@@ -59,7 +59,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**.
+The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility.
 
 
 --- middle
