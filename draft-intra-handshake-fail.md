@@ -3,7 +3,7 @@ title: "Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7
 abbrev: "TODO - Abbreviation"
 category: info
 
-docname: draft-ietf-seat-intra-handshake-fail-latest
+docname: draft-intra-handshake-fail-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
