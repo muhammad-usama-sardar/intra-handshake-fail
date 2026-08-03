@@ -1,6 +1,6 @@
 ---
 title: "Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)"
-abbrev: "TODO - Abbreviation"
+abbrev: "Intra-handshake Attestation Considered Harmful"
 category: info
 
 docname: draft-intra-handshake-fail-latest
@@ -59,7 +59,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility.
+The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
 
 
 --- middle
@@ -84,7 +84,10 @@ binding mechanisms of intra-handshake attestation using the
 state-of-the-art tool ProVerif and propose a mitigation for the
 discovered security vulnerabilities. Our study reveals that it may
 not be possible to achieve strong application-traffic (level 3)
-binding using intra-handshake attestation alone.
+binding using intra-handshake attestation alone. This can be exploited
+for relay attacks, where an attacker makes a client accept an evidence
+from a different machine. So the client cannot be sure that it connects
+to its desired server.
 ~~~
 
 
@@ -208,7 +211,7 @@ urgently move to post-handshake attestation.
 ~~~
 
 ## Implications of Findings for Agent2Agent
-Intra-handshake attestation does more damage than protection for AI agents.
+From a security perspective, intra-handshake attestation does more damage than protection for AI agents.
 
 # Technical Details
 
@@ -252,6 +255,10 @@ Several media enthusiasts have covered the vulnerabilities to protect the commun
 - [dugganusa repo](https://github.com/pduggusa/dugganusa-ietf/tree/main/cve-2026-33697-attestation)
 - [spoitus](https://sploitus.com/exploit?id=92591A05-07BC-5015-BA3D-B1347B35D684)
 - [lavx news](https://news.lavx.hu/article/attested-tls-research-exposes-a-weak-link-in-confidential-computing)
+- [sohu](https://www.sohu.com/a/1045865934_122004016)
+- [Persian](https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8)
+- [GCVE.eu](https://db.gcve.eu/sightings/?query=cve-2026-33697)
+- [freenode](https://freenode.net/digest/67)
 - (Chinese) [csdn](https://blog.csdn.net/weixin_42376192/category_13096766.html)
 - [osintsights](https://osintsights.com/confidential-computing-flaws-expose-trust-risks)
 - (Turkish) [hardwaremania](https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/)
@@ -263,11 +270,12 @@ If you have written an article on this and would like to be added here, please s
 
 ## Security Researchers
 
-Credible security researchers, such as the following, have attested to it.
+Credible security researchers, such as the following, have publicly attested to it.
 
 - [Michael Pak](https://www.linkedin.com/posts/michaelpak_confidential-computings-core-trust-mechanism-activity-7479415537836376064-q-A4/)
 - [Rodrigo Branco](https://www.linkedin.com/posts/rrbranco_one-more-evidence-that-there-is-no-such-a-share-7479582122366615552-X0A5/)
 - [Bart Preneel](https://www.linkedin.com/posts/bart-preneel-4451412_on-the-limits-of-confidential-computing-share-7479549718294077440-wfi3/)
+- [Thorsten Strufe](https://www.linkedin.com/in/strufe/recent-activity/all/)
 
 ## Germany's BSI
 
@@ -305,6 +313,15 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/](https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/)
 - [https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/](https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/)
 - [https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/](https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/)
+- [https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/](https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+
+Three main questions have been raised in support of our work:
+
+- What security property hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
+- Since continuous attestation is required, how is **additional complexity** of **intra**-handshake attestation justified?
+- What is the benefit of doing signatures of remote attestation within the handshake (as this latency can be exploited)?
 
 ## Researchers outside of IETF/IRTF
 
@@ -347,6 +364,9 @@ We gratefully acknowledge the following for insightful discussions on this work:
 - Songbo Bu
 - John Preuß Mattsson
 - Werner Staub
+- Haowen Song
+- Chengxin Huang
+- Patrick Duggan
 - Nathanael Ritz
 
 We also gratefully acknowledge the following who gave feedback on [previous state-of-the-art](https://github.com/CCC-Attestation/formal-spec-id-crisis) that we utilize as the basis:
