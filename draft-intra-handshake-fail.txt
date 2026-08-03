@@ -4,8 +4,8 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                              31 July 2026
-Expires: 1 February 2027
+Intended status: Informational                             3 August 2026
+Expires: 4 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -21,7 +21,8 @@ Abstract
    *unnecessary complexity*. The results are backed by the research
    [Intra-handshake.fail] and the ProVerif artifacts
    [Intra-handshake.fail-repo] under Apache-2.0 license for
-   reproducibility.
+   reproducibility, and have been acknowledged by the relevant
+   stakeholders.
 
 About This Document
 
@@ -50,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 February 2027.
+   This Internet-Draft will expire on 4 February 2027.
 
 Copyright Notice
 
@@ -171,12 +172,15 @@ Table of Contents
 
     Table 1: Binding mechanisms, implementations and ProVerif artifacts
 
-   We provide a formal proof of insecurity of all the above candidate
-   binding mechanisms of intra-handshake attestation using the
-   state-of-the-art tool ProVerif and propose a mitigation for the
-   discovered security vulnerabilities. Our study reveals that it may
-   not be possible to achieve strong application-traffic (level 3)
-   binding using intra-handshake attestation alone.
+ We provide a formal proof of insecurity of all the above candidate
+ binding mechanisms of intra-handshake attestation using the
+ state-of-the-art tool ProVerif and propose a mitigation for the
+ discovered security vulnerabilities. Our study reveals that it may
+ not be possible to achieve strong application-traffic (level 3)
+ binding using intra-handshake attestation alone. This can be exploited
+ for relay attacks, where an attacker makes a client accept an evidence
+ from a different machine. So the client cannot be sure that it connects
+ to its desired server.
 
    We responsibly disclosed the vulnerability in intra-handshake
    attestation -- as noted in security advisory
@@ -495,8 +499,8 @@ Table of Contents
 
 10.4.  Implications of Findings for Agent2Agent
 
-   Intra-handshake attestation does more damage than protection for AI
-   agents.
+   From a security perspective, intra-handshake attestation does more
+   damage than protection for AI agents.
 
 11.  Technical Details
 
@@ -605,6 +609,15 @@ Table of Contents
    *  lavx news (https://news.lavx.hu/article/attested-tls-research-
       exposes-a-weak-link-in-confidential-computing)
 
+   *  sohu (https://www.sohu.com/a/1045865934_122004016)
+
+   *  Persian (https://news.ditty.ir/news/attested-tls-relay-flaw-
+      formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8)
+
+   *  GCVE.eu (https://db.gcve.eu/sightings/?query=cve-2026-33697)
+
+   *  freenode (https://freenode.net/digest/67)
+
    *  (Chinese) csdn (https://blog.csdn.net/weixin_42376192/
       category_13096766.html)
 
@@ -628,8 +641,8 @@ Table of Contents
 
 12.1.  Security Researchers
 
-   Credible security researchers, such as the following, have attested
-   to it.
+   Credible security researchers, such as the following, have publicly
+   attested to it.
 
    *  Michael Pak (https://www.linkedin.com/posts/
       michaelpak_confidential-computings-core-trust-mechanism-activity-
@@ -641,6 +654,9 @@ Table of Contents
    *  Bart Preneel (https://www.linkedin.com/posts/bart-preneel-
       4451412_on-the-limits-of-confidential-computing-share-
       7479549718294077440-wfi3/)
+
+   *  Thorsten Strufe (https://www.linkedin.com/in/strufe/recent-
+      activity/all/)
 
 12.2.  Germany's BSI
 
@@ -739,6 +755,33 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/
       ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/)
 
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+
+   Three main questions have been raised in support of our work:
+
+   *  What security property hybrid (intra- + post-handshake
+      attestation) provides that post-handshake attestation alone cannot
+      provide?
+
+   *  Since continuous attestation is required, how is *additional
+      complexity* of *intra*-handshake attestation justified?
+
+   *  What is the benefit of doing signatures of remote attestation
+      within the handshake (as this latency can be exploited)?
+
 13.3.  Researchers outside of IETF/IRTF
 
    Some researchers have approached us confirming the proof-of-concept
@@ -828,6 +871,12 @@ Acknowledgments
    *  John Preuß Mattsson
 
    *  Werner Staub
+
+   *  Haowen Song
+
+   *  Chengxin Huang
+
+   *  Patrick Duggan
 
    *  Nathanael Ritz
 

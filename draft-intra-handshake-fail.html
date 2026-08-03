@@ -7,7 +7,7 @@
 <title>Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="
-       The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how  intra -handshake attestation fails in practice. Moreover, since continuous attestation is required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the ProVerif artifacts    under Apache-2.0 license for reproducibility. 
+       The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how  intra -handshake attestation fails in practice. Moreover, since continuous attestation is required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the ProVerif artifacts    under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="AI agents" name="keyword">
@@ -23,7 +23,7 @@
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.10.1
+    platformdirs 4.11.0
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
@@ -1042,12 +1042,12 @@ svg {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">TODO - Abbreviation</td>
-<td class="right">July 2026</td>
+<td class="center">Intra-handshake Attestation Considered H</td>
+<td class="right">August 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar</td>
-<td class="center">Expires 1 February 2027</td>
+<td class="center">Expires 4 February 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1060,12 +1060,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-07-31" class="published">31 July 2026</time>
+<time datetime="2026-08-03" class="published">3 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-02-01">1 February 2027</time></dd>
+<dd class="expires"><time datetime="2027-02-04">4 February 2027</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1078,7 +1078,7 @@ svg {
 <h1 id="title">Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how <strong>intra</strong>-handshake attestation fails in practice. Moreover, since continuous attestation is required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the ProVerif artifacts  <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> under Apache-2.0 license for reproducibility.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how <strong>intra</strong>-handshake attestation fails in practice. Moreover, since continuous attestation is required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the ProVerif artifacts  <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1110,7 +1110,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 4 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1348,7 +1348,10 @@ binding mechanisms of intra-handshake attestation using the
 state-of-the-art tool ProVerif and propose a mitigation for the
 discovered security vulnerabilities. Our study reveals that it may
 not be possible to achieve strong application-traffic (level 3)
-binding using intra-handshake attestation alone.
+binding using intra-handshake attestation alone. This can be exploited
+for relay attacks, where an attacker makes a client accept an evidence
+from a different machine. So the client cannot be sure that it connects
+to its desired server.
 </pre><a href="#section-1-3" class="pilcrow">¶</a>
 </div>
 <p id="section-1-4">We responsibly disclosed the vulnerability in intra-handshake attestation -- as noted in <a href="https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7">security advisory</a> issued -- to the vendors, which resulted in  <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5.<a href="#section-1-4" class="pilcrow">¶</a></p>
@@ -1826,7 +1829,7 @@ urgently move to post-handshake attestation.
         <h3 id="name-implications-of-findings-for-a">
 <a href="#section-10.4" class="section-number selfRef">10.4. </a><a href="#name-implications-of-findings-for-a" class="section-name selfRef">Implications of Findings for Agent2Agent</a>
         </h3>
-<p id="section-10.4-1">Intra-handshake attestation does more damage than protection for AI agents.<a href="#section-10.4-1" class="pilcrow">¶</a></p>
+<p id="section-10.4-1">From a security perspective, intra-handshake attestation does more damage than protection for AI agents.<a href="#section-10.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1943,22 +1946,34 @@ This modeling choice makes it clear that even with the diversion attacks fixed, 
           <p id="section-12-2.21.1"><a href="https://news.lavx.hu/article/attested-tls-research-exposes-a-weak-link-in-confidential-computing">lavx news</a><a href="#section-12-2.21.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.22">
-          <p id="section-12-2.22.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-12-2.22.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.22.1"><a href="https://www.sohu.com/a/1045865934_122004016">sohu</a><a href="#section-12-2.22.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.23">
-          <p id="section-12-2.23.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-12-2.23.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.23.1"><a href="https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8">Persian</a><a href="#section-12-2.23.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.24">
-          <p id="section-12-2.24.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-12-2.24.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.24.1"><a href="https://db.gcve.eu/sightings/?query=cve-2026-33697">GCVE.eu</a><a href="#section-12-2.24.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.25">
-          <p id="section-12-2.25.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-12-2.25.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.25.1"><a href="https://freenode.net/digest/67">freenode</a><a href="#section-12-2.25.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.26">
-          <p id="section-12-2.26.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-12-2.26.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.26.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-12-2.26.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.27">
-          <p id="section-12-2.27.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-12-2.27.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.27.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-12-2.27.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.28">
+          <p id="section-12-2.28.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-12-2.28.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.29">
+          <p id="section-12-2.29.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-12-2.29.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.30">
+          <p id="section-12-2.30.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-12-2.30.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.31">
+          <p id="section-12-2.31.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-12-2.31.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="section-12-3">If you have written an article on this and would like to be added here, please send us a PR or an email with the subject "media coverage of intra-handshake.fail"<a href="#section-12-3" class="pilcrow">¶</a></p>
@@ -1967,7 +1982,7 @@ This modeling choice makes it clear that even with the diversion attacks fixed, 
         <h3 id="name-security-researchers">
 <a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-security-researchers" class="section-name selfRef">Security Researchers</a>
         </h3>
-<p id="section-12.1-1">Credible security researchers, such as the following, have attested to it.<a href="#section-12.1-1" class="pilcrow">¶</a></p>
+<p id="section-12.1-1">Credible security researchers, such as the following, have publicly attested to it.<a href="#section-12.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-12.1-2.1">
             <p id="section-12.1-2.1.1"><a href="https://www.linkedin.com/posts/michaelpak_confidential-computings-core-trust-mechanism-activity-7479415537836376064-q-A4/">Michael Pak</a><a href="#section-12.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1977,6 +1992,9 @@ This modeling choice makes it clear that even with the diversion attacks fixed, 
 </li>
           <li class="normal" id="section-12.1-2.3">
             <p id="section-12.1-2.3.1"><a href="https://www.linkedin.com/posts/bart-preneel-4451412_on-the-limits-of-confidential-computing-share-7479549718294077440-wfi3/">Bart Preneel</a><a href="#section-12.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-12.1-2.4">
+            <p id="section-12.1-2.4.1"><a href="https://www.linkedin.com/in/strufe/recent-activity/all/">Thorsten Strufe</a><a href="#section-12.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2066,6 +2084,27 @@ management etc., are also not mitigated by CC.
 </li>
           <li class="normal" id="section-13.2-2.15">
             <p id="section-13.2-2.15.1"><a href="https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/">https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/</a><a href="#section-13.2-2.15.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-13.2-2.16">
+            <p id="section-13.2-2.16.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/">https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/</a><a href="#section-13.2-2.16.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-13.2-2.17">
+            <p id="section-13.2-2.17.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/">https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/</a><a href="#section-13.2-2.17.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-13.2-2.18">
+            <p id="section-13.2-2.18.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/">https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/</a><a href="#section-13.2-2.18.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-13.2-3">Three main questions have been raised in support of our work:<a href="#section-13.2-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-13.2-4.1">
+            <p id="section-13.2-4.1.1">What security property hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?<a href="#section-13.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-13.2-4.2">
+            <p id="section-13.2-4.2.1">Since continuous attestation is required, how is <strong>additional complexity</strong> of <strong>intra</strong>-handshake attestation justified?<a href="#section-13.2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-13.2-4.3">
+            <p id="section-13.2-4.3.1">What is the benefit of doing signatures of remote attestation within the handshake (as this latency can be exploited)?<a href="#section-13.2-4.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2203,7 +2242,16 @@ management etc., are also not mitigated by CC.
           <p id="appendix-A-4.15.1">Werner Staub<a href="#appendix-A-4.15.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-4.16">
-          <p id="appendix-A-4.16.1">Nathanael Ritz<a href="#appendix-A-4.16.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-4.16.1">Haowen Song<a href="#appendix-A-4.16.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-4.17">
+          <p id="appendix-A-4.17.1">Chengxin Huang<a href="#appendix-A-4.17.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-4.18">
+          <p id="appendix-A-4.18.1">Patrick Duggan<a href="#appendix-A-4.18.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-4.19">
+          <p id="appendix-A-4.19.1">Nathanael Ritz<a href="#appendix-A-4.19.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="appendix-A-5">We also gratefully acknowledge the following who gave feedback on <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis">previous state-of-the-art</a> that we utilize as the basis:<a href="#appendix-A-5" class="pilcrow">¶</a></p>
