@@ -1855,6 +1855,14 @@ urgently move to post-handshake attestation.
 <p id="section-11.2-1">The formal model uses the <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis/tree/main/TLS-a/fix">fixed version of diversion attacks in intra-handshake attestation</a> from our previous work as the starting point to focus on relay attacks in intra-handshake attestation in this work.
 The rationale is that we consider it more useful to show the added value of this contribution to the community by using the <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis/tree/main/TLS-a/fix">fixed version of diversion attacks in intra-handshake attestation</a> as the baseline, rather than showing the same diversion attacks from <a href="https://dl.acm.org/doi/10.1145/3779208.3785387">ID-Crisis paper</a>, and the discovered CVE (<span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>) -- which the previous analysis could not find -- practically demonstrates the added value.
 This modeling choice makes it clear that even with the diversion attacks fixed, high-severity relay attacks would still remain in intra-handshake attestation.<a href="#section-11.2-1" class="pilcrow">¶</a></p>
+<p id="section-11.2-2">Note: Similar to the <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis/tree/main/TLS-a/fix">fixed version of diversion attacks in intra-handshake attestation</a> from our previous work, we model non-PSK-based handshake.
+From <a href="https://dl.acm.org/doi/10.1145/3779208.3785387">ID-Crisis paper</a>:<a href="#section-11.2-2" class="pilcrow">¶</a></p>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-11.2-3.1">
+            <p id="section-11.2-3.1.1">For modeling TLS 1.3, we consider handshakes based on Diffie-Hellman over either finite fields or elliptic curves, represented as (EC)DHE. This is because we are unaware of any publicly available specification or implementation of attested TLS with PSK-based handshakes.<a href="#section-11.2-3.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-11.2-4">While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.<a href="#section-11.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="technical-report">
