@@ -224,6 +224,14 @@ The formal model uses the [fixed version of diversion attacks in intra-handshake
 The rationale is that we consider it more useful to show the added value of this contribution to the community by using the [fixed version of diversion attacks in intra-handshake attestation](https://github.com/CCC-Attestation/formal-spec-id-crisis/tree/main/TLS-a/fix) as the baseline, rather than showing the same diversion attacks from [ID-Crisis paper](https://dl.acm.org/doi/10.1145/3779208.3785387), and the discovered CVE ({{CVE-2026-33697}}) -- which the previous analysis could not find -- practically demonstrates the added value.
 This modeling choice makes it clear that even with the diversion attacks fixed, high-severity relay attacks would still remain in intra-handshake attestation.
 
+Note: Similar to the [fixed version of diversion attacks in intra-handshake attestation](https://github.com/CCC-Attestation/formal-spec-id-crisis/tree/main/TLS-a/fix) from our previous work, we model non-PSK-based handshake.
+From [ID-Crisis paper](https://dl.acm.org/doi/10.1145/3779208.3785387):
+
+> For modeling TLS 1.3, we consider handshakes based on Diffie-Hellman over either finite fields or elliptic curves, represented as (EC)DHE. This is because we are unaware of any publicly available specification or implementation of attested TLS with PSK-based handshakes.
+
+While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.
+
+
 ## Technical Report
 Technical report is available at {{Intra-handshake.fail}}. It is accepted for publication at ESORICS 2026.
 
