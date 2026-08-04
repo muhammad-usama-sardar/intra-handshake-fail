@@ -334,6 +334,7 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
 - [https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/](https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/)
 - [https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/](https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/)
+- [https://mailarchive.ietf.org/arch/msg/seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/](https://mailarchive.ietf.org/arch/msg/seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/)
 
 Three main questions have been raised in support of our work:
 
@@ -385,6 +386,7 @@ We gratefully acknowledge the following for insightful discussions on this work:
 - Haowen Song
 - Chengxin Huang
 - Steve Luo
+- Kubilay Ahmet Küçük
 - Patrick Duggan
 - Nathanael Ritz
 
