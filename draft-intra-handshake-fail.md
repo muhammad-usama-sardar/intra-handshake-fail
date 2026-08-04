@@ -59,7 +59,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
+The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without phyical access*. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
 
 
 --- middle
@@ -313,9 +313,11 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/](https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/)
 - [https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/](https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/)
 - [https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/](https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/)
+- [https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/](https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/)
 - [https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/](https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
 - [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
-- [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/](https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/](https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/)
 
 Three main questions have been raised in support of our work:
 
@@ -366,6 +368,7 @@ We gratefully acknowledge the following for insightful discussions on this work:
 - Werner Staub
 - Haowen Song
 - Chengxin Huang
+- Steve Luo
 - Patrick Duggan
 - Nathanael Ritz
 
