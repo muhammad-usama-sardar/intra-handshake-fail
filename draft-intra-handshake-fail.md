@@ -366,7 +366,7 @@ We would like to thank our co-authors of paper for their valuable contributions:
 - Viacheslav Dubeyko
 - Jean-Marie Jacquet
 
-We gratefully acknowledge the following for insightful discussions on this work:
+We gratefully acknowledge the following for insightful discussions and reviews on this work:
 
 - Eric Rescorla
 - Juho Forsén
@@ -403,6 +403,8 @@ We also gratefully acknowledge the following who gave feedback on [previous stat
 - Jonathan Hoyland
 - Richard Barnes
 
-Several others at the IETF, IRTF, and CCC have contributed by providing feedback.
+Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback.
 
 We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594).
+
+The research work is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")
