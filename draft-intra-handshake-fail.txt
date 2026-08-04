@@ -828,6 +828,10 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/seat/
       aEV9dUFotAQzHndk23qBcwBT3as/)
 
+   *  https://mailarchive.ietf.org/arch/msg/seat/3Hv0E1sfXsvyBtl6AgY8j-
+      SHHiw/ (https://mailarchive.ietf.org/arch/msg/
+      seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/)
+
    Three main questions have been raised in support of our work:
 
    *  What security property hybrid (intra- + post-handshake
@@ -935,6 +939,8 @@ Acknowledgments
    *  Chengxin Huang
 
    *  Steve Luo
+
+   *  Kubilay Ahmet Küçük
 
    *  Patrick Duggan
 
