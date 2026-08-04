@@ -7,7 +7,7 @@
 <title>Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="
-       The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how  intra -handshake attestation fails in practice, even  without phyical access . Moreover, since continuous attestation is required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the ProVerif artifacts    under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. 
+       The draft aims to provide technical details of CVE-2026-33697 and  EUVD-2026-16488 , which is substantial technical evidence of how  intra -handshake attestation fails in practice, even  without phyical access . Moreover, since continuous attestation is required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the ProVerif artifacts    under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="AI agents" name="keyword">
@@ -1078,7 +1078,7 @@ svg {
 <h1 id="title">Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of CVE-2026-33697, which is substantial technical evidence of how <strong>intra</strong>-handshake attestation fails in practice, even <em>without phyical access</em>. Moreover, since continuous attestation is required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the ProVerif artifacts  <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of CVE-2026-33697 and <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, which is substantial technical evidence of how <strong>intra</strong>-handshake attestation fails in practice, even <em>without phyical access</em>. Moreover, since continuous attestation is required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the ProVerif artifacts  <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1323,7 +1323,7 @@ svg {
             <td class="text-left" rowspan="1" colspan="1">6.</td>
             <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #4</td>
             <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.ultraviolet.rs/products/cocos-ai/">Cocos AI</a>;  CCC Attestation SIG's adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>
+              <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf">Cocos AI</a>;  CCC Attestation SIG's adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>
 </td>
             <td class="text-left" rowspan="1" colspan="1">
               <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6">binder6</a>
@@ -1418,6 +1418,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <tr>
             <td class="text-left" rowspan="1" colspan="1">CVE (<a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>) published  [<strong>Severity = HIGH (CVSS 7.5)</strong>]</td>
             <td class="text-left" rowspan="1" colspan="1">26 March, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <a href="https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1">Acknowledgment</a> by Privasys for rustls <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a> [<strong>Severity = HIGH (CVSS 7.5)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">9 July, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <a href="https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5">Acknowledgment</a> by Privasys for go <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a> [<strong>Severity = HIGH (CVSS 7.5)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">10 July, 2026</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">
@@ -1571,6 +1581,12 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </li>
         <li class="normal" id="section-6-2.4">
           <p id="section-6-2.4.1">CCC Attestation SIG's adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>: declared <a href="https://github.com/CCC-Attestation/attested-tls-poc/pull/58">vulnerable to relay attacks</a> and <strong>archived</strong><a href="#section-6-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.5">
+          <p id="section-6-2.5.1">Privasys rustls: <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a> [<strong>Severity = HIGH (CVSS 7.5)</strong>] <a href="https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1">Acknowledgment</a><a href="#section-6-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-6-2.6">
+          <p id="section-6-2.6.1">Pirvasys go: <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a> [<strong>Severity = HIGH (CVSS 7.5)</strong>] <a href="https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5">Acknowledgment</a><a href="#section-6-2.6.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
@@ -1957,31 +1973,43 @@ From <a href="https://dl.acm.org/doi/10.1145/3779208.3785387">ID-Crisis paper</a
           <p id="section-12-2.22.1"><a href="https://www.sohu.com/a/1045865934_122004016">sohu</a><a href="#section-12-2.22.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.23">
-          <p id="section-12-2.23.1"><a href="https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8">Persian</a><a href="#section-12-2.23.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.23.1">(Persian) <a href="https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8">news.ditty</a><a href="#section-12-2.23.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.24">
-          <p id="section-12-2.24.1"><a href="https://db.gcve.eu/sightings/?query=cve-2026-33697">GCVE.eu</a><a href="#section-12-2.24.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.24.1">(Russian) <a href="https://limpvpn.com/ru/news/attested-tls-whatsapp-privacy-flaw-2026">LiMP VPN</a><a href="#section-12-2.24.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.25">
-          <p id="section-12-2.25.1"><a href="https://freenode.net/digest/67">freenode</a><a href="#section-12-2.25.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.25.1"><a href="https://daily.dev/posts/kI6PoNzPx">daily.dev</a><a href="#section-12-2.25.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.26">
-          <p id="section-12-2.26.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-12-2.26.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.26.1"><a href="https://warden.veritai.ch/news/researchers-find-attested-tls-flaws-that-weaken-confidential-computing-trust-model">warden</a><a href="#section-12-2.26.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.27">
-          <p id="section-12-2.27.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-12-2.27.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.27.1"><a href="https://db.gcve.eu/sightings/?query=cve-2026-33697">GCVE.eu</a><a href="#section-12-2.27.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.28">
-          <p id="section-12-2.28.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-12-2.28.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.28.1"><a href="https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security">coderlegion</a><a href="#section-12-2.28.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.29">
-          <p id="section-12-2.29.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-12-2.29.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.29.1"><a href="https://freenode.net/digest/67">freenode</a><a href="#section-12-2.29.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.30">
-          <p id="section-12-2.30.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-12-2.30.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.30.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-12-2.30.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-12-2.31">
-          <p id="section-12-2.31.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-12-2.31.1" class="pilcrow">¶</a></p>
+          <p id="section-12-2.31.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-12-2.31.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.32">
+          <p id="section-12-2.32.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-12-2.32.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.33">
+          <p id="section-12-2.33.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-12-2.33.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.34">
+          <p id="section-12-2.34.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-12-2.34.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="section-12-2.35">
+          <p id="section-12-2.35.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-12-2.35.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="section-12-3">If you have written an article on this and would like to be added here, please send us a PR or an email with the subject "media coverage of intra-handshake.fail"<a href="#section-12-3" class="pilcrow">¶</a></p>

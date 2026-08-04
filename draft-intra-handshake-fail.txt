@@ -14,8 +14,9 @@ Expires: 5 February 2027
 
 Abstract
 
-   The draft aims to provide technical details of CVE-2026-33697, which
-   is substantial technical evidence of how *intra*-handshake
+   The draft aims to provide technical details of CVE-2026-33697 and
+   EUVD-2026-16488 (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488),
+   which is substantial technical evidence of how *intra*-handshake
    attestation fails in practice, even _without phyical access_.
    Moreover, since continuous attestation is required, *intra*-handshake
    attestation adds *unnecessary complexity*. The results are backed by
@@ -156,9 +157,11 @@ Table of Contents
    |   |#4         |Attestation/meetings/blob/main/materials/|muhammad-usama-sardar/   |
    |   |           |MarkusRudy.contrast-atls-ccc-            |intra-                   |
    |   |           |attestation.pdf); Cocos AI               |handshake.fail/tree/main/|
-   |   |           |(https://www.ultraviolet.rs/products/    |binder6)                 |
-   |   |           |cocos-ai/); CCC Attestation SIG's adopted|                         |
-   |   |           |project intra-handshake attestation      |                         |
+   |   |           |(https://www.sns-itrust6g.com/wp-        |binder6)                 |
+   |   |           |content/uploads/2025/12/Webinar-         |                         |
+   |   |           |Architecting-Trust-CONFIDENTIAL6G.pdf);  |                         |
+   |   |           |CCC Attestation SIG's adopted project    |                         |
+   |   |           |intra-handshake attestation              |                         |
    |   |           |(https://github.com/ccc-attestation/     |                         |
    |   |           |attested-tls-poc)                        |                         |
    +---+-----------+-----------------------------------------+-------------------------+
@@ -230,6 +233,14 @@ Table of Contents
    |CVE (CVE-2026-33697 (https://www.cve.org/CVERecord?id=CVE-2026-33697))      |26    |
    |published [*Severity = HIGH (CVSS 7.5)*]                                    |March,|
    |                                                                            |2026  |
+   +----------------------------------------------------------------------------+------+
+   |Acknowledgment (https://github.com/Privasys/rustls/releases/tag/privasys-   |9     |
+   |v0.8.1) by Privasys for rustls CVE-2026-33697 (https://www.cve.org/         |July, |
+   |CVERecord?id=CVE-2026-33697) [*Severity = HIGH (CVSS 7.5)*]                 |2026  |
+   +----------------------------------------------------------------------------+------+
+   |Acknowledgment (https://github.com/Privasys/go/releases/tag/privasys-       |10    |
+   |v0.5.1-go1.26.5) by Privasys for go CVE-2026-33697 (https://www.cve.org/    |July, |
+   |CVERecord?id=CVE-2026-33697) [*Severity = HIGH (CVSS 7.5)*]                 |2026  |
    +----------------------------------------------------------------------------+------+
    |CCC implementation (https://github.com/ccc-attestation/attested-tls-poc)    |17    |
    |declared vulnerable to relay attacks (https://github.com/CCC-Attestation/   |July, |
@@ -345,6 +356,16 @@ Table of Contents
       (https://github.com/ccc-attestation/attested-tls-poc): declared
       vulnerable to relay attacks (https://github.com/CCC-Attestation/
       attested-tls-poc/pull/58) and *archived*
+
+   *  Privasys rustls: CVE-2026-33697 (https://www.cve.org/
+      CVERecord?id=CVE-2026-33697) [*Severity = HIGH (CVSS 7.5)*]
+      Acknowledgment (https://github.com/Privasys/rustls/releases/tag/
+      privasys-v0.8.1)
+
+   *  Pirvasys go: CVE-2026-33697 (https://www.cve.org/CVERecord?id=CVE-
+      2026-33697) [*Severity = HIGH (CVSS 7.5)*] Acknowledgment
+      (https://github.com/Privasys/go/releases/tag/privasys-
+      v0.5.1-go1.26.5)
 
 7.  Binding Levels
 
@@ -627,10 +648,21 @@ Table of Contents
 
    *  sohu (https://www.sohu.com/a/1045865934_122004016)
 
-   *  Persian (https://news.ditty.ir/news/attested-tls-relay-flaw-
-      formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8)
+   *  (Persian) news.ditty (https://news.ditty.ir/news/attested-tls-
+      relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8)
+
+   *  (Russian) LiMP VPN (https://limpvpn.com/ru/news/attested-tls-
+      whatsapp-privacy-flaw-2026)
+
+   *  daily.dev (https://daily.dev/posts/kI6PoNzPx)
+
+   *  warden (https://warden.veritai.ch/news/researchers-find-attested-
+      tls-flaws-that-weaken-confidential-computing-trust-model)
 
    *  GCVE.eu (https://db.gcve.eu/sightings/?query=cve-2026-33697)
+
+   *  coderlegion (https://coderlegion.com/24087/intra-handshake-
+      attestation-when-more-security-doesnt-mean-better-security)
 
    *  freenode (https://freenode.net/digest/67)
 
