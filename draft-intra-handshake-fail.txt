@@ -4,8 +4,8 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                             3 August 2026
-Expires: 4 February 2027
+Intended status: Informational                             4 August 2026
+Expires: 5 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -16,10 +16,10 @@ Abstract
 
    The draft aims to provide technical details of CVE-2026-33697, which
    is substantial technical evidence of how *intra*-handshake
-   attestation fails in practice.  Moreover, since continuous
-   attestation is required, *intra*-handshake attestation adds
-   *unnecessary complexity*. The results are backed by the research
-   [Intra-handshake.fail] and the ProVerif artifacts
+   attestation fails in practice, even _without phyical access_.
+   Moreover, since continuous attestation is required, *intra*-handshake
+   attestation adds *unnecessary complexity*. The results are backed by
+   the research [Intra-handshake.fail] and the ProVerif artifacts
    [Intra-handshake.fail-repo] under Apache-2.0 license for
    reproducibility, and have been acknowledged by the relevant
    stakeholders.
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 February 2027.
+   This Internet-Draft will expire on 5 February 2027.
 
 Copyright Notice
 
@@ -756,6 +756,11 @@ Table of Contents
       ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/
+      Q6Jmc58v0c1lDV3ujIY0AX_ofGA/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      Q6Jmc58v0c1lDV3ujIY0AX_ofGA/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
       ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/
       (https://mailarchive.ietf.org/arch/msg/seat/
       ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
@@ -765,10 +770,15 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/
       seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
 
-   *  https://mailarchive.ietf.org/arch/msg/
-      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/
-      (https://mailarchive.ietf.org/arch/msg/
-      seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      JF_cwmHHEbrJ_W5V6yEetWWnii4/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      JF_cwmHHEbrJ_W5V6yEetWWnii4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      aEV9dUFotAQzHndk23qBcwBT3as/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      aEV9dUFotAQzHndk23qBcwBT3as/)
 
    Three main questions have been raised in support of our work:
 
@@ -875,6 +885,8 @@ Acknowledgments
    *  Haowen Song
 
    *  Chengxin Huang
+
+   *  Steve Luo
 
    *  Patrick Duggan
 
