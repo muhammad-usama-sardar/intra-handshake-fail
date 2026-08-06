@@ -59,8 +59,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of CVE-2026-33697 and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without phyical access*. Moreover, since continuous attestation is required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
-
+The draft aims to provide technical details of CVE-2026-33697 and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without phyical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
 
 --- middle
 
@@ -158,14 +157,16 @@ If you are aware of any other intra-handshake attestation implementation, please
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation path are vulnerable to [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488):
 
-- [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/)
-- [draft-ritz-seat-facts](https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/)
-- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation): withdrawn
+- [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/): symbolic and computational proof of insecurity (orginially for -04 which also applies to -06)
+- [draft-ritz-seat-facts](https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/): symbolic proof of insecurity
+- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) withdrawn
 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
 3. Application traffic key (`astc`) used for encryption of application data
+
+Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
 
 # Correlation Goals
 We consider TLS Server as RATS Attester, which is typical in confidential computing.
@@ -173,6 +174,8 @@ We consider TLS Server as RATS Attester, which is typical in confidential comput
 1. Correlation of Evidence to a DH Shared Secret (G1)
 2. Correlation of Evidence to Client’s Handshake Traffic Key (G2)
 3. Correlation of Evidence to Client’s Application Traffic Key (G3)
+
+Please see Sec. 6.3 of {{Intra-handshake.fail}} for details.
 
 # Main Results
 
@@ -188,6 +191,7 @@ We consider TLS Server as RATS Attester, which is typical in confidential comput
 | G3 : Correlation of Evidence to `kc`  | ❌     | ❌    | ❌    |
 {: title="Main results"}
 
+Please see Sec. 7.1 of {{Intra-handshake.fail}} for details.
 
 ## Expected Results
 
@@ -250,6 +254,12 @@ While it would be nice to model PSK-based handshake, the rationale is that the c
 ## Technical Report
 Technical report is available at {{Intra-handshake.fail}}. It is accepted for publication at ESORICS 2026.
 
+### Vulnerabilities
+Sec. 7.1 of {{Intra-handshake.fail}} presents the technical details with actual attack traces of the vulnerabilities.
+
+### Mitigation
+Sec. 7.2 of {{Intra-handshake.fail}} presents the technical details of the proposed mitigation.
+
 ## Artifacts
 Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 License.
 
@@ -285,6 +295,7 @@ Several media enthusiasts have covered the vulnerabilities to protect the commun
 - [warden](https://warden.veritai.ch/news/researchers-find-attested-tls-flaws-that-weaken-confidential-computing-trust-model)
 - [GCVE.eu](https://db.gcve.eu/sightings/?query=cve-2026-33697)
 - [coderlegion](https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security)
+- [Anjuna Security](https://www.anjuna.io/blog/attested-tls-flaw-explained)
 - [freenode](https://freenode.net/digest/67)
 - (Chinese) [csdn](https://blog.csdn.net/weixin_42376192/category_13096766.html)
 - [osintsights](https://osintsights.com/confidential-computing-flaws-expose-trust-risks)
