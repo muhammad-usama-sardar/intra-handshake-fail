@@ -4,26 +4,27 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                             5 August 2026
-Expires: 6 February 2027
+Intended status: Informational                             9 August 2026
+Expires: 10 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
-                                  7.5)
+    7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)
                    draft-intra-handshake-fail-latest
 
 Abstract
 
-   The draft aims to provide technical details of CVE-2026-33697 and
-   EUVD-2026-16488 (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488),
-   which is substantial technical evidence of how *intra*-handshake
-   attestation fails in practice, even _without phyical access_.
-   Moreover, since continuous attestation is required, *intra*-handshake
+   The draft aims to provide technical details of CVE-2026-33697
+   (https://www.cve.org/CVERecord?id=CVE-2026-33697) and EUVD-2026-16488
+   (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is
+   substantial technical evidence of how *intra*-handshake attestation
+   fails in practice, even _without physical access_. Moreover, since
+   continuous attestation is generally required, *intra*-handshake
    attestation adds *unnecessary complexity*. The results are backed by
-   the research [Intra-handshake.fail] and the ProVerif artifacts
-   [Intra-handshake.fail-repo] under Apache-2.0 license for
-   reproducibility, and have been acknowledged by the relevant
-   stakeholders.
+   the research [Intra-handshake.fail] and the artifacts
+   [Intra-handshake.fail-repo] in state-of-the-art tool, ProVerif, under
+   Apache-2.0 license for reproducibility, and have been acknowledged by
+   the relevant stakeholders.
 
 About This Document
 
@@ -52,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 February 2027.
+   This Internet-Draft will expire on 10 February 2027.
 
 Copyright Notice
 
@@ -73,38 +74,42 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  Credits
-   4.  Detailed Vulnerability Disclosure Timeline and Acknowledgements
-           by Affected Vendors
+   4.  Detailed Vulnerability Disclosure Timeline and Public
+           Acknowledgements by Affected Vendors
    5.  Comparison with Other Vulnerabilities in Confidential Computing
            Literature
-   6.  Vulnerable Implementations
-   7.  Vulnerable Protocol Specifications
-   8.  Binding Levels
-   9.  Correlation Goals
-   10. Main Results
-     10.1.  Expected Results
-   11. Implications of Findings
-     11.1.  Implications of Findings for IETF SEAT WG
-     11.2.  Implications of Findings for IETF LAKE WG
-     11.3.  Implications of Findings for IETF TLS WG
-     11.4.  Implications of Findings for Agent2Agent
-   12. Technical Details
-     12.1.  Tool
-     12.2.  Modeling
-     12.3.  Technical Report
-     12.4.  Artifacts
-   13. Media Coverage
-     13.1.  Security Researchers
-     13.2.  Germany's BSI
-   14. Reviews
-     14.1.  Conference Reviews
-     14.2.  IETF/IRTF
-     14.3.  Researchers outside of IETF/IRTF
-   15. Security Considerations
-   16. IANA Considerations
-   17. References
-     17.1.  Normative References
-     17.2.  Informative References
+   6.  More CVEs
+   7.  Vulnerable Implementations
+   8.  Vulnerable Protocol Specifications
+   9.  Binding Levels
+   10. Correlation Goals
+   11. Main Results
+     11.1.  Expected Results
+   12. Implications of Findings
+     12.1.  Implications of Findings for IETF SEAT WG
+     12.2.  Implications of Findings for IETF LAKE WG
+     12.3.  Implications of Findings for IETF TLS WG
+     12.4.  Implications of Findings for Agent2Agent
+   13. Technical Details
+     13.1.  Tool
+     13.2.  Modeling
+     13.3.  Technical Report
+       13.3.1.  Vulnerabilities
+       13.3.2.  Mitigation
+     13.4.  Artifacts
+   14. Media Coverage
+     14.1.  Security Researchers
+     14.2.  Germany's BSI
+   15. Reviews
+     15.1.  Conference Reviews
+     15.2.  IETF/IRTF
+     15.3.  Researchers outside of IETF/IRTF
+   16. Security Considerations
+   17. Ethical Considerations
+   18. IANA Considerations
+   19. References
+     19.1.  Normative References
+     19.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -161,8 +166,9 @@ Table of Contents
    |   |           |(https://www.sns-itrust6g.com/wp-        |binder6)                 |
    |   |           |content/uploads/2025/12/Webinar-         |                         |
    |   |           |Architecting-Trust-CONFIDENTIAL6G.pdf);  |                         |
-   |   |           |CCC Attestation SIG's adopted project    |                         |
-   |   |           |intra-handshake attestation              |                         |
+   |   |           |CCC Attestation SIG (https://github.com/ |                         |
+   |   |           |CCC-Attestation)'s adopted project intra-|                         |
+   |   |           |handshake attestation                    |                         |
    |   |           |(https://github.com/ccc-attestation/     |                         |
    |   |           |attested-tls-poc)                        |                         |
    +---+-----------+-----------------------------------------+-------------------------+
@@ -202,11 +208,11 @@ Table of Contents
 
 3.  Credits
 
-   We discovered the vulnerability jointly with *Viacheslav Dubeyko* and
-   *Jean-Marie Jacquet*.
+   While not the editors of this draft, we discovered CVE-2026-33697
+   jointly with *Viacheslav Dubeyko* and *Jean-Marie Jacquet*.
 
-4.  Detailed Vulnerability Disclosure Timeline and Acknowledgements by
-    Affected Vendors
+4.  Detailed Vulnerability Disclosure Timeline and Public
+    Acknowledgements by Affected Vendors
 
    +============================================================================+======+
    |Event                                                                       |Date  |
@@ -328,12 +334,25 @@ Table of Contents
    compared to the rest of the confidential computing stack, and is
    currently one of the weakest links in the ecosystem.
 
-   Further formal analysis of *production* implementation of intra-
-   handshake attestation has led to discovery of another class of
-   attacks and will potentially lead to three CVEs (currently under
-   _responsible_ disclosure) each with an expected *CVSS 9.1*.
+6.  More CVEs
 
-6.  Vulnerable Implementations
+   Further formal analysis has led to the following potential CVEs for
+   intra-handshake attestation (currently under disclosure):
+
+   *  1 CVE of expected CVSS *7.4*
+
+   *  2 CVEs of expected CVSS *7.5*
+
+   *  1 CVE of expected CVSS *8.7*
+
+   *  2 CVEs of expected CVSS *9.1*
+
+   *  1 CVE of expected CVSS *9.8*
+
+   These are preliminary estimates of scores, not final assigned score.
+   They are still under review.
+
+7.  Vulnerable Implementations
 
    At least the following implementations are vulnerable:
 
@@ -356,10 +375,11 @@ Table of Contents
       (https://github.com/edgelesssys/contrast/security/advisories/GHSA-
       hjgc-jc5v-fw7h) [*Severity = HIGH (CVSS 7.4)*]
 
-   *  CCC Attestation SIG's adopted project intra-handshake attestation
-      (https://github.com/ccc-attestation/attested-tls-poc): declared
-      vulnerable to relay attacks (https://github.com/CCC-Attestation/
-      attested-tls-poc/pull/58) and *archived*
+   *  CCC Attestation SIG (https://github.com/CCC-Attestation)'s adopted
+      project intra-handshake attestation (https://github.com/ccc-
+      attestation/attested-tls-poc): declared vulnerable to relay
+      attacks (https://github.com/CCC-Attestation/attested-tls-poc/
+      pull/58) and *archived*
 
    *  Privasys rustls: Acknowledgment
       (https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1)
@@ -376,24 +396,27 @@ Table of Contents
    implementation, please let us know so that we can check and disclose
    the vulnerabilities to them.
 
-7.  Vulnerable Protocol Specifications
+8.  Vulnerable Protocol Specifications
 
    At least the following protocol specifications with intra-handshake
    attestation path are vulnerable to CVE-2026-33697
    (https://www.cve.org/CVERecord?id=CVE-2026-33697) and EUVD-2026-16488
    (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488):
 
+   *  draft-fossati-tls-attestation (https://datatracker.ietf.org/doc/
+      draft-fossati-tls-attestation/09/): symbolic proof of insecurity;
+      draft (https://datatracker.ietf.org/doc/draft-fossati-tls-
+      attestation/10/) *withdrawn*
+
    *  draft-fossati-seat-early-attestation
       (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
-      attestation/06/)
+      attestation/06/): symbolic and computational proof of insecurity
+      (orginially done for -04 and applies also to -06)
 
    *  draft-ritz-seat-facts (https://datatracker.ietf.org/doc/draft-
-      ritz-seat-facts/00/)
+      ritz-seat-facts/00/): symbolic proof of insecurity
 
-   *  draft-fossati-tls-attestation (https://datatracker.ietf.org/doc/
-      draft-fossati-tls-attestation): withdrawn
-
-8.  Binding Levels
+9.  Binding Levels
 
    1.  DH shared secret (gxy) used as shared secret between client and
        server
@@ -404,7 +427,9 @@ Table of Contents
    3.  Application traffic key (astc) used for encryption of application
        data
 
-9.  Correlation Goals
+   Please see Sec. 6.2 of [Intra-handshake.fail] for details.
+
+10.  Correlation Goals
 
    We consider TLS Server as RATS Attester, which is typical in
    confidential computing.
@@ -415,7 +440,9 @@ Table of Contents
 
    3.  Correlation of Evidence to Client’s Application Traffic Key (G3)
 
-10.  Main Results
+   Please see Sec. 6.3 of [Intra-handshake.fail] for details.
+
+11.  Main Results
 
    *  All analyzed binding mechanisms and the corresponding
       implementations of intra-handshake attestation are vulnerable to
@@ -444,7 +471,9 @@ Table of Contents
 
                            Table 4: Main results
 
-10.1.  Expected Results
+   Please see Sec. 7.1 of [Intra-handshake.fail] for details.
+
+11.1.  Expected Results
 
    +===+===========+=========================+==================================+
    |No.|Binding    |Artifacts                |Expected results                  |
@@ -509,9 +538,9 @@ Table of Contents
 
                          Table 5: Expected results
 
-11.  Implications of Findings
+12.  Implications of Findings
 
-11.1.  Implications of Findings for IETF SEAT WG
+12.1.  Implications of Findings for IETF SEAT WG
 
    *  We believe post-handshake attestation alone, such as draft-
       fossati-seat-expat (https://datatracker.ietf.org/doc/draft-
@@ -535,12 +564,12 @@ Table of Contents
       (https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/)
       remain vulnerable to CVE-2026-33697.
 
-11.2.  Implications of Findings for IETF LAKE WG
+12.2.  Implications of Findings for IETF LAKE WG
 
    *  Similar problems occur for protocol specification lake-ra
       (https://datatracker.ietf.org/doc/draft-ietf-lake-ra/).
 
-11.3.  Implications of Findings for IETF TLS WG
+12.3.  Implications of Findings for IETF TLS WG
 
    *  draft-fossati-tls-attestation-09
       (https://datatracker.ietf.org/doc/draft-fossati-tls-
@@ -557,20 +586,20 @@ Table of Contents
    developers and maintainers of intra-handshake attestation MUST
    urgently move to post-handshake attestation.
 
-11.4.  Implications of Findings for Agent2Agent
+12.4.  Implications of Findings for Agent2Agent
 
    From a security perspective, intra-handshake attestation does more
    damage than protection for AI agents.
 
-12.  Technical Details
+13.  Technical Details
 
-12.1.  Tool
+13.1.  Tool
 
    We use state-of-the-art symbolic security analysis tool ProVerif
    (https://ieeexplore.ieee.org/document/9833653) for the specification
    of the protocols.
 
-12.2.  Modeling
+13.2.  Modeling
 
    The formal model uses the fixed version of diversion attacks in
    intra-handshake attestation (https://github.com/CCC-Attestation/
@@ -604,17 +633,27 @@ Table of Contents
    that the correlation properties studied in this work do not
    necessarily require it.
 
-12.3.  Technical Report
+13.3.  Technical Report
 
    Technical report is available at [Intra-handshake.fail].  It is
    accepted for publication at ESORICS 2026.
 
-12.4.  Artifacts
+13.3.1.  Vulnerabilities
+
+   Sec. 7.1 of [Intra-handshake.fail] presents the technical details
+   with actual attack traces of the vulnerabilities.
+
+13.3.2.  Mitigation
+
+   Sec. 7.2 of [Intra-handshake.fail] presents the technical details of
+   the proposed mitigation.
+
+13.4.  Artifacts
 
    Artifacts are available at [Intra-handshake.fail-repo] under Apache-
    2.0 License.
 
-13.  Media Coverage
+14.  Media Coverage
 
    Several media enthusiasts have covered the vulnerabilities to protect
    the community from the harm of intra-handshake attestation.
@@ -703,6 +742,9 @@ Table of Contents
    *  coderlegion (https://coderlegion.com/24087/intra-handshake-
       attestation-when-more-security-doesnt-mean-better-security)
 
+   *  Anjuna Security (https://www.anjuna.io/blog/attested-tls-flaw-
+      explained)
+
    *  freenode (https://freenode.net/digest/67)
 
    *  (Chinese) csdn (https://blog.csdn.net/weixin_42376192/
@@ -726,7 +768,7 @@ Table of Contents
    here, please send us a PR or an email with the subject "media
    coverage of intra-handshake.fail"
 
-13.1.  Security Researchers
+14.1.  Security Researchers
 
    Credible security researchers, such as the following, have publicly
    attested to it.
@@ -745,7 +787,7 @@ Table of Contents
    *  Thorsten Strufe (https://www.linkedin.com/in/strufe/recent-
       activity/all/)
 
-13.2.  Germany's BSI
+14.2.  Germany's BSI
 
    Germany's Federal Office for Information Security (Bundesamt für
    Sicherheit in der Informationstechnik) has attested to it.  Carina
@@ -758,14 +800,14 @@ Table of Contents
    dependencies on other services, such as identity and key
    management etc., are also not mitigated by CC.
 
-14.  Reviews
+15.  Reviews
 
-14.1.  Conference Reviews
+15.1.  Conference Reviews
 
    [Intra-handshake.fail] has been peer-reviewed and accepted for
    publication at ESORICS 2026.
 
-14.2.  IETF/IRTF
+15.2.  IETF/IRTF
 
    Several participants of the IETF/IRTF have attested to the results by
    independently verifying the code.  Some of the participants have
@@ -782,15 +824,20 @@ Table of Contents
       SHHiw/ (https://mailarchive.ietf.org/arch/msg/
       seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/)
 
-   *  https://mailarchive.ietf.org/arch/msg/seat/
-      JF_cwmHHEbrJ_W5V6yEetWWnii4/
-      (https://mailarchive.ietf.org/arch/msg/seat/
-      JF_cwmHHEbrJ_W5V6yEetWWnii4/)
-
    *  https://mailarchive.ietf.org/arch/msg/
       seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/
       (https://mailarchive.ietf.org/arch/msg/
       seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      V_YqGUY3fEwaFwwyfA9DshpHet0/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      V_YqGUY3fEwaFwwyfA9DshpHet0/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      JF_cwmHHEbrJ_W5V6yEetWWnii4/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      JF_cwmHHEbrJ_W5V6yEetWWnii4/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/P_CYTycg0KG7cbKauFA-
       kVgX2jo/ (https://mailarchive.ietf.org/arch/msg/seat/
@@ -800,6 +847,11 @@ Table of Contents
       ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/
       (https://mailarchive.ietf.org/arch/msg/seat/
       ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/
       Q6Jmc58v0c1lDV3ujIY0AX_ofGA/
@@ -885,24 +937,58 @@ Table of Contents
       reference (https://www.ietf.org/archive/id/draft-usama-seat-intra-
       vs-post-04.html#section-4.2.4).
 
-14.3.  Researchers outside of IETF/IRTF
+15.3.  Researchers outside of IETF/IRTF
 
    Some researchers have approached us confirming the proof-of-concept
    of the vulnerabilities in intra-handshake attestation.  More
    information will be added once their pre-prints/papers are public.
 
-15.  Security Considerations
+16.  Security Considerations
 
    All of this document is about the *insecurity* of *intra*-handshake
    attestation.
 
-16.  IANA Considerations
+   By no means should the vendors mentioned in this draft be considered
+   less secure than any other vendors implementing intra-handshake
+   attestation solutions.  In particular, those who have closed-source
+   implementations are likely more vulnerable than the open-source ones,
+   since they cannot easily be reviewed.  Even extensive security
+   reviews by cybersecurity firms often do not perform formal analysis,
+   and thus remain prone to the corner cases.
+
+17.  Ethical Considerations
+
+   We (i.e., the super set of all authors involved in this research) are
+   ethical researchers aiming to protect the community before the
+   attackers can exploit the vulnerabilities.  We have responsibly
+   disclosed the vulnerabilities to the developers and maintainers and
+   provided them our proposed mitigations to take rapid action.
+
+   We have released only the formal analysis for published CVE.  To
+   avoid exploit in the wild, we have not publicly released the proof-
+   of-concept exploit code.
+
+   We have not retrieved any real data from any real system.  We have
+   not released any key to any public forum or to any person.
+
+   To the best of our abilities, knowledge, and understanding, we have
+   tried to explain the vulnerabilities to the authors of vulnerable
+   drafts draft-fossati-tls-attestation
+   (https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/),
+   draft-fossati-seat-early-attestation
+   (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
+   attestation/06/), and draft-ritz-seat-facts
+   (https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/) for at
+   least half a year at several forums, including CCC Attestation SIG
+   and IETF/IRTF.  Thankfully, the first one has been withdrawn.
+
+18.  IANA Considerations
 
    This document has no IANA actions.
 
-17.  References
+19.  References
 
-17.1.  Normative References
+19.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -913,7 +999,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-17.2.  Informative References
+19.2.  Informative References
 
    [CVE-2026-33697]
               CVE, "CoCoS attested TLS is vulnerable to relay attacks
@@ -972,6 +1058,8 @@ Acknowledgments
    *  Songbo Bu
 
    *  John Preuß Mattsson
+
+   *  Britta Hale
 
    *  Werner Staub
 
