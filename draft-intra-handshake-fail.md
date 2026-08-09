@@ -1,5 +1,5 @@
 ---
-title: "Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5)"
+title: "Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)"
 abbrev: "Intra-handshake Attestation Considered Harmful"
 category: info
 
@@ -59,7 +59,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of CVE-2026-33697 and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without phyical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the ProVerif artifacts  {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
 
 --- middle
 
@@ -73,7 +73,7 @@ This draft presents the formal specification and analysis of the candidate bindi
 | 3. | Early exporter | - | [binder3](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3) |
 | 4. | Server’s public key | - | [binder4](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4) |
 | 5. | Combination of #2 and #3 | - | [binder5](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5) |
-| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  CCC Attestation SIG's adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
+| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
 | 7. | Combination of #2, #3, and #4 | [draft-fossati-tls-attestation-06](https://www.ietf.org/archive/id/draft-fossati-tls-attestation-06.html) | [binder7](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7) |
 {: title="Binding mechanisms, implementations and ProVerif artifacts"}
 
@@ -98,9 +98,9 @@ We responsibly disclosed the vulnerability in intra-handshake attestation -- as 
 
 
 # Credits
-We discovered the vulnerability jointly with **Viacheslav Dubeyko** and **Jean-Marie Jacquet**.
+While not the editors of this draft, we discovered CVE-2026-33697 jointly with **Viacheslav Dubeyko** and **Jean-Marie Jacquet**.
 
-# Detailed Vulnerability Disclosure Timeline and Acknowledgements by Affected Vendors
+# Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
 
 | Event | Date |
 |---|---|
@@ -138,8 +138,17 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 
 The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indicates that attested TLS is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
 
-Further formal analysis of **production** implementation of intra-handshake attestation has led to discovery of another class of attacks and will potentially lead to three CVEs (currently under *responsible* disclosure) each with an expected **CVSS 9.1**.
+# More CVEs
 
+Further formal analysis has led to the following potential CVEs for intra-handshake attestation (currently under disclosure):
+
+- 1 CVE of expected CVSS **7.4**
+- 2 CVEs of expected CVSS **7.5**
+- 1 CVE of expected CVSS **8.7**
+- 2 CVEs of expected CVSS **9.1**
+- 1 CVE of expected CVSS **9.8**
+
+These are preliminary estimates of scores, not final assigned score. They are still under review.
 
 # Vulnerable Implementations
 
@@ -148,7 +157,7 @@ At least the following implementations are vulnerable:
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) [**Severity = HIGH (CVSS 7.5)**]
 - [Cocos AI](https://github.com/ultravioletrs/cocos): [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7)  [**Severity = HIGH (CVSS 7.8)**], [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) [**Severity = HIGH (CVSS 7.5)**]
 - [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): [security advisory](https://github.com/edgelesssys/contrast/security/advisories/GHSA-hjgc-jc5v-fw7h)  [**Severity = HIGH (CVSS 7.4)**]
-- CCC Attestation SIG's adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
+- [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
 - Privasys rustls: [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) of applicability of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**]
 - Pirvasys go: [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) of applicability of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**]
 
@@ -157,9 +166,9 @@ If you are aware of any other intra-handshake attestation implementation, please
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation path are vulnerable to [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488):
 
-- [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/): symbolic and computational proof of insecurity (orginially for -04 which also applies to -06)
+- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) **withdrawn**
+- [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/): symbolic and computational proof of insecurity (orginially done for -04 and applies also to -06)
 - [draft-ritz-seat-facts](https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/): symbolic proof of insecurity
-- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) withdrawn
 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
@@ -338,10 +347,12 @@ Several participants of the IETF/IRTF have attested to the results by independen
 
 - [https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/](https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/)
 - [https://mailarchive.ietf.org/arch/msg/seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/](https://mailarchive.ietf.org/arch/msg/seat/3Hv0E1sfXsvyBtl6AgY8j-SHHiw/)
-- [https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/](https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/)
 - [https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/](https://mailarchive.ietf.org/arch/msg/seat/5LJ6i9svomnhpyPHWPejM7fMmXQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/V_YqGUY3fEwaFwwyfA9DshpHet0/](https://mailarchive.ietf.org/arch/msg/seat/V_YqGUY3fEwaFwwyfA9DshpHet0/)
+- [https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/](https://mailarchive.ietf.org/arch/msg/seat/JF_cwmHHEbrJ_W5V6yEetWWnii4/)
 - [https://mailarchive.ietf.org/arch/msg/seat/P_CYTycg0KG7cbKauFA-kVgX2jo/](https://mailarchive.ietf.org/arch/msg/seat/P_CYTycg0KG7cbKauFA-kVgX2jo/)
 - [https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/](https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/](https://mailarchive.ietf.org/arch/msg/seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/)
 - [https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/](https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/)
 - [https://mailarchive.ietf.org/arch/msg/seat/beRzNNvwMifkRfJPfxecGoHpTDs/](https://mailarchive.ietf.org/arch/msg/seat/beRzNNvwMifkRfJPfxecGoHpTDs/)
 - [https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/](https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/)
@@ -370,6 +381,18 @@ Some researchers have approached us confirming the proof-of-concept of the vulne
 # Security Considerations
 
 All of this document is about the **insecurity** of **intra**-handshake attestation.
+
+By no means should the vendors mentioned in this draft be considered less secure than any other vendors implementing intra-handshake attestation solutions. In particular, those who have closed-source implementations are likely more vulnerable than the open-source ones, since they cannot easily be reviewed. Even extensive security reviews by cybersecurity firms often do not perform formal analysis, and thus remain prone to the corner cases.
+
+# Ethical Considerations
+
+We (i.e., the super set of all authors involved in this research) are ethical researchers aiming to protect the community before the attackers can exploit the vulnerabilities. We have responsibly disclosed the vulnerabilities to the developers and maintainers and provided them our proposed mitigations to take rapid action.
+
+We have released only the formal analysis for published CVE. To avoid exploit in the wild, we have not publicly released the proof-of-concept exploit code.
+
+We have not retrieved any real data from any real system. We have not released any key to any public forum or to any person.
+
+To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts  [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/), [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/), and [draft-ritz-seat-facts](https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/) for at least half a year at several forums, including CCC Attestation SIG and IETF/IRTF. Thankfully, the first one has been withdrawn.
 
 
 # IANA Considerations
@@ -403,6 +426,7 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Danko Miladinovic
 - Songbo Bu
 - John Preuß Mattsson
+- Britta Hale
 - Werner Staub
 - Haowen Song
 - Chengxin Huang
