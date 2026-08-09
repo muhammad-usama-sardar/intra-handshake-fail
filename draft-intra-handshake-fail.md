@@ -354,6 +354,7 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/](https://mailarchive.ietf.org/arch/msg/seat/ZJjJXpYwZ5nCVmz_W4FK6XiFEY4/)
 - [https://mailarchive.ietf.org/arch/msg/seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/](https://mailarchive.ietf.org/arch/msg/seat/4so3LxHOOXHS1wnvhuoeWWgeCHk/)
 - [https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/](https://mailarchive.ietf.org/arch/msg/seat/Q6Jmc58v0c1lDV3ujIY0AX_ofGA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/n4Me5QPCvwhxcEJndWePyishcoo/](https://mailarchive.ietf.org/arch/msg/seat/n4Me5QPCvwhxcEJndWePyishcoo/)
 - [https://mailarchive.ietf.org/arch/msg/seat/beRzNNvwMifkRfJPfxecGoHpTDs/](https://mailarchive.ietf.org/arch/msg/seat/beRzNNvwMifkRfJPfxecGoHpTDs/)
 - [https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/](https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/)
 - [https://mailarchive.ietf.org/arch/msg/seat/aFCo4BMRDSUynvN9AQJatPjnXag/](https://mailarchive.ietf.org/arch/msg/seat/aFCo4BMRDSUynvN9AQJatPjnXag/)
@@ -432,6 +433,7 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Chengxin Huang
 - Steve Luo
 - Kubilay Ahmet Küçük
+- Iman Schrock
 - Patrick Duggan
 - Nathanael Ritz
 - Deb Cooley
