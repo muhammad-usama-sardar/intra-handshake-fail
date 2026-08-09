@@ -72,10 +72,10 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
-   2.  Conventions and Definitions
-   3.  Credits
-   4.  Detailed Vulnerability Disclosure Timeline and Public
+   2.  Credits
+   3.  Detailed Vulnerability Disclosure Timeline and Public
            Acknowledgements by Affected Vendors
+   4.  EU ERISA
    5.  Comparison with Other Vulnerabilities in Confidential Computing
            Literature
    6.  More CVEs
@@ -103,13 +103,12 @@ Table of Contents
    15. Reviews
      15.1.  Conference Reviews
      15.2.  IETF/IRTF
+       15.2.1.  Main Questions
      15.3.  Researchers outside of IETF/IRTF
    16. Security Considerations
    17. Ethical Considerations
    18. IANA Considerations
-   19. References
-     19.1.  Normative References
-     19.2.  Informative References
+   19. Normative References
    Acknowledgments
    Author's Address
 
@@ -198,20 +197,12 @@ Table of Contents
    vfgg-mvxx-mgg7) issued -- to the vendors, which resulted in
    [CVE-2026-33697] of CVSS 7.5.
 
-2.  Conventions and Definitions
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
-   capitals, as shown here.
-
-3.  Credits
+2.  Credits
 
    While not the editors of this draft, we discovered CVE-2026-33697
    jointly with *Viacheslav Dubeyko* and *Jean-Marie Jacquet*.
 
-4.  Detailed Vulnerability Disclosure Timeline and Public
+3.  Detailed Vulnerability Disclosure Timeline and Public
     Acknowledgements by Affected Vendors
 
    +============================================================================+======+
@@ -241,6 +232,10 @@ Table of Contents
    |published [*Severity = HIGH (CVSS 7.5)*]                                    |March,|
    |                                                                            |2026  |
    +----------------------------------------------------------------------------+------+
+   |ERISA published EUVD (EUVD-2026-16488 (https://euvd.enisa.europa.eu/enisa/  |26    |
+   |EUVD-2026-16488)) [*Severity = HIGH (CVSS 7.5)*]                            |March,|
+   |                                                                            |2026  |
+   +----------------------------------------------------------------------------+------+
    |Acknowledgment (https://github.com/Privasys/rustls/releases/tag/privasys-   |9     |
    |v0.8.1) by Privasys for rustls CVE-2026-33697 (https://www.cve.org/         |July, |
    |CVERecord?id=CVE-2026-33697) [*Severity = HIGH (CVSS 7.5)*]                 |2026  |
@@ -268,6 +263,12 @@ Table of Contents
 
           Table 2: Detailed vulnerability disclosure timeline and
                               acknowledgements
+
+4.  EU ERISA
+
+   European Union's ERISA has independently published EUVD-2026-16488
+   (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) with CVSS 7.5 to
+   acknowledge this vulnerability.
 
 5.  Comparison with Other Vulnerabilities in Confidential Computing
     Literature
@@ -558,11 +559,18 @@ Table of Contents
       are not aware of any security property that hybrid proposals can
       achieve that post-handshake attestation alone cannot achieve.
 
-   *  The protocol specifications draft-fossati-seat-early-attestation
+   *  As demonstrated by our symbolic analysis using ProVerif, the
+      protocol specifications draft-fossati-seat-early-attestation
       (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
       attestation/06/) and draft-ritz-seat-facts
       (https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/)
-      remain vulnerable to CVE-2026-33697.
+      remain vulnerable to CVE-2026-33697.  We have also proved that
+      draft-fossati-seat-early-attestation-04
+      (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
+      attestation/04/) and draft-fossati-seat-early-attestation-06
+      (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
+      attestation/06/) violate the security theorems in the
+      computational model.
 
 12.2.  Implications of Findings for IETF LAKE WG
 
@@ -770,8 +778,8 @@ Table of Contents
 
 14.1.  Security Researchers
 
-   Credible security researchers, such as the following, have publicly
-   attested to it.
+   Several credible security researchers, such as the following, have
+   publicly attested to it.
 
    *  Michael Pak (https://www.linkedin.com/posts/
       michaelpak_confidential-computings-core-trust-mechanism-activity-
@@ -810,10 +818,11 @@ Table of Contents
 15.2.  IETF/IRTF
 
    Several participants of the IETF/IRTF have attested to the results by
-   independently verifying the code.  Some of the participants have
-   independently reproduced the results by developing their own formal
-   models and a proof-of-concept implementation of the vulnerabilities.
-   Some of the messages are mentioned below:
+   independently reproducing the results and reviewing the code.  Some
+   of the participants have independently reproduced the results by
+   developing their own formal models and a proof-of-concept
+   implementation of the vulnerabilities.  Some of the messages are
+   mentioned below:
 
    *  https://mailarchive.ietf.org/arch/msg/seat/
       aEV9dUFotAQzHndk23qBcwBT3as/
@@ -923,10 +932,12 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/
       seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/)
 
+15.2.1.  Main Questions
+
    In short, three main questions have been raised by WG participants in
    support of our work:
 
-   *  What security property hybrid (intra- + post-handshake
+   *  What *security property* hybrid (intra- + post-handshake
       attestation) provides that post-handshake attestation alone cannot
       provide?
 
@@ -937,8 +948,8 @@ Table of Contents
       Time: see reference (https://www.ietf.org/archive/id/draft-usama-
       seat-intra-vs-post-04.html#section-6-2).
 
-   *  What is the benefit of doing signatures of remote attestation
-      within the handshake (as this latency can be exploited)?  See
+   *  What is the benefit of doing *signatures* of remote attestation
+      *within* the handshake (as this latency can be exploited)?  See
       reference (https://www.ietf.org/archive/id/draft-usama-seat-intra-
       vs-post-04.html#section-4.2.4).
 
@@ -985,26 +996,18 @@ Table of Contents
    attestation/06/), and draft-ritz-seat-facts
    (https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/) for at
    least half a year at several forums, including CCC Attestation SIG
-   and IETF/IRTF.  Thankfully, the first one has been withdrawn.
+   and IETF/IRTF.  Please see the (non-exhaustive) recordings
+   (https://github.com/muhammad-usama-sardar/intra-
+   handshake.fail#upcoming-and-recent-talks-and-research-visits) and the
+   archives (https://github.com/muhammad-usama-sardar/intra-
+   handshake.fail#community-service).  Thankfully, the first one has
+   been withdrawn.
 
 18.  IANA Considerations
 
    This document has no IANA actions.
 
-19.  References
-
-19.1.  Normative References
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
-
-19.2.  Informative References
+19.  Normative References
 
    [CVE-2026-33697]
               CVE, "CoCoS attested TLS is vulnerable to relay attacks
@@ -1026,8 +1029,8 @@ Table of Contents
 
 Acknowledgments
 
-   We would like to thank our co-authors of paper for their valuable
-   contributions:
+   We would like to thank our co-authors of paper [Intra-handshake.fail]
+   for their valuable contributions:
 
    *  Viacheslav Dubeyko
 
