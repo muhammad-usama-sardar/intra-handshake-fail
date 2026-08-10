@@ -4,8 +4,8 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                             9 August 2026
-Expires: 10 February 2027
+Intended status: Informational                            10 August 2026
+Expires: 11 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 February 2027.
+   This Internet-Draft will expire on 11 February 2027.
 
 Copyright Notice
 
@@ -400,7 +400,7 @@ Table of Contents
 8.  Vulnerable Protocol Specifications
 
    At least the following protocol specifications with intra-handshake
-   attestation path are vulnerable to CVE-2026-33697
+   attestation _path_ are vulnerable to CVE-2026-33697
    (https://www.cve.org/CVERecord?id=CVE-2026-33697) and EUVD-2026-16488
    (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488):
 
@@ -411,8 +411,9 @@ Table of Contents
 
    *  draft-fossati-seat-early-attestation
       (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
-      attestation/06/): symbolic and computational proof of insecurity
-      (orginially done for -04 and applies also to -06)
+      attestation/06/): symbolic and (paper-and-pen-based) computational
+      proof of insecurity (originally done for -04 and applies also to
+      -06)
 
    *  draft-ritz-seat-facts (https://datatracker.ietf.org/doc/draft-
       ritz-seat-facts/00/): symbolic proof of insecurity
@@ -897,7 +898,39 @@ Table of Contents
 
    *  https://mailarchive.ietf.org/arch/msg/seat/2uUuaD1DygjNDM4GT_-
       rYbwTiJk/ (https://mailarchive.ietf.org/arch/msg/
-      seat/2uUuaD1DygjNDM4GT_-rYbwTiJk/)
+      seat/2uUuaD1DygjNDM4GT_-rYbwTiJk/) -
+      https://mailarchive.ietf.org/arch/msg/seat/
+      pB39abN1QrH4_ATM_E78vxPTuxk/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      pB39abN1QrH4_ATM_E78vxPTuxk/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/PxKCxMHe-
+      SAiR9uhOOllrK4mUA4/ (https://mailarchive.ietf.org/arch/msg/seat/
+      PxKCxMHe-SAiR9uhOOllrK4mUA4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      T1xupUBwqYEBSHCTXgSHXZtdqz8/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      T1xupUBwqYEBSHCTXgSHXZtdqz8/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      hRw46FwgmVdi9fqZm2fjKbln_IA/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      hRw46FwgmVdi9fqZm2fjKbln_IA/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      UG7yE_klmRSxNy2HX6fzuFonDjM/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      UG7yE_klmRSxNy2HX6fzuFonDjM/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/2hpeIldeFfE6o9q6L9Vkt00ACKA/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/2hpeIldeFfE6o9q6L9Vkt00ACKA/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/gc2ij0vboehS_-
+      v10-SNslxaZC0/ (https://mailarchive.ietf.org/arch/msg/seat/
+      gc2ij0vboehS_-v10-SNslxaZC0/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/2_aGylmFHoLmqN7BBcYVoH-
       rNJk/ (https://mailarchive.ietf.org/arch/msg/
@@ -975,10 +1008,11 @@ Table of Contents
 17.  Ethical Considerations
 
    We (i.e., the super set of all authors involved in this research) are
-   ethical researchers aiming to protect the community before the
-   attackers can exploit the vulnerabilities.  We have responsibly
-   disclosed the vulnerabilities to the developers and maintainers and
-   provided them our proposed mitigations to take rapid action.
+   ethical researchers aiming to protect the community from the
+   potential harm caused by the exploitability of the vulnerabilities in
+   intra-handshake attestation.  We have responsibly disclosed the
+   vulnerabilities to the developers and maintainers and provided them
+   our proposed mitigations and requested them to take rapid action.
 
    We have released only the formal analysis for published CVE.  To
    avoid exploit in the wild, we have not publicly released the proof-
@@ -995,13 +1029,14 @@ Table of Contents
    (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
    attestation/06/), and draft-ritz-seat-facts
    (https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/) for at
-   least half a year at several forums, including CCC Attestation SIG
-   and IETF/IRTF.  Please see the (non-exhaustive) recordings
-   (https://github.com/muhammad-usama-sardar/intra-
+   least half a year at several forums, including but not limited to CCC
+   Attestation SIG and IETF/IRTF.  Please see the (non-exhaustive list
+   of) recordings (https://github.com/muhammad-usama-sardar/intra-
    handshake.fail#upcoming-and-recent-talks-and-research-visits) and the
    archives (https://github.com/muhammad-usama-sardar/intra-
-   handshake.fail#community-service).  Thankfully, the first one has
-   been withdrawn.
+   handshake.fail#community-service).  Thankfully, draft-fossati-tls-
+   attestation (https://datatracker.ietf.org/doc/draft-fossati-tls-
+   attestation/10/) has been withdrawn.
 
 18.  IANA Considerations
 
