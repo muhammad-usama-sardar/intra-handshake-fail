@@ -4,8 +4,8 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                            13 August 2026
-Expires: 14 February 2027
+Intended status: Informational                            15 August 2026
+Expires: 16 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 February 2027.
+   This Internet-Draft will expire on 16 February 2027.
 
 Copyright Notice
 
@@ -339,15 +339,17 @@ Table of Contents
    Further formal analysis has led to the following potential CVEs for
    intra-handshake attestation (currently under disclosure):
 
-   *  1 CVE of expected CVSS *7.4*
+   *  1 potential CVE of expected CVSS *9.8*
 
-   *  2 CVEs of expected CVSS *7.5*
+   *  2 potential CVEs of expected CVSS *9.1*
 
-   *  1 CVE of expected CVSS *8.7*
+   *  1 potential CVE of expected CVSS *8.7*
 
-   *  2 CVEs of expected CVSS *9.1*
+   *  2 potential CVEs of expected CVSS *7.5*
 
-   *  1 CVE of expected CVSS *9.8*
+   *  2 potential CVE of expected CVSS *7.4*
+
+   *  2 potential CVE of expected CVSS *6.3*
 
    These are preliminary estimates of scores, not final assigned score.
    They are still under review.
@@ -393,8 +395,8 @@ Table of Contents
       HIGH (CVSS 7.5)*]
 
    If you are aware of any other intra-handshake attestation
-   implementation, please let us know so that we can check and disclose
-   the vulnerabilities to them.
+   implementation, please let us know so that we can check and
+   responsibly disclose the vulnerabilities to them.
 
 8.  Vulnerable Protocol Specifications
 
@@ -412,22 +414,32 @@ Table of Contents
       (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
       attestation/06/): symbolic and (paper-and-pen-based) computational
       proof of insecurity (originally done for -04 and applies also to
-      -06): Some WG participants successfully reproduced the
-      vulnerability by formal analysis.  An informal reasoning is that
-      binder is not directly derived from any shared secret in this
-      draft.  As a SEAT WG participant pointed out, please note that
-      both CVE-2026-33697 (https://www.cve.org/CVERecord?id=CVE-
-      2026-33697) and EUVD-2026-16488
-      (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) contain a
-      link to security advisory
-      (https://github.com/ultravioletrs/cocos/security/advisories/GHSA-
-      vfgg-mvxx-mgg7) that contains a link to our SEAT email
-      (https://mailarchive.ietf.org/arch/msg/seat/
-      x3eQxFjQFJLceae6l4_NgXnmsDY/) that contains the G3 property that
-      this draft does not satisfy.
+      -06)
+
+      -  As a SEAT WG participant pointed out, please note that both
+         CVE-2026-33697 (https://www.cve.org/CVERecord?id=CVE-
+         2026-33697) and EUVD-2026-16488
+         (https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) contain a
+         link to security advisory
+         (https://github.com/ultravioletrs/cocos/security/advisories/
+         GHSA-vfgg-mvxx-mgg7) that contains a link to our SEAT email
+         (https://mailarchive.ietf.org/arch/msg/seat/
+         x3eQxFjQFJLceae6l4_NgXnmsDY/) that contains the G3 property
+         (cf. Section 10) that this draft does not satisfy.
+
+      -  Some WG participants successfully reproduced the vulnerability
+         by substituting the right value of rdata in the shared formal
+         model [Intra-handshake.fail-repo] that led to the CVE.
+
+      -  An informal reasoning is that binder is not *directly* derived
+         from any *shared secret* in this draft.
 
    *  draft-ritz-seat-facts (https://datatracker.ietf.org/doc/draft-
       ritz-seat-facts/00/): symbolic proof of insecurity
+
+      -  violates G3 property in our analysis
+
+      -  unnecessary complexity is itself a security concern
 
 9.  Binding Levels
 
@@ -568,7 +580,7 @@ Table of Contents
       without adding any security benefit compared to post-handshake
       attestation alone, such as draft-fossati-seat-expat
       (https://datatracker.ietf.org/doc/draft-fossati-seat-expat/).  We
-      are not aware of any security property that hybrid proposals can
+      are not aware of any *security property* that hybrid proposals can
       achieve that post-handshake attestation alone cannot achieve.
 
    *  As demonstrated by our symbolic analysis using ProVerif, the
@@ -599,8 +611,9 @@ Table of Contents
       attestation/10/).
 
    *  Remote attestation _within_ the handshake is very dangerous, since
-      to our knowledge, it is one of the highest scored vulnerabilities
-      in confidential computing literature (see Section 5).
+      to our knowledge, it is one of the highest scored published
+      vulnerabilities in confidential computing literature (see
+      Section 5).
 
    Given the high-severity vulnerabilities, we recommend that the
    developers and maintainers of intra-handshake attestation MUST
@@ -661,7 +674,7 @@ Table of Contents
 13.3.1.  Vulnerabilities
 
    Sec. 7.1 of [Intra-handshake.fail] presents the technical details
-   with actual attack traces of the vulnerabilities.
+   with abstract attack traces of the vulnerabilities.
 
 13.3.2.  Mitigation
 
@@ -675,8 +688,9 @@ Table of Contents
 
 14.  Media Coverage
 
-   Several media enthusiasts have covered the vulnerabilities to protect
-   the community from the harm of intra-handshake attestation.
+   Several media enthusiasts and bloggers have covered the
+   vulnerabilities to protect the community from the harm of intra-
+   handshake attestation.
 
    *  The Register (https://www.theregister.com/security/2026/07/04/
       confidential-computings-trust-mechanism-is-broken-the-fix-may-not-
@@ -820,6 +834,9 @@ Table of Contents
    dependencies on other services, such as identity and key
    management etc., are also not mitigated by CC.
 
+   CC refers to Confidential Computing, and attested TLS is the core
+   trust mechanism of CC.
+
 15.  Reviews
 
 15.1.  Conference Reviews
@@ -835,6 +852,11 @@ Table of Contents
    developing their own formal models and a proof-of-concept
    implementation of the vulnerabilities.  Some of the messages are
    mentioned below:
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/
       aEV9dUFotAQzHndk23qBcwBT3as/
@@ -909,8 +931,9 @@ Table of Contents
 
    *  https://mailarchive.ietf.org/arch/msg/seat/2uUuaD1DygjNDM4GT_-
       rYbwTiJk/ (https://mailarchive.ietf.org/arch/msg/
-      seat/2uUuaD1DygjNDM4GT_-rYbwTiJk/) -
-      https://mailarchive.ietf.org/arch/msg/seat/
+      seat/2uUuaD1DygjNDM4GT_-rYbwTiJk/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
       pB39abN1QrH4_ATM_E78vxPTuxk/
       (https://mailarchive.ietf.org/arch/msg/seat/
       pB39abN1QrH4_ATM_E78vxPTuxk/)
@@ -942,6 +965,72 @@ Table of Contents
    *  https://mailarchive.ietf.org/arch/msg/seat/gc2ij0vboehS_-
       v10-SNslxaZC0/ (https://mailarchive.ietf.org/arch/msg/seat/
       gc2ij0vboehS_-v10-SNslxaZC0/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      oO4mAfq5HJZptDDNrSnd7zDdX18/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      oO4mAfq5HJZptDDNrSnd7zDdX18/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      XuJc_yEJPCMIuYcv2OM7XDogRCU/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      XuJc_yEJPCMIuYcv2OM7XDogRCU/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/nVHlnbFIEh-
+      cPQeMuDVOqx5YvWQ/ (https://mailarchive.ietf.org/arch/msg/seat/
+      nVHlnbFIEh-cPQeMuDVOqx5YvWQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      xVU3C7qUOngcip7B4ZO5MJUT9Xg/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      xVU3C7qUOngcip7B4ZO5MJUT9Xg/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/1gCcPw-
+      7NopDRzzBzA3dFIgo3Rs/ (https://mailarchive.ietf.org/arch/msg/
+      seat/1gCcPw-7NopDRzzBzA3dFIgo3Rs/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      t8aobzB374lWiLzrVrORY7kGYyQ/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      t8aobzB374lWiLzrVrORY7kGYyQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      m3UyB6XLQzxaucejE_o8Pn41uSI/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      m3UyB6XLQzxaucejE_o8Pn41uSI/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/gqHqcbbKva_oGE-
+      jEDZu243gf-4/ (https://mailarchive.ietf.org/arch/msg/seat/
+      gqHqcbbKva_oGE-jEDZu243gf-4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/QD8QB1WVL-
+      toNovGQ2Tk6DmmeEM/ (https://mailarchive.ietf.org/arch/msg/seat/
+      QD8QB1WVL-toNovGQ2Tk6DmmeEM/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      vXN2pifZ5GXcC1xLwSfLCnUcFUE/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      vXN2pifZ5GXcC1xLwSfLCnUcFUE/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      MGFXinb85XSaLkqjBEhmBZC7PcI/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      MGFXinb85XSaLkqjBEhmBZC7PcI/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      js9VI4PB8yYmhg2ObaZB1a22fL4/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      js9VI4PB8yYmhg2ObaZB1a22fL4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/0RzORzX_VdlY5UQ_MWMmxZlnrjs/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/0RzORzX_VdlY5UQ_MWMmxZlnrjs/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      W3MH1BDSUbm1WUPxGQihaIc1zTk/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      W3MH1BDSUbm1WUPxGQihaIc1zTk/)
 
    *  https://mailarchive.ietf.org/arch/msg/seat/2_aGylmFHoLmqN7BBcYVoH-
       rNJk/ (https://mailarchive.ietf.org/arch/msg/
@@ -978,7 +1067,7 @@ Table of Contents
 
 15.2.1.  Main Questions
 
-   In short, three main questions have been raised by WG participants in
+   In short, four main questions have been raised by WG participants in
    support of our work:
 
    *  What *security property* hybrid (intra- + post-handshake
@@ -993,12 +1082,14 @@ Table of Contents
       seat-intra-vs-post-04.html#section-6-2).
 
    *  What is the benefit of doing *signatures* of remote attestation
-      *within* the handshake (as this latency can be exploited)?  See
-      reference (https://www.ietf.org/archive/id/draft-usama-seat-intra-
-      vs-post-04.html#section-4.2.4).
+      *within* the handshake (as this latency can be exploited)?  We add
+      that *verification* of signatures is also time consuming, which
+      can be exploited too.  See reference
+      (https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-
+      04.html#section-4.2.4).
 
    *  How evidence is bound to the secure channel without involving any
-      shared secret?
+      *shared secret*?
 
 15.3.  Researchers outside of IETF/IRTF
 
@@ -1014,10 +1105,12 @@ Table of Contents
    By no means should the vendors mentioned in this draft be considered
    less secure than any other vendors implementing intra-handshake
    attestation solutions.  In particular, those who have closed-source
-   implementations are likely more vulnerable than the open-source ones,
-   since they cannot easily be reviewed.  Even extensive security
-   reviews by cybersecurity firms often do not perform formal analysis,
-   and thus remain prone to the corner cases.
+   implementations are most likely more vulnerable than the open-source
+   ones, since the former cannot easily be reviewed by the security
+   community.  Even extensive security reviews -- of closed-source
+   implementations -- by cybersecurity firms often do not perform formal
+   analysis, and thus such reviews may miss corner cases and subtle
+   vulnerabilities.
 
 17.  Ethical Considerations
 
@@ -1025,12 +1118,13 @@ Table of Contents
    ethical researchers aiming to protect the community from the
    potential harm caused by the exploitability of the vulnerabilities in
    intra-handshake attestation.  We have responsibly disclosed the
-   vulnerabilities to the developers and maintainers and provided them
-   our proposed mitigations and requested them to take rapid action.
+   vulnerabilities to the respective developers and maintainers
+   following their respective disclosure processes and provided them our
+   proposed mitigations and requested them to take rapid action.
 
    We have released only the formal analysis for published CVE.  To
-   avoid exploit in the wild, we have not publicly released the proof-
-   of-concept exploit code.
+   minimize exploit in the wild, we have not publicly released the
+   proof-of-concept exploit code.
 
    We have not retrieved any real data from any real system.  We have
    not released any key to any public forum or to any person.
@@ -1048,9 +1142,10 @@ Table of Contents
    of) recordings (https://github.com/muhammad-usama-sardar/intra-
    handshake.fail#upcoming-and-recent-talks-and-research-visits) and the
    archives (https://github.com/muhammad-usama-sardar/intra-
-   handshake.fail#community-service).  Thankfully, draft-fossati-tls-
-   attestation (https://datatracker.ietf.org/doc/draft-fossati-tls-
-   attestation/10/) has been withdrawn.
+   handshake.fail#community-service).  We sincerely thank the authors of
+   draft-fossati-tls-attestation (https://datatracker.ietf.org/doc/
+   draft-fossati-tls-attestation/10/) for withdrawing their draft to
+   protect further exploits.
 
 18.  IANA Considerations
 
@@ -1129,6 +1224,8 @@ Acknowledgments
    *  Kubilay Ahmet Küçük
 
    *  Iman Schrock
+
+   *  Sophie Schmieg
 
    *  Patrick Duggan
 
