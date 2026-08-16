@@ -267,6 +267,7 @@ From [ID-Crisis paper](https://dl.acm.org/doi/10.1145/3779208.3785387):
 
 While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.
 
+Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.
 
 ## Technical Report
 Technical report is available at {{Intra-handshake.fail}}. It is accepted for publication at ESORICS 2026.
@@ -469,6 +470,7 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Kubilay Ahmet Küçük
 - Iman Schrock
 - Sophie Schmieg
+- Jakub Maria Plutowski
 - Patrick Duggan
 - Nathanael Ritz
 - Deb Cooley
