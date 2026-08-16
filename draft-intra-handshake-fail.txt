@@ -4,8 +4,8 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                            15 August 2026
-Expires: 16 February 2027
+Intended status: Informational                            16 August 2026
+Expires: 17 February 2027
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 February 2027.
+   This Internet-Draft will expire on 17 February 2027.
 
 Copyright Notice
 
@@ -666,6 +666,10 @@ Table of Contents
    that the correlation properties studied in this work do not
    necessarily require it.
 
+   Note: The artifacts consider the case of server authentication only,
+   as client authentication is optional in TLS 1.3.  No claims are made
+   about other configurations.
+
 13.3.  Technical Report
 
    Technical report is available at [Intra-handshake.fail].  It is
@@ -1226,6 +1230,8 @@ Acknowledgments
    *  Iman Schrock
 
    *  Sophie Schmieg
+
+   *  Jakub Maria Plutowski
 
    *  Patrick Duggan
 
