@@ -51,7 +51,13 @@ normative:
         org: CVE
      title: CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys
      target: https://www.cve.org/CVERecord?id=CVE-2026-33697
-     date: March 2026
+     date: 26 March 2026
+  EUVD-2026-16488:
+     author:
+        org: ENISA
+     title: CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488
+     date: 26 March 2026
 
 informative:
 
@@ -104,10 +110,10 @@ While not the editors of this draft, we discovered CVE-2026-33697 jointly with *
 | Information to the [IETF](https://mailarchive.ietf.org/arch/msg/rats/6gbqx0XY8WYrH3Mx4vO8n2-uKgY/) | 11 Jan, 2026 |
 | [Public announcement](https://web.archive.org/web/20260227160554/https://www.ultraviolet.rs/blog/tee-tls-privacy/) by vendor | 27 Feb, 2026 |
 | Cocos AI published [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7)  [**Severity = HIGH (CVSS 7.8)**] | 23 March, 2026 |
-| CVE ([CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697)) published  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
-| ERISA published EUVD ([EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488))  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
-| [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) by Privasys for rustls [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**] | 9 July, 2026 |
-| [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) by Privasys for go [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**] | 10 July, 2026 |
+| CVE {{CVE-2026-33697}} published  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
+| ERISA published EUVD {{EUVD-2026-16488}}  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
+| [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) by Privasys for rustls {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] | 9 July, 2026 |
+| [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) by Privasys for go {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] | 10 July, 2026 |
 | [CCC implementation](https://github.com/ccc-attestation/attested-tls-poc) declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) | 17 July, 2026 |
 | Vulnerable [CCC implementation repo](https://github.com/ccc-attestation/attested-tls-poc) archived | 22 July, 2026 |
 | Vulnerable draft [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) withdrawn by authors |  23 July, 2026 |
@@ -116,7 +122,7 @@ While not the editors of this draft, we discovered CVE-2026-33697 jointly with *
 
 # EU ERISA
 
-European Union's ERISA has independently published [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) with CVSS 7.5 to acknowledge this vulnerability.
+European Union's ERISA has independently published {{EUVD-2026-16488}} with CVSS 7.5 to acknowledge this vulnerability.
 
 
 # Comparison with Other Vulnerabilities in Confidential Computing Literature
@@ -134,7 +140,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [BadRAM](https://badram.eu/badram.pdf)| [AMD](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
-| [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) | 7.5 | High |
+| [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
 The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indicates that attested TLS is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
@@ -147,8 +153,8 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 - 2 potential CVEs of expected CVSS **9.1**
 - 1 potential CVE of expected CVSS **8.7**
 - 2 potential CVEs of expected CVSS **7.5**
-- 2 potential CVE of expected CVSS **7.4**
-- 2 potential CVE of expected CVSS **6.3**
+- 2 potential CVEs of expected CVSS **7.4**
+- 2 potential CVEs of expected CVSS **6.3**
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
 
@@ -156,21 +162,21 @@ These are preliminary estimates of scores, not final assigned score. They are st
 
 At least the following implementations are vulnerable:
 
-- [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) [**Severity = HIGH (CVSS 7.5)**]
-- [Cocos AI](https://github.com/ultravioletrs/cocos): [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7)  [**Severity = HIGH (CVSS 7.8)**], [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) [**Severity = HIGH (CVSS 7.5)**]
+- [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
+- [Cocos AI](https://github.com/ultravioletrs/cocos): [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7)  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
 - [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): [security advisory](https://github.com/edgelesssys/contrast/security/advisories/GHSA-hjgc-jc5v-fw7h)  [**Severity = HIGH (CVSS 7.4)**]
 - [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
-- Privasys rustls: [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) of applicability of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**]
-- Pirvasys go: [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) of applicability of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) [**Severity = HIGH (CVSS 7.5)**]
+- Privasys rustls: [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**]
+- Pirvasys go: [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**]
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
 # Vulnerable Protocol Specifications
-At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488):
+At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
 
 - [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) **withdrawn**
 - [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/): symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)
-  - As a SEAT WG participant pointed out, please note that both [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488) contain a link to [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7) that contains a link to our [SEAT email](https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/) that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
+  - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7) that contains a link to our [SEAT email](https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/) that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
 - [draft-ritz-seat-facts](https://datatracker.ietf.org/doc/draft-ritz-seat-facts/00/): symbolic proof of insecurity
