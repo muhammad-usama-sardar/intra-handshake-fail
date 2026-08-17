@@ -103,7 +103,15 @@ to its desired server.
 We responsibly disclosed the vulnerability in intra-handshake attestation -- as noted in [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7) issued -- to the vendors, which resulted in  {{CVE-2026-33697}} of CVSS 7.5.
 
 # Credits
-While not the editors of this draft, we discovered CVE-2026-33697 jointly with **Viacheslav Dubeyko** and **Jean-Marie Jacquet**.
+
+| CVE | Finders |
+|---|---|
+| CVE-2026-33697 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+{: title="CVEs and finders"}
+
+# Threat Model
+The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}}.
+
 
 # Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
 
@@ -194,7 +202,7 @@ At least the following protocol specifications with intra-handshake attestation 
 
 Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
 
-# Correlation Goals
+# Security Properties (Correlation Goals)
 {: #sec-corr-goals }
 We consider TLS Server as RATS Attester, which is typical in confidential computing.
 
@@ -218,7 +226,7 @@ Please see Sec. 6.3 of {{Intra-handshake.fail}} for details.
 | G3 : Correlation of Evidence to `kc`  | ❌     | ❌    | ❌    |
 {: title="Main results"}
 
-Please see Sec. 7.1 of {{Intra-handshake.fail}} for details.
+Please see Sec. 7.1 and Figure 5 of {{Intra-handshake.fail}} for details of attacks.
 
 ## Expected Results
 
