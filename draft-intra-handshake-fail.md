@@ -28,6 +28,10 @@ author:
     fullname: "Muhammad Usama Sardar"
     organization: TU Dresden, Germany
     email: "muhammad_usama.sardar@tu-dresden.de"
+ -
+    fullname: "Songbo Bu"
+    organization: Shanghai Guan An Information Technology Co., Ltd., China
+    email: "bluedognull@gmail.com"
 
 normative:
   Intra-handshake.fail:
@@ -466,7 +470,6 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Pavel Nikonorov
 - Casey Wilson
 - Danko Miladinovic
-- Songbo Bu
 - John Preuß Mattsson
 - Britta Hale
 - Werner Staub
@@ -498,4 +501,4 @@ Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing f
 
 We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594).
 
-The research work is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")
+Muhammad Usama Sardar is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")
