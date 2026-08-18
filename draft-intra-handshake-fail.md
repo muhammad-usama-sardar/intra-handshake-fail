@@ -422,6 +422,9 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/0RzORzX_VdlY5UQ_MWMmxZlnrjs/](https://mailarchive.ietf.org/arch/msg/seat/0RzORzX_VdlY5UQ_MWMmxZlnrjs/)
 - [https://mailarchive.ietf.org/arch/msg/seat/W3MH1BDSUbm1WUPxGQihaIc1zTk/](https://mailarchive.ietf.org/arch/msg/seat/W3MH1BDSUbm1WUPxGQihaIc1zTk/)
 - [https://mailarchive.ietf.org/arch/msg/seat/2_aGylmFHoLmqN7BBcYVoH-rNJk/](https://mailarchive.ietf.org/arch/msg/seat/2_aGylmFHoLmqN7BBcYVoH-rNJk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/7SYSuB83Kmr9qCb1V1F94n9W33U/](https://mailarchive.ietf.org/arch/msg/seat/7SYSuB83Kmr9qCb1V1F94n9W33U/)
+- [https://mailarchive.ietf.org/arch/msg/seat/0SWfg2YNEAOtJQ7Zsf1xl4O-AOo/](https://mailarchive.ietf.org/arch/msg/seat/0SWfg2YNEAOtJQ7Zsf1xl4O-AOo/)
+- [https://mailarchive.ietf.org/arch/msg/seat/1mfNw-bw8KsdJbl4saL99Fz4iec/](https://mailarchive.ietf.org/arch/msg/seat/1mfNw-bw8KsdJbl4saL99Fz4iec/)
 - [https://mailarchive.ietf.org/arch/msg/seat/VyifG8zP5aworb_S1NR9FEUEXW0/](https://mailarchive.ietf.org/arch/msg/seat/VyifG8zP5aworb_S1NR9FEUEXW0/)
 - [https://mailarchive.ietf.org/arch/msg/seat/CYwvM75z6rTId2A3ZZvZJmHxOig/](https://mailarchive.ietf.org/arch/msg/seat/CYwvM75z6rTId2A3ZZvZJmHxOig/)
 - [https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/](https://mailarchive.ietf.org/arch/msg/ufmrg/29xFZX5C4oSGkpZAvXT_7YLW2Vc/)
@@ -490,13 +493,12 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - John Preuß Mattsson
 - Britta Hale
 - Werner Staub
-- Haowen Song
-- Chengxin Huang
 - Steve Luo
 - Kubilay Ahmet Küçük
 - Iman Schrock
 - Sophie Schmieg
 - Jakub Maria Plutowski
+- Martin Friedrich
 - Patrick Duggan
 - Nathanael Ritz
 - Deb Cooley
@@ -514,7 +516,7 @@ We also gratefully acknowledge the following who gave feedback on [previous stat
 - Jonathan Hoyland
 - Richard Barnes
 
-Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback.
+Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. An incomplete list of contributors is [here](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17).
 
 We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594).
 
