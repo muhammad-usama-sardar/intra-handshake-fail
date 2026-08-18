@@ -5,8 +5,12 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                     S. Bu
-Expires: 18 February 2027Shanghai Guan An Information Technology Co., Ltd., China
-                                                          17 August 2026
+Expires: 19 February 2027Shanghai Guan An Information Technology Co., Ltd., China
+                                                                C. Huang
+                                                             Independent
+                                                                 H. Song
+                Shanghai Guan An Information Technology Co., Ltd., China
+                                                          18 August 2026
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -54,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 February 2027.
+   This Internet-Draft will expire on 19 February 2027.
 
 Copyright Notice
 
@@ -413,7 +417,7 @@ Table of Contents
    *  draft-fossati-tls-attestation (https://datatracker.ietf.org/doc/
       draft-fossati-tls-attestation/09/): symbolic proof of insecurity;
       draft (https://datatracker.ietf.org/doc/draft-fossati-tls-
-      attestation/10/) *withdrawn*
+      attestation/10/) *withdrawn* after the CVE
 
    *  draft-fossati-seat-early-attestation
       (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
@@ -1290,3 +1294,13 @@ Authors' Addresses
    Songbo Bu
    Shanghai Guan An Information Technology Co., Ltd., China
    Email: bluedognull@gmail.com
+
+
+   Chengxin Huang
+   Independent
+   Email: aurestarnull@gmail.com
+
+
+   Haowen Song
+   Shanghai Guan An Information Technology Co., Ltd., China
+   Email: havan12050544@gmail.com

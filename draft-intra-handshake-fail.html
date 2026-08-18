@@ -7,6 +7,8 @@
 <title>Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="Songbo Bu" name="author">
+<meta content="Chengxin Huang" name="author">
+<meta content="Haowen Song" name="author">
 <meta content="
        The draft aims to provide technical details of  CVE-2026-33697  and  EUVD-2026-16488 , which is substantial technical evidence of how  intra -handshake attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the artifacts   in state-of-the-art tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. 
     " name="description">
@@ -17,14 +19,14 @@
 <meta content="draft-intra-handshake-fail-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.34.0
-    Python 3.14.5
+    Python 3.14.7
     ConfigArgParse 1.7.5
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.0
+    platformdirs 4.11.3
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
@@ -1047,8 +1049,8 @@ svg {
 <td class="right">August 2026</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Sardar &amp; Bu</td>
-<td class="center">Expires 18 February 2027</td>
+<td class="left">Sardar, et al.</td>
+<td class="center">Expires 19 February 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1061,12 +1063,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-08-17" class="published">17 August 2026</time>
+<time datetime="2026-08-18" class="published">18 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-02-18">18 February 2027</time></dd>
+<dd class="expires"><time datetime="2027-02-19">19 February 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1075,6 +1077,14 @@ svg {
 </div>
 <div class="author">
       <div class="author-name">S. Bu</div>
+<div class="org">Shanghai Guan An Information Technology Co., Ltd., China</div>
+</div>
+<div class="author">
+      <div class="author-name">C. Huang</div>
+<div class="org">Independent</div>
+</div>
+<div class="author">
+      <div class="author-name">H. Song</div>
 <div class="org">Shanghai Guan An Information Technology Co., Ltd., China</div>
 </div>
 </dd>
@@ -1115,7 +1125,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 18 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 19 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1676,7 +1686,7 @@ to its desired server.
 <p id="section-9-1">At least the following protocol specifications with intra-handshake attestation <em>path</em> are vulnerable to <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>:<a href="#section-9-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-9-2.1">
-          <p id="section-9-2.1.1"><a href="https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/">draft-fossati-tls-attestation</a>: symbolic proof of insecurity; <a href="https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/">draft</a> <strong>withdrawn</strong><a href="#section-9-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-9-2.1.1"><a href="https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/">draft-fossati-tls-attestation</a>: symbolic proof of insecurity; <a href="https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/">draft</a> <strong>withdrawn</strong> after the CVE<a href="#section-9-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-9-2.2">
           <p id="section-9-2.2.1"><a href="https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/">draft-fossati-seat-early-attestation</a>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-9-2.2.1" class="pilcrow">¶</a></p>
@@ -2593,6 +2603,22 @@ management etc., are also not mitigated by CC.
 <div class="email">
 <span>Email:</span>
 <a href="mailto:bluedognull@gmail.com" class="email">bluedognull@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Chengxin Huang</span></div>
+<div dir="auto" class="left"><span class="org">Independent</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:aurestarnull@gmail.com" class="email">aurestarnull@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Haowen Song</span></div>
+<div dir="auto" class="left"><span class="org">Shanghai Guan An Information Technology Co., Ltd., China</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:havan12050544@gmail.com" class="email">havan12050544@gmail.com</a>
 </div>
 </address>
 </section>
