@@ -32,6 +32,15 @@ author:
     fullname: "Songbo Bu"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "bluedognull@gmail.com"
+ -
+    fullname: "Chengxin Huang"
+    organization: Independent
+    email: "aurestarnull@gmail.com"
+ -
+    fullname: "Haowen Song"
+    organization: Shanghai Guan An Information Technology Co., Ltd., China
+    email: "havan12050544@gmail.com"
+
 
 normative:
   Intra-handshake.fail:
@@ -186,7 +195,7 @@ If you are aware of any other intra-handshake attestation implementation, please
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
 
-- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) **withdrawn**
+- [draft-fossati-tls-attestation](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/09/): symbolic proof of insecurity; [draft](https://datatracker.ietf.org/doc/draft-fossati-tls-attestation/10/) **withdrawn** after the CVE
 - [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/): symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7) that contains a link to our [SEAT email](https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/) that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
