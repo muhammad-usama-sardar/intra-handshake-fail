@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-16T00:41:27.643543+00:00",
+  "timestamp": "2026-08-18T00:39:16.513624+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -50,5 +50,34 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOTPsy-c7_ylb3",
+      "title": "Invite Songbo as co-author",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/1",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-08-16T19:45:28Z",
+      "updatedAt": "2026-08-17T03:58:24Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "a9ab173c44bc6994c63b645f99f6a7c5a25568c0",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "coauthor",
+      "headRefOid": "9c56dde11d3546780bfa1524eb4c4eb9f87f0c6d",
+      "closedAt": "2026-08-17T03:58:24Z",
+      "mergedAt": "2026-08-17T03:58:24Z",
+      "mergedBy": "B1ueD0g",
+      "mergeCommit": {
+        "oid": "b260adfcbcdc8806cf13b2c23d37e9a4edd119b2"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
