@@ -431,6 +431,11 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/u1HxYW9cJfVpi3Cf9q06ehwpYGE/](https://mailarchive.ietf.org/arch/msg/seat/u1HxYW9cJfVpi3Cf9q06ehwpYGE/)
 - [https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/](https://mailarchive.ietf.org/arch/msg/seat/SG_A0016a-KMnXAkGtMUxokZmjc/)
 - [https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/](https://mailarchive.ietf.org/arch/msg/seat/3w7-OW2CAVr0-QBz97eAMxB_nMI/)
+- [https://mailarchive.ietf.org/arch/msg/seat/UnybcafvQ2D-IhUfTV228WQFNhA/](https://mailarchive.ietf.org/arch/msg/seat/UnybcafvQ2D-IhUfTV228WQFNhA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/rmVNeFbjax26l31n5pitHIxOQkk/](https://mailarchive.ietf.org/arch/msg/seat/rmVNeFbjax26l31n5pitHIxOQkk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/DghJdG3ysbPFKMQe8czz-tcIMq0/](https://mailarchive.ietf.org/arch/msg/seat/DghJdG3ysbPFKMQe8czz-tcIMq0/)
+- [https://mailarchive.ietf.org/arch/msg/seat/rZLacid2wnEtaJwSbiIIft3T0FI/](https://mailarchive.ietf.org/arch/msg/seat/rZLacid2wnEtaJwSbiIIft3T0FI/)
+- [https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/](https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/)
 
 ### Main Questions
 
@@ -453,7 +458,7 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, and Haowen Song) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
@@ -470,13 +475,19 @@ This document has no IANA actions.
 
 # Acknowledgments
 {:numbered="false"}
+We wish to express our sincere appreciation to the following for their review of our latest work:
+
+- Sammy Kerata Oina
+- Drasko Draskovic
+
+**Intra-handshake.fail**
 
 We would like to thank our co-authors of paper {{Intra-handshake.fail}} for their valuable contributions:
 
 - Viacheslav Dubeyko
 - Jean-Marie Jacquet
 
-We gratefully acknowledge the following for insightful discussions and reviews on this work:
+We gratefully acknowledge the following for insightful discussions and reviews on {{Intra-handshake.fail}}:
 
 - Eric Rescorla
 - Juho Forsén
@@ -503,6 +514,8 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Nathanael Ritz
 - Deb Cooley
 
+**Identity Crisis**
+
 We also gratefully acknowledge the following who gave feedback on [previous state-of-the-art](https://github.com/CCC-Attestation/formal-spec-id-crisis) that we utilize as the basis:
 
 - Tuomas Aura
@@ -516,8 +529,12 @@ We also gratefully acknowledge the following who gave feedback on [previous stat
 - Jonathan Hoyland
 - Richard Barnes
 
-Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. An incomplete list of contributors is [here](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17).
+**refTLS**
 
 We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594).
+
+**General**
+
+Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. An incomplete list of contributors is [here](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17).
 
 Muhammad Usama Sardar is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")
