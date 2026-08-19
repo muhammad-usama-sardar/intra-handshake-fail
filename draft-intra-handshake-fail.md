@@ -475,6 +475,8 @@ This document has no IANA actions.
 
 # Acknowledgments
 {:numbered="false"}
+Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis or this draft.
+
 We wish to express our sincere appreciation to the following for their review of our latest work:
 
 - Sammy Kerata Oina
@@ -511,7 +513,6 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - Jakub Maria Plutowski
 - Martin Friedrich
 - Patrick Duggan
-- Nathanael Ritz
 - Deb Cooley
 
 **Identity Crisis**
