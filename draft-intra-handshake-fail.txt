@@ -1230,6 +1230,10 @@ Table of Contents
 
 Acknowledgments
 
+   Acknowledgment does not necessarily imply attestation.  It implies
+   that the authors found the feedback and discussion useful in
+   improving the formal analysis or this draft.
+
    We wish to express our sincere appreciation to the following for
    their review of our latest work:
 
@@ -1292,8 +1296,6 @@ Acknowledgments
    *  Martin Friedrich
 
    *  Patrick Duggan
-
-   *  Nathanael Ritz
 
    *  Deb Cooley
 
