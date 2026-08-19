@@ -40,7 +40,10 @@ author:
     fullname: "Haowen Song"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "havan12050544@gmail.com"
-
+ -
+    fullname: "Iman Schrock"
+    organization: EMILIA Protocol, Inc.
+    email: "team@emiliaprotocol.ai"
 
 normative:
   Intra-handshake.fail:
