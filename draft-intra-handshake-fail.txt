@@ -5,12 +5,12 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                     S. Bu
-Expires: 20 February 2027Shanghai Guan An Information Technology Co., Ltd., China
+Expires: 22 February 2027Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
-                                                          19 August 2026
+                                                          21 August 2026
 
 
  Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS
@@ -58,7 +58,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 February 2027.
+   This Internet-Draft will expire on 22 February 2027.
 
 Copyright Notice
 
@@ -77,6 +77,9 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction
+     1.1.  Overview
+     1.2.  Modeling Other Binding Mechanisms
+     1.3.  SEAT-Early-Attestaion
    2.  Credits
    3.  Threat Model
    4.  Detailed Vulnerability Disclosure Timeline and Public
@@ -119,6 +122,15 @@ Table of Contents
    Authors' Addresses
 
 1.  Introduction
+
+   [Intra-handshake.fail] presents a general approach to analyze the
+   intra-handshake attestation proposals, regardless of whether they are
+   within the scope of SEAT charter or not.  From a security
+   perspective, the key decision factor is the candidate binding
+   mechanism.  Some binding mechanisms are within scope of SEAT charter
+   and others are not.
+
+1.1.  Overview
 
    This draft presents the formal specification and analysis of the
    candidate binding mechanisms for binding in intra-handshake
@@ -202,6 +214,39 @@ Table of Contents
    (https://github.com/ultravioletrs/cocos/security/advisories/GHSA-
    vfgg-mvxx-mgg7) issued -- to the vendors, which resulted in
    [CVE-2026-33697] of CVSS 7.5.
+
+1.2.  Modeling Other Binding Mechanisms
+
+   The artifacts are quite flexible for modification and testing of
+   different intra-handshake attestation binding mechanisms by simply
+   changing single rdata parameter in the Client and Server processes.
+   Folder aggregate (https://github.com/muhammad-usama-sardar/intra-
+   handshake.fail/tree/main/aggregate) contains all analyzed and
+   proposed binding mechanisms in [Intra-handshake.fail] to select via
+   comment and uncomment.  Other folders contain one specific binding
+   mechanism.
+
+1.3.  SEAT-Early-Attestaion
+
+   The draft draft-fossati-seat-early-attestation
+   (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
+   attestation) is an extension of the provably vulnerable (and
+   withdrawn) draft draft-fossati-tls-attestation-10
+   (https://www.ietf.org/archive/id/draft-fossati-tls-attestation-
+   10.html) with the following two main changes from a formal
+   perspective:
+
+   1.  Binder has been updated
+
+   2.  Post-handshake attestation part has been added for re-attestation
+
+   The current binder in draft-fossati-seat-early-attestation
+   (https://datatracker.ietf.org/doc/draft-fossati-seat-early-
+   attestation/06/) does not prevent relay attacks as there is no shared
+   secret in the binder.
+
+   Post-handshake attestation part prevents relay attacks, but then the
+   complexity of intra-handshake attestation is unjustified.
 
 2.  Credits
 
@@ -810,10 +855,6 @@ Table of Contents
 
    *  AIMultiple (https://aimultiple.com/privacy-enhancing-technologies)
 
-   If you have written an article on this and would like to be added
-   here, please send us a PR or an email with the subject "media
-   coverage of intra-handshake.fail"
-
 15.1.  Security Researchers
 
    Several credible security researchers, such as the following, have
@@ -863,7 +904,7 @@ Table of Contents
    of the participants have independently reproduced the results by
    developing their own formal models and a proof-of-concept
    implementation of the vulnerabilities.  Some of the messages are
-   mentioned below:
+   mentioned below (*excluding* the messages of _paper_ authors):
 
    *  https://mailarchive.ietf.org/arch/msg/seat/
       B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/
@@ -1114,6 +1155,40 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/
       seat/_kEBODNsTWjgadb5xnlj86dvhcs/)
 
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      qP3XC0MarFFA3SMbBpWWJtxACNA/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      qP3XC0MarFFA3SMbBpWWJtxACNA/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      kkjQhi4yvJ_iAwYrPw1crFh-m-0/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      kkjQhi4yvJ_iAwYrPw1crFh-m-0/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      vBkdKtKzTt4F91VprfKIndgmT2o/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      vBkdKtKzTt4F91VprfKIndgmT2o/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      Huu_AFu11BTrdxK3I8hmw2jjp8Q/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      Huu_AFu11BTrdxK3I8hmw2jjp8Q/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      oOnioxkB__QZIvhFn5naW6jIXzg/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      oOnioxkB__QZIvhFn5naW6jIXzg/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/iWsCCAl8YZ-
+      pOTA7siNUGsfliHQ/ (https://mailarchive.ietf.org/arch/msg/seat/
+      iWsCCAl8YZ-pOTA7siNUGsfliHQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/-
+      HGPUR5CvuVWcOAg37cSxwoATm0/
+      (https://mailarchive.ietf.org/arch/msg/seat/-
+      HGPUR5CvuVWcOAg37cSxwoATm0/)
+
 16.2.1.  Main Questions
 
    In short, four main questions have been raised by WG participants in
@@ -1232,7 +1307,11 @@ Acknowledgments
 
    Acknowledgment does not necessarily imply attestation.  It implies
    that the authors found the feedback and discussion useful in
-   improving the formal analysis or this draft.
+   improving the formal analysis, the corresponding paper, or this
+   draft.
+
+   This draft benefits from several years of research on attested TLS,
+   in particular some of the recent works mentioned below:
 
    We wish to express our sincere appreciation to the following for
    their review of our latest work:
@@ -1250,8 +1329,8 @@ Acknowledgments
 
    *  Jean-Marie Jacquet
 
-   We gratefully acknowledge the following for insightful discussions
-   and reviews on [Intra-handshake.fail]:
+   We also gratefully acknowledge the following for insightful
+   discussions and reviews on [Intra-handshake.fail]:
 
    *  Eric Rescorla
 
@@ -1283,6 +1362,12 @@ Acknowledgments
 
    *  Werner Staub
 
+   *  Songbo Bu
+
+   *  Haowen Song
+
+   *  Chengxin Huang
+
    *  Steve Luo
 
    *  Kubilay Ahmet Küçük
@@ -1301,11 +1386,18 @@ Acknowledgments
 
    *Identity Crisis*
 
-   We also gratefully acknowledge the following who gave feedback on
-   previous state-of-the-art (https://github.com/CCC-Attestation/formal-
-   spec-id-crisis) that we utilize as the basis:
+   We would like to thank our co-authors of ID-Crisis paper
+   (https://www.researchgate.net/
+   publication/398839141_Identity_Crisis_in_Confidential_Computing_Formal_Analysis_of_Attested_TLS)
+   for their valuable contributions:
+
+   *  Mariam Moustafa
 
    *  Tuomas Aura
+
+   We also gratefully acknowledge the following who gave feedback on
+   previous state-of-the-art (https://github.com/CCC-Attestation/formal-
+   spec-id-crisis) that we utilize as the basis for attested TLS:
 
    *  Ionut Mihalcea
 
@@ -1327,9 +1419,15 @@ Acknowledgments
 
    *refTLS*
 
-   We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim
-   Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in
-   their work (https://ieeexplore.ieee.org/document/7958594).
+   We sincerely thank the following for the foundational formal model of
+   draft 20 of TLS 1.3 in their work (https://ieeexplore.ieee.org/
+   document/7958594) that forms the foundation of all of this work:
+
+   *  Karthikeyan Bhargavan
+
+   *  Bruno Blanchet
+
+   *  Nadim Kobeissi
 
    *General*
 

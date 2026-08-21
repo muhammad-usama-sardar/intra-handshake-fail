@@ -1050,7 +1050,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 20 February 2027</td>
+<td class="center">Expires 22 February 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1063,12 +1063,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-08-19" class="published">19 August 2026</time>
+<time datetime="2026-08-21" class="published">21 August 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-02-20">20 February 2027</time></dd>
+<dd class="expires"><time datetime="2027-02-22">22 February 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1125,7 +1125,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 February 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1155,13 +1155,24 @@ svg {
         </h2>
 <nav class="toc"><ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
-            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+            <p id="section-toc.1-1.1.1"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
+                <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="auto internal xref">1.1</a>.  <a href="#name-overview" class="internal xref">Overview</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.2">
+                <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="auto internal xref">1.2</a>.  <a href="#name-modeling-other-binding-mech" class="internal xref">Modeling Other Binding Mechanisms</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.3">
+                <p id="section-toc.1-1.1.2.3.1" class="keepWithNext"><a href="#section-1.3" class="auto internal xref">1.3</a>.  <a href="#name-seat-early-attestaion" class="internal xref">SEAT-Early-Attestaion</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-credits" class="internal xref">Credits</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-credits" class="internal xref">Credits</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-threat-model" class="internal xref">Threat Model</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-threat-model" class="internal xref">Threat Model</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-detailed-vulnerability-disc" class="internal xref">Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors</a></p>
@@ -1294,86 +1305,92 @@ svg {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">This draft presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1"><span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents a general approach to analyze the intra-handshake attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, the key decision factor is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<div id="overview">
+<section id="section-1.1">
+        <h3 id="name-overview">
+<a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-overview" class="section-name selfRef">Overview</a>
+        </h3>
+<p id="section-1.1-1">This draft presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:<a href="#section-1.1-1" class="pilcrow">¶</a></p>
 <span id="name-binding-mechanisms-implemen"></span><table class="center" id="table-1">
-        <caption>
+          <caption>
 <a href="#table-1" class="selfRef">Table 1</a>:
 <a href="#name-binding-mechanisms-implemen" class="selfRef">Binding mechanisms, implementations and ProVerif artifacts</a>
-        </caption>
+          </caption>
 <thead>
-          <tr>
-            <th class="text-left" rowspan="1" colspan="1">No.</th>
-            <th class="text-left" rowspan="1" colspan="1">Binding mechanism</th>
-            <th class="text-left" rowspan="1" colspan="1">Used in</th>
-            <th class="text-left" rowspan="1" colspan="1">Artifacts</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">1.</td>
-            <td class="text-left" rowspan="1" colspan="1">Client’s TLS nonce</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">Meta's AI</a>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">No.</th>
+              <th class="text-left" rowspan="1" colspan="1">Binding mechanism</th>
+              <th class="text-left" rowspan="1" colspan="1">Used in</th>
+              <th class="text-left" rowspan="1" colspan="1">Artifacts</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">1.</td>
+              <td class="text-left" rowspan="1" colspan="1">Client’s TLS nonce</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">Meta's AI</a>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1">binder1</a>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1">binder1</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">2.</td>
-            <td class="text-left" rowspan="1" colspan="1">Client’s attestation nonce</td>
-            <td class="text-left" rowspan="1" colspan="1">-</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder2">binder2</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">2.</td>
+              <td class="text-left" rowspan="1" colspan="1">Client’s attestation nonce</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder2">binder2</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">3.</td>
-            <td class="text-left" rowspan="1" colspan="1">Early exporter</td>
-            <td class="text-left" rowspan="1" colspan="1">-</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3">binder3</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">3.</td>
+              <td class="text-left" rowspan="1" colspan="1">Early exporter</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3">binder3</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">4.</td>
-            <td class="text-left" rowspan="1" colspan="1">Server’s public key</td>
-            <td class="text-left" rowspan="1" colspan="1">-</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4">binder4</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">4.</td>
+              <td class="text-left" rowspan="1" colspan="1">Server’s public key</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4">binder4</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">5.</td>
-            <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #3</td>
-            <td class="text-left" rowspan="1" colspan="1">-</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5">binder5</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">5.</td>
+              <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #3</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5">binder5</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">6.</td>
-            <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #4</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf">Cocos AI</a>;  <a href="https://github.com/CCC-Attestation">CCC Attestation SIG</a>'s adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">6.</td>
+              <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #4</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf">Cocos AI</a>;  <a href="https://github.com/CCC-Attestation">CCC Attestation SIG</a>'s adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6">binder6</a>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6">binder6</a>
 </td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">7.</td>
-            <td class="text-left" rowspan="1" colspan="1">Combination of #2, #3, and #4</td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://www.ietf.org/archive/id/draft-fossati-tls-attestation-06.html">draft-fossati-tls-attestation-06</a>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">7.</td>
+              <td class="text-left" rowspan="1" colspan="1">Combination of #2, #3, and #4</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://www.ietf.org/archive/id/draft-fossati-tls-attestation-06.html">draft-fossati-tls-attestation-06</a>
 </td>
-            <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7">binder7</a>
+              <td class="text-left" rowspan="1" colspan="1">
+                <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7">binder7</a>
 </td>
-          </tr>
-        </tbody>
-      </table>
-<div class="alignLeft art-text artwork" id="section-1-3">
+            </tr>
+          </tbody>
+        </table>
+<div class="alignLeft art-text artwork" id="section-1.1-3">
 <pre>
 We provide a formal proof of insecurity of all the above candidate
 binding mechanisms of intra-handshake attestation using the
@@ -1384,9 +1401,37 @@ binding using intra-handshake attestation alone. This can be exploited
 for relay attacks, where an attacker makes a client accept an evidence
 from a different machine. So the client cannot be sure that it connects
 to its desired server.
-</pre><a href="#section-1-3" class="pilcrow">¶</a>
+</pre><a href="#section-1.1-3" class="pilcrow">¶</a>
 </div>
-<p id="section-1-4">We responsibly disclosed the vulnerability in intra-handshake attestation -- as noted in <a href="https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7">security advisory</a> issued -- to the vendors, which resulted in  <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1.1-4">We responsibly disclosed the vulnerability in intra-handshake attestation -- as noted in <a href="https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7">security advisory</a> issued -- to the vendors, which resulted in  <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5.<a href="#section-1.1-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="modeling-other-binding-mechanisms">
+<section id="section-1.2">
+        <h3 id="name-modeling-other-binding-mech">
+<a href="#section-1.2" class="section-number selfRef">1.2. </a><a href="#name-modeling-other-binding-mech" class="section-name selfRef">Modeling Other Binding Mechanisms</a>
+        </h3>
+<p id="section-1.2-1">The artifacts are quite flexible for modification and testing of different intra-handshake attestation binding mechanisms by simply changing single <code>rdata</code> parameter in the Client and Server processes. Folder <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/aggregate">aggregate</a> contains all analyzed and proposed binding mechanisms in <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> to select via comment and uncomment. Other folders contain one specific binding mechanism.<a href="#section-1.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="seat-early-attestaion">
+<section id="section-1.3">
+        <h3 id="name-seat-early-attestaion">
+<a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-seat-early-attestaion" class="section-name selfRef">SEAT-Early-Attestaion</a>
+        </h3>
+<p id="section-1.3-1">The draft <a href="https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation">draft-fossati-seat-early-attestation</a> is an extension of the provably vulnerable (and withdrawn) draft <a href="https://www.ietf.org/archive/id/draft-fossati-tls-attestation-10.html">draft-fossati-tls-attestation-10</a> with the following two main changes from a formal perspective:<a href="#section-1.3-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-1.3-2">
+<li id="section-1.3-2.1">
+            <p id="section-1.3-2.1.1">Binder has been updated<a href="#section-1.3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-1.3-2.2">
+            <p id="section-1.3-2.2.1">Post-handshake attestation part has been added for re-attestation<a href="#section-1.3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        </ol>
+<p id="section-1.3-3">The current binder in <a href="https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/">draft-fossati-seat-early-attestation</a> does not prevent relay attacks as there is no shared secret in the binder.<a href="#section-1.3-3" class="pilcrow">¶</a></p>
+<p id="section-1.3-4">Post-handshake attestation part prevents relay attacks, but then the complexity of intra-handshake attestation is unjustified.<a href="#section-1.3-4" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="credits">
@@ -2166,7 +2211,6 @@ From <a href="https://dl.acm.org/doi/10.1145/3779208.3785387">ID-Crisis paper</a
           <p id="section-15-2.36.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-15-2.36.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-15-3">If you have written an article on this and would like to be added here, please send us a PR or an email with the subject "media coverage of intra-handshake.fail"<a href="#section-15-3" class="pilcrow">¶</a></p>
 <div id="security-researchers">
 <section id="section-15.1">
         <h3 id="name-security-researchers">
@@ -2229,7 +2273,7 @@ management etc., are also not mitigated by CC.
         <h3 id="name-ietf-irtf">
 <a href="#section-16.2" class="section-number selfRef">16.2. </a><a href="#name-ietf-irtf" class="section-name selfRef">IETF/IRTF</a>
         </h3>
-<p id="section-16.2-1">Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below:<a href="#section-16.2-1" class="pilcrow">¶</a></p>
+<p id="section-16.2-1">Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below (<strong>excluding</strong> the messages of <em>paper</em> authors):<a href="#section-16.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-16.2-2.1">
             <p id="section-16.2-2.1.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/">https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/</a><a href="#section-16.2-2.1.1" class="pilcrow">¶</a></p>
@@ -2390,6 +2434,27 @@ management etc., are also not mitigated by CC.
           <li class="normal" id="section-16.2-2.53">
             <p id="section-16.2-2.53.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/">https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/</a><a href="#section-16.2-2.53.1" class="pilcrow">¶</a></p>
 </li>
+          <li class="normal" id="section-16.2-2.54">
+            <p id="section-16.2-2.54.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/qP3XC0MarFFA3SMbBpWWJtxACNA/">https://mailarchive.ietf.org/arch/msg/seat/qP3XC0MarFFA3SMbBpWWJtxACNA/</a><a href="#section-16.2-2.54.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.55">
+            <p id="section-16.2-2.55.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/kkjQhi4yvJ_iAwYrPw1crFh-m-0/">https://mailarchive.ietf.org/arch/msg/seat/kkjQhi4yvJ_iAwYrPw1crFh-m-0/</a><a href="#section-16.2-2.55.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.56">
+            <p id="section-16.2-2.56.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/vBkdKtKzTt4F91VprfKIndgmT2o/">https://mailarchive.ietf.org/arch/msg/seat/vBkdKtKzTt4F91VprfKIndgmT2o/</a><a href="#section-16.2-2.56.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.57">
+            <p id="section-16.2-2.57.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/Huu_AFu11BTrdxK3I8hmw2jjp8Q/">https://mailarchive.ietf.org/arch/msg/seat/Huu_AFu11BTrdxK3I8hmw2jjp8Q/</a><a href="#section-16.2-2.57.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.58">
+            <p id="section-16.2-2.58.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/oOnioxkB__QZIvhFn5naW6jIXzg/">https://mailarchive.ietf.org/arch/msg/seat/oOnioxkB__QZIvhFn5naW6jIXzg/</a><a href="#section-16.2-2.58.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.59">
+            <p id="section-16.2-2.59.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/iWsCCAl8YZ-pOTA7siNUGsfliHQ/">https://mailarchive.ietf.org/arch/msg/seat/iWsCCAl8YZ-pOTA7siNUGsfliHQ/</a><a href="#section-16.2-2.59.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.60">
+            <p id="section-16.2-2.60.1"><a href="https://mailarchive.ietf.org/arch/msg/seat/-HGPUR5CvuVWcOAg37cSxwoATm0/">https://mailarchive.ietf.org/arch/msg/seat/-HGPUR5CvuVWcOAg37cSxwoATm0/</a><a href="#section-16.2-2.60.1" class="pilcrow">¶</a></p>
+</li>
         </ul>
 <div id="main-questions">
 <section id="section-16.2.1">
@@ -2483,137 +2548,164 @@ management etc., are also not mitigated by CC.
       <h2 id="name-acknowledgments">
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-A-1">Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis or this draft.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">We wish to express our sincere appreciation to the following for their review of our latest work:<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis, the corresponding paper, or this draft.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-2">This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:<a href="#appendix-A-2" class="pilcrow">¶</a></p>
+<p id="appendix-A-3">We wish to express our sincere appreciation to the following for their review of our latest work:<a href="#appendix-A-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-3.1">
-          <p id="appendix-A-3.1.1">Sammy Kerata Oina<a href="#appendix-A-3.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-A-4.1">
+          <p id="appendix-A-4.1.1">Sammy Kerata Oina<a href="#appendix-A-4.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-3.2">
-          <p id="appendix-A-3.2.1">Drasko Draskovic<a href="#appendix-A-3.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-4.2">
+          <p id="appendix-A-4.2.1">Drasko Draskovic<a href="#appendix-A-4.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-4"><strong>Intra-handshake.fail</strong><a href="#appendix-A-4" class="pilcrow">¶</a></p>
-<p id="appendix-A-5">We would like to thank our co-authors of paper <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> for their valuable contributions:<a href="#appendix-A-5" class="pilcrow">¶</a></p>
+<p id="appendix-A-5"><strong>Intra-handshake.fail</strong><a href="#appendix-A-5" class="pilcrow">¶</a></p>
+<p id="appendix-A-6">We would like to thank our co-authors of paper <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> for their valuable contributions:<a href="#appendix-A-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-6.1">
-          <p id="appendix-A-6.1.1">Viacheslav Dubeyko<a href="#appendix-A-6.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-A-7.1">
+          <p id="appendix-A-7.1.1">Viacheslav Dubeyko<a href="#appendix-A-7.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-6.2">
-          <p id="appendix-A-6.2.1">Jean-Marie Jacquet<a href="#appendix-A-6.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-7.2">
+          <p id="appendix-A-7.2.1">Jean-Marie Jacquet<a href="#appendix-A-7.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-7">We gratefully acknowledge the following for insightful discussions and reviews on <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>:<a href="#appendix-A-7" class="pilcrow">¶</a></p>
+<p id="appendix-A-8">We also gratefully acknowledge the following for insightful discussions and reviews on <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>:<a href="#appendix-A-8" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-8.1">
-          <p id="appendix-A-8.1.1">Eric Rescorla<a href="#appendix-A-8.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-A-9.1">
+          <p id="appendix-A-9.1.1">Eric Rescorla<a href="#appendix-A-9.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.2">
-          <p id="appendix-A-8.2.1">Juho Forsén<a href="#appendix-A-8.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.2">
+          <p id="appendix-A-9.2.1">Juho Forsén<a href="#appendix-A-9.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.3">
-          <p id="appendix-A-8.3.1">Markus Rudy<a href="#appendix-A-8.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.3">
+          <p id="appendix-A-9.3.1">Markus Rudy<a href="#appendix-A-9.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.4">
-          <p id="appendix-A-8.4.1">Mariam Moustafa<a href="#appendix-A-8.4.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.4">
+          <p id="appendix-A-9.4.1">Mariam Moustafa<a href="#appendix-A-9.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.5">
-          <p id="appendix-A-8.5.1">Bruno Blanchet<a href="#appendix-A-8.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.5">
+          <p id="appendix-A-9.5.1">Bruno Blanchet<a href="#appendix-A-9.5.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.6">
-          <p id="appendix-A-8.6.1">Steve Kremer<a href="#appendix-A-8.6.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.6">
+          <p id="appendix-A-9.6.1">Steve Kremer<a href="#appendix-A-9.6.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.7">
-          <p id="appendix-A-8.7.1">Tjaden Hess<a href="#appendix-A-8.7.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.7">
+          <p id="appendix-A-9.7.1">Tjaden Hess<a href="#appendix-A-9.7.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.8">
-          <p id="appendix-A-8.8.1">Martin Thomson<a href="#appendix-A-8.8.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.8">
+          <p id="appendix-A-9.8.1">Martin Thomson<a href="#appendix-A-9.8.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.9">
-          <p id="appendix-A-8.9.1">Yuning Jiang<a href="#appendix-A-8.9.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.9">
+          <p id="appendix-A-9.9.1">Yuning Jiang<a href="#appendix-A-9.9.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.10">
-          <p id="appendix-A-8.10.1">Pavel Nikonorov<a href="#appendix-A-8.10.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.10">
+          <p id="appendix-A-9.10.1">Pavel Nikonorov<a href="#appendix-A-9.10.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.11">
-          <p id="appendix-A-8.11.1">Casey Wilson<a href="#appendix-A-8.11.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.11">
+          <p id="appendix-A-9.11.1">Casey Wilson<a href="#appendix-A-9.11.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.12">
-          <p id="appendix-A-8.12.1">Danko Miladinovic<a href="#appendix-A-8.12.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.12">
+          <p id="appendix-A-9.12.1">Danko Miladinovic<a href="#appendix-A-9.12.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.13">
-          <p id="appendix-A-8.13.1">John Preuß Mattsson<a href="#appendix-A-8.13.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.13">
+          <p id="appendix-A-9.13.1">John Preuß Mattsson<a href="#appendix-A-9.13.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.14">
-          <p id="appendix-A-8.14.1">Britta Hale<a href="#appendix-A-8.14.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.14">
+          <p id="appendix-A-9.14.1">Britta Hale<a href="#appendix-A-9.14.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.15">
-          <p id="appendix-A-8.15.1">Werner Staub<a href="#appendix-A-8.15.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.15">
+          <p id="appendix-A-9.15.1">Werner Staub<a href="#appendix-A-9.15.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.16">
-          <p id="appendix-A-8.16.1">Steve Luo<a href="#appendix-A-8.16.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.16">
+          <p id="appendix-A-9.16.1">Songbo Bu<a href="#appendix-A-9.16.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.17">
-          <p id="appendix-A-8.17.1">Kubilay Ahmet Küçük<a href="#appendix-A-8.17.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.17">
+          <p id="appendix-A-9.17.1">Haowen Song<a href="#appendix-A-9.17.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.18">
-          <p id="appendix-A-8.18.1">Iman Schrock<a href="#appendix-A-8.18.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.18">
+          <p id="appendix-A-9.18.1">Chengxin Huang<a href="#appendix-A-9.18.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.19">
-          <p id="appendix-A-8.19.1">Sophie Schmieg<a href="#appendix-A-8.19.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.19">
+          <p id="appendix-A-9.19.1">Steve Luo<a href="#appendix-A-9.19.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.20">
-          <p id="appendix-A-8.20.1">Jakub Maria Plutowski<a href="#appendix-A-8.20.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.20">
+          <p id="appendix-A-9.20.1">Kubilay Ahmet Küçük<a href="#appendix-A-9.20.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.21">
-          <p id="appendix-A-8.21.1">Martin Friedrich<a href="#appendix-A-8.21.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.21">
+          <p id="appendix-A-9.21.1">Iman Schrock<a href="#appendix-A-9.21.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.22">
-          <p id="appendix-A-8.22.1">Patrick Duggan<a href="#appendix-A-8.22.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.22">
+          <p id="appendix-A-9.22.1">Sophie Schmieg<a href="#appendix-A-9.22.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-8.23">
-          <p id="appendix-A-8.23.1">Deb Cooley<a href="#appendix-A-8.23.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-9.23">
+          <p id="appendix-A-9.23.1">Jakub Maria Plutowski<a href="#appendix-A-9.23.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-9.24">
+          <p id="appendix-A-9.24.1">Martin Friedrich<a href="#appendix-A-9.24.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-9.25">
+          <p id="appendix-A-9.25.1">Patrick Duggan<a href="#appendix-A-9.25.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-9.26">
+          <p id="appendix-A-9.26.1">Deb Cooley<a href="#appendix-A-9.26.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-9"><strong>Identity Crisis</strong><a href="#appendix-A-9" class="pilcrow">¶</a></p>
-<p id="appendix-A-10">We also gratefully acknowledge the following who gave feedback on <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis">previous state-of-the-art</a> that we utilize as the basis:<a href="#appendix-A-10" class="pilcrow">¶</a></p>
+<p id="appendix-A-10"><strong>Identity Crisis</strong><a href="#appendix-A-10" class="pilcrow">¶</a></p>
+<p id="appendix-A-11">We would like to thank our co-authors of <a href="https://www.researchgate.net/publication/398839141_Identity_Crisis_in_Confidential_Computing_Formal_Analysis_of_Attested_TLS">ID-Crisis paper</a> for their valuable contributions:<a href="#appendix-A-11" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-A-11.1">
-          <p id="appendix-A-11.1.1">Tuomas Aura<a href="#appendix-A-11.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-A-12.1">
+          <p id="appendix-A-12.1.1">Mariam Moustafa<a href="#appendix-A-12.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-A-11.2">
-          <p id="appendix-A-11.2.1">Ionut Mihalcea<a href="#appendix-A-11.2.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.3">
-          <p id="appendix-A-11.3.1">Thomas Fossati<a href="#appendix-A-11.3.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.4">
-          <p id="appendix-A-11.4.1">Hannes Tschofenig<a href="#appendix-A-11.4.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.5">
-          <p id="appendix-A-11.5.1">Yaron Sheffer<a href="#appendix-A-11.5.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.6">
-          <p id="appendix-A-11.6.1">Laurence Lundblade<a href="#appendix-A-11.6.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.7">
-          <p id="appendix-A-11.7.1">Giridhar Mandyam<a href="#appendix-A-11.7.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.8">
-          <p id="appendix-A-11.8.1">Christopher Patton<a href="#appendix-A-11.8.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.9">
-          <p id="appendix-A-11.9.1">Jonathan Hoyland<a href="#appendix-A-11.9.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-A-11.10">
-          <p id="appendix-A-11.10.1">Richard Barnes<a href="#appendix-A-11.10.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-A-12.2">
+          <p id="appendix-A-12.2.1">Tuomas Aura<a href="#appendix-A-12.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-A-12"><strong>refTLS</strong><a href="#appendix-A-12" class="pilcrow">¶</a></p>
-<p id="appendix-A-13">We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their <a href="https://ieeexplore.ieee.org/document/7958594">work</a>.<a href="#appendix-A-13" class="pilcrow">¶</a></p>
-<p id="appendix-A-14"><strong>General</strong><a href="#appendix-A-14" class="pilcrow">¶</a></p>
-<p id="appendix-A-15">Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. An incomplete list of contributors is <a href="https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17">here</a>.<a href="#appendix-A-15" class="pilcrow">¶</a></p>
-<p id="appendix-A-16">Muhammad Usama Sardar is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")<a href="#appendix-A-16" class="pilcrow">¶</a></p>
+<p id="appendix-A-13">We also gratefully acknowledge the following who gave feedback on <a href="https://github.com/CCC-Attestation/formal-spec-id-crisis">previous state-of-the-art</a> that we utilize as the basis for attested TLS:<a href="#appendix-A-13" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-A-14.1">
+          <p id="appendix-A-14.1.1">Ionut Mihalcea<a href="#appendix-A-14.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.2">
+          <p id="appendix-A-14.2.1">Thomas Fossati<a href="#appendix-A-14.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.3">
+          <p id="appendix-A-14.3.1">Hannes Tschofenig<a href="#appendix-A-14.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.4">
+          <p id="appendix-A-14.4.1">Yaron Sheffer<a href="#appendix-A-14.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.5">
+          <p id="appendix-A-14.5.1">Laurence Lundblade<a href="#appendix-A-14.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.6">
+          <p id="appendix-A-14.6.1">Giridhar Mandyam<a href="#appendix-A-14.6.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.7">
+          <p id="appendix-A-14.7.1">Christopher Patton<a href="#appendix-A-14.7.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.8">
+          <p id="appendix-A-14.8.1">Jonathan Hoyland<a href="#appendix-A-14.8.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-14.9">
+          <p id="appendix-A-14.9.1">Richard Barnes<a href="#appendix-A-14.9.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="appendix-A-15"><strong>refTLS</strong><a href="#appendix-A-15" class="pilcrow">¶</a></p>
+<p id="appendix-A-16">We sincerely thank the following for the foundational formal model of draft 20 of TLS 1.3 in their <a href="https://ieeexplore.ieee.org/document/7958594">work</a> that forms the foundation of all of this work:<a href="#appendix-A-16" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-A-17.1">
+          <p id="appendix-A-17.1.1">Karthikeyan Bhargavan<a href="#appendix-A-17.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-17.2">
+          <p id="appendix-A-17.2.1">Bruno Blanchet<a href="#appendix-A-17.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-17.3">
+          <p id="appendix-A-17.3.1">Nadim Kobeissi<a href="#appendix-A-17.3.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="appendix-A-18"><strong>General</strong><a href="#appendix-A-18" class="pilcrow">¶</a></p>
+<p id="appendix-A-19">Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. An incomplete list of contributors is <a href="https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17">here</a>.<a href="#appendix-A-19" class="pilcrow">¶</a></p>
+<p id="appendix-A-20">Muhammad Usama Sardar is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")<a href="#appendix-A-20" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
