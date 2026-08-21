@@ -127,7 +127,7 @@ The draft [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/do
 
 The current binder in [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/) does not prevent relay attacks as there is no shared secret in the binder.
 
-Post-handshake attestation part prevents relay attacks, but then the complexity of intra-handshake attestation is unjustified. 
+Post-handshake attestation part prevents relay attacks, but then the complexity of intra-handshake attestation is unjustified.
 
 # Credits
 
