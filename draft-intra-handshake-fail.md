@@ -83,6 +83,9 @@ The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.
 --- middle
 
 # Introduction
+{{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, the key decision factor is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not.
+
+## Overview
 
 This draft presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:
 
@@ -110,6 +113,21 @@ to its desired server.
 
 
 We responsibly disclosed the vulnerability in intra-handshake attestation -- as noted in [security advisory](https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7) issued -- to the vendors, which resulted in  {{CVE-2026-33697}} of CVSS 7.5.
+
+## Modeling Other Binding Mechanisms
+
+The artifacts are quite flexible for modification and testing of different intra-handshake attestation binding mechanisms by simply changing single `rdata` parameter in the Client and Server processes. Folder [aggregate](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/aggregate) contains all analyzed and proposed binding mechanisms in {{Intra-handshake.fail}} to select via comment and uncomment. Other folders contain one specific binding mechanism.
+
+## SEAT-Early-Attestaion
+
+The draft [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation) is an extension of the provably vulnerable (and withdrawn) draft [draft-fossati-tls-attestation-10](https://www.ietf.org/archive/id/draft-fossati-tls-attestation-10.html) with the following two main changes from a formal perspective:
+
+1. Binder has been updated
+2. Post-handshake attestation part has been added for re-attestation
+
+The current binder in [draft-fossati-seat-early-attestation](https://datatracker.ietf.org/doc/draft-fossati-seat-early-attestation/06/) does not prevent relay attacks as there is no shared secret in the binder.
+
+Post-handshake attestation part prevents relay attacks, but then the complexity of intra-handshake attestation is unjustified. 
 
 # Credits
 
@@ -349,8 +367,6 @@ Several media enthusiasts and bloggers have covered the vulnerabilities to prote
 - [ad-hoc news](https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475)
 - [AIMultiple](https://aimultiple.com/privacy-enhancing-technologies)
 
-If you have written an article on this and would like to be added here, please send us a PR or an email with the subject "media coverage of intra-handshake.fail"
-
 ## Security Researchers
 
 Several credible security researchers, such as the following, have publicly attested to it.
@@ -381,7 +397,7 @@ CC refers to Confidential Computing, and attested TLS is the core trust mechanis
 {{Intra-handshake.fail}} has been peer-reviewed and accepted for publication at ESORICS 2026.
 
 ## IETF/IRTF
-Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below:
+Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below (**excluding** the messages of *paper* authors):
 
 - [https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/](https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/)
 - [https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/](https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/)
@@ -436,6 +452,13 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/DghJdG3ysbPFKMQe8czz-tcIMq0/](https://mailarchive.ietf.org/arch/msg/seat/DghJdG3ysbPFKMQe8czz-tcIMq0/)
 - [https://mailarchive.ietf.org/arch/msg/seat/rZLacid2wnEtaJwSbiIIft3T0FI/](https://mailarchive.ietf.org/arch/msg/seat/rZLacid2wnEtaJwSbiIIft3T0FI/)
 - [https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/](https://mailarchive.ietf.org/arch/msg/seat/_kEBODNsTWjgadb5xnlj86dvhcs/)
+- [https://mailarchive.ietf.org/arch/msg/seat/qP3XC0MarFFA3SMbBpWWJtxACNA/](https://mailarchive.ietf.org/arch/msg/seat/qP3XC0MarFFA3SMbBpWWJtxACNA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/kkjQhi4yvJ_iAwYrPw1crFh-m-0/](https://mailarchive.ietf.org/arch/msg/seat/kkjQhi4yvJ_iAwYrPw1crFh-m-0/)
+- [https://mailarchive.ietf.org/arch/msg/seat/vBkdKtKzTt4F91VprfKIndgmT2o/](https://mailarchive.ietf.org/arch/msg/seat/vBkdKtKzTt4F91VprfKIndgmT2o/)
+- [https://mailarchive.ietf.org/arch/msg/seat/Huu_AFu11BTrdxK3I8hmw2jjp8Q/](https://mailarchive.ietf.org/arch/msg/seat/Huu_AFu11BTrdxK3I8hmw2jjp8Q/)
+- [https://mailarchive.ietf.org/arch/msg/seat/oOnioxkB__QZIvhFn5naW6jIXzg/](https://mailarchive.ietf.org/arch/msg/seat/oOnioxkB__QZIvhFn5naW6jIXzg/)
+- [https://mailarchive.ietf.org/arch/msg/seat/iWsCCAl8YZ-pOTA7siNUGsfliHQ/](https://mailarchive.ietf.org/arch/msg/seat/iWsCCAl8YZ-pOTA7siNUGsfliHQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/-HGPUR5CvuVWcOAg37cSxwoATm0/](https://mailarchive.ietf.org/arch/msg/seat/-HGPUR5CvuVWcOAg37cSxwoATm0/)
 
 ### Main Questions
 
@@ -475,7 +498,9 @@ This document has no IANA actions.
 
 # Acknowledgments
 {:numbered="false"}
-Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis or this draft.
+Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis, the corresponding paper, or this draft.
+
+This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:
 
 We wish to express our sincere appreciation to the following for their review of our latest work:
 
@@ -489,7 +514,7 @@ We would like to thank our co-authors of paper {{Intra-handshake.fail}} for thei
 - Viacheslav Dubeyko
 - Jean-Marie Jacquet
 
-We gratefully acknowledge the following for insightful discussions and reviews on {{Intra-handshake.fail}}:
+We also gratefully acknowledge the following for insightful discussions and reviews on {{Intra-handshake.fail}}:
 
 - Eric Rescorla
 - Juho Forsén
@@ -506,6 +531,9 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 - John Preuß Mattsson
 - Britta Hale
 - Werner Staub
+- Songbo Bu
+- Haowen Song	 		
+- Chengxin Huang
 - Steve Luo
 - Kubilay Ahmet Küçük
 - Iman Schrock
@@ -517,9 +545,13 @@ We gratefully acknowledge the following for insightful discussions and reviews o
 
 **Identity Crisis**
 
-We also gratefully acknowledge the following who gave feedback on [previous state-of-the-art](https://github.com/CCC-Attestation/formal-spec-id-crisis) that we utilize as the basis:
+We would like to thank our co-authors of [ID-Crisis paper](https://www.researchgate.net/publication/398839141_Identity_Crisis_in_Confidential_Computing_Formal_Analysis_of_Attested_TLS) for their valuable contributions:
 
+- Mariam Moustafa
 - Tuomas Aura
+
+We also gratefully acknowledge the following who gave feedback on [previous state-of-the-art](https://github.com/CCC-Attestation/formal-spec-id-crisis) that we utilize as the basis for attested TLS:
+
 - Ionut Mihalcea
 - Thomas Fossati
 - Hannes Tschofenig
@@ -532,7 +564,11 @@ We also gratefully acknowledge the following who gave feedback on [previous stat
 
 **refTLS**
 
-We sincerely thank Karthikeyan Bhargavan, Bruno Blanchet, and Nadim Kobeissi for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594).
+We sincerely thank the following for the foundational formal model of draft 20 of TLS 1.3 in their [work](https://ieeexplore.ieee.org/document/7958594) that forms the foundation of all of this work:
+
+- Karthikeyan Bhargavan
+- Bruno Blanchet
+- Nadim Kobeissi
 
 **General**
 
