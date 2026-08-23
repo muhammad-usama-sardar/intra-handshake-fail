@@ -86,7 +86,7 @@ Table of Contents
    3.  Threat Model
    4.  Detailed Vulnerability Disclosure Timeline and Public
            Acknowledgements by Affected Vendors
-   5.  EU ERISA
+   5.  EU ENISA
    6.  Comparison with Other Vulnerabilities in Confidential Computing
            Literature
    7.  More CVEs
@@ -312,7 +312,7 @@ Table of Contents
    |                                                                            |March,|
    |                                                                            |2026  |
    +----------------------------------------------------------------------------+------+
-   |ERISA published EUVD [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]       |26    |
+   |ENISA published EUVD [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]       |26    |
    |                                                                            |March,|
    |                                                                            |2026  |
    +----------------------------------------------------------------------------+------+
@@ -349,10 +349,11 @@ Table of Contents
    hold independent of those, i.e., with StrongHash and StrongDH and all
    good elements within a group.
 
-5.  EU ERISA
+5.  EU ENISA
 
-   European Union's ERISA has independently published [EUVD-2026-16488]
-   with CVSS 7.5 to acknowledge this vulnerability.
+   European Union's ENISA (https://euvd.enisa.europa.eu/homepage) has
+   independently published [EUVD-2026-16488] with CVSS 7.5 to
+   acknowledge this vulnerability.
 
 6.  Comparison with Other Vulnerabilities in Confidential Computing
     Literature
