@@ -193,7 +193,7 @@ The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4
 | [Public announcement](https://web.archive.org/web/20260227160554/https://www.ultraviolet.rs/blog/tee-tls-privacy/) by vendor | 27 Feb, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**] | 23 March, 2026 |
 | CVE {{CVE-2026-33697}} published  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
-| ERISA published EUVD {{EUVD-2026-16488}}  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
+| ENISA published EUVD {{EUVD-2026-16488}}  [**Severity = HIGH (CVSS 7.5)**] | 26 March, 2026 |
 | [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) by Privasys for rustls {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] | 9 July, 2026 |
 | [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) by Privasys for go {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] | 10 July, 2026 |
 | [CCC implementation](https://github.com/ccc-attestation/attested-tls-poc) declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) | 17 July, 2026 |
@@ -204,9 +204,9 @@ The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
 
-# EU ERISA
+# EU ENISA
 
-European Union's ERISA has independently published {{EUVD-2026-16488}} with CVSS 7.5 to acknowledge this vulnerability.
+European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independently published {{EUVD-2026-16488}} with CVSS 7.5 to acknowledge this vulnerability.
 
 
 # Comparison with Other Vulnerabilities in Confidential Computing Literature
