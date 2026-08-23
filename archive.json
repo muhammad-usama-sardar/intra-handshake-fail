@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-20T00:39:07.509050+00:00",
+  "timestamp": "2026-08-23T00:42:08.511964+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -104,6 +104,55 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOTPsy-c8AAAABAhtDvw",
+      "title": "seat, scope, and ack",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/3",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-08-21T08:55:28Z",
+      "updatedAt": "2026-08-21T08:58:29Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "1bae20eb43cab19ff75fa7b05c3b5cc3ec42421d",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "clarify-link-to-draft",
+      "headRefOid": "84ab6c3f2bb530af41fac8ac33567e4ad44bea81",
+      "closedAt": "2026-08-21T08:58:29Z",
+      "mergedAt": "2026-08-21T08:58:29Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "ddd86d57d984f26df89fe53d73b1b96785cf5c8f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABKYUGFA",
+          "commit": {
+            "abbreviatedOid": "86c2b27"
+          },
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-08-21T08:55:57Z",
+          "updatedAt": "2026-08-21T08:55:57Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "````suggestion\nPost-handshake attestation part prevents relay attacks, but then the complexity of intra-handshake attestation is unjustified.\n````",
+              "createdAt": "2026-08-21T08:55:57Z",
+              "updatedAt": "2026-08-21T08:55:57Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
