@@ -1,5 +1,5 @@
 ---
-title: "Intra-handshake Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)"
+title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)"
 abbrev: "Intra-handshake Attestation Considered Harmful"
 category: info
 
@@ -114,7 +114,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
 
 --- middle
 
@@ -158,7 +158,7 @@ We responsibly disclosed the vulnerability in intra-handshake attestation -- as 
 
 The artifacts are quite flexible for modification and testing of different intra-handshake attestation binding mechanisms by simply changing single `rdata` parameter in the Client and Server processes. Folder [aggregate](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/aggregate) contains all analyzed and proposed binding mechanisms in {{Intra-handshake.fail}} to select via comment and uncomment. Other folders contain one specific binding mechanism.
 
-## SEAT-Early-Attestaion
+## SEAT-Early-Attestation
 
 The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably vulnerable (and withdrawn) draft {{I-D.fossati-tls-attestation-10}} with the following two main changes from a formal perspective:
 
@@ -177,6 +177,7 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 | {{EUVD-2026-16488}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Cocos-AI}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Edgeless-Systems}} | Muhammad Usama Sardar |
+| TBA | Muhammad Usama Sardar and Songbo Bu |
 {: title="GHSAs/CVEs and finders"}
 
 # Threat Model
@@ -233,12 +234,15 @@ The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indic
 
 Further formal analysis has led to the following potential CVEs for intra-handshake attestation (currently under disclosure):
 
-- 1 potential CVE of expected CVSS **9.8**
-- 2 potential CVEs of expected CVSS **9.1**
-- 1 potential CVE of expected CVSS **8.7**
-- 2 potential CVEs of expected CVSS **7.5**
-- 2 potential CVEs of expected CVSS **7.4**
-- 2 potential CVEs of expected CVSS **6.3**
+| CVSS | Severity | Number of CVEs |
+|---|---|---|
+| 9.8 | Critical | 1 |
+| 9.1 | Critical | 2 |
+| 8.7 | High | 1 |
+| 7.5 | High | 2 |
+| 7.4 | High | 2 |
+| 6.3 | Medium | 2 |
+{: title="Expected CVEs for intra-handshake attestation under disclosure "}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
 
@@ -409,6 +413,7 @@ Several media professionals and bloggers have covered the vulnerabilities to pro
 - [daily.dev](https://daily.dev/posts/kI6PoNzPx)
 - [warden](https://warden.veritai.ch/news/researchers-find-attested-tls-flaws-that-weaken-confidential-computing-trust-model)
 - [GCVE.eu](https://db.gcve.eu/sightings/?query=cve-2026-33697)
+- [vuln.lu](https://vulnerability.circl.lu/vuln/CVE-2026-33697#sightings)
 - [coderlegion](https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security)
 - [Anjuna Security](https://www.anjuna.io/blog/attested-tls-flaw-explained)
 - [freenode](https://freenode.net/digest/67)
@@ -514,15 +519,23 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/LnLYE7bGQOmCxVXq6stiOtKwc1s/](https://mailarchive.ietf.org/arch/msg/seat/LnLYE7bGQOmCxVXq6stiOtKwc1s/)
 - [https://mailarchive.ietf.org/arch/msg/seat/o_bIJhOdB4j1g0nczxPZwFXtCo8/](https://mailarchive.ietf.org/arch/msg/seat/o_bIJhOdB4j1g0nczxPZwFXtCo8/)
 - [https://mailarchive.ietf.org/arch/msg/seat/hy4qVQJQGR82-bskQ_UGI6iel1Y/](https://mailarchive.ietf.org/arch/msg/seat/hy4qVQJQGR82-bskQ_UGI6iel1Y/)
+- [https://mailarchive.ietf.org/arch/msg/seat/3J3s_YFnf9IQ87Tv2c1q4f36xKQ/](https://mailarchive.ietf.org/arch/msg/seat/3J3s_YFnf9IQ87Tv2c1q4f36xKQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/JWKMYY1YG1E2iS_HyQ4rDmOsDGw/](https://mailarchive.ietf.org/arch/msg/seat/JWKMYY1YG1E2iS_HyQ4rDmOsDGw/)
+- [https://mailarchive.ietf.org/arch/msg/seat/rK1nDSewAbVL_weOp98knYZcg6s/](https://mailarchive.ietf.org/arch/msg/seat/rK1nDSewAbVL_weOp98knYZcg6s/)
+- [https://mailarchive.ietf.org/arch/msg/seat/Wjuz0fIj8tjYocUmiZZXcSwwFHw/](https://mailarchive.ietf.org/arch/msg/seat/Wjuz0fIj8tjYocUmiZZXcSwwFHw/)
+- [https://mailarchive.ietf.org/arch/msg/seat/SYiV4KZNr20re6QkGmyWS3pPteA/](https://mailarchive.ietf.org/arch/msg/seat/SYiV4KZNr20re6QkGmyWS3pPteA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/ZYgxm1ibt6p4dL7xF1YNdl0XSpc/](https://mailarchive.ietf.org/arch/msg/seat/ZYgxm1ibt6p4dL7xF1YNdl0XSpc/)
+- [https://mailarchive.ietf.org/arch/msg/seat/6LKgOp22YRxGTYb-i-BxiMGzMW4/](https://mailarchive.ietf.org/arch/msg/seat/6LKgOp22YRxGTYb-i-BxiMGzMW4/)
 
 ### Main Questions
 
-In short, four main questions have been raised by WG participants in support of our work:
+In short, five main questions have been raised by WG participants in support of our work:
 
 - What **security property** hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
 - Since continuous attestation is required in most use cases, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
 - What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
 - How evidence is bound to the secure channel without involving any **shared secret**?
+- How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
 
 ## Researchers outside of IETF/IRTF
 
@@ -543,7 +556,7 @@ We have released only the formal analysis for published CVE. To minimize exploit
 We have not retrieved any real data from any real system. We have not released any key to any public forum or to any person.
 
 
-## Evidence of explanation of vulnerabilities to the authors
+## Evidence of Explanation of Vulnerabilities to the Authors of Vulnerable Drafts
 To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF. Please see the (non-exhaustive list of) recordings below and the [archives](https://github.com/muhammad-usama-sardar/intra-handshake.fail#community-service). We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
 
 | Event/Host | Venue | Date(s) | Evidence |
@@ -553,7 +566,7 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | slides |
 | IETF RATS Interim meeting | Virtual | TBA Sept, 2026 | slides, video |
 | [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 2-4 September, 2026 | [abstract](https://summit.riot-os.org/2026/blog/speakers/muhammad-usama-sardar/), slides, video |
-| [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 24 Aug, 2026 | slides, video |
+| [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 24 Aug, 2026 | [slides](https://www.researchgate.net/publication/413569575_High-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), [video](https://us02web.zoom.us/rec/share/UAn381deia-aMNmjGHhMqxocc1HcyF7ksLlaeeKefxO4bSC2mHPzwPQPYGe2dnZR.zfleYCmmtiteo_NS) |
 | Confidential AI Public Side Meeting @ [IETF 126](https://www.ietf.org/meeting/126/) | Vienna, Austria | 21 July, 2026 | [plan](https://mailarchive.ietf.org/arch/msg/126attendees/odgd_xmhjQXiR_aLYdqtVvDJeF4/), [slides](https://www.researchgate.net/publication/410954219_Proposed_RG_Confidential_Computing_for_Agentic_AI) |
 | SEAT @ [IETF 126](https://www.ietf.org/meeting/126/) | Vienna, Austria | 21 July, 2026 | [slides](https://datatracker.ietf.org/meeting/126/materials/slides-126-seat-binding-properties-of-expat-00.pdf), [video](https://youtu.be/Fb5Hzh1mp1E?t=4189) |
 | [IETF 126 Hackdemo Happy Hour](https://wiki.ietf.org/en/meeting/126/hackathon/hackdemo) | Vienna, Austria | 20 July, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/126/hackathon#cve-2026-33697-cvss-75-intra-handshakefail), [demo](https://wiki.ietf.org/en/meeting/126/hackathon/hackdemo) |
@@ -563,7 +576,7 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | IEPG @ [IETF 126](https://www.ietf.org/meeting/126/) | Vienna, Austria | 19 July, 2026  | [slides](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00), [video](https://youtu.be/g8q_u19vXzk?t=4404) |
 | [Workshop](https://www.wissenschaftsnacht-dresden.de/programm/detailansicht/confidential-computing-15585) @ [Dresden Science Night 2026](https://www.wissenschaftsnacht-dresden.de/en/) | Dresden | 26 June, 2026  | [demo](https://www.wissenschaftsnacht-dresden.de/programm/detailansicht/confidential-computing-15585) |
 | [Output 2026](https://output-dd.de/) | Dresden | 25 June, 2026 | [demo](https://output-dd.de/projekte/relay-attacks-in-intra-handshake-attestation-for-confidential-agentic-ai-systems/) |
-| [Confidential Computing Summit 2026](https://events.linuxfoundation.org/confidential-computing-summit/) (presented by Jens Albers) | San Francisco, USA | 23-24 June, 2026 | [poster](https://www.researchgate.net/publication/411851358_Standardization_of_Attested_TLS), video |
+| [Confidential Computing Summit 2026](https://events.linuxfoundation.org/confidential-computing-summit/) (presented by Jens Albers) | San Francisco, USA | 23-24 June, 2026 | [poster](https://www.researchgate.net/publication/411851358_Standardization_of_Attested_TLS) |
 | [Confidential Containers Community Meeting](https://confidentialcontainers.org/) @ [Cloud Native Computing Foundation](https://www.cncf.io/) | Virtual | 30 April, 2026  | [slides](https://www.researchgate.net/publication/411849492_Relay_Attacks_in_Intra-handshake_Attestation), [video](https://zoom.us/rec/share/3thZhsRi-BZJL-GqjnwGzh7inbltuKIlpVjqMlWp6WRdMTZ66Z8p-8YjaaeOfbhX.CoH6YBukaKua0gkt) around timestamp 00:27:00 |
 | GIF Project showcase @ [GA4GH April Connect 2026](https://www.ga4gh.org/event/april-connect-2026/) | Montreal, Canada (virtual) | 17 April, 2026 | [slides](https://www.researchgate.net/publication/412136610_Trusted_Research_Environment_TRE_Open_Suite), [video](https://youtu.be/Kr9oxp1fdn0?t=1083), [report](https://www.ga4gh.org/document/arpril-connect-2026-meeting-report/) |
 | [NSA Symposium on Hot Topics in the Science of Security (HotSoS) 2026](https://sos-vo.org/group/hotsos/) | Virtual | 16 April, 2026 | [abstract](https://sos-vo.org/group/hotsos/2026/sardar), [slides](https://sos-vo.org/system/files/2026-04/20260416_HotSoS%20%281%29.pdf), [video](https://sos-vo.org/group/hotsos/2026/sardar) |
@@ -675,6 +688,6 @@ We sincerely thank the following for the foundational formal model of draft 20 o
 
 **General**
 
-Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback. A non-exhaustive list of contributors is [here](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17).
+Several others at the IETF, IRTF, CCC, and GA4GH have contributed by providing feedback over the years. A non-exhaustive list of contributors is [here](https://datatracker.ietf.org/meeting/126/materials/slides-126-iepg-sessa-05-intra-handshakefail-cve-2026-33697-00#page=17).
 
 Muhammad Usama Sardar is funded by German Research Foundation ("Deutsche Forschungsgemeinschaft.")
