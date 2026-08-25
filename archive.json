@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-23T00:42:08.511964+00:00",
+  "timestamp": "2026-08-25T00:40:22.456535+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 4,
+      "id": "I_kwDOTPsy-c8AAAABN4NI-g",
+      "title": "Main dispute?",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/issues/4",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "What exactly is the dispute related to: papers, artifacts, GHSAs, CVE, or something else?\nRead emails in recent threads and extract the [main questions](https://www.ietf.org/archive/id/draft-intra-handshake-fail-11.html#section-16.2.1).\n",
+      "createdAt": "2026-08-23T09:50:21Z",
+      "updatedAt": "2026-08-23T09:50:21Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
@@ -84,26 +101,42 @@
       "id": "PR_kwDOTPsy-c8AAAABAUbprQ",
       "title": "Add Iman",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-08-19T18:12:43Z",
-      "updatedAt": "2026-08-19T18:12:43Z",
+      "updatedAt": "2026-08-23T07:14:25Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "1bae20eb43cab19ff75fa7b05c3b5cc3ec42421d",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "coauthors",
       "headRefOid": "cc50b25719a5ea54c972130d2dcb07bfa2cf60f5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-08-23T07:14:25Z",
+      "mergedAt": "2026-08-23T07:14:25Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "3e7eb5ca36b0e900f50d0475562e5da1191ad261"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABKh2AgA",
+          "commit": {
+            "abbreviatedOid": "cc50b25"
+          },
+          "author": "FutureEnterprises",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Confirmed. My name, affiliation, and email are correct. Thank you for adding me as a co-author.",
+          "createdAt": "2026-08-23T02:59:44Z",
+          "updatedAt": "2026-08-23T02:59:44Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 3,
