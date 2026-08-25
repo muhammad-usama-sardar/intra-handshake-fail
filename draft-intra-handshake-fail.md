@@ -557,7 +557,10 @@ We have not retrieved any real data from any real system. We have not released a
 
 
 ## Evidence of Explanation of Vulnerabilities to the Authors of Vulnerable Drafts
-To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF. Please see the (non-exhaustive list of) recordings below and the [archives](https://github.com/muhammad-usama-sardar/intra-handshake.fail#community-service). We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
+To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} first privately in several meetings and then later on publicly for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF. Please see the (non-exhaustive list of) recordings {{sec-recordings}} and the archives {{sec-archives}} below. We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
+
+### Recordings
+{: #sec-recordings }
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- | --- |
@@ -596,6 +599,38 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | [CCC Attestation SIG](https://github.com/CCC-Attestation) | Virtual | 16 Dec, 2025  | [slides](https://github.com/CCC-Attestation/meetings/blob/main/materials/MuhammadUsamaSardar_Binding_Properties_20251216.pdf); [video](https://youtu.be/w_MrjMeHyP8?list=PLmfkUJc39uMhZsNGmpx-qD-uCoQyMglIp&t=593) |
 | [CCC Attestation SIG](https://github.com/CCC-Attestation) | Virtual | 2 Dec, 2025  | [slides](https://github.com/muhammad-usama-sardar/CCC-Att-meetings/blob/main/materials/MuhammadUsamaSardar_Open_Questions_20251202.pdf); [video](https://youtu.be/16aGZ-oZidg?list=PLmfkUJc39uMhZsNGmpx-qD-uCoQyMglIp&t=2920) |
 {: title="Evidence of several explanations of vulnerabilities to the authors of vulnerable drafts"}
+
+
+### Archives
+{: #sec-archives }
+
+Since January, we have publicly informed the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} and shared our results with the community for review and to raise awareness on high-severity vulnerabilities and apply appropriate mitigations for the safety of their users:
+
+#### [IETF](https://www.ietf.org/)
+  - [SEAT WG](https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/)
+  - [RATS WG](https://mailarchive.ietf.org/arch/msg/rats/6gbqx0XY8WYrH3Mx4vO8n2-uKgY/)
+  - [TLS WG](https://mailarchive.ietf.org/arch/msg/tls/8lyqHh9y7_Lv6b1iXhpUqYrp0M0/)
+  - [LAKE WG](https://mailarchive.ietf.org/arch/msg/lake/Tovtl7wgvzwJWT2I2ZwnhoIOnYQ/)
+  - [SAAG](https://mailarchive.ietf.org/arch/msg/saag/jBZVk7YySwpaFqydAfxW33kNZPY/)
+  - [Practical Cybersecurity list](https://mailarchive.ietf.org/arch/msg/practical-cybersecurity/d65WPaC0WbZRwxTBclnTkf7SmRs/)
+  - Agent2agent list [thread1](https://mailarchive.ietf.org/arch/msg/agent2agent/ubz7uXCs--YzuSWyXNNsmWf_tSQ/) and [thread2](https://mailarchive.ietf.org/arch/msg/agent2agent/xHhjA94fzed6ONIvPRgwTT-WRmA/)
+  - [DSMC list](https://mailarchive.ietf.org/arch/msg/dmsc/QC2adIcYkxiTlniEcc7ggk86BAY/)
+  - [Hackathon](https://mailarchive.ietf.org/arch/msg/hackathon/PIrJ2O_QqcNUAnMIn_Vh22ImWMc/)
+  - [126attendees](https://mailarchive.ietf.org/arch/msg/126attendees/V9BKZJ_DGkZPdlnjBaUeyluhbqQ/)
+
+#### [IRTF](https://www.irtf.org/)
+  - UFMRG: [thread1](https://mailarchive.ietf.org/arch/msg/ufmrg/ZWK0uMM92OdwlPbgXBvQApDpe5Q/) and [thread2](https://mailarchive.ietf.org/arch/msg/ufmrg/ZRhR7o1HrWxfGDfgRJMR65RBkDE/)
+  - CFRG [thread1](https://mailarchive.ietf.org/arch/msg/cfrg/NbxHIw9H_xpSYbgfO_n7lVIFeWs/) and [thread2](https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/)
+  - [DINRG](https://mailarchive.ietf.org/arch/msg/din/_8LE3Ru1xX16hgGJwryMTRwRoaA/)
+
+#### [CCC](https://confidentialcomputing.io/)
+  - Attestation SIG: [thread1](https://lists.confidentialcomputing.io/g/attestation/topic/117207133) and [thread2](https://lists.confidentialcomputing.io/g/attestation/message/334)
+  - TAC: [thread1](https://lists.confidentialcomputing.io/g/tac/topic/117932193) and [thread2](https://lists.confidentialcomputing.io/g/tac/topic/120068850)
+
+#### [OCP](https://www.opencompute.org/)
+  - OCP Security: [message1](https://ocp-all.groups.io/g/OCP-Security/topic/117932716), [message2](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120069056), [message3](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120483814) and [message4](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120524635)
+
+If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
 
 # IANA Considerations
