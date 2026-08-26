@@ -10,6 +10,8 @@ Expires: 27 February 2027Shanghai Guan An Information Technology Co., Ltd., Chin
                                                              Independent
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
+                                                              K. Ercihan
+                                                                  Switch
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
                                                           26 August 2026
@@ -1761,8 +1763,6 @@ Acknowledgments
 
    *  Anonymous ESORICS 2026 reviewers
 
-   *  Kaya Ercihan
-
    *  Danko Miladinovic
 
    *  John Preuß Mattsson
@@ -1878,6 +1878,11 @@ Authors' Addresses
    Haowen Song
    Shanghai Guan An Information Technology Co., Ltd., China
    Email: havan12050544@gmail.com
+
+
+   Kaya Ercihan
+   Switch
+   Email: kaya.ercihan@switch.ch
 
 
    Iman Schrock
