@@ -41,6 +41,10 @@ author:
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "havan12050544@gmail.com"
  -
+    fullname: "Kaya Ercihan"
+    organization: Switch
+    email: "kaya.ercihan@switch.ch"
+ -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
     email: "team@emiliaprotocol.ai"
@@ -672,7 +676,6 @@ We also gratefully acknowledge the following for insightful discussions and help
 - Pavel Nikonorov
 - Casey Wilson
 - Anonymous ESORICS 2026 reviewers
-- Kaya Ercihan
 - Danko Miladinovic
 - John Preuß Mattsson
 - Britta Hale
