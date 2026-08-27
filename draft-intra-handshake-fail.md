@@ -7,7 +7,7 @@ docname: draft-intra-handshake-fail-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
-consensus: true
+consensus: false
 v: 3
 # area: AREA
 workgroup: SEAT
@@ -40,6 +40,10 @@ author:
     fullname: "Haowen Song"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "havan12050544@gmail.com"
+ -
+    fullname: "Kaya Ercihan"
+    organization: Switch
+    email: "kaya.ercihan@switch.ch"
  -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
@@ -123,7 +127,7 @@ The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.
 
 A **complementary** paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility and extensibility.
 
-Another complementary paper -- currently under submission -- peforms a thorough formal analysis of the design options in intra-handshake attestation.
+Another complementary paper -- currently under submission -- performs a thorough formal analysis of the design options in intra-handshake attestation.
 
 ## Overview
 
