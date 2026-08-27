@@ -5,14 +5,16 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                     S. Bu
-Expires: 26 February 2027Shanghai Guan An Information Technology Co., Ltd., China
+Expires: 28 February 2027Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
+                                                              K. Ercihan
+                                                                  Switch
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          25 August 2026
+                                                          27 August 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -61,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 February 2027.
+   This Internet-Draft will expire on 28 February 2027.
 
 Copyright Notice
 
@@ -146,7 +148,7 @@ Table of Contents
    available in [ID-Crisis-repo] under Apache-2.0 license for
    reproducibility and extensibility.
 
-   Another complementary paper -- currently under submission -- peforms
+   Another complementary paper -- currently under submission -- performs
    a thorough formal analysis of the design options in intra-handshake
    attestation.
 
@@ -1876,6 +1878,11 @@ Authors' Addresses
    Haowen Song
    Shanghai Guan An Information Technology Co., Ltd., China
    Email: havan12050544@gmail.com
+
+
+   Kaya Ercihan
+   Switch
+   Email: kaya.ercihan@switch.ch
 
 
    Iman Schrock
