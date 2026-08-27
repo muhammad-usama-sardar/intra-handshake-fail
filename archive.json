@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-25T00:40:22.456535+00:00",
+  "timestamp": "2026-08-27T05:46:02.115000+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -62,9 +62,24 @@
       "labels": [],
       "body": "What exactly is the dispute related to: papers, artifacts, GHSAs, CVE, or something else?\nRead emails in recent threads and extract the [main questions](https://www.ietf.org/archive/id/draft-intra-handshake-fail-11.html#section-16.2.1).\n",
       "createdAt": "2026-08-23T09:50:21Z",
-      "updatedAt": "2026-08-23T09:50:21Z",
+      "updatedAt": "2026-08-26T23:11:48Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "The [claimed alternative \"Contrast Policies\"](https://mailarchive.ietf.org/arch/msg/seat/BQBqSa62G8jYYAv37VFTi04aOGo/) has been [refuted](https://mailarchive.ietf.org/arch/msg/seat/6LKgOp22YRxGTYb-i-BxiMGzMW4/). ",
+          "createdAt": "2026-08-25T20:03:37Z",
+          "updatedAt": "2026-08-25T20:05:33Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "[RATS thread](https://mailarchive.ietf.org/arch/msg/rats/JO4KbLDErf4eHVkvHPR0SbwBbek/) is discussing very different things. Useful bit is [this](https://mailarchive.ietf.org/arch/msg/rats/Hpcr-VZbGZqaQ1vhd2DFlhR6vng/).",
+          "createdAt": "2026-08-26T23:11:48Z",
+          "updatedAt": "2026-08-26T23:11:48Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -184,6 +199,46 @@
               "updatedAt": "2026-08-21T08:55:57Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOTPsy-c8AAAABBHlrAw",
+      "title": "Typo and co-author",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/5",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-08-26T19:12:14Z",
+      "updatedAt": "2026-08-26T21:58:03Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "c39feac0b71f7e14d62f7b1227ce72c5b21b504f",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "update",
+      "headRefOid": "a1d18bb17d9a34205f06b5f3c48e0f98a38f5c2d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLCJclw",
+          "commit": {
+            "abbreviatedOid": "a1d18bb"
+          },
+          "author": "FutureEnterprises",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Reviewed the exact head. The consensus correction, Kaya\u2019s coauthor addition, and the typo fix all look right to me. Approved.",
+          "createdAt": "2026-08-26T21:58:03Z",
+          "updatedAt": "2026-08-26T21:58:03Z",
+          "comments": []
         }
       ]
     }
