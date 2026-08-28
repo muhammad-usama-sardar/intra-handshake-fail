@@ -45,6 +45,10 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
+    fullname: "Massimiliano Brighindi"
+    organization: Independent or Phi-Omega?
+    email: "phiomega.runtime@gmail.com"
+ -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
     email: "team@emiliaprotocol.ai"
