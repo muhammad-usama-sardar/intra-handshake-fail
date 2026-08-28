@@ -29,6 +29,10 @@ author:
     organization: TU Dresden, Germany
     email: "muhammad_usama.sardar@tu-dresden.de"
  -
+    fullname: "Viacheslav Dubeyko"
+    organization: CoreWeave
+    email: "slava@dubeyko.com"
+ -
     fullname: "Songbo Bu"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "bluedognull@gmail.com"
