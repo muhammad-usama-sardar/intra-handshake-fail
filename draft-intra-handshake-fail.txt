@@ -4,8 +4,10 @@
 
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
-Intended status: Informational                                     S. Bu
-Expires: 28 February 2027Shanghai Guan An Information Technology Co., Ltd., China
+Intended status: Informational                                V. Dubeyko
+Expires: 1 March 2027                                          CoreWeave
+                                                                   S. Bu
+                Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
@@ -14,7 +16,7 @@ Expires: 28 February 2027Shanghai Guan An Information Technology Co., Ltd., Chin
                                                                   Switch
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          27 August 2026
+                                                          28 August 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -63,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 February 2027.
+   This Internet-Draft will expire on 1 March 2027.
 
 Copyright Notice
 
@@ -1863,6 +1865,11 @@ Authors' Addresses
    Muhammad Usama Sardar
    TU Dresden, Germany
    Email: muhammad_usama.sardar@tu-dresden.de
+
+
+   Viacheslav Dubeyko
+   CoreWeave
+   Email: slava@dubeyko.com
 
 
    Songbo Bu
