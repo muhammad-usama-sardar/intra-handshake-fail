@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 1 March 2027                                          CoreWeave
+Expires: 2 March 2027                                          CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -16,7 +16,7 @@ Expires: 1 March 2027                                          CoreWeave
                                                                   Switch
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          28 August 2026
+                                                          29 August 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 March 2027.
+   This Internet-Draft will expire on 2 March 2027.
 
 Copyright Notice
 
@@ -285,6 +285,9 @@ Table of Contents
       | TBA                     | Muhammad Usama Sardar and Songbo  |
       |                         | Bu                                |
       +-------------------------+-----------------------------------+
+      | TBA                     | Songbo Bu and Muhammad Usama      |
+      |                         | Sardar                            |
+      +-------------------------+-----------------------------------+
 
                       Table 2: GHSAs/CVEs and finders
 
@@ -435,25 +438,24 @@ Table of Contents
    Further formal analysis has led to the following potential CVEs for
    intra-handshake attestation (currently under disclosure):
 
-                   +======+==========+================+
-                   | CVSS | Severity | Number of CVEs |
-                   +======+==========+================+
-                   | 9.8  | Critical | 1              |
-                   +------+----------+----------------+
-                   | 9.1  | Critical | 2              |
-                   +------+----------+----------------+
-                   | 8.7  | High     | 1              |
-                   +------+----------+----------------+
-                   | 7.5  | High     | 2              |
-                   +------+----------+----------------+
-                   | 7.4  | High     | 2              |
-                   +------+----------+----------------+
-                   | 6.3  | Medium   | 2              |
-                   +------+----------+----------------+
+             +======+==========+=============================+
+             | CVSS | Severity | Number of CVEs              |
+             +======+==========+=============================+
+             | 9.8  | Critical | 1                           |
+             +------+----------+-----------------------------+
+             | 9.1  | Critical | 3 (confirmed by developers) |
+             +------+----------+-----------------------------+
+             | 8.7  | High     | 1                           |
+             +------+----------+-----------------------------+
+             | 7.5  | High     | 2                           |
+             +------+----------+-----------------------------+
+             | 7.4  | High     | 2                           |
+             +------+----------+-----------------------------+
+             | 6.3  | Medium   | 2                           |
+             +------+----------+-----------------------------+
 
-                        Table 5: Expected CVEs for
-                       intra-handshake attestation
-                             under disclosure
+                 Table 5: Expected CVEs for intra-handshake
+                        attestation under disclosure
 
    These are preliminary estimates of scores, not final assigned score.
    They are still under review.
