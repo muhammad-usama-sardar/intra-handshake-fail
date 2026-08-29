@@ -186,6 +186,7 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 | {{GHSA-Cocos-AI}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Edgeless-Systems}} | Muhammad Usama Sardar |
 | TBA | Muhammad Usama Sardar and Songbo Bu |
+| TBA | Songbo Bu and Muhammad Usama Sardar |
 {: title="GHSAs/CVEs and finders"}
 
 # Threat Model
@@ -245,7 +246,7 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 | CVSS | Severity | Number of CVEs |
 |---|---|---|
 | 9.8 | Critical | 1 |
-| 9.1 | Critical | 2 |
+| 9.1 | Critical | 3 (confirmed by developers) |
 | 8.7 | High | 1 |
 | 7.5 | High | 2 |
 | 7.4 | High | 2 |
