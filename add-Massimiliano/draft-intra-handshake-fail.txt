@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                     S. Bu
-Expires: 1 March 2027Shanghai Guan An Information Technology Co., Ltd., China
+Expires: 2 March 2027Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
@@ -13,10 +13,10 @@ Expires: 1 March 2027Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
                                                                   Switch
                                                             M. Brighindi
-                                               Independent or Phi-Omega?
+                                                               PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          28 August 2026
+                                                          29 August 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 March 2027.
+   This Internet-Draft will expire on 2 March 2027.
 
 Copyright Notice
 
@@ -1888,7 +1888,7 @@ Authors' Addresses
 
 
    Massimiliano Brighindi
-   Independent or Phi-Omega?
+   PHI-OMEGA
    Email: phiomega.runtime@gmail.com
 
 
