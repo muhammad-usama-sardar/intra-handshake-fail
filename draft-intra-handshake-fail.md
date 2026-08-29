@@ -46,7 +46,7 @@ author:
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Massimiliano Brighindi"
-    organization: Independent or Phi-Omega?
+    organization: PHI-OMEGA
     email: "phiomega.runtime@gmail.com"
  -
     fullname: "Iman Schrock"
