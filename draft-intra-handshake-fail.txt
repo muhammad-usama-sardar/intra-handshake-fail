@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 2 March 2027                                          CoreWeave
+Expires: 3 March 2027                                          CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -14,9 +14,11 @@ Expires: 2 March 2027                                          CoreWeave
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
                                                                   Switch
+                                                            M. Brighindi
+                                                               PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          29 August 2026
+                                                          30 August 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -65,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 March 2027.
+   This Internet-Draft will expire on 3 March 2027.
 
 Copyright Notice
 
@@ -1892,6 +1894,11 @@ Authors' Addresses
    Kaya Ercihan
    Switch
    Email: kaya.ercihan@switch.ch
+
+
+   Massimiliano Brighindi
+   PHI-OMEGA
+   Email: phiomega.runtime@gmail.com
 
 
    Iman Schrock
