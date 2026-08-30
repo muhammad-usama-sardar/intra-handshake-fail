@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-27T05:46:02.115000+00:00",
+  "timestamp": "2026-08-30T02:25:50.511887+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -207,25 +207,35 @@
       "id": "PR_kwDOTPsy-c8AAAABBHlrAw",
       "title": "Typo and co-author",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-08-26T19:12:14Z",
-      "updatedAt": "2026-08-26T21:58:03Z",
+      "updatedAt": "2026-08-27T17:27:30Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "c39feac0b71f7e14d62f7b1227ce72c5b21b504f",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "update",
       "headRefOid": "a1d18bb17d9a34205f06b5f3c48e0f98a38f5c2d",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2026-08-27T17:27:29Z",
+      "mergedAt": "2026-08-27T17:27:29Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af"
+      },
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Thanks Kaya for the very insightful discussion. The author team is very pleased to welcome you on board and benefit from your expertise. \r\n\r\nWill soon publish a version with this.",
+          "createdAt": "2026-08-27T17:26:27Z",
+          "updatedAt": "2026-08-27T17:26:27Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOTPsy-c8AAAABLCJclw",
@@ -239,8 +249,181 @@
           "createdAt": "2026-08-26T21:58:03Z",
           "updatedAt": "2026-08-26T21:58:03Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLE69-g",
+          "commit": {
+            "abbreviatedOid": "a1d18bb"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Reviewed the exact head. The non-consensus metadata correction, Kaya Ercihan co-author entry, and typo fix are coherent, and the Editor's Copy checks pass. Approved.",
+          "createdAt": "2026-08-27T07:35:16Z",
+          "updatedAt": "2026-08-27T07:35:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLJlg2g",
+          "commit": {
+            "abbreviatedOid": "a1d18bb"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-27T16:34:00Z",
+          "updatedAt": "2026-08-27T16:34:00Z",
+          "comments": []
         }
       ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOTPsy-c8AAAABBP8j2w",
+      "title": "Add Slava as co-author",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/6",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Justification for 2nd author:\r\n- Co-author of [Intra-handshake.fail paper](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS)\r\n- Co-finder of GHSA-Cocos-AI\r\n- Co-finder of CVE-2026-33697\r\n- Co-finder of EUVD-2026-16488\r\n- Co-author of follow-up work",
+      "createdAt": "2026-08-27T18:58:30Z",
+      "updatedAt": "2026-08-28T18:54:20Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-slava",
+      "headRefOid": "40db6636337ca3308aed4505a34ea6ad9783afdb",
+      "closedAt": "2026-08-28T18:54:20Z",
+      "mergedAt": "2026-08-28T18:54:20Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "5a9b2c81451ccce5fe580ba53742891ed26e1a01"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLLNQGA",
+          "commit": {
+            "abbreviatedOid": "40db663"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-27T19:35:46Z",
+          "updatedAt": "2026-08-27T19:35:46Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLNp62w",
+          "commit": {
+            "abbreviatedOid": "40db663"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Reviewed the one-file author metadata change at 40db663. The draft builds successfully with the current template; the existing markup warnings are unchanged by this PR.",
+          "createdAt": "2026-08-28T02:40:19Z",
+          "updatedAt": "2026-08-28T02:40:19Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLTzTjg",
+          "commit": {
+            "abbreviatedOid": "40db663"
+          },
+          "author": "dubeyko",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-28T18:26:31Z",
+          "updatedAt": "2026-08-28T18:26:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOTPsy-c8AAAABBT0OtQ",
+      "title": "Add Massimiliano",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/7",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "will contribute his insights on the runtime perspective.",
+      "createdAt": "2026-08-28T07:56:35Z",
+      "updatedAt": "2026-08-29T19:58:26Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-Massimiliano",
+      "headRefOid": "33da7748ae594937fd18ed07163d6a1e908d5de8",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLUsrpQ",
+          "commit": {
+            "abbreviatedOid": "98be423"
+          },
+          "author": "dubeyko",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-28T20:32:34Z",
+          "updatedAt": "2026-08-28T20:32:34Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLXbRTA",
+          "commit": {
+            "abbreviatedOid": "98be423"
+          },
+          "author": "phiomegaruntime-rgb",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-29T10:32:16Z",
+          "updatedAt": "2026-08-29T10:32:16Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOTPsy-c8AAAABBT02gQ",
+      "title": "Add K\u00fc\u00e7\u00fck",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/8",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "He will contribute dynamic loading and continuous attestation.",
+      "createdAt": "2026-08-28T07:58:01Z",
+      "updatedAt": "2026-08-28T07:58:01Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-kucuk",
+      "headRefOid": "191c7fc613af78d4354ea45866a5bac8301285f1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
