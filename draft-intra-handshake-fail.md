@@ -49,6 +49,10 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
+    fullname: "Kubilay Ahmet Küçük (DPhil Ph.D.)"
+    organization:
+    email: "dr.kucuk@oxfordalumni.org"
+ -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
     email: "team@emiliaprotocol.ai"
