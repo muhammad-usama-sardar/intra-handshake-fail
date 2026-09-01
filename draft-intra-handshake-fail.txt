@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 3 March 2027                                          CoreWeave
+Expires: 5 March 2027                                          CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -18,7 +18,7 @@ Expires: 3 March 2027                                          CoreWeave
                                                                PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                          30 August 2026
+                                                        1 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 March 2027.
+   This Internet-Draft will expire on 5 March 2027.
 
 Copyright Notice
 
@@ -284,7 +284,10 @@ Table of Contents
       +-------------------------+-----------------------------------+
       | [GHSA-Edgeless-Systems] | Muhammad Usama Sardar             |
       +-------------------------+-----------------------------------+
-      | TBA                     | Muhammad Usama Sardar and Songbo  |
+      | [GHSA-Cocos-AI2]        | Muhammad Usama Sardar and Songbo  |
+      |                         | Bu                                |
+      +-------------------------+-----------------------------------+
+      | [GHSA-Cocos-AI3]        | Muhammad Usama Sardar and Songbo  |
       |                         | Bu                                |
       +-------------------------+-----------------------------------+
       | TBA                     | Songbo Bu and Muhammad Usama      |
@@ -301,61 +304,66 @@ Table of Contents
 4.  Detailed Vulnerability Disclosure Timeline and Public
     Acknowledgements by Affected Vendors
 
-   +============================================================================+======+
-   |Event                                                                       |Date  |
-   +============================================================================+======+
-   |Our initial responsible disclosure to vendor                                |07    |
-   |                                                                            |Oct,  |
-   |                                                                            |2025  |
-   +----------------------------------------------------------------------------+------+
-   |Acknowledgement by vendor                                                   |14    |
-   |                                                                            |Dec,  |
-   |                                                                            |2025  |
-   +----------------------------------------------------------------------------+------+
-   |Information to the IETF (https://mailarchive.ietf.org/arch/msg/             |11    |
-   |rats/6gbqx0XY8WYrH3Mx4vO8n2-uKgY/)                                          |Jan,  |
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Public announcement                                                         |27    |
-   |(https://web.archive.org/web/20260227160554/https://www.ultraviolet.rs/blog/|Feb,  |
-   |tee-tls-privacy/) by vendor                                                 |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Cocos AI published [GHSA-Cocos-AI] [*Severity = HIGH (CVSS 7.8)*]           |23    |
-   |                                                                            |March,|
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |CVE [CVE-2026-33697] published [*Severity = HIGH (CVSS 7.5)*]               |26    |
-   |                                                                            |March,|
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |ENISA published EUVD [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]       |26    |
-   |                                                                            |March,|
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Acknowledgment (https://github.com/Privasys/rustls/releases/tag/privasys-   |9     |
-   |v0.8.1) by Privasys for rustls [CVE-2026-33697] [*Severity = HIGH (CVSS     |July, |
-   |7.5)*]                                                                      |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Acknowledgment (https://github.com/Privasys/go/releases/tag/privasys-       |10    |
-   |v0.5.1-go1.26.5) by Privasys for go [CVE-2026-33697] [*Severity = HIGH (CVSS|July, |
-   |7.5)*]                                                                      |2026  |
-   +----------------------------------------------------------------------------+------+
-   |CCC implementation (https://github.com/ccc-attestation/attested-tls-poc)    |17    |
-   |declared vulnerable to relay attacks (https://github.com/CCC-Attestation/   |July, |
-   |attested-tls-poc/pull/58)                                                   |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Vulnerable CCC implementation repo (https://github.com/ccc-attestation/     |22    |
-   |attested-tls-poc) archived                                                  |July, |
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Vulnerable draft [I-D.fossati-tls-attestation-10] withdrawn by authors      |23    |
-   |                                                                            |July, |
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
-   |Edgeless Systems published [GHSA-Edgeless-Systems] [*Severity = HIGH (CVSS  |29    |
-   |7.4)*]                                                                      |July, |
-   |                                                                            |2026  |
-   +----------------------------------------------------------------------------+------+
+   +============================================================================+=======+
+   |Event                                                                       |Date   |
+   +============================================================================+=======+
+   |Our initial responsible disclosure to vendor                                |07 Oct,|
+   |                                                                            |2025   |
+   +----------------------------------------------------------------------------+-------+
+   |Acknowledgement by vendor                                                   |14 Dec,|
+   |                                                                            |2025   |
+   +----------------------------------------------------------------------------+-------+
+   |Information to the IETF (https://mailarchive.ietf.org/arch/msg/             |11 Jan,|
+   |rats/6gbqx0XY8WYrH3Mx4vO8n2-uKgY/)                                          |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Public announcement                                                         |27 Feb,|
+   |(https://web.archive.org/web/20260227160554/https://www.ultraviolet.rs/blog/|2026   |
+   |tee-tls-privacy/) by vendor                                                 |       |
+   +----------------------------------------------------------------------------+-------+
+   |Cocos AI published [GHSA-Cocos-AI] [*Severity = HIGH (CVSS 7.8)*]           |23     |
+   |                                                                            |March, |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |CVE [CVE-2026-33697] published [*Severity = HIGH (CVSS 7.5)*]               |26     |
+   |                                                                            |March, |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |ENISA published EUVD [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]       |26     |
+   |                                                                            |March, |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Acknowledgment (https://github.com/Privasys/rustls/releases/tag/privasys-   |9 July,|
+   |v0.8.1) by Privasys for rustls [CVE-2026-33697] [*Severity = HIGH (CVSS     |2026   |
+   |7.5)*]                                                                      |       |
+   +----------------------------------------------------------------------------+-------+
+   |Acknowledgment (https://github.com/Privasys/go/releases/tag/privasys-       |10     |
+   |v0.5.1-go1.26.5) by Privasys for go [CVE-2026-33697] [*Severity = HIGH (CVSS|July,  |
+   |7.5)*]                                                                      |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |CCC implementation (https://github.com/ccc-attestation/attested-tls-poc)    |17     |
+   |declared vulnerable to relay attacks (https://github.com/CCC-Attestation/   |July,  |
+   |attested-tls-poc/pull/58)                                                   |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Vulnerable CCC implementation repo (https://github.com/ccc-attestation/     |22     |
+   |attested-tls-poc) archived                                                  |July,  |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Vulnerable draft [I-D.fossati-tls-attestation-10] withdrawn by authors      |23     |
+   |                                                                            |July,  |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Edgeless Systems published [GHSA-Edgeless-Systems] [*Severity = HIGH (CVSS  |29     |
+   |7.4)*]                                                                      |July,  |
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Cocos AI published [GHSA-Cocos-AI2] [*Severity = CRITICAL (CVSS 9.1)*]      |16     |
+   |                                                                            |August,|
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
+   |Cocos AI published [GHSA-Cocos-AI3] [*Severity = CRITICAL (CVSS 9.1)*]      |16     |
+   |                                                                            |August,|
+   |                                                                            |2026   |
+   +----------------------------------------------------------------------------+-------+
 
           Table 3: Detailed vulnerability disclosure timeline and
                               acknowledgements
@@ -539,7 +547,7 @@ Table of Contents
    2.  Handshake traffic key (htsc) used for encryption of handshake
        messages
 
-   3.  Application traffic key (astc) used for encryption of application
+   3.  Application traffic key (atsc) used for encryption of application
        data
 
    Please see Sec. 6.2 of [Intra-handshake.fail] for details.
@@ -1617,6 +1625,20 @@ Table of Contents
               2026, <https://github.com/ultravioletrs/cocos/security/
               advisories/GHSA-vfgg-mvxx-mgg7>.
 
+   [GHSA-Cocos-AI2]
+              Ultraviolet Cocos AI, "Cocos AI intra-handshake attested
+              TLS implementation is vulnerable to session-misbinding
+              attacks for Intel TDX verifier path", August 2026,
+              <https://github.com/ultravioletrs/cocos/security/
+              advisories/GHSA-4px3-wj2x-xx47>.
+
+   [GHSA-Cocos-AI3]
+              Ultraviolet Cocos AI, "Cocos AI intra-handshake attested
+              TLS implementation can accept Evidence with nil, empty, or
+              omitted reportData in the AMD SEV-SNP path", August 2026,
+              <https://github.com/ultravioletrs/cocos/security/
+              advisories/GHSA-4r6g-mp48-j2rw>.
+
    [GHSA-Edgeless-Systems]
               Edgeless Systems, "Remote attestation is susceptible to
               relay attacks", August 2026,
@@ -1735,10 +1757,8 @@ Acknowledgments
 
    *Intra-handshake.fail* [Intra-handshake.fail]
 
-   We would like to thank our co-authors of paper [Intra-handshake.fail]
-   for their valuable contributions:
-
-   *  Viacheslav Dubeyko
+   We would like to thank our co-author of paper [Intra-handshake.fail]
+   for his valuable contributions:
 
    *  Jean-Marie Jacquet
 
