@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-08-30T02:25:50.511887+00:00",
+  "timestamp": "2026-09-01T02:38:02.678797+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -351,25 +351,35 @@
       "id": "PR_kwDOTPsy-c8AAAABBT0OtQ",
       "title": "Add Massimiliano",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "will contribute his insights on the runtime perspective.",
       "createdAt": "2026-08-28T07:56:35Z",
-      "updatedAt": "2026-08-29T19:58:26Z",
+      "updatedAt": "2026-08-30T13:12:11Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-Massimiliano",
       "headRefOid": "33da7748ae594937fd18ed07163d6a1e908d5de8",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2026-08-30T13:12:11Z",
+      "mergedAt": "2026-08-30T13:12:11Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "556031ccfea7c19256d46fe6f466cbff8a7180c1"
+      },
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Thanks Massimiliano for the very insightful discussion. The author team is very pleased to welcome you on board and benefit from your expertise.\r\n\r\nWill soon publish a version with this.",
+          "createdAt": "2026-08-30T13:11:48Z",
+          "updatedAt": "2026-08-30T13:11:48Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOTPsy-c8AAAABLUsrpQ",
@@ -395,6 +405,19 @@
           "body": "",
           "createdAt": "2026-08-29T10:32:16Z",
           "updatedAt": "2026-08-29T10:32:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLaVqpQ",
+          "commit": {
+            "abbreviatedOid": "33da774"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-08-30T12:12:54Z",
+          "updatedAt": "2026-08-30T12:12:54Z",
           "comments": []
         }
       ]
