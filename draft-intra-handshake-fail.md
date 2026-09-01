@@ -92,6 +92,18 @@ normative:
     target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7
     author:
       - ins: Ultraviolet Cocos AI
+  GHSA-Cocos-AI2:
+    title: "Cocos AI intra-handshake attested TLS implementation is vulnerable to session-misbinding attacks for Intel TDX verifier path"
+    date: 16 August 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-4px3-wj2x-xx47
+    author:
+      - ins: Ultraviolet Cocos AI
+  GHSA-Cocos-AI3:
+    title: "Cocos AI intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path"
+    date: 16 August 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-4r6g-mp48-j2rw
+    author:
+      - ins: Ultraviolet Cocos AI
   GHSA-Edgeless-Systems:
     title: "Remote attestation is susceptible to relay attacks"
     date: August 2026
@@ -189,7 +201,8 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 | {{EUVD-2026-16488}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Cocos-AI}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Edgeless-Systems}} | Muhammad Usama Sardar |
-| TBA | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Cocos-AI2}} | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Cocos-AI3}} | Muhammad Usama Sardar and Songbo Bu |
 | TBA | Songbo Bu and Muhammad Usama Sardar |
 {: title="GHSAs/CVEs and finders"}
 
@@ -214,6 +227,8 @@ The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4
 | Vulnerable [CCC implementation repo](https://github.com/ccc-attestation/attested-tls-poc) archived | 22 July, 2026 |
 | Vulnerable draft {{I-D.fossati-tls-attestation-10}} withdrawn by authors |  23 July, 2026 |
 | Edgeless Systems published {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**] | 29 July, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI2}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI3}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -288,7 +303,7 @@ At least the following protocol specifications with intra-handshake attestation 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
-3. Application traffic key (`astc`) used for encryption of application data
+3. Application traffic key (`atsc`) used for encryption of application data
 
 Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
 
@@ -666,9 +681,8 @@ We wish to express our sincere appreciation to the following for their review of
 
 **Intra-handshake.fail** {{Intra-handshake.fail}}
 
-We would like to thank our co-authors of paper {{Intra-handshake.fail}} for their valuable contributions:
+We would like to thank our co-author of paper {{Intra-handshake.fail}} for his valuable contributions:
 
-- Viacheslav Dubeyko
 - Jean-Marie Jacquet
 
 We also gratefully acknowledge the following for insightful discussions and helpful reviews on {{Intra-handshake.fail}}:
