@@ -234,7 +234,7 @@ and trust domains. The following table provides a corresponding low-level view.
 | Component/key         | Runs/lives where?                    | Type                                    | Randomness/key source |
 | --------------------- | ------------------------------------ | --------------------------------------- | --------------------- |
 | `privEK`              | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
-| TLS ECDHE             | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
+| TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |
 | AK / VCEK / VLEK      | Quoting/attestation component        | Firmware/enclave/platform key hierarchy | Platform-specific     |
 | Memory-encryption key | CPU/platform security subsystem      | Hardware/firmware managed               | Platform RNG/KDF      |
 | `REPORT_DATA`         | Created by guest, signed by platform | Data binding                            | No independent entropy requirement |
