@@ -327,9 +327,9 @@ Table of Contents
       | Agent*    | path                       | attestation       |
       |           |                            | firmware          |
       +-----------+----------------------------+-------------------+
-      | *Network  | Guest OS + TLS library     | Guest OS + TLS    |
-      | stack*    | inside TD                  | library inside    |
-      |           |                            | SNP guest         |
+      | *Network  | Part of guest OS + TLS     | Part of guest OS  |
+      | stack*    | library inside TD          | + TLS library     |
+      |           |                            | inside SNP guest  |
       +-----------+----------------------------+-------------------+
       | *HSM/TPM* | Optional secure element    | Optional secure   |
       |           |                            | element           |
