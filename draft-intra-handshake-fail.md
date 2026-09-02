@@ -237,7 +237,7 @@ and trust domains. The following table provides a corresponding low-level view.
 | TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |
 | AK / VCEK / VLEK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
 | Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |
-| `REPORT_DATA`         | Created by guest, signed by platform | Data binding                            | No independent entropy requirement |
+| `REPORT_DATA`         | Created by Guest OS | Data binding                            | No independent entropy requirement |
 {: title="Low-level implementation and key-generation domains"}
 
 
