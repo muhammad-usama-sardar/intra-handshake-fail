@@ -223,7 +223,7 @@ components to representative Intel TDX and AMD SEV-SNP implementations.
 | **Quoting Agent**    | TDQE / quote-generation path                     | AMD-SP / SNP attestation firmware                |
 | **Network stack**    | Guest OS + TLS library inside TD                 | Guest OS + TLS library inside SNP guest          |
 | **HSM/TPM**          | Optional secure element                          | Optional secure element                          |
-| **`privAK`**         | Attestation key of quoting component             | VCEK/VLEK signing key                            |
+| **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
 | **`privEK`**         | Workload/TLS-side ephemeral key                  | Workload/TLS-side ephemeral key                  |
 | **`privLTK`**        | Long-term key in secure element                  | Long-term key in secure element                  |
 {: title="Mapping of the abstract system model to representative CC implementations"}
