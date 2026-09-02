@@ -209,6 +209,37 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
 
+## Low-Level Mapping of the System Model
+
+Figure 2 of {{Intra-handshake.fail}} provides a TEE-agnostic protocol-level
+abstraction. For a low-level view, the following table maps the abstract
+components to representative Intel TDX and AMD SEV-SNP implementations.
+
+| Fig. 2 element       | Intel TDX                                        | AMD SEV-SNP                                      |
+| -------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| **Physical Machine** | TDX-capable Intel platform                       | SEV-SNP-capable AMD platform                     |
+| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery |
+| **VM**               | Trust Domain (TD)                                | SNP confidential VM                              |
+| **Quoting Agent**    | TDQE / quote-generation path                     | AMD-SP / SNP attestation firmware                |
+| **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |
+| **HSM/TPM**          | Secure element                          |  Secure element                          |
+| **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
+| **`privEK`**         | Workload/TLS-side ephemeral key                  | Workload/TLS-side ephemeral key                  |
+| **`privLTK`**        | Long-term key in secure element                  | Long-term key in secure element                  |
+{: title="Mapping of the abstract system model to representative CC implementations"}
+
+The key material shown in the abstract model belongs to different implementation
+and trust domains. The following table provides a corresponding low-level view.
+
+| Component/key         | Runs/lives where?                    | Type                                    | Randomness/key source |
+| --------------------- | ------------------------------------ | --------------------------------------- | --------------------- |
+| `privEK`              | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
+| TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |
+| AK / VCEK / VLEK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
+| Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |
+| `REPORT_DATA`         | Created by Guest OS | Data binding                            | No independent entropy requirement |
+{: title="Low-level implementation and key-generation domains"}
+
 
 # Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
 
