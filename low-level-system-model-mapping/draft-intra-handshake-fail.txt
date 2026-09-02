@@ -362,9 +362,9 @@ Table of Contents
    |                 |confidential |                 |                 |
    |                 |VM           |                 |                 |
    +-----------------+-------------+-----------------+-----------------+
-   |AK / VCEK / VLEK |Quoting/     |Firmware/enclave/|Platform-specific|
-   |                 |attestation  |platform key     |                 |
-   |                 |component    |hierarchy        |                 |
+   |AK / VCEK / VLEK |Quoting      |Firmware/enclave/|Platform-specific|
+   |                 |Agent        |platform key     |                 |
+   |                 |             |hierarchy        |                 |
    +-----------------+-------------+-----------------+-----------------+
    |Memory-encryption|CPU/platform |Hardware/firmware|Platform RNG/KDF |
    |key              |security     |managed          |                 |
