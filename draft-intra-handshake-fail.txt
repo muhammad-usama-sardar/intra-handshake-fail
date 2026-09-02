@@ -271,29 +271,32 @@ Table of Contents
 
 2.  Credits
 
-      +=========================+===================================+
-      | GHSA/CVE                | Finders                           |
-      +=========================+===================================+
-      | [CVE-2026-33697]        | Muhammad Usama Sardar, Viacheslav |
-      |                         | Dubeyko, and Jean-Marie Jacquet   |
-      +-------------------------+-----------------------------------+
-      | [EUVD-2026-16488]       | Muhammad Usama Sardar, Viacheslav |
-      |                         | Dubeyko, and Jean-Marie Jacquet   |
-      +-------------------------+-----------------------------------+
-      | [GHSA-Cocos-AI]         | Muhammad Usama Sardar, Viacheslav |
-      |                         | Dubeyko, and Jean-Marie Jacquet   |
-      +-------------------------+-----------------------------------+
-      | [GHSA-Edgeless-Systems] | Muhammad Usama Sardar             |
-      +-------------------------+-----------------------------------+
-      | [GHSA-Cocos-AI2]        | Muhammad Usama Sardar and Songbo  |
-      |                         | Bu                                |
-      +-------------------------+-----------------------------------+
-      | [GHSA-Cocos-AI3]        | Muhammad Usama Sardar and Songbo  |
-      |                         | Bu                                |
-      +-------------------------+-----------------------------------+
-      | TBA                     | Songbo Bu and Muhammad Usama      |
-      |                         | Sardar                            |
-      +-------------------------+-----------------------------------+
+        +=========================+======+========================+
+        | GHSA/CVE                | CVSS | Finders                |
+        +=========================+======+========================+
+        | [CVE-2026-33697]        | 7.5  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [EUVD-2026-16488]       | 7.5  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Cocos-AI]         | 7.8  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Edgeless-Systems] | 7.4  | Muhammad Usama Sardar  |
+        +-------------------------+------+------------------------+
+        | [GHSA-Cocos-AI2]        | 9.1  | Muhammad Usama Sardar  |
+        |                         |      | and Songbo Bu          |
+        +-------------------------+------+------------------------+
+        | [GHSA-Cocos-AI3]        | 9.1  | Muhammad Usama Sardar  |
+        |                         |      | and Songbo Bu          |
+        +-------------------------+------+------------------------+
+        | TBA                     | TBA  | Songbo Bu and Muhammad |
+        |                         |      | Usama Sardar           |
+        +-------------------------+------+------------------------+
 
                       Table 2: GHSAs/CVEs and finders
 
