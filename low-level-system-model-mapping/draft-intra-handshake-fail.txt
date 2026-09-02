@@ -331,8 +331,7 @@ Table of Contents
       | stack*    | library inside TD          | + TLS library     |
       |           |                            | inside SNP guest  |
       +-----------+----------------------------+-------------------+
-      | *HSM/TPM* | Optional secure element    | Optional secure   |
-      |           |                            | element           |
+      | *HSM/TPM* | Secure element             | Secure element    |
       +-----------+----------------------------+-------------------+
       | *privAK*  | Attestation key of TD      | VCEK/VLEK signing |
       |           | Quoting Enclave            | key               |
