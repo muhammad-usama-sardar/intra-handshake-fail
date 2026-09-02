@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 5 March 2027                                          CoreWeave
+Expires: 6 March 2027                                          CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -18,7 +18,7 @@ Expires: 5 March 2027                                          CoreWeave
                                                                PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                        1 September 2026
+                                                        2 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 March 2027.
+   This Internet-Draft will expire on 6 March 2027.
 
 Copyright Notice
 
@@ -91,6 +91,7 @@ Table of Contents
      1.3.  SEAT-Early-Attestation
    2.  Credits
    3.  Threat Model
+     3.1.  Low-Level Mapping of the System Model
    4.  Detailed Vulnerability Disclosure Timeline and Public
            Acknowledgements by Affected Vendors
    5.  EU ENISA
@@ -301,6 +302,80 @@ Table of Contents
    The threat model is explained in Sec. 6.1 of [Intra-handshake.fail]
    and Sec. 4 of [ID-Crisis].
 
+3.1.  Low-Level Mapping of the System Model
+
+   Figure 2 of [Intra-handshake.fail] provides a TEE-agnostic protocol-
+   level abstraction.  For a low-level view, the following table maps
+   the abstract components to representative Intel TDX and AMD SEV-SNP
+   implementations.
+
+      +===========+============================+===================+
+      | Fig. 2    | Intel TDX                  | AMD SEV-SNP       |
+      | element   |                            |                   |
+      +===========+============================+===================+
+      | *Physical | TDX-capable Intel platform | SEV-SNP-capable   |
+      | Machine*  |                            | AMD platform      |
+      +-----------+----------------------------+-------------------+
+      | *CC       | CPU HW + TDX Module +      | CPU HW + AMD-SP/  |
+      | Platform* | attestation infrastructure | SNP firmware +    |
+      |           |                            | RMP/SEV machinery |
+      +-----------+----------------------------+-------------------+
+      | *VM*      | Trust Domain (TD)          | SNP confidential  |
+      |           |                            | VM                |
+      +-----------+----------------------------+-------------------+
+      | *Quoting  | TDQE / quote-generation    | AMD-SP / SNP      |
+      | Agent*    | path                       | attestation       |
+      |           |                            | firmware          |
+      +-----------+----------------------------+-------------------+
+      | *Network  | Part of guest OS + TLS     | Part of guest OS  |
+      | stack*    | library inside TD          | + TLS library     |
+      |           |                            | inside SNP guest  |
+      +-----------+----------------------------+-------------------+
+      | *HSM/TPM* | Secure element             | Secure element    |
+      +-----------+----------------------------+-------------------+
+      | *privAK*  | Attestation key of TD      | VCEK/VLEK signing |
+      |           | Quoting Enclave            | key               |
+      +-----------+----------------------------+-------------------+
+      | *privEK*  | Workload/TLS-side          | Workload/TLS-side |
+      |           | ephemeral key              | ephemeral key     |
+      +-----------+----------------------------+-------------------+
+      | *privLTK* | Long-term key in secure    | Long-term key in  |
+      |           | element                    | secure element    |
+      +-----------+----------------------------+-------------------+
+
+             Table 3: Mapping of the abstract system model to
+                    representative CC implementations
+
+   The key material shown in the abstract model belongs to different
+   implementation and trust domains.  The following table provides a
+   corresponding low-level view.
+
+   +=================+============+=================+=================+
+   |Component/key    |Runs/lives  |Type             |Randomness/key   |
+   |                 |where?      |                 |source           |
+   +=================+============+=================+=================+
+   |privEK           |Inside      |Guest software   |OS/library CSPRNG|
+   |                 |confidential|                 |                 |
+   |                 |VM          |                 |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |TLS ECDHE        |Inside      |Network stack    |OS/library CSPRNG|
+   |                 |confidential|                 |                 |
+   |                 |VM          |                 |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |AK / VCEK / VLEK |Quoting     |Firmware/enclave/|Platform-specific|
+   |                 |Agent       |platform key     |                 |
+   |                 |            |hierarchy        |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |Memory-encryption|CC Platform |Hardware/firmware|Platform RNG/KDF |
+   |key              |            |managed          |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |REPORT_DATA      |Created by  |Data binding     |No independent   |
+   |                 |Guest OS    |                 |entropy          |
+   |                 |            |                 |requirement      |
+   +-----------------+------------+-----------------+-----------------+
+
+       Table 4: Low-level implementation and key-generation domains
+
 4.  Detailed Vulnerability Disclosure Timeline and Public
     Acknowledgements by Affected Vendors
 
@@ -365,7 +440,7 @@ Table of Contents
    |                                                                            |2026   |
    +----------------------------------------------------------------------------+-------+
 
-          Table 3: Detailed vulnerability disclosure timeline and
+          Table 5: Detailed vulnerability disclosure timeline and
                               acknowledgements
 
    *Neither the GHSAs nor the CVE has any dependency whatsoever on the
@@ -435,7 +510,7 @@ Table of Contents
    |severity_CVE_in_Attested_TLS) |                                         |    |        |
    +------------------------------+-----------------------------------------+----+--------+
 
-       Table 4: Comparison with other vulnerabilities in confidential
+       Table 6: Comparison with other vulnerabilities in confidential
                             computing literature
 
    The comparison of the above with CVSS *7.5* for
@@ -464,7 +539,7 @@ Table of Contents
              | 6.3  | Medium   | 2                           |
              +------+----------+-----------------------------+
 
-                 Table 5: Expected CVEs for intra-handshake
+                 Table 7: Expected CVEs for intra-handshake
                         attestation under disclosure
 
    These are preliminary estimates of scores, not final assigned score.
@@ -592,7 +667,7 @@ Table of Contents
     | of Evidence to kc  |                    |           |           |
     +--------------------+--------------------+-----------+-----------+
 
-                           Table 6: Main results
+                           Table 8: Main results
 
    Please see Sec. 7.1 and Figure 5 of [Intra-handshake.fail] for
    details of attacks.
@@ -660,7 +735,7 @@ Table of Contents
    |   |           |proposal/)               |                                  |
    +---+-----------+-------------------------+----------------------------------+
 
-                         Table 7: Expected results
+                         Table 9: Expected results
 
 13.  Implications of Findings
 
@@ -1515,7 +1590,7 @@ Table of Contents
    |                                                |          |          |oZidg?list=PLmfkUJc39uMhZsNGmpx-qD-uCoQyMglIp&t=2920)                                 |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
 
-      Table 8: Evidence of several explanations of vulnerabilities to
+      Table 10: Evidence of several explanations of vulnerabilities to
                       the authors of vulnerable drafts
 
 18.1.2.  Archives

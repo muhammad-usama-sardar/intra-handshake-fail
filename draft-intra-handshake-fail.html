@@ -1054,7 +1054,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 5 March 2027</td>
+<td class="center">Expires 6 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1067,12 +1067,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-01" class="published">1 September 2026</time>
+<time datetime="2026-09-02" class="published">2 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-05">5 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-06">6 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1145,7 +1145,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 5 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 6 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1193,6 +1193,11 @@ svg {
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-threat-model" class="internal xref">Threat Model</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-low-level-mapping-of-the-sy" class="internal xref">Low-Level Mapping of the System Model</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-detailed-vulnerability-disc" class="internal xref">Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors</a></p>
@@ -1547,6 +1552,146 @@ to its desired server.
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-threat-model" class="section-name selfRef">Threat Model</a>
       </h2>
 <p id="section-3-1">The threat model is explained in Sec. 6.1 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and Sec. 4 of <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<div id="low-level-mapping-of-the-system-model">
+<section id="section-3.1">
+        <h3 id="name-low-level-mapping-of-the-sy">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-low-level-mapping-of-the-sy" class="section-name selfRef">Low-Level Mapping of the System Model</a>
+        </h3>
+<p id="section-3.1-1">Figure 2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> provides a TEE-agnostic protocol-level
+abstraction. For a low-level view, the following table maps the abstract
+components to representative Intel TDX and AMD SEV-SNP implementations.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<span id="name-mapping-of-the-abstract-sys"></span><table class="center" id="table-3">
+          <caption>
+<a href="#table-3" class="selfRef">Table 3</a>:
+<a href="#name-mapping-of-the-abstract-sys" class="selfRef">Mapping of the abstract system model to representative CC implementations</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Fig. 2 element</th>
+              <th class="text-left" rowspan="1" colspan="1">Intel TDX</th>
+              <th class="text-left" rowspan="1" colspan="1">AMD SEV-SNP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Physical Machine</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">TDX-capable Intel platform</td>
+              <td class="text-left" rowspan="1" colspan="1">SEV-SNP-capable AMD platform</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>CC Platform</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">CPU HW + TDX Module + attestation infrastructure</td>
+              <td class="text-left" rowspan="1" colspan="1">CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>VM</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Trust Domain (TD)</td>
+              <td class="text-left" rowspan="1" colspan="1">SNP confidential VM</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Quoting Agent</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">TDQE / quote-generation path</td>
+              <td class="text-left" rowspan="1" colspan="1">AMD-SP / SNP attestation firmware</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Network stack</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Part of guest OS + TLS library inside TD</td>
+              <td class="text-left" rowspan="1" colspan="1">Part of guest OS + TLS library inside SNP guest</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>HSM/TPM</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Secure element</td>
+              <td class="text-left" rowspan="1" colspan="1">Secure element</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong><code>privAK</code></strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Attestation key of TD Quoting Enclave</td>
+              <td class="text-left" rowspan="1" colspan="1">VCEK/VLEK signing key</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong><code>privEK</code></strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Workload/TLS-side ephemeral key</td>
+              <td class="text-left" rowspan="1" colspan="1">Workload/TLS-side ephemeral key</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong><code>privLTK</code></strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Long-term key in secure element</td>
+              <td class="text-left" rowspan="1" colspan="1">Long-term key in secure element</td>
+            </tr>
+          </tbody>
+        </table>
+<p id="section-3.1-3">The key material shown in the abstract model belongs to different implementation
+and trust domains. The following table provides a corresponding low-level view.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+<span id="name-low-level-implementation-an"></span><table class="center" id="table-4">
+          <caption>
+<a href="#table-4" class="selfRef">Table 4</a>:
+<a href="#name-low-level-implementation-an" class="selfRef">Low-level implementation and key-generation domains</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Component/key</th>
+              <th class="text-left" rowspan="1" colspan="1">Runs/lives where?</th>
+              <th class="text-left" rowspan="1" colspan="1">Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Randomness/key source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <code>privEK</code>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Inside confidential VM</td>
+              <td class="text-left" rowspan="1" colspan="1">Guest software</td>
+              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">TLS ECDHE</td>
+              <td class="text-left" rowspan="1" colspan="1">Inside confidential VM</td>
+              <td class="text-left" rowspan="1" colspan="1">Network stack</td>
+              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">AK / VCEK / VLEK</td>
+              <td class="text-left" rowspan="1" colspan="1">Quoting Agent</td>
+              <td class="text-left" rowspan="1" colspan="1">Firmware/enclave/platform key hierarchy</td>
+              <td class="text-left" rowspan="1" colspan="1">Platform-specific</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Memory-encryption key</td>
+              <td class="text-left" rowspan="1" colspan="1">CC Platform</td>
+              <td class="text-left" rowspan="1" colspan="1">Hardware/firmware managed</td>
+              <td class="text-left" rowspan="1" colspan="1">Platform RNG/KDF</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <code>REPORT_DATA</code>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Created by Guest OS</td>
+              <td class="text-left" rowspan="1" colspan="1">Data binding</td>
+              <td class="text-left" rowspan="1" colspan="1">No independent entropy requirement</td>
+            </tr>
+          </tbody>
+        </table>
+</section>
+</div>
 </section>
 </div>
 <div id="detailed-vulnerability-disclosure-timeline-and-public-acknowledgements-by-affected-vendors">
@@ -1554,9 +1699,9 @@ to its desired server.
       <h2 id="name-detailed-vulnerability-disc">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-detailed-vulnerability-disc" class="section-name selfRef">Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors</a>
       </h2>
-<span id="name-detailed-vulnerability-discl"></span><table class="center" id="table-3">
+<span id="name-detailed-vulnerability-discl"></span><table class="center" id="table-5">
         <caption>
-<a href="#table-3" class="selfRef">Table 3</a>:
+<a href="#table-5" class="selfRef">Table 5</a>:
 <a href="#name-detailed-vulnerability-discl" class="selfRef">Detailed vulnerability disclosure timeline and acknowledgements</a>
         </caption>
 <thead>
@@ -1651,9 +1796,9 @@ to its desired server.
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-comparison-with-other-vulne" class="section-name selfRef">Comparison with Other Vulnerabilities in Confidential Computing Literature</a>
       </h2>
 <p id="section-6-1">Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST metrics</a>.<a href="#section-6-1" class="pilcrow">¶</a></p>
-<span id="name-comparison-with-other-vulner"></span><table class="center" id="table-4">
+<span id="name-comparison-with-other-vulner"></span><table class="center" id="table-6">
         <caption>
-<a href="#table-4" class="selfRef">Table 4</a>:
+<a href="#table-6" class="selfRef">Table 6</a>:
 <a href="#name-comparison-with-other-vulner" class="selfRef">Comparison with other vulnerabilities in confidential computing literature</a>
         </caption>
 <thead>
@@ -1762,9 +1907,9 @@ to its desired server.
 <a href="#section-7" class="section-number selfRef">7. </a><a href="#name-more-cves" class="section-name selfRef">More CVEs</a>
       </h2>
 <p id="section-7-1">Further formal analysis has led to the following potential CVEs for intra-handshake attestation (currently under disclosure):<a href="#section-7-1" class="pilcrow">¶</a></p>
-<span id="name-expected-cves-for-intra-han"></span><table class="center" id="table-5">
+<span id="name-expected-cves-for-intra-han"></span><table class="center" id="table-7">
         <caption>
-<a href="#table-5" class="selfRef">Table 5</a>:
+<a href="#table-7" class="selfRef">Table 7</a>:
 <a href="#name-expected-cves-for-intra-han" class="selfRef">Expected CVEs for intra-handshake attestation under disclosure</a>
         </caption>
 <thead>
@@ -1938,9 +2083,9 @@ to its desired server.
           <p id="section-12-1.4.1">It may not be possible to achieve level 3 in intra-handshake attestation alone without additional assumptions.<a href="#section-12-1.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<span id="name-main-results-2"></span><table class="center" id="table-6">
+<span id="name-main-results-2"></span><table class="center" id="table-8">
         <caption>
-<a href="#table-6" class="selfRef">Table 6</a>:
+<a href="#table-8" class="selfRef">Table 8</a>:
 <a href="#name-main-results-2" class="selfRef">Main results</a>
         </caption>
 <thead>
@@ -1981,9 +2126,9 @@ to its desired server.
         <h3 id="name-expected-results">
 <a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-expected-results" class="section-name selfRef">Expected Results</a>
         </h3>
-<span id="name-expected-results-2"></span><table class="center" id="table-7">
+<span id="name-expected-results-2"></span><table class="center" id="table-9">
           <caption>
-<a href="#table-7" class="selfRef">Table 7</a>:
+<a href="#table-9" class="selfRef">Table 9</a>:
 <a href="#name-expected-results-2" class="selfRef">Expected results</a>
           </caption>
 <thead>
@@ -2686,9 +2831,9 @@ management etc., are also not mitigated by CC.
           <h4 id="name-recordings">
 <a href="#section-18.1.1" class="section-number selfRef">18.1.1. </a><a href="#name-recordings" class="section-name selfRef">Recordings</a>
           </h4>
-<span id="name-evidence-of-several-explana"></span><table class="center" id="table-8">
+<span id="name-evidence-of-several-explana"></span><table class="center" id="table-10">
             <caption>
-<a href="#table-8" class="selfRef">Table 8</a>:
+<a href="#table-10" class="selfRef">Table 10</a>:
 <a href="#name-evidence-of-several-explana" class="selfRef">Evidence of several explanations of vulnerabilities to the authors of vulnerable drafts</a>
             </caption>
 <thead>
