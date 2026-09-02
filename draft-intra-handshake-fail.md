@@ -221,7 +221,7 @@ components to representative Intel TDX and AMD SEV-SNP implementations.
 | **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery |
 | **VM**               | Trust Domain (TD)                                | SNP confidential VM                              |
 | **Quoting Agent**    | TDQE / quote-generation path                     | AMD-SP / SNP attestation firmware                |
-| **Network stack**    | Guest OS + TLS library inside TD                 | Guest OS + TLS library inside SNP guest          |
+| **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |
 | **HSM/TPM**          | Optional secure element                          | Optional secure element                          |
 | **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
 | **`privEK`**         | Workload/TLS-side ephemeral key                  | Workload/TLS-side ephemeral key                  |
