@@ -350,33 +350,31 @@ Table of Contents
    implementation and trust domains.  The following table provides a
    corresponding low-level view.
 
-   +=================+=============+=================+=================+
-   |Component/key    |Runs/lives   |Type             |Randomness/key   |
-   |                 |where?       |                 |source           |
-   +=================+=============+=================+=================+
-   |privEK           |Inside       |Guest software   |OS/library CSPRNG|
-   |                 |confidential |                 |                 |
-   |                 |VM           |                 |                 |
-   +-----------------+-------------+-----------------+-----------------+
-   |TLS ECDHE        |Inside       |Network stack    |OS/library CSPRNG|
-   |                 |confidential |                 |                 |
-   |                 |VM           |                 |                 |
-   +-----------------+-------------+-----------------+-----------------+
-   |AK / VCEK / VLEK |Quoting      |Firmware/enclave/|Platform-specific|
-   |                 |Agent        |platform key     |                 |
-   |                 |             |hierarchy        |                 |
-   +-----------------+-------------+-----------------+-----------------+
-   |Memory-encryption|CPU/platform |Hardware/firmware|Platform RNG/KDF |
-   |key              |security     |managed          |                 |
-   |                 |subsystem    |                 |                 |
-   +-----------------+-------------+-----------------+-----------------+
-   |REPORT_DATA      |Created by   |Data binding     |No independent   |
-   |                 |guest,       |                 |entropy          |
-   |                 |signed by    |                 |requirement      |
-   |                 |platform     |                 |                 |
-   +-----------------+-------------+-----------------+-----------------+
+   +=================+============+=================+=================+
+   |Component/key    |Runs/lives  |Type             |Randomness/key   |
+   |                 |where?      |                 |source           |
+   +=================+============+=================+=================+
+   |privEK           |Inside      |Guest software   |OS/library CSPRNG|
+   |                 |confidential|                 |                 |
+   |                 |VM          |                 |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |TLS ECDHE        |Inside      |Network stack    |OS/library CSPRNG|
+   |                 |confidential|                 |                 |
+   |                 |VM          |                 |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |AK / VCEK / VLEK |Quoting     |Firmware/enclave/|Platform-specific|
+   |                 |Agent       |platform key     |                 |
+   |                 |            |hierarchy        |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |Memory-encryption|CC Platform |Hardware/firmware|Platform RNG/KDF |
+   |key              |            |managed          |                 |
+   +-----------------+------------+-----------------+-----------------+
+   |REPORT_DATA      |Created by  |Data binding     |No independent   |
+   |                 |Guest OS    |                 |entropy          |
+   |                 |            |                 |requirement      |
+   +-----------------+------------+-----------------+-----------------+
 
-        Table 4: Low-level implementation and key-generation domains
+       Table 4: Low-level implementation and key-generation domains
 
 4.  Detailed Vulnerability Disclosure Timeline and Public
     Acknowledgements by Affected Vendors
