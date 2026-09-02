@@ -358,7 +358,7 @@ Table of Contents
    |                 |confidential |                 |                 |
    |                 |VM           |                 |                 |
    +-----------------+-------------+-----------------+-----------------+
-   |TLS ECDHE        |Inside       |Guest software   |OS/library CSPRNG|
+   |TLS ECDHE        |Inside       |Network stack    |OS/library CSPRNG|
    |                 |confidential |                 |                 |
    |                 |VM           |                 |                 |
    +-----------------+-------------+-----------------+-----------------+
