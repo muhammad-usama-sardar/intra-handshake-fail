@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-01T02:38:02.678797+00:00",
+  "timestamp": "2026-09-03T02:03:42.121290+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -80,6 +80,22 @@
           "updatedAt": "2026-08-26T23:11:48Z"
         }
       ]
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOTPsy-c8AAAABPUf0xQ",
+      "title": "Separation of main processor and co-processor for AMD",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/issues/10",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "This is even more low-level than the text proposed by Kaya. Think if it is required for security analysis.",
+      "createdAt": "2026-09-02T11:07:20Z",
+      "updatedAt": "2026-09-02T11:07:20Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -447,6 +463,188 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOTPsy-c8AAAABB0Uaiw",
+      "title": "Add low-level mapping of attestation model",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/9",
+      "state": "MERGED",
+      "author": "ercihan",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Adds a low-level mapping of the TEE-agnostic system model in Figure 2 of Intra-handshake.fail to representative Intel TDX and AMD SEV-SNP components.\r\n\r\nThe additional table distinguishes workload-controlled TLS key material from platform attestation and memory-protection key domains, including their respective implementation and entropy/key-source layers.",
+      "createdAt": "2026-09-01T22:43:08Z",
+      "updatedAt": "2026-09-02T19:23:37Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "8330677ab1b1ca5745689ae77c3c8bb210916d01",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "low-level-system-model-mapping",
+      "headRefOid": "d37683eaa20edb7c87be38528d20196d3eb43be0",
+      "closedAt": "2026-09-02T19:23:37Z",
+      "mergedAt": "2026-09-02T19:23:37Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "160af923eca5adbfcab229afb8c87c9d78305ef3"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLyP2VA",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Thank you for your valuable contribution. This looks great to me!",
+          "createdAt": "2026-09-02T05:19:51Z",
+          "updatedAt": "2026-09-02T05:19:51Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLyQ4uw",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T05:21:55Z",
+          "updatedAt": "2026-09-02T05:21:55Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "```suggestion\n| **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |\n```",
+              "createdAt": "2026-09-02T05:21:55Z",
+              "updatedAt": "2026-09-02T05:21:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLztKzg",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:33:18Z",
+          "updatedAt": "2026-09-02T08:33:18Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\n| **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |\n```",
+              "createdAt": "2026-09-02T08:33:18Z",
+              "updatedAt": "2026-09-02T08:33:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLzyMtA",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:42:21Z",
+          "updatedAt": "2026-09-02T08:42:22Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "```suggestion\n| **HSM/TPM**          | Secure element                          |  Secure element                          |\n```",
+              "createdAt": "2026-09-02T08:42:21Z",
+              "updatedAt": "2026-09-02T08:42:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLz1nGw",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:48:37Z",
+          "updatedAt": "2026-09-02T08:48:38Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "```suggestion\n| TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |\n```",
+              "createdAt": "2026-09-02T08:48:37Z",
+              "updatedAt": "2026-09-02T08:48:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLz2R8Q",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:49:43Z",
+          "updatedAt": "2026-09-02T08:49:44Z",
+          "comments": [
+            {
+              "originalPosition": 30,
+              "body": "```suggestion\n| AK / VCEK / VLEK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |\n```",
+              "createdAt": "2026-09-02T08:49:43Z",
+              "updatedAt": "2026-09-02T08:49:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLz3_Rg",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:52:14Z",
+          "updatedAt": "2026-09-02T08:52:14Z",
+          "comments": [
+            {
+              "originalPosition": 31,
+              "body": "```suggestion\n| Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |\n```",
+              "createdAt": "2026-09-02T08:52:14Z",
+              "updatedAt": "2026-09-02T08:52:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABLz5Y7A",
+          "commit": {
+            "abbreviatedOid": "033ee70"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-02T08:54:48Z",
+          "updatedAt": "2026-09-02T08:54:48Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "```suggestion\n| `REPORT_DATA`         | Created by Guest OS | Data binding                            | No independent entropy requirement |\n```",
+              "createdAt": "2026-09-02T08:54:48Z",
+              "updatedAt": "2026-09-02T08:54:48Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
