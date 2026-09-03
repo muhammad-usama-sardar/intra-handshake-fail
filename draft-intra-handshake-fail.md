@@ -116,8 +116,36 @@ normative:
     target: https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/
     author:
       - ins: M. U. Sardar
-
-informative:
+  GHSA-Privasys-rustls:
+    title: "Privasys RA-TLS challenge mode did not bind attestation evidence to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/rustls/security/advisories/GHSA-j6qv-435v-r492
+    author:
+      - ins: Privasys
+  GHSA-Privasys-go:
+    title: "Privasys Go fork: RA-TLS challenge mode did not bind attestation evidence to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/go/security/advisories/GHSA-7jfw-53rm-phh2
+    author:
+      - ins: Privasys
+  GHSA-Privasys-eov:
+    title: "enclave-os-virtual: RA-TLS challenge certificates were not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-p5fp-g94g-g9m9
+    author:
+      - ins: Privasys
+  GHSA-Privasys-eom:
+    title: "enclave-os-mini: RA-TLS challenge certificates were not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-49qm-4pj3-w2c6
+    author:
+      - ins: Privasys
+  GHSA-Privasys-rtc:
+    title: "ra-tls-clients: RA-TLS challenge verifier accepted quotes not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-5qrc-v874-mxvx
+    author:
+      - ins: Privasys
   ID-Crisis: DOI.10.1145/3779208.3785387
   ID-Crisis-repo:
     title: "Identity Crisis in Confidential Computing: Formal Analysis of Attested TLS"
@@ -128,6 +156,7 @@ informative:
       - ins: M. Moustafa
       - ins: T. Aura
   refTLS: DOI.10.1109/SP.2017.26
+informative:
   I-D.fossati-seat-early-attestation:
   I-D.fossati-seat-early-attestation-04:
   I-D.fossati-tls-attestation-06:
@@ -203,8 +232,13 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 | {{GHSA-Edgeless-Systems}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | TBA | TBA | Songbo Bu and Muhammad Usama Sardar |
-{: title="GHSAs/CVEs and finders"}
+{: title="GHSAs/CVEs and finders in chronological order of publishing"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -299,7 +333,7 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 | 9.1 | Critical | 3 (confirmed by developers) |
 | 8.7 | High | 1 |
 | 7.5 | High | 2 |
-| 7.4 | High | 2 |
+| 7.4 | High | 7 (5 confirmed by developers) |
 | 6.3 | Medium | 2 |
 {: title="Expected CVEs for intra-handshake attestation under disclosure "}
 
@@ -475,6 +509,7 @@ Several media professionals and bloggers have covered the vulnerabilities to pro
 - [vuln.lu](https://vulnerability.circl.lu/vuln/CVE-2026-33697#sightings)
 - [coderlegion](https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security)
 - [Anjuna Security](https://www.anjuna.io/blog/attested-tls-flaw-explained)
+- [Privasys](https://privasys.org/blog/binding-attestation-to-the-tls-session/)
 - [freenode](https://freenode.net/digest/67)
 - (Chinese) [csdn](https://blog.csdn.net/weixin_42376192/category_13096766.html)
 - [osintsights](https://osintsights.com/confidential-computing-flaws-expose-trust-risks)
@@ -608,7 +643,7 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, and Haowen Song) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Massimiliano Brighindi, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
@@ -707,6 +742,7 @@ This draft benefits from several years of research on attested TLS, in particula
 
 We wish to express our sincere appreciation to the following for their review of our latest work:
 
+- Bertrand Foing
 - Sammy Kerata Oina
 - Drasko Draskovic
 
