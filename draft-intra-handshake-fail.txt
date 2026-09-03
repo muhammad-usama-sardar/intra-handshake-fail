@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 6 March 2027                                          CoreWeave
+Expires: 7 March 2027                                          CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -18,7 +18,7 @@ Expires: 6 March 2027                                          CoreWeave
                                                                PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                        2 September 2026
+                                                        3 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 March 2027.
+   This Internet-Draft will expire on 7 March 2027.
 
 Copyright Notice
 
@@ -294,11 +294,32 @@ Table of Contents
         | [GHSA-Cocos-AI3]        | 9.1  | Muhammad Usama Sardar  |
         |                         |      | and Songbo Bu          |
         +-------------------------+------+------------------------+
+        | [GHSA-Privasys-rustls]  | 7.4  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Privasys-go]      | 7.4  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Privasys-eov]     | 7.4  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Privasys-eom]     | 7.4  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
+        | [GHSA-Privasys-rtc]     | 7.4  | Muhammad Usama Sardar, |
+        |                         |      | Viacheslav Dubeyko,    |
+        |                         |      | and Jean-Marie Jacquet |
+        +-------------------------+------+------------------------+
         | TBA                     | TBA  | Songbo Bu and Muhammad |
         |                         |      | Usama Sardar           |
         +-------------------------+------+------------------------+
 
-                      Table 2: GHSAs/CVEs and finders
+           Table 2: GHSAs/CVEs and finders in chronological order
+                               of publishing
 
 3.  Threat Model
 
@@ -526,21 +547,21 @@ Table of Contents
    Further formal analysis has led to the following potential CVEs for
    intra-handshake attestation (currently under disclosure):
 
-             +======+==========+=============================+
-             | CVSS | Severity | Number of CVEs              |
-             +======+==========+=============================+
-             | 9.8  | Critical | 1                           |
-             +------+----------+-----------------------------+
-             | 9.1  | Critical | 3 (confirmed by developers) |
-             +------+----------+-----------------------------+
-             | 8.7  | High     | 1                           |
-             +------+----------+-----------------------------+
-             | 7.5  | High     | 2                           |
-             +------+----------+-----------------------------+
-             | 7.4  | High     | 2                           |
-             +------+----------+-----------------------------+
-             | 6.3  | Medium   | 2                           |
-             +------+----------+-----------------------------+
+            +======+==========+===============================+
+            | CVSS | Severity | Number of CVEs                |
+            +======+==========+===============================+
+            | 9.8  | Critical | 1                             |
+            +------+----------+-------------------------------+
+            | 9.1  | Critical | 3 (confirmed by developers)   |
+            +------+----------+-------------------------------+
+            | 8.7  | High     | 1                             |
+            +------+----------+-------------------------------+
+            | 7.5  | High     | 2                             |
+            +------+----------+-------------------------------+
+            | 7.4  | High     | 7 (5 confirmed by developers) |
+            +------+----------+-------------------------------+
+            | 6.3  | Medium   | 2                             |
+            +------+----------+-------------------------------+
 
                  Table 7: Expected CVEs for intra-handshake
                         attestation under disclosure
@@ -958,6 +979,9 @@ Table of Contents
 
    *  Anjuna Security (https://www.anjuna.io/blog/attested-tls-flaw-
       explained)
+
+   *  Privasys (https://privasys.org/blog/binding-attestation-to-the-
+      tls-session/)
 
    *  freenode (https://freenode.net/digest/67)
 
@@ -1416,13 +1440,14 @@ Table of Contents
    We (i.e., the super set of all authors involved in this research,
    including but not limited to Muhammad Usama Sardar, Mariam Moustafa,
    Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu,
-   Chengxin Huang, and Haowen Song) are ethical researchers aiming to
-   protect the community from the potential harm caused by the
-   exploitability of the vulnerabilities in intra-handshake attestation.
-   We have responsibly disclosed the vulnerabilities to the respective
-   developers and maintainers following their respective disclosure
-   processes and provided them our proposed mitigations and requested
-   them to take rapid action.
+   Chengxin Huang, Haowen Song, Kaya Ercihan, Massimiliano Brighindi,
+   and Iman Schrock) are ethical researchers aiming to protect the
+   community from the potential harm caused by the exploitability of the
+   vulnerabilities in intra-handshake attestation.  We have responsibly
+   disclosed the vulnerabilities to the respective developers and
+   maintainers following their respective disclosure processes and
+   provided them our proposed mitigations and requested them to take
+   rapid action.
 
    We have released only the formal analysis for published CVE.  To
    minimize exploit in the wild, we have not publicly released the
@@ -1723,6 +1748,50 @@ Table of Contents
               <https://github.com/edgelesssys/contrast/security/
               advisories/GHSA-hjgc-jc5v-fw7h>.
 
+   [GHSA-Privasys-eom]
+              Privasys, "enclave-os-mini: RA-TLS challenge certificates
+              were not bound to the TLS session", September 2026,
+              <https://github.com/Privasys/enclave-os-
+              mini/security/advisories/GHSA-49qm-4pj3-w2c6>.
+
+   [GHSA-Privasys-eov]
+              Privasys, "enclave-os-virtual: RA-TLS challenge
+              certificates were not bound to the TLS session", September
+              2026, <https://github.com/Privasys/enclave-os-
+              virtual/security/advisories/GHSA-p5fp-g94g-g9m9>.
+
+   [GHSA-Privasys-go]
+              Privasys, "Privasys Go fork: RA-TLS challenge mode did not
+              bind attestation evidence to the TLS session", September
+              2026, <https://github.com/Privasys/go/security/advisories/
+              GHSA-7jfw-53rm-phh2>.
+
+   [GHSA-Privasys-rtc]
+              Privasys, "ra-tls-clients: RA-TLS challenge verifier
+              accepted quotes not bound to the TLS session", September
+              2026, <https://github.com/Privasys/ra-tls-
+              clients/security/advisories/GHSA-5qrc-v874-mxvx>.
+
+   [GHSA-Privasys-rustls]
+              Privasys, "Privasys RA-TLS challenge mode did not bind
+              attestation evidence to the TLS session", September 2026,
+              <https://github.com/Privasys/rustls/security/advisories/
+              GHSA-j6qv-435v-r492>.
+
+   [ID-Crisis]
+              Sardar, M., Moustafa, M., and T. Aura, "Identity Crisis in
+              Confidential Computing: Formal Analysis of Attested TLS",
+              ACM, Proceedings of the ACM Asia Conference on Computer
+              and Communications Security pp. 547-560,
+              DOI 10.1145/3779208.3785387, June 2026,
+              <https://doi.org/10.1145/3779208.3785387>.
+
+   [ID-Crisis-repo]
+              Sardar, M. U., Moustafa, M., and T. Aura, "Identity Crisis
+              in Confidential Computing: Formal Analysis of Attested
+              TLS", November 2025, <https://github.com/CCC-Attestation/
+              formal-spec-id-crisis>.
+
    [Intra-handshake.fail]
               Sardar, M. U., Dubeyko, V., and J.-M. Jacquet, "Intra-
               handshake.fail (CVE-2026-33697): High-severity CVE in
@@ -1735,6 +1804,12 @@ Table of Contents
               handshake.fail (CVE-2026-33697): High-severity CVE in
               Attested TLS", July 2026, <https://github.com/muhammad-
               usama-sardar/intra-handshake.fail>.
+
+   [refTLS]   Bhargavan, K., Blanchet, B., and N. Kobeissi, "Verified
+              Models and Reference Implementations for the TLS 1.3
+              Standard Candidate", IEEE, 2017 IEEE Symposium on Security
+              and Privacy (SP) pp. 483-502, DOI 10.1109/sp.2017.26, May
+              2017, <https://doi.org/10.1109/sp.2017.26>.
 
    [SEAT-vulnerability-report]
               Sardar, M. U., "Relay Attacks in Intra-handshake
@@ -1796,26 +1871,6 @@ Table of Contents
               <https://datatracker.ietf.org/doc/html/draft-ritz-seat-
               facts-00>.
 
-   [ID-Crisis]
-              Sardar, M., Moustafa, M., and T. Aura, "Identity Crisis in
-              Confidential Computing: Formal Analysis of Attested TLS",
-              ACM, Proceedings of the ACM Asia Conference on Computer
-              and Communications Security pp. 547-560,
-              DOI 10.1145/3779208.3785387, June 2026,
-              <https://doi.org/10.1145/3779208.3785387>.
-
-   [ID-Crisis-repo]
-              Sardar, M. U., Moustafa, M., and T. Aura, "Identity Crisis
-              in Confidential Computing: Formal Analysis of Attested
-              TLS", November 2025, <https://github.com/CCC-Attestation/
-              formal-spec-id-crisis>.
-
-   [refTLS]   Bhargavan, K., Blanchet, B., and N. Kobeissi, "Verified
-              Models and Reference Implementations for the TLS 1.3
-              Standard Candidate", IEEE, 2017 IEEE Symposium on Security
-              and Privacy (SP) pp. 483-502, DOI 10.1109/sp.2017.26, May
-              2017, <https://doi.org/10.1109/sp.2017.26>.
-
 Acknowledgments
 
    Acknowledgment does not necessarily imply attestation.  It implies
@@ -1828,6 +1883,8 @@ Acknowledgments
 
    We wish to express our sincere appreciation to the following for
    their review of our latest work:
+
+   *  Bertrand Foing
 
    *  Sammy Kerata Oina
 
