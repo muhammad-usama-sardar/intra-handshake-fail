@@ -171,7 +171,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. Currently, there are two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against **intra**-handshake (aka early) attestation.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.
 
 --- middle
 
@@ -254,7 +254,7 @@ For TLS reference, Heartbleed was CVSS 7.5.
 | {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | TBA | TBA | Songbo Bu and Muhammad Usama Sardar |
-{: title="GHSAs/CVEs and finders in (roughly) chronological order of publishing"}
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -762,6 +762,9 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
 
 If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
+# Contributions
+Contributions to the draft are welcome at https://github.com/muhammad-usama-sardar/intra-handshake-fail.
+
 
 # IANA Considerations
 
@@ -810,6 +813,7 @@ We also gratefully acknowledge the following for insightful discussions and help
 - Haowen Song	 		
 - Chengxin Huang
 - Steve Luo
+- Andrew Miller
 - Kubilay Ahmet Küçük
 - Iman Schrock
 - Sophie Schmieg
