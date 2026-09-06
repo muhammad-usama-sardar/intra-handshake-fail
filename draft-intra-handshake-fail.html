@@ -15,7 +15,7 @@
 <meta content="Massimiliano Brighindi" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
-       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. 
+       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against intra-handshake (aka early) attestation . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="AI agents" name="keyword">
@@ -1118,7 +1118,7 @@ svg {
 <h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against intra-handshake (aka early) attestation</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1391,9 +1391,7 @@ svg {
             <tr>
               <td class="text-left" rowspan="1" colspan="1">1.</td>
               <td class="text-left" rowspan="1" colspan="1">Client’s TLS nonce</td>
-              <td class="text-left" rowspan="1" colspan="1">
-                <a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">Meta's AI</a>
-</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">
                 <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1">binder1</a>
 </td>
@@ -1434,7 +1432,7 @@ svg {
               <td class="text-left" rowspan="1" colspan="1">6.</td>
               <td class="text-left" rowspan="1" colspan="1">Combination of #2 and #4</td>
               <td class="text-left" rowspan="1" colspan="1">
-                <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf">Cocos AI</a>;  <a href="https://github.com/CCC-Attestation">CCC Attestation SIG</a>'s adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>
+                <a href="https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf">Edgeless Systems Contrast</a>; <a href="https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf">Cocos AI v0.8.2</a>;  <a href="https://github.com/CCC-Attestation">CCC Attestation SIG</a>'s adopted project <a href="https://github.com/ccc-attestation/attested-tls-poc">intra-handshake attestation</a>; <a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">Meta's AI updated spec</a>
 </td>
               <td class="text-left" rowspan="1" colspan="1">
                 <a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6">binder6</a>
@@ -1490,7 +1488,7 @@ to its desired server.
             <p id="section-1.3-2.2.1">Post-handshake attestation part has been added for re-attestation<a href="#section-1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
-<p id="section-1.3-3">The current binder in <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> does not prevent relay attacks as there is no <strong>shared secret</strong> in the binder.<a href="#section-1.3-3" class="pilcrow">¶</a></p>
+<p id="section-1.3-3">The current binder in <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> does not prevent relay attacks as there is no <strong>shared secret</strong> in the binder. In addition to the formal analysis in <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, see <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> for arguments why shared secret is necessary to prevent relay attacks.<a href="#section-1.3-3" class="pilcrow">¶</a></p>
 <p id="section-1.3-4">Post-handshake attestation part may prevent relay attacks, but then the <strong>additional complexity</strong> of intra-handshake attestation is unjustified.<a href="#section-1.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1499,6 +1497,7 @@ to its desired server.
         <h3 id="name-executive-summary-of-curren">
 <a href="#section-1.4" class="section-number selfRef">1.4. </a><a href="#name-executive-summary-of-curren" class="section-name selfRef">Executive Summary of Current Status</a>
         </h3>
+<p id="section-1.4-1">Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST metrics</a>.<a href="#section-1.4-1" class="pilcrow">¶</a></p>
 <span id="name-published-cves-ghsas-for-in"></span><table class="center" id="table-2">
           <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
@@ -1530,11 +1529,16 @@ to its desired server.
             <tr>
               <td class="text-left" rowspan="1" colspan="1">7.4</td>
               <td class="text-left" rowspan="1" colspan="1">High</td>
-              <td class="text-left" rowspan="1" colspan="1">6</td>
+              <td class="text-left" rowspan="1" colspan="1">7</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">6.3</td>
+              <td class="text-left" rowspan="1" colspan="1">Medium</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
             </tr>
           </tbody>
         </table>
-<p id="section-1.4-2">For TLS reference, Heartbleed was CVSS 7.5.<a href="#section-1.4-2" class="pilcrow">¶</a></p>
+<p id="section-1.4-3"><strong>For TLS reference, Heartbleed was CVSS 7.5</strong>.<a href="#section-1.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1635,8 +1639,22 @@ to its desired server.
             <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet</td>
           </tr>
           <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#GHSA-Privasys-rtc-da" class="cite xref">GHSA-Privasys-rtc-da</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">7.4</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#GHSA-Privasys-rtc-tcu" class="cite xref">GHSA-Privasys-rtc-tcu</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">6.3</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
             <td class="text-left" rowspan="1" colspan="1">TBA</td>
-            <td class="text-left" rowspan="1" colspan="1">TBA</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
             <td class="text-left" rowspan="1" colspan="1">Songbo Bu and Muhammad Usama Sardar</td>
           </tr>
         </tbody>
@@ -1901,6 +1919,14 @@ and trust domains. The following table provides a corresponding low-level view.<
           <tr>
             <td class="text-left" rowspan="1" colspan="1">Privasys archived early attestation in go and moved to post-handshake attestation</td>
             <td class="text-left" rowspan="1" colspan="1">4 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <span>[<a href="#GHSA-Privasys-rtc-da" class="cite xref">GHSA-Privasys-rtc-da</a>]</span> [<strong>Severity = HIGH (CVSS 7.4)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">6 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <span>[<a href="#GHSA-Privasys-rtc-tcu" class="cite xref">GHSA-Privasys-rtc-tcu</a>]</span> [<strong>Severity = MEDIUM (CVSS 6.3)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">6 September, 2026</td>
           </tr>
         </tbody>
       </table>
@@ -2945,7 +2971,7 @@ management etc., are also not mitigated by CC.
               <p id="section-16.2.1-2.3.1">What is the benefit of doing <strong>signatures</strong> of remote attestation <strong>within</strong> the handshake (as this latency can be exploited)? We add that <strong>verification</strong> of signatures is also time consuming, which can be exploited too. See <a href="https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4">reference</a>.<a href="#section-16.2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.2.1-2.4">
-              <p id="section-16.2.1-2.4.1">How evidence is bound to the secure channel without involving any <strong>shared secret</strong>?<a href="#section-16.2.1-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-16.2.1-2.4.1">How evidence is bound to the secure channel without involving any <strong>shared secret</strong>? See <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>.<a href="#section-16.2.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.2.1-2.5">
               <p id="section-16.2.1-2.5.1">How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?<a href="#section-16.2.1-2.5.1" class="pilcrow">¶</a></p>
@@ -3437,7 +3463,7 @@ management etc., are also not mitigated by CC.
       <h2 id="name-contributions">
 <a href="#section-19" class="section-number selfRef">19. </a><a href="#name-contributions" class="section-name selfRef">Contributions</a>
       </h2>
-<p id="section-19-1">Contributions to the draft are welcome at https://github.com/muhammad-usama-sardar/intra-handshake-fail.<a href="#section-19-1" class="pilcrow">¶</a></p>
+<p id="section-19-1">Contributions to the draft are welcome at <a href="https://github.com/muhammad-usama-sardar/intra-handshake-fail">https://github.com/muhammad-usama-sardar/intra-handshake-fail</a>.<a href="#section-19-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
@@ -3499,6 +3525,14 @@ management etc., are also not mitigated by CC.
         <dd>
 <span class="refAuthor">Privasys</span>, <span class="refTitle">"ra-tls-clients: RA-TLS challenge verifier accepted quotes not bound to the TLS session"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-5qrc-v874-mxvx">https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-5qrc-v874-mxvx</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="GHSA-Privasys-rtc-da">[GHSA-Privasys-rtc-da]</dt>
+        <dd>
+<span class="refAuthor">Privasys</span>, <span class="refTitle">"Privasys Intra-handshake attested TLS implementation is vulnerable to Diversion Attacks"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-pj2x-5wqv-fh57">https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-pj2x-5wqv-fh57</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="GHSA-Privasys-rtc-tcu">[GHSA-Privasys-rtc-tcu]</dt>
+        <dd>
+<span class="refAuthor">Privasys</span>, <span class="refTitle">"Privasys Intra-handshake attested TLS implementation is vulnerable to TOCTOU Attacks"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-gg8q-mfhh-wrrc">https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-gg8q-mfhh-wrrc</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="GHSA-Privasys-rustls">[GHSA-Privasys-rustls]</dt>
         <dd>
 <span class="refAuthor">Privasys</span>, <span class="refTitle">"Privasys RA-TLS challenge mode did not bind attestation evidence to the TLS session"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://github.com/Privasys/rustls/security/advisories/GHSA-j6qv-435v-r492">https://github.com/Privasys/rustls/security/advisories/GHSA-j6qv-435v-r492</a>&gt;</span>. </dd>
@@ -3524,8 +3558,12 @@ management etc., are also not mitigated by CC.
 <span class="refAuthor">Bhargavan, K.</span>, <span class="refAuthor">Blanchet, B.</span>, and <span class="refAuthor">N. Kobeissi</span>, <span class="refTitle">"Verified Models and Reference Implementations for the TLS 1.3 Standard Candidate"</span>, <span class="refContent">IEEE</span>, <span class="seriesInfo">2017 IEEE Symposium on Security and Privacy (SP) pp. 483-502</span>, <span class="seriesInfo">DOI 10.1109/sp.2017.26</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://doi.org/10.1109/sp.2017.26">https://doi.org/10.1109/sp.2017.26</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="SEAT-vulnerability-report">[SEAT-vulnerability-report]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Sardar, M. U.</span>, <span class="refTitle">"Relay Attacks in Intra-handshake Attestation for Confidential Agentic AI Systems"</span>, <time datetime="2026-01" class="refDate">January 2026</time>, <span>&lt;<a href="https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/">https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="TLS-RA">[TLS-RA]</dt>
+      <dd>
+<span class="refAuthor">Carsten Weinhold</span>, <span class="refAuthor">Sardar, M. U.</span>, <span class="refAuthor">Ionuț Mihalcea</span>, <span class="refAuthor">Yogesh Deshpande</span>, <span class="refAuthor">Hannes Tschofenig</span>, <span class="refAuthor">Yaron Sheffer</span>, <span class="refAuthor">Thomas Fossati</span>, and <span class="refAuthor">Michael Roitzsch</span>, <span class="refTitle">"Separate but together: integrating remote attestation into TLS"</span>, <time datetime="2025-07" class="refDate">July 2025</time>, <span>&lt;<a href="https://www.usenix.org/conference/atc25/presentation/weinhold">https://www.usenix.org/conference/atc25/presentation/weinhold</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>

@@ -38,16 +38,16 @@ Abstract
    fails in practice, even _without physical access_. Moreover, since
    continuous attestation is generally required, *intra*-handshake
    attestation adds *unnecessary complexity*. The results are backed by
-   the research [Intra-handshake.fail] and the artifacts
+   the research [Intra-handshake.fail], [TLS-RA] and the artifacts
    [Intra-handshake.fail-repo] in state-of-the-art formal analysis tool,
    ProVerif, under Apache-2.0 license for reproducibility and review,
    and have been acknowledged by the relevant stakeholders.  Currently,
    there are *two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of
-   CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake
-   (aka early) attestation*. The research papers on these are currently
-   either under submission or being prepared for submission.  The
-   artifacts of these papers will be shared with the community under
-   Apache-2.0 license for reproducibility and review.
+   CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published
+   against intra-handshake (aka early) attestation*. The research papers
+   on these are currently either under submission or being prepared for
+   submission.  The artifacts of these papers will be shared with the
+   community under Apache-2.0 license for reproducibility and review.
 
 About This Document
 
@@ -179,9 +179,9 @@ Table of Contents
    |No.|Binding    |Used in                                  |Artifacts                |
    |   |mechanism  |                                         |                         |
    +===+===========+=========================================+=========================+
-   |1. |Client’s   |Meta's AI (https://ai.meta.com/static-   |binder1                  |
-   |   |TLS nonce  |resource/private-processing-technical-   |(https://github.com/     |
-   |   |           |whitepaper)                              |muhammad-usama-sardar/   |
+   |1. |Client’s   |-                                        |binder1                  |
+   |   |TLS nonce  |                                         |(https://github.com/     |
+   |   |           |                                         |muhammad-usama-sardar/   |
    |   |           |                                         |intra-                   |
    |   |           |                                         |handshake.fail/tree/main/|
    |   |           |                                         |binder1)                 |
@@ -218,7 +218,7 @@ Table of Contents
    |   |of #2 and  |(https://github.com/CCC-                 |(https://github.com/     |
    |   |#4         |Attestation/meetings/blob/main/materials/|muhammad-usama-sardar/   |
    |   |           |MarkusRudy.contrast-atls-ccc-            |intra-                   |
-   |   |           |attestation.pdf); Cocos AI               |handshake.fail/tree/main/|
+   |   |           |attestation.pdf); Cocos AI v0.8.2        |handshake.fail/tree/main/|
    |   |           |(https://www.sns-itrust6g.com/wp-        |binder6)                 |
    |   |           |content/uploads/2025/12/Webinar-         |                         |
    |   |           |Architecting-Trust-CONFIDENTIAL6G.pdf);  |                         |
@@ -226,7 +226,9 @@ Table of Contents
    |   |           |CCC-Attestation)'s adopted project intra-|                         |
    |   |           |handshake attestation                    |                         |
    |   |           |(https://github.com/ccc-attestation/     |                         |
-   |   |           |attested-tls-poc)                        |                         |
+   |   |           |attested-tls-poc); Meta's AI updated spec|                         |
+   |   |           |(https://ai.meta.com/static-resource/    |                         |
+   |   |           |private-processing-technical-whitepaper) |                         |
    +---+-----------+-----------------------------------------+-------------------------+
    |7. |Combination|[I-D.fossati-tls-attestation-06]         |binder7                  |
    |   |of #2, #3, |                                         |(https://github.com/     |
@@ -276,12 +278,18 @@ Table of Contents
 
    The current binder in [I-D.fossati-seat-early-attestation] does not
    prevent relay attacks as there is no *shared secret* in the binder.
+   In addition to the formal analysis in [Intra-handshake.fail], see
+   [TLS-RA] for arguments why shared secret is necessary to prevent
+   relay attacks.
 
    Post-handshake attestation part may prevent relay attacks, but then
    the *additional complexity* of intra-handshake attestation is
    unjustified.
 
 1.4.  Executive Summary of Current Status
+
+   Severity is based on NIST metrics (https://nvd.nist.gov/vuln-metrics/
+   cvss).
 
            +======+==========+================================+
            | CVSS | Severity | Number of Published CVEs/GHSAs |
@@ -292,13 +300,15 @@ Table of Contents
            +------+----------+--------------------------------+
            | 7.5  | High     | 2                              |
            +------+----------+--------------------------------+
-           | 7.4  | High     | 6                              |
+           | 7.4  | High     | 7                              |
+           +------+----------+--------------------------------+
+           | 6.3  | Medium   | 1                              |
            +------+----------+--------------------------------+
 
                  Table 2: Published CVEs/GHSAs for intra-
                     handshake (aka early) attestation
 
-   For TLS reference, Heartbleed was CVSS 7.5.
+   *For TLS reference, Heartbleed was CVSS 7.5*.
 
 2.  Credits
 
@@ -345,7 +355,11 @@ Table of Contents
         |                         |      | Viacheslav Dubeyko,    |
         |                         |      | and Jean-Marie Jacquet |
         +-------------------------+------+------------------------+
-        | TBA                     | TBA  | Songbo Bu and Muhammad |
+        | [GHSA-Privasys-rtc-da]  | 7.4  | Muhammad Usama Sardar  |
+        +-------------------------+------+------------------------+
+        | [GHSA-Privasys-rtc-tcu] | 6.3  | Muhammad Usama Sardar  |
+        +-------------------------+------+------------------------+
+        | TBA                     | 9.1  | Songbo Bu and Muhammad |
         |                         |      | Usama Sardar           |
         +-------------------------+------+------------------------+
 
@@ -513,6 +527,14 @@ Table of Contents
    +----------------------------------------------------------------------------+----------+
    |Privasys archived early attestation in go and moved to post-handshake       |4         |
    |attestation                                                                 |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published [GHSA-Privasys-rtc-da] [*Severity = HIGH (CVSS 7.4)*]    |6         |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published [GHSA-Privasys-rtc-tcu] [*Severity = MEDIUM (CVSS 6.3)*] |6         |
+   |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
 
@@ -1526,7 +1548,7 @@ Table of Contents
       04.html#section-4.2.4).
 
    *  How evidence is bound to the secure channel without involving any
-      *shared secret*?
+      *shared secret*? See [TLS-RA].
 
    *  How does a verifying relying party get the legitimate PIIDs and
       CHIP_IDs?
@@ -1828,7 +1850,8 @@ Table of Contents
 19.  Contributions
 
    Contributions to the draft are welcome at https://github.com/
-   muhammad-usama-sardar/intra-handshake-fail.
+   muhammad-usama-sardar/intra-handshake-fail (https://github.com/
+   muhammad-usama-sardar/intra-handshake-fail).
 
 20.  IANA Considerations
 
@@ -1898,6 +1921,18 @@ Table of Contents
               2026, <https://github.com/Privasys/ra-tls-
               clients/security/advisories/GHSA-5qrc-v874-mxvx>.
 
+   [GHSA-Privasys-rtc-da]
+              Privasys, "Privasys Intra-handshake attested TLS
+              implementation is vulnerable to Diversion Attacks",
+              September 2026, <https://github.com/Privasys/ra-tls-
+              clients/security/advisories/GHSA-pj2x-5wqv-fh57>.
+
+   [GHSA-Privasys-rtc-tcu]
+              Privasys, "Privasys Intra-handshake attested TLS
+              implementation is vulnerable to TOCTOU Attacks", September
+              2026, <https://github.com/Privasys/ra-tls-
+              clients/security/advisories/GHSA-gg8q-mfhh-wrrc>.
+
    [GHSA-Privasys-rustls]
               Privasys, "Privasys RA-TLS challenge mode did not bind
               attestation evidence to the TLS session", September 2026,
@@ -1942,6 +1977,13 @@ Table of Contents
               Attestation for Confidential Agentic AI Systems", January
               2026, <https://mailarchive.ietf.org/arch/msg/seat/
               x3eQxFjQFJLceae6l4_NgXnmsDY/>.
+
+   [TLS-RA]   Carsten Weinhold, Sardar, M. U., Ionuț Mihalcea, Yogesh
+              Deshpande, Hannes Tschofenig, Yaron Sheffer, Thomas
+              Fossati, and Michael Roitzsch, "Separate but together:
+              integrating remote attestation into TLS", July 2025,
+              <https://www.usenix.org/conference/atc25/presentation/
+              weinhold>.
 
 21.2.  Informative References
 
