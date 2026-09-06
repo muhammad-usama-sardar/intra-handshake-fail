@@ -455,6 +455,7 @@ urgently move to post-handshake attestation.
 
 ## Implications of Findings for Agent2Agent
 From a security perspective, intra-handshake attestation does more damage than protection for AI agents.
+Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
 # Technical Details
 
