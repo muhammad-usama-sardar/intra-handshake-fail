@@ -15,7 +15,7 @@
 <meta content="Massimiliano Brighindi" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
-       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. Currently, there are two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against  intra -handshake (aka early) attestation. 
+       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="AI agents" name="keyword">
@@ -1118,7 +1118,7 @@ svg {
 <h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders. Currently, there are two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against <strong>intra</strong>-handshake (aka early) attestation.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1334,24 +1334,27 @@ svg {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.19">
-            <p id="section-toc.1-1.19.1"><a href="#section-19" class="auto internal xref">19</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.19.1"><a href="#section-19" class="auto internal xref">19</a>. <a href="#name-contributions" class="internal xref">Contributions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.20">
-            <p id="section-toc.1-1.20.1"><a href="#section-20" class="auto internal xref">20</a>. <a href="#name-references" class="internal xref">References</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.20.2.1">
-                <p id="section-toc.1-1.20.2.1.1"><a href="#section-20.1" class="auto internal xref">20.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.20.1"><a href="#section-20" class="auto internal xref">20</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.20.2.2">
-                <p id="section-toc.1-1.20.2.2.1"><a href="#section-20.2" class="auto internal xref">20.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.21">
+            <p id="section-toc.1-1.21.1"><a href="#section-21" class="auto internal xref">21</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.21.2.1">
+                <p id="section-toc.1-1.21.2.1.1"><a href="#section-21.1" class="auto internal xref">21.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.21.2.2">
+                <p id="section-toc.1-1.21.2.2.1"><a href="#section-21.2" class="auto internal xref">21.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.21">
-            <p id="section-toc.1-1.21.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
-</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.22">
-            <p id="section-toc.1-1.22.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.22.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.23">
+            <p id="section-toc.1-1.23.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1541,10 +1544,10 @@ to its desired server.
       <h2 id="name-credits">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-credits" class="section-name selfRef">Credits</a>
       </h2>
-<span id="name-ghsas-cves-and-finders-in-r"></span><table class="center" id="table-3">
+<span id="name-ghsas-cves-for-intra-handsh"></span><table class="center" id="table-3">
         <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
-<a href="#name-ghsas-cves-and-finders-in-r" class="selfRef">GHSAs/CVEs and finders in (roughly) chronological order of publishing</a>
+<a href="#name-ghsas-cves-for-intra-handsh" class="selfRef">GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing</a>
         </caption>
 <thead>
           <tr>
@@ -3429,23 +3432,31 @@ management etc., are also not mitigated by CC.
 </div>
 </section>
 </div>
-<div id="iana-considerations">
+<div id="contributions">
 <section id="section-19">
-      <h2 id="name-iana-considerations">
-<a href="#section-19" class="section-number selfRef">19. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      <h2 id="name-contributions">
+<a href="#section-19" class="section-number selfRef">19. </a><a href="#name-contributions" class="section-name selfRef">Contributions</a>
       </h2>
-<p id="section-19-1">This document has no IANA actions.<a href="#section-19-1" class="pilcrow">¶</a></p>
+<p id="section-19-1">Contributions to the draft are welcome at https://github.com/muhammad-usama-sardar/intra-handshake-fail.<a href="#section-19-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="iana-considerations">
+<section id="section-20">
+      <h2 id="name-iana-considerations">
+<a href="#section-20" class="section-number selfRef">20. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+      </h2>
+<p id="section-20-1">This document has no IANA actions.<a href="#section-20-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-combined-references">
-<section id="section-20">
+<section id="section-21">
       <h2 id="name-references">
-<a href="#section-20" class="section-number selfRef">20. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-21" class="section-number selfRef">21. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-20.1">
+<section id="section-21.1">
         <h3 id="name-normative-references">
-<a href="#section-20.1" class="section-number selfRef">20.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-21.1" class="section-number selfRef">21.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="CVE-2026-33697">[CVE-2026-33697]</dt>
@@ -3520,9 +3531,9 @@ management etc., are also not mitigated by CC.
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-20.2">
+<section id="section-21.2">
         <h3 id="name-informative-references">
-<a href="#section-20.2" class="section-number selfRef">20.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-21.2" class="section-number selfRef">21.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="I-D.fossati-seat-early-attestation">[I-D.fossati-seat-early-attestation]</dt>
@@ -3643,37 +3654,40 @@ management etc., are also not mitigated by CC.
           <p id="appendix-A-9.20.1">Steve Luo<a href="#appendix-A-9.20.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.21">
-          <p id="appendix-A-9.21.1">Kubilay Ahmet Küçük<a href="#appendix-A-9.21.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.21.1">Andrew Miller<a href="#appendix-A-9.21.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.22">
-          <p id="appendix-A-9.22.1">Iman Schrock<a href="#appendix-A-9.22.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.22.1">Kubilay Ahmet Küçük<a href="#appendix-A-9.22.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.23">
-          <p id="appendix-A-9.23.1">Sophie Schmieg<a href="#appendix-A-9.23.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.23.1">Iman Schrock<a href="#appendix-A-9.23.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.24">
-          <p id="appendix-A-9.24.1">Davyd Okaianchenko<a href="#appendix-A-9.24.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.24.1">Sophie Schmieg<a href="#appendix-A-9.24.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.25">
-          <p id="appendix-A-9.25.1">Alistair Woodman<a href="#appendix-A-9.25.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.25.1">Davyd Okaianchenko<a href="#appendix-A-9.25.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.26">
-          <p id="appendix-A-9.26.1">Göran Selander<a href="#appendix-A-9.26.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.26.1">Alistair Woodman<a href="#appendix-A-9.26.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.27">
-          <p id="appendix-A-9.27.1">Tom Sato<a href="#appendix-A-9.27.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.27.1">Göran Selander<a href="#appendix-A-9.27.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.28">
-          <p id="appendix-A-9.28.1">Jakub Maria Plutowski<a href="#appendix-A-9.28.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.28.1">Tom Sato<a href="#appendix-A-9.28.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.29">
-          <p id="appendix-A-9.29.1">Martin Friedrich<a href="#appendix-A-9.29.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.29.1">Jakub Maria Plutowski<a href="#appendix-A-9.29.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.30">
-          <p id="appendix-A-9.30.1">Patrick Duggan<a href="#appendix-A-9.30.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.30.1">Martin Friedrich<a href="#appendix-A-9.30.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-9.31">
-          <p id="appendix-A-9.31.1">Deb Cooley<a href="#appendix-A-9.31.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-9.31.1">Patrick Duggan<a href="#appendix-A-9.31.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-9.32">
+          <p id="appendix-A-9.32.1">Deb Cooley<a href="#appendix-A-9.32.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="appendix-A-10"><strong>Identity Crisis</strong> <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span><a href="#appendix-A-10" class="pilcrow">¶</a></p>

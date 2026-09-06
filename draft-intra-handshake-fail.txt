@@ -40,11 +40,14 @@ Abstract
    attestation adds *unnecessary complexity*. The results are backed by
    the research [Intra-handshake.fail] and the artifacts
    [Intra-handshake.fail-repo] in state-of-the-art formal analysis tool,
-   ProVerif, under Apache-2.0 license for reproducibility, and have been
-   acknowledged by the relevant stakeholders.  Currently, there are two
-   CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and
-   six GHSAs of CVSS 7.4 published against *intra*-handshake (aka early)
-   attestation.
+   ProVerif, under Apache-2.0 license for reproducibility and review,
+   and have been acknowledged by the relevant stakeholders.  Currently,
+   there are *two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of
+   CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake
+   (aka early) attestation*. The research papers on these are currently
+   either under submission or being prepared for submission.  The
+   artifacts of these papers will be shared with the community under
+   Apache-2.0 license for reproducibility and review.
 
 About This Document
 
@@ -138,10 +141,11 @@ Table of Contents
             of Vulnerable Drafts
        18.1.1.  Recordings
        18.1.2.  Archives
-   19. IANA Considerations
-   20. References
-     20.1.  Normative References
-     20.2.  Informative References
+   19. Contributions
+   20. IANA Considerations
+   21. References
+     21.1.  Normative References
+     21.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -345,8 +349,9 @@ Table of Contents
         |                         |      | Usama Sardar           |
         +-------------------------+------+------------------------+
 
-                Table 3: GHSAs/CVEs and finders in (roughly)
-                     chronological order of publishing
+            Table 3: GHSAs/CVEs for intra-handshake (aka early)
+             attestation and finders in (roughly) chronological
+                            order of publishing
 
 3.  Threat Model
 
@@ -1820,13 +1825,18 @@ Table of Contents
    If you know any other relevant mailing list that we should inform for
    protection of users, please let us know.
 
-19.  IANA Considerations
+19.  Contributions
+
+   Contributions to the draft are welcome at https://github.com/
+   muhammad-usama-sardar/intra-handshake-fail.
+
+20.  IANA Considerations
 
    This document has no IANA actions.
 
-20.  References
+21.  References
 
-20.1.  Normative References
+21.1.  Normative References
 
    [CVE-2026-33697]
               CVE, "CoCoS attested TLS is vulnerable to relay attacks
@@ -1933,7 +1943,7 @@ Table of Contents
               2026, <https://mailarchive.ietf.org/arch/msg/seat/
               x3eQxFjQFJLceae6l4_NgXnmsDY/>.
 
-20.2.  Informative References
+21.2.  Informative References
 
    [I-D.fossati-seat-early-attestation]
               Sheffer, Y., Mihalcea, I., Deshpande, Y., Fossati, T., and
@@ -2055,6 +2065,8 @@ Acknowledgments
    *  Chengxin Huang
 
    *  Steve Luo
+
+   *  Andrew Miller
 
    *  Kubilay Ahmet Küçük
 
