@@ -150,6 +150,18 @@ normative:
     target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-5qrc-v874-mxvx
     author:
       - ins: Privasys
+  GHSA-Privasys-rtc-da:
+    title: "Privasys Intra-handshake attested TLS implementation is vulnerable to Diversion Attacks"
+    date: 6 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-pj2x-5wqv-fh57
+    author:
+      - ins: Privasys
+  GHSA-Privasys-rtc-tcu:
+    title: "Privasys Intra-handshake attested TLS implementation is vulnerable to TOCTOU Attacks"
+    date: 6 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-gg8q-mfhh-wrrc
+    author:
+      - ins: Privasys
   ID-Crisis: DOI.10.1145/3779208.3785387
   ID-Crisis-repo:
     title: "Identity Crisis in Confidential Computing: Formal Analysis of Attested TLS"
@@ -160,6 +172,20 @@ normative:
       - ins: M. Moustafa
       - ins: T. Aura
   refTLS: DOI.10.1109/SP.2017.26
+  TLS-RA:
+    title: "Separate but together: integrating remote attestation into TLS"
+    date: July 2025,
+    target: https://www.usenix.org/conference/atc25/presentation/weinhold
+    author:
+      - ins: Carsten Weinhold
+      - ins: M. U. Sardar
+      - ins: Ionuț Mihalcea
+      - ins: Yogesh Deshpande
+      - ins: Hannes Tschofenig
+      - ins: Yaron Sheffer
+      - ins: Thomas Fossati
+      - ins: Michael Roitzsch
+
 informative:
   I-D.fossati-seat-early-attestation:
   I-D.fossati-seat-early-attestation-04:
@@ -171,7 +197,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, and six GHSAs of CVSS 7.4 published against intra-handshake (aka early) attestation**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against intra-handshake (aka early) attestation**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.
 
 --- middle
 
@@ -187,12 +213,12 @@ Another complementary paper -- currently under submission -- performs a thorough
 {{Intra-handshake.fail}} presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:
 
 | No. | Binding mechanism | Used in | Artifacts |
-| 1. | Client’s TLS nonce | [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder1](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1) |
+| 1. | Client’s TLS nonce | - | [binder1](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1) |
 | 2. | Client’s attestation nonce | - | [binder2](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder2) |
 | 3. | Early exporter | - | [binder3](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3) |
 | 4. | Server’s public key | - | [binder4](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4) |
 | 5. | Combination of #2 and #3 | - | [binder5](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5) |
-| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
+| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
 | 7. | Combination of #2, #3, and #4 | {{I-D.fossati-tls-attestation-06}} | [binder7](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7) |
 {: title="Binding mechanisms, implementations and ProVerif artifacts"}
 
@@ -222,21 +248,24 @@ The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably
 1. Binder has been updated
 2. Post-handshake attestation part has been added for re-attestation
 
-The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder.
+The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks.
 
 Post-handshake attestation part may prevent relay attacks, but then the **additional complexity** of intra-handshake attestation is unjustified.
 
 ## Executive Summary of Current Status
+
+Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 
 | CVSS | Severity | Number of Published CVEs/GHSAs |
 |---|---|---|
 | 9.1 | Critical | 2 |
 | 7.8 | High | 1 |
 | 7.5 | High | 2 |
-| 7.4 | High | 6 |
+| 7.4 | High | 7 |
+| 6.3 | Medium | 1 |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
-For TLS reference, Heartbleed was CVSS 7.5.
+**For TLS reference, Heartbleed was CVSS 7.5**.
 
 # Credits
 
@@ -253,7 +282,9 @@ For TLS reference, Heartbleed was CVSS 7.5.
 | {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| TBA | TBA | Songbo Bu and Muhammad Usama Sardar |
+| {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
+| TBA | 9.1 | Songbo Bu and Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
@@ -317,6 +348,8 @@ and trust domains. The following table provides a corresponding low-level view.
 | Privasys published {{GHSA-Privasys-rtc}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
 | Privasys archived early attestation in rustls and moved to post-handshake attestation | 4 September, 2026 |
 | Privasys archived early attestation in go and moved to post-handshake attestation | 4 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc-da}} [**Severity = HIGH (CVSS 7.4)**] | 6 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc-tcu}} [**Severity = MEDIUM (CVSS 6.3)**] | 6 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -663,7 +696,7 @@ In short, five main questions have been raised by WG participants in support of 
 - What **security property** hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
 - Since continuous attestation is required in most use cases, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
 - What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
-- How evidence is bound to the secure channel without involving any **shared secret**?
+- How evidence is bound to the secure channel without involving any **shared secret**? See {{TLS-RA}}.
 - How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
 
 ## Researchers outside of IETF/IRTF
@@ -763,7 +796,7 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
 If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
 # Contributions
-Contributions to the draft are welcome at https://github.com/muhammad-usama-sardar/intra-handshake-fail.
+Contributions to the draft are welcome at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail).
 
 
 # IANA Considerations
