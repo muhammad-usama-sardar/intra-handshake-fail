@@ -300,9 +300,9 @@ components to representative Intel TDX and AMD SEV-SNP implementations.
 | Fig. 2 element       | Intel TDX                                        | AMD SEV-SNP                                      |
 | -------------------- | ------------------------------------------------ | ------------------------------------------------ |
 | **Physical Machine** | TDX-capable Intel platform                       | SEV-SNP-capable AMD platform                     |
-| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery |
-| **VM**               | Trust Domain (TD)                                | SNP confidential VM                              |
-| **Quoting Agent**    | TDQE / quote-generation path                     | AMD-SP / SNP attestation firmware                |
+| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP (system) firmware + RMP/SEV machinery |
+| **Quoting Agent**    | TD QE                      | AMD-SP / SNP attestation (VM) firmware                |
+| **Confidential VM**               | Trust Domain (TD)                                | Part of SNP confidential VM                              |
 | **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |
 | **HSM/TPM**          | Secure element                          |  Secure element                          |
 | **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
@@ -315,12 +315,14 @@ and trust domains. The following table provides a corresponding low-level view.
 
 | Component/key         | Runs/lives where?                    | Type                                    | Randomness/key source |
 | --------------------- | ------------------------------------ | --------------------------------------- | --------------------- |
+| TLS ECDHE             | Inside network stack               | Network stack                          | OS/library CSPRNG     |
 | `privEK`              | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
-| TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |
-| AK / VCEK / VLEK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
+| AK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
 | Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |
-| `REPORT_DATA`         | Created by Guest OS | Data binding                            | No independent entropy requirement |
+| `REPORT_DATA`         | Created by Guest Software | Data binding                            | No independent entropy requirement |
 {: title="Low-level implementation and key-generation domains"}
+
+Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 
 
 # Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
