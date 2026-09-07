@@ -1700,21 +1700,21 @@ components to representative Intel TDX and AMD SEV-SNP implementations.<a href="
                 <strong>CC Platform</strong>
 </td>
               <td class="text-left" rowspan="1" colspan="1">CPU HW + TDX Module + attestation infrastructure</td>
-              <td class="text-left" rowspan="1" colspan="1">CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery</td>
-            </tr>
-            <tr>
-              <td class="text-left" rowspan="1" colspan="1">
-                <strong>VM</strong>
-</td>
-              <td class="text-left" rowspan="1" colspan="1">Trust Domain (TD)</td>
-              <td class="text-left" rowspan="1" colspan="1">SNP confidential VM</td>
+              <td class="text-left" rowspan="1" colspan="1">CPU HW + AMD-SP/SNP (system) firmware + RMP/SEV machinery</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
                 <strong>Quoting Agent</strong>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">TDQE / quote-generation path</td>
-              <td class="text-left" rowspan="1" colspan="1">AMD-SP / SNP attestation firmware</td>
+              <td class="text-left" rowspan="1" colspan="1">TD QE</td>
+              <td class="text-left" rowspan="1" colspan="1">AMD-SP / SNP attestation (VM) firmware</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Confidential VM</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Trust Domain (TD)</td>
+              <td class="text-left" rowspan="1" colspan="1">Part of SNP confidential VM</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
@@ -1770,6 +1770,12 @@ and trust domains. The following table provides a corresponding low-level view.<
           </thead>
           <tbody>
             <tr>
+              <td class="text-left" rowspan="1" colspan="1">TLS ECDHE</td>
+              <td class="text-left" rowspan="1" colspan="1">Inside network stack</td>
+              <td class="text-left" rowspan="1" colspan="1">Network stack</td>
+              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
+            </tr>
+            <tr>
               <td class="text-left" rowspan="1" colspan="1">
                 <code>privEK</code>
 </td>
@@ -1778,13 +1784,7 @@ and trust domains. The following table provides a corresponding low-level view.<
               <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">TLS ECDHE</td>
-              <td class="text-left" rowspan="1" colspan="1">Inside confidential VM</td>
-              <td class="text-left" rowspan="1" colspan="1">Network stack</td>
-              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
-            </tr>
-            <tr>
-              <td class="text-left" rowspan="1" colspan="1">AK / VCEK / VLEK</td>
+              <td class="text-left" rowspan="1" colspan="1">AK</td>
               <td class="text-left" rowspan="1" colspan="1">Quoting Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Firmware/enclave/platform key hierarchy</td>
               <td class="text-left" rowspan="1" colspan="1">Platform-specific</td>
@@ -1799,12 +1799,13 @@ and trust domains. The following table provides a corresponding low-level view.<
               <td class="text-left" rowspan="1" colspan="1">
                 <code>REPORT_DATA</code>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">Created by Guest OS</td>
+              <td class="text-left" rowspan="1" colspan="1">Created by Guest Software</td>
               <td class="text-left" rowspan="1" colspan="1">Data binding</td>
               <td class="text-left" rowspan="1" colspan="1">No independent entropy requirement</td>
             </tr>
           </tbody>
         </table>
+<p id="section-3.1-5">Per-VM memory-encryption key is used to encrypt confidential VM's RAM.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
