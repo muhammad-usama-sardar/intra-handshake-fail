@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 10 March 2027                                         CoreWeave
+Expires: 11 March 2027                                         CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -14,13 +14,13 @@ Expires: 10 March 2027                                         CoreWeave
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
                                                                   Switch
-                                                              E. Willems
+                                                        E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
                                                                PHI-OMEGA
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                        6 September 2026
+                                                        7 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -76,7 +76,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 March 2027.
+   This Internet-Draft will expire on 11 March 2027.
 
 Copyright Notice
 
@@ -379,72 +379,75 @@ Table of Contents
    the abstract components to representative Intel TDX and AMD SEV-SNP
    implementations.
 
-      +===========+============================+===================+
-      | Fig. 2    | Intel TDX                  | AMD SEV-SNP       |
-      | element   |                            |                   |
-      +===========+============================+===================+
-      | *Physical | TDX-capable Intel platform | SEV-SNP-capable   |
-      | Machine*  |                            | AMD platform      |
-      +-----------+----------------------------+-------------------+
-      | *CC       | CPU HW + TDX Module +      | CPU HW + AMD-SP/  |
-      | Platform* | attestation infrastructure | SNP firmware +    |
-      |           |                            | RMP/SEV machinery |
-      +-----------+----------------------------+-------------------+
-      | *VM*      | Trust Domain (TD)          | SNP confidential  |
-      |           |                            | VM                |
-      +-----------+----------------------------+-------------------+
-      | *Quoting  | TDQE / quote-generation    | AMD-SP / SNP      |
-      | Agent*    | path                       | attestation       |
-      |           |                            | firmware          |
-      +-----------+----------------------------+-------------------+
-      | *Network  | Part of guest OS + TLS     | Part of guest OS  |
-      | stack*    | library inside TD          | + TLS library     |
-      |           |                            | inside SNP guest  |
-      +-----------+----------------------------+-------------------+
-      | *HSM/TPM* | Secure element             | Secure element    |
-      +-----------+----------------------------+-------------------+
-      | *privAK*  | Attestation key of TD      | VCEK/VLEK signing |
-      |           | Quoting Enclave            | key               |
-      +-----------+----------------------------+-------------------+
-      | *privEK*  | Workload/TLS-side          | Workload/TLS-side |
-      |           | ephemeral key              | ephemeral key     |
-      +-----------+----------------------------+-------------------+
-      | *privLTK* | Long-term key in secure    | Long-term key in  |
-      |           | element                    | secure element    |
-      +-----------+----------------------------+-------------------+
+   +===============+============================+=====================+
+   | Fig. 2        | Intel TDX                  | AMD SEV-SNP         |
+   | element       |                            |                     |
+   +===============+============================+=====================+
+   | *Physical     | TDX-capable Intel platform | SEV-SNP-capable AMD |
+   | Machine*      |                            | platform            |
+   +---------------+----------------------------+---------------------+
+   | *CC Platform* | CPU HW + TDX Module +      | CPU HW + AMD-SP/SNP |
+   |               | attestation infrastructure | (system) firmware + |
+   |               |                            | RMP/SEV machinery   |
+   +---------------+----------------------------+---------------------+
+   | *Quoting      | TD QE                      | AMD-SP / SNP        |
+   | Agent*        |                            | attestation (VM)    |
+   |               |                            | firmware            |
+   +---------------+----------------------------+---------------------+
+   | *Confidential | Trust Domain (TD)          | Part of SNP         |
+   | VM*           |                            | confidential VM     |
+   +---------------+----------------------------+---------------------+
+   | *Network      | Part of guest OS + TLS     | Part of guest OS +  |
+   | stack*        | library inside TD          | TLS library inside  |
+   |               |                            | SNP guest           |
+   +---------------+----------------------------+---------------------+
+   | *HSM/TPM*     | Secure element             | Secure element      |
+   +---------------+----------------------------+---------------------+
+   | *privAK*      | Attestation key of TD      | VCEK/VLEK signing   |
+   |               | Quoting Enclave            | key                 |
+   +---------------+----------------------------+---------------------+
+   | *privEK*      | Workload/TLS-side          | Workload/TLS-side   |
+   |               | ephemeral key              | ephemeral key       |
+   +---------------+----------------------------+---------------------+
+   | *privLTK*     | Long-term key in secure    | Long-term key in    |
+   |               | element                    | secure element      |
+   +---------------+----------------------------+---------------------+
 
-             Table 4: Mapping of the abstract system model to
-                    representative CC implementations
+    Table 4: Mapping of the abstract system model to representative CC
+                             implementations
 
    The key material shown in the abstract model belongs to different
    implementation and trust domains.  The following table provides a
    corresponding low-level view.
 
-   +=================+============+=================+=================+
-   |Component/key    |Runs/lives  |Type             |Randomness/key   |
-   |                 |where?      |                 |source           |
-   +=================+============+=================+=================+
-   |privEK           |Inside      |Guest software   |OS/library CSPRNG|
-   |                 |confidential|                 |                 |
-   |                 |VM          |                 |                 |
-   +-----------------+------------+-----------------+-----------------+
-   |TLS ECDHE        |Inside      |Network stack    |OS/library CSPRNG|
-   |                 |confidential|                 |                 |
-   |                 |VM          |                 |                 |
-   +-----------------+------------+-----------------+-----------------+
-   |AK / VCEK / VLEK |Quoting     |Firmware/enclave/|Platform-specific|
-   |                 |Agent       |platform key     |                 |
-   |                 |            |hierarchy        |                 |
-   +-----------------+------------+-----------------+-----------------+
-   |Memory-encryption|CC Platform |Hardware/firmware|Platform RNG/KDF |
-   |key              |            |managed          |                 |
-   +-----------------+------------+-----------------+-----------------+
-   |REPORT_DATA      |Created by  |Data binding     |No independent   |
-   |                 |Guest OS    |                 |entropy          |
-   |                 |            |                 |requirement      |
-   +-----------------+------------+-----------------+-----------------+
+   +=================+=============+=================+=================+
+   |Component/key    |Runs/lives   |Type             |Randomness/key   |
+   |                 |where?       |                 |source           |
+   +=================+=============+=================+=================+
+   |TLS ECDHE        |Inside       |Network stack    |OS/library CSPRNG|
+   |                 |network      |                 |                 |
+   |                 |stack        |                 |                 |
+   +-----------------+-------------+-----------------+-----------------+
+   |privEK           |Inside       |Guest software   |OS/library CSPRNG|
+   |                 |confidential |                 |                 |
+   |                 |VM           |                 |                 |
+   +-----------------+-------------+-----------------+-----------------+
+   |AK               |Quoting      |Firmware/enclave/|Platform-specific|
+   |                 |Agent        |platform key     |                 |
+   |                 |             |hierarchy        |                 |
+   +-----------------+-------------+-----------------+-----------------+
+   |Memory-encryption|CC Platform  |Hardware/firmware|Platform RNG/KDF |
+   |key              |             |managed          |                 |
+   +-----------------+-------------+-----------------+-----------------+
+   |REPORT_DATA      |Created by   |Data binding     |No independent   |
+   |                 |Guest        |                 |entropy          |
+   |                 |Software     |                 |requirement      |
+   +-----------------+-------------+-----------------+-----------------+
 
-       Table 5: Low-level implementation and key-generation domains
+        Table 5: Low-level implementation and key-generation domains
+
+   Per-VM memory-encryption key is used to encrypt confidential VM's
+   RAM.
 
 4.  Detailed Vulnerability Disclosure Timeline and Public
     Acknowledgements by Affected Vendors
@@ -882,19 +885,22 @@ Table of Contents
 
 13.4.  Implications of Findings for Agent2Agent
 
-   From a security perspective, intra-handshake attestation does more
-   damage than protection for AI agents.  Attestation can provide
-   evidence about an agent’s technical state, but such evidence should
-   not be equated with governability.  For a relying party,
-   governability also depends on whether the agent’s identity, authority
-   and permissions remain aligned with the intended interaction, whether
-   responsibility for its actions can be attributed, and whether
-   meaningful intervention remains possible.  The findings in this draft
-   reinforce that distinction by showing that even the binding between
-   attestation evidence and the intended session can fail.  Successful
-   attestation should therefore be treated as one input into governance,
-   rather than as sufficient evidence that an AI agent remains under
-   effective control.
+   The findings of published CVEs/GHSAs up to 9.1 (presented in
+   Section 2) show that intra-handshake attestation can introduce
+   significant security risks for AI agents when relied upon as a
+   security mechanism.
+
+   Attestation can provide evidence about an agent’s technical state,
+   but such evidence should not be equated with governability.  For a
+   relying party, governability also depends on whether the agent’s
+   identity, authority and permissions remain aligned with the intended
+   interaction, whether responsibility for its actions can be
+   attributed, and whether meaningful intervention remains possible.
+   The findings in this draft reinforce that distinction by showing that
+   even the binding between attestation evidence and the intended
+   session can fail.  Successful attestation should therefore be treated
+   as one input into governance, rather than as sufficient evidence that
+   an AI agent remains under effective control.
 
 14.  Technical Details
 
@@ -2221,7 +2227,7 @@ Authors' Addresses
    Email: kaya.ercihan@switch.ch
 
 
-   Eva Willems
+   E. C. M. Willems
    Independent, Netherlands
    Email: evac.m.willems@proton.me
 

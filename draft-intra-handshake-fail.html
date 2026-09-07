@@ -11,7 +11,7 @@
 <meta content="Chengxin Huang" name="author">
 <meta content="Haowen Song" name="author">
 <meta content="Kaya Ercihan" name="author">
-<meta content="Eva Willems" name="author">
+<meta content="E. C. M. Willems" name="author">
 <meta content="Massimiliano Brighindi" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
@@ -1055,7 +1055,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 10 March 2027</td>
+<td class="center">Expires 11 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1068,12 +1068,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-06" class="published">6 September 2026</time>
+<time datetime="2026-09-07" class="published">7 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-10">10 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-11">11 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1101,7 +1101,7 @@ svg {
 <div class="org">Switch</div>
 </div>
 <div class="author">
-      <div class="author-name">E. Willems</div>
+      <div class="author-name">E. C. M. Willems</div>
 <div class="org">Independent, Netherlands</div>
 </div>
 <div class="author">
@@ -1150,7 +1150,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 11 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1543,7 +1543,7 @@ to its desired server.
 </div>
 </section>
 </div>
-<div id="credits">
+<div id="sec-credits">
 <section id="section-2">
       <h2 id="name-credits">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-credits" class="section-name selfRef">Credits</a>
@@ -1700,21 +1700,21 @@ components to representative Intel TDX and AMD SEV-SNP implementations.<a href="
                 <strong>CC Platform</strong>
 </td>
               <td class="text-left" rowspan="1" colspan="1">CPU HW + TDX Module + attestation infrastructure</td>
-              <td class="text-left" rowspan="1" colspan="1">CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery</td>
-            </tr>
-            <tr>
-              <td class="text-left" rowspan="1" colspan="1">
-                <strong>VM</strong>
-</td>
-              <td class="text-left" rowspan="1" colspan="1">Trust Domain (TD)</td>
-              <td class="text-left" rowspan="1" colspan="1">SNP confidential VM</td>
+              <td class="text-left" rowspan="1" colspan="1">CPU HW + AMD-SP/SNP (system) firmware + RMP/SEV machinery</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
                 <strong>Quoting Agent</strong>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">TDQE / quote-generation path</td>
-              <td class="text-left" rowspan="1" colspan="1">AMD-SP / SNP attestation firmware</td>
+              <td class="text-left" rowspan="1" colspan="1">TD QE</td>
+              <td class="text-left" rowspan="1" colspan="1">AMD-SP / SNP attestation (VM) firmware</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Confidential VM</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Trust Domain (TD)</td>
+              <td class="text-left" rowspan="1" colspan="1">Part of SNP confidential VM</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">
@@ -1770,6 +1770,12 @@ and trust domains. The following table provides a corresponding low-level view.<
           </thead>
           <tbody>
             <tr>
+              <td class="text-left" rowspan="1" colspan="1">TLS ECDHE</td>
+              <td class="text-left" rowspan="1" colspan="1">Inside network stack</td>
+              <td class="text-left" rowspan="1" colspan="1">Network stack</td>
+              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
+            </tr>
+            <tr>
               <td class="text-left" rowspan="1" colspan="1">
                 <code>privEK</code>
 </td>
@@ -1778,13 +1784,7 @@ and trust domains. The following table provides a corresponding low-level view.<
               <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">TLS ECDHE</td>
-              <td class="text-left" rowspan="1" colspan="1">Inside confidential VM</td>
-              <td class="text-left" rowspan="1" colspan="1">Network stack</td>
-              <td class="text-left" rowspan="1" colspan="1">OS/library CSPRNG</td>
-            </tr>
-            <tr>
-              <td class="text-left" rowspan="1" colspan="1">AK / VCEK / VLEK</td>
+              <td class="text-left" rowspan="1" colspan="1">AK</td>
               <td class="text-left" rowspan="1" colspan="1">Quoting Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Firmware/enclave/platform key hierarchy</td>
               <td class="text-left" rowspan="1" colspan="1">Platform-specific</td>
@@ -1799,12 +1799,13 @@ and trust domains. The following table provides a corresponding low-level view.<
               <td class="text-left" rowspan="1" colspan="1">
                 <code>REPORT_DATA</code>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">Created by Guest OS</td>
+              <td class="text-left" rowspan="1" colspan="1">Created by Guest Software</td>
               <td class="text-left" rowspan="1" colspan="1">Data binding</td>
               <td class="text-left" rowspan="1" colspan="1">No independent entropy requirement</td>
             </tr>
           </tbody>
         </table>
+<p id="section-3.1-5">Per-VM memory-encryption key is used to encrypt confidential VM's RAM.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2439,8 +2440,8 @@ urgently move to post-handshake attestation.
         <h3 id="name-implications-of-findings-for-a">
 <a href="#section-13.4" class="section-number selfRef">13.4. </a><a href="#name-implications-of-findings-for-a" class="section-name selfRef">Implications of Findings for Agent2Agent</a>
         </h3>
-<p id="section-13.4-1">From a security perspective, intra-handshake attestation does more damage than protection for AI agents.
-Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.<a href="#section-13.4-1" class="pilcrow">¶</a></p>
+<p id="section-13.4-1">The findings of published CVEs/GHSAs up to 9.1 (presented in <a href="#sec-credits" class="auto internal xref">Section 2</a>) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.<a href="#section-13.4-1" class="pilcrow">¶</a></p>
+<p id="section-13.4-2">Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.<a href="#section-13.4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -3846,7 +3847,7 @@ management etc., are also not mitigated by CC.
 </div>
 </address>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Eva Willems</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">E. C. M. Willems</span></div>
 <div dir="auto" class="left"><span class="org">Independent, Netherlands</span></div>
 <div class="email">
 <span>Email:</span>
