@@ -49,7 +49,7 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
-    fullname: "Eva Willems"
+    fullname: "E. C. M. Willems"
     organization: Independent, Netherlands
     email: "evac.m.willems@proton.me"
  -
@@ -268,6 +268,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 **For TLS reference, Heartbleed was CVSS 7.5**.
 
 # Credits
+{: #sec-credits }
 
 | GHSA/CVE | CVSS | Finders |
 |---|---|---|
@@ -299,9 +300,9 @@ components to representative Intel TDX and AMD SEV-SNP implementations.
 | Fig. 2 element       | Intel TDX                                        | AMD SEV-SNP                                      |
 | -------------------- | ------------------------------------------------ | ------------------------------------------------ |
 | **Physical Machine** | TDX-capable Intel platform                       | SEV-SNP-capable AMD platform                     |
-| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP firmware + RMP/SEV machinery |
-| **VM**               | Trust Domain (TD)                                | SNP confidential VM                              |
-| **Quoting Agent**    | TDQE / quote-generation path                     | AMD-SP / SNP attestation firmware                |
+| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP (system) firmware + RMP/SEV machinery |
+| **Quoting Agent**    | TD QE                      | AMD-SP / SNP attestation (VM) firmware                |
+| **Confidential VM**               | Trust Domain (TD)                                | Part of SNP confidential VM                              |
 | **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |
 | **HSM/TPM**          | Secure element                          |  Secure element                          |
 | **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
@@ -314,12 +315,14 @@ and trust domains. The following table provides a corresponding low-level view.
 
 | Component/key         | Runs/lives where?                    | Type                                    | Randomness/key source |
 | --------------------- | ------------------------------------ | --------------------------------------- | --------------------- |
+| TLS ECDHE             | Inside network stack               | Network stack                          | OS/library CSPRNG     |
 | `privEK`              | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
-| TLS ECDHE             | Inside confidential VM               | Network stack                          | OS/library CSPRNG     |
-| AK / VCEK / VLEK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
+| AK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
 | Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |
-| `REPORT_DATA`         | Created by Guest OS | Data binding                            | No independent entropy requirement |
+| `REPORT_DATA`         | Created by Guest Software | Data binding                            | No independent entropy requirement |
 {: title="Low-level implementation and key-generation domains"}
+
+Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 
 
 # Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
@@ -491,7 +494,8 @@ urgently move to post-handshake attestation.
 ~~~
 
 ## Implications of Findings for Agent2Agent
-From a security perspective, intra-handshake attestation does more damage than protection for AI agents.
+The findings of published CVEs/GHSAs up to 9.1 (presented in {{sec-credits}}) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.
+
 Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
 # Technical Details
