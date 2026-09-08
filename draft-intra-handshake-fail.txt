@@ -44,12 +44,16 @@ Abstract
    [Intra-handshake.fail-repo] in state-of-the-art formal analysis tool,
    ProVerif, under Apache-2.0 license for reproducibility and review,
    and have been acknowledged by the relevant stakeholders.  Currently,
-   there are *two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of
-   CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published
-   against intra-handshake (aka early) attestation*. The research papers
-   on these are currently either under submission or being prepared for
-   submission.  The artifacts of these papers will be shared with the
-   community under Apache-2.0 license for reproducibility and review.
+   there are *two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of
+   CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA
+   of CVSS 6.3 published against the broader intra-handshake (aka early)
+   attestation covering all layers of the ecosystem up to the
+   application*. The research papers on these are currently either under
+   submission or being prepared for submission.  The artifacts of these
+   papers will be shared with the community under Apache-2.0 license for
+   reproducibility and review.  In our analysis, the remaining
+   implementations of early attestation -- Edgeless Systems Contrast and
+   Meta's AI -- remain vulnerable.
 
 About This Document
 
@@ -111,6 +115,7 @@ Table of Contents
            Literature
    7.  More CVEs
    8.  Vulnerable Implementations
+     8.1.  Mitigated Implementations
    9.  Vulnerable Protocol Specifications
    10. Binding Levels
    11. Security Properties (Correlation Goals)
@@ -136,6 +141,7 @@ Table of Contents
      16.1.  Conference Reviews
      16.2.  IETF/IRTF
        16.2.1.  Main Questions
+       16.2.2.  Guidance Text
      16.3.  Researchers outside of IETF/IRTF
    17. Security Considerations
    18. Ethical Considerations
@@ -316,60 +322,60 @@ Table of Contents
 
 2.  Credits
 
-      +=========================+==========+========================+
-      | GHSA/CVE                | CVSS     | Finders                |
-      +=========================+==========+========================+
-      | [GHSA-Cocos-AI]         | 7.8      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [CVE-2026-33697]        | 7.5      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [EUVD-2026-16488]       | 7.5      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Edgeless-Systems] | 7.4      | Muhammad Usama Sardar  |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Cocos-AI2]        | 9.1      | Muhammad Usama Sardar  |
-      |                         |          | and Songbo Bu          |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Cocos-AI3]        | 9.1      | Muhammad Usama Sardar  |
-      |                         |          | and Songbo Bu          |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-rustls]  | 7.4      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-go]      | 7.4      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-eov]     | 7.4      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-eom]     | 7.4      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-rtc]     | 7.4      | Muhammad Usama Sardar, |
-      |                         |          | Viacheslav Dubeyko,    |
-      |                         |          | and Jean-Marie Jacquet |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-rtc-da]  | 7.4      | Muhammad Usama Sardar  |
-      +-------------------------+----------+------------------------+
-      | [GHSA-Privasys-rtc-tcu] | 6.3      | Muhammad Usama Sardar  |
-      +-------------------------+----------+------------------------+
-      | TBA                     | 9.0-10.0 | Songbo Bu and Muhammad |
-      |                         |          | Usama Sardar           |
-      +-------------------------+----------+------------------------+
+   +==========================+==========+============================+
+   | GHSA/CVE                 | CVSS     | Finders                    |
+   +==========================+==========+============================+
+   | [GHSA-Cocos-AI]          | 7.8      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [CVE-2026-33697]         | 7.5      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [EUVD-2026-16488]        | 7.5      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Edgeless-Systems]  | 7.4      | Muhammad Usama Sardar      |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Cocos-AI2]         | 9.1      | Muhammad Usama Sardar and  |
+   |                          |          | Songbo Bu                  |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Cocos-AI3]         | 9.1      | Muhammad Usama Sardar and  |
+   |                          |          | Songbo Bu                  |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Edgeless-Systems2] | 9.0-10.0 | Markus Rudy; independently |
+   |                          |          | by Songbo Bu and Muhammad  |
+   |                          |          | Usama Sardar               |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-rustls]   | 7.4      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-go]       | 7.4      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-eov]      | 7.4      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-eom]      | 7.4      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-rtc]      | 7.4      | Muhammad Usama Sardar,     |
+   |                          |          | Viacheslav Dubeyko, and    |
+   |                          |          | Jean-Marie Jacquet         |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-rtc-da]   | 7.4      | Muhammad Usama Sardar      |
+   +--------------------------+----------+----------------------------+
+   | [GHSA-Privasys-rtc-tcu]  | 6.3      | Muhammad Usama Sardar      |
+   +--------------------------+----------+----------------------------+
 
-            Table 3: GHSAs/CVEs for intra-handshake (aka early)
-        attestation and finders in (roughly) chronological order of
-                                 publishing
+     Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
+        and finders in (roughly) chronological order of publishing
 
 3.  Threat Model
 
@@ -541,6 +547,9 @@ Table of Contents
    |Cocos AI published [GHSA-Cocos-AI3] [*Severity = CRITICAL (CVSS 9.1)*]      |16 August,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |Edgeless Systems published [GHSA-Edgeless-Systems2] [*Severity = CRITICAL   |24 August,|
+   |(CVSS 9.0-10.0)*]                                                           |2026      |
+   +----------------------------------------------------------------------------+----------+
    |Privasys published [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*]    |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
@@ -687,19 +696,25 @@ Table of Contents
 
 8.  Vulnerable Implementations
 
-   At least the following implementations are vulnerable:
+   As demonstrated in [Intra-handshake.fail] and
+   [Intra-handshake.fail-repo], at least the following intra-handshake
+   implementations are vulnerable:
 
    *  Meta's AI (https://ai.meta.com/static-resource/private-processing-
       technical-whitepaper): [CVE-2026-33697] and [EUVD-2026-16488]
       [*Severity = HIGH (CVSS 7.5)*]
 
-   *  Cocos AI up to v0.8.2 (https://github.com/ultravioletrs/cocos):
-      [GHSA-Cocos-AI] [*Severity = HIGH (CVSS 7.8)*], [CVE-2026-33697]
-      and [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]; *migrated*
-      to post-handshake attestation since v0.9.0
-
    *  Edgeless Systems Contrast (https://github.com/edgelesssys/
       contrast): [GHSA-Edgeless-Systems] [*Severity = HIGH (CVSS 7.4)*]
+
+   If you are aware of any other intra-handshake attestation
+   implementation, please let us know so that we can check and
+   responsibly disclose the vulnerabilities to them.
+
+8.1.  Mitigated Implementations
+
+   The following intra-handshake implementations were vulnerable and
+   have been *archived* or moved to *post*-handshake attestation:
 
    *  CCC Attestation SIG (https://github.com/CCC-Attestation)'s adopted
       project intra-handshake attestation (https://github.com/ccc-
@@ -707,16 +722,19 @@ Table of Contents
       attacks (https://github.com/CCC-Attestation/attested-tls-poc/
       pull/58) and *archived*
 
-   *  Privasys rustls: [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS
-      7.4)*], *archived* and Privasys migrated to post-handshake
-      attestation
+   *  Cocos AI <= v0.8.2 (https://github.com/ultravioletrs/cocos):
+      [GHSA-Cocos-AI] [*Severity = HIGH (CVSS 7.8)*], [CVE-2026-33697]
+      and [EUVD-2026-16488] [*Severity = HIGH (CVSS 7.5)*]; *migrated*
+      to post-handshake attestation since v0.9.0
 
-   *  Pirvasys go: [GHSA-Privasys-go] [*Severity = HIGH (CVSS 7.4)*],
+   *  Privasys rustls <= privasys-v0.2.0 (https://github.com/Privasys/
+      rustls): [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*],
       *archived* and Privasys migrated to post-handshake attestation
 
-   If you are aware of any other intra-handshake attestation
-   implementation, please let us know so that we can check and
-   responsibly disclose the vulnerabilities to them.
+   *  Pirvasys go <= privasys-v0.3.0-go1.26.5
+      (https://github.com/Privasys/go): [GHSA-Privasys-go] [*Severity =
+      HIGH (CVSS 7.4)*], *archived* and Privasys migrated to post-
+      handshake attestation
 
 9.  Vulnerable Protocol Specifications
 
@@ -1110,6 +1128,8 @@ Table of Contents
 
    *  Privasys (https://privasys.org/blog/binding-attestation-to-the-
       tls-session/)
+
+   *  Caution (https://caution.co/blog/steve-attesting-the-session.html)
 
    *  freenode (https://freenode.net/digest/67)
 
@@ -1567,6 +1587,40 @@ Table of Contents
       wFxU/ (https://mailarchive.ietf.org/arch/msg/seat/
       UsIj6o7wf4hX_uCL51TCTv-wFxU/)
 
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      a6c8D6PBDRe0x4DAqXM3t4EPc4c/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      a6c8D6PBDRe0x4DAqXM3t4EPc4c/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      prB537Jht2kELVCSrTRktjbp7Y4/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      prB537Jht2kELVCSrTRktjbp7Y4/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      RPnKYfUCD_MRw3hnA00zg684yGM/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      RPnKYfUCD_MRw3hnA00zg684yGM/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      nMH_0sLLU5MekoEnzWKJnIJmaSk/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      nMH_0sLLU5MekoEnzWKJnIJmaSk/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/
+      GJCA31mgAehlgFPRu_yHA10lKPI/
+      (https://mailarchive.ietf.org/arch/msg/seat/
+      GJCA31mgAehlgFPRu_yHA10lKPI/)
+
+   *  https://mailarchive.ietf.org/arch/msg/seat/9f-
+      21JMK6s1Pdcob6mPo06rNwmQ/ (https://mailarchive.ietf.org/arch/msg/
+      seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/)
+
+   *  https://mailarchive.ietf.org/arch/msg/
+      seat/8qq_GFT391IEbGZZQUtYMONX9U0/
+      (https://mailarchive.ietf.org/arch/msg/
+      seat/8qq_GFT391IEbGZZQUtYMONX9U0/)
+
 16.2.1.  Main Questions
 
    In short, five main questions have been raised by WG participants in
@@ -1595,6 +1649,24 @@ Table of Contents
 
    *  How does a verifying relying party get the legitimate PIIDs and
       CHIP_IDs?
+
+16.2.2.  Guidance Text
+
+   *  Evidence MUST be bound to the secure channel.  Failure to do so
+      results in relay attacks [CVE-2026-33697], [EUVD-2026-16488],
+      [GHSA-Cocos-AI].
+
+   *  Verifier MUST have access to legitimate hardware identifiers of
+      the Attester.  Failure to do so results in relay attacks
+      [GHSA-Edgeless-Systems].
+
+   *  Verifier MUST carefully check the binding.  Failure to do so
+      results in relay attacks [GHSA-Cocos-AI2], [GHSA-Cocos-AI3].
+
+   *  Binder MUST contain shared secrets.  Failure to do so results in
+      relay attacks [GHSA-Privasys-rustls], [GHSA-Privasys-go],
+      [GHSA-Privasys-eov], [GHSA-Privasys-eom], [GHSA-Privasys-rtc],
+      [GHSA-Privasys-rtc-da], [GHSA-Privasys-rtc-tcu].
 
 16.3.  Researchers outside of IETF/IRTF
 
@@ -1940,6 +2012,12 @@ Table of Contents
               <https://github.com/edgelesssys/contrast/security/
               advisories/GHSA-hjgc-jc5v-fw7h>.
 
+   [GHSA-Edgeless-Systems2]
+              Edgeless Systems, "Generated policies don't detect all
+              image substitutions", August 2026,
+              <https://github.com/edgelesssys/contrast/security/
+              advisories/GHSA-m2qg-wrxv-h898>.
+
    [GHSA-Privasys-eom]
               Privasys, "enclave-os-mini: RA-TLS challenge certificates
               were not bound to the TLS session", September 2026,
@@ -2100,6 +2178,8 @@ Acknowledgments
    *  Sammy Kerata Oina
 
    *  Drasko Draskovic
+
+   *  Markus Rudy
 
    *  Rebekah Overdorf
 
