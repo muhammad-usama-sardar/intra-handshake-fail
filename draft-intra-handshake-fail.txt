@@ -26,8 +26,8 @@ Expires: 12 March 2027                                         CoreWeave
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8
-                               upcoming)
+  2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS
+                             10.0 upcoming)
                    draft-intra-handshake-fail-latest
 
 Abstract
@@ -293,81 +293,83 @@ Table of Contents
    Severity is based on NIST metrics (https://nvd.nist.gov/vuln-metrics/
    cvss).
 
-           +======+==========+================================+
-           | CVSS | Severity | Number of Published CVEs/GHSAs |
-           +======+==========+================================+
-           | 9.1  | Critical | 2                              |
-           +------+----------+--------------------------------+
-           | 7.8  | High     | 1                              |
-           +------+----------+--------------------------------+
-           | 7.5  | High     | 2                              |
-           +------+----------+--------------------------------+
-           | 7.4  | High     | 7                              |
-           +------+----------+--------------------------------+
-           | 6.3  | Medium   | 1                              |
-           +------+----------+--------------------------------+
+         +==========+==========+================================+
+         | CVSS     | Severity | Number of Published CVEs/GHSAs |
+         +==========+==========+================================+
+         | 9.0-10.0 | Critical | 1                              |
+         +----------+----------+--------------------------------+
+         | 9.1      | Critical | 2                              |
+         +----------+----------+--------------------------------+
+         | 7.8      | High     | 1                              |
+         +----------+----------+--------------------------------+
+         | 7.5      | High     | 2                              |
+         +----------+----------+--------------------------------+
+         | 7.4      | High     | 7                              |
+         +----------+----------+--------------------------------+
+         | 6.3      | Medium   | 1                              |
+         +----------+----------+--------------------------------+
 
-                 Table 2: Published CVEs/GHSAs for intra-
-                    handshake (aka early) attestation
+            Table 2: Published CVEs/GHSAs for intra-handshake
+                         (aka early) attestation
 
    *For TLS reference, Heartbleed was CVSS 7.5*.
 
 2.  Credits
 
-        +=========================+======+========================+
-        | GHSA/CVE                | CVSS | Finders                |
-        +=========================+======+========================+
-        | [GHSA-Cocos-AI]         | 7.8  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [CVE-2026-33697]        | 7.5  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [EUVD-2026-16488]       | 7.5  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Edgeless-Systems] | 7.4  | Muhammad Usama Sardar  |
-        +-------------------------+------+------------------------+
-        | [GHSA-Cocos-AI2]        | 9.1  | Muhammad Usama Sardar  |
-        |                         |      | and Songbo Bu          |
-        +-------------------------+------+------------------------+
-        | [GHSA-Cocos-AI3]        | 9.1  | Muhammad Usama Sardar  |
-        |                         |      | and Songbo Bu          |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-rustls]  | 7.4  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-go]      | 7.4  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-eov]     | 7.4  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-eom]     | 7.4  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-rtc]     | 7.4  | Muhammad Usama Sardar, |
-        |                         |      | Viacheslav Dubeyko,    |
-        |                         |      | and Jean-Marie Jacquet |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-rtc-da]  | 7.4  | Muhammad Usama Sardar  |
-        +-------------------------+------+------------------------+
-        | [GHSA-Privasys-rtc-tcu] | 6.3  | Muhammad Usama Sardar  |
-        +-------------------------+------+------------------------+
-        | TBA                     | 9.1  | Songbo Bu and Muhammad |
-        |                         |      | Usama Sardar           |
-        +-------------------------+------+------------------------+
+      +=========================+==========+========================+
+      | GHSA/CVE                | CVSS     | Finders                |
+      +=========================+==========+========================+
+      | [GHSA-Cocos-AI]         | 7.8      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [CVE-2026-33697]        | 7.5      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [EUVD-2026-16488]       | 7.5      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Edgeless-Systems] | 7.4      | Muhammad Usama Sardar  |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Cocos-AI2]        | 9.1      | Muhammad Usama Sardar  |
+      |                         |          | and Songbo Bu          |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Cocos-AI3]        | 9.1      | Muhammad Usama Sardar  |
+      |                         |          | and Songbo Bu          |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-rustls]  | 7.4      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-go]      | 7.4      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-eov]     | 7.4      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-eom]     | 7.4      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-rtc]     | 7.4      | Muhammad Usama Sardar, |
+      |                         |          | Viacheslav Dubeyko,    |
+      |                         |          | and Jean-Marie Jacquet |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-rtc-da]  | 7.4      | Muhammad Usama Sardar  |
+      +-------------------------+----------+------------------------+
+      | [GHSA-Privasys-rtc-tcu] | 6.3      | Muhammad Usama Sardar  |
+      +-------------------------+----------+------------------------+
+      | TBA                     | 9.0-10.0 | Songbo Bu and Muhammad |
+      |                         |          | Usama Sardar           |
+      +-------------------------+----------+------------------------+
 
             Table 3: GHSAs/CVEs for intra-handshake (aka early)
-             attestation and finders in (roughly) chronological
-                            order of publishing
+        attestation and finders in (roughly) chronological order of
+                                 publishing
 
 3.  Threat Model
 
@@ -659,21 +661,23 @@ Table of Contents
    Further formal analysis has led to the following potential CVEs for
    intra-handshake attestation (currently under review and disclosure):
 
-            +======+==========+===============================+
-            | CVSS | Severity | Number of CVEs                |
-            +======+==========+===============================+
-            | 9.8  | Critical | 1                             |
-            +------+----------+-------------------------------+
-            | 9.1  | Critical | 3 (confirmed by developers)   |
-            +------+----------+-------------------------------+
-            | 8.7  | High     | 1                             |
-            +------+----------+-------------------------------+
-            | 7.5  | High     | 2                             |
-            +------+----------+-------------------------------+
-            | 7.4  | High     | 7 (5 confirmed by developers) |
-            +------+----------+-------------------------------+
-            | 6.3  | Medium   | 2                             |
-            +------+----------+-------------------------------+
+          +==========+==========+===============================+
+          | CVSS     | Severity | Number of CVEs                |
+          +==========+==========+===============================+
+          | 9.0-10.0 | Critical | 1 (confirmed by developers)   |
+          +----------+----------+-------------------------------+
+          | 9.8      | Critical | 1                             |
+          +----------+----------+-------------------------------+
+          | 9.1      | Critical | 2 (confirmed by developers)   |
+          +----------+----------+-------------------------------+
+          | 8.7      | High     | 1                             |
+          +----------+----------+-------------------------------+
+          | 7.5      | High     | 4                             |
+          +----------+----------+-------------------------------+
+          | 7.4      | High     | 8 (5 confirmed by developers) |
+          +----------+----------+-------------------------------+
+          | 6.3      | Medium   | 3                             |
+          +----------+----------+-------------------------------+
 
                  Table 8: Expected CVEs for intra-handshake
                         attestation under disclosure

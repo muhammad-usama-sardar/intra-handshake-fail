@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)</title>
+<title>Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="Viacheslav Dubeyko" name="author">
 <meta content="Songbo Bu" name="author">
@@ -1120,7 +1120,7 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)</h1>
+<h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against intra-handshake (aka early) attestation</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
@@ -1517,6 +1517,11 @@ to its desired server.
           </thead>
           <tbody>
             <tr>
+              <td class="text-left" rowspan="1" colspan="1">9.0-10.0</td>
+              <td class="text-left" rowspan="1" colspan="1">Critical</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+            </tr>
+            <tr>
               <td class="text-left" rowspan="1" colspan="1">9.1</td>
               <td class="text-left" rowspan="1" colspan="1">Critical</td>
               <td class="text-left" rowspan="1" colspan="1">2</td>
@@ -1659,7 +1664,7 @@ to its desired server.
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">TBA</td>
-            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">9.0-10.0</td>
             <td class="text-left" rowspan="1" colspan="1">Songbo Bu and Muhammad Usama Sardar</td>
           </tr>
         </tbody>
@@ -2079,6 +2084,11 @@ and trust domains. The following table provides a corresponding low-level view.<
         </thead>
         <tbody>
           <tr>
+            <td class="text-left" rowspan="1" colspan="1">9.0-10.0</td>
+            <td class="text-left" rowspan="1" colspan="1">Critical</td>
+            <td class="text-left" rowspan="1" colspan="1">1 (confirmed by developers)</td>
+          </tr>
+          <tr>
             <td class="text-left" rowspan="1" colspan="1">9.8</td>
             <td class="text-left" rowspan="1" colspan="1">Critical</td>
             <td class="text-left" rowspan="1" colspan="1">1</td>
@@ -2086,7 +2096,7 @@ and trust domains. The following table provides a corresponding low-level view.<
           <tr>
             <td class="text-left" rowspan="1" colspan="1">9.1</td>
             <td class="text-left" rowspan="1" colspan="1">Critical</td>
-            <td class="text-left" rowspan="1" colspan="1">3 (confirmed by developers)</td>
+            <td class="text-left" rowspan="1" colspan="1">2 (confirmed by developers)</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">8.7</td>
@@ -2096,17 +2106,17 @@ and trust domains. The following table provides a corresponding low-level view.<
           <tr>
             <td class="text-left" rowspan="1" colspan="1">7.5</td>
             <td class="text-left" rowspan="1" colspan="1">High</td>
-            <td class="text-left" rowspan="1" colspan="1">2</td>
+            <td class="text-left" rowspan="1" colspan="1">4</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">7.4</td>
             <td class="text-left" rowspan="1" colspan="1">High</td>
-            <td class="text-left" rowspan="1" colspan="1">7 (5 confirmed by developers)</td>
+            <td class="text-left" rowspan="1" colspan="1">8 (5 confirmed by developers)</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">6.3</td>
             <td class="text-left" rowspan="1" colspan="1">Medium</td>
-            <td class="text-left" rowspan="1" colspan="1">2</td>
+            <td class="text-left" rowspan="1" colspan="1">3</td>
           </tr>
         </tbody>
       </table>
