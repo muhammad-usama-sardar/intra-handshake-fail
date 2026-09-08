@@ -57,6 +57,10 @@ author:
     organization: PHI-OMEGA
     email: "phiomega.runtime@gmail.com"
  -
+    fullname: "Mikerah Quintyne-Collins"
+    organization: HashCloak Inc and Stoffel Labs Inc, Canada
+    email: "mikerah@hashcloak.com"
+ -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
     email: "team@emiliaprotocol.ai"
@@ -823,6 +827,8 @@ We wish to express our sincere appreciation to the following for their review of
 - Bertrand Foing
 - Sammy Kerata Oina
 - Drasko Draskovic
+- Rebekah Overdorf
+- Tobias Pulls
 
 **Intra-handshake.fail** {{Intra-handshake.fail}}
 
