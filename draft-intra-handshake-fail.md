@@ -1,5 +1,5 @@
 ---
-title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)"
+title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Intra-handshake Attestation Considered Harmful"
 category: info
 
@@ -262,6 +262,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 
 | CVSS | Severity | Number of Published CVEs/GHSAs |
 |---|---|---|
+| 9.0-10.0 | Critical | 1 |
 | 9.1 | Critical | 2 |
 | 7.8 | High | 1 |
 | 7.5 | High | 2 |
@@ -289,7 +290,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
-| TBA | 9.1 | Songbo Bu and Muhammad Usama Sardar |
+| TBA | 9.0-10.0 | Songbo Bu and Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
@@ -394,12 +395,13 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 
 | CVSS | Severity | Number of CVEs |
 |---|---|---|
+| 9.0-10.0 | Critical | 1 (confirmed by developers) |
 | 9.8 | Critical | 1 |
-| 9.1 | Critical | 3 (confirmed by developers) |
+| 9.1 | Critical | 2 (confirmed by developers) |
 | 8.7 | High | 1 |
-| 7.5 | High | 2 |
-| 7.4 | High | 7 (5 confirmed by developers) |
-| 6.3 | Medium | 2 |
+| 7.5 | High | 4 |
+| 7.4 | High | 8 (5 confirmed by developers) |
+| 6.3 | Medium | 3 |
 {: title="Expected CVEs for intra-handshake attestation under disclosure "}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
