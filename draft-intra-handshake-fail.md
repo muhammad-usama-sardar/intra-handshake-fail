@@ -409,11 +409,11 @@ These are preliminary estimates of scores, not final assigned score. They are st
 At least the following implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Cocos AI](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
+- [Cocos AI up to v0.8.2](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]; **migrated** to post-handshake attestation since v0.9.0
 - [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**]
 - [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
-- Privasys rustls: [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] and **archived**
-- Pirvasys go: [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**] and **archived**
+- Privasys rustls: {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
+- Pirvasys go: {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
