@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 11 March 2027                                         CoreWeave
+Expires: 12 March 2027                                         CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -18,9 +18,11 @@ Expires: 11 March 2027                                         CoreWeave
                                                 Independent, Netherlands
                                                             M. Brighindi
                                                                PHI-OMEGA
+                                                     M. Quintyne-Collins
+                              HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                        7 September 2026
+                                                        8 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -76,7 +78,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 March 2027.
+   This Internet-Draft will expire on 12 March 2027.
 
 Copyright Notice
 
@@ -2097,6 +2099,10 @@ Acknowledgments
 
    *  Drasko Draskovic
 
+   *  Rebekah Overdorf
+
+   *  Tobias Pulls
+
    *Intra-handshake.fail* [Intra-handshake.fail]
 
    We would like to thank our co-author of paper [Intra-handshake.fail]
@@ -2268,6 +2274,11 @@ Authors' Addresses
    Massimiliano Brighindi
    PHI-OMEGA
    Email: phiomega.runtime@gmail.com
+
+
+   Mikerah Quintyne-Collins
+   HashCloak Inc and Stoffel Labs Inc, Canada
+   Email: mikerah@hashcloak.com
 
 
    Iman Schrock
