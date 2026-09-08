@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-03T02:03:42.121290+00:00",
+  "timestamp": "2026-09-08T02:04:03.329706+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -47,6 +47,11 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
+    },
+    {
+      "name": "Contribution to draft awaited",
+      "description": "",
+      "color": "a0b171"
     }
   ],
   "issues": [
@@ -55,15 +60,15 @@
       "id": "I_kwDOTPsy-c8AAAABN4NI-g",
       "title": "Main dispute?",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "What exactly is the dispute related to: papers, artifacts, GHSAs, CVE, or something else?\nRead emails in recent threads and extract the [main questions](https://www.ietf.org/archive/id/draft-intra-handshake-fail-11.html#section-16.2.1).\n",
       "createdAt": "2026-08-23T09:50:21Z",
-      "updatedAt": "2026-08-26T23:11:48Z",
-      "closedAt": null,
+      "updatedAt": "2026-09-07T11:29:23Z",
+      "closedAt": "2026-09-07T11:29:23Z",
       "comments": [
         {
           "author": "muhammad-usama-sardar",
@@ -78,6 +83,20 @@
           "body": "[RATS thread](https://mailarchive.ietf.org/arch/msg/rats/JO4KbLDErf4eHVkvHPR0SbwBbek/) is discussing very different things. Useful bit is [this](https://mailarchive.ietf.org/arch/msg/rats/Hpcr-VZbGZqaQ1vhd2DFlhR6vng/).",
           "createdAt": "2026-08-26T23:11:48Z",
           "updatedAt": "2026-08-26T23:11:48Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Main dispute was whether shared secrets are necessary to avoid relay attacks or not. ",
+          "createdAt": "2026-09-06T17:38:08Z",
+          "updatedAt": "2026-09-06T17:38:08Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Added https://www.usenix.org/conference/atc25/presentation/weinhold in draft ",
+          "createdAt": "2026-09-07T11:29:23Z",
+          "updatedAt": "2026-09-07T11:29:23Z"
         }
       ]
     },
@@ -447,10 +466,12 @@
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "Contribution to draft awaited"
+      ],
       "body": "He will contribute dynamic loading and continuous attestation.",
       "createdAt": "2026-08-28T07:58:01Z",
-      "updatedAt": "2026-08-28T07:58:01Z",
+      "updatedAt": "2026-09-07T18:34:13Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
@@ -643,6 +664,240 @@
               "updatedAt": "2026-09-02T08:54:48Z"
             }
           ]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOTPsy-c8AAAABCY9A5g",
+      "title": "Add governability perspective on AI agent attestation",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/11",
+      "state": "MERGED",
+      "author": "ECMW",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR adds a concise governability perspective to the Agent2Agent implications section.\r\n\r\nIt distinguishes technical attestation from broader governability of AI agents, highlighting that effective control also depends on identity, authority and permissions, attribution of responsibility, and meaningful intervention.\r\n\r\nThis is intended as a governance complement to the draft\u2019s technical findings.",
+      "createdAt": "2026-09-06T08:47:14Z",
+      "updatedAt": "2026-09-06T13:11:05Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "a6272e6c800e1fcb20ff7ad72912fbac0c182208",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "Eva-governability-agent2agent",
+      "headRefOid": "809648a8151ec56911e49b19e7a3c4e4815dc2df",
+      "closedAt": "2026-09-06T13:11:05Z",
+      "mergedAt": "2026-09-06T13:11:05Z",
+      "mergedBy": "B1ueD0g",
+      "mergeCommit": {
+        "oid": "f9641e91cd63a5b368e0a65e7f0bff65577132bf"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMXhxhA",
+          "commit": {
+            "abbreviatedOid": "809648a"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Looks good to me, thanks a lot Eva for sharing your expertise. And a very warm welcome to the authors team!",
+          "createdAt": "2026-09-06T09:32:26Z",
+          "updatedAt": "2026-09-06T09:32:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "PR_kwDOTPsy-c8AAAABCZGjfw",
+      "title": "Add Eva as co-author",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/12",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Expert in AI governance\r\n- Initial contribution #11 \r\n- As per agreement of authors' meeting last week",
+      "createdAt": "2026-09-06T09:28:11Z",
+      "updatedAt": "2026-09-06T13:11:14Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "a6272e6c800e1fcb20ff7ad72912fbac0c182208",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-eva",
+      "headRefOid": "f1d53ce17bb88bfd109d6d9f7df0e05d29f3b432",
+      "closedAt": "2026-09-06T13:11:14Z",
+      "mergedAt": "2026-09-06T13:11:14Z",
+      "mergedBy": "B1ueD0g",
+      "mergeCommit": {
+        "oid": "aef70b5f74fe355b8ba6475a5f17fd2cdbf4af38"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMXh-bw",
+          "commit": {
+            "abbreviatedOid": "f1d53ce"
+          },
+          "author": "ECMW",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Looks good to me. \nThank you for the warm welcome, I'm looking forward to contributing!",
+          "createdAt": "2026-09-06T09:34:07Z",
+          "updatedAt": "2026-09-06T09:34:07Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMXodhQ",
+          "commit": {
+            "abbreviatedOid": "f1d53ce"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-06T10:30:08Z",
+          "updatedAt": "2026-09-06T10:30:08Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOTPsy-c8AAAABCcmV2A",
+      "title": "Extend threat model with entropy provenance",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/13",
+      "state": "MERGED",
+      "author": "ercihan",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Extends the threat model around LEK(privEK) to include failures during key generation and entropy provisioning.\r\n\r\nThe contribution adds a hardware-level perspective on entropy provenance and uses CVE-2025-62626 as an example of a manufacturer-layer RNG fault that can violate ideal-randomness assumptions below the protocol layer.",
+      "createdAt": "2026-09-07T00:59:26Z",
+      "updatedAt": "2026-09-07T18:32:51Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "c7806e8d62ac1dd5e3d44862732b6c2a6a3ebaf8",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "entropy-threat-model",
+      "headRefOid": "cf1682d029a16d3f000d32602ab3f639137f3969",
+      "closedAt": "2026-09-07T18:32:51Z",
+      "mergedAt": "2026-09-07T18:32:51Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "368fe572c4a51d51b8eabf75c39a7a8107c671c4"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMgpqNA",
+          "commit": {
+            "abbreviatedOid": "cf1682d"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "LGTM, thanks a lot. ",
+          "createdAt": "2026-09-07T18:11:23Z",
+          "updatedAt": "2026-09-07T18:11:23Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "PR_kwDOTPsy-c8AAAABCgvaQQ",
+      "title": "Update name, clarify the statement on damage in AI agents, and refine threat model",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/14",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "1. Sync name with formal publications (as per request of Eva)\r\n2. Clarify the statement on damage in AI agents\r\n3. Refine threat model",
+      "createdAt": "2026-09-07T11:20:29Z",
+      "updatedAt": "2026-09-07T18:32:16Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "c7806e8d62ac1dd5e3d44862732b6c2a6a3ebaf8",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "feedback",
+      "headRefOid": "89d3b65d55ba312fcea6fdde5b6d6235410a477d",
+      "closedAt": "2026-09-07T18:32:16Z",
+      "mergedAt": "2026-09-07T18:32:16Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "62b93b733f907b2f182efcd1e768d78818f8158c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMgWS7Q",
+          "commit": {
+            "abbreviatedOid": "89d3b65"
+          },
+          "author": "ECMW",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-07T17:05:30Z",
+          "updatedAt": "2026-09-07T17:05:30Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "id": "PR_kwDOTPsy-c8AAAABClwbgw",
+      "title": "Add Mikerah as co-author",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/15",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Add Mikerah as co-author\r\n- ACK Rebekah and Tobias for review",
+      "createdAt": "2026-09-08T00:16:46Z",
+      "updatedAt": "2026-09-08T00:59:07Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "368fe572c4a51d51b8eabf75c39a7a8107c671c4",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-mikerah",
+      "headRefOid": "147ca214c15691810c6de20c79e5926993ff5cdc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMiKReg",
+          "commit": {
+            "abbreviatedOid": "147ca21"
+          },
+          "author": "Mikerah",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-08T00:20:33Z",
+          "updatedAt": "2026-09-08T00:20:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMiTgrw",
+          "commit": {
+            "abbreviatedOid": "147ca21"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-08T00:59:07Z",
+          "updatedAt": "2026-09-08T00:59:07Z",
+          "comments": []
         }
       ]
     }
