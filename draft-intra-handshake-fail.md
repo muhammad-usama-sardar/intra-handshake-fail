@@ -118,6 +118,12 @@ normative:
     target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-hjgc-jc5v-fw7h
     author:
       - ins: Edgeless Systems
+  GHSA-Edgeless-Systems2:
+    title: "Generated policies don't detect all image substitutions"
+    date: August 2026
+    target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-m2qg-wrxv-h898
+    author:
+      - ins: Edgeless Systems
   SEAT-vulnerability-report:
     title: "Relay Attacks in Intra-handshake Attestation for Confidential Agentic AI Systems"
     date: 11 Jan 2026,
@@ -201,7 +207,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against intra-handshake (aka early) attestation**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
@@ -283,6 +289,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{GHSA-Edgeless-Systems}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
@@ -290,7 +297,6 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
-| TBA | 9.0-10.0 | Songbo Bu and Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
@@ -351,6 +357,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Edgeless Systems published {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**] | 29 July, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI2}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI3}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
+| Edgeless Systems published {{GHSA-Edgeless-Systems2}} [**Severity = CRITICAL (CVSS 9.0-10.0)**] | 24 August, 2026 |
 | Privasys published {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
 | Privasys published {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
 | Privasys published {{GHSA-Privasys-eov}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
@@ -408,16 +415,21 @@ These are preliminary estimates of scores, not final assigned score. They are st
 
 # Vulnerable Implementations
 
-At least the following implementations are vulnerable:
+As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, at least the following intra-handshake implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Cocos AI up to v0.8.2](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]; **migrated** to post-handshake attestation since v0.9.0
 - [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**]
-- [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
-- Privasys rustls: {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
-- Pirvasys go: {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
+
+## Mitigated Implementations
+
+The following intra-handshake implementations were vulnerable and have been **archived** or moved to **post**-handshake attestation:
+
+- [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
+- [Cocos AI <= v0.8.2](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]; **migrated** to post-handshake attestation since v0.9.0
+- [Privasys rustls <= privasys-v0.2.0](https://github.com/Privasys/rustls): {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
+- [Pirvasys go <= privasys-v0.3.0-go1.26.5](https://github.com/Privasys/go): {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
 
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
@@ -579,6 +591,7 @@ Several media professionals and bloggers have covered the vulnerabilities to pro
 - [coderlegion](https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security)
 - [Anjuna Security](https://www.anjuna.io/blog/attested-tls-flaw-explained)
 - [Privasys](https://privasys.org/blog/binding-attestation-to-the-tls-session/)
+- [Caution](https://caution.co/blog/steve-attesting-the-session.html)
 - [freenode](https://freenode.net/digest/67)
 - (Chinese) [csdn](https://blog.csdn.net/weixin_42376192/category_13096766.html)
 - [osintsights](https://osintsights.com/confidential-computing-flaws-expose-trust-risks)
@@ -700,6 +713,13 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/JbwL9cdl6fiP0vBGgASUUDmaPy8/](https://mailarchive.ietf.org/arch/msg/seat/JbwL9cdl6fiP0vBGgASUUDmaPy8/)
 - [https://mailarchive.ietf.org/arch/msg/seat/TtewHbMGKBQOKD2sqrgTrnpCOkI/](https://mailarchive.ietf.org/arch/msg/seat/TtewHbMGKBQOKD2sqrgTrnpCOkI/)
 - [https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/](https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/)
+- [https://mailarchive.ietf.org/arch/msg/seat/a6c8D6PBDRe0x4DAqXM3t4EPc4c/](https://mailarchive.ietf.org/arch/msg/seat/a6c8D6PBDRe0x4DAqXM3t4EPc4c/)
+- [https://mailarchive.ietf.org/arch/msg/seat/prB537Jht2kELVCSrTRktjbp7Y4/](https://mailarchive.ietf.org/arch/msg/seat/prB537Jht2kELVCSrTRktjbp7Y4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/RPnKYfUCD_MRw3hnA00zg684yGM/](https://mailarchive.ietf.org/arch/msg/seat/RPnKYfUCD_MRw3hnA00zg684yGM/)
+- [https://mailarchive.ietf.org/arch/msg/seat/nMH_0sLLU5MekoEnzWKJnIJmaSk/](https://mailarchive.ietf.org/arch/msg/seat/nMH_0sLLU5MekoEnzWKJnIJmaSk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/](https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/)
+- [https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/](https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/](https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/)
 
 ### Main Questions
 
@@ -710,6 +730,17 @@ In short, five main questions have been raised by WG participants in support of 
 - What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
 - How evidence is bound to the secure channel without involving any **shared secret**? See {{TLS-RA}}.
 - How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
+
+### Guidance Text
+
+- Evidence MUST be bound to the secure channel. Failure to do so results in
+relay attacks {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{GHSA-Cocos-AI}}.
+- Verifier MUST have access to legitimate hardware identifiers of the
+Attester. Failure to do so results in relay attacks {{GHSA-Edgeless-Systems}}.
+- Verifier MUST carefully check the binding. Failure to do so results in
+relay attacks {{GHSA-Cocos-AI2}}, {{GHSA-Cocos-AI3}}.
+- Binder MUST contain shared secrets. Failure to do so results in relay
+attacks {{GHSA-Privasys-rustls}}, {{GHSA-Privasys-go}}, {{GHSA-Privasys-eov}}, {{GHSA-Privasys-eom}}, {{GHSA-Privasys-rtc}}, {{GHSA-Privasys-rtc-da}}, {{GHSA-Privasys-rtc-tcu}}.
 
 ## Researchers outside of IETF/IRTF
 
@@ -829,6 +860,7 @@ We wish to express our sincere appreciation to the following for their review of
 - Bertrand Foing
 - Sammy Kerata Oina
 - Drasko Draskovic
+- Markus Rudy
 - Rebekah Overdorf
 - Tobias Pulls
 
