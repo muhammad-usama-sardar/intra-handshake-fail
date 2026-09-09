@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 12 March 2027                                         CoreWeave
+Expires: 13 March 2027                                         CoreWeave
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -22,7 +22,7 @@ Expires: 12 March 2027                                         CoreWeave
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                        8 September 2026
+                                                        9 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -82,7 +82,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 March 2027.
+   This Internet-Draft will expire on 13 March 2027.
 
 Copyright Notice
 
@@ -115,7 +115,7 @@ Table of Contents
            Literature
    7.  More CVEs
    8.  Vulnerable Implementations
-     8.1.  Mitigated Implementations
+     8.1.  Archived/Mitigated Implementations
    9.  Vulnerable Protocol Specifications
    10. Binding Levels
    11. Security Properties (Correlation Goals)
@@ -668,7 +668,8 @@ Table of Contents
 7.  More CVEs
 
    Further formal analysis has led to the following potential CVEs for
-   intra-handshake attestation (currently under review and disclosure):
+   intra-handshake (aka early) attestation (currently under review and
+   disclosure):
 
           +==========+==========+===============================+
           | CVSS     | Severity | Number of CVEs                |
@@ -681,15 +682,15 @@ Table of Contents
           +----------+----------+-------------------------------+
           | 8.7      | High     | 1                             |
           +----------+----------+-------------------------------+
-          | 7.5      | High     | 4                             |
+          | 7.5      | High     | 5                             |
           +----------+----------+-------------------------------+
-          | 7.4      | High     | 8 (5 confirmed by developers) |
+          | 7.4      | High     | 9 (5 confirmed by developers) |
           +----------+----------+-------------------------------+
-          | 6.3      | Medium   | 3                             |
+          | 6.3      | Medium   | 4                             |
           +----------+----------+-------------------------------+
 
-                 Table 8: Expected CVEs for intra-handshake
-                        attestation under disclosure
+              Table 8: Expected CVEs for intra-handshake (aka
+               early) attestation under review and disclosure
 
    These are preliminary estimates of scores, not final assigned score.
    They are still under review.
@@ -711,7 +712,7 @@ Table of Contents
    implementation, please let us know so that we can check and
    responsibly disclose the vulnerabilities to them.
 
-8.1.  Mitigated Implementations
+8.1.  Archived/Mitigated Implementations
 
    The following intra-handshake implementations were vulnerable and
    have been *archived* or moved to *post*-handshake attestation:
