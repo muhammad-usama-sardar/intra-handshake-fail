@@ -278,7 +278,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 
 **For TLS reference, Heartbleed was CVSS 7.5**.
 
-# Credits
+# Published GHSAs/CVEs
 {: #sec-credits }
 
 | GHSA/CVE | CVSS | Finders |
