@@ -408,7 +408,7 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 | 8.7 | High | 1 |
 | 7.5 | High | 5 |
 | 7.4 | High | 9 (5 confirmed by developers) |
-| 6.3 | Medium | 4 |
+| 6.3 | Medium | 7 |
 {: title="Expected CVEs for intra-handshake (aka early) attestation under review and disclosure "}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
