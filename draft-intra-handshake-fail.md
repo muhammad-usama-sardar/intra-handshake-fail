@@ -398,7 +398,7 @@ The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indic
 
 # More CVEs
 
-Further formal analysis has led to the following potential CVEs for intra-handshake attestation (currently under review and disclosure):
+Further formal analysis has led to the following potential CVEs for intra-handshake (aka early) attestation (currently under review and disclosure):
 
 | CVSS | Severity | Number of CVEs |
 |---|---|---|
@@ -406,10 +406,10 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 | 9.8 | Critical | 1 |
 | 9.1 | Critical | 2 (confirmed by developers) |
 | 8.7 | High | 1 |
-| 7.5 | High | 4 |
-| 7.4 | High | 8 (5 confirmed by developers) |
-| 6.3 | Medium | 3 |
-{: title="Expected CVEs for intra-handshake attestation under disclosure "}
+| 7.5 | High | 5 |
+| 7.4 | High | 9 (5 confirmed by developers) |
+| 6.3 | Medium | 4 |
+{: title="Expected CVEs for intra-handshake (aka early) attestation under review and disclosure "}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
 
@@ -422,7 +422,7 @@ As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, a
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
-## Mitigated Implementations
+## Archived/Mitigated Implementations
 
 The following intra-handshake implementations were vulnerable and have been **archived** or moved to **post**-handshake attestation:
 
