@@ -16,7 +16,7 @@
 <meta content="Mikerah Quintyne-Collins" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
-       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
+       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required    ,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
     " name="description">
 <meta content="xml2rfc 3.34.0" name="generator">
 <meta content="AI agents" name="keyword">
@@ -1056,7 +1056,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 13 March 2027</td>
+<td class="center">Expires 14 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1069,12 +1069,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-09" class="published">9 September 2026</time>
+<time datetime="2026-09-10" class="published">10 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-13">13 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-14">14 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1123,7 +1123,7 @@ svg {
 <h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1155,7 +1155,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 13 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -3030,7 +3030,7 @@ management etc., are also not mitigated by CC.
               <p id="section-16.2.1-2.1.1">What <strong>security property</strong> hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?<a href="#section-16.2.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.2.1-2.2">
-              <p id="section-16.2.1-2.2.1">Since continuous attestation is required in most use cases, how is <strong>additional complexity</strong> of <strong>intra</strong>-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see <a href="https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2">reference</a>.<a href="#section-16.2.1-2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-16.2.1-2.2.1">Since continuous attestation is required in most use cases <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, how is <strong>additional complexity</strong> of <strong>intra</strong>-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see <a href="https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2">reference</a>.<a href="#section-16.2.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.2.1-2.3">
               <p id="section-16.2.1-2.3.1">What is the benefit of doing <strong>signatures</strong> of remote attestation <strong>within</strong> the handshake (as this latency can be exploited)? We add that <strong>verification</strong> of signatures is also time consuming, which can be exploited too. See <a href="https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4">reference</a>.<a href="#section-16.2.1-2.3.1" class="pilcrow">¶</a></p>
@@ -3575,6 +3575,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <a href="#section-21.1" class="section-number selfRef">21.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
+<dt id="CSA-eBPF">[CSA-eBPF]</dt>
+        <dd>
+<span class="refAuthor">Cloud Security Alliance</span>, <span class="refTitle">"MITRE's New Framework: Securing the eBPF Layer Your AI Depends On"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://cloudsecurityalliance.org/blog/2026/09/09/mitre-s-new-framework-securing-the-ebpf-layer-your-ai-depends-on">https://cloudsecurityalliance.org/blog/2026/09/09/mitre-s-new-framework-securing-the-ebpf-layer-your-ai-depends-on</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="CVE-2026-33697">[CVE-2026-33697]</dt>
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">https://www.cve.org/CVERecord?id=CVE-2026-33697</a>&gt;</span>. </dd>
@@ -3646,6 +3650,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <dt id="Intra-handshake.fail-repo">[Intra-handshake.fail-repo]</dt>
         <dd>
 <span class="refAuthor">Sardar, M. U.</span>, <span class="refAuthor">Dubeyko, V.</span>, and <span class="refAuthor">J.-M. Jacquet</span>, <span class="refTitle">"Intra-handshake.fail (CVE-2026-33697): High-severity CVE in Attested TLS"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://github.com/muhammad-usama-sardar/intra-handshake.fail">https://github.com/muhammad-usama-sardar/intra-handshake.fail</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="MITRE-Continuous-Attestation">[MITRE-Continuous-Attestation]</dt>
+        <dd>
+<span class="refAuthor">MITRE's Confidential Computing Layered Attestation Working Group</span>, <span class="refTitle">"Framework for Continuous Remote Attestation"</span>, <time datetime="2026-07" class="refDate">July 2026</time>, <span>&lt;<a href="https://www.mitre.org/news-insights/publication/framework-continuous-remote-attestation">https://www.mitre.org/news-insights/publication/framework-continuous-remote-attestation</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="refTLS">[refTLS]</dt>
         <dd>
