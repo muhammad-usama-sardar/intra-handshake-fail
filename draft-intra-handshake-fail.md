@@ -195,6 +195,18 @@ normative:
       - ins: Yaron Sheffer
       - ins: Thomas Fossati
       - ins: Michael Roitzsch
+  CSA-eBPF:
+    title: "MITRE's New Framework: Securing the eBPF Layer Your AI Depends On"
+    date: 9 September 2026
+    target: https://cloudsecurityalliance.org/blog/2026/09/09/mitre-s-new-framework-securing-the-ebpf-layer-your-ai-depends-on
+    author:
+      - ins: Cloud Security Alliance
+  MITRE-Continuous-Attestation:
+    title: "Framework for Continuous Remote Attestation"
+    date: 16 July 2026
+    target: https://www.mitre.org/news-insights/publication/framework-continuous-remote-attestation
+    author:
+      - ins: MITRE's Confidential Computing Layered Attestation Working Group
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -207,7 +219,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
@@ -726,7 +738,7 @@ Several participants of the IETF/IRTF have attested to the results by independen
 In short, five main questions have been raised by WG participants in support of our work:
 
 - What **security property** hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
-- Since continuous attestation is required in most use cases, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
+- Since continuous attestation is required in most use cases {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
 - What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
 - How evidence is bound to the secure channel without involving any **shared secret**? See {{TLS-RA}}.
 - How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
