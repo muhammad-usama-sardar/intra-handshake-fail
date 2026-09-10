@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-08T02:04:03.329706+00:00",
+  "timestamp": "2026-09-10T02:06:12.983481+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -109,10 +109,28 @@
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "enhancement"
+      ],
       "body": "This is even more low-level than the text proposed by Kaya. Think if it is required for security analysis.",
       "createdAt": "2026-09-02T11:07:20Z",
-      "updatedAt": "2026-09-02T11:07:20Z",
+      "updatedAt": "2026-09-08T22:35:04Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 16,
+      "id": "I_kwDOTPsy-c8AAAABQW6WJQ",
+      "title": "What is the target audience of \"Guidance text?\"",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/issues/16",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/\n\n- Protocol designer?\n- Implementer?\n- Formal analyst?\n- Formal verifier?\n- Auditor?\n\nInstead of going into two TLS connections, I am reducing the \"Verifier\" to \"Verifying RP\" as in the formal model. Would this make any difference for the target audience?\n\nThe same sentence is repeated 4 times. Can't this repetition be reduced?",
+      "createdAt": "2026-09-08T22:50:46Z",
+      "updatedAt": "2026-09-08T22:50:46Z",
       "closedAt": null,
       "comments": []
     }
@@ -853,25 +871,42 @@
       "id": "PR_kwDOTPsy-c8AAAABClwbgw",
       "title": "Add Mikerah as co-author",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/15",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- Add Mikerah as co-author\r\n- ACK Rebekah and Tobias for review",
       "createdAt": "2026-09-08T00:16:46Z",
-      "updatedAt": "2026-09-08T00:59:07Z",
+      "updatedAt": "2026-09-08T14:11:22Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "368fe572c4a51d51b8eabf75c39a7a8107c671c4",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-mikerah",
       "headRefOid": "147ca214c15691810c6de20c79e5926993ff5cdc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "closedAt": "2026-09-08T14:11:21Z",
+      "mergedAt": "2026-09-08T14:11:21Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "8428a435bb8142d1825660d2b805a68916faf873"
+      },
+      "comments": [
+        {
+          "author": "phiomegaruntime-rgb",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Usama,\r\nI re-read the current draft and also re-ran the problem through the updated\r\nPHI-INFINITY mechanics.\r\nI think there is one narrow property that may strengthen the distinction\r\nbetween failed intra-handshake binding and later post-handshake attestation:\r\nPost-handshake evidence is non-retroactive: it may establish a new\r\napplication-scope relation, but it cannot repair an earlier intra-handshake\r\nbinding failure or promote that failed relation across scopes; the earlier\r\nfailure and its provenance must remain preserved.\r\nA simple falsification test would be:\r\nestablish an intra-handshake binding result as failed or unresolved;\r\nlater establish a valid post-handshake/application-scope attestation;\r\nverify that the later valid relation does not reclassify the earlier failed\r\nbinding as valid.\r\nIn short:\r\nB_application = VALID must not imply B_handshake = VALID.\r\nThis seems distinct from G1/G2/G3, freshness, re-attestation and entropy\r\nprovenance because it concerns preservation of the status and provenance of\r\nan earlier failed relation across scopes.\r\nIf you think this distinction is useful, I can help formulate it directly\r\nin the draft language and place it where it fits best.\r\n\r\nIl mar 8 set 2026, 02:59 Kaya Ercihan ***@***.***> ha scritto:\r\n\r\n> ***@***.**** approved this pull request.\r\n>\r\n> \u2014\r\n> Reply to this email directly, view it on GitHub\r\n> <https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/15?email_source=notifications&email_token=CJYZ2DU5RFHPWEVHAS34KQT5N5KXDA5CNFSNUABKM5UWIORPF5TWS5BNNB2WEL2QOVWGYUTFOF2WK43UKJSXM2LFO4XTKMJTGYZDINBZGEY2M4TFMFZW63VQOJSXM2LFO5PXEZLROVSXG5DFMSSWK5TFNZ2KYZTPN52GK4S7MNWGSY3L#pullrequestreview-5136244911>,\r\n> or unsubscribe\r\n> <https://github.com/notifications/unsubscribe-auth/CJYZ2DWAPPQAHJGJLKZZOAT5N5KXDAVCNFSNUABGKJSXA33TNF2G64TZHMYTEOJRGUZTCMBQGE5US43TOVSTWNJTHAYDENZRGIZDHILWAI>\r\n> .\r\n> You are receiving this because your review was requested.Message ID:\r\n> <muhammad-usama-sardar/intra-handshake-fail/pull/15/review/5136244911@\r\n> github.com>\r\n>\r\n",
+          "createdAt": "2026-09-08T03:41:25Z",
+          "updatedAt": "2026-09-08T03:41:25Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "> Post-handshake evidence is non-retroactive: it may establish a new\r\napplication-scope relation, but it cannot repair an earlier intra-handshake\r\nbinding failure or promote that failed relation across scopes; the earlier\r\nfailure and its provenance must remain preserved.\r\n\r\nThanks, very good point. Please provide as a separate PR, or open an issue with proposed text. ",
+          "createdAt": "2026-09-08T05:52:10Z",
+          "updatedAt": "2026-09-08T05:52:10Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOTPsy-c8AAAABMiKReg",
@@ -897,6 +932,19 @@
           "body": "",
           "createdAt": "2026-09-08T00:59:07Z",
           "updatedAt": "2026-09-08T00:59:07Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABMofi0g",
+          "commit": {
+            "abbreviatedOid": "147ca21"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Reviewed 147ca21. The author and acknowledgment additions are correctly represented in the generated draft, and both documentation checks pass. No blocking issues found in this change.",
+          "createdAt": "2026-09-08T14:03:52Z",
+          "updatedAt": "2026-09-08T14:03:52Z",
           "comments": []
         }
       ]
