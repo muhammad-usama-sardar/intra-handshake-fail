@@ -34,7 +34,7 @@ author:
     email: "slava@dubeyko.com"
  -
     fullname: "Jean-Marie Jacquet"
-    organization: University of Namur
+    organization: University of Namur, Belgium
     email: "jean-marie.jacquet@unamur.be"
  -
     fullname: "Songbo Bu"
