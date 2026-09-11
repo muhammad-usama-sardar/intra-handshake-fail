@@ -7,7 +7,7 @@ Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
 Expires: 15 March 2027                                         CoreWeave
                                                               J. Jacquet
-                                                     University of Namur
+                                            University of Namur, Belgium
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -2346,7 +2346,7 @@ Authors' Addresses
 
 
    Jean-Marie Jacquet
-   University of Namur
+   University of Namur, Belgium
    Email: jean-marie.jacquet@unamur.be
 
 
