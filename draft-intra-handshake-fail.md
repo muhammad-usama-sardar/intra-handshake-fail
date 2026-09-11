@@ -50,7 +50,7 @@ author:
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Serhii Nikolaichuk"
-    organization: Switch
+    organization: The Capital Index, Austin, Texas
     email: "nikolaichuk.s.f@gmail.com"
  -
     fullname: "E. C. M. Willems"
