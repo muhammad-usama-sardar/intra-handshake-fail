@@ -33,6 +33,10 @@ author:
     organization: CoreWeave
     email: "slava@dubeyko.com"
  -
+    fullname: "Jean-Marie Jacquet"
+    organization: University of Namur
+    email: "jean-marie.jacquet@unamur.be"
+ -
     fullname: "Songbo Bu"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "bluedognull@gmail.com"
