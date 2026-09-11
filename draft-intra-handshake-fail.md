@@ -49,6 +49,10 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
+    fullname: "Serhii Nikolaichuk"
+    organization: Switch
+    email: "nikolaichuk.s.f@gmail.com"
+ -
     fullname: "E. C. M. Willems"
     organization: Independent, Netherlands
     email: "evac.m.willems@proton.me"
