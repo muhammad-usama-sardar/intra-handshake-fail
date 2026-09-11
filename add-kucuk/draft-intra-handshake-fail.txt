@@ -14,6 +14,8 @@ Expires: 15 March 2027                                         CoreWeave
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
                                                                   Switch
+                                                      K. A. K. (. Ph.D.)
+                                                                        
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
@@ -2361,6 +2363,10 @@ Authors' Addresses
    Kaya Ercihan
    Switch
    Email: kaya.ercihan@switch.ch
+
+
+   Kubilay Ahmet Küçük (DPhil Ph.D.)
+   Email: dr.kucuk@oxfordalumni.org
 
 
    E. C. M. Willems
