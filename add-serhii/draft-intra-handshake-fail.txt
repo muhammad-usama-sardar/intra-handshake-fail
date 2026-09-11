@@ -13,8 +13,9 @@ Expires: 15 March 2027                                         CoreWeave
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
-                                                          S. Nikolaichuk
                                                                   Switch
+                                                          S. Nikolaichuk
+                                        The Capital Index, Austin, Texas
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
@@ -2365,7 +2366,7 @@ Authors' Addresses
 
 
    Serhii Nikolaichuk
-   Switch
+   The Capital Index, Austin, Texas
    Email: nikolaichuk.s.f@gmail.com
 
 
