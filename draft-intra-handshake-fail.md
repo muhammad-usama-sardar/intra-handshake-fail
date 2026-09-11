@@ -1,5 +1,5 @@
 ---
-title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 9.8 upcoming)"
+title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Intra-handshake Attestation Considered Harmful"
 category: info
 
@@ -29,6 +29,10 @@ author:
     organization: TU Dresden, Germany
     email: "muhammad_usama.sardar@tu-dresden.de"
  -
+    fullname: "Viacheslav Dubeyko"
+    organization: CoreWeave
+    email: "slava@dubeyko.com"
+ -
     fullname: "Songbo Bu"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "bluedognull@gmail.com"
@@ -45,9 +49,17 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
-    fullname: "Kubilay Ahmet Küçük (DPhil Ph.D.)"
-    organization:
-    email: "dr.kucuk@oxfordalumni.org"
+    fullname: "E. C. M. Willems"
+    organization: Independent, Netherlands
+    email: "evac.m.willems@proton.me"
+ -
+    fullname: "Massimiliano Brighindi"
+    organization: PHI-OMEGA
+    email: "phiomega.runtime@gmail.com"
+ -
+    fullname: "Mikerah Quintyne-Collins"
+    organization: HashCloak Inc and Stoffel Labs Inc, Canada
+    email: "mikerah@hashcloak.com"
  -
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
@@ -88,10 +100,28 @@ normative:
     target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-vfgg-mvxx-mgg7
     author:
       - ins: Ultraviolet Cocos AI
+  GHSA-Cocos-AI2:
+    title: "Cocos AI intra-handshake attested TLS implementation is vulnerable to session-misbinding attacks for Intel TDX verifier path"
+    date: 16 August 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-4px3-wj2x-xx47
+    author:
+      - ins: Ultraviolet Cocos AI
+  GHSA-Cocos-AI3:
+    title: "Cocos AI intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path"
+    date: 16 August 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-4r6g-mp48-j2rw
+    author:
+      - ins: Ultraviolet Cocos AI
   GHSA-Edgeless-Systems:
     title: "Remote attestation is susceptible to relay attacks"
     date: August 2026
     target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-hjgc-jc5v-fw7h
+    author:
+      - ins: Edgeless Systems
+  GHSA-Edgeless-Systems2:
+    title: "Generated policies don't detect all image substitutions"
+    date: August 2026
+    target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-m2qg-wrxv-h898
     author:
       - ins: Edgeless Systems
   SEAT-vulnerability-report:
@@ -100,8 +130,48 @@ normative:
     target: https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/
     author:
       - ins: M. U. Sardar
-
-informative:
+  GHSA-Privasys-rustls:
+    title: "Privasys RA-TLS challenge mode did not bind attestation evidence to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/rustls/security/advisories/GHSA-j6qv-435v-r492
+    author:
+      - ins: Privasys
+  GHSA-Privasys-go:
+    title: "Privasys Go fork: RA-TLS challenge mode did not bind attestation evidence to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/go/security/advisories/GHSA-7jfw-53rm-phh2
+    author:
+      - ins: Privasys
+  GHSA-Privasys-eov:
+    title: "enclave-os-virtual: RA-TLS challenge certificates were not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-p5fp-g94g-g9m9
+    author:
+      - ins: Privasys
+  GHSA-Privasys-eom:
+    title: "enclave-os-mini: RA-TLS challenge certificates were not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-49qm-4pj3-w2c6
+    author:
+      - ins: Privasys
+  GHSA-Privasys-rtc:
+    title: "ra-tls-clients: RA-TLS challenge verifier accepted quotes not bound to the TLS session"
+    date: 3 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-5qrc-v874-mxvx
+    author:
+      - ins: Privasys
+  GHSA-Privasys-rtc-da:
+    title: "Privasys Intra-handshake attested TLS implementation is vulnerable to Diversion Attacks"
+    date: 6 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-pj2x-5wqv-fh57
+    author:
+      - ins: Privasys
+  GHSA-Privasys-rtc-tcu:
+    title: "Privasys Intra-handshake attested TLS implementation is vulnerable to TOCTOU Attacks"
+    date: 6 September 2026
+    target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-gg8q-mfhh-wrrc
+    author:
+      - ins: Privasys
   ID-Crisis: DOI.10.1145/3779208.3785387
   ID-Crisis-repo:
     title: "Identity Crisis in Confidential Computing: Formal Analysis of Attested TLS"
@@ -112,6 +182,33 @@ informative:
       - ins: M. Moustafa
       - ins: T. Aura
   refTLS: DOI.10.1109/SP.2017.26
+  TLS-RA:
+    title: "Separate but together: integrating remote attestation into TLS"
+    date: July 2025,
+    target: https://www.usenix.org/conference/atc25/presentation/weinhold
+    author:
+      - ins: Carsten Weinhold
+      - ins: M. U. Sardar
+      - ins: Ionuț Mihalcea
+      - ins: Yogesh Deshpande
+      - ins: Hannes Tschofenig
+      - ins: Yaron Sheffer
+      - ins: Thomas Fossati
+      - ins: Michael Roitzsch
+  CSA-eBPF:
+    title: "MITRE's New Framework: Securing the eBPF Layer Your AI Depends On"
+    date: 9 September 2026
+    target: https://cloudsecurityalliance.org/blog/2026/09/09/mitre-s-new-framework-securing-the-ebpf-layer-your-ai-depends-on
+    author:
+      - ins: Cloud Security Alliance
+  MITRE-Continuous-Attestation:
+    title: "Framework for Continuous Remote Attestation"
+    date: 16 July 2026
+    target: https://www.mitre.org/news-insights/publication/framework-continuous-remote-attestation
+    author:
+      - ins: MITRE's Confidential Computing Layered Attestation Working Group
+
+informative:
   I-D.fossati-seat-early-attestation:
   I-D.fossati-seat-early-attestation-04:
   I-D.fossati-tls-attestation-06:
@@ -122,12 +219,12 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697) and [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), which is substantial technical evidence of how **intra**-handshake attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, and have been acknowledged by the relevant stakeholders.
+The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
 # Introduction
-{{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, one of the key decision factors is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not. The artifacts are in {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility and extensibility.
+{{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake (aka early) attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, one of the key decision factors is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not. The artifacts are available in {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, extensibility and further research.
 
 A **complementary** paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility and extensibility.
 
@@ -135,15 +232,15 @@ Another complementary paper -- currently under submission -- performs a thorough
 
 ## Overview
 
-This draft presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:
+{{Intra-handshake.fail}} presents the formal specification and analysis of the candidate binding mechanisms for binding in intra-handshake attestation for standardization for attested TLS protocols:
 
 | No. | Binding mechanism | Used in | Artifacts |
-| 1. | Client’s TLS nonce | [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder1](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1) |
+| 1. | Client’s TLS nonce | - | [binder1](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder1) |
 | 2. | Client’s attestation nonce | - | [binder2](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder2) |
 | 3. | Early exporter | - | [binder3](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3) |
 | 4. | Server’s public key | - | [binder4](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4) |
 | 5. | Combination of #2 and #3 | - | [binder5](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5) |
-| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
+| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
 | 7. | Combination of #2, #3, and #4 | {{I-D.fossati-tls-attestation-06}} | [binder7](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7) |
 {: title="Binding mechanisms, implementations and ProVerif artifacts"}
 
@@ -173,23 +270,84 @@ The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably
 1. Binder has been updated
 2. Post-handshake attestation part has been added for re-attestation
 
-The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder.
+The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks.
 
 Post-handshake attestation part may prevent relay attacks, but then the **additional complexity** of intra-handshake attestation is unjustified.
 
-# Credits
+## Executive Summary of Current Status
 
-| GHSA/CVE | Finders |
-|---|---|
-| {{CVE-2026-33697}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{EUVD-2026-16488}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Cocos-AI}} | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Edgeless-Systems}} | Muhammad Usama Sardar |
-| TBA | Muhammad Usama Sardar and Songbo Bu |
-{: title="GHSAs/CVEs and finders"}
+Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
+
+| CVSS | Severity | Number of Published CVEs/GHSAs |
+|---|---|---|
+| 9.0-10.0 | Critical | 1 |
+| 9.1 | Critical | 2 |
+| 7.8 | High | 1 |
+| 7.5 | High | 2 |
+| 7.4 | High | 7 |
+| 6.3 | Medium | 1 |
+{: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
+
+**For TLS reference, Heartbleed was CVSS 7.5**.
+
+# Published GHSAs/CVEs
+{: #sec-credits }
+
+| GHSA/CVE | CVSS | Finders |
+|---|---|---|
+| {{GHSA-Cocos-AI}} | 7.8 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{CVE-2026-33697}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{EUVD-2026-16488}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Edgeless-Systems}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
+
+Beyond post-generation leakage of `privEK` considered in {{Intra-handshake.fail}}, the same adversary capability may arise from failures during key generation or entropy provisioning. Platform-attestation keys and workload-controlled TLS keys belong to distinct key-generation domains: for example, in AMD SEV-SNP the VCEK is derived by SNP firmware from chip-unique secrets and a TCB version, while several other platform secrets are specified as CSRNG-generated; by contrast, `privEK` and TLS (EC)DHE private values are typically generated by software executing inside the confidential VM using the guest OS or cryptographic-library random subsystem. Furthermore, SEV-SNP `REPORT_DATA` is supplied by the guest and incorporated into the signed attestation report without being interpreted by SNP firmware; consequently, valid Evidence can authenticate a binding value without attesting the entropy provenance, generation procedure, or exclusive possession of the corresponding private key. The `LEK(privEK)` capability should therefore also encompass predictable or repeated key generation caused by deficient entropy, cloned or rolled-back DRBG state, defective software or firmware, or malicious provisioning. [CVE-2025-62626](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-7055.html) provides a concrete manufacturer-layer fault model: affected AMD Zen 5 processors could return insufficiently random values from certain `RDSEED` forms while incorrectly signaling success. This does not establish compromise of the AMD-SP-internal CSRNG or of a specific attested-TLS implementation, but demonstrates that ideal-randomness assumptions can fail below the protocol layer; software dependencies such as OpenSSL's `--with-rand-seed=rdcpu` ([OpenSSL 3.5.0 INSTALL.md](https://github.com/openssl/openssl/blob/openssl-3.5.0/INSTALL.md)), which can use `RDSEED` or `RDRAND` as CSPRNG seed input, illustrate a possible propagation path from hardware entropy interfaces to workload TLS key generation.
+
+## Low-Level Mapping of the System Model
+
+Figure 2 of {{Intra-handshake.fail}} provides a TEE-agnostic protocol-level
+abstraction. For a low-level view, the following table maps the abstract
+components to representative Intel TDX and AMD SEV-SNP implementations.
+
+| Fig. 2 element       | Intel TDX                                        | AMD SEV-SNP                                      |
+| -------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| **Physical Machine** | TDX-capable Intel platform                       | SEV-SNP-capable AMD platform                     |
+| **CC Platform**      | CPU HW + TDX Module + attestation infrastructure | CPU HW + AMD-SP/SNP (system) firmware + RMP/SEV machinery |
+| **Quoting Agent**    | TD QE                      | AMD-SP / SNP attestation (VM) firmware                |
+| **Confidential VM**               | Trust Domain (TD)                                | Part of SNP confidential VM                              |
+| **Network stack**    | Part of guest OS + TLS library inside TD                 | Part of guest OS + TLS library inside SNP guest          |
+| **HSM/TPM**          | Secure element                          |  Secure element                          |
+| **`privAK`**         | Attestation key of TD Quoting Enclave             | VCEK/VLEK signing key                            |
+| **`privEK`**         | Workload/TLS-side ephemeral key                  | Workload/TLS-side ephemeral key                  |
+| **`privLTK`**        | Long-term key in secure element                  | Long-term key in secure element                  |
+{: title="Mapping of the abstract system model to representative CC implementations"}
+
+The key material shown in the abstract model belongs to different implementation
+and trust domains. The following table provides a corresponding low-level view.
+
+| Component/key         | Runs/lives where?                    | Type                                    | Randomness/key source |
+| --------------------- | ------------------------------------ | --------------------------------------- | --------------------- |
+| TLS ECDHE             | Inside network stack               | Network stack                          | OS/library CSPRNG     |
+| `privEK`              | Inside confidential VM               | Guest software                          | OS/library CSPRNG     |
+| AK      | Quoting Agent        | Firmware/enclave/platform key hierarchy | Platform-specific     |
+| Memory-encryption key | CC Platform      | Hardware/firmware managed               | Platform RNG/KDF      |
+| `REPORT_DATA`         | Created by Guest Software | Data binding                            | No independent entropy requirement |
+{: title="Low-level implementation and key-generation domains"}
+
+Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 
 
 # Detailed Vulnerability Disclosure Timeline and Public Acknowledgements by Affected Vendors
@@ -209,6 +367,18 @@ The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4
 | Vulnerable [CCC implementation repo](https://github.com/ccc-attestation/attested-tls-poc) archived | 22 July, 2026 |
 | Vulnerable draft {{I-D.fossati-tls-attestation-10}} withdrawn by authors |  23 July, 2026 |
 | Edgeless Systems published {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**] | 29 July, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI2}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI3}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
+| Edgeless Systems published {{GHSA-Edgeless-Systems2}} [**Severity = CRITICAL (CVSS 9.0-10.0)**] | 24 August, 2026 |
+| Privasys published {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-eov}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-eom}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys archived early attestation in rustls and moved to post-handshake attestation | 4 September, 2026 |
+| Privasys archived early attestation in go and moved to post-handshake attestation | 4 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc-da}} [**Severity = HIGH (CVSS 7.4)**] | 6 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc-tcu}} [**Severity = MEDIUM (CVSS 6.3)**] | 6 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -240,32 +410,38 @@ The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indic
 
 # More CVEs
 
-Further formal analysis has led to the following potential CVEs for intra-handshake attestation (currently under disclosure):
+Further formal analysis has led to the following potential CVEs for intra-handshake (aka early) attestation (currently under review and disclosure):
 
 | CVSS | Severity | Number of CVEs |
 |---|---|---|
+| 9.0-10.0 | Critical | 1 (confirmed by developers) |
 | 9.8 | Critical | 1 |
-| 9.1 | Critical | 2 |
+| 9.1 | Critical | 2 (confirmed by developers) |
 | 8.7 | High | 1 |
-| 7.5 | High | 2 |
-| 7.4 | High | 2 |
-| 6.3 | Medium | 2 |
-{: title="Expected CVEs for intra-handshake attestation under disclosure "}
+| 7.5 | High | 5 |
+| 7.4 | High | 9 (5 confirmed by developers) |
+| 6.3 | Medium | 7 |
+{: title="Expected CVEs for intra-handshake (aka early) attestation under review and disclosure "}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
 
 # Vulnerable Implementations
 
-At least the following implementations are vulnerable:
+As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, at least the following intra-handshake implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Cocos AI](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
 - [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**]
-- [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
-- Privasys rustls: [Acknowledgment](https://github.com/Privasys/rustls/releases/tag/privasys-v0.8.1) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**]
-- Pirvasys go: [Acknowledgment](https://github.com/Privasys/go/releases/tag/privasys-v0.5.1-go1.26.5) of applicability of {{CVE-2026-33697}} [**Severity = HIGH (CVSS 7.5)**]
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
+
+## Archived/Mitigated Implementations
+
+The following intra-handshake implementations were vulnerable and have been **archived** or moved to **post**-handshake attestation:
+
+- [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
+- [Cocos AI <= v0.8.2](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]; **migrated** to post-handshake attestation since v0.9.0
+- [Privasys rustls <= privasys-v0.2.0](https://github.com/Privasys/rustls): {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
+- [Pirvasys go <= privasys-v0.3.0-go1.26.5](https://github.com/Privasys/go): {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
 
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
@@ -283,7 +459,7 @@ At least the following protocol specifications with intra-handshake attestation 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
-3. Application traffic key (`astc`) used for encryption of application data
+3. Application traffic key (`atsc`) used for encryption of application data
 
 Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
 
@@ -341,7 +517,7 @@ Please see Sec. 7.1 and Figure 5 of {{Intra-handshake.fail}} for details of atta
 
 ## Implications of Findings for IETF TLS WG
 - {{I-D.fossati-tls-attestation-09}} is vulnerable to {{CVE-2026-33697}}. Thankfully, the authors have withdrawn {{I-D.fossati-tls-attestation-10}}.
-- Remote attestation *within* the handshake is very dangerous, since to our knowledge, it is one of the highest scored published vulnerabilities in confidential computing literature (see {{sec-cvss-scores}}).
+- Remote attestation *within* the handshake is very dangerous, since to our knowledge, it is one of the highest scored published vulnerabilities in confidential computing literature (see {{sec-cvss-scores}}). For reference, **Heartbleed** was **7.5 CVSS**.
 
 ~~~
 Given the high- and critical-severity vulnerabilities, we recommend
@@ -350,7 +526,9 @@ urgently move to post-handshake attestation.
 ~~~
 
 ## Implications of Findings for Agent2Agent
-From a security perspective, intra-handshake attestation does more damage than protection for AI agents.
+The findings of published CVEs/GHSAs up to 9.1 (presented in {{sec-credits}}) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.
+
+Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
 # Technical Details
 
@@ -424,6 +602,8 @@ Several media professionals and bloggers have covered the vulnerabilities to pro
 - [vuln.lu](https://vulnerability.circl.lu/vuln/CVE-2026-33697#sightings)
 - [coderlegion](https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security)
 - [Anjuna Security](https://www.anjuna.io/blog/attested-tls-flaw-explained)
+- [Privasys](https://privasys.org/blog/binding-attestation-to-the-tls-session/)
+- [Caution](https://caution.co/blog/steve-attesting-the-session.html)
 - [freenode](https://freenode.net/digest/67)
 - (Chinese) [csdn](https://blog.csdn.net/weixin_42376192/category_13096766.html)
 - [osintsights](https://osintsights.com/confidential-computing-flaws-expose-trust-risks)
@@ -462,7 +642,7 @@ CC refers to Confidential Computing, and attested TLS is the core trust mechanis
 {{Intra-handshake.fail}} has been peer-reviewed and accepted for publication at ESORICS 2026.
 
 ## IETF/IRTF
-Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below (**excluding** the messages of *paper* authors):
+Several participants of the IETF/IRTF have attested to the results by independently reproducing the results and reviewing the code. Some of the participants have independently reproduced the results by developing their own formal models and a proof-of-concept implementation of the vulnerabilities. Some of the messages are mentioned below (**excluding** the messages of authors of {{Intra-handshake.fail}}):
 
 - [https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/](https://mailarchive.ietf.org/arch/msg/seat/B7F1Dj_rjs8I0Kg3yCp3Rap0XeE/)
 - [https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/](https://mailarchive.ietf.org/arch/msg/seat/aEV9dUFotAQzHndk23qBcwBT3as/)
@@ -534,16 +714,45 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/SYiV4KZNr20re6QkGmyWS3pPteA/](https://mailarchive.ietf.org/arch/msg/seat/SYiV4KZNr20re6QkGmyWS3pPteA/)
 - [https://mailarchive.ietf.org/arch/msg/seat/ZYgxm1ibt6p4dL7xF1YNdl0XSpc/](https://mailarchive.ietf.org/arch/msg/seat/ZYgxm1ibt6p4dL7xF1YNdl0XSpc/)
 - [https://mailarchive.ietf.org/arch/msg/seat/6LKgOp22YRxGTYb-i-BxiMGzMW4/](https://mailarchive.ietf.org/arch/msg/seat/6LKgOp22YRxGTYb-i-BxiMGzMW4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/3oHcKPtXLfBUYCZoN1nnO6e1F-s/](https://mailarchive.ietf.org/arch/msg/seat/3oHcKPtXLfBUYCZoN1nnO6e1F-s/)
+- [https://mailarchive.ietf.org/arch/msg/seat/aSybH9ihnNjN7SjdhhY_XtxhMtc/](https://mailarchive.ietf.org/arch/msg/seat/aSybH9ihnNjN7SjdhhY_XtxhMtc/)
+- [https://mailarchive.ietf.org/arch/msg/seat/d_G8r7LMGjA45BPexZwsfmmAtJY/](https://mailarchive.ietf.org/arch/msg/seat/d_G8r7LMGjA45BPexZwsfmmAtJY/)
+- [https://mailarchive.ietf.org/arch/msg/seat/u-za86_YJ0spwBXBwTVQzwiOCrU/](https://mailarchive.ietf.org/arch/msg/seat/u-za86_YJ0spwBXBwTVQzwiOCrU/)
+- [https://mailarchive.ietf.org/arch/msg/seat/P4IMdvCx8lSEKrCiJIjbpBCRr4g/](https://mailarchive.ietf.org/arch/msg/seat/P4IMdvCx8lSEKrCiJIjbpBCRr4g/)
+- [https://mailarchive.ietf.org/arch/msg/seat/-AO9yFJoflV1wDwwch45dmqkmyo/](https://mailarchive.ietf.org/arch/msg/seat/-AO9yFJoflV1wDwwch45dmqkmyo/)
+- [https://mailarchive.ietf.org/arch/msg/seat/H0LqHfBasQml69Y-9Zl_njfsE8s/](https://mailarchive.ietf.org/arch/msg/seat/H0LqHfBasQml69Y-9Zl_njfsE8s/)
+- [https://mailarchive.ietf.org/arch/msg/seat/3hOGlYyc_yntmvT0tjYxldlwaxM/](https://mailarchive.ietf.org/arch/msg/seat/3hOGlYyc_yntmvT0tjYxldlwaxM/)
+- [https://mailarchive.ietf.org/arch/msg/seat/JbwL9cdl6fiP0vBGgASUUDmaPy8/](https://mailarchive.ietf.org/arch/msg/seat/JbwL9cdl6fiP0vBGgASUUDmaPy8/)
+- [https://mailarchive.ietf.org/arch/msg/seat/TtewHbMGKBQOKD2sqrgTrnpCOkI/](https://mailarchive.ietf.org/arch/msg/seat/TtewHbMGKBQOKD2sqrgTrnpCOkI/)
+- [https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/](https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/)
+- [https://mailarchive.ietf.org/arch/msg/seat/a6c8D6PBDRe0x4DAqXM3t4EPc4c/](https://mailarchive.ietf.org/arch/msg/seat/a6c8D6PBDRe0x4DAqXM3t4EPc4c/)
+- [https://mailarchive.ietf.org/arch/msg/seat/prB537Jht2kELVCSrTRktjbp7Y4/](https://mailarchive.ietf.org/arch/msg/seat/prB537Jht2kELVCSrTRktjbp7Y4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/RPnKYfUCD_MRw3hnA00zg684yGM/](https://mailarchive.ietf.org/arch/msg/seat/RPnKYfUCD_MRw3hnA00zg684yGM/)
+- [https://mailarchive.ietf.org/arch/msg/seat/nMH_0sLLU5MekoEnzWKJnIJmaSk/](https://mailarchive.ietf.org/arch/msg/seat/nMH_0sLLU5MekoEnzWKJnIJmaSk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/](https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/)
+- [https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/](https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/)
+- [https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/](https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/)
 
 ### Main Questions
 
 In short, five main questions have been raised by WG participants in support of our work:
 
 - What **security property** hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
-- Since continuous attestation is required in most use cases, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
+- Since continuous attestation is required in most use cases {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
 - What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
-- How evidence is bound to the secure channel without involving any **shared secret**?
+- How evidence is bound to the secure channel without involving any **shared secret**? See {{TLS-RA}}.
 - How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
+
+### Guidance Text
+
+- Evidence MUST be bound to the secure channel. Failure to do so results in
+relay attacks {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{GHSA-Cocos-AI}}.
+- Verifier MUST have access to legitimate hardware identifiers of the
+Attester. Failure to do so results in relay attacks {{GHSA-Edgeless-Systems}}.
+- Verifier MUST carefully check the binding. Failure to do so results in
+relay attacks {{GHSA-Cocos-AI2}}, {{GHSA-Cocos-AI3}}.
+- Binder MUST contain shared secrets. Failure to do so results in relay
+attacks {{GHSA-Privasys-rustls}}, {{GHSA-Privasys-go}}, {{GHSA-Privasys-eov}}, {{GHSA-Privasys-eom}}, {{GHSA-Privasys-rtc}}, {{GHSA-Privasys-rtc-da}}, {{GHSA-Privasys-rtc-tcu}}.
 
 ## Researchers outside of IETF/IRTF
 
@@ -551,13 +760,13 @@ Some researchers have approached us confirming the proof-of-concept of the vulne
 
 # Security Considerations
 
-All of this document is about the **insecurity** of **intra**-handshake attestation.
+All of this document is about the **insecurity** of **intra**-handshake (aka early) attestation.
 
 By no means should the vendors mentioned in this draft be considered less secure than any other vendors implementing intra-handshake attestation solutions. In particular, those who have closed-source implementations are most likely more vulnerable than the open-source ones, since the former cannot easily be reviewed by the security community. Even extensive security reviews -- of closed-source implementations -- by cybersecurity firms often do not perform formal analysis, and thus such reviews may miss corner cases and subtle vulnerabilities.
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, and Haowen Song) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Massimiliano Brighindi, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
@@ -575,8 +784,9 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5-7 Oct, 2026 | slides, video |
 | [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | slides, video |
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | slides |
-| IETF RATS Interim meeting | Virtual | TBA Sept, 2026 | slides, video |
-| [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 2-4 September, 2026 | [abstract](https://summit.riot-os.org/2026/blog/speakers/muhammad-usama-sardar/), slides, video |
+| IETF RATS Interim meeting | Virtual | 14 Sept, 2026 | slides, video |
+| Hackathon @ [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 4 September, 2026 | [topic synopsis](https://notes.inria.fr/2ppogr2fTSKusRog3RXbPQ?view#topic-security-analysis-of-attested-tls-and-attested-edhoc) |
+| [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 2-4 September, 2026 | [abstract](https://summit.riot-os.org/2026/blog/speakers/muhammad-usama-sardar/), [slides](https://www.researchgate.net/publication/413988306_Security_Analysis_of_Attested_TLS_and_Attested_EDHOC), video |
 | [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 24 Aug, 2026 | [slides](https://www.researchgate.net/publication/413569575_High-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), [video](https://us02web.zoom.us/rec/share/UAn381deia-aMNmjGHhMqxocc1HcyF7ksLlaeeKefxO4bSC2mHPzwPQPYGe2dnZR.zfleYCmmtiteo_NS) |
 | Confidential AI Public Side Meeting @ [IETF 126](https://www.ietf.org/meeting/126/) | Vienna, Austria | 21 July, 2026 | [plan](https://mailarchive.ietf.org/arch/msg/126attendees/odgd_xmhjQXiR_aLYdqtVvDJeF4/), [slides](https://www.researchgate.net/publication/410954219_Proposed_RG_Confidential_Computing_for_Agentic_AI) |
 | SEAT @ [IETF 126](https://www.ietf.org/meeting/126/) | Vienna, Austria | 21 July, 2026 | [slides](https://datatracker.ietf.org/meeting/126/materials/slides-126-seat-binding-properties-of-expat-00.pdf), [video](https://youtu.be/Fb5Hzh1mp1E?t=4189) |
@@ -640,6 +850,9 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
 
 If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
+# Contributions
+Contributions to the draft are welcome at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail).
+
 
 # IANA Considerations
 
@@ -656,14 +869,17 @@ This draft benefits from several years of research on attested TLS, in particula
 
 We wish to express our sincere appreciation to the following for their review of our latest work:
 
+- Bertrand Foing
 - Sammy Kerata Oina
 - Drasko Draskovic
+- Markus Rudy
+- Rebekah Overdorf
+- Tobias Pulls
 
 **Intra-handshake.fail** {{Intra-handshake.fail}}
 
-We would like to thank our co-authors of paper {{Intra-handshake.fail}} for their valuable contributions:
+We would like to thank our co-author of paper {{Intra-handshake.fail}} for his valuable contributions:
 
-- Viacheslav Dubeyko
 - Jean-Marie Jacquet
 
 We also gratefully acknowledge the following for insightful discussions and helpful reviews on {{Intra-handshake.fail}}:
@@ -688,6 +904,7 @@ We also gratefully acknowledge the following for insightful discussions and help
 - Haowen Song	 		
 - Chengxin Huang
 - Steve Luo
+- Andrew Miller
 - Kubilay Ahmet Küçük
 - Iman Schrock
 - Sophie Schmieg
