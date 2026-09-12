@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 15 March 2027                                         CoreWeave
+Expires: 16 March 2027                                         CoreWeave
                                                               J. Jacquet
                                             University of Namur, Belgium
                                                                    S. Bu
@@ -16,6 +16,8 @@ Expires: 15 March 2027                                         CoreWeave
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
                                                                   Switch
+                                                          S. Nikolaichuk
+                                        The Capital Index, Austin, Texas
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
@@ -24,7 +26,7 @@ Expires: 15 March 2027                                         CoreWeave
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       11 September 2026
+                                                       12 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -85,7 +87,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 March 2027.
+   This Internet-Draft will expire on 16 March 2027.
 
 Copyright Notice
 
@@ -2368,6 +2370,11 @@ Authors' Addresses
    Kaya Ercihan
    Switch
    Email: kaya.ercihan@switch.ch
+
+
+   Serhii Nikolaichuk
+   The Capital Index, Austin, Texas
+   Email: nikolaichuk.s.f@gmail.com
 
 
    E. C. M. Willems
