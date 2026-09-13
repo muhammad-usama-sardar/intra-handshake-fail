@@ -56,7 +56,7 @@ author:
     fullname: "Dr Kubilay Ahmet Küçük"
     organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
- - 
+ -
     fullname: "Serhii Nikolaichuk"
     organization: The Capital Index, Austin, Texas
     email: "nikolaichuk.s.f@gmail.com"
