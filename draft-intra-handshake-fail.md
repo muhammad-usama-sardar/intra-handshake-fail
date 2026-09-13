@@ -33,6 +33,10 @@ author:
     organization: CoreWeave
     email: "slava@dubeyko.com"
  -
+    fullname: "Jean-Marie Jacquet"
+    organization: University of Namur, Belgium
+    email: "jean-marie.jacquet@unamur.be"
+ -
     fullname: "Songbo Bu"
     organization: Shanghai Guan An Information Technology Co., Ltd., China
     email: "bluedognull@gmail.com"
@@ -52,6 +56,10 @@ author:
     fullname: "Dr Kubilay Ahmet Küçük"
     organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
+ - 
+    fullname: "Serhii Nikolaichuk"
+    organization: The Capital Index, Austin, Texas
+    email: "nikolaichuk.s.f@gmail.com"
  -
     fullname: "E. C. M. Willems"
     organization: Independent, Netherlands
