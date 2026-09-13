@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-10T02:06:12.983481+00:00",
+  "timestamp": "2026-09-13T02:04:44.397442+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -484,24 +484,36 @@
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
-      "labels": [
-        "Contribution to draft awaited"
-      ],
+      "labels": [],
       "body": "He will contribute dynamic loading and continuous attestation.",
       "createdAt": "2026-08-28T07:58:01Z",
-      "updatedAt": "2026-09-07T18:34:13Z",
+      "updatedAt": "2026-09-11T11:42:20Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
-      "baseRefOid": "690f46ffb8a1cd7e7e07cd3f6d43ee273bb548af",
+      "baseRefOid": "8b8bb320c5e9c36e7b2b3c4f5a963370e2f5fd2b",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-kucuk",
-      "headRefOid": "191c7fc613af78d4354ea45866a5bac8301285f1",
+      "headRefOid": "57333a58280d92283fb37d2c2e8879e88de42ffd",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNKWkbg",
+          "commit": {
+            "abbreviatedOid": "57333a5"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-11T11:42:20Z",
+          "updatedAt": "2026-09-11T11:42:20Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 9,
@@ -945,6 +957,137 @@
           "body": "Reviewed 147ca21. The author and acknowledgment additions are correctly represented in the generated draft, and both documentation checks pass. No blocking issues found in this change.",
           "createdAt": "2026-09-08T14:03:52Z",
           "updatedAt": "2026-09-08T14:03:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "id": "PR_kwDOTPsy-c8AAAABDJFcNw",
+      "title": "Add Jean-Marie",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/17",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Justification for 3rd author:\r\n\r\n- Co-author of [Intra-handshake.fail paper](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS)\r\n- Co-finder of GHSA-Cocos-AI\r\n- Co-finder of CVE-2026-33697\r\n- Co-finder of EUVD-2026-16488\r\n- Co-finder of several other GHSAs",
+      "createdAt": "2026-09-11T12:29:08Z",
+      "updatedAt": "2026-09-11T18:04:41Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "8b8bb320c5e9c36e7b2b3c4f5a963370e2f5fd2b",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-jean-marie",
+      "headRefOid": "5206bb1eaaf3f0c4eaeb782c7477700bcf50aa04",
+      "closedAt": "2026-09-11T18:04:41Z",
+      "mergedAt": "2026-09-11T18:04:41Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "e9b93e72e098a7eb5accaf8fc2e8b314340327fc"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNKvpvQ",
+          "commit": {
+            "abbreviatedOid": "9927487"
+          },
+          "author": "jacquejm",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-11T12:32:39Z",
+          "updatedAt": "2026-09-11T12:32:39Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNLGbaA",
+          "commit": {
+            "abbreviatedOid": "9927487"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-11T13:13:24Z",
+          "updatedAt": "2026-09-11T13:13:24Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDOTPsy-c8AAAABDLkSJw",
+      "title": "Add Serhii",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/18",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "After discussion, he practically demonstrated the attack on [hardware](https://github.com/nikolaichuk7/geoar-verifier/tree/main/early-attestation) for early attestation. This is additional value to our regression tests, which are not checked at the hardware level. \r\n\r\nHe will also add practical insights from experiments on the need of continuous attestation -- a key argument for the need of post-handshake attestation demonstrating the additional complexity within the handshake is not useful.",
+      "createdAt": "2026-09-11T17:47:38Z",
+      "updatedAt": "2026-09-12T08:43:49Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "8b8bb320c5e9c36e7b2b3c4f5a963370e2f5fd2b",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-serhii",
+      "headRefOid": "8db06bcfa271b589cf3922180f41c492148da5ab",
+      "closedAt": "2026-09-12T08:43:49Z",
+      "mergedAt": "2026-09-12T08:43:49Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "94a7f4c8220dcfc6362a8dd7e0de268aff458966"
+      },
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Thanks Serhii for your valuable contributions, and a very warm welcome to the author team.\r\n",
+          "createdAt": "2026-09-12T08:43:39Z",
+          "updatedAt": "2026-09-12T08:43:39Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNPFuSA",
+          "commit": {
+            "abbreviatedOid": "8db06bc"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-11T20:35:47Z",
+          "updatedAt": "2026-09-11T20:35:47Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNPiUWw",
+          "commit": {
+            "abbreviatedOid": "8db06bc"
+          },
+          "author": "nikolaichuk7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Approved. Author block only; thanks, Usama. I'll add the continuous-attestation point (relaunch vs move seen through REPORT_ID and CHIP_ID) as a concise contribution after reading the current draft end to end, and I'm building the 5.1.1 relay measurement in parallel.",
+          "createdAt": "2026-09-11T21:46:31Z",
+          "updatedAt": "2026-09-11T21:46:31Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNRp7CA",
+          "commit": {
+            "abbreviatedOid": "8db06bc"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-12T08:35:08Z",
+          "updatedAt": "2026-09-12T08:35:08Z",
           "comments": []
         }
       ]
