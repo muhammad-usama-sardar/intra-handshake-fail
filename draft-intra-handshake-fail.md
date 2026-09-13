@@ -49,8 +49,8 @@ author:
     organization: Switch
     email: "kaya.ercihan@switch.ch"
  -
-    fullname: "Kubilay Ahmet Küçük (DPhil Ph.D.)"
-    organization:
+    fullname: "Dr Kubilay Ahmet Küçük"
+    organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
  -
     fullname: "E. C. M. Willems"
