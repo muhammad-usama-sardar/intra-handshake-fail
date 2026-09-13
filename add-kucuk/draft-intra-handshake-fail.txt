@@ -6,6 +6,8 @@ SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
 Expires: 17 March 2027                                         CoreWeave
+                                                              J. Jacquet
+                                            University of Namur, Belgium
                                                                    S. Bu
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                                 C. Huang
@@ -16,6 +18,8 @@ Expires: 17 March 2027                                         CoreWeave
                                                                   Switch
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
+                                                          S. Nikolaichuk
+                                        The Capital Index, Austin, Texas
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
@@ -2345,6 +2349,11 @@ Authors' Addresses
    Email: slava@dubeyko.com
 
 
+   Jean-Marie Jacquet
+   University of Namur, Belgium
+   Email: jean-marie.jacquet@unamur.be
+
+
    Songbo Bu
    Shanghai Guan An Information Technology Co., Ltd., China
    Email: bluedognull@gmail.com
@@ -2368,6 +2377,11 @@ Authors' Addresses
    Dr Kubilay Ahmet Küçük
    DPhil Oxford University
    Email: dr.kucuk@oxfordalumni.org
+
+
+   Serhii Nikolaichuk
+   The Capital Index, Austin, Texas
+   Email: nikolaichuk.s.f@gmail.com
 
 
    E. C. M. Willems
