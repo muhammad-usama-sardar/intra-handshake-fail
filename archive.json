@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-13T02:04:44.397442+00:00",
+  "timestamp": "2026-09-15T02:27:56.494369+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -480,24 +480,26 @@
       "id": "PR_kwDOTPsy-c8AAAABBT02gQ",
       "title": "Add K\u00fc\u00e7\u00fck",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "He will contribute dynamic loading and continuous attestation.",
       "createdAt": "2026-08-28T07:58:01Z",
-      "updatedAt": "2026-09-11T11:42:20Z",
+      "updatedAt": "2026-09-13T04:34:44Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
-      "baseRefOid": "8b8bb320c5e9c36e7b2b3c4f5a963370e2f5fd2b",
+      "baseRefOid": "94a7f4c8220dcfc6362a8dd7e0de268aff458966",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-kucuk",
-      "headRefOid": "57333a58280d92283fb37d2c2e8879e88de42ffd",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "0cf1712f26542d7addf47c4d53e6bbdb2eba33b6",
+      "closedAt": "2026-09-13T04:34:44Z",
+      "mergedAt": "2026-09-13T04:34:44Z",
+      "mergedBy": "dr-kucuk",
+      "mergeCommit": {
+        "oid": "3049e191e1cda8c65868186a19e0173697467296"
+      },
       "comments": [],
       "reviews": [
         {
@@ -512,6 +514,39 @@
           "createdAt": "2026-09-11T11:42:20Z",
           "updatedAt": "2026-09-11T11:42:20Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNVIQcQ",
+          "commit": {
+            "abbreviatedOid": "ec96724"
+          },
+          "author": "dr-kucuk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "update Kucuk",
+          "createdAt": "2026-09-13T04:31:16Z",
+          "updatedAt": "2026-09-13T04:31:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABNVIu5g",
+          "commit": {
+            "abbreviatedOid": "eaaaafe"
+          },
+          "author": "github-actions",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-13T04:33:36Z",
+          "updatedAt": "2026-09-13T04:33:36Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "````suggestion\n -\n````",
+              "createdAt": "2026-09-13T04:33:36Z",
+              "updatedAt": "2026-09-13T04:33:36Z"
+            }
+          ]
         }
       ]
     },
