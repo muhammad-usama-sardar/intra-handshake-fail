@@ -61,6 +61,10 @@ author:
     organization: The Capital Index, Austin, Texas
     email: "nikolaichuk.s.f@gmail.com"
  -
+    fullname: "Sylvain Bellemare"
+    organization: Sureshot Labs, Japan
+    email: "sbellem@gmail.com"
+ -
     fullname: "E. C. M. Willems"
     organization: Independent, Netherlands
     email: "evac.m.willems@proton.me"
