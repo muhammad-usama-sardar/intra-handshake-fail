@@ -1754,12 +1754,13 @@ Table of Contents
    |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides, video                                                                         |
    |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |ESORICS 2026                                    |Rome,     |14-18     |slides                                                                                |
-   |(https://sites.google.com/di.uniroma1.it/       |Italy     |Sept, 2026|                                                                                      |
+   |ESORICS 2026                                    |Rome,     |14-18     |slides (https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-   |
+   |(https://sites.google.com/di.uniroma1.it/       |Italy     |Sept, 2026|2026-33697_High-severity_CVE_in_Attested_TLS)                                         |
    |esorics2026/)                                   |          |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |IETF RATS Interim meeting                       |Virtual   |14 Sept,  |slides, video                                                                         |
-   |                                                |          |2026      |                                                                                      |
+   |IETF RATS Interim meeting                       |Virtual   |14 Sept,  |slides (https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-   |
+   |(https://datatracker.ietf.org/meeting/interim-  |          |2026      |interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-      |
+   |2026-rats-03/session/rats)                      |          |          |vulnerabilities-00), video (https://youtu.be/y5_SR0-DzH0?t=255)                       |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |Hackathon @ RIOT Summit 2026                    |Grenoble, |4         |topic synopsis (https://notes.inria.fr/2ppogr2fTSKusRog3RXbPQ?view#topic-security-    |
    |(https://summit.riot-os.org/2026/)              |France    |September,|analysis-of-attested-tls-and-attested-edhoc)                                          |
@@ -2250,6 +2251,20 @@ Acknowledgments
    *  Anonymous ESORICS 2026 reviewers
 
    *  Danko Miladinovic
+
+   *  Rongkuan He
+
+   *  Peeter Laud
+
+   *  Stephen Holmes
+
+   *  Ammara Gul
+
+   *  Atul Prakash
+
+   *  Paul Syverson
+
+   *  Jan Tobias Muehlberg
 
    *  John Preuß Mattsson
 
