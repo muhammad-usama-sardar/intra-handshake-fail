@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 17 March 2027                                         CoreWeave
+Expires: 21 March 2027                                         CoreWeave
                                                               J. Jacquet
                                             University of Namur, Belgium
                                                                    S. Bu
@@ -28,7 +28,7 @@ Expires: 17 March 2027                                         CoreWeave
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       13 September 2026
+                                                       17 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -89,7 +89,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 March 2027.
+   This Internet-Draft will expire on 21 March 2027.
 
 Copyright Notice
 
@@ -629,6 +629,15 @@ Table of Contents
    |TEE.fail                      |No CVE                                   |-   |None    |
    |(https://tee.fail/files/      |                                         |    |        |
    |paper.pdf)                    |                                         |    |        |
+   +------------------------------+-----------------------------------------+----+--------+
+   |DDRop (https://ddropattack.eu/|No CVE (Intel                            |-   |None    |
+   |ddrop.pdf)                    |(https://www.intel.com/content/www/us/en/|    |        |
+   |                              |security-center/announcement/intel-      |    |        |
+   |                              |security-announcement-                   |    |        |
+   |                              |2026-08-11-001.html) and AMD             |    |        |
+   |                              |(https://www.amd.com/en/resources/       |    |        |
+   |                              |product-security/bulletin/amd-sb-        |    |        |
+   |                              |3048.html) announcements)                |    |        |
    +------------------------------+-----------------------------------------+----+--------+
    |TDXdown (https://dl.acm.org/  |Intel                                    |2.5 |Low     |
    |doi/10.1145/3658644.3690230)  |(https://www.intel.com/content/www/us/en/|    |        |
