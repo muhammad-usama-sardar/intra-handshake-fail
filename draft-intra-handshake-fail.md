@@ -50,7 +50,7 @@ author:
     email: "havan12050544@gmail.com"
  -
     fullname: "Kaya Ercihan"
-    organization: Switch
+    organization: Switch, Zurich, Switzerland
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Dr Kubilay Ahmet Küçük"
