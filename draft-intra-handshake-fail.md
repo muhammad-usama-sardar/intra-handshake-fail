@@ -409,6 +409,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 |---|---|---|---|
 | [wiretap.fail](https://wiretap.fail/files/wiretap.pdf) | No CVE ([Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2025-10-28-001.html) and [AMD](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3040.html) announcements) | - | None |
 | [TEE.fail](https://tee.fail/files/paper.pdf) | No CVE | - | None |
+| [DDRop](https://ddropattack.eu/ddrop.pdf) | No CVE ([Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2026-08-11-001.html) and [AMD](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3048.html) announcements) | - | None |
 | [TDXdown](https://dl.acm.org/doi/10.1145/3658644.3690230) | [Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-10-08-001.html) | 2.5 | Low |
 | [Staleus](https://xca-attacks.github.io/staleus/staleus_usenix26.pdf) | [CVE-2025-54509](https://www.cve.org/CVERecord?id=CVE-2025-54509) | 4.0 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61972](https://www.cve.org/CVERecord?id=CVE-2025-6197)| 4.2 | Medium |
