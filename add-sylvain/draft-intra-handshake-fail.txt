@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 20 March 2027                                         CoreWeave
+Expires: 21 March 2027                                         CoreWeave
                                                               J. Jacquet
                                             University of Namur, Belgium
                                                                    S. Bu
@@ -15,7 +15,7 @@ Expires: 20 March 2027                                         CoreWeave
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
-                                                                  Switch
+                                             Switch, Zurich, Switzerland
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
                                                           S. Nikolaichuk
@@ -30,7 +30,7 @@ Expires: 20 March 2027                                         CoreWeave
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       16 September 2026
+                                                       17 September 2026
 
 
     Intra-handshake (aka Early) Attestation Considered Harmful (CVE-
@@ -91,7 +91,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 20 March 2027.
+   This Internet-Draft will expire on 21 March 2027.
 
 Copyright Notice
 
@@ -2372,7 +2372,7 @@ Authors' Addresses
 
 
    Kaya Ercihan
-   Switch
+   Switch, Zurich, Switzerland
    Email: kaya.ercihan@switch.ch
 
 
