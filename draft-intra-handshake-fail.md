@@ -745,6 +745,18 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/](https://mailarchive.ietf.org/arch/msg/seat/GJCA31mgAehlgFPRu_yHA10lKPI/)
 - [https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/](https://mailarchive.ietf.org/arch/msg/seat/9f-21JMK6s1Pdcob6mPo06rNwmQ/)
 - [https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/](https://mailarchive.ietf.org/arch/msg/seat/8qq_GFT391IEbGZZQUtYMONX9U0/)
+- [https://mailarchive.ietf.org/arch/msg/seat/xzu2UlClYMkG8gNSOClxGJgwnOI/](https://mailarchive.ietf.org/arch/msg/seat/xzu2UlClYMkG8gNSOClxGJgwnOI/)
+- Exploit: [https://mailarchive.ietf.org/arch/msg/seat/MfxWpRtlTqPElX8vX4v8uiN65TU/](https://mailarchive.ietf.org/arch/msg/seat/MfxWpRtlTqPElX8vX4v8uiN65TU/)
+- [https://mailarchive.ietf.org/arch/msg/seat/PkU0jW_xHAF18rZmtZJ2A2p_wHs/](https://mailarchive.ietf.org/arch/msg/seat/PkU0jW_xHAF18rZmtZJ2A2p_wHs/)
+- [https://mailarchive.ietf.org/arch/msg/seat/jZmdYKQlfherbhowIEmZRw2HF1c/](https://mailarchive.ietf.org/arch/msg/seat/jZmdYKQlfherbhowIEmZRw2HF1c/)
+- [https://mailarchive.ietf.org/arch/msg/seat/-0j6UpsD_CebqPPMNkDJCjySqEI/](https://mailarchive.ietf.org/arch/msg/seat/-0j6UpsD_CebqPPMNkDJCjySqEI/)
+- [https://mailarchive.ietf.org/arch/msg/rats/ssDrZRFW4s6CSaYeA9ImH0PPQ10/](https://mailarchive.ietf.org/arch/msg/rats/ssDrZRFW4s6CSaYeA9ImH0PPQ10/)
+- [https://mailarchive.ietf.org/arch/msg/rats/OPBI_Wd-RoTzzdh5D0JZoWlNGI8/](https://mailarchive.ietf.org/arch/msg/rats/OPBI_Wd-RoTzzdh5D0JZoWlNGI8/)
+- [https://mailarchive.ietf.org/arch/msg/rats/nfrdr1T9Pdp6D_kj2Et3XZk-hOY/](https://mailarchive.ietf.org/arch/msg/rats/nfrdr1T9Pdp6D_kj2Et3XZk-hOY/)
+- [https://mailarchive.ietf.org/arch/msg/rats/gMMvtP1IXsXFfb0X5nMhRTaLLok/](https://mailarchive.ietf.org/arch/msg/rats/gMMvtP1IXsXFfb0X5nMhRTaLLok/)
+- [https://mailarchive.ietf.org/arch/msg/rats/yaGG4sVf4pCfJ0HNPPRv3Xg0cG8/](https://mailarchive.ietf.org/arch/msg/rats/yaGG4sVf4pCfJ0HNPPRv3Xg0cG8/)
+- [https://mailarchive.ietf.org/arch/msg/rats/DaA1jDQNF-bdO5x-dkVbSzlHcD4/](https://mailarchive.ietf.org/arch/msg/rats/DaA1jDQNF-bdO5x-dkVbSzlHcD4/)
+- [https://mailarchive.ietf.org/arch/msg/rats/ptkHZUDzSoYnD6R5zln6HcE1cv4/](https://mailarchive.ietf.org/arch/msg/rats/ptkHZUDzSoYnD6R5zln6HcE1cv4/)
 
 ### Main Questions
 
