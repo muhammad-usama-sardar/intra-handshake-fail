@@ -796,8 +796,8 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | --- | --- | --- | --- | --- |
 | [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5-7 Oct, 2026 | slides, video |
 | [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | slides, video |
-| [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | slides |
-| IETF RATS Interim meeting | Virtual | 14 Sept, 2026 | slides, video |
+| [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | [slides](https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) |
+| [IETF RATS Interim meeting](https://datatracker.ietf.org/meeting/interim-2026-rats-03/session/rats) | Virtual | 14 Sept, 2026 | [slides](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00), [video](https://youtu.be/y5_SR0-DzH0?t=255) |
 | Hackathon @ [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 4 September, 2026 | [topic synopsis](https://notes.inria.fr/2ppogr2fTSKusRog3RXbPQ?view#topic-security-analysis-of-attested-tls-and-attested-edhoc) |
 | [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 2-4 September, 2026 | [abstract](https://summit.riot-os.org/2026/blog/speakers/muhammad-usama-sardar/), [slides](https://www.researchgate.net/publication/413988306_Security_Analysis_of_Attested_TLS_and_Attested_EDHOC), video |
 | [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 24 Aug, 2026 | [slides](https://www.researchgate.net/publication/413569575_High-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), [video](https://us02web.zoom.us/rec/share/UAn381deia-aMNmjGHhMqxocc1HcyF7ksLlaeeKefxO4bSC2mHPzwPQPYGe2dnZR.zfleYCmmtiteo_NS) |
@@ -910,6 +910,13 @@ We also gratefully acknowledge the following for insightful discussions and help
 - Casey Wilson
 - Anonymous ESORICS 2026 reviewers
 - Danko Miladinovic
+- Rongkuan He
+- Peeter Laud
+- Stephen Holmes
+- Ammara Gul
+- Atul Prakash
+- Paul Syverson
+- Jan Tobias Muehlberg
 - John Preuß Mattsson
 - Britta Hale
 - Werner Staub
