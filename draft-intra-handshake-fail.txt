@@ -15,7 +15,7 @@ Expires: 22 March 2027                                         CoreWeave
                                                                  H. Song
                 Shanghai Guan An Information Technology Co., Ltd., China
                                                               K. Ercihan
-                                                                  Switch
+                                             Switch, Zurich, Switzerland
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
                                                           S. Nikolaichuk
@@ -23,7 +23,7 @@ Expires: 22 March 2027                                         CoreWeave
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                             M. Brighindi
-                                                               PHI-OMEGA
+                              PHI-OMEGA, San Benedetto del Tronto, Italy
                                                      M. Quintyne-Collins
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
@@ -2503,7 +2503,7 @@ Authors' Addresses
 
 
    Kaya Ercihan
-   Switch
+   Switch, Zurich, Switzerland
    Email: kaya.ercihan@switch.ch
 
 
@@ -2523,7 +2523,7 @@ Authors' Addresses
 
 
    Massimiliano Brighindi
-   PHI-OMEGA
+   PHI-OMEGA, San Benedetto del Tronto, Italy
    Email: phiomega.runtime@gmail.com
 
 
