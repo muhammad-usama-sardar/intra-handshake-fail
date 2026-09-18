@@ -50,7 +50,7 @@ author:
     email: "havan12050544@gmail.com"
  -
     fullname: "Kaya Ercihan"
-    organization: Switch
+    organization: Switch, Zurich, Switzerland
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Dr Kubilay Ahmet Küçük"
@@ -66,7 +66,7 @@ author:
     email: "evac.m.willems@proton.me"
  -
     fullname: "Massimiliano Brighindi"
-    organization: PHI-OMEGA
+    organization: PHI-OMEGA, San Benedetto del Tronto, Italy
     email: "phiomega.runtime@gmail.com"
  -
     fullname: "Mikerah Quintyne-Collins"
