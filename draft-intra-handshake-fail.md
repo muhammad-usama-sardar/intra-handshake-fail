@@ -1,6 +1,6 @@
 ---
-title: "Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)"
-abbrev: "Intra-handshake Attestation Considered Harmful"
+title: "Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 24 other CVEs of up to expected CVSS 10.0 upcoming)"
+abbrev: "Early Attestation Considered Harmful"
 category: info
 
 docname: draft-intra-handshake-fail-latest
@@ -106,6 +106,30 @@ normative:
      title: CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys
      target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488
      date: 26 March 2026
+  CVE-2026-92701:
+     author:
+        org: CVE
+     title: Cocos AI Intra-handshake attested TLS implementation is vulnerable to session-misbinding attacks for Intel TDX verifier path
+     target: https://www.cve.org/CVERecord?id=CVE-2026-92701
+     date: 18 Sept 2026
+  CVE-2026-92702:
+     author:
+        org: CVE
+     title: Cocos AI Intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path
+     target: https://www.cve.org/CVERecord?id=CVE-2026-92702
+     date: 18 Sept 2026
+  EUVD-2026-83194:
+     author:
+        org: ENISA
+     title: EUVD-2026-83194
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194
+     date: 18 Sept 2026
+  EUVD-2026-83192:
+     author:
+        org: ENISA
+     title: EUVD-2026-83192
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-83192
+     date: 18 Sept 2026
   GHSA-Cocos-AI:
     title: "CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys"
     date: 23 March 2026
@@ -231,7 +255,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of [CVE-2026-33697](https://www.cve.org/CVERecord?id=CVE-2026-33697), [EUVD-2026-16488](https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488), and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how **intra**-handshake (aka early) attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, **intra**-handshake attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
@@ -280,7 +304,7 @@ The artifacts are quite flexible for modification and testing of different intra
 The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably vulnerable (and withdrawn) draft {{I-D.fossati-tls-attestation-10}} with the following two main changes from a formal perspective:
 
 1. Binder has been updated
-2. Post-handshake attestation part has been added for re-attestation
+2. Optional post-handshake attestation part has been added for re-attestation
 
 The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks.
 
@@ -290,14 +314,14 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 
 Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 
-| CVSS | Severity | Number of Published CVEs/GHSAs |
-|---|---|---|
-| 9.0-10.0 | Critical | 1 |
-| 9.1 | Critical | 2 |
-| 7.8 | High | 1 |
-| 7.5 | High | 2 |
-| 7.4 | High | 7 |
-| 6.3 | Medium | 1 |
+| CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
+|---|---|---|---|
+| 9.0-10.0 | Critical | 1 | - |
+| 9.1 | Critical | 2 | 2 |
+| 7.8 | High | 1 | - |
+| 7.5 | High | 1 | 1 |
+| 7.4 | High | 7 | - |
+| 6.3 | Medium | 1 | - |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
 **For TLS reference, Heartbleed was CVSS 7.5**.
@@ -321,6 +345,10 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
 | {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
+| {{CVE-2026-92701}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{CVE-2026-92702}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{EUVD-2026-83194}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{EUVD-2026-83192}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Threat Model
@@ -391,6 +419,10 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys archived early attestation in go and moved to post-handshake attestation | 4 September, 2026 |
 | Privasys published {{GHSA-Privasys-rtc-da}} [**Severity = HIGH (CVSS 7.4)**] | 6 September, 2026 |
 | Privasys published {{GHSA-Privasys-rtc-tcu}} [**Severity = MEDIUM (CVSS 6.3)**] | 6 September, 2026 |
+| CVE {{CVE-2026-92701}} published [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
+| CVE {{CVE-2026-92702}} published [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-83194}} [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-83192}} [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -417,9 +449,11 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
 | [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
+| EarlyAttestationBleed | {{CVE-2026-92701}} | 9.1 | Critical |
+| EarlyAttestationBleed | {{CVE-2026-92702}} | 9.1 | Critical |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
-The comparison of the above with CVSS **7.5** for {{Intra-handshake.fail}} indicates that attested TLS is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
+The comparison of the above with CVSS **9.1** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
 
 # More CVEs
 
@@ -429,7 +463,6 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 |---|---|---|
 | 9.0-10.0 | Critical | 1 (confirmed by developers) |
 | 9.8 | Critical | 1 |
-| 9.1 | Critical | 2 (confirmed by developers) |
 | 8.7 | High | 1 |
 | 7.5 | High | 5 |
 | 7.4 | High | 9 (5 confirmed by developers) |
