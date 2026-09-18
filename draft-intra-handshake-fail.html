@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)</title>
+<title>Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 24 other CVEs of up to expected CVSS 10.0 upcoming)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="Viacheslav Dubeyko" name="author">
 <meta content="Jean-Marie Jacquet" name="author">
@@ -19,27 +19,27 @@
 <meta content="Mikerah Quintyne-Collins" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
-       The draft aims to provide technical details of  CVE-2026-33697 ,  EUVD-2026-16488 , and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how  intra -handshake (aka early) attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required    ,  intra -handshake attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
+       The draft aims to provide technical details of  ,  ,  ,  ,  ,   and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
     " name="description">
-<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="xml2rfc 3.34.1" name="generator">
 <meta content="AI agents" name="keyword">
 <meta content="Intra-handshake attestation" name="keyword">
 <meta content="CVE-2026-33697" name="keyword">
 <meta content="draft-intra-handshake-fail-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.0
+  xml2rfc 3.34.1
     Python 3.14.7
-    ConfigArgParse 1.7.5
+    ConfigArgParse 1.7.7
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.7
+    platformdirs 4.11.10
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.3
+    wcwidth 0.8.4
 -->
 <link href="draft-intra-handshake-fail.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1054,12 +1054,12 @@ svg {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">Intra-handshake Attestation Considered H</td>
+<td class="center">Early Attestation Considered Harmful</td>
 <td class="right">September 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 21 March 2027</td>
+<td class="center">Expires 22 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1072,12 +1072,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-17" class="published">17 September 2026</time>
+<time datetime="2026-09-18" class="published">18 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-21">21 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-22">22 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1135,10 +1135,10 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Intra-handshake (aka Early) Attestation Considered Harmful (CVE-2026-33697 of CVSS 7.5 and several other CVEs of up to expected CVSS 10.0 upcoming)</h1>
+<h1 id="title">Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 24 other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">CVE-2026-33697</a>, <a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">EUVD-2026-16488</a>, and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how <strong>intra</strong>-handshake (aka early) attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, <strong>intra</strong>-handshake attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader intra-handshake (aka early) attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>, <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>, <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>, <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1170,7 +1170,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 21 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1513,7 +1513,7 @@ to its desired server.
             <p id="section-1.3-2.1.1">Binder has been updated<a href="#section-1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-1.3-2.2">
-            <p id="section-1.3-2.2.1">Post-handshake attestation part has been added for re-attestation<a href="#section-1.3-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.3-2.2.1">Optional post-handshake attestation part has been added for re-attestation<a href="#section-1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 <p id="section-1.3-3">The current binder in <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> does not prevent relay attacks as there is no <strong>shared secret</strong> in the binder. In addition to the formal analysis in <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, see <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> for arguments why shared secret is necessary to prevent relay attacks.<a href="#section-1.3-3" class="pilcrow">¶</a></p>
@@ -1535,7 +1535,8 @@ to its desired server.
             <tr>
               <th class="text-left" rowspan="1" colspan="1">CVSS</th>
               <th class="text-left" rowspan="1" colspan="1">Severity</th>
-              <th class="text-left" rowspan="1" colspan="1">Number of Published CVEs/GHSAs</th>
+              <th class="text-left" rowspan="1" colspan="1">Number of Published GHSAs</th>
+              <th class="text-left" rowspan="1" colspan="1">Number of Published CVEs</th>
             </tr>
           </thead>
           <tbody>
@@ -1543,31 +1544,37 @@ to its desired server.
               <td class="text-left" rowspan="1" colspan="1">9.0-10.0</td>
               <td class="text-left" rowspan="1" colspan="1">Critical</td>
               <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">9.1</td>
               <td class="text-left" rowspan="1" colspan="1">Critical</td>
+              <td class="text-left" rowspan="1" colspan="1">2</td>
               <td class="text-left" rowspan="1" colspan="1">2</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">7.8</td>
               <td class="text-left" rowspan="1" colspan="1">High</td>
               <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">7.5</td>
               <td class="text-left" rowspan="1" colspan="1">High</td>
-              <td class="text-left" rowspan="1" colspan="1">2</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">7.4</td>
               <td class="text-left" rowspan="1" colspan="1">High</td>
               <td class="text-left" rowspan="1" colspan="1">7</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">6.3</td>
               <td class="text-left" rowspan="1" colspan="1">Medium</td>
               <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
             </tr>
           </tbody>
         </table>
@@ -1691,6 +1698,34 @@ to its desired server.
 </td>
             <td class="text-left" rowspan="1" colspan="1">6.3</td>
             <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
           </tr>
         </tbody>
       </table>
@@ -1969,6 +2004,22 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">Privasys published <span>[<a href="#GHSA-Privasys-rtc-tcu" class="cite xref">GHSA-Privasys-rtc-tcu</a>]</span> [<strong>Severity = MEDIUM (CVSS 6.3)</strong>]</td>
             <td class="text-left" rowspan="1" colspan="1">6 September, 2026</td>
           </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">CVE <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> published [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">18 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">CVE <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> published [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">18 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">ENISA published EUVD <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span> [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">18 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">ENISA published EUVD <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">18 September, 2026</td>
+          </tr>
         </tbody>
       </table>
 <p id="section-4-2"><strong>Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with <code>WeakHash</code>, <code>WeakDH</code>, or <code>BadElement</code>.</strong> They hold independent of those, i.e., with <code>StrongHash</code> and <code>StrongDH</code> and all good elements within a group.<a href="#section-4-2" class="pilcrow">¶</a></p>
@@ -2096,9 +2147,25 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">7.5</td>
             <td class="text-left" rowspan="1" colspan="1">High</td>
           </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">EarlyAttestationBleed</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Critical</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">EarlyAttestationBleed</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Critical</td>
+          </tr>
         </tbody>
       </table>
-<p id="section-6-3">The comparison of the above with CVSS <strong>7.5</strong> for <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> indicates that attested TLS is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.<a href="#section-6-3" class="pilcrow">¶</a></p>
+<p id="section-6-3">The comparison of the above with CVSS <strong>9.1</strong> for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.<a href="#section-6-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="more-cves">
@@ -2129,11 +2196,6 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">9.8</td>
             <td class="text-left" rowspan="1" colspan="1">Critical</td>
             <td class="text-left" rowspan="1" colspan="1">1</td>
-          </tr>
-          <tr>
-            <td class="text-left" rowspan="1" colspan="1">9.1</td>
-            <td class="text-left" rowspan="1" colspan="1">Critical</td>
-            <td class="text-left" rowspan="1" colspan="1">2 (confirmed by developers)</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">8.7</td>
@@ -3648,9 +3710,25 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-33697">https://www.cve.org/CVERecord?id=CVE-2026-33697</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="CVE-2026-92701">[CVE-2026-92701]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"Cocos AI Intra-handshake attested TLS implementation is vulnerable to session-misbinding attacks for Intel TDX verifier path"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-92701">https://www.cve.org/CVERecord?id=CVE-2026-92701</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CVE-2026-92702">[CVE-2026-92702]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"Cocos AI Intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-92702">https://www.cve.org/CVERecord?id=CVE-2026-92702</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="EUVD-2026-16488">[EUVD-2026-16488]</dt>
         <dd>
 <span class="refAuthor">ENISA</span>, <span class="refTitle">"CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="EUVD-2026-83192">[EUVD-2026-83192]</dt>
+        <dd>
+<span class="refAuthor">ENISA</span>, <span class="refTitle">"EUVD-2026-83192"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-83192">https://euvd.enisa.europa.eu/enisa/EUVD-2026-83192</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="EUVD-2026-83194">[EUVD-2026-83194]</dt>
+        <dd>
+<span class="refAuthor">ENISA</span>, <span class="refTitle">"EUVD-2026-83194"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194">https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="GHSA-Cocos-AI">[GHSA-Cocos-AI]</dt>
         <dd>
