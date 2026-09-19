@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                       TU Dresden, Germany
 Intended status: Informational                                V. Dubeyko
-Expires: 22 March 2027                                         CoreWeave
+Expires: 23 March 2027                                         CoreWeave
                                                               J. Jacquet
                                             University of Namur, Belgium
                                                                    S. Bu
@@ -22,13 +22,15 @@ Expires: 22 March 2027                                         CoreWeave
                                         The Capital Index, Austin, Texas
                                                         E. C. M. Willems
                                                 Independent, Netherlands
+                                                           J. D. SAINTEN
+                    Independent Corporate Risk Consultant, Paris, France
                                                             M. Brighindi
                               PHI-OMEGA, San Benedetto del Tronto, Italy
                                                      M. Quintyne-Collins
                               HashCloak Inc and Stoffel Labs Inc, Canada
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       18 September 2026
+                                                       19 September 2026
 
 
  Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-
@@ -88,7 +90,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 March 2027.
+   This Internet-Draft will expire on 23 March 2027.
 
 Copyright Notice
 
@@ -2520,6 +2522,11 @@ Authors' Addresses
    E. C. M. Willems
    Independent, Netherlands
    Email: evac.m.willems@proton.me
+
+
+   Justin DESSENNES SAINTEN
+   Independent Corporate Risk Consultant, Paris, France
+   Email: dessennes_sainten@msn.com
 
 
    Massimiliano Brighindi
