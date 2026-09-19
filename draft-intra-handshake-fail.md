@@ -26,8 +26,12 @@ venue:
 author:
  -
     fullname: "Muhammad Usama Sardar"
-    organization: TU Dresden, Germany
-    email: "muhammad_usama.sardar@tu-dresden.de"
+    organization: Technical University of Dresden
+    abbrev: TU Dresden
+    city: Dresden
+    country: Germany
+    code: 01187
+    email: muhammad_usama.sardar@tu-dresden.de
  -
     fullname: "Viacheslav Dubeyko"
     organization: CoreWeave
@@ -35,10 +39,13 @@ author:
  -
     fullname: "Jean-Marie Jacquet"
     organization: University of Namur, Belgium
+    city: Namur
+    country: Belgium
     email: "jean-marie.jacquet@unamur.be"
  -
     fullname: "Songbo Bu"
-    organization: Shanghai Guan An Information Technology Co., Ltd., China
+    organization: Shanghai Guan An Information Technology Co., Ltd.
+    country: China
     email: "bluedognull@gmail.com"
  -
     fullname: "Chengxin Huang"
@@ -46,11 +53,14 @@ author:
     email: "aurestarnull@gmail.com"
  -
     fullname: "Haowen Song"
-    organization: Shanghai Guan An Information Technology Co., Ltd., China
+    organization: Shanghai Guan An Information Technology Co., Ltd.
+    country: China
     email: "havan12050544@gmail.com"
  -
     fullname: "Kaya Ercihan"
-    organization: Switch, Zurich, Switzerland
+    organization: Switch
+    city: Zurich
+    country: Switzerland
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Dr Kubilay Ahmet Küçük"
@@ -58,27 +68,36 @@ author:
     email: "dr.kucuk@oxfordalumni.org"
  -
     fullname: "Serhii Nikolaichuk"
-    organization: The Capital Index, Austin, Texas
+    organization: The Capital Index
+    city: Austin, Texas
+    country: USA
     email: "nikolaichuk.s.f@gmail.com"
  -
     fullname: "Sylvain Bellemare"
-    organization: Sureshot Labs, Japan
+    organization: Sureshot Labs
+    country: Japan
     email: "sbellem@gmail.com"
  -
     fullname: "E. C. M. Willems"
-    organization: Independent, Netherlands
+    organization: Independent
+    country: Netherlands
     email: "evac.m.willems@proton.me"
  -
     fullname: "Justin DESSENNES SAINTEN"
-    organization: Independent Corporate Risk Consultant, Paris, France
+    organization: Independent Corporate Risk Consultant
+    city: Paris
+    country: France
     email: "dessennes_sainten@msn.com"
  -
     fullname: "Massimiliano Brighindi"
-    organization: PHI-OMEGA, San Benedetto del Tronto, Italy
+    organization: PHI-OMEGA
+    city: San Benedetto del Tronto
+    country: Italy
     email: "phiomega.runtime@gmail.com"
  -
     fullname: "Mikerah Quintyne-Collins"
-    organization: HashCloak Inc and Stoffel Labs Inc, Canada
+    organization: HashCloak Inc and Stoffel Labs Inc
+    country: Canada
     email: "mikerah@hashcloak.com"
  -
     fullname: "Iman Schrock"
@@ -263,7 +282,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
