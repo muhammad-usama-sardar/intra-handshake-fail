@@ -3,33 +3,33 @@
 
 
 SEAT                                                        M. U. Sardar
-Internet-Draft                                       TU Dresden, Germany
+Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
 Expires: 23 March 2027                                         CoreWeave
                                                               J. Jacquet
                                             University of Namur, Belgium
                                                                    S. Bu
-                Shanghai Guan An Information Technology Co., Ltd., China
+                       Shanghai Guan An Information Technology Co., Ltd.
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
-                Shanghai Guan An Information Technology Co., Ltd., China
+                       Shanghai Guan An Information Technology Co., Ltd.
                                                               K. Ercihan
-                                             Switch, Zurich, Switzerland
+                                                                  Switch
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
                                                           S. Nikolaichuk
-                                        The Capital Index, Austin, Texas
+                                                       The Capital Index
                                                             S. Bellemare
-                                                    Sureshot Labs, Japan
+                                                           Sureshot Labs
                                                         E. C. M. Willems
-                                                Independent, Netherlands
+                                                             Independent
                                                            J. D. SAINTEN
-                    Independent Corporate Risk Consultant, Paris, France
+                                   Independent Corporate Risk Consultant
                                                             M. Brighindi
-                              PHI-OMEGA, San Benedetto del Tronto, Italy
+                                                               PHI-OMEGA
                                                      M. Quintyne-Collins
-                              HashCloak Inc and Stoffel Labs Inc, Canada
+                                      HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
                                                        19 September 2026
@@ -54,13 +54,13 @@ Abstract
    [Intra-handshake.fail-repo] in state-of-the-art formal analysis tool,
    ProVerif, under Apache-2.0 license for reproducibility and review,
    and have been acknowledged by the relevant stakeholders.  Currently,
-   there are *two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of
-   CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of
-   CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader
-   early attestation covering all layers of the ecosystem up to the
-   application*. The research papers on these are currently either under
-   submission or being prepared for submission.  The artifacts of these
-   papers will be shared with the community under Apache-2.0 license for
+   there are *two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of
+   9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA
+   of CVSS 6.3 published against the broader early attestation covering
+   all layers of the ecosystem up to the application*. The research
+   papers on these are currently either under submission or being
+   prepared for submission.  The artifacts of these papers will be
+   shared with the community under Apache-2.0 license for
    reproducibility and review.  In our analysis, the remaining
    implementations of early attestation -- Edgeless Systems Contrast and
    Meta's AI -- remain vulnerable.
@@ -2477,7 +2477,9 @@ Acknowledgments
 Authors' Addresses
 
    Muhammad Usama Sardar
-   TU Dresden, Germany
+   Technical University of Dresden
+   01187 Dresden
+   Germany
    Email: muhammad_usama.sardar@tu-dresden.de
 
 
@@ -2488,11 +2490,14 @@ Authors' Addresses
 
    Jean-Marie Jacquet
    University of Namur, Belgium
+   Namur
+   Belgium
    Email: jean-marie.jacquet@unamur.be
 
 
    Songbo Bu
-   Shanghai Guan An Information Technology Co., Ltd., China
+   Shanghai Guan An Information Technology Co., Ltd.
+   China
    Email: bluedognull@gmail.com
 
 
@@ -2502,12 +2507,15 @@ Authors' Addresses
 
 
    Haowen Song
-   Shanghai Guan An Information Technology Co., Ltd., China
+   Shanghai Guan An Information Technology Co., Ltd.
+   China
    Email: havan12050544@gmail.com
 
 
    Kaya Ercihan
-   Switch, Zurich, Switzerland
+   Switch
+   CH- Zurich
+   Switzerland
    Email: kaya.ercihan@switch.ch
 
 
@@ -2517,32 +2525,41 @@ Authors' Addresses
 
 
    Serhii Nikolaichuk
-   The Capital Index, Austin, Texas
+   The Capital Index
+   Austin, Texas,
+   United States of America
    Email: nikolaichuk.s.f@gmail.com
 
 
    Sylvain Bellemare
-   Sureshot Labs, Japan
+   Sureshot Labs
+   Japan
    Email: sbellem@gmail.com
 
 
    E. C. M. Willems
-   Independent, Netherlands
+   Independent
+   Netherlands
    Email: evac.m.willems@proton.me
 
 
    Justin DESSENNES SAINTEN
-   Independent Corporate Risk Consultant, Paris, France
+   Independent Corporate Risk Consultant
+   Paris
+   France
    Email: dessennes_sainten@msn.com
 
 
    Massimiliano Brighindi
-   PHI-OMEGA, San Benedetto del Tronto, Italy
+   PHI-OMEGA
+   San Benedetto del Tronto
+   Italy
    Email: phiomega.runtime@gmail.com
 
 
    Mikerah Quintyne-Collins
-   HashCloak Inc and Stoffel Labs Inc, Canada
+   HashCloak Inc and Stoffel Labs Inc
+   Canada
    Email: mikerah@hashcloak.com
 
 

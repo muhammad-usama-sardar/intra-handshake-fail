@@ -21,7 +21,7 @@
 <meta content="Mikerah Quintyne-Collins" name="author">
 <meta content="Iman Schrock" name="author">
 <meta content="
-       The draft aims to provide technical details of  ,  ,  ,  ,  ,   and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
+       The draft aims to provide technical details of  ,  ,  ,  ,  ,   and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even  without physical access . Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. 
     " name="description">
 <meta content="xml2rfc 3.34.1" name="generator">
 <meta content="AI agents" name="keyword">
@@ -1084,7 +1084,7 @@ svg {
 <dd class="authors">
 <div class="author">
       <div class="author-name">M. U. Sardar</div>
-<div class="org">TU Dresden, Germany</div>
+<div class="org">TU Dresden</div>
 </div>
 <div class="author">
       <div class="author-name">V. Dubeyko</div>
@@ -1096,7 +1096,7 @@ svg {
 </div>
 <div class="author">
       <div class="author-name">S. Bu</div>
-<div class="org">Shanghai Guan An Information Technology Co., Ltd., China</div>
+<div class="org">Shanghai Guan An Information Technology Co., Ltd.</div>
 </div>
 <div class="author">
       <div class="author-name">C. Huang</div>
@@ -1104,11 +1104,11 @@ svg {
 </div>
 <div class="author">
       <div class="author-name">H. Song</div>
-<div class="org">Shanghai Guan An Information Technology Co., Ltd., China</div>
+<div class="org">Shanghai Guan An Information Technology Co., Ltd.</div>
 </div>
 <div class="author">
       <div class="author-name">K. Ercihan</div>
-<div class="org">Switch, Zurich, Switzerland</div>
+<div class="org">Switch</div>
 </div>
 <div class="author">
       <div class="author-name">D. K. A. Küçük</div>
@@ -1116,27 +1116,27 @@ svg {
 </div>
 <div class="author">
       <div class="author-name">S. Nikolaichuk</div>
-<div class="org">The Capital Index, Austin, Texas</div>
+<div class="org">The Capital Index</div>
 </div>
 <div class="author">
       <div class="author-name">S. Bellemare</div>
-<div class="org">Sureshot Labs, Japan</div>
+<div class="org">Sureshot Labs</div>
 </div>
 <div class="author">
       <div class="author-name">E. C. M. Willems</div>
-<div class="org">Independent, Netherlands</div>
+<div class="org">Independent</div>
 </div>
 <div class="author">
       <div class="author-name">J. D. SAINTEN</div>
-<div class="org">Independent Corporate Risk Consultant, Paris, France</div>
+<div class="org">Independent Corporate Risk Consultant</div>
 </div>
 <div class="author">
       <div class="author-name">M. Brighindi</div>
-<div class="org">PHI-OMEGA, San Benedetto del Tronto, Italy</div>
+<div class="org">PHI-OMEGA</div>
 </div>
 <div class="author">
       <div class="author-name">M. Quintyne-Collins</div>
-<div class="org">HashCloak Inc and Stoffel Labs Inc, Canada</div>
+<div class="org">HashCloak Inc and Stoffel Labs Inc</div>
 </div>
 <div class="author">
       <div class="author-name">I. Schrock</div>
@@ -1148,7 +1148,7 @@ svg {
 <h1 id="title">Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 24 other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>, <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>, <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>, <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 7.5, one GHSA of 9.0-10.0, two GHSAs of CVSS 9.1, two CVEs of CVSS 9.1, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>, <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>, <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>, <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even <em>without physical access</em>. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -4084,7 +4084,11 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Muhammad Usama Sardar</span></div>
-<div dir="auto" class="left"><span class="org">TU Dresden, Germany</span></div>
+<div dir="auto" class="left"><span class="org">Technical University of Dresden</span></div>
+<div dir="auto" class="left">
+<span class="postal-code">01187</span> <span class="locality">Dresden</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">Germany</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:muhammad_usama.sardar@tu-dresden.de" class="email">muhammad_usama.sardar@tu-dresden.de</a>
@@ -4101,6 +4105,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Jean-Marie Jacquet</span></div>
 <div dir="auto" class="left"><span class="org">University of Namur, Belgium</span></div>
+<div dir="auto" class="left"><span class="locality">Namur</span></div>
+<div dir="auto" class="left"><span class="country-name">Belgium</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:jean-marie.jacquet@unamur.be" class="email">jean-marie.jacquet@unamur.be</a>
@@ -4108,7 +4114,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Songbo Bu</span></div>
-<div dir="auto" class="left"><span class="org">Shanghai Guan An Information Technology Co., Ltd., China</span></div>
+<div dir="auto" class="left"><span class="org">Shanghai Guan An Information Technology Co., Ltd.</span></div>
+<div dir="auto" class="left"><span class="country-name">China</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:bluedognull@gmail.com" class="email">bluedognull@gmail.com</a>
@@ -4124,7 +4131,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Haowen Song</span></div>
-<div dir="auto" class="left"><span class="org">Shanghai Guan An Information Technology Co., Ltd., China</span></div>
+<div dir="auto" class="left"><span class="org">Shanghai Guan An Information Technology Co., Ltd.</span></div>
+<div dir="auto" class="left"><span class="country-name">China</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:havan12050544@gmail.com" class="email">havan12050544@gmail.com</a>
@@ -4132,7 +4140,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Kaya Ercihan</span></div>
-<div dir="auto" class="left"><span class="org">Switch, Zurich, Switzerland</span></div>
+<div dir="auto" class="left"><span class="org">Switch</span></div>
+<div dir="auto" class="left">CH- <span class="locality">Zurich</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">Switzerland</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:kaya.ercihan@switch.ch" class="email">kaya.ercihan@switch.ch</a>
@@ -4148,7 +4159,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Serhii Nikolaichuk</span></div>
-<div dir="auto" class="left"><span class="org">The Capital Index, Austin, Texas</span></div>
+<div dir="auto" class="left"><span class="org">The Capital Index</span></div>
+<div dir="auto" class="left">
+<span class="locality">Austin, Texas</span>,  </div>
+<div dir="auto" class="left"><span class="country-name">United States of America</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:nikolaichuk.s.f@gmail.com" class="email">nikolaichuk.s.f@gmail.com</a>
@@ -4156,7 +4170,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Sylvain Bellemare</span></div>
-<div dir="auto" class="left"><span class="org">Sureshot Labs, Japan</span></div>
+<div dir="auto" class="left"><span class="org">Sureshot Labs</span></div>
+<div dir="auto" class="left"><span class="country-name">Japan</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:sbellem@gmail.com" class="email">sbellem@gmail.com</a>
@@ -4164,7 +4179,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">E. C. M. Willems</span></div>
-<div dir="auto" class="left"><span class="org">Independent, Netherlands</span></div>
+<div dir="auto" class="left"><span class="org">Independent</span></div>
+<div dir="auto" class="left"><span class="country-name">Netherlands</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:evac.m.willems@proton.me" class="email">evac.m.willems@proton.me</a>
@@ -4172,7 +4188,9 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Justin DESSENNES SAINTEN</span></div>
-<div dir="auto" class="left"><span class="org">Independent Corporate Risk Consultant, Paris, France</span></div>
+<div dir="auto" class="left"><span class="org">Independent Corporate Risk Consultant</span></div>
+<div dir="auto" class="left"><span class="locality">Paris</span></div>
+<div dir="auto" class="left"><span class="country-name">France</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:dessennes_sainten@msn.com" class="email">dessennes_sainten@msn.com</a>
@@ -4180,7 +4198,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Massimiliano Brighindi</span></div>
-<div dir="auto" class="left"><span class="org">PHI-OMEGA, San Benedetto del Tronto, Italy</span></div>
+<div dir="auto" class="left"><span class="org">PHI-OMEGA</span></div>
+<div dir="auto" class="left">
+<span class="locality">San Benedetto del Tronto</span> </div>
+<div dir="auto" class="left"><span class="country-name">Italy</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:phiomega.runtime@gmail.com" class="email">phiomega.runtime@gmail.com</a>
@@ -4188,7 +4209,8 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 </address>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Mikerah Quintyne-Collins</span></div>
-<div dir="auto" class="left"><span class="org">HashCloak Inc and Stoffel Labs Inc, Canada</span></div>
+<div dir="auto" class="left"><span class="org">HashCloak Inc and Stoffel Labs Inc</span></div>
+<div dir="auto" class="left"><span class="country-name">Canada</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:mikerah@hashcloak.com" class="email">mikerah@hashcloak.com</a>
