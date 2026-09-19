@@ -65,6 +65,10 @@ author:
     organization: Independent, Netherlands
     email: "evac.m.willems@proton.me"
  -
+    fullname: "Justin DESSENNES SAINTEN"
+    organization: Independent Corporate Risk Consultant, Paris, France
+    email: "dessennes_sainten@msn.com"
+ -
     fullname: "Massimiliano Brighindi"
     organization: PHI-OMEGA, San Benedetto del Tronto, Italy
     email: "phiomega.runtime@gmail.com"
