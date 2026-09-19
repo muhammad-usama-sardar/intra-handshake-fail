@@ -20,6 +20,8 @@ Expires: 23 March 2027                                         CoreWeave
                                                  DPhil Oxford University
                                                           S. Nikolaichuk
                                         The Capital Index, Austin, Texas
+                                                            S. Bellemare
+                                                    Sureshot Labs, Japan
                                                         E. C. M. Willems
                                                 Independent, Netherlands
                                                            J. D. SAINTEN
@@ -2517,6 +2519,11 @@ Authors' Addresses
    Serhii Nikolaichuk
    The Capital Index, Austin, Texas
    Email: nikolaichuk.s.f@gmail.com
+
+
+   Sylvain Bellemare
+   Sureshot Labs, Japan
+   Email: sbellem@gmail.com
 
 
    E. C. M. Willems
