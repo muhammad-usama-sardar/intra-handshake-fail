@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-17T02:25:52.410160+00:00",
+  "timestamp": "2026-09-20T02:22:39.346181+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1132,26 +1132,149 @@
       "id": "PR_kwDOTPsy-c8AAAABD1EVvQ",
       "title": "Add Sylvain",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/19",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "He will contribute from practical implementation perspective. More [here](https://sbellem.github.io/).",
       "createdAt": "2026-09-16T20:36:24Z",
-      "updatedAt": "2026-09-16T20:36:24Z",
+      "updatedAt": "2026-09-19T12:48:45Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "3049e191e1cda8c65868186a19e0173697467296",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-sylvain",
-      "headRefOid": "0a86c249fae31566883c402d24947e882babcbbb",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "9e563018194b073b2a0c794b9ebbd117cb0c08fb",
+      "closedAt": "2026-09-19T12:48:45Z",
+      "mergedAt": "2026-09-19T12:48:45Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "17affdb30c842cef97bebf6da81a39211dd35e3a"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABN-DbFg",
+          "commit": {
+            "abbreviatedOid": "0a86c24"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-17T07:23:51Z",
+          "updatedAt": "2026-09-17T07:23:51Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABN-dFIg",
+          "commit": {
+            "abbreviatedOid": "0a86c24"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-17T08:09:22Z",
+          "updatedAt": "2026-09-17T08:09:22Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABOCfcgQ",
+          "commit": {
+            "abbreviatedOid": "9e56301"
+          },
+          "author": "nikolaichuk7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "No objections. Welcome, Sylvain.",
+          "createdAt": "2026-09-17T14:27:11Z",
+          "updatedAt": "2026-09-17T14:27:11Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABOUJdtg",
+          "commit": {
+            "abbreviatedOid": "9e56301"
+          },
+          "author": "sbellem",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-19T11:36:33Z",
+          "updatedAt": "2026-09-19T11:36:33Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "id": "PR_kwDOTPsy-c8AAAABEFy_wg",
+      "title": "Add Justin",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/20",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "He will add his insights from risk analysis, specifically in Section 13. ",
+      "createdAt": "2026-09-18T14:01:14Z",
+      "updatedAt": "2026-09-19T08:22:16Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "c8b84386c5089bdb6173b64f3e25ad0ab6e22ba3",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-justin",
+      "headRefOid": "4ef4f088e1644ddc63bfaf03ff55421a7d6cfaa3",
+      "closedAt": "2026-09-19T08:22:16Z",
+      "mergedAt": "2026-09-19T08:22:16Z",
+      "mergedBy": "JustinDSParis",
+      "mergeCommit": {
+        "oid": "6e04b26d4325efd942dbcb2b5a49b35c7b50895c"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABONmUBg",
+          "commit": {
+            "abbreviatedOid": "4ef4f08"
+          },
+          "author": "nikolaichuk7",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "No objections. Welcome, Justin.",
+          "createdAt": "2026-09-18T14:14:42Z",
+          "updatedAt": "2026-09-18T14:14:42Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABOOzzgw",
+          "commit": {
+            "abbreviatedOid": "4ef4f08"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-18T16:15:42Z",
+          "updatedAt": "2026-09-18T16:15:42Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABOP5crA",
+          "commit": {
+            "abbreviatedOid": "4ef4f08"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-18T18:21:27Z",
+          "updatedAt": "2026-09-18T18:21:27Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
