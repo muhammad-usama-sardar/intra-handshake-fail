@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 24 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -38,7 +38,7 @@ author:
     email: "slava@dubeyko.com"
  -
     fullname: "Jean-Marie Jacquet"
-    organization: University of Namur, Belgium
+    organization: University of Namur
     city: Namur
     country: Belgium
     email: "jean-marie.jacquet@unamur.be"
@@ -64,6 +64,7 @@ author:
     email: "kaya.ercihan@switch.ch"
  -
     fullname: "Dr Kubilay Ahmet Küçük"
+    ins: Dr. K. A. Küçük
     organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
  -
@@ -78,7 +79,8 @@ author:
     country: Japan
     email: "sbellem@gmail.com"
  -
-    fullname: "E. C. M. Willems"
+    fullname: "Eva C. M. Willems"
+    ins: E. C. M. Willems
     organization: Independent
     country: Netherlands
     email: "evac.m.willems@proton.me"
@@ -282,7 +284,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even *without physical access*. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
@@ -376,7 +378,20 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{CVE-2026-92702}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{EUVD-2026-83194}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{EUVD-2026-83192}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
+| [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 9.8 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 9.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 8.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 8.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 7.9 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 5.6 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 13 GHSAs are preliminary"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -952,7 +967,9 @@ Acknowledgment does not necessarily imply attestation. It implies that the autho
 
 This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:
 
-We wish to express our sincere appreciation to the following for their review of our latest work:
+**EarlyAttestationBleed**
+
+We wish to express our sincere appreciation to the following for their review:
 
 - Bertrand Foing
 - Sammy Kerata Oina
@@ -963,11 +980,7 @@ We wish to express our sincere appreciation to the following for their review of
 
 **Intra-handshake.fail** {{Intra-handshake.fail}}
 
-We would like to thank our co-author of paper {{Intra-handshake.fail}} for his valuable contributions:
-
-- Jean-Marie Jacquet
-
-We also gratefully acknowledge the following for insightful discussions and helpful reviews on {{Intra-handshake.fail}}:
+We gratefully acknowledge the following for insightful discussions and helpful reviews on {{Intra-handshake.fail}}:
 
 - Eric Rescorla
 - Juho Forsén
@@ -981,6 +994,7 @@ We also gratefully acknowledge the following for insightful discussions and help
 - Pavel Nikonorov
 - Casey Wilson
 - Anonymous ESORICS 2026 reviewers
+- Marco Anisetti (ESORICS 2026 shepherd)
 - Danko Miladinovic
 - Rongkuan He
 - Peeter Laud
@@ -1011,7 +1025,7 @@ We also gratefully acknowledge the following for insightful discussions and help
 
 **Identity Crisis** {{ID-Crisis}}
 
-We would like to thank our co-authors of complementary paper {{ID-Crisis}} for their valuable contributions:
+We would like to thank our co-authors of paper {{ID-Crisis}} for their valuable contributions:
 
 - Mariam Moustafa
 - Tuomas Aura
