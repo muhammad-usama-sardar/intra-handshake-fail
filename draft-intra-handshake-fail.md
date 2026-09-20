@@ -341,7 +341,7 @@ Post-handshake attestation part may prevent relay attacks, but then the **additi
 
 ## Executive Summary of Current Status
 
-Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
+Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Scores of 13 more GHSAs is yet to be confirmed and will be added later in this table. **For TLS reference, Heartbleed was CVSS 7.5**.
 
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
@@ -352,8 +352,6 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | 7.4 | High | 7 | - |
 | 6.3 | Medium | 1 | - |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
-
-**For TLS reference, Heartbleed was CVSS 7.5**.
 
 # Published GHSAs/CVEs
 {: #sec-credits }
