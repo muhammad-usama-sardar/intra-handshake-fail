@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -14,7 +14,10 @@ workgroup: SEAT
 keyword:
  - AI agents
  - Intra-handshake attestation
+ - Early attestation
  - CVE-2026-33697
+ - CVE-2026-92701
+ - CVE-2026-92702
 venue:
 #  group: WG
 #  type: Working Group
@@ -272,6 +275,14 @@ normative:
     target: https://www.mitre.org/news-insights/publication/framework-continuous-remote-attestation
     author:
       - ins: MITRE's Confidential Computing Layered Attestation Working Group
+  EarlyAttestationBleed:
+    title: "EarlyAttestationBleed: Three Critical-severity Vulnerabilities of CVSS ≥ 9.0 in Confidential Computing"
+    date: 21 September 2026,
+    target: https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing
+    author:
+      - ins: M. U. Sardar
+      - ins: Songbo Bu
+
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -463,6 +474,19 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-92702}} published [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-83194}} [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-83192}} [**Severity = CRITICAL (CVSS 9.1)**] | 18 September, 2026 |
+| Privasys published [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 19 September, 2026  |
+| Privasys published [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 19 September, 2026 |
+| Privasys published [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 19 September, 2026 |
+| Privasys published [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 19 September, 2026 |
+| Privasys published [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 19 September, 2026 |
+| Privasys published [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 19 September, 2026 |
+| Privasys published [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 19 September, 2026 |
+| Privasys published [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 19 September, 2026 |
+| Privasys published [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 19 September, 2026 |
+| Privasys published [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 19 September, 2026 |
+| Privasys published [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 19 September, 2026 |
+| Privasys published [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 19 September, 2026 |
+| Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -489,8 +513,8 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
 | [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
-| EarlyAttestationBleed | {{CVE-2026-92701}} | 9.1 | Critical |
-| EarlyAttestationBleed | {{CVE-2026-92702}} | 9.1 | Critical |
+| {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
+| {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
 The comparison of the above with CVSS **9.1** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
@@ -965,14 +989,14 @@ Acknowledgment does not necessarily imply attestation. It implies that the autho
 
 This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:
 
-**EarlyAttestationBleed**
+**EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
 We wish to express our sincere appreciation to the following for their review:
 
-- Bertrand Foing
 - Sammy Kerata Oina
 - Drasko Draskovic
 - Markus Rudy
+- Bertrand Foing
 - Rebekah Overdorf
 - Tobias Pulls
 
