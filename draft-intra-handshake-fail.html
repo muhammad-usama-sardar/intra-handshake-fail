@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)</title>
+<title>Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="Viacheslav Dubeyko" name="author">
 <meta content="Jean-Marie Jacquet" name="author">
@@ -26,7 +26,10 @@
 <meta content="xml2rfc 3.34.1" name="generator">
 <meta content="AI agents" name="keyword">
 <meta content="Intra-handshake attestation" name="keyword">
+<meta content="Early attestation" name="keyword">
 <meta content="CVE-2026-33697" name="keyword">
+<meta content="CVE-2026-92701" name="keyword">
+<meta content="CVE-2026-92702" name="keyword">
 <meta content="draft-intra-handshake-fail-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.34.1
@@ -1061,7 +1064,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 24 March 2027</td>
+<td class="center">Expires 25 March 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1074,12 +1077,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-20" class="published">20 September 2026</time>
+<time datetime="2026-09-21" class="published">21 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-24">24 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-03-25">25 March 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1145,7 +1148,7 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)</h1>
+<h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>, <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>, <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>, <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
@@ -1180,7 +1183,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 24 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -2120,6 +2123,71 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">ENISA published EUVD <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span> [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
             <td class="text-left" rowspan="1" colspan="1">18 September, 2026</td>
           </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm">GHSA-322v-xwfj-63cm</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j">GHSA-m9p9-3hxp-4j6j</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397">GHSA-ppc4-fg56-x397</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6">GHSA-6j47-3cm6-9cg6</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j">GHSA-4755-rh6c-694j</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr">GHSA-6f8q-88mv-c8vr</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v">GHSA-qqq3-6c47-684v</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx">GHSA-xxr6-w252-4ggx</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp">GHSA-fmrx-fjqw-37gp</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp">GHSA-f96w-jjf8-xpw3</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49">GHSA-fqrx-3wc2-4g49</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8">GHSA-mrgr-34cc-fcg8</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">Privasys published <a href="https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v">GHSA-wqf9-jfmm-f68v</a>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">19 September, 2026</td>
+          </tr>
         </tbody>
       </table>
 <p id="section-4-2"><strong>Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with <code>WeakHash</code>, <code>WeakDH</code>, or <code>BadElement</code>.</strong> They hold independent of those, i.e., with <code>StrongHash</code> and <code>StrongDH</code> and all good elements within a group.<a href="#section-4-2" class="pilcrow">¶</a></p>
@@ -2248,7 +2316,9 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">High</td>
           </tr>
           <tr>
-            <td class="text-left" rowspan="1" colspan="1">EarlyAttestationBleed</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span>
+</td>
             <td class="text-left" rowspan="1" colspan="1">
               <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>
 </td>
@@ -2256,7 +2326,9 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">Critical</td>
           </tr>
           <tr>
-            <td class="text-left" rowspan="1" colspan="1">EarlyAttestationBleed</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span>
+</td>
             <td class="text-left" rowspan="1" colspan="1">
               <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>
 </td>
@@ -3818,6 +3890,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"Cocos AI Intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-92702">https://www.cve.org/CVERecord?id=CVE-2026-92702</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="EarlyAttestationBleed">[EarlyAttestationBleed]</dt>
+        <dd>
+<span class="refAuthor">Sardar, M. U.</span> and <span class="refAuthor">Songbo Bu</span>, <span class="refTitle">"EarlyAttestationBleed: Three Critical-severity Vulnerabilities of CVSS ≥ 9.0 in Confidential Computing"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing">https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="EUVD-2026-16488">[EUVD-2026-16488]</dt>
         <dd>
 <span class="refAuthor">ENISA</span>, <span class="refTitle">"CoCoS attested TLS is vulnerable to relay attacks via extracted ephemeral TLS keys"</span>, <time datetime="2026-03" class="refDate">March 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488">https://euvd.enisa.europa.eu/enisa/EUVD-2026-16488</a>&gt;</span>. </dd>
@@ -3921,7 +3997,7 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <dl class="references">
 <dt id="I-D.fossati-seat-early-attestation">[I-D.fossati-seat-early-attestation]</dt>
         <dd>
-<span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Mihalcea, I.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Fossati, T.</span>, and <span class="refAuthor">T. Reddy.K</span>, <span class="refTitle">"Using Attestation in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-fossati-seat-early-attestation-06</span>, <time datetime="2026-08-05" class="refDate">5 August 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-06">https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Mihalcea, I.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Fossati, T.</span>, and <span class="refAuthor">T. Reddy.K</span>, <span class="refTitle">"Using Attestation in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-fossati-seat-early-attestation-07</span>, <time datetime="2026-09-20" class="refDate">20 September 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-07">https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.fossati-seat-early-attestation-04">[I-D.fossati-seat-early-attestation-04]</dt>
         <dd>
@@ -3955,20 +4031,20 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
       </h2>
 <p id="appendix-A-1">Acknowledgment does not necessarily imply attestation. It implies that the authors found the feedback and discussion useful in improving the formal analysis, the corresponding paper, or this draft.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 <p id="appendix-A-2">This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:<a href="#appendix-A-2" class="pilcrow">¶</a></p>
-<p id="appendix-A-3"><strong>EarlyAttestationBleed</strong><a href="#appendix-A-3" class="pilcrow">¶</a></p>
+<p id="appendix-A-3"><strong>EarlyAttestationBleed</strong> <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span><a href="#appendix-A-3" class="pilcrow">¶</a></p>
 <p id="appendix-A-4">We wish to express our sincere appreciation to the following for their review:<a href="#appendix-A-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-A-5.1">
-          <p id="appendix-A-5.1.1">Bertrand Foing<a href="#appendix-A-5.1.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-5.1.1">Sammy Kerata Oina<a href="#appendix-A-5.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-5.2">
-          <p id="appendix-A-5.2.1">Sammy Kerata Oina<a href="#appendix-A-5.2.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-5.2.1">Drasko Draskovic<a href="#appendix-A-5.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-5.3">
-          <p id="appendix-A-5.3.1">Drasko Draskovic<a href="#appendix-A-5.3.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-5.3.1">Markus Rudy<a href="#appendix-A-5.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-5.4">
-          <p id="appendix-A-5.4.1">Markus Rudy<a href="#appendix-A-5.4.1" class="pilcrow">¶</a></p>
+          <p id="appendix-A-5.4.1">Bertrand Foing<a href="#appendix-A-5.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-A-5.5">
           <p id="appendix-A-5.5.1">Rebekah Overdorf<a href="#appendix-A-5.5.1" class="pilcrow">¶</a></p>

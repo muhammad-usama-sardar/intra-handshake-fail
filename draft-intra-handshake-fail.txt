@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 24 March 2027                                         CoreWeave
+Expires: 25 March 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,12 +32,12 @@ Expires: 24 March 2027                                         CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       20 September 2026
+                                                       21 September 2026
 
 
- Early Attestation Considered Harmful (CVE-2026-92701 of CVSS 9.1, CVE-
-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of
-                   up to expected CVSS 10.0 upcoming)
+ Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
+  CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other
+               CVEs of up to expected CVSS 10.0 upcoming)
                    draft-intra-handshake-fail-latest
 
 Abstract
@@ -93,7 +93,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 March 2027.
+   This Internet-Draft will expire on 25 March 2027.
 
 Copyright Notice
 
@@ -715,6 +715,58 @@ Table of Contents
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-322v-xwfj-63cm (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-322v-xwfj-63cm)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-m9p9-3hxp-4j6j (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-ppc4-fg56-x397 (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-ppc4-fg56-x397)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-6j47-3cm6-9cg6 (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-6j47-3cm6-9cg6)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-4755-rh6c-694j (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-4755-rh6c-694j)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-6f8q-88mv-c8vr (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-6f8q-88mv-c8vr)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-qqq3-6c47-684v (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-qqq3-6c47-684v)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-xxr6-w252-4ggx (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-xxr6-w252-4ggx)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-fmrx-fjqw-37gp (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-fmrx-fjqw-37gp)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-f96w-jjf8-xpw3 (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-fmrx-fjqw-37gp)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-fqrx-3wc2-4g49 (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-fqrx-3wc2-4g49)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-mrgr-34cc-fcg8 (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-mrgr-34cc-fcg8)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Privasys published GHSA-wqf9-jfmm-f68v (https://github.com/Privasys/enclave-|19        |
+   |os-mini/security/advisories/GHSA-wqf9-jfmm-f68v)                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
                               acknowledgements
@@ -794,9 +846,9 @@ Table of Contents
    |33697_High-                   |                                         |    |        |
    |severity_CVE_in_Attested_TLS) |                                         |    |        |
    +------------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationBleed         |[CVE-2026-92701]                         |9.1 |Critical|
+   |[EarlyAttestationBleed]       |[CVE-2026-92701]                         |9.1 |Critical|
    +------------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationBleed         |[CVE-2026-92702]                         |9.1 |Critical|
+   |[EarlyAttestationBleed]       |[CVE-2026-92702]                         |9.1 |Critical|
    +------------------------------+-----------------------------------------+----+--------+
 
        Table 7: Comparison with other vulnerabilities in confidential
@@ -2200,6 +2252,14 @@ Table of Contents
               in the AMD SEV-SNP path", September 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-92702>.
 
+   [EarlyAttestationBleed]
+              Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
+              Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
+              Confidential Computing", September 2026,
+              <https://www.researchgate.net/
+              publication/414529199_EarlyAttestationBleed_Three_Critical-
+              severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing>.
+
    [EUVD-2026-16488]
               ENISA, "CoCoS attested TLS is vulnerable to relay attacks
               via extracted ephemeral TLS keys", March 2026,
@@ -2346,9 +2406,9 @@ Table of Contents
               T. Reddy.K, "Using Attestation in Transport Layer Security
               (TLS) and Datagram Transport Layer Security (DTLS)", Work
               in Progress, Internet-Draft, draft-fossati-seat-early-
-              attestation-06, 5 August 2026,
+              attestation-07, 20 September 2026,
               <https://datatracker.ietf.org/doc/html/draft-fossati-seat-
-              early-attestation-06>.
+              early-attestation-07>.
 
    [I-D.fossati-seat-early-attestation-04]
               Sheffer, Y., Mihalcea, I., Deshpande, Y., Fossati, T., and
@@ -2403,18 +2463,18 @@ Acknowledgments
    This draft benefits from several years of research on attested TLS,
    in particular some of the recent works mentioned below:
 
-   *EarlyAttestationBleed*
+   *EarlyAttestationBleed* [EarlyAttestationBleed]
 
    We wish to express our sincere appreciation to the following for
    their review:
-
-   *  Bertrand Foing
 
    *  Sammy Kerata Oina
 
    *  Drasko Draskovic
 
    *  Markus Rudy
+
+   *  Bertrand Foing
 
    *  Rebekah Overdorf
 
