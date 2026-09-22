@@ -295,7 +295,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
@@ -400,6 +400,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| TBA | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 13 GHSAs are preliminary"}
 
 # Threat Model
@@ -489,7 +490,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
-**Neither the GHSAs nor the CVE has any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
+**Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
 
 # EU ENISA
 
@@ -528,6 +529,7 @@ Further formal analysis has led to the following potential CVEs for intra-handsh
 | 9.0-10.0 | Critical | 1 (confirmed by developers) |
 | 9.8 | Critical | 1 |
 | 8.7 | High | 1 |
+| 7.8 | High | 1 (confirmed by developers) |
 | 7.5 | High | 5 |
 | 7.4 | High | 9 (5 confirmed by developers) |
 | 6.3 | Medium | 7 |
@@ -680,7 +682,18 @@ Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 Licens
 # Media Coverage
 {: #sec-news }
 
-Several media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of intra-handshake attestation.
+Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.
+
+**EarlyAttestationBleed** {{EarlyAttestationBleed}}
+
+- (German) [Cybersecurity news (CVE-2026-92701)](https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/)
+- (German) [Cybersecurity news (CVE-2026-92702)](https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/)
+- (Chinese) [Security 114](https://www.anquan114.com/archives/7429)
+- (Chinese) [OWASP](https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ)
+
+If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of EarlyAttestationBleed."
+
+**Intra-handshake.fail** {{Intra-handshake.fail}}
 
 - [The Register](https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056)
 - (Japanese) [BlackHatNewsTokyo](https://blackhatnews.tokyo/archives/119915)
@@ -890,7 +903,7 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Massimiliano Brighindi, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
-We have released only the formal analysis for published CVE. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
+We have released only the formal analysis for published CVE-2026-33697. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
 We have not retrieved any real data from any real system. We have not released any key to any public forum or to any person.
 
@@ -903,8 +916,10 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- | --- |
-| [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5-7 Oct, 2026 | slides, video |
+| System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), slides, video |
+| BoF @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2640/), slides, video |
 | [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | slides, video |
+| [PET-CON 2026.2: 16th Privacy Enhancing Techniques Convention](https://fg-pet.gi.de/veranstaltung/16th-privacy-enhancing-techniques-convention) | Lübeck, Germany | 28-29 Sept, 2026 | slides |
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | [slides](https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) |
 | [IETF RATS Interim meeting](https://datatracker.ietf.org/meeting/interim-2026-rats-03/session/rats) | Virtual | 14 Sept, 2026 | [slides](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00), [video](https://youtu.be/y5_SR0-DzH0?t=255) |
 | Hackathon @ [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 4 September, 2026 | [topic synopsis](https://notes.inria.fr/2ppogr2fTSKusRog3RXbPQ?view#topic-security-analysis-of-attested-tls-and-attested-edhoc) |
@@ -946,7 +961,9 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 
 Since January, we have publicly informed the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} and shared our results with the community for review and to raise awareness on high-severity vulnerabilities and apply appropriate mitigations for the safety of their users:
 
-#### [IETF](https://www.ietf.org/)
+#### Intra-handshake.fail
+
+##### [IETF](https://www.ietf.org/)
   - [SEAT WG](https://mailarchive.ietf.org/arch/msg/seat/x3eQxFjQFJLceae6l4_NgXnmsDY/)
   - [RATS WG](https://mailarchive.ietf.org/arch/msg/rats/6gbqx0XY8WYrH3Mx4vO8n2-uKgY/)
   - [TLS WG](https://mailarchive.ietf.org/arch/msg/tls/8lyqHh9y7_Lv6b1iXhpUqYrp0M0/)
@@ -958,23 +975,30 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
   - [Hackathon](https://mailarchive.ietf.org/arch/msg/hackathon/PIrJ2O_QqcNUAnMIn_Vh22ImWMc/)
   - [126attendees](https://mailarchive.ietf.org/arch/msg/126attendees/V9BKZJ_DGkZPdlnjBaUeyluhbqQ/)
 
-#### [IRTF](https://www.irtf.org/)
+##### [IRTF](https://www.irtf.org/)
   - UFMRG: [thread1](https://mailarchive.ietf.org/arch/msg/ufmrg/ZWK0uMM92OdwlPbgXBvQApDpe5Q/) and [thread2](https://mailarchive.ietf.org/arch/msg/ufmrg/ZRhR7o1HrWxfGDfgRJMR65RBkDE/)
   - CFRG [thread1](https://mailarchive.ietf.org/arch/msg/cfrg/NbxHIw9H_xpSYbgfO_n7lVIFeWs/) and [thread2](https://mailarchive.ietf.org/arch/msg/cfrg/U5YHd91lYjiqCTt9BZyVDNFeUpM/)
   - [DINRG](https://mailarchive.ietf.org/arch/msg/din/_8LE3Ru1xX16hgGJwryMTRwRoaA/)
 
-#### [CCC](https://confidentialcomputing.io/)
+##### [CCC](https://confidentialcomputing.io/)
   - Attestation SIG: [thread1](https://lists.confidentialcomputing.io/g/attestation/topic/117207133) and [thread2](https://lists.confidentialcomputing.io/g/attestation/message/334)
   - TAC: [thread1](https://lists.confidentialcomputing.io/g/tac/topic/117932193) and [thread2](https://lists.confidentialcomputing.io/g/tac/topic/120068850)
 
-#### [OCP](https://www.opencompute.org/)
+##### [OCP](https://www.opencompute.org/)
   - OCP Security: [message1](https://ocp-all.groups.io/g/OCP-Security/topic/117932716), [message2](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120069056), [message3](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120483814) and [message4](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120524635)
 
 If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
+#### EarlyAttestationBleed
+- [IRTF UFMRG](https://mailarchive.ietf.org/arch/msg/ufmrg/ZQKdp07P4UeTushAC1q9eBBtp0s/)
+- [IETF RATS](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00)
+- [OCP Security](https://ocp-all.groups.io/g/OCP-Security/message/1263)
+- [ProVerif](https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html)
+
 # Contributions
 Contributions to the draft are welcome at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail).
 
+Wenn Sie nur Deutsch sprechen, können Sie sich gerne per E-Mail an den Erstautor wenden. Wir haben Mitglieder, die Ihnen bei der Übersetzung Ihres Beitrags helfen können.
 
 # IANA Considerations
 
@@ -997,6 +1021,7 @@ We wish to express our sincere appreciation to the following for their review:
 - Drasko Draskovic
 - Markus Rudy
 - Bertrand Foing
+- Peg Jones
 - Rebekah Overdorf
 - Tobias Pulls
 
