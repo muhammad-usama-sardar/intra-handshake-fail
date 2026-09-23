@@ -147,8 +147,10 @@ Table of Contents
        14.4.2.  Mitigation
      14.5.  Artifacts
    15. Media Coverage
-     15.1.  Security Researchers
-     15.2.  Germany's BSI
+     15.1.  EarlyAttestationBleed
+     15.2.  Intra-handshake.fail
+       15.2.1.  Security Researchers
+       15.2.2.  Germany's BSI
    16. Reviews
      16.1.  Conference Reviews
      16.2.  IETF/IRTF
@@ -1236,7 +1238,9 @@ Table of Contents
    covered the vulnerabilities to protect the community from the harm of
    early attestation.
 
-   *EarlyAttestationBleed* [EarlyAttestationBleed]
+15.1.  EarlyAttestationBleed
+
+   [EarlyAttestationBleed]
 
    *  (German) Cybersecurity news (CVE-2026-92701)
       (https://cybersecurity-news.de/cve-2026-92701-trusted-execution-
@@ -1261,13 +1265,27 @@ Table of Contents
 
    *  Freenode (https://freenode.net/digest/518)
 
+   *  CIRCL's vulnerability.circl.lu (CVE-2026-92701)
+      (https://vulnerability.circl.lu/vuln/CVE-2026-92701)
+
+   *  CIRCL's vulnerability.circl.lu (CVE-2026-92702)
+      (https://vulnerability.circl.lu/vuln/CVE-2026-92701)
+
+   *  GCVE's db.gcve.eu (CVE-2026-92701) (https://db.gcve.eu/vuln/cve-
+      2026-92701)
+
+   *  GCVE's db.gcve.eu (CVE-2026-92702) (https://db.gcve.eu/vuln/cve-
+      2026-92702)
+
    If you have written an article on this and would like to be added
    here, please send us a PR at https://github.com/muhammad-usama-
    sardar/intra-handshake-fail (https://github.com/muhammad-usama-
    sardar/intra-handshake-fail) or an email with the subject "Media
    coverage of EarlyAttestationBleed."
 
-   *Intra-handshake.fail* [Intra-handshake.fail]
+15.2.  Intra-handshake.fail
+
+   [Intra-handshake.fail]
 
    *  The Register (https://www.theregister.com/security/2026/07/04/
       confidential-computings-trust-mechanism-is-broken-the-fix-may-not-
@@ -1383,7 +1401,7 @@ Table of Contents
 
    *  AIMultiple (https://aimultiple.com/privacy-enhancing-technologies)
 
-15.1.  Security Researchers
+15.2.1.  Security Researchers
 
    Several credible security researchers, such as the following, have
    publicly attested to it.
@@ -1402,7 +1420,7 @@ Table of Contents
    *  Thorsten Strufe (https://www.linkedin.com/in/strufe/recent-
       activity/all/)
 
-15.2.  Germany's BSI
+15.2.2.  Germany's BSI
 
    Germany's Federal Office for Information Security (Bundesamt für
    Sicherheit in der Informationstechnik) has attested to it.  Carina
