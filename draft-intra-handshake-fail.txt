@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 26 March 2027                                         CoreWeave
+Expires: 27 March 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,7 +32,7 @@ Expires: 26 March 2027                                         CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       22 September 2026
+                                                       23 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -94,7 +94,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 March 2027.
+   This Internet-Draft will expire on 27 March 2027.
 
 Copyright Notice
 
@@ -493,7 +493,7 @@ Table of Contents
 
      Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
       and finders in (roughly) chronological order of publishing --
-                  CVSS of last 13 GHSAs are preliminary
+                  CVSS of last 14 GHSAs are preliminary
 
 3.  Threat Model
 
@@ -1247,8 +1247,19 @@ Table of Contents
 
    *  (Chinese) Security 114 (https://www.anquan114.com/archives/7429)
 
-   *  (Chinese) OWASP (https://mp.weixin.qq.com/
+   *  (Chinese) KK says security (https://mp.weixin.qq.com/
       s/31Glxqr6ofHylTyrtNsuaQ)
+
+   *  (Chinese) Safe Meow Station (mp.weixin.qq.com/s/
+      REtESPngXemSro0hjIZyxw)
+
+   *  (Chinese) Digital World Information (https://mp.weixin.qq.com/
+      s/864dwIXF5IY04q7ig4uBwg)
+
+   *  (Chinese) Shusei Consulting (https://mp.weixin.qq.com/
+      s/864dwIXF5IY04q7ig4uBwg)
+
+   *  Freenode (https://freenode.net/digest/518)
 
    If you have written an article on this and would like to be added
    here, please send us a PR at https://github.com/muhammad-usama-
@@ -2278,6 +2289,8 @@ Table of Contents
    Wenn Sie nur Deutsch sprechen, können Sie sich gerne per E-Mail an
    den Erstautor wenden.  Wir haben Mitglieder, die Ihnen bei der
    Übersetzung Ihres Beitrags helfen können.
+
+   如果您只会说中文，非常欢迎您通过电子邮件联系第四位作者。我们有成员可以协助翻译您的投稿。
 
 20.  IANA Considerations
 
