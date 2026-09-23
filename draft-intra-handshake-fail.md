@@ -684,7 +684,9 @@ Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 Licens
 
 Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.
 
-**EarlyAttestationBleed** {{EarlyAttestationBleed}}
+## EarlyAttestationBleed
+
+{{EarlyAttestationBleed}}
 
 - (German) [Cybersecurity news (CVE-2026-92701)](https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/)
 - (German) [Cybersecurity news (CVE-2026-92702)](https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/)
@@ -694,10 +696,16 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 - (Chinese) [Digital World Information](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - (Chinese) [Shusei Consulting](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - [Freenode](https://freenode.net/digest/518)
+- CIRCL's [vulnerability.circl.lu (CVE-2026-92701)](https://vulnerability.circl.lu/vuln/CVE-2026-92701)
+- CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92701)
+- GCVE's [db.gcve.eu (CVE-2026-92701)](https://db.gcve.eu/vuln/cve-2026-92701)
+- GCVE's [db.gcve.eu (CVE-2026-92702)](https://db.gcve.eu/vuln/cve-2026-92702)
 
 If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of EarlyAttestationBleed."
 
-**Intra-handshake.fail** {{Intra-handshake.fail}}
+## Intra-handshake.fail
+
+{{Intra-handshake.fail}}
 
 - [The Register](https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056)
 - (Japanese) [BlackHatNewsTokyo](https://blackhatnews.tokyo/archives/119915)
@@ -739,7 +747,7 @@ If you have written an article on this and would like to be added here, please s
 - [ad-hoc news](https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475)
 - [AIMultiple](https://aimultiple.com/privacy-enhancing-technologies)
 
-## Security Researchers
+### Security Researchers
 
 Several credible security researchers, such as the following, have publicly attested to it.
 
@@ -748,7 +756,7 @@ Several credible security researchers, such as the following, have publicly atte
 - [Bart Preneel](https://www.linkedin.com/posts/bart-preneel-4451412_on-the-limits-of-confidential-computing-share-7479549718294077440-wfi3/)
 - [Thorsten Strufe](https://www.linkedin.com/in/strufe/recent-activity/all/)
 
-## Germany's BSI
+### Germany's BSI
 
 Germany's Federal Office for Information Security (Bundesamt für Sicherheit in der Informationstechnik) has attested to it. Carina Hilt, deputy press spokesperson at BSI, told [The Register](https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056):
 
