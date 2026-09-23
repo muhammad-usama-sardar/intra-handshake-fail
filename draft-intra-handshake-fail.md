@@ -401,7 +401,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | TBA | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 13 GHSAs are preliminary"}
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 14 GHSAs are preliminary"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -689,7 +689,11 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 - (German) [Cybersecurity news (CVE-2026-92701)](https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/)
 - (German) [Cybersecurity news (CVE-2026-92702)](https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/)
 - (Chinese) [Security 114](https://www.anquan114.com/archives/7429)
-- (Chinese) [OWASP](https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ)
+- (Chinese) [KK says security](https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ)
+- (Chinese) [Safe Meow Station](mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw)
+- (Chinese) [Digital World Information](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
+- (Chinese) [Shusei Consulting](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
+- [Freenode](https://freenode.net/digest/518)
 
 If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of EarlyAttestationBleed."
 
@@ -999,6 +1003,8 @@ If you know any other relevant mailing list that we should inform for protection
 Contributions to the draft are welcome at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail).
 
 Wenn Sie nur Deutsch sprechen, können Sie sich gerne per E-Mail an den Erstautor wenden. Wir haben Mitglieder, die Ihnen bei der Übersetzung Ihres Beitrags helfen können.
+
+如果您只会说中文，非常欢迎您通过电子邮件联系第四位作者。我们有成员可以协助翻译您的投稿。
 
 # IANA Considerations
 
