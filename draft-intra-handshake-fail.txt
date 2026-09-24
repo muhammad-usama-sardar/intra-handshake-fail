@@ -523,7 +523,8 @@ Table of Contents
 
       Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
        and finders in (roughly) chronological order of publishing --
-                   CVSS of last 14 GHSAs are preliminary
+      Except for the very last GHSA, CVSS scores of previous 13 GHSAs
+                              are preliminary
 
 3.  Threat Model
 
