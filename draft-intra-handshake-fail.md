@@ -108,6 +108,11 @@ author:
     fullname: "Iman Schrock"
     organization: EMILIA Protocol, Inc.
     email: "team@emiliaprotocol.ai"
+ -
+    fullname: "Ammara Gul"
+    organization: Birmingham City University
+    country: UK
+    email: "ammara.gul@bcu.ac.uk"
 
 normative:
   Intra-handshake.fail:
