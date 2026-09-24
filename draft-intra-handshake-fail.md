@@ -401,7 +401,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 14 GHSAs are preliminary"}
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- Except for the very last GHSA, CVSS scores of previous 13 GHSAs are preliminary"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
