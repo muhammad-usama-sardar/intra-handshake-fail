@@ -696,8 +696,12 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 - (Chinese) [Digital World Information](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - (Chinese) [Shusei Consulting](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - [Freenode](https://freenode.net/digest/518)
+- [Flashbots](https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054)
+- (Japanese) [Rich & Wise with Socrates and Plato](https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/)
+- [OpenCVE (CVE-2026-92701)](https://app.opencve.io/cve/CVE-2026-92701)
+- [OpenCVE (CVE-2026-92702)](https://app.opencve.io/cve/CVE-2026-92702)
 - CIRCL's [vulnerability.circl.lu (CVE-2026-92701)](https://vulnerability.circl.lu/vuln/CVE-2026-92701)
-- CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92701)
+- CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92702)
 - GCVE's [db.gcve.eu (CVE-2026-92701)](https://db.gcve.eu/vuln/cve-2026-92701)
 - GCVE's [db.gcve.eu (CVE-2026-92702)](https://db.gcve.eu/vuln/cve-2026-92702)
 
@@ -879,6 +883,31 @@ Several participants of the IETF/IRTF have attested to the results by independen
 - [https://mailarchive.ietf.org/arch/msg/rats/yaGG4sVf4pCfJ0HNPPRv3Xg0cG8/](https://mailarchive.ietf.org/arch/msg/rats/yaGG4sVf4pCfJ0HNPPRv3Xg0cG8/)
 - [https://mailarchive.ietf.org/arch/msg/rats/DaA1jDQNF-bdO5x-dkVbSzlHcD4/](https://mailarchive.ietf.org/arch/msg/rats/DaA1jDQNF-bdO5x-dkVbSzlHcD4/)
 - [https://mailarchive.ietf.org/arch/msg/rats/ptkHZUDzSoYnD6R5zln6HcE1cv4/](https://mailarchive.ietf.org/arch/msg/rats/ptkHZUDzSoYnD6R5zln6HcE1cv4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/n1-mBLW1m4TKiGsQqOhOIkbNxVs/](https://mailarchive.ietf.org/arch/msg/seat/n1-mBLW1m4TKiGsQqOhOIkbNxVs/)
+- [https://mailarchive.ietf.org/arch/msg/seat/mBHcB8YRR0HVcyihhjm11XqRhWE/](https://mailarchive.ietf.org/arch/msg/seat/mBHcB8YRR0HVcyihhjm11XqRhWE/)
+- [https://mailarchive.ietf.org/arch/msg/seat/zY3vdP_TZKZIdK_kpcrwWQuYf8s/](https://mailarchive.ietf.org/arch/msg/seat/zY3vdP_TZKZIdK_kpcrwWQuYf8s/)
+- [https://mailarchive.ietf.org/arch/msg/seat/QcXGunfoT1OKrBI_FRsgpNsXvn4/](https://mailarchive.ietf.org/arch/msg/seat/QcXGunfoT1OKrBI_FRsgpNsXvn4/)
+- [https://mailarchive.ietf.org/arch/msg/seat/FSh0tTa7h1NcaeVZENqz6wg45C8/](https://mailarchive.ietf.org/arch/msg/seat/FSh0tTa7h1NcaeVZENqz6wg45C8/)
+- [https://mailarchive.ietf.org/arch/msg/seat/5uos1xo5lkLisK-9RGJWLJaAnmk/](https://mailarchive.ietf.org/arch/msg/seat/5uos1xo5lkLisK-9RGJWLJaAnmk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/2Vyb3hcqRoJF4tLkJOxs2CueNuw/](https://mailarchive.ietf.org/arch/msg/seat/2Vyb3hcqRoJF4tLkJOxs2CueNuw/)
+- [https://mailarchive.ietf.org/arch/msg/seat/9mDNq-Fv3-9726qe_te0nfYKMaM/](https://mailarchive.ietf.org/arch/msg/seat/9mDNq-Fv3-9726qe_te0nfYKMaM/)
+- [https://mailarchive.ietf.org/arch/msg/seat/KwtGScLIYvUCW2A0HxAS5s9XMMo/](https://mailarchive.ietf.org/arch/msg/seat/KwtGScLIYvUCW2A0HxAS5s9XMMo/)
+- [https://mailarchive.ietf.org/arch/msg/seat/SpLBEi5_nMr51gSng5oqS1uTlxU/](https://mailarchive.ietf.org/arch/msg/seat/SpLBEi5_nMr51gSng5oqS1uTlxU/)
+- [https://mailarchive.ietf.org/arch/msg/seat/b2laJbuyFQQr6Q1nUCbpKa_PNz8/](https://mailarchive.ietf.org/arch/msg/seat/b2laJbuyFQQr6Q1nUCbpKa_PNz8/)
+- [https://mailarchive.ietf.org/arch/msg/seat/V-3QA8_dX1A5mdKxoVy-1z_8RlA/](https://mailarchive.ietf.org/arch/msg/seat/V-3QA8_dX1A5mdKxoVy-1z_8RlA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/vjIo3JCMjHglRNaSSHNOqjKgDxs/](https://mailarchive.ietf.org/arch/msg/seat/vjIo3JCMjHglRNaSSHNOqjKgDxs/)
+- [https://mailarchive.ietf.org/arch/msg/seat/pE1j3aP-qvaUgT-Q88JextCIlcc/](https://mailarchive.ietf.org/arch/msg/seat/pE1j3aP-qvaUgT-Q88JextCIlcc/)
+- [https://mailarchive.ietf.org/arch/msg/seat/uojEp8S21Ftf2osLCJNoR8xPzKA/](https://mailarchive.ietf.org/arch/msg/seat/uojEp8S21Ftf2osLCJNoR8xPzKA/)
+- [https://mailarchive.ietf.org/arch/msg/seat/xP6PxDJhAH9bnefUjlKc0f96ak8/](https://mailarchive.ietf.org/arch/msg/seat/xP6PxDJhAH9bnefUjlKc0f96ak8/)
+- [https://mailarchive.ietf.org/arch/msg/seat/krTrXMiNIPyYzVDvlXlJB0UvaSk/](https://mailarchive.ietf.org/arch/msg/seat/krTrXMiNIPyYzVDvlXlJB0UvaSk/)
+- [https://mailarchive.ietf.org/arch/msg/seat/5dHBv3DyUy4Fprh71i90x6pHPCY/](https://mailarchive.ietf.org/arch/msg/seat/5dHBv3DyUy4Fprh71i90x6pHPCY/)
+- [https://mailarchive.ietf.org/arch/msg/rats/HErXLOWPTDmOK6RMVO8J0lEGCyU/](https://mailarchive.ietf.org/arch/msg/rats/HErXLOWPTDmOK6RMVO8J0lEGCyU/)
+- [https://mailarchive.ietf.org/arch/msg/rats/QqstD1bsKrZrfQ_VQU-Z9KhYnxM/](https://mailarchive.ietf.org/arch/msg/rats/QqstD1bsKrZrfQ_VQU-Z9KhYnxM/)
+- [https://mailarchive.ietf.org/arch/msg/rats/Oh4lBsX5wtnqPJM1cPOkt1mPOAQ/](https://mailarchive.ietf.org/arch/msg/rats/Oh4lBsX5wtnqPJM1cPOkt1mPOAQ/)
+- [https://mailarchive.ietf.org/arch/msg/rats/dMAZ-uAbZIlUxiDbO_0ZBVh4q90/](https://mailarchive.ietf.org/arch/msg/rats/dMAZ-uAbZIlUxiDbO_0ZBVh4q90/)
+- [https://mailarchive.ietf.org/arch/msg/rats/FRdzVOJ5OBs4M1yuFk_ntxYl1yI/](https://mailarchive.ietf.org/arch/msg/rats/FRdzVOJ5OBs4M1yuFk_ntxYl1yI/)
+- [https://mailarchive.ietf.org/arch/msg/rats/qr4w7FinCkG1qt27aCCjJKruP5E/](https://mailarchive.ietf.org/arch/msg/rats/qr4w7FinCkG1qt27aCCjJKruP5E/)
+- [https://mailarchive.ietf.org/arch/msg/ufmrg/mf_CtbtSDHPz3uMHRXele2vwYr8/](https://mailarchive.ietf.org/arch/msg/ufmrg/mf_CtbtSDHPz3uMHRXele2vwYr8/)
 
 ### Main Questions
 
@@ -913,7 +942,7 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Massimiliano Brighindi, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in intra-handshake attestation. We have responsibly disclosed the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük, Serhii Nikolaichuk, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. We have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE-2026-33697. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
@@ -999,13 +1028,13 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
 ##### [OCP](https://www.opencompute.org/)
   - OCP Security: [message1](https://ocp-all.groups.io/g/OCP-Security/topic/117932716), [message2](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120069056), [message3](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120483814) and [message4](https://ocp-all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120524635)
 
-If you know any other relevant mailing list that we should inform for protection of users, please let us know.
-
 #### EarlyAttestationBleed
 - [IRTF UFMRG](https://mailarchive.ietf.org/arch/msg/ufmrg/ZQKdp07P4UeTushAC1q9eBBtp0s/)
 - [IETF RATS](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00)
 - [OCP Security](https://ocp-all.groups.io/g/OCP-Security/message/1263)
 - [ProVerif](https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html)
+
+If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
 # Contributions
 Contributions to the draft are welcome at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail).
@@ -1034,8 +1063,9 @@ We wish to express our sincere appreciation to the following for their review:
 - Sammy Kerata Oina
 - Drasko Draskovic
 - Markus Rudy
-- Bertrand Foing
+- Kaya Ercihan
 - Peg Jones
+- Bertrand Foing
 - Rebekah Overdorf
 - Tobias Pulls
 
