@@ -324,7 +324,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.1      | Critical | 2                         | 2              |
    +----------+----------+---------------------------+----------------+
-   | 7.8      | High     | 1                         | -              |
+   | 7.8      | High     | 2                         | -              |
    +----------+----------+---------------------------+----------------+
    | 7.5      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
@@ -338,164 +338,192 @@ Table of Contents
 
 2.  Published GHSAs/CVEs
 
-   +===============================+==========+=======================+
-   | GHSA/CVE                      | CVSS     | Finders               |
-   +===============================+==========+=======================+
-   | [GHSA-Cocos-AI]               | 7.8      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [CVE-2026-33697]              | 7.5      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [EUVD-2026-16488]             | 7.5      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Edgeless-Systems]       | 7.4      | Muhammad Usama Sardar |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Cocos-AI2]              | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Cocos-AI3]              | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Edgeless-Systems2]      | 9.0-10.0 | Markus Rudy;          |
-   |                               |          | independently by      |
-   |                               |          | Songbo Bu and         |
-   |                               |          | Muhammad Usama Sardar |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-rustls]        | 7.4      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-go]            | 7.4      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-eov]           | 7.4      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-eom]           | 7.4      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-rtc]           | 7.4      | Muhammad Usama        |
-   |                               |          | Sardar, Viacheslav    |
-   |                               |          | Dubeyko, and Jean-    |
-   |                               |          | Marie Jacquet         |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-rtc-da]        | 7.4      | Muhammad Usama Sardar |
-   +-------------------------------+----------+-----------------------+
-   | [GHSA-Privasys-rtc-tcu]       | 6.3      | Muhammad Usama Sardar |
-   +-------------------------------+----------+-----------------------+
-   | [CVE-2026-92701]              | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | [CVE-2026-92702]              | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | [EUVD-2026-83194]             | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | [EUVD-2026-83192]             | 9.1      | Muhammad Usama Sardar |
-   |                               |          | and Songbo Bu         |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-322v-xwfj-63cm           | 9.8      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-322v-xwfj-63cm)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-m9p9-3hxp-4j6j           | 9.1      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-m9p9-3hxp-4j6j)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-ppc4-fg56-x397           | 8.2      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-ppc4-fg56-x397)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-6j47-3cm6-9cg6           | 8.1      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-6j47-3cm6-9cg6)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-4755-rh6c-694j           | 8.1      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-4755-rh6c-694j)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-6f8q-88mv-c8vr           | 7.9      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-6f8q-88mv-c8vr)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-qqq3-6c47-684v           | 7.5      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-qqq3-6c47-684v)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-xxr6-w252-4ggx           | 7.5      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-xxr6-w252-4ggx)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-fmrx-fjqw-37gp           | 6.5      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-fmrx-fjqw-37gp)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-f96w-jjf8-xpw3           | 5.6      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-fmrx-fjqw-37gp)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-fqrx-3wc2-4g49           | 4.4      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-fqrx-3wc2-4g49)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-mrgr-34cc-fcg8           | 4.2      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-mrgr-34cc-fcg8)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | GHSA-wqf9-jfmm-f68v           | 4.2      | Songbo Bu, Chengxin   |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad   |
-   | enclave-os-                   |          | Usama Sardar          |
-   | mini/security/advisories/     |          |                       |
-   | GHSA-wqf9-jfmm-f68v)          |          |                       |
-   +-------------------------------+----------+-----------------------+
-   | TBA                           | 7.8      | Chengxin Huang,       |
-   |                               |          | Songbo Bu, and        |
-   |                               |          | Muhammad Usama Sardar |
-   +-------------------------------+----------+-----------------------+
+   +=============================================================+========+=============+
+   |GHSA/CVE                                                     |CVSS    |Finders      |
+   +=============================================================+========+=============+
+   |[GHSA-Cocos-AI]                                              |7.8     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[CVE-2026-33697]                                             |7.5     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-16488]                                            |7.5     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems]                                      |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI2]                                             |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI3]                                             |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems2]                                     |9.0-10.0|Markus Rudy; |
+   |                                                             |        |independently|
+   |                                                             |        |by Songbo Bu |
+   |                                                             |        |and Muhammad |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rustls]                                       |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-go]                                           |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-eov]                                          |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-eom]                                          |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc]                                          |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar,|
+   |                                                             |        |Viacheslav   |
+   |                                                             |        |Dubeyko, and |
+   |                                                             |        |Jean-Marie   |
+   |                                                             |        |Jacquet      |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc-da]                                       |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc-tcu]                                      |6.3     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |[CVE-2026-92701]                                             |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |[CVE-2026-92702]                                             |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-83194]                                            |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-83192]                                            |9.1     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   |                                                             |        |and Songbo Bu|
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-322v-xwfj-63cm (https://github.com/Privasys/enclave-os- |9.8     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-322v-xwfj-63cm)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-m9p9-3hxp-4j6j (https://github.com/Privasys/enclave-os- |9.1     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-m9p9-3hxp-4j6j)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-ppc4-fg56-x397 (https://github.com/Privasys/enclave-os- |8.2     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-ppc4-fg56-x397)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-6j47-3cm6-9cg6 (https://github.com/Privasys/enclave-os- |8.1     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-6j47-3cm6-9cg6)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-4755-rh6c-694j (https://github.com/Privasys/enclave-os- |8.1     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-4755-rh6c-694j)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-6f8q-88mv-c8vr (https://github.com/Privasys/enclave-os- |7.9     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-6f8q-88mv-c8vr)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-qqq3-6c47-684v (https://github.com/Privasys/enclave-os- |7.5     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-qqq3-6c47-684v)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-xxr6-w252-4ggx (https://github.com/Privasys/enclave-os- |7.5     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-xxr6-w252-4ggx)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-fmrx-fjqw-37gp (https://github.com/Privasys/enclave-os- |6.5     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-fmrx-fjqw-37gp)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-f96w-jjf8-xpw3 (https://github.com/Privasys/enclave-os- |5.6     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-fmrx-fjqw-37gp)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-fqrx-3wc2-4g49 (https://github.com/Privasys/enclave-os- |4.4     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-fqrx-3wc2-4g49)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-mrgr-34cc-fcg8 (https://github.com/Privasys/enclave-os- |4.2     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-mrgr-34cc-fcg8)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-wqf9-jfmm-f68v (https://github.com/Privasys/enclave-os- |4.2     |Songbo Bu,   |
+   |mini/security/advisories/GHSA-wqf9-jfmm-f68v)                |        |Chengxin     |
+   |                                                             |        |Huang, and   |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |GHSA-376m-h37w-4rvq                                          |7.8     |Chengxin     |
+   |(https://github.com/edgelesssys/contrast/security/advisories/|        |Huang, Songbo|
+   |GHSA-376m-h37w-4rvq)                                         |        |Bu, and      |
+   |                                                             |        |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
 
-     Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
-      and finders in (roughly) chronological order of publishing --
-                  CVSS of last 14 GHSAs are preliminary
+      Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
+       and finders in (roughly) chronological order of publishing --
+                   CVSS of last 14 GHSAs are preliminary
 
 3.  Threat Model
 
@@ -773,6 +801,10 @@ Table of Contents
    |Privasys published GHSA-wqf9-jfmm-f68v (https://github.com/Privasys/enclave-|19        |
    |os-mini/security/advisories/GHSA-wqf9-jfmm-f68v)                            |September,|
    |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Edgeless Systems published GHSA-376m-h37w-4rvq                              |24        |
+   |(https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-|September,|
+   |4rvq)                                                                       |2026      |
    +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
