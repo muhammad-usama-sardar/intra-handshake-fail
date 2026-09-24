@@ -358,7 +358,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
 | 9.1 | Critical | 2 | 2 |
-| 7.8 | High | 1 | - |
+| 7.8 | High | 2 | - |
 | 7.5 | High | 1 | 1 |
 | 7.4 | High | 7 | - |
 | 6.3 | Medium | 1 | - |
@@ -400,7 +400,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| TBA | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS of last 14 GHSAs are preliminary"}
 
 # Threat Model
@@ -488,6 +488,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 19 September, 2026 |
 | Privasys published [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 19 September, 2026 |
 | Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
+| Edgeless Systems published [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 24 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
