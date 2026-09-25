@@ -18,8 +18,6 @@ Expires: 29 March 2027                                         CoreWeave
                                                                   Switch
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
-                                                          S. Nikolaichuk
-                                                       The Capital Index
                                                             S. Bellemare
                                                            Sureshot Labs
                                                         E. C. M. Willems
@@ -2185,15 +2183,14 @@ Table of Contents
    including but not limited to Muhammad Usama Sardar, Mariam Moustafa,
    Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu,
    Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük,
-   Serhii Nikolaichuk, Sylvain Bellemare, Eva C.  M.  Willems, Justin
-   DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins,
-   and Iman Schrock) are ethical researchers aiming to protect the
-   community from the potential harm caused by the exploitability of the
-   vulnerabilities in early attestation.  We have *responsibly
-   disclosed* the vulnerabilities to the respective developers and
-   maintainers following their respective disclosure processes and
-   provided them our proposed mitigations and requested them to take
-   rapid action.
+   Sylvain Bellemare, Eva C.  M.  Willems, Justin DESSENNES SAINTEN,
+   Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock)
+   are ethical researchers aiming to protect the community from the
+   potential harm caused by the exploitability of the vulnerabilities in
+   early attestation.  We have *responsibly disclosed* the
+   vulnerabilities to the respective developers and maintainers
+   following their respective disclosure processes and provided them our
+   proposed mitigations and requested them to take rapid action.
 
    We have released only the formal analysis for published CVE-
    2026-33697.  To minimize exploit in the wild, we have not publicly
@@ -2852,6 +2849,8 @@ Acknowledgments
 
    *  Patrick Duggan
 
+   *  Serhii Nikolaichuk
+
    *  Deb Cooley
 
    *Identity Crisis* [ID-Crisis]
@@ -2959,13 +2958,6 @@ Authors' Addresses
    Dr Kubilay Ahmet Küçük
    DPhil Oxford University
    Email: dr.kucuk@oxfordalumni.org
-
-
-   Serhii Nikolaichuk
-   The Capital Index
-   Austin, Texas,
-   United States of America
-   Email: nikolaichuk.s.f@gmail.com
 
 
    Sylvain Bellemare
