@@ -1084,7 +1084,6 @@ We wish to express our sincere appreciation to the following for their review:
 
 We gratefully acknowledge the following for insightful discussions and helpful reviews on {{Intra-handshake.fail}}:
 
-- Serhii Nikolaichuk (hardware reproduction of the Section 5.1.1 relay on a live SEV-SNP guest with a leaked TIK)
 - Eric Rescorla
 - Juho Forsén
 - Markus Rudy
@@ -1124,6 +1123,7 @@ We gratefully acknowledge the following for insightful discussions and helpful r
 - Jakub Maria Plutowski
 - Martin Friedrich
 - Patrick Duggan
+- Serhii Nikolaichuk
 - Deb Cooley
 
 **Identity Crisis** {{ID-Crisis}}
