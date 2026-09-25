@@ -71,12 +71,6 @@ author:
     organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
  -
-    fullname: "Serhii Nikolaichuk"
-    organization: The Capital Index
-    city: Austin, Texas
-    country: USA
-    email: "nikolaichuk.s.f@gmail.com"
- -
     fullname: "Sylvain Bellemare"
     organization: Sureshot Labs
     country: Japan
@@ -959,7 +953,7 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük, Serhii Nikolaichuk, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. We have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. We have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE-2026-33697. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
@@ -1129,6 +1123,7 @@ We gratefully acknowledge the following for insightful discussions and helpful r
 - Jakub Maria Plutowski
 - Martin Friedrich
 - Patrick Duggan
+- Serhii Nikolaichuk
 - Deb Cooley
 
 **Identity Crisis** {{ID-Crisis}}
