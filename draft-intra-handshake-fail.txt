@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 28 March 2027                                         CoreWeave
+Expires: 29 March 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,7 +32,7 @@ Expires: 28 March 2027                                         CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       24 September 2026
+                                                       25 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -94,7 +94,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 March 2027.
+   This Internet-Draft will expire on 29 March 2027.
 
 Copyright Notice
 
@@ -236,19 +236,19 @@ Table of Contents
    |   |           |                                         |handshake.fail/tree/main/|
    |   |           |                                         |binder5)                 |
    +---+-----------+-----------------------------------------+-------------------------+
-   |6. |Combination|Edgeless Systems Contrast                |binder6                  |
-   |   |of #2 and  |(https://github.com/CCC-                 |(https://github.com/     |
-   |   |#4         |Attestation/meetings/blob/main/materials/|muhammad-usama-sardar/   |
-   |   |           |MarkusRudy.contrast-atls-ccc-            |intra-                   |
-   |   |           |attestation.pdf); Cocos AI v0.8.2        |handshake.fail/tree/main/|
-   |   |           |(https://www.sns-itrust6g.com/wp-        |binder6)                 |
-   |   |           |content/uploads/2025/12/Webinar-         |                         |
-   |   |           |Architecting-Trust-CONFIDENTIAL6G.pdf);  |                         |
-   |   |           |CCC Attestation SIG (https://github.com/ |                         |
-   |   |           |CCC-Attestation)'s adopted project intra-|                         |
+   |6. |Combination|[I-D.fossati-tls-attestation-09]; Cocos  |binder6                  |
+   |   |of #2 and  |AI v0.8.2 (https://www.sns-itrust6g.com/ |(https://github.com/     |
+   |   |#4         |wp-content/uploads/2025/12/Webinar-      |muhammad-usama-sardar/   |
+   |   |           |Architecting-Trust-CONFIDENTIAL6G.pdf);  |intra-                   |
+   |   |           |CCC Attestation SIG (https://github.com/ |handshake.fail/tree/main/|
+   |   |           |CCC-Attestation)'s adopted project intra-|binder6)                 |
    |   |           |handshake attestation                    |                         |
    |   |           |(https://github.com/ccc-attestation/     |                         |
-   |   |           |attested-tls-poc); Meta's AI updated spec|                         |
+   |   |           |attested-tls-poc); Edgeless Systems      |                         |
+   |   |           |Contrast (https://github.com/CCC-        |                         |
+   |   |           |Attestation/meetings/blob/main/materials/|                         |
+   |   |           |MarkusRudy.contrast-atls-ccc-            |                         |
+   |   |           |attestation.pdf); Meta's AI updated spec |                         |
    |   |           |(https://ai.meta.com/static-resource/    |                         |
    |   |           |private-processing-technical-whitepaper) |                         |
    +---+-----------+-----------------------------------------+-------------------------+
@@ -328,9 +328,9 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 7.5      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 7.4      | High     | 7                         | -              |
+   | 7.4      | High     | 8                         | -              |
    +----------+----------+---------------------------+----------------+
-   | 6.3      | Medium   | 1                         | -              |
+   | 6.3      | Medium   | 2                         | -              |
    +----------+----------+---------------------------+----------------+
 
       Table 2: Published CVEs/GHSAs for intra-handshake (aka early)
@@ -520,11 +520,17 @@ Table of Contents
    |                                                             |        |Muhammad     |
    |                                                             |        |Usama Sardar |
    +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI4]                                             |7.4     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI5]                                             |6.3     |Muhammad     |
+   |                                                             |        |Usama Sardar |
+   +-------------------------------------------------------------+--------+-------------+
 
       Table 3: GHSAs/CVEs for intra-handshake (aka early) attestation
        and finders in (roughly) chronological order of publishing --
-      Except for the very last GHSA, CVSS scores of previous 13 GHSAs
-                              are preliminary
+        Except for the very last 3 GHSAs, CVSS scores of previous 13
+                           GHSAs are preliminary
 
 3.  Threat Model
 
@@ -806,6 +812,14 @@ Table of Contents
    |Edgeless Systems published GHSA-376m-h37w-4rvq                              |24        |
    |(https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-|September,|
    |4rvq)                                                                       |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Cocos AI published [GHSA-Cocos-AI4] [*Severity = HIGH (CVSS 7.4)*]          |25        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |Cocos AI published [GHSA-Cocos-AI5] [*Severity = MODERATE (CVSS 6.3)*]      |25        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
@@ -2549,6 +2563,20 @@ Table of Contents
               omitted reportData in the AMD SEV-SNP path", August 2026,
               <https://github.com/ultravioletrs/cocos/security/
               advisories/GHSA-4r6g-mp48-j2rw>.
+
+   [GHSA-Cocos-AI4]
+              Ultraviolet Cocos AI, "Cocos Intra-handshake attested TLS
+              implementation is vulnerable to Diversion Attacks",
+              September 2026,
+              <https://github.com/ultravioletrs/cocos/security/
+              advisories/GHSA-v5m8-5wxc-vjgp>.
+
+   [GHSA-Cocos-AI5]
+              Ultraviolet Cocos AI, "Cocos AI Intra-handshake attested
+              TLS implementation is vulnerable to TOCTOU Attacks",
+              September 2026,
+              <https://github.com/ultravioletrs/cocos/security/
+              advisories/GHSA-ghwv-vrp2-2975>.
 
    [GHSA-Edgeless-Systems]
               Edgeless Systems, "Remote attestation is susceptible to
