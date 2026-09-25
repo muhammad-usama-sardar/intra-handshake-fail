@@ -240,6 +240,18 @@ normative:
     target: https://github.com/Privasys/ra-tls-clients/security/advisories/GHSA-gg8q-mfhh-wrrc
     author:
       - ins: Privasys
+  GHSA-Cocos-AI4:
+    title: "Cocos Intra-handshake attested TLS implementation is vulnerable to Diversion Attacks"
+    date: 25 September 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-v5m8-5wxc-vjgp
+    author:
+      - ins: Ultraviolet Cocos AI
+  GHSA-Cocos-AI5:
+    title: "Cocos AI Intra-handshake attested TLS implementation is vulnerable to TOCTOU Attacks"
+    date: 25 September 2026
+    target: https://github.com/ultravioletrs/cocos/security/advisories/GHSA-ghwv-vrp2-2975
+    author:
+      - ins: Ultraviolet Cocos AI
   ID-Crisis: DOI.10.1145/3779208.3785387
   ID-Crisis-repo:
     title: "Identity Crisis in Confidential Computing: Formal Analysis of Attested TLS"
@@ -316,7 +328,7 @@ Another complementary paper -- currently under submission -- performs a thorough
 | 3. | Early exporter | - | [binder3](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3) |
 | 4. | Server’s public key | - | [binder4](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4) |
 | 5. | Combination of #2 and #3 | - | [binder5](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5) |
-| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
+| 6. | Combination of #2 and #4 | {{I-D.fossati-tls-attestation-09}}; [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
 | 7. | Combination of #2, #3, and #4 | {{I-D.fossati-tls-attestation-06}} | [binder7](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7) |
 {: title="Binding mechanisms, implementations and ProVerif artifacts"}
 
@@ -360,8 +372,8 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | 9.1 | Critical | 2 | 2 |
 | 7.8 | High | 2 | - |
 | 7.5 | High | 1 | 1 |
-| 7.4 | High | 7 | - |
-| 6.3 | Medium | 1 | - |
+| 7.4 | High | 8 | - |
+| 6.3 | Medium | 2 | - |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
 # Published GHSAs/CVEs
@@ -401,7 +413,9 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Sco
 | [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- Except for the very last GHSA, CVSS scores of previous 13 GHSAs are preliminary"}
+| {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- Except for the very last 3 GHSAs, CVSS scores of previous 13 GHSAs are preliminary"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -489,6 +503,8 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 19 September, 2026 |
 | Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
 | Edgeless Systems published [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 24 September, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI4}}  [**Severity = HIGH (CVSS 7.4)**] | 25 September, 2026 |
+| Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
