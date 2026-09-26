@@ -186,6 +186,18 @@ normative:
     target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-m2qg-wrxv-h898
     author:
       - ins: Edgeless Systems
+  GHSA-Edgeless-Systems3:
+    title: "Existing Mesh CA key can cross manifest boundaries during Contrast peer recovery"
+    date: September 2026
+    target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-rxcv-p3px-m3c3
+    author:
+      - ins: Edgeless Systems
+  GHSA-Edgeless-Systems4:
+    title: "Node installer leaves the host containerd configuration world-writable (0666), allowing local privilege escalation"
+    date: September 2026
+    target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq
+    author:
+      - ins: Edgeless Systems
   SEAT-vulnerability-report:
     title: "Relay Attacks in Intra-handshake Attestation for Confidential Agentic AI Systems"
     date: 11 Jan 2026,
@@ -301,16 +313,85 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. In our analysis, the remaining implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
 
 --- middle
 
 # Introduction
-{{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake (aka early) attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, one of the key decision factors is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not. The artifacts are available in {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, extensibility and further research.
+We first present the executive summary of published GHSAs/CVEs against early attestation and then an overview of the research works that led to those discoveries.
 
-A **complementary** paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility and extensibility.
+## Executive Summary of Current Status
 
-Another complementary paper -- currently under submission -- performs a thorough formal analysis of the design options in intra-handshake attestation.
+The table below presents the current status of published GHSAs and CVEs against early attestation with confirmed scores.
+Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 13 more published GHSAs is yet to be confirmed and will be added later in this table.
+
+| CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
+|---|---|---|---|
+| 9.0-10.0 | Critical | 1 | - |
+| 9.1 | Critical | 2 | 2 |
+| 7.8 | High | 2 | - |
+| 7.7 | High | 1 | - |
+| 7.5 | High | 1 | 1 |
+| 7.4 | High | 8 | - |
+| 6.3 | Medium | 2 | - |
+{: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
+
+## Intra-handshake.fail
+{{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake (aka early) attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, one of the key decision factors is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not. The artifacts are available in {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, extensibility, and further research.
+
+## ID-Crisis
+A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility, extensibility, and extensibility.
+
+## EarlyAttestationBleed
+{{EarlyAttestationBleed}} presents a formal analysis together with regression tests of the broader attestation ecosystem and discovered three critical-severity vulnerabilities in implementations of early attestation:
+
+- Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1
+- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1
+- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0
+
+# Published GHSAs/CVEs
+{: #sec-credits }
+
+| GHSA/CVE | CVSS | Finders |
+|---|---|---|
+| {{GHSA-Cocos-AI}} | 7.8 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{CVE-2026-33697}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{EUVD-2026-16488}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Edgeless-Systems}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
+| {{CVE-2026-92701}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{CVE-2026-92702}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{EUVD-2026-83194}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| {{EUVD-2026-83192}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 9.8* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 9.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 8.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 8.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 8.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 7.9* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 7.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 7.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 6.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 5.6* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| {{GHSA-Edgeless-Systems3}} | 7.7 | Sebastian Jylanki |
+| {{GHSA-Edgeless-Systems4}} | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
+| {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
+{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
+
+# Intra-handshake.fail
 
 ## Overview
 
@@ -322,7 +403,7 @@ Another complementary paper -- currently under submission -- performs a thorough
 | 3. | Early exporter | - | [binder3](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder3) |
 | 4. | Server’s public key | - | [binder4](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder4) |
 | 5. | Combination of #2 and #3 | - | [binder5](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder5) |
-| 6. | Combination of #2 and #4 | {{I-D.fossati-tls-attestation-09}}; [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
+| 6. | Combination of #2 and #4 | [Edgeless Systems Contrast](https://github.com/CCC-Attestation/meetings/blob/main/materials/MarkusRudy.contrast-atls-ccc-attestation.pdf); [Cocos AI v0.8.2](https://www.sns-itrust6g.com/wp-content/uploads/2025/12/Webinar-Architecting-Trust-CONFIDENTIAL6G.pdf);  [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc); [Meta's AI updated spec](https://ai.meta.com/static-resource/private-processing-technical-whitepaper) | [binder6](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder6) |
 | 7. | Combination of #2, #3, and #4 | {{I-D.fossati-tls-attestation-06}} | [binder7](https://github.com/muhammad-usama-sardar/intra-handshake.fail/tree/main/binder7) |
 {: title="Binding mechanisms, implementations and ProVerif artifacts"}
 
@@ -355,61 +436,6 @@ The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably
 The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks.
 
 Post-handshake attestation part may prevent relay attacks, but then the **additional complexity** of intra-handshake attestation is unjustified.
-
-## Executive Summary of Current Status
-
-Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss). Scores of 13 more GHSAs is yet to be confirmed and will be added later in this table. **For TLS reference, Heartbleed was CVSS 7.5**.
-
-| CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
-|---|---|---|---|
-| 9.0-10.0 | Critical | 1 | - |
-| 9.1 | Critical | 2 | 2 |
-| 7.8 | High | 2 | - |
-| 7.5 | High | 1 | 1 |
-| 7.4 | High | 8 | - |
-| 6.3 | Medium | 2 | - |
-{: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
-
-# Published GHSAs/CVEs
-{: #sec-credits }
-
-| GHSA/CVE | CVSS | Finders |
-|---|---|---|
-| {{GHSA-Cocos-AI}} | 7.8 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{CVE-2026-33697}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{EUVD-2026-16488}} | 7.5 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Edgeless-Systems}} | 7.4 | Muhammad Usama Sardar |
-| {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
-| {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
-| {{CVE-2026-92701}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| {{CVE-2026-92702}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| {{EUVD-2026-83194}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| {{EUVD-2026-83192}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 9.8 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 9.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 8.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 8.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 7.9 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 5.6 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
-| {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
-| {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- Except for the very last 3 GHSAs, CVSS scores of previous 13 GHSAs are preliminary"}
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -496,7 +522,8 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 19 September, 2026 |
 | Privasys published [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 19 September, 2026 |
 | Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
-| Edgeless Systems published [GHSA-376m-h37w-4rvq](https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq) | 24 September, 2026 |
+| Edgeless Systems published {{GHSA-Edgeless-Systems3}} | 24 September, 2026 |
+| Edgeless Systems published {{GHSA-Edgeless-Systems4}} | 24 September, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI4}}  [**Severity = HIGH (CVSS 7.4)**] | 25 September, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
@@ -527,9 +554,10 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
+| {{EarlyAttestationBleed}} | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Critical |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
-The comparison of the above with CVSS **9.1** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
+The comparison of the above with CVSS up to **10.0** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
 
 # More CVEs
 
@@ -649,7 +677,7 @@ urgently move to post-handshake attestation.
 ~~~
 
 ## Implications of Findings for Agent2Agent
-The findings of published CVEs/GHSAs up to 9.1 (presented in {{sec-credits}}) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.
+The findings of published CVEs/GHSAs up to 10.0 (presented in {{sec-credits}}) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.
 
 Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
@@ -1075,6 +1103,7 @@ We wish to express our sincere appreciation to the following for their review:
 - Drasko Draskovic
 - Markus Rudy
 - Kaya Ercihan
+- Jan Kahmen
 - Peg Jones
 - Bertrand Foing
 - Rebekah Overdorf
