@@ -66,7 +66,8 @@ Abstract
    or moved to post-handshake attestation.  In our analysis
    [Intra-handshake.fail-repo], the remaining two implementations of
    early attestation -- Edgeless Systems Contrast and Meta's AI --
-   remain vulnerable.
+   remain vulnerable.  We recommend users to carefully evaluate their
+   systems.
 
 About This Document
 
