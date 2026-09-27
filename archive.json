@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-20T02:22:39.346181+00:00",
+  "timestamp": "2026-09-27T02:31:43.745119+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -130,9 +130,17 @@
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/seat/UsIj6o7wf4hX_uCL51TCTv-wFxU/\n\n- Protocol designer?\n- Implementer?\n- Formal analyst?\n- Formal verifier?\n- Auditor?\n\nInstead of going into two TLS connections, I am reducing the \"Verifier\" to \"Verifying RP\" as in the formal model. Would this make any difference for the target audience?\n\nThe same sentence is repeated 4 times. Can't this repetition be reduced?",
       "createdAt": "2026-09-08T22:50:46Z",
-      "updatedAt": "2026-09-08T22:50:46Z",
+      "updatedAt": "2026-09-24T13:00:29Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Updated text but none of the above issues are resolved: https://mailarchive.ietf.org/arch/msg/seat/5uos1xo5lkLisK-9RGJWLJaAnmk/",
+          "createdAt": "2026-09-24T13:00:29Z",
+          "updatedAt": "2026-09-24T13:00:29Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -1272,6 +1280,94 @@
           "body": "",
           "createdAt": "2026-09-18T18:21:27Z",
           "updatedAt": "2026-09-18T18:21:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOTPsy-c8AAAABE7xvoQ",
+      "title": "Add Dr. Ammara",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/21",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "https://pureportal.bcu.ac.uk/en/persons/ammara-gul/\r\n\r\nDiscussed in detail at ESORICS. She will contribute to security analysis.",
+      "createdAt": "2026-09-24T12:52:37Z",
+      "updatedAt": "2026-09-24T12:52:37Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "2a9b70fcfe6e4b60a59d1b64ef01dc6ecd634f69",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-ammara",
+      "headRefOid": "6be686816bfadb1af82ffdf31f66f45785237031",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 22,
+      "id": "PR_kwDOTPsy-c8AAAABFJl1Hg",
+      "title": "Move Serhii Nikolaichuk from the author block to the acknowledgements",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/22",
+      "state": "MERGED",
+      "author": "nikolaichuk7",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "My contribution to this document is one measurement: the hardware reproduction of the Section 5.1.1 relay on a live SEV-SNP guest with a leaked TIK (https://github.com/nikolaichuk7/geoar-verifier/tree/main/early-attestation). I did not write or review the rest of the text and should not be listed as an author of it.\n\nThis change removes my author entry, removes my name from the sentence in Ethical Considerations, and adds one line under the Intra-handshake.fail acknowledgements crediting the measurement. Nothing else is touched.",
+      "createdAt": "2026-09-25T17:02:48Z",
+      "updatedAt": "2026-09-25T17:49:10Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "4ecfe23c6b9ae93a7346372f76f16aba48e05811",
+      "headRepository": "nikolaichuk7/intra-handshake-fail",
+      "headRefName": "move-nikolaichuk-to-acknowledgements",
+      "headRefOid": "eeff1815039caa14635dbaa73f71a5512b4c7d4d",
+      "closedAt": "2026-09-25T17:49:10Z",
+      "mergedAt": "2026-09-25T17:49:10Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "6e5ebb58ff9cb43be75c406151febdb76a5dd191"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPSO-jA",
+          "commit": {
+            "abbreviatedOid": "d4c801c"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-25T17:37:37Z",
+          "updatedAt": "2026-09-25T17:37:38Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "Please make two changes: \n1. Remove the contribution to be consistent with the other acknowledgments\n2. Move your name between Patrick and Deb to first credit those who contributed more to the paper and presentation.",
+              "createdAt": "2026-09-25T17:37:38Z",
+              "updatedAt": "2026-09-25T17:37:38Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPSShzQ",
+          "commit": {
+            "abbreviatedOid": "eeff181"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "As per request of Serhii. Thank you Serhii for your contribution on hardware reproduction.\n\nFor the record, he was added after his approval in #18.",
+          "createdAt": "2026-09-25T17:44:21Z",
+          "updatedAt": "2026-09-25T17:44:21Z",
           "comments": []
         }
       ]
