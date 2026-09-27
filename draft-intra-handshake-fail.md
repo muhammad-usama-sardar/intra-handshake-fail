@@ -335,12 +335,12 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 7.7 | High | 2 | - |
 | 7.5 | High | 3 | 1 |
 | 7.4 | High | 9 | - |
-| 6.5 | High | 1 | - |
+| 6.5 | Medium | 1 | - |
 | 6.3 | Medium | 3 | - |
 | 5.3 | Medium | 1 | - |
 | 4.4 | Medium | 1 | - |
 | 4.2 | Medium | 1 | - |
-| 3.7 | Medium | 1 | - |
+| 3.7 | Low | 1 | - |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
 ## Intra-handshake.fail
