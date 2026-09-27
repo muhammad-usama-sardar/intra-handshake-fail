@@ -322,18 +322,25 @@ We first present the executive summary of published GHSAs/CVEs against early att
 
 ## Executive Summary of Current Status
 
-The table below presents the current status of published GHSAs and CVEs against early attestation with confirmed scores.
+The table below presents the current status of published GHSAs and CVEs against implementations of early attestation with confirmed scores.
 Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 13 more published GHSAs is yet to be confirmed and will be added later in this table.
 
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
-| 9.1 | Critical | 2 | 2 |
+| 9.8 | Critical | 1 | - |
+| 9.1 | Critical | 3 | 2 |
+| 8.2 | High | 1 | - |
 | 7.8 | High | 2 | - |
-| 7.7 | High | 1 | - |
-| 7.5 | High | 1 | 1 |
-| 7.4 | High | 8 | - |
-| 6.3 | Medium | 2 | - |
+| 7.7 | High | 2 | - |
+| 7.5 | High | 3 | 1 |
+| 7.4 | High | 9 | - |
+| 6.5 | High | 1 | - |
+| 6.3 | Medium | 3 | - |
+| 5.3 | Medium | 1 | - |
+| 4.4 | Medium | 1 | - |
+| 4.2 | Medium | 1 | - |
+| 3.7 | Medium | 1 | - |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
 ## Intra-handshake.fail
@@ -352,6 +359,8 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 # Published GHSAs/CVEs
 {: #sec-credits }
 
+The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to the complexity of an already complex system.
+
 | GHSA/CVE | CVSS | Finders |
 |---|---|---|
 | {{GHSA-Cocos-AI}} | 7.8 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
@@ -361,35 +370,35 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 | {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
-| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, and Jean-Marie Jacquet |
+| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
 | {{CVE-2026-92701}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{CVE-2026-92702}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{EUVD-2026-83194}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{EUVD-2026-83192}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 9.8* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 9.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 8.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 8.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 8.1* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 7.9* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 7.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 7.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 6.5* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 5.6* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 4.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2* | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-322v-xwfj-63cm](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-322v-xwfj-63cm) | 9.8 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-m9p9-3hxp-4j6j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j) | 9.1 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-ppc4-fg56-x397](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-ppc4-fg56-x397) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6j47-3cm6-9cg6](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6j47-3cm6-9cg6) | 8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-4755-rh6c-694j](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-4755-rh6c-694j) | 7.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-6f8q-88mv-c8vr](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-6f8q-88mv-c8vr) | 6.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 7.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 7.7 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-f96w-jjf8-xpw3) | 5.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 4.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 3.7 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 4.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | {{GHSA-Edgeless-Systems3}} | 7.7 | Sebastian Jylanki |
 | {{GHSA-Edgeless-Systems4}} | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
+{: title="GHSAs/CVEs for broader ecosystem of intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing"}
 
 # Intra-handshake.fail
 
