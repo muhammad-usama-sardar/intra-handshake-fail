@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 30 March 2027                                         CoreWeave
+Expires: 31 March 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -30,7 +30,9 @@ Expires: 30 March 2027                                         CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       26 September 2026
+                                                                  A. Gul
+                                              Birmingham City University
+                                                       27 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -96,7 +98,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 March 2027.
+   This Internet-Draft will expire on 31 March 2027.
 
 Copyright Notice
 
@@ -3021,3 +3023,9 @@ Authors' Addresses
    Iman Schrock
    EMILIA Protocol, Inc.
    Email: team@emiliaprotocol.ai
+
+
+   Ammara Gul
+   Birmingham City University
+   United Kingdom
+   Email: ammara.gul@bcu.ac.uk
