@@ -553,6 +553,8 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Edgeless Systems published {{GHSA-Edgeless-Systems4}} | 24 September, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI4}}  [**Severity = HIGH (CVSS 7.4)**] | 25 September, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
+| CVE {{CVE-2026-100835}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-87851}}  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
