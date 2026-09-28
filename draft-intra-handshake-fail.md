@@ -305,7 +305,18 @@ normative:
     author:
       - ins: M. U. Sardar
       - ins: Songbo Bu
-
+  CVE-2026-100835:
+     author:
+        org: CVE
+     title: Contrast before 1.16.0 Remote Attestation Relay Attack
+     target: https://www.cve.org/CVERecord?id=CVE-2026-100835
+     date: 27 Sept 2026
+  EUVD-2026-87851:
+     author:
+        org: ENISA
+     title: EUVD-2026-87851
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
+     date: 27 Sept 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -333,7 +344,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
-| 9.1 | Critical | 2 | 2 |
+| 9.1 | Critical | 2 | 3 |
 | 7.8 | High | 2 | - |
 | 7.7 | High | 1 | - |
 | 7.5 | High | 1 | 1 |
@@ -394,6 +405,8 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 | {{GHSA-Edgeless-Systems4}} | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
+| {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
+| {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
