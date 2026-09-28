@@ -329,7 +329,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
 | 9.8 | Critical | 1 | - |
-| 9.1 | Critical | 3 | 2 |
+| 9.1 | Critical | 3 | 3 |
 | 8.2 | High | 1 | - |
 | 7.8 | High | 2 | - |
 | 7.7 | High | 2 | - |
