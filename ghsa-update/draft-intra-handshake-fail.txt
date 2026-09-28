@@ -862,6 +862,14 @@ Table of Contents
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |CVE [CVE-2026-100835] published  [*Severity = CRITICAL (CVSS 9.1)*]         |27        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-87851]  [*Severity = CRITICAL (CVSS 9.1)*]  |27        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
                               acknowledgements
