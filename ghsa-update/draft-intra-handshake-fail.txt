@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 31 March 2027                                         CoreWeave
+Expires: 1 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -30,7 +30,7 @@ Expires: 31 March 2027                                         CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
-                                                       27 September 2026
+                                                       28 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -96,7 +96,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 March 2027.
+   This Internet-Draft will expire on 1 April 2027.
 
 Copyright Notice
 
@@ -201,7 +201,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.8      | Critical | 1                         | -              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 3                         | 2              |
+   | 9.1      | Critical | 3                         | 3              |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | -              |
    +----------+----------+---------------------------+----------------+
