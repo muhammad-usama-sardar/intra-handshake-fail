@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 31 March 2027                                         CoreWeave
+Expires: 1 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,7 +32,7 @@ Expires: 31 March 2027                                         CoreWeave
                                                    EMILIA Protocol, Inc.
                                                                   A. Gul
                                               Birmingham City University
-                                                       27 September 2026
+                                                       28 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -98,7 +98,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 March 2027.
+   This Internet-Draft will expire on 1 April 2027.
 
 Copyright Notice
 
@@ -200,7 +200,7 @@ Table of Contents
    +==========+==========+===========================+================+
    | 9.0-10.0 | Critical | 1                         | -              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 2                         | 2              |
+   | 9.1      | Critical | 2                         | 3              |
    +----------+----------+---------------------------+----------------+
    | 7.8      | High     | 2                         | -              |
    +----------+----------+---------------------------+----------------+
@@ -411,6 +411,10 @@ Table of Contents
    | [GHSA-Cocos-AI4]              | 7.4      | Muhammad Usama Sardar |
    +-------------------------------+----------+-----------------------+
    | [GHSA-Cocos-AI5]              | 6.3      | Muhammad Usama Sardar |
+   +-------------------------------+----------+-----------------------+
+   | [CVE-2026-100835]             | 9.1      | Muhammad Usama Sardar |
+   +-------------------------------+----------+-----------------------+
+   | [EUVD-2026-87851]             | 9.1      | Muhammad Usama Sardar |
    +-------------------------------+----------+-----------------------+
 
      Table 2: GHSAs/CVEs for intra-handshake (aka early) attestation
@@ -2533,6 +2537,11 @@ Table of Contents
               in the AMD SEV-SNP path", September 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-92702>.
 
+   [CVE-2026-100835]
+              CVE, "Contrast before 1.16.0 Remote Attestation Relay
+              Attack", September 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-100835>.
+
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
               Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
@@ -2553,6 +2562,10 @@ Table of Contents
    [EUVD-2026-83194]
               ENISA, "EUVD-2026-83194", September 2026,
               <https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194>.
+
+   [EUVD-2026-87851]
+              ENISA, "EUVD-2026-87851", September 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851>.
 
    [GHSA-Cocos-AI]
               Ultraviolet Cocos AI, "CoCoS attested TLS is vulnerable to
