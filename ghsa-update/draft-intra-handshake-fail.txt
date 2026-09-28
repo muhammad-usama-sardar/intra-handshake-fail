@@ -30,6 +30,8 @@ Expires: 1 April 2027                                          CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
+                                                                  A. Gul
+                                              Birmingham City University
                                                        28 September 2026
 
 
@@ -438,10 +440,14 @@ Table of Contents
    +-------------------------------+----------+------------------------+
    | [GHSA-Cocos-AI5]              | 6.3      | Muhammad Usama Sardar  |
    +-------------------------------+----------+------------------------+
+   | [CVE-2026-100835]             | 9.1      | Muhammad Usama Sardar  |
+   +-------------------------------+----------+------------------------+
+   | [EUVD-2026-87851]             | 9.1      | Muhammad Usama Sardar  |
+   +-------------------------------+----------+------------------------+
 
-     Table 2: GHSAs/CVEs for broader ecosystem of intra-handshake (aka
-      early) attestation and finders in (roughly) chronological order
-                               of publishing
+      Table 2: GHSAs/CVEs for intra-handshake (aka early) attestation
+       and finders in (roughly) chronological order of publishing --
+                 CVSS scores marked with * are preliminary
 
 3.  Intra-handshake.fail
 
@@ -2559,6 +2565,11 @@ Table of Contents
               in the AMD SEV-SNP path", September 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-92702>.
 
+   [CVE-2026-100835]
+              CVE, "Contrast before 1.16.0 Remote Attestation Relay
+              Attack", September 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-100835>.
+
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
               Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
@@ -2579,6 +2590,10 @@ Table of Contents
    [EUVD-2026-83194]
               ENISA, "EUVD-2026-83194", September 2026,
               <https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194>.
+
+   [EUVD-2026-87851]
+              ENISA, "EUVD-2026-87851", September 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851>.
 
    [GHSA-Cocos-AI]
               Ultraviolet Cocos AI, "CoCoS attested TLS is vulnerable to
@@ -3049,3 +3064,9 @@ Authors' Addresses
    Iman Schrock
    EMILIA Protocol, Inc.
    Email: team@emiliaprotocol.ai
+
+
+   Ammara Gul
+   Birmingham City University
+   United Kingdom
+   Email: ammara.gul@bcu.ac.uk

@@ -19,6 +19,7 @@
 <meta content="Massimiliano Brighindi" name="author">
 <meta content="Mikerah Quintyne-Collins" name="author">
 <meta content="Iman Schrock" name="author">
+<meta content="Ammara Gul" name="author">
 <meta content="
        The draft aims to provide technical details of  ,  ,  ,  ,  ,   and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine. Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are  two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems. 
     " name="description">
@@ -1140,6 +1141,10 @@ svg {
       <div class="author-name">I. Schrock</div>
 <div class="org">EMILIA Protocol, Inc.</div>
 </div>
+<div class="author">
+      <div class="author-name">A. Gul</div>
+<div class="org">Birmingham City University</div>
+</div>
 </dd>
 </dl>
 </div>
@@ -1576,10 +1581,10 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-published-ghsas-cves" class="section-name selfRef">Published GHSAs/CVEs</a>
       </h2>
 <p id="section-2-1">The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to the complexity of an already complex system.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<span id="name-ghsas-cves-for-broader-ecos"></span><table class="center" id="table-2">
+<span id="name-ghsas-cves-for-intra-handsh"></span><table class="center" id="table-2">
         <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
-<a href="#name-ghsas-cves-for-broader-ecos" class="selfRef">GHSAs/CVEs for broader ecosystem of intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing</a>
+<a href="#name-ghsas-cves-for-intra-handsh" class="selfRef">GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary</a>
         </caption>
 <thead>
           <tr>
@@ -1832,6 +1837,20 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
               <span>[<a href="#GHSA-Cocos-AI5" class="cite xref">GHSA-Cocos-AI5</a>]</span>
 </td>
             <td class="text-left" rowspan="1" colspan="1">6.3</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#EUVD-2026-87851" class="cite xref">EUVD-2026-87851</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
             <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
           </tr>
         </tbody>
@@ -4246,6 +4265,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"Cocos AI Intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-92702">https://www.cve.org/CVERecord?id=CVE-2026-92702</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="CVE-2026-100835">[CVE-2026-100835]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"Contrast before 1.16.0 Remote Attestation Relay Attack"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-100835">https://www.cve.org/CVERecord?id=CVE-2026-100835</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="EarlyAttestationBleed">[EarlyAttestationBleed]</dt>
         <dd>
 <span class="refAuthor">Sardar, M. U.</span> and <span class="refAuthor">Songbo Bu</span>, <span class="refTitle">"EarlyAttestationBleed: Three Critical-severity Vulnerabilities of CVSS ≥ 9.0 in Confidential Computing"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing">https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing</a>&gt;</span>. </dd>
@@ -4261,6 +4284,10 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <dt id="EUVD-2026-83194">[EUVD-2026-83194]</dt>
         <dd>
 <span class="refAuthor">ENISA</span>, <span class="refTitle">"EUVD-2026-83194"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194">https://euvd.enisa.europa.eu/enisa/EUVD-2026-83194</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="EUVD-2026-87851">[EUVD-2026-87851]</dt>
+        <dd>
+<span class="refAuthor">ENISA</span>, <span class="refTitle">"EUVD-2026-87851"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851">https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="GHSA-Cocos-AI">[GHSA-Cocos-AI]</dt>
         <dd>
@@ -4759,6 +4786,15 @@ attacks <span>[<a href="#GHSA-Privasys-rustls" class="cite xref">GHSA-Privasys-r
 <div class="email">
 <span>Email:</span>
 <a href="mailto:team@emiliaprotocol.ai" class="email">team@emiliaprotocol.ai</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Ammara Gul</span></div>
+<div dir="auto" class="left"><span class="org">Birmingham City University</span></div>
+<div dir="auto" class="left"><span class="country-name">United Kingdom</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:ammara.gul@bcu.ac.uk" class="email">ammara.gul@bcu.ac.uk</a>
 </div>
 </address>
 </section>
