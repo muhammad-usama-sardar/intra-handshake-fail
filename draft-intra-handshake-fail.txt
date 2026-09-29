@@ -5,11 +5,11 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 1 April 2027                                          CoreWeave
+Expires: 2 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
-                       Shanghai Guan An Information Technology Co., Ltd.
+                                         Stevens Institute of Technology
                                                                 C. Huang
                                                              Independent
                                                                  H. Song
@@ -32,7 +32,7 @@ Expires: 1 April 2027                                          CoreWeave
                                                    EMILIA Protocol, Inc.
                                                                   A. Gul
                                               Birmingham City University
-                                                       28 September 2026
+                                                       29 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -98,7 +98,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 April 2027.
+   This Internet-Draft will expire on 2 April 2027.
 
 Copyright Notice
 
@@ -155,10 +155,11 @@ Table of Contents
        15.4.2.  Mitigation
      15.5.  Artifacts
    16. Media Coverage
-     16.1.  EarlyAttestationBleed
-     16.2.  Intra-handshake.fail
-       16.2.1.  Security Researchers
-       16.2.2.  Germany's BSI
+     16.1.  Edgeless Systems (CVE-2026-100835)
+     16.2.  EarlyAttestationBleed
+     16.3.  Intra-handshake.fail
+       16.3.1.  Security Researchers
+       16.3.2.  Germany's BSI
    17. Reviews
      17.1.  Conference Reviews
      17.2.  IETF/IRTF
@@ -203,7 +204,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.8      | Critical | 1                         | -              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 3                         | 3              |
+   | 9.1      | Critical | 8                         | 3              |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | -              |
    +----------+----------+---------------------------+----------------+
@@ -213,7 +214,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 7.5      | High     | 3                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 7.4      | High     | 9                         | -              |
+   | 7.4      | High     | 4                         | -              |
    +----------+----------+---------------------------+----------------+
    | 6.5      | Medium   | 1                         | -              |
    +----------+----------+---------------------------+----------------+
@@ -306,31 +307,31 @@ Table of Contents
    |                               |          | Songbo Bu and          |
    |                               |          | Muhammad Usama Sardar  |
    +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rustls]        | 7.4      | Muhammad Usama         |
+   | [GHSA-Privasys-rustls]        | 9.1      | Muhammad Usama         |
    |                               |          | Sardar, Viacheslav     |
    |                               |          | Dubeyko, Jean-Marie    |
    |                               |          | Jacquet, and Songbo    |
    |                               |          | Bu                     |
    +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-go]            | 7.4      | Muhammad Usama         |
+   | [GHSA-Privasys-go]            | 9.1      | Muhammad Usama         |
    |                               |          | Sardar, Viacheslav     |
    |                               |          | Dubeyko, Jean-Marie    |
    |                               |          | Jacquet, and Songbo    |
    |                               |          | Bu                     |
    +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-eov]           | 7.4      | Muhammad Usama         |
+   | [GHSA-Privasys-eov]           | 9.1      | Muhammad Usama         |
    |                               |          | Sardar, Viacheslav     |
    |                               |          | Dubeyko, Jean-Marie    |
    |                               |          | Jacquet, and Songbo    |
    |                               |          | Bu                     |
    +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-eom]           | 7.4      | Muhammad Usama         |
+   | [GHSA-Privasys-eom]           | 9.1      | Muhammad Usama         |
    |                               |          | Sardar, Viacheslav     |
    |                               |          | Dubeyko, Jean-Marie    |
    |                               |          | Jacquet, and Songbo    |
    |                               |          | Bu                     |
    +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rtc]           | 7.4      | Muhammad Usama         |
+   | [GHSA-Privasys-rtc]           | 9.1      | Muhammad Usama         |
    |                               |          | Sardar, Viacheslav     |
    |                               |          | Dubeyko, Jean-Marie    |
    |                               |          | Jacquet, and Songbo    |
@@ -741,6 +742,10 @@ Table of Contents
    +----------------------------------------------------------------------------+----------+
    |Edgeless Systems published [GHSA-Edgeless-Systems2] [*Severity = CRITICAL   |24 August,|
    |(CVSS 9.0-10.0)*]                                                           |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[I-D.ritz-seat-facts] archived                                              |2         |
+   |                                                                            |September,|
+   |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |Privasys published [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*]    |3         |
    |                                                                            |September,|
@@ -1336,7 +1341,18 @@ Table of Contents
    covered the vulnerabilities to protect the community from the harm of
    early attestation.
 
-16.1.  EarlyAttestationBleed
+16.1.  Edgeless Systems (CVE-2026-100835)
+
+   *  Threat radar (https://radar.offseq.com/threat/contrast-before-
+      1160-is-susceptible-to-remote-attestation-relay-attacks-cve-
+      2026-100835-3833ee713219f7e3)
+
+   *  vulnfeed (https://buttondown.com/vulnfeed/archive/vulnfeed-2-
+      critical-cves-2026-09-27-0400-utc/)
+
+   *  ervik (https://www.ervik.as/cves/CVE-2026-100835)
+
+16.2.  EarlyAttestationBleed
 
    [EarlyAttestationBleed]
 
@@ -1394,7 +1410,7 @@ Table of Contents
    sardar/intra-handshake-fail) or an email with the subject "Media
    coverage of EarlyAttestationBleed."
 
-16.2.  Intra-handshake.fail
+16.3.  Intra-handshake.fail
 
    [Intra-handshake.fail]
 
@@ -1512,7 +1528,7 @@ Table of Contents
 
    *  AIMultiple (https://aimultiple.com/privacy-enhancing-technologies)
 
-16.2.1.  Security Researchers
+16.3.1.  Security Researchers
 
    Several credible security researchers, such as the following, have
    publicly attested to it.
@@ -1531,7 +1547,7 @@ Table of Contents
    *  Thorsten Strufe (https://www.linkedin.com/in/strufe/recent-
       activity/all/)
 
-16.2.2.  Germany's BSI
+16.3.2.  Germany's BSI
 
    Germany's Federal Office for Information Security (Bundesamt für
    Sicherheit in der Informationstechnik) has attested to it.  Carina
@@ -2265,7 +2281,8 @@ Table of Contents
    of) recordings Section 19.1.1 and the archives Section 19.1.2 below.
    We sincerely thank the authors of [I-D.fossati-tls-attestation-10]
    for withdrawing their draft to protect further exploits mentioned in
-   Section 16.
+   Section 16.  We also sincerely thank the author of
+   [I-D.ritz-seat-facts] for archiving the draft.
 
 19.1.1.  Recordings
 
@@ -2281,9 +2298,9 @@ Table of Contents
    |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides, video                                                                         |
    |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |PET-CON 2026.2: 16th Privacy Enhancing          |Lübeck,   |28-29     |slides                                                                                |
-   |Techniques Convention (https://fg-pet.gi.de/    |Germany   |Sept, 2026|                                                                                      |
-   |veranstaltung/16th-privacy-enhancing-techniques-|          |          |                                                                                      |
+   |PET-CON 2026.2: 16th Privacy Enhancing          |Lübeck,   |28-29     |slides (https://www.researchgate.net/                                                 |
+   |Techniques Convention (https://fg-pet.gi.de/    |Germany   |Sept, 2026|publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-              |
+   |veranstaltung/16th-privacy-enhancing-techniques-|          |          |severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing)                        |
    |convention)                                     |          |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |ESORICS 2026                                    |Rome,     |14-18     |slides (https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-   |
@@ -3009,8 +3026,9 @@ Authors' Addresses
 
 
    Songbo Bu
-   Shanghai Guan An Information Technology Co., Ltd.
-   China
+   Stevens Institute of Technology
+   New York,
+   United States of America
    Email: bluedognull@gmail.com
 
 
