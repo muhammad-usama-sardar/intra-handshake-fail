@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-27T02:31:43.745119+00:00",
+  "timestamp": "2026-09-29T03:17:24.054759+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1289,26 +1289,68 @@
       "id": "PR_kwDOTPsy-c8AAAABE7xvoQ",
       "title": "Add Dr. Ammara",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/21",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "https://pureportal.bcu.ac.uk/en/persons/ammara-gul/\r\n\r\nDiscussed in detail at ESORICS. She will contribute to security analysis.",
       "createdAt": "2026-09-24T12:52:37Z",
-      "updatedAt": "2026-09-24T12:52:37Z",
+      "updatedAt": "2026-09-27T16:58:32Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "2a9b70fcfe6e4b60a59d1b64ef01dc6ecd634f69",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-ammara",
       "headRefOid": "6be686816bfadb1af82ffdf31f66f45785237031",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-09-27T16:58:32Z",
+      "mergedAt": "2026-09-27T16:58:32Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "a79591a4cd0e9524dfc78dd44a644d737ef9a3a8"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPb2Vgg",
+          "commit": {
+            "abbreviatedOid": "6be6868"
+          },
+          "author": "AmmaraGul-spec",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-27T15:02:55Z",
+          "updatedAt": "2026-09-27T15:02:55Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPcEEzg",
+          "commit": {
+            "abbreviatedOid": "6be6868"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-27T16:01:14Z",
+          "updatedAt": "2026-09-27T16:01:14Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPcM-tg",
+          "commit": {
+            "abbreviatedOid": "6be6868"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-27T16:36:44Z",
+          "updatedAt": "2026-09-27T16:36:44Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 22,
@@ -1368,6 +1410,61 @@
           "body": "As per request of Serhii. Thank you Serhii for your contribution on hardware reproduction.\n\nFor the record, he was added after his approval in #18.",
           "createdAt": "2026-09-25T17:44:21Z",
           "updatedAt": "2026-09-25T17:44:21Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "id": "PR_kwDOTPsy-c8AAAABFWFYmA",
+      "title": "GHSA update",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/23",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Update scores\r\n- Clarify scope of vulnerabilities",
+      "createdAt": "2026-09-27T11:56:16Z",
+      "updatedAt": "2026-09-28T09:48:08Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "a2e4a4d12c5c5fc0ad3b662d42785b0b95e2062f",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "ghsa-update",
+      "headRefOid": "9d16bfdc2f2df4ae31bb161488d823e7068fd1ab",
+      "closedAt": "2026-09-28T09:48:08Z",
+      "mergedAt": "2026-09-28T09:48:08Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "60cc7ce1e323a7a837424891a9eea84e6146d69a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPbb-gA",
+          "commit": {
+            "abbreviatedOid": "e42e37f"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-27T12:56:11Z",
+          "updatedAt": "2026-09-27T12:56:11Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPd86dA",
+          "commit": {
+            "abbreviatedOid": "99c4341"
+          },
+          "author": "rechard-edward",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-28T01:18:34Z",
+          "updatedAt": "2026-09-28T01:18:34Z",
           "comments": []
         }
       ]
