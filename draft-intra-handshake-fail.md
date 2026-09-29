@@ -47,8 +47,9 @@ author:
     email: "jean-marie.jacquet@unamur.be"
  -
     fullname: "Songbo Bu"
-    organization: Shanghai Guan An Information Technology Co., Ltd.
-    country: China
+    organization: Stevens Institute of Technology
+    city: New York
+    country: USA
     email: "bluedognull@gmail.com"
  -
     fullname: "Chengxin Huang"
@@ -345,12 +346,12 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
 | 9.8 | Critical | 1 | - |
-| 9.1 | Critical | 3 | 3 |
+| 9.1 | Critical | 8 | 3 |
 | 8.2 | High | 1 | - |
 | 7.8 | High | 2 | - |
 | 7.7 | High | 2 | - |
 | 7.5 | High | 3 | 1 |
-| 7.4 | High | 9 | - |
+| 7.4 | High | 4 | - |
 | 6.5 | Medium | 1 | - |
 | 6.3 | Medium | 3 | - |
 | 5.3 | Medium | 1 | - |
@@ -386,11 +387,11 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI2}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Cocos-AI3}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
 | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{GHSA-Privasys-rustls}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
-| {{GHSA-Privasys-go}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
-| {{GHSA-Privasys-eov}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
-| {{GHSA-Privasys-eom}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
-| {{GHSA-Privasys-rtc}} | 7.4 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-rustls}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-go}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-eov}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-eom}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{GHSA-Privasys-rtc}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{GHSA-Privasys-rtc-da}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Privasys-rtc-tcu}} | 6.3 | Muhammad Usama Sardar |
 | {{CVE-2026-92701}} | 9.1 | Muhammad Usama Sardar and Songbo Bu |
@@ -752,6 +753,13 @@ Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 Licens
 
 Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.
 
+## Edgeless Systems (CVE-2026-100835)
+
+- [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
+- [vulnfeed](https://buttondown.com/vulnfeed/archive/vulnfeed-2-critical-cves-2026-09-27-0400-utc/)
+- [ervik](https://www.ervik.as/cves/CVE-2026-100835)
+
+
 ## EarlyAttestationBleed
 
 {{EarlyAttestationBleed}}
@@ -1018,7 +1026,10 @@ We have not retrieved any real data from any real system. We have not released a
 
 
 ## Evidence of Explanation of Vulnerabilities to the Authors of Vulnerable Drafts
-To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} first privately in several meetings and then later on publicly for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF. Please see the (non-exhaustive list of) recordings {{sec-recordings}} and the archives {{sec-archives}} below. We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
+To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} first privately in several meetings and then later on publicly for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF.
+Please see the (non-exhaustive list of) recordings {{sec-recordings}} and the archives {{sec-archives}} below.
+We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
+We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the draft.
 
 ### Recordings
 {: #sec-recordings }
@@ -1028,7 +1039,7 @@ To the best of our abilities, knowledge, and understanding, we have tried to exp
 | System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), slides, video |
 | BoF @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2640/), slides, video |
 | [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | slides, video |
-| [PET-CON 2026.2: 16th Privacy Enhancing Techniques Convention](https://fg-pet.gi.de/veranstaltung/16th-privacy-enhancing-techniques-convention) | Lübeck, Germany | 28-29 Sept, 2026 | slides |
+| [PET-CON 2026.2: 16th Privacy Enhancing Techniques Convention](https://fg-pet.gi.de/veranstaltung/16th-privacy-enhancing-techniques-convention) | Lübeck, Germany | 28-29 Sept, 2026 | [slides](https://www.researchgate.net/publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing) |
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | [slides](https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) |
 | [IETF RATS Interim meeting](https://datatracker.ietf.org/meeting/interim-2026-rats-03/session/rats) | Virtual | 14 Sept, 2026 | [slides](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00), [video](https://youtu.be/y5_SR0-DzH0?t=255) |
 | Hackathon @ [RIOT Summit 2026](https://summit.riot-os.org/2026/) | Grenoble, France | 4 September, 2026 | [topic synopsis](https://notes.inria.fr/2ppogr2fTSKusRog3RXbPQ?view#topic-security-analysis-of-attested-tls-and-attested-edhoc) |
