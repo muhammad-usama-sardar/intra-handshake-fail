@@ -743,6 +743,10 @@ Table of Contents
    |Edgeless Systems published [GHSA-Edgeless-Systems2] [*Severity = CRITICAL   |24 August,|
    |(CVSS 9.0-10.0)*]                                                           |2026      |
    +----------------------------------------------------------------------------+----------+
+   |[I-D.ritz-seat-facts] archived                                              |2         |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |Privasys published [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*]    |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
