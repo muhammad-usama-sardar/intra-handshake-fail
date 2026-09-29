@@ -524,6 +524,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Cocos AI published {{GHSA-Cocos-AI2}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
 | Cocos AI published {{GHSA-Cocos-AI3}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
 | Edgeless Systems published {{GHSA-Edgeless-Systems2}} [**Severity = CRITICAL (CVSS 9.0-10.0)**] | 24 August, 2026 |
+| {{I-D.ritz-seat-facts}} archived | 2 September, 2026 |
 | Privasys published {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
 | Privasys published {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
 | Privasys published {{GHSA-Privasys-eov}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
