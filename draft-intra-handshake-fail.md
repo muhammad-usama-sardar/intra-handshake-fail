@@ -1026,9 +1026,7 @@ We have not retrieved any real data from any real system. We have not released a
 
 
 ## Evidence of Explanation of Vulnerabilities to the Authors of Vulnerable Drafts
-To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} first privately in several meetings and then later on publicly for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF.
-Please see the (non-exhaustive list of) recordings {{sec-recordings}} and the archives {{sec-archives}} below.
-We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
+To the best of our abilities, knowledge, and understanding, we have tried to explain the vulnerabilities to the authors of vulnerable drafts {{I-D.fossati-tls-attestation-09}}, {{I-D.fossati-seat-early-attestation}}, and {{I-D.ritz-seat-facts}} first privately in several meetings and then later on publicly for at least half a year at several forums, including but not limited to CCC Attestation SIG and IETF/IRTF. Please see the (non-exhaustive list of) recordings {{sec-recordings}} and the archives {{sec-archives}} below. We sincerely thank the authors of {{I-D.fossati-tls-attestation-10}} for withdrawing their draft to protect further exploits mentioned in {{sec-news}}.
 We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the draft.
 
 ### Recordings
