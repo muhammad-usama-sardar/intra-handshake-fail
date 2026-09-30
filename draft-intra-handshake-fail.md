@@ -376,7 +376,7 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 # Published GHSAs/CVEs
 {: #sec-credits }
 
-The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to the complexity of an already complex system.
+The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to an already complex system.
 
 | GHSA/CVE | CVSS | Finders |
 |---|---|---|
@@ -417,7 +417,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
-{: title="GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
+{: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
 
@@ -629,15 +629,14 @@ The following intra-handshake implementations were vulnerable and have been **ar
 At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
 
 - {{I-D.fossati-tls-attestation-09}}: symbolic proof of insecurity; {{I-D.fossati-tls-attestation-10}} **withdrawn** after the CVE
+- {{I-D.ritz-seat-facts}}: symbolic proof of insecurity; draft **archived**
+  - violates G3 property in our analysis
+  - unnecessary complexity is itself a security concern
 - {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to {{GHSA-Cocos-AI}} that contains a link to {{SEAT-vulnerability-report}} that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
   - **Unnecessary complexity** is itself a security concern
-- {{I-D.ritz-seat-facts}}: symbolic proof of insecurity
-  - violates G3 property in our analysis
-  - unnecessary complexity is itself a security concern
-  - **archived**
 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
