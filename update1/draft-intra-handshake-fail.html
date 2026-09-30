@@ -1583,11 +1583,11 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
       <h2 id="name-published-ghsas-cves">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-published-ghsas-cves" class="section-name selfRef">Published GHSAs/CVEs</a>
       </h2>
-<p id="section-2-1">The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to the complexity of an already complex system.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<span id="name-ghsas-cves-for-intra-handsh"></span><table class="center" id="table-2">
+<p id="section-2-1">The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to an already complex system.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<span id="name-ghsas-cves-for-implementati"></span><table class="center" id="table-2">
         <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
-<a href="#name-ghsas-cves-for-intra-handsh" class="selfRef">GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary</a>
+<a href="#name-ghsas-cves-for-implementati" class="selfRef">GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary</a>
         </caption>
 <thead>
           <tr>
@@ -2647,33 +2647,30 @@ and trust domains. The following table provides a corresponding low-level view.<
           <p id="section-10-2.1.1"><span>[<a href="#I-D.fossati-tls-attestation-09" class="cite xref">I-D.fossati-tls-attestation-09</a>]</span>: symbolic proof of insecurity; <span>[<a href="#I-D.fossati-tls-attestation-10" class="cite xref">I-D.fossati-tls-attestation-10</a>]</span> <strong>withdrawn</strong> after the CVE<a href="#section-10-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-10-2.2">
-          <p id="section-10-2.2.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-10-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-10-2.2.1"><span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span>: symbolic proof of insecurity; draft <strong>archived</strong><a href="#section-10-2.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10-2.2.2.1">
-              <p id="section-10-2.2.2.1.1">As a SEAT WG participant pointed out, please note that both <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> contain a link to <span>[<a href="#GHSA-Cocos-AI" class="cite xref">GHSA-Cocos-AI</a>]</span> that contains a link to <span>[<a href="#SEAT-vulnerability-report" class="cite xref">SEAT-vulnerability-report</a>]</span> that contains the G3 property (cf. <a href="#sec-corr-goals" class="auto internal xref">Section 12</a>) that this draft does not satisfy.<a href="#section-10-2.2.2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.2.2.1.1">violates G3 property in our analysis<a href="#section-10-2.2.2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-10-2.2.2.2">
-              <p id="section-10-2.2.2.2.1">Some WG participants successfully reproduced the vulnerability by substituting the right value of <code>rdata</code> in the shared formal model <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> that led to the CVE.<a href="#section-10-2.2.2.2.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-10-2.2.2.3">
-              <p id="section-10-2.2.2.3.1">An informal reasoning is that binder is not <strong>directly</strong> derived from any <strong>shared secret</strong> in this draft.<a href="#section-10-2.2.2.3.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-10-2.2.2.4">
-              <p id="section-10-2.2.2.4.1"><strong>Unnecessary complexity</strong> is itself a security concern<a href="#section-10-2.2.2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.2.2.2.1">unnecessary complexity is itself a security concern<a href="#section-10-2.2.2.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </li>
         <li class="normal" id="section-10-2.3">
-          <p id="section-10-2.3.1"><span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span>: symbolic proof of insecurity<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
+          <p id="section-10-2.3.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10-2.3.2.1">
-              <p id="section-10-2.3.2.1.1">violates G3 property in our analysis<a href="#section-10-2.3.2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.3.2.1.1">As a SEAT WG participant pointed out, please note that both <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> contain a link to <span>[<a href="#GHSA-Cocos-AI" class="cite xref">GHSA-Cocos-AI</a>]</span> that contains a link to <span>[<a href="#SEAT-vulnerability-report" class="cite xref">SEAT-vulnerability-report</a>]</span> that contains the G3 property (cf. <a href="#sec-corr-goals" class="auto internal xref">Section 12</a>) that this draft does not satisfy.<a href="#section-10-2.3.2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-10-2.3.2.2">
-              <p id="section-10-2.3.2.2.1">unnecessary complexity is itself a security concern<a href="#section-10-2.3.2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.3.2.2.1">Some WG participants successfully reproduced the vulnerability by substituting the right value of <code>rdata</code> in the shared formal model <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> that led to the CVE.<a href="#section-10-2.3.2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-10-2.3.2.3">
-              <p id="section-10-2.3.2.3.1"><strong>archived</strong><a href="#section-10-2.3.2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.3.2.3.1">An informal reasoning is that binder is not <strong>directly</strong> derived from any <strong>shared secret</strong> in this draft.<a href="#section-10-2.3.2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-10-2.3.2.4">
+              <p id="section-10-2.3.2.4.1"><strong>Unnecessary complexity</strong> is itself a security concern<a href="#section-10-2.3.2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </li>

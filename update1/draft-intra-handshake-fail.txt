@@ -273,8 +273,7 @@ Table of Contents
    parsing and resource handling inside the runtime.  Any vulnerability
    in the whole system, and not just attestation, breaks security of the
    overall system.  The key take away is that early attestation adds
-   unnecessary complexity to the complexity of an already complex
-   system.
+   unnecessary complexity to an already complex system.
 
    +===============================+==========+========================+
    | GHSA/CVE                      | CVSS     | Finders                |
@@ -446,9 +445,9 @@ Table of Contents
    | [EUVD-2026-87851]             | 9.1      | Muhammad Usama Sardar  |
    +-------------------------------+----------+------------------------+
 
-      Table 2: GHSAs/CVEs for intra-handshake (aka early) attestation
-       and finders in (roughly) chronological order of publishing --
-                 CVSS scores marked with * are preliminary
+      Table 2: GHSAs/CVEs for implementations of early attestation and
+       finders in (roughly) chronological order of publishing -- CVSS
+                    scores marked with * are preliminary
 
 3.  Intra-handshake.fail
 
@@ -1051,6 +1050,13 @@ Table of Contents
    *  [I-D.fossati-tls-attestation-09]: symbolic proof of insecurity;
       [I-D.fossati-tls-attestation-10] *withdrawn* after the CVE
 
+   *  [I-D.ritz-seat-facts]: symbolic proof of insecurity; draft
+      *archived*
+
+      -  violates G3 property in our analysis
+
+      -  unnecessary complexity is itself a security concern
+
    *  [I-D.fossati-seat-early-attestation]: symbolic and (paper-and-pen-
       based) computational proof of insecurity (originally done for -04
       and applies also to -06)
@@ -1069,14 +1075,6 @@ Table of Contents
          from any *shared secret* in this draft.
 
       -  *Unnecessary complexity* is itself a security concern
-
-   *  [I-D.ritz-seat-facts]: symbolic proof of insecurity
-
-      -  violates G3 property in our analysis
-
-      -  unnecessary complexity is itself a security concern
-
-      -  *archived*
 
 11.  Binding Levels
 
