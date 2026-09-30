@@ -579,7 +579,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [TDXdown](https://dl.acm.org/doi/10.1145/3658644.3690230) | [Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-10-08-001.html) | 2.5 | Low |
 | [Staleus](https://xca-attacks.github.io/staleus/staleus_usenix26.pdf) | [CVE-2025-54509](https://www.cve.org/CVERecord?id=CVE-2025-54509) | 4.0 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61972](https://www.cve.org/CVERecord?id=CVE-2025-6197)| 4.2 | Medium |
-| [BadRAM](https://badram.eu/badram.pdf)| [AMD](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
+| [BadRAM](https://badram.eu/badram.pdf)| [CVE-2024-21944](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
 | [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
@@ -637,6 +637,7 @@ At least the following protocol specifications with intra-handshake attestation 
 - {{I-D.ritz-seat-facts}}: symbolic proof of insecurity
   - violates G3 property in our analysis
   - unnecessary complexity is itself a security concern
+  - **archived**
 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
@@ -754,12 +755,15 @@ Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 Licens
 
 Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.
 
+If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."
+
 ## Edgeless Systems (CVE-2026-100835)
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
 - [vulnfeed](https://buttondown.com/vulnfeed/archive/vulnfeed-2-critical-cves-2026-09-27-0400-utc/)
 - [ervik](https://www.ervik.as/cves/CVE-2026-100835)
-
+- [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
+- CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
 
 ## EarlyAttestationBleed
 
@@ -772,7 +776,8 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 - (Chinese) [Safe Meow Station](mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw)
 - (Chinese) [Digital World Information](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - (Chinese) [Shusei Consulting](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
-- [Freenode](https://freenode.net/digest/518)
+- [Freenode 518](https://freenode.net/digest/518)
+- [Freenode 571](https://freenode.net/digest/571)
 - [Flashbots](https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054)
 - (Japanese) [Rich & Wise with Socrates and Plato](https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/)
 - [OpenCVE (CVE-2026-92701)](https://app.opencve.io/cve/CVE-2026-92701)
@@ -781,8 +786,6 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 - CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92702)
 - GCVE's [db.gcve.eu (CVE-2026-92701)](https://db.gcve.eu/vuln/cve-2026-92701)
 - GCVE's [db.gcve.eu (CVE-2026-92702)](https://db.gcve.eu/vuln/cve-2026-92702)
-
-If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of EarlyAttestationBleed."
 
 ## Intra-handshake.fail
 
@@ -1109,6 +1112,8 @@ Since January, we have publicly informed the authors of vulnerable drafts {{I-D.
 #### EarlyAttestationBleed
 - [IRTF UFMRG](https://mailarchive.ietf.org/arch/msg/ufmrg/ZQKdp07P4UeTushAC1q9eBBtp0s/)
 - [IETF RATS](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00)
+- [Confidential Computing Consortium (CCC)](https://lists.confidentialcomputing.io/g/attestation/topic/121496347)
+- [Agentic AI Foundation (AAIF) Security & Privacy](https://lists.aaif.io/g/wg-security-privacy/topic/contribution/121504323)
 - [OCP Security](https://ocp-all.groups.io/g/OCP-Security/message/1263)
 - [ProVerif](https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html)
 
