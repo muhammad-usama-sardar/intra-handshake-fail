@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 2 April 2027                                          CoreWeave
+Expires: 3 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,7 +32,7 @@ Expires: 2 April 2027                                          CoreWeave
                                                    EMILIA Protocol, Inc.
                                                                   A. Gul
                                               Birmingham City University
-                                                       29 September 2026
+                                                       30 September 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -98,7 +98,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 April 2027.
+   This Internet-Draft will expire on 3 April 2027.
 
 Copyright Notice
 
@@ -273,8 +273,7 @@ Table of Contents
    parsing and resource handling inside the runtime.  Any vulnerability
    in the whole system, and not just attestation, breaks security of the
    overall system.  The key take away is that early attestation adds
-   unnecessary complexity to the complexity of an already complex
-   system.
+   unnecessary complexity to an already complex system.
 
    +===============================+==========+========================+
    | GHSA/CVE                      | CVSS     | Finders                |
@@ -446,9 +445,9 @@ Table of Contents
    | [EUVD-2026-87851]             | 9.1      | Muhammad Usama Sardar  |
    +-------------------------------+----------+------------------------+
 
-      Table 2: GHSAs/CVEs for intra-handshake (aka early) attestation
-       and finders in (roughly) chronological order of publishing --
-                 CVSS scores marked with * are preliminary
+      Table 2: GHSAs/CVEs for implementations of early attestation and
+       finders in (roughly) chronological order of publishing -- CVSS
+                    scores marked with * are preliminary
 
 3.  Intra-handshake.fail
 
@@ -935,8 +934,9 @@ Table of Contents
    |attacks.github.io/breakfast/  |CVERecord?id=CVE-2025-6197)              |        |        |
    |breakfast_oakland26.pdf)      |                                         |        |        |
    +------------------------------+-----------------------------------------+--------+--------+
-   |BadRAM (https://badram.eu/    |AMD (https://www.amd.com/en/resources/   |5.3     |Medium  |
-   |badram.pdf)                   |product-security/bulletin/amd-sb-        |        |        |
+   |BadRAM (https://badram.eu/    |CVE-2024-21944                           |5.3     |Medium  |
+   |badram.pdf)                   |(https://www.amd.com/en/resources/       |        |        |
+   |                              |product-security/bulletin/amd-sb-        |        |        |
    |                              |3015.html)                               |        |        |
    +------------------------------+-----------------------------------------+--------+--------+
    |BreakFAST (https://xca-       |CVE-2025-61971 (https://www.cve.org/     |5.9     |Medium  |
@@ -1050,6 +1050,13 @@ Table of Contents
    *  [I-D.fossati-tls-attestation-09]: symbolic proof of insecurity;
       [I-D.fossati-tls-attestation-10] *withdrawn* after the CVE
 
+   *  [I-D.ritz-seat-facts]: symbolic proof of insecurity; draft
+      *archived*
+
+      -  violates G3 property in our analysis
+
+      -  unnecessary complexity is itself a security concern
+
    *  [I-D.fossati-seat-early-attestation]: symbolic and (paper-and-pen-
       based) computational proof of insecurity (originally done for -04
       and applies also to -06)
@@ -1068,12 +1075,6 @@ Table of Contents
          from any *shared secret* in this draft.
 
       -  *Unnecessary complexity* is itself a security concern
-
-   *  [I-D.ritz-seat-facts]: symbolic proof of insecurity
-
-      -  violates G3 property in our analysis
-
-      -  unnecessary complexity is itself a security concern
 
 11.  Binding Levels
 
@@ -1341,6 +1342,13 @@ Table of Contents
    covered the vulnerabilities to protect the community from the harm of
    early attestation.
 
+   If you have written an article on this and would like to be added
+   here, please send us a PR at https://github.com/muhammad-usama-
+   sardar/intra-handshake-fail (https://github.com/muhammad-usama-
+   sardar/intra-handshake-fail) or an email with the subject "Media
+   coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-
+   handshake.fail."
+
 16.1.  Edgeless Systems (CVE-2026-100835)
 
    *  Threat radar (https://radar.offseq.com/threat/contrast-before-
@@ -1351,6 +1359,12 @@ Table of Contents
       critical-cves-2026-09-27-0400-utc/)
 
    *  ervik (https://www.ervik.as/cves/CVE-2026-100835)
+
+   *  securityvulnerability.io
+      (https://securityvulnerability.io/vulnerability/CVE-2026-100835)
+
+   *  CIRCL's vulnerability (https://vulnerability.circl.lu/vuln/cve-
+      2026-100835)
 
 16.2.  EarlyAttestationBleed
 
@@ -1377,7 +1391,9 @@ Table of Contents
    *  (Chinese) Shusei Consulting (https://mp.weixin.qq.com/
       s/864dwIXF5IY04q7ig4uBwg)
 
-   *  Freenode (https://freenode.net/digest/518)
+   *  Freenode 518 (https://freenode.net/digest/518)
+
+   *  Freenode 571 (https://freenode.net/digest/571)
 
    *  Flashbots (https://collective.flashbots.net/t/
       earlyattestationbleed-paper-review/6054)
@@ -1403,12 +1419,6 @@ Table of Contents
 
    *  GCVE's db.gcve.eu (CVE-2026-92702) (https://db.gcve.eu/vuln/cve-
       2026-92702)
-
-   If you have written an article on this and would like to be added
-   here, please send us a PR at https://github.com/muhammad-usama-
-   sardar/intra-handshake-fail (https://github.com/muhammad-usama-
-   sardar/intra-handshake-fail) or an email with the subject "Media
-   coverage of EarlyAttestationBleed."
 
 16.3.  Intra-handshake.fail
 
@@ -2537,6 +2547,14 @@ Table of Contents
    *  IETF RATS (https://datatracker.ietf.org/meeting/interim-2026-rats-
       03/materials/slides-interim-2026-rats-03-sessa-protecting-the-
       rats-ecosystem-from-critical-severity-vulnerabilities-00)
+
+   *  Confidential Computing Consortium (CCC)
+      (https://lists.confidentialcomputing.io/g/attestation/
+      topic/121496347)
+
+   *  Agentic AI Foundation (AAIF) Security & Privacy
+      (https://lists.aaif.io/g/wg-security-privacy/topic/
+      contribution/121504323)
 
    *  OCP Security (https://ocp-all.groups.io/g/OCP-Security/
       message/1263)

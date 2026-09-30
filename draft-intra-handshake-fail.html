@@ -1064,7 +1064,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 2 April 2027</td>
+<td class="center">Expires 3 April 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1077,12 +1077,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-29" class="published">29 September 2026</time>
+<time datetime="2026-09-30" class="published">30 September 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-02">2 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-04-03">3 April 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1183,7 +1183,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 2 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1583,11 +1583,11 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
       <h2 id="name-published-ghsas-cves">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-published-ghsas-cves" class="section-name selfRef">Published GHSAs/CVEs</a>
       </h2>
-<p id="section-2-1">The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to the complexity of an already complex system.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<span id="name-ghsas-cves-for-intra-handsh"></span><table class="center" id="table-2">
+<p id="section-2-1">The vulnerabilities cover the broader ecosystem, including but not limited to attestation, authentication, authorization, key storage, parsing and resource handling inside the runtime. Any vulnerability in the whole system, and not just attestation, breaks security of the overall system. The key take away is that early attestation adds unnecessary complexity to an already complex system.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<span id="name-ghsas-cves-for-implementati"></span><table class="center" id="table-2">
         <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
-<a href="#name-ghsas-cves-for-intra-handsh" class="selfRef">GHSAs/CVEs for intra-handshake (aka early) attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary</a>
+<a href="#name-ghsas-cves-for-implementati" class="selfRef">GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary</a>
         </caption>
 <thead>
           <tr>
@@ -2468,7 +2468,7 @@ and trust domains. The following table provides a corresponding low-level view.<
               <a href="https://badram.eu/badram.pdf">BadRAM</a>
 </td>
             <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html">AMD</a>
+              <a href="https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html">CVE-2024-21944</a>
 </td>
             <td class="text-left" rowspan="1" colspan="1">5.3</td>
             <td class="text-left" rowspan="1" colspan="1">Medium</td>
@@ -2647,30 +2647,30 @@ and trust domains. The following table provides a corresponding low-level view.<
           <p id="section-10-2.1.1"><span>[<a href="#I-D.fossati-tls-attestation-09" class="cite xref">I-D.fossati-tls-attestation-09</a>]</span>: symbolic proof of insecurity; <span>[<a href="#I-D.fossati-tls-attestation-10" class="cite xref">I-D.fossati-tls-attestation-10</a>]</span> <strong>withdrawn</strong> after the CVE<a href="#section-10-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-10-2.2">
-          <p id="section-10-2.2.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-10-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-10-2.2.1"><span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span>: symbolic proof of insecurity; draft <strong>archived</strong><a href="#section-10-2.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10-2.2.2.1">
-              <p id="section-10-2.2.2.1.1">As a SEAT WG participant pointed out, please note that both <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> contain a link to <span>[<a href="#GHSA-Cocos-AI" class="cite xref">GHSA-Cocos-AI</a>]</span> that contains a link to <span>[<a href="#SEAT-vulnerability-report" class="cite xref">SEAT-vulnerability-report</a>]</span> that contains the G3 property (cf. <a href="#sec-corr-goals" class="auto internal xref">Section 12</a>) that this draft does not satisfy.<a href="#section-10-2.2.2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.2.2.1.1">violates G3 property in our analysis<a href="#section-10-2.2.2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-10-2.2.2.2">
-              <p id="section-10-2.2.2.2.1">Some WG participants successfully reproduced the vulnerability by substituting the right value of <code>rdata</code> in the shared formal model <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> that led to the CVE.<a href="#section-10-2.2.2.2.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-10-2.2.2.3">
-              <p id="section-10-2.2.2.3.1">An informal reasoning is that binder is not <strong>directly</strong> derived from any <strong>shared secret</strong> in this draft.<a href="#section-10-2.2.2.3.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-10-2.2.2.4">
-              <p id="section-10-2.2.2.4.1"><strong>Unnecessary complexity</strong> is itself a security concern<a href="#section-10-2.2.2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.2.2.2.1">unnecessary complexity is itself a security concern<a href="#section-10-2.2.2.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </li>
         <li class="normal" id="section-10-2.3">
-          <p id="section-10-2.3.1"><span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span>: symbolic proof of insecurity<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
+          <p id="section-10-2.3.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10-2.3.2.1">
-              <p id="section-10-2.3.2.1.1">violates G3 property in our analysis<a href="#section-10-2.3.2.1.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.3.2.1.1">As a SEAT WG participant pointed out, please note that both <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> contain a link to <span>[<a href="#GHSA-Cocos-AI" class="cite xref">GHSA-Cocos-AI</a>]</span> that contains a link to <span>[<a href="#SEAT-vulnerability-report" class="cite xref">SEAT-vulnerability-report</a>]</span> that contains the G3 property (cf. <a href="#sec-corr-goals" class="auto internal xref">Section 12</a>) that this draft does not satisfy.<a href="#section-10-2.3.2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-10-2.3.2.2">
-              <p id="section-10-2.3.2.2.1">unnecessary complexity is itself a security concern<a href="#section-10-2.3.2.2.1" class="pilcrow">¶</a></p>
+              <p id="section-10-2.3.2.2.1">Some WG participants successfully reproduced the vulnerability by substituting the right value of <code>rdata</code> in the shared formal model <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> that led to the CVE.<a href="#section-10-2.3.2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-10-2.3.2.3">
+              <p id="section-10-2.3.2.3.1">An informal reasoning is that binder is not <strong>directly</strong> derived from any <strong>shared secret</strong> in this draft.<a href="#section-10-2.3.2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-10-2.3.2.4">
+              <p id="section-10-2.3.2.4.1"><strong>Unnecessary complexity</strong> is itself a security concern<a href="#section-10-2.3.2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </li>
@@ -3031,6 +3031,7 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 <a href="#section-16" class="section-number selfRef">16. </a><a href="#name-media-coverage" class="section-name selfRef">Media Coverage</a>
       </h2>
 <p id="section-16-1">Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.<a href="#section-16-1" class="pilcrow">¶</a></p>
+<p id="section-16-2">If you have written an article on this and would like to be added here, please send us a PR at <a href="https://github.com/muhammad-usama-sardar/intra-handshake-fail">https://github.com/muhammad-usama-sardar/intra-handshake-fail</a> or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."<a href="#section-16-2" class="pilcrow">¶</a></p>
 <div id="edgeless-systems-cve-2026-100835">
 <section id="section-16.1">
         <h3 id="name-edgeless-systems-cve-2026-1">
@@ -3045,6 +3046,12 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 </li>
           <li class="normal" id="section-16.1-1.3">
             <p id="section-16.1-1.3.1"><a href="https://www.ervik.as/cves/CVE-2026-100835">ervik</a><a href="#section-16.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.1-1.4">
+            <p id="section-16.1-1.4.1"><a href="https://securityvulnerability.io/vulnerability/CVE-2026-100835">securityvulnerability.io</a><a href="#section-16.1-1.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.1-1.5">
+            <p id="section-16.1-1.5.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/cve-2026-100835">vulnerability</a><a href="#section-16.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3078,34 +3085,36 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
             <p id="section-16.2-2.7.1">(Chinese) <a href="https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg">Shusei Consulting</a><a href="#section-16.2-2.7.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.8">
-            <p id="section-16.2-2.8.1"><a href="https://freenode.net/digest/518">Freenode</a><a href="#section-16.2-2.8.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.8.1"><a href="https://freenode.net/digest/518">Freenode 518</a><a href="#section-16.2-2.8.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.9">
-            <p id="section-16.2-2.9.1"><a href="https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054">Flashbots</a><a href="#section-16.2-2.9.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.9.1"><a href="https://freenode.net/digest/571">Freenode 571</a><a href="#section-16.2-2.9.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.10">
-            <p id="section-16.2-2.10.1">(Japanese) <a href="https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/">Rich &amp; Wise with Socrates and Plato</a><a href="#section-16.2-2.10.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.10.1"><a href="https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054">Flashbots</a><a href="#section-16.2-2.10.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.11">
-            <p id="section-16.2-2.11.1"><a href="https://app.opencve.io/cve/CVE-2026-92701">OpenCVE (CVE-2026-92701)</a><a href="#section-16.2-2.11.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.11.1">(Japanese) <a href="https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/">Rich &amp; Wise with Socrates and Plato</a><a href="#section-16.2-2.11.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.12">
-            <p id="section-16.2-2.12.1"><a href="https://app.opencve.io/cve/CVE-2026-92702">OpenCVE (CVE-2026-92702)</a><a href="#section-16.2-2.12.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.12.1"><a href="https://app.opencve.io/cve/CVE-2026-92701">OpenCVE (CVE-2026-92701)</a><a href="#section-16.2-2.12.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.13">
-            <p id="section-16.2-2.13.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92701">vulnerability.circl.lu (CVE-2026-92701)</a><a href="#section-16.2-2.13.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.13.1"><a href="https://app.opencve.io/cve/CVE-2026-92702">OpenCVE (CVE-2026-92702)</a><a href="#section-16.2-2.13.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.14">
-            <p id="section-16.2-2.14.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92702">vulnerability.circl.lu (CVE-2026-92702)</a><a href="#section-16.2-2.14.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.14.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92701">vulnerability.circl.lu (CVE-2026-92701)</a><a href="#section-16.2-2.14.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.15">
-            <p id="section-16.2-2.15.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92701">db.gcve.eu (CVE-2026-92701)</a><a href="#section-16.2-2.15.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.15.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92702">vulnerability.circl.lu (CVE-2026-92702)</a><a href="#section-16.2-2.15.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-16.2-2.16">
-            <p id="section-16.2-2.16.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92702">db.gcve.eu (CVE-2026-92702)</a><a href="#section-16.2-2.16.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-2.16.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92701">db.gcve.eu (CVE-2026-92701)</a><a href="#section-16.2-2.16.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.17">
+            <p id="section-16.2-2.17.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92702">db.gcve.eu (CVE-2026-92702)</a><a href="#section-16.2-2.17.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-16.2-3">If you have written an article on this and would like to be added here, please send us a PR at <a href="https://github.com/muhammad-usama-sardar/intra-handshake-fail">https://github.com/muhammad-usama-sardar/intra-handshake-fail</a> or an email with the subject "Media coverage of EarlyAttestationBleed."<a href="#section-16.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="intra-handshakefail-2">
@@ -4242,10 +4251,16 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
                 <p id="section-19.1.2.2-1.2.1"><a href="https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00">IETF RATS</a><a href="#section-19.1.2.2-1.2.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-19.1.2.2-1.3">
-                <p id="section-19.1.2.2-1.3.1"><a href="https://ocp-all.groups.io/g/OCP-Security/message/1263">OCP Security</a><a href="#section-19.1.2.2-1.3.1" class="pilcrow">¶</a></p>
+                <p id="section-19.1.2.2-1.3.1"><a href="https://lists.confidentialcomputing.io/g/attestation/topic/121496347">Confidential Computing Consortium (CCC)</a><a href="#section-19.1.2.2-1.3.1" class="pilcrow">¶</a></p>
 </li>
               <li class="normal" id="section-19.1.2.2-1.4">
-                <p id="section-19.1.2.2-1.4.1"><a href="https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html">ProVerif</a><a href="#section-19.1.2.2-1.4.1" class="pilcrow">¶</a></p>
+                <p id="section-19.1.2.2-1.4.1"><a href="https://lists.aaif.io/g/wg-security-privacy/topic/contribution/121504323">Agentic AI Foundation (AAIF) Security &amp; Privacy</a><a href="#section-19.1.2.2-1.4.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-19.1.2.2-1.5">
+                <p id="section-19.1.2.2-1.5.1"><a href="https://ocp-all.groups.io/g/OCP-Security/message/1263">OCP Security</a><a href="#section-19.1.2.2-1.5.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-19.1.2.2-1.6">
+                <p id="section-19.1.2.2-1.6.1"><a href="https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html">ProVerif</a><a href="#section-19.1.2.2-1.6.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 <p id="section-19.1.2.2-2">If you know any other relevant mailing list that we should inform for protection of users, please let us know.<a href="#section-19.1.2.2-2" class="pilcrow">¶</a></p>
