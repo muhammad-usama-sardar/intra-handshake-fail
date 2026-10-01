@@ -612,7 +612,7 @@ These are preliminary estimates of scores, not final assigned score. They are st
 As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, at least the following intra-handshake implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{GHSA-Edgeless-Systems}} [**Severity = HIGH (CVSS 7.4)**]
+- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{CVE-2026-100835}} [**Severity = CRITICAL (CVSS 9.1)**]
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
@@ -623,7 +623,7 @@ The following intra-handshake implementations were vulnerable and have been **ar
 - [CCC Attestation SIG](https://github.com/CCC-Attestation)'s adopted project [intra-handshake attestation](https://github.com/ccc-attestation/attested-tls-poc): declared [vulnerable to relay attacks](https://github.com/CCC-Attestation/attested-tls-poc/pull/58) and **archived**
 - [Cocos AI <= v0.8.2](https://github.com/ultravioletrs/cocos): {{GHSA-Cocos-AI}}  [**Severity = HIGH (CVSS 7.8)**], {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]; **migrated** to post-handshake attestation since v0.9.0
 - [Privasys rustls <= privasys-v0.2.0](https://github.com/Privasys/rustls): {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
-- [Pirvasys go <= privasys-v0.3.0-go1.26.5](https://github.com/Privasys/go): {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
+- [Privasys go <= privasys-v0.3.0-go1.26.5](https://github.com/Privasys/go): {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**], **archived** and Privasys migrated to post-handshake attestation
 
 # Vulnerable Protocol Specifications
 At least the following protocol specifications with intra-handshake attestation *path* are vulnerable to {{CVE-2026-33697}} and {{EUVD-2026-16488}}:
@@ -1039,7 +1039,7 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 | --- | --- | --- | --- | --- |
 | System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), slides, video |
 | BoF @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2640/), slides, video |
-| [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | slides, video |
+| [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | [slides](https://www.researchgate.net/publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), video |
 | [PET-CON 2026.2: 16th Privacy Enhancing Techniques Convention](https://fg-pet.gi.de/veranstaltung/16th-privacy-enhancing-techniques-convention) | Lübeck, Germany | 28-29 Sept, 2026 | [slides](https://www.researchgate.net/publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing) |
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | [slides](https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) |
 | [IETF RATS Interim meeting](https://datatracker.ietf.org/meeting/interim-2026-rats-03/session/rats) | Virtual | 14 Sept, 2026 | [slides](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00), [video](https://youtu.be/y5_SR0-DzH0?t=255) |
