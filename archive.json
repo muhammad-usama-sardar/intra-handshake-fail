@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-29T03:17:24.054759+00:00",
+  "timestamp": "2026-10-01T03:06:24.164864+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1465,6 +1465,182 @@
           "body": "",
           "createdAt": "2026-09-28T01:18:34Z",
           "updatedAt": "2026-09-28T01:18:34Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "id": "PR_kwDOTPsy-c8AAAABFp86NQ",
+      "title": "Update scores",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/24",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-09-29T08:17:23Z",
+      "updatedAt": "2026-09-29T16:01:14Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "60cc7ce1e323a7a837424891a9eea84e6146d69a",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "update-scores",
+      "headRefOid": "3d858af205d20ae5c706bc885c846f3697307b53",
+      "closedAt": "2026-09-29T16:01:14Z",
+      "mergedAt": "2026-09-29T16:01:14Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "48a6d04dab3f0255f9bbb91870c37365e540793e"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPt0oRg",
+          "commit": {
+            "abbreviatedOid": "9c793e6"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-29T08:19:23Z",
+          "updatedAt": "2026-09-29T08:19:23Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABPy9YFg",
+          "commit": {
+            "abbreviatedOid": "3d858af"
+          },
+          "author": "rechard-edward",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-29T15:48:16Z",
+          "updatedAt": "2026-09-29T15:48:16Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "id": "PR_kwDOTPsy-c8AAAABF19J9w",
+      "title": "CCC and AAIF",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/25",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-09-30T07:03:39Z",
+      "updatedAt": "2026-09-30T12:19:37Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "48a6d04dab3f0255f9bbb91870c37365e540793e",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "update1",
+      "headRefOid": "cea53d2d89b93b3ccae53c7be9ad412f5137ebd6",
+      "closedAt": "2026-09-30T12:19:37Z",
+      "mergedAt": "2026-09-30T12:19:37Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "25d07663fea35a956325891b5547fab7aedabdcb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABP6davw",
+          "commit": {
+            "abbreviatedOid": "23e3383"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-30T07:27:00Z",
+          "updatedAt": "2026-09-30T07:27:00Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABP8FuUA",
+          "commit": {
+            "abbreviatedOid": "23e3383"
+          },
+          "author": "rechard-edward",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-30T09:54:38Z",
+          "updatedAt": "2026-09-30T09:54:38Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "id": "PR_kwDOTPsy-c8AAAABF5PFag",
+      "title": "Add Islam",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/26",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Has published a paper in ESORICS\r\n- Will contribute to security analysis ",
+      "createdAt": "2026-09-30T12:35:40Z",
+      "updatedAt": "2026-09-30T17:27:27Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "25d07663fea35a956325891b5547fab7aedabdcb",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-islam",
+      "headRefOid": "5261d9fe8678d006c8cde6bc388377c643b7e0f1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABP9qvtQ",
+          "commit": {
+            "abbreviatedOid": "5261d9f"
+          },
+          "author": "R4iid3n",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-30T12:38:47Z",
+          "updatedAt": "2026-09-30T12:38:47Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABP-JFYA",
+          "commit": {
+            "abbreviatedOid": "5261d9f"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-30T13:22:04Z",
+          "updatedAt": "2026-09-30T13:22:04Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQA9KdA",
+          "commit": {
+            "abbreviatedOid": "5261d9f"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-09-30T17:27:27Z",
+          "updatedAt": "2026-09-30T17:27:27Z",
           "comments": []
         }
       ]
