@@ -30,6 +30,8 @@ Expires: 4 April 2027                                          CoreWeave
                                       HashCloak Inc and Stoffel Labs Inc
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
+                                                          I. Aboubakarov
+                                                                   ESILV
                                                                   A. Gul
                                               Birmingham City University
                                                           1 October 2026
@@ -3110,6 +3112,13 @@ Authors' Addresses
    Iman Schrock
    EMILIA Protocol, Inc.
    Email: team@emiliaprotocol.ai
+
+
+   Islam Aboubakarov
+   Ecole Superieure Ingénieurs Léonard de Vinci Paris
+   92000 Paris
+   France
+   Email: islam.aboubakarov@edu.devinci.fr
 
 
    Ammara Gul
