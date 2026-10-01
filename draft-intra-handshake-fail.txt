@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 3 April 2027                                          CoreWeave
+Expires: 4 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -32,7 +32,7 @@ Expires: 3 April 2027                                          CoreWeave
                                                    EMILIA Protocol, Inc.
                                                                   A. Gul
                                               Birmingham City University
-                                                       30 September 2026
+                                                          1 October 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -98,7 +98,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 April 2027.
+   This Internet-Draft will expire on 4 April 2027.
 
 Copyright Notice
 
@@ -1010,7 +1010,7 @@ Table of Contents
       [*Severity = HIGH (CVSS 7.5)*]
 
    *  Edgeless Systems Contrast (https://github.com/edgelesssys/
-      contrast): [GHSA-Edgeless-Systems] [*Severity = HIGH (CVSS 7.4)*]
+      contrast): [CVE-2026-100835] [*Severity = CRITICAL (CVSS 9.1)*]
 
    If you are aware of any other intra-handshake attestation
    implementation, please let us know so that we can check and
@@ -1036,7 +1036,7 @@ Table of Contents
       rustls): [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*],
       *archived* and Privasys migrated to post-handshake attestation
 
-   *  Pirvasys go <= privasys-v0.3.0-go1.26.5
+   *  Privasys go <= privasys-v0.3.0-go1.26.5
       (https://github.com/Privasys/go): [GHSA-Privasys-go] [*Severity =
       HIGH (CVSS 7.4)*], *archived* and Privasys migrated to post-
       handshake attestation
@@ -2305,8 +2305,10 @@ Table of Contents
    |BoF @ Linux Plumbers Conference 2026            |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2640/), slides, video             |
    |(https://lpc.events/event/20/)                  |Czechia   |2026      |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides, video                                                                         |
-   |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |                                                                                      |
+   |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides (https://www.researchgate.net/                                                 |
+   |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-            |
+   |                                                |          |          |and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-    |
+   |                                                |          |          |fossati-seat-early-attestation), video                                                |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |PET-CON 2026.2: 16th Privacy Enhancing          |Lübeck,   |28-29     |slides (https://www.researchgate.net/                                                 |
    |Techniques Convention (https://fg-pet.gi.de/    |Germany   |Sept, 2026|publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-              |
