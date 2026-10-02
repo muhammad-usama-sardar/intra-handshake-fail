@@ -655,6 +655,13 @@ At least the following protocol specifications with intra-handshake attestation 
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
   - **Unnecessary complexity** is itself a security concern
 
+| Spec | Status |
+|---|---|
+| {{I-D.fossati-tls-attestation-10}} | Withdrawn |
+| {{I-D.ritz-seat-facts}} | Archived |
+| {{I-D.fossati-seat-early-attestation}} | Vulnerable |
+{: title="Summary of vulnerable early attestation drafts"}
+
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
