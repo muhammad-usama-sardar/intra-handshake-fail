@@ -1081,6 +1081,19 @@ Table of Contents
 
       -  *Unnecessary complexity* is itself a security concern
 
+           +======================================+============+
+           | Spec                                 | Status     |
+           +======================================+============+
+           | [I-D.fossati-tls-attestation-10]     | Withdrawn  |
+           +--------------------------------------+------------+
+           | [I-D.ritz-seat-facts]                | Archived   |
+           +--------------------------------------+------------+
+           | [I-D.fossati-seat-early-attestation] | Vulnerable |
+           +--------------------------------------+------------+
+
+              Table 9: Summary of vulnerable early attestation
+                                   drafts
+
 11.  Binding Levels
 
    1.  DH shared secret (gxy) used as shared secret between client and
@@ -1134,7 +1147,7 @@ Table of Contents
     | of Evidence to kc  |                    |           |           |
     +--------------------+--------------------+-----------+-----------+
 
-                           Table 9: Main results
+                           Table 10: Main results
 
    Please see Sec. 7.1 and Figure 5 of [Intra-handshake.fail] for
    details of attacks.
@@ -1202,7 +1215,7 @@ Table of Contents
    |   |           |proposal/)               |                                  |
    +---+-----------+-------------------------+----------------------------------+
 
-                         Table 10: Expected results
+                         Table 11: Expected results
 
 14.  Implications of Findings
 
@@ -2442,7 +2455,7 @@ Table of Contents
    |                                                |          |          |oZidg?list=PLmfkUJc39uMhZsNGmpx-qD-uCoQyMglIp&t=2920)                                 |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
 
-      Table 11: Evidence of several explanations of vulnerabilities to
+      Table 12: Evidence of several explanations of vulnerabilities to
                       the authors of vulnerable drafts
 
 19.1.2.  Archives
