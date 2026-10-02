@@ -900,71 +900,66 @@ Table of Contents
    Severity is based on NIST metrics (https://nvd.nist.gov/vuln-metrics/
    cvss).
 
-   +==============================+=========================================+========+========+
-   |Vulnerability                 |CVE                                      |CVSS    |Severity|
-   +==============================+=========================================+========+========+
-   |wiretap.fail                  |No CVE (Intel                            |-       |None    |
-   |(https://wiretap.fail/files/  |(https://www.intel.com/content/www/us/en/|        |        |
-   |wiretap.pdf)                  |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2025-10-28-001.html) and AMD             |        |        |
-   |                              |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3040.html) announcements)                |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |TEE.fail                      |No CVE                                   |-       |None    |
-   |(https://tee.fail/files/      |                                         |        |        |
-   |paper.pdf)                    |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |DDRop (https://ddropattack.eu/|No CVE (Intel                            |-       |None    |
-   |ddrop.pdf)                    |(https://www.intel.com/content/www/us/en/|        |        |
-   |                              |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2026-08-11-001.html) and AMD             |        |        |
-   |                              |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3048.html) announcements)                |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |TDXdown (https://dl.acm.org/  |Intel                                    |2.5     |Low     |
-   |doi/10.1145/3658644.3690230)  |(https://www.intel.com/content/www/us/en/|        |        |
-   |                              |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2024-10-08-001.html)                     |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Staleus (https://xca-         |CVE-2025-54509 (https://www.cve.org/     |4.0     |Medium  |
-   |attacks.github.io/staleus/    |CVERecord?id=CVE-2025-54509)             |        |        |
-   |staleus_usenix26.pdf)         |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BreakFAST (https://xca-       |CVE-2025-61972 (https://www.cve.org/     |4.2     |Medium  |
-   |attacks.github.io/breakfast/  |CVERecord?id=CVE-2025-6197)              |        |        |
-   |breakfast_oakland26.pdf)      |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BadRAM (https://badram.eu/    |CVE-2024-21944                           |5.3     |Medium  |
-   |badram.pdf)                   |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3015.html)                               |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BreakFAST (https://xca-       |CVE-2025-61971 (https://www.cve.org/     |5.9     |Medium  |
-   |attacks.github.io/breakfast/  |CVERecord?id=CVE-2025-61971)             |        |        |
-   |breakfast_oakland26.pdf)      |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Fabricked (https://xca-       |CVE-2025-54510 (https://www.cve.org/     |5.9     |Medium  |
-   |attacks.github.io/fabricked/  |CVERecord?id=cve-2025-54510)             |        |        |
-   |fabricked_usenix26.pdf)       |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Intra-handshake.fail          |[CVE-2026-33697]                         |7.5     |High    |
-   |(https://www.researchgate.net/|                                         |        |        |
-   |publication/408219182_Intra-  |                                         |        |        |
-   |handshakefail_CVE-2026-       |                                         |        |        |
-   |33697_High-                   |                                         |        |        |
-   |severity_CVE_in_Attested_TLS) |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[CVE-2026-92701]                         |9.1     |Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[CVE-2026-92702]                         |9.1     |Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[GHSA-Edgeless-Systems2]                 |9.0-10.0|Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
+   +============================+=========================================+========+========+
+   |Vulnerability               |CVE                                      |CVSS    |Severity|
+   +============================+=========================================+========+========+
+   |wiretap.fail                |No CVE (Intel                            |-       |None    |
+   |(https://wiretap.fail/files/|(https://www.intel.com/content/www/us/en/|        |        |
+   |wiretap.pdf)                |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2025-10-28-001.html) and AMD             |        |        |
+   |                            |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3040.html) announcements)                |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |TEE.fail                    |No CVE                                   |-       |None    |
+   |(https://tee.fail/files/    |                                         |        |        |
+   |paper.pdf)                  |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |DDRop                       |No CVE (Intel                            |-       |None    |
+   |(https://ddropattack.eu/    |(https://www.intel.com/content/www/us/en/|        |        |
+   |ddrop.pdf)                  |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2026-08-11-001.html) and AMD             |        |        |
+   |                            |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3048.html) announcements)                |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |TDXdown (https://dl.acm.org/|Intel                                    |2.5     |Low     |
+   |doi/10.1145/3658644.3690230)|(https://www.intel.com/content/www/us/en/|        |        |
+   |                            |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2024-10-08-001.html)                     |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |Staleus (https://xca-       |CVE-2025-54509 (https://www.cve.org/     |4.0     |Medium  |
+   |attacks.github.io/staleus/  |CVERecord?id=CVE-2025-54509)             |        |        |
+   |staleus_usenix26.pdf)       |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BreakFAST (https://xca-     |CVE-2025-61972 (https://www.cve.org/     |4.2     |Medium  |
+   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-6197)              |        |        |
+   |breakfast_oakland26.pdf)    |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BadRAM (https://badram.eu/  |CVE-2024-21944                           |5.3     |Medium  |
+   |badram.pdf)                 |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3015.html)                               |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BreakFAST (https://xca-     |CVE-2025-61971 (https://www.cve.org/     |5.9     |Medium  |
+   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-61971)             |        |        |
+   |breakfast_oakland26.pdf)    |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |Fabricked (https://xca-     |CVE-2025-54510 (https://www.cve.org/     |5.9     |Medium  |
+   |attacks.github.io/fabricked/|CVERecord?id=cve-2025-54510)             |        |        |
+   |fabricked_usenix26.pdf)     |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[Intra-handshake.fail]      |[CVE-2026-33697]                         |7.5     |High    |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[CVE-2026-92701]                         |9.1     |Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[CVE-2026-92702]                         |9.1     |Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[GHSA-Edgeless-Systems2]                 |9.0-10.0|Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
 
        Table 7: Comparison with other vulnerabilities in confidential
                             computing literature
@@ -1015,7 +1010,17 @@ Table of Contents
       [*Severity = HIGH (CVSS 7.5)*]
 
    *  Edgeless Systems Contrast (https://github.com/edgelesssys/
-      contrast): [CVE-2026-100835] [*Severity = CRITICAL (CVSS 9.1)*]
+      contrast): [CVE-2026-33697] and [EUVD-2026-16488] [*Severity =
+      HIGH (CVSS 7.5)*]
+
+   Both violate the fundamental requirement in SEAT charter of binding
+   to connection.
+
+   While [CVE-2026-100835] and [GHSA-Edgeless-Systems5] [*Severity =
+   CRITICAL (CVSS 9.1)*] are patched in Contrast v1.16.0, users of
+   Edgeless Systems Contrast need to trust Edgeless Systems for the
+   provided hardware identifiers.  This keeps Edgeless Systems within
+   the TCB.
 
    If you are aware of any other intra-handshake attestation
    implementation, please let us know so that we can check and
@@ -1064,7 +1069,7 @@ Table of Contents
 
    *  [I-D.fossati-seat-early-attestation]: symbolic and (paper-and-pen-
       based) computational proof of insecurity (originally done for -04
-      and applies also to -06)
+      and applies also to -06 and -07)
 
       -  As a SEAT WG participant pointed out, please note that both
          [CVE-2026-33697] and [EUVD-2026-16488] contain a link to
@@ -2697,6 +2702,11 @@ Table of Contents
               local privilege escalation", September 2026,
               <https://github.com/edgelesssys/contrast/security/
               advisories/GHSA-376m-h37w-4rvq>.
+
+   [GHSA-Edgeless-Systems5]
+              Edgeless Systems, "Contrast before 1.16.0 is susceptible
+              to remote attestation relay attacks", August 2026,
+              <https://github.com/advisories/GHSA-jw33-f4wc-8736>.
 
    [GHSA-Privasys-eom]
               Privasys, "enclave-os-mini: RA-TLS challenge certificates

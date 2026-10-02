@@ -2507,7 +2507,7 @@ and trust domains. The following table provides a corresponding low-level view.<
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">
-              <a href="https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS">Intra-handshake.fail</a>
+              <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>
 </td>
             <td class="text-left" rowspan="1" colspan="1">
               <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>
@@ -2620,10 +2620,12 @@ and trust domains. The following table provides a corresponding low-level view.<
           <p id="section-9-2.1.1"><a href="https://ai.meta.com/static-resource/private-processing-technical-whitepaper">Meta's AI</a>: <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> [<strong>Severity = HIGH (CVSS 7.5)</strong>]<a href="#section-9-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-9-2.2">
-          <p id="section-9-2.2.1"><a href="https://github.com/edgelesssys/contrast">Edgeless Systems Contrast</a>: <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]<a href="#section-9-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-9-2.2.1"><a href="https://github.com/edgelesssys/contrast">Edgeless Systems Contrast</a>: <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> [<strong>Severity = HIGH (CVSS 7.5)</strong>]<a href="#section-9-2.2.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-9-3">If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.<a href="#section-9-3" class="pilcrow">¶</a></p>
+<p id="section-9-3">Both violate the fundamental requirement in SEAT charter of binding to connection.<a href="#section-9-3" class="pilcrow">¶</a></p>
+<p id="section-9-4">While <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> and <span>[<a href="#GHSA-Edgeless-Systems5" class="cite xref">GHSA-Edgeless-Systems5</a>]</span> [<strong>Severity = CRITICAL (CVSS 9.1)</strong>] are patched in Contrast v1.16.0, users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers. This keeps Edgeless Systems within the TCB.<a href="#section-9-4" class="pilcrow">¶</a></p>
+<p id="section-9-5">If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.<a href="#section-9-5" class="pilcrow">¶</a></p>
 <div id="archivedmitigated-implementations">
 <section id="section-9.1">
         <h3 id="name-archived-mitigated-implemen">
@@ -2670,7 +2672,7 @@ and trust domains. The following table provides a corresponding low-level view.<
           </ul>
 </li>
         <li class="normal" id="section-10-2.3">
-          <p id="section-10-2.3.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
+          <p id="section-10-2.3.1"><span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06 and -07)<a href="#section-10-2.3.1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-10-2.3.2.1">
               <p id="section-10-2.3.2.1.1">As a SEAT WG participant pointed out, please note that both <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> and <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span> contain a link to <span>[<a href="#GHSA-Cocos-AI" class="cite xref">GHSA-Cocos-AI</a>]</span> that contains a link to <span>[<a href="#SEAT-vulnerability-report" class="cite xref">SEAT-vulnerability-report</a>]</span> that contains the G3 property (cf. <a href="#sec-corr-goals" class="auto internal xref">Section 12</a>) that this draft does not satisfy.<a href="#section-10-2.3.2.1.1" class="pilcrow">¶</a></p>
@@ -4399,6 +4401,10 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
 <dt id="GHSA-Edgeless-Systems4">[GHSA-Edgeless-Systems4]</dt>
         <dd>
 <span class="refAuthor">Edgeless Systems</span>, <span class="refTitle">"Node installer leaves the host containerd configuration world-writable (0666), allowing local privilege escalation"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq">https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="GHSA-Edgeless-Systems5">[GHSA-Edgeless-Systems5]</dt>
+        <dd>
+<span class="refAuthor">Edgeless Systems</span>, <span class="refTitle">"Contrast before 1.16.0 is susceptible to remote attestation relay attacks"</span>, <time datetime="2026-08" class="refDate">August 2026</time>, <span>&lt;<a href="https://github.com/advisories/GHSA-jw33-f4wc-8736">https://github.com/advisories/GHSA-jw33-f4wc-8736</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="GHSA-Privasys-eom">[GHSA-Privasys-eom]</dt>
         <dd>
