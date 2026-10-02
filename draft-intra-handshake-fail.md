@@ -378,6 +378,8 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 ## Intra-handshake.fail
 {{Intra-handshake.fail}} presents a general approach to analyze the intra-handshake (aka early) attestation proposals, regardless of whether they are within the scope of SEAT charter or not. From a security perspective, one of the key decision factors is the candidate binding mechanism. Some binding mechanisms are within scope of SEAT charter and others are not. The artifacts are available in {{Intra-handshake.fail-repo}} under Apache-2.0 license for reproducibility, extensibility, and further research.
 
+- This work resulted in {{CVE-2026-33697}} of CVSS 7.5.
+
 ## ID-Crisis
 A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility, extensibility, and extensibility.
 
@@ -844,15 +846,6 @@ If you have written an article on this and would like to be added here, please s
 - [akber](https://akber.com/sovereignty-in-the-cloud-is-an-illusion/)
 - [ad-hoc news](https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475)
 - [AIMultiple](https://aimultiple.com/privacy-enhancing-technologies)
-
-### Security Researchers
-
-Several credible security researchers, such as the following, have publicly attested to it.
-
-- [Michael Pak](https://www.linkedin.com/posts/michaelpak_confidential-computings-core-trust-mechanism-activity-7479415537836376064-q-A4/)
-- [Rodrigo Branco](https://www.linkedin.com/posts/rrbranco_one-more-evidence-that-there-is-no-such-a-share-7479582122366615552-X0A5/)
-- [Bart Preneel](https://www.linkedin.com/posts/bart-preneel-4451412_on-the-limits-of-confidential-computing-share-7479549718294077440-wfi3/)
-- [Thorsten Strufe](https://www.linkedin.com/in/strufe/recent-activity/all/)
 
 ### Germany's BSI
 
