@@ -440,6 +440,13 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
+| [GHSA-wqf9-jfmm-f68v](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
+| [GHSA-jj9v-7353-35cv](https://github.com/veraison/services/security/advisories/GHSA-jj9v-7353-35cv) | 9.0-10.0 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
+| [GHSA-9rfg-55gm-hwvw](https://github.com/veraison/services/security/advisories/GHSA-9rfg-55gm-hwvw) | 7.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| [GHSA-ccfw-q8vr-cww3](https://github.com/veraison/services/security/advisories/GHSA-ccfw-q8vr-cww3) | 5.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| [GHSA-ffg7-hfjp-rj7v](https://github.com/veraison/services/security/advisories/GHSA-ffg7-hfjp-rj7v) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-cxxj-pvvx-6xcv](https://github.com/veraison/services/security/advisories/GHSA-cxxj-pvvx-6xcv) | 4.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-pv6g-4385-q8c8](https://github.com/veraison/services/security/advisories/GHSA-pv6g-4385-q8c8) | 6.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
