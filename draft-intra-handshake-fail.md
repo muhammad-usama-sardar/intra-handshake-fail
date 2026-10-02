@@ -219,6 +219,12 @@ normative:
     target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq
     author:
       - ins: Edgeless Systems
+  GHSA-Edgeless-Systems5:
+    title: "Contrast before 1.16.0 is susceptible to remote attestation relay attacks"
+    date: August 2026
+    target: https://github.com/advisories/GHSA-jw33-f4wc-8736
+    author:
+      - ins: Edgeless Systems
   SEAT-vulnerability-report:
     title: "Relay Attacks in Intra-handshake Attestation for Confidential Agentic AI Systems"
     date: 11 Jan 2026,
@@ -599,7 +605,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [BadRAM](https://badram.eu/badram.pdf)| [CVE-2024-21944](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
-| [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
+| {{Intra-handshake.fail}} | {{CVE-2026-33697}} | 7.5 | High |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Critical |
@@ -629,7 +635,11 @@ These are preliminary estimates of scores, not final assigned score. They are st
 As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, at least the following intra-handshake implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{CVE-2026-100835}} [**Severity = CRITICAL (CVSS 9.1)**]
+- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
+
+Both violate the fundamental requirement in SEAT charter of binding to connection.
+
+While {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] are patched in Contrast v1.16.0, users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers. This keeps Edgeless Systems within the TCB.
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
@@ -649,7 +659,7 @@ At least the following protocol specifications with intra-handshake attestation 
 - {{I-D.ritz-seat-facts}}: symbolic proof of insecurity; draft **archived**
   - violates G3 property in our analysis
   - unnecessary complexity is itself a security concern
-- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)
+- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06 and -07)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to {{GHSA-Cocos-AI}} that contains a link to {{SEAT-vulnerability-report}} that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
