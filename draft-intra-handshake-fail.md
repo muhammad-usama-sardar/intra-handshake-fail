@@ -116,6 +116,13 @@ author:
     organization: Birmingham City University
     country: UK
     email: "ammara.gul@bcu.ac.uk"
+ -
+    fullname: "Venkat Malladi"
+    organization: Verily
+    city: Dallas, TX
+    country: United States of America
+    code: 75019
+    email: vmalladi@verily.com
 
 normative:
   Intra-handshake.fail:
