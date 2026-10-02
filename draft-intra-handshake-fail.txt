@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 4 April 2027                                          CoreWeave
+Expires: 5 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -34,7 +34,9 @@ Expires: 4 April 2027                                          CoreWeave
                                                                    ESILV
                                                                   A. Gul
                                               Birmingham City University
-                                                          1 October 2026
+                                                              V. Malladi
+                                                                  Verily
+                                                          2 October 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
@@ -100,7 +102,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 April 2027.
+   This Internet-Draft will expire on 5 April 2027.
 
 Copyright Notice
 
@@ -3125,3 +3127,10 @@ Authors' Addresses
    Birmingham City University
    United Kingdom
    Email: ammara.gul@bcu.ac.uk
+
+
+   Venkat Malladi
+   Verily
+   Dallas, TX,  75019
+   United States of America
+   Email: vmalladi@verily.com
