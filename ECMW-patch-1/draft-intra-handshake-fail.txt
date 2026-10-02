@@ -2257,10 +2257,11 @@ Table of Contents
    Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock)
    are ethical researchers aiming to protect the community from the
    potential harm caused by the exploitability of the vulnerabilities in
-   early attestation.  We have *responsibly disclosed* the
-   vulnerabilities to the respective developers and maintainers
-   following their respective disclosure processes and provided them our
-   proposed mitigations and requested them to take rapid action.
+   early attestation.  The finders of Section 2 have *responsibly
+   disclosed* the vulnerabilities to the respective developers and
+   maintainers following their respective disclosure processes and
+   provided them the proposed mitigations and requested them to take
+   rapid action.
 
    We have released only the formal analysis for published CVE-
    2026-33697.  To minimize exploit in the wild, we have not publicly
