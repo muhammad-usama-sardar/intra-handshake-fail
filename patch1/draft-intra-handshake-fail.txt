@@ -160,8 +160,9 @@ Table of Contents
        15.4.2.  Mitigation
      15.5.  Artifacts
    16. Media Coverage
-     16.1.  EarlyAttestationTschüss (EAT) (CVE-2026-100835)
+     16.1.  EarlyAttestationTschüss (EAT)
      16.2.  EarlyAttestationBleed
+       16.2.1.  CVE-2026-100833
      16.3.  Intra-handshake.fail
        16.3.1.  Germany's BSI
    17. Reviews
@@ -1495,7 +1496,9 @@ Table of Contents
    coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-
    handshake.fail."
 
-16.1.  EarlyAttestationTschüss (EAT) (CVE-2026-100835)
+16.1.  EarlyAttestationTschüss (EAT)
+
+   [CVE-2026-100835]
 
    *  Threat radar (https://radar.offseq.com/threat/contrast-before-
       1160-is-susceptible-to-remote-attestation-relay-attacks-cve-
@@ -1565,6 +1568,24 @@ Table of Contents
 
    *  GCVE's db.gcve.eu (CVE-2026-92702) (https://db.gcve.eu/vuln/cve-
       2026-92702)
+
+16.2.1.  CVE-2026-100833
+
+   *  America's Cyber Defense Agency (CISA) (https://www.cisa.gov/news-
+      events/bulletins/sb26-271)
+
+   *  Alan Turing Institute (https://github.com/alan-turing-institute/
+      cyber-threat-observatory/blob/main/reports/2026-09-27/TIER_3_CVE-
+      2026-100833.md)
+
+   *  Offseq (https://radar.offseq.com/threat/contrast-
+      edgelesssyscontrast-versions-1140-before-1231-generate-runtime-
+      policies-that-fail-to-detect-d602b2a9f5df6321)
+
+   *  The Hacker wire (https://www.thehackerwire.com/vulnerability/CVE-
+      2026-100833/)
+
+   *  CVE Brief (https://cvebrief.com/cve/cve-2026-100833/)
 
 16.3.  Intra-handshake.fail
 
