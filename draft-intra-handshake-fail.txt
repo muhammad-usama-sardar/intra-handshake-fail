@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 5 April 2027                                          CoreWeave
+Expires: 6 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,25 +36,26 @@ Expires: 5 April 2027                                          CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                          2 October 2026
+                                                          3 October 2026
 
 
- Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1,
-  CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other
-               CVEs of up to expected CVSS 10.0 upcoming)
+Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1,
+CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-100833
+  of CVSS 8.2, CVE-2026-33697 of CVSS 7.5, and 36 other CVEs of up to
+                      expected CVSS 10.0 upcoming)
                    draft-intra-handshake-fail-latest
 
 Abstract
 
    The draft aims to provide technical details of [CVE-2026-33697],
    [EUVD-2026-16488], [CVE-2026-92701], [EUVD-2026-83194],
-   [CVE-2026-92702], [EUVD-2026-83192] and several GitHub Security
-   Advisories (GHSAs) which provide substantial technical evidence of
-   how early attestation fails in practice, even *without physical
-   access* to the desired machine.  Moreover, since continuous
-   attestation is generally required [CSA-eBPF]
-   [MITRE-Continuous-Attestation], early attestation adds *unnecessary
-   complexity*. The results are backed by the research
+   [CVE-2026-92702], [EUVD-2026-83192], [CVE-2026-100833],
+   [EUVD-2026-87851] and several GitHub Security Advisories (GHSAs)
+   which provide substantial technical evidence of how early attestation
+   fails in practice, even *without physical access* to the desired
+   machine.  Moreover, since continuous attestation is generally
+   required [CSA-eBPF] [MITRE-Continuous-Attestation], early attestation
+   adds *unnecessary complexity*. The results are backed by the research
    [Intra-handshake.fail], [TLS-RA], [EarlyAttestationBleed] and the
    artifacts [Intra-handshake.fail-repo] in state-of-the-art formal
    analysis tool, ProVerif, under Apache-2.0 license for
@@ -102,7 +103,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 April 2027.
+   This Internet-Draft will expire on 6 April 2027.
 
 Copyright Notice
 
@@ -159,7 +160,7 @@ Table of Contents
        15.4.2.  Mitigation
      15.5.  Artifacts
    16. Media Coverage
-     16.1.  Edgeless Systems (CVE-2026-100835)
+     16.1.  EarlyAttestationTschüss (EAT) (CVE-2026-100835)
      16.2.  EarlyAttestationBleed
      16.3.  Intra-handshake.fail
        16.3.1.  Germany's BSI
@@ -196,7 +197,7 @@ Table of Contents
    scores.  Severity is based on NIST standard metrics
    (https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest
    possible vulnerability score. *For TLS reference, Heartbleed was CVSS
-   7.5*. Scores of 13 more published GHSAs is yet to be confirmed and
+   7.5*. Scores of 20 more published GHSAs is yet to be confirmed and
    will be added later in this table.
 
    +==========+==========+===========================+================+
@@ -209,7 +210,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.1      | Critical | 8                         | 3              |
    +----------+----------+---------------------------+----------------+
-   | 8.2      | High     | 1                         | -              |
+   | 8.2      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
    | 7.8      | High     | 2                         | -              |
    +----------+----------+---------------------------+----------------+
@@ -263,13 +264,14 @@ Table of Contents
    attestation:
 
    *  Ultraviolet Cocos AI in TDX path resulting in [CVE-2026-92701] of
-      CVSS 9.1
+      CVSS 9.1.
 
    *  Ultraviolet Cocos AI in SEV-SNP path resulting in [CVE-2026-92702]
-      of CVSS 9.1
+      of CVSS 9.1.
 
    *  Edgeless Systems Contrast in policies resulting in
-      [GHSA-Edgeless-Systems2] of CVSS 9.0-10.0
+      [GHSA-Edgeless-Systems2] of CVSS 9.0-10.0 and [CVE-2026-100833] of
+      CVSS 8.2.
 
 2.  Published GHSAs/CVEs
 
@@ -280,175 +282,272 @@ Table of Contents
    overall system.  The key take away is that early attestation adds
    unnecessary complexity to an already complex system.
 
-   +===============================+==========+========================+
-   | GHSA/CVE                      | CVSS     | Finders                |
-   +===============================+==========+========================+
-   | [GHSA-Cocos-AI]               | 7.8      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, and Jean-     |
-   |                               |          | Marie Jacquet          |
-   +-------------------------------+----------+------------------------+
-   | [CVE-2026-33697]              | 7.5      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, and Jean-     |
-   |                               |          | Marie Jacquet          |
-   +-------------------------------+----------+------------------------+
-   | [EUVD-2026-16488]             | 7.5      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, and Jean-     |
-   |                               |          | Marie Jacquet          |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Edgeless-Systems]       | 7.4      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Cocos-AI2]              | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Cocos-AI3]              | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Edgeless-Systems2]      | 9.0-10.0 | Markus Rudy;           |
-   |                               |          | independently by       |
-   |                               |          | Songbo Bu and          |
-   |                               |          | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rustls]        | 9.1      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, Jean-Marie    |
-   |                               |          | Jacquet, and Songbo    |
-   |                               |          | Bu                     |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-go]            | 9.1      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, Jean-Marie    |
-   |                               |          | Jacquet, and Songbo    |
-   |                               |          | Bu                     |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-eov]           | 9.1      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, Jean-Marie    |
-   |                               |          | Jacquet, and Songbo    |
-   |                               |          | Bu                     |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-eom]           | 9.1      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, Jean-Marie    |
-   |                               |          | Jacquet, and Songbo    |
-   |                               |          | Bu                     |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rtc]           | 9.1      | Muhammad Usama         |
-   |                               |          | Sardar, Viacheslav     |
-   |                               |          | Dubeyko, Jean-Marie    |
-   |                               |          | Jacquet, and Songbo    |
-   |                               |          | Bu                     |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rtc-da]        | 7.4      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Privasys-rtc-tcu]       | 6.3      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [CVE-2026-92701]              | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | [CVE-2026-92702]              | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | [EUVD-2026-83194]             | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | [EUVD-2026-83192]             | 9.1      | Muhammad Usama Sardar  |
-   |                               |          | and Songbo Bu          |
-   +-------------------------------+----------+------------------------+
-   | GHSA-322v-xwfj-63cm           | 9.8      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-322v-xwfj-63cm)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-m9p9-3hxp-4j6j           | 9.1      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-m9p9-3hxp-4j6j)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-ppc4-fg56-x397           | 6.5      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-ppc4-fg56-x397)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-6j47-3cm6-9cg6           | 8.2      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-6j47-3cm6-9cg6)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-4755-rh6c-694j           | 7.4      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-4755-rh6c-694j)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-6f8q-88mv-c8vr           | 6.3      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-6f8q-88mv-c8vr)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-qqq3-6c47-684v           | 7.5      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-qqq3-6c47-684v)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-xxr6-w252-4ggx           | 7.5      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-xxr6-w252-4ggx)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-fmrx-fjqw-37gp           | 7.7      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-fmrx-fjqw-37gp)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-f96w-jjf8-xpw3           | 5.3      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-f96w-jjf8-xpw3)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-fqrx-3wc2-4g49           | 4.4      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-fqrx-3wc2-4g49)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-mrgr-34cc-fcg8           | 3.7      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-mrgr-34cc-fcg8)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | GHSA-wqf9-jfmm-f68v           | 4.2      | Songbo Bu, Chengxin    |
-   | (https://github.com/Privasys/ |          | Huang, and Muhammad    |
-   | enclave-os-                   |          | Usama Sardar           |
-   | mini/security/advisories/     |          |                        |
-   | GHSA-wqf9-jfmm-f68v)          |          |                        |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Edgeless-Systems3]      | 7.7      | Sebastian Jylanki      |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Edgeless-Systems4]      | 7.8      | Chengxin Huang,        |
-   |                               |          | Songbo Bu, and         |
-   |                               |          | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Cocos-AI4]              | 7.4      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [GHSA-Cocos-AI5]              | 6.3      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [CVE-2026-100835]             | 9.1      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
-   | [EUVD-2026-87851]             | 9.1      | Muhammad Usama Sardar  |
-   +-------------------------------+----------+------------------------+
+   +==========================================================+========+=============+
+   |GHSA/CVE                                                  |CVSS    |Finders      |
+   +==========================================================+========+=============+
+   |[GHSA-Cocos-AI]                                           |7.8     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko, and |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet      |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-33697]                                          |7.5     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko, and |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet      |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-16488]                                         |7.5     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko, and |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet      |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems]                                   |7.4     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI2]                                          |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI3]                                          |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems2]                                  |9.0-10.0|Markus Rudy; |
+   |                                                          |        |independently|
+   |                                                          |        |by Songbo Bu |
+   |                                                          |        |and Muhammad |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rustls]                                    |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-go]                                        |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-eov]                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-eom]                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc]                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc-da]                                    |7.4     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Privasys-rtc-tcu]                                   |6.3     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-92701]                                          |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-92702]                                          |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-83194]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-83192]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-322v-xwfj-63cm (https://github.com/Privasys/enclave- |9.8     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-322v-xwfj-63cm)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-m9p9-3hxp-4j6j (https://github.com/Privasys/enclave- |9.1     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-m9p9-3hxp-4j6j)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-ppc4-fg56-x397 (https://github.com/Privasys/enclave- |6.5     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-ppc4-fg56-x397)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-6j47-3cm6-9cg6 (https://github.com/Privasys/enclave- |8.2     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-6j47-3cm6-9cg6)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-4755-rh6c-694j (https://github.com/Privasys/enclave- |7.4     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-4755-rh6c-694j)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-6f8q-88mv-c8vr (https://github.com/Privasys/enclave- |6.3     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-6f8q-88mv-c8vr)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-qqq3-6c47-684v (https://github.com/Privasys/enclave- |7.5     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-qqq3-6c47-684v)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-xxr6-w252-4ggx (https://github.com/Privasys/enclave- |7.5     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-xxr6-w252-4ggx)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-fmrx-fjqw-37gp (https://github.com/Privasys/enclave- |7.7     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-fmrx-fjqw-37gp)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-f96w-jjf8-xpw3 (https://github.com/Privasys/enclave- |5.3     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-f96w-jjf8-xpw3)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-fqrx-3wc2-4g49 (https://github.com/Privasys/enclave- |4.4     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-fqrx-3wc2-4g49)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-mrgr-34cc-fcg8 (https://github.com/Privasys/enclave- |3.7     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-mrgr-34cc-fcg8)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-wqf9-jfmm-f68v (https://github.com/Privasys/enclave- |4.2     |Songbo Bu,   |
+   |os-mini/security/advisories/GHSA-wqf9-jfmm-f68v)          |        |Chengxin     |
+   |                                                          |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems3]                                  |7.7     |Sebastian    |
+   |                                                          |        |Jylanki      |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems4]                                  |7.8     |Chengxin     |
+   |                                                          |        |Huang, Songbo|
+   |                                                          |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI4]                                          |7.4     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Cocos-AI5]                                          |6.3     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[GHSA-Edgeless-Systems6]                                  |7.6     |Markus Rudy; |
+   |                                                          |        |independently|
+   |                                                          |        |by Songbo Bu |
+   |                                                          |        |and Muhammad |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-100833]                                         |8.2     |Markus Rudy; |
+   |                                                          |        |independently|
+   |                                                          |        |by Songbo Bu |
+   |                                                          |        |and Muhammad |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-87853]                                         |7.6     |Markus Rudy; |
+   |                                                          |        |independently|
+   |                                                          |        |by Songbo Bu |
+   |                                                          |        |and Muhammad |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-100835]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-87851]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-wqf9-jfmm-f68v                                       |Moderate|Chengxin     |
+   |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
+   |GHSA-q46g-34w4-vhmp)                                      |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar;|
+   |                                                          |        |independently|
+   |                                                          |        |by XOR       |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-jj9v-7353-35cv                                       |9.0-10.0|Chengxin     |
+   |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
+   |GHSA-jj9v-7353-35cv)                                      |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar;|
+   |                                                          |        |independently|
+   |                                                          |        |by XOR       |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-9rfg-55gm-hwvw                                       |7.5     |Chengxin     |
+   |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
+   |GHSA-9rfg-55gm-hwvw)                                      |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-ccfw-q8vr-cww3                                       |5.5     |Chengxin     |
+   |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
+   |GHSA-ccfw-q8vr-cww3)                                      |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-ffg7-hfjp-rj7v                                       |6.5     |Songbo Bu,   |
+   |(https://github.com/veraison/services/security/advisories/|        |Chengxin     |
+   |GHSA-ffg7-hfjp-rj7v)                                      |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-cxxj-pvvx-6xcv                                       |4.3     |Songbo Bu,   |
+   |(https://github.com/veraison/services/security/advisories/|        |Chengxin     |
+   |GHSA-cxxj-pvvx-6xcv)                                      |        |Huang, and   |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-pv6g-4385-q8c8                                       |6.5     |Chengxin     |
+   |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
+   |GHSA-pv6g-4385-q8c8)                                      |        |Bu, and      |
+   |                                                          |        |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
 
       Table 2: GHSAs/CVEs for implementations of early attestation and
        finders in (roughly) chronological order of publishing -- CVSS
@@ -879,6 +978,14 @@ Table of Contents
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |CVE [CVE-2026-100833] published  [*Severity = HIGH (CVSS 8.2)*]             |27        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-87853]  [*Severity = HIGH (CVSS 7.6)*]      |27        |
+   |                                                                            |September,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
                               acknowledgements
@@ -891,8 +998,24 @@ Table of Contents
 6.  EU ENISA
 
    European Union's ENISA (https://euvd.enisa.europa.eu/homepage) has
-   independently published [EUVD-2026-16488] with CVSS 7.5 to
-   acknowledge this vulnerability.
+   independently published the following EUVDs to acknowledge the
+   vulnerabilities.
+
+                  +===================+======+==========+
+                  | EUVD              | CVSS | Severity |
+                  +===================+======+==========+
+                  | [EUVD-2026-16488] | 7.5  | High     |
+                  +-------------------+------+----------+
+                  | [EUVD-2026-83194] | 9.1  | Critical |
+                  +-------------------+------+----------+
+                  | [EUVD-2026-83192] | 9.1  | Critical |
+                  +-------------------+------+----------+
+                  | [EUVD-2026-87851] | 9.1  | Critical |
+                  +-------------------+------+----------+
+                  | [EUVD-2026-87853] | 7.6  | High     |
+                  +-------------------+------+----------+
+
+                       Table 7: ENISA's issued EUVDs
 
 7.  Comparison with Other Vulnerabilities in Confidential Computing
     Literature
@@ -900,73 +1023,68 @@ Table of Contents
    Severity is based on NIST metrics (https://nvd.nist.gov/vuln-metrics/
    cvss).
 
-   +==============================+=========================================+========+========+
-   |Vulnerability                 |CVE                                      |CVSS    |Severity|
-   +==============================+=========================================+========+========+
-   |wiretap.fail                  |No CVE (Intel                            |-       |None    |
-   |(https://wiretap.fail/files/  |(https://www.intel.com/content/www/us/en/|        |        |
-   |wiretap.pdf)                  |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2025-10-28-001.html) and AMD             |        |        |
-   |                              |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3040.html) announcements)                |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |TEE.fail                      |No CVE                                   |-       |None    |
-   |(https://tee.fail/files/      |                                         |        |        |
-   |paper.pdf)                    |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |DDRop (https://ddropattack.eu/|No CVE (Intel                            |-       |None    |
-   |ddrop.pdf)                    |(https://www.intel.com/content/www/us/en/|        |        |
-   |                              |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2026-08-11-001.html) and AMD             |        |        |
-   |                              |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3048.html) announcements)                |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |TDXdown (https://dl.acm.org/  |Intel                                    |2.5     |Low     |
-   |doi/10.1145/3658644.3690230)  |(https://www.intel.com/content/www/us/en/|        |        |
-   |                              |security-center/announcement/intel-      |        |        |
-   |                              |security-announcement-                   |        |        |
-   |                              |2024-10-08-001.html)                     |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Staleus (https://xca-         |CVE-2025-54509 (https://www.cve.org/     |4.0     |Medium  |
-   |attacks.github.io/staleus/    |CVERecord?id=CVE-2025-54509)             |        |        |
-   |staleus_usenix26.pdf)         |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BreakFAST (https://xca-       |CVE-2025-61972 (https://www.cve.org/     |4.2     |Medium  |
-   |attacks.github.io/breakfast/  |CVERecord?id=CVE-2025-6197)              |        |        |
-   |breakfast_oakland26.pdf)      |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BadRAM (https://badram.eu/    |CVE-2024-21944                           |5.3     |Medium  |
-   |badram.pdf)                   |(https://www.amd.com/en/resources/       |        |        |
-   |                              |product-security/bulletin/amd-sb-        |        |        |
-   |                              |3015.html)                               |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |BreakFAST (https://xca-       |CVE-2025-61971 (https://www.cve.org/     |5.9     |Medium  |
-   |attacks.github.io/breakfast/  |CVERecord?id=CVE-2025-61971)             |        |        |
-   |breakfast_oakland26.pdf)      |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Fabricked (https://xca-       |CVE-2025-54510 (https://www.cve.org/     |5.9     |Medium  |
-   |attacks.github.io/fabricked/  |CVERecord?id=cve-2025-54510)             |        |        |
-   |fabricked_usenix26.pdf)       |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |Intra-handshake.fail          |[CVE-2026-33697]                         |7.5     |High    |
-   |(https://www.researchgate.net/|                                         |        |        |
-   |publication/408219182_Intra-  |                                         |        |        |
-   |handshakefail_CVE-2026-       |                                         |        |        |
-   |33697_High-                   |                                         |        |        |
-   |severity_CVE_in_Attested_TLS) |                                         |        |        |
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[CVE-2026-92701]                         |9.1     |Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[CVE-2026-92702]                         |9.1     |Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
-   |[EarlyAttestationBleed]       |[GHSA-Edgeless-Systems2]                 |9.0-10.0|Critical|
-   +------------------------------+-----------------------------------------+--------+--------+
+   +============================+=========================================+========+========+
+   |Vulnerability               |CVE                                      |CVSS    |Severity|
+   +============================+=========================================+========+========+
+   |wiretap.fail                |No CVE (Intel                            |-       |None    |
+   |(https://wiretap.fail/files/|(https://www.intel.com/content/www/us/en/|        |        |
+   |wiretap.pdf)                |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2025-10-28-001.html) and AMD             |        |        |
+   |                            |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3040.html) announcements)                |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |TEE.fail                    |No CVE                                   |-       |None    |
+   |(https://tee.fail/files/    |                                         |        |        |
+   |paper.pdf)                  |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |DDRop                       |No CVE (Intel                            |-       |None    |
+   |(https://ddropattack.eu/    |(https://www.intel.com/content/www/us/en/|        |        |
+   |ddrop.pdf)                  |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2026-08-11-001.html) and AMD             |        |        |
+   |                            |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3048.html) announcements)                |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |TDXdown (https://dl.acm.org/|Intel                                    |2.5     |Low     |
+   |doi/10.1145/3658644.3690230)|(https://www.intel.com/content/www/us/en/|        |        |
+   |                            |security-center/announcement/intel-      |        |        |
+   |                            |security-announcement-                   |        |        |
+   |                            |2024-10-08-001.html)                     |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |Staleus (https://xca-       |CVE-2025-54509 (https://www.cve.org/     |4.0     |Medium  |
+   |attacks.github.io/staleus/  |CVERecord?id=CVE-2025-54509)             |        |        |
+   |staleus_usenix26.pdf)       |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BreakFAST (https://xca-     |CVE-2025-61972 (https://www.cve.org/     |4.2     |Medium  |
+   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-6197)              |        |        |
+   |breakfast_oakland26.pdf)    |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BadRAM (https://badram.eu/  |CVE-2024-21944                           |5.3     |Medium  |
+   |badram.pdf)                 |(https://www.amd.com/en/resources/       |        |        |
+   |                            |product-security/bulletin/amd-sb-        |        |        |
+   |                            |3015.html)                               |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |BreakFAST (https://xca-     |CVE-2025-61971 (https://www.cve.org/     |5.9     |Medium  |
+   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-61971)             |        |        |
+   |breakfast_oakland26.pdf)    |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |Fabricked (https://xca-     |CVE-2025-54510 (https://www.cve.org/     |5.9     |Medium  |
+   |attacks.github.io/fabricked/|CVERecord?id=cve-2025-54510)             |        |        |
+   |fabricked_usenix26.pdf)     |                                         |        |        |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[Intra-handshake.fail]      |[CVE-2026-33697]                         |7.5     |High    |
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[CVE-2026-92701]                         |9.1     |Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[CVE-2026-92702]                         |9.1     |Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
+   |[EarlyAttestationBleed]     |[GHSA-Edgeless-Systems2]                 |9.0-10.0|Critical|
+   +----------------------------+-----------------------------------------+--------+--------+
 
-       Table 7: Comparison with other vulnerabilities in confidential
+       Table 8: Comparison with other vulnerabilities in confidential
                             computing literature
 
    The comparison of the above with CVSS up to *10.0* for early
@@ -998,7 +1116,7 @@ Table of Contents
           | 6.3      | Medium   | 7                             |
           +----------+----------+-------------------------------+
 
-              Table 8: Expected CVEs for intra-handshake (aka
+              Table 9: Expected CVEs for intra-handshake (aka
                early) attestation under review and disclosure
 
    These are preliminary estimates of scores, not final assigned score.
@@ -1015,7 +1133,17 @@ Table of Contents
       [*Severity = HIGH (CVSS 7.5)*]
 
    *  Edgeless Systems Contrast (https://github.com/edgelesssys/
-      contrast): [CVE-2026-100835] [*Severity = CRITICAL (CVSS 9.1)*]
+      contrast): [CVE-2026-33697] and [EUVD-2026-16488] [*Severity =
+      HIGH (CVSS 7.5)*]
+
+   Both violate the fundamental requirement in SEAT charter of binding
+   to connection.
+
+   While [CVE-2026-100835] and [GHSA-Edgeless-Systems5] [*Severity =
+   CRITICAL (CVSS 9.1)*] are patched in Contrast v1.16.0, users of
+   Edgeless Systems Contrast need to trust Edgeless Systems for the
+   provided hardware identifiers.  This keeps Edgeless Systems within
+   the TCB.
 
    If you are aware of any other intra-handshake attestation
    implementation, please let us know so that we can check and
@@ -1064,7 +1192,7 @@ Table of Contents
 
    *  [I-D.fossati-seat-early-attestation]: symbolic and (paper-and-pen-
       based) computational proof of insecurity (originally done for -04
-      and applies also to -06)
+      and applies also to -06 and -07)
 
       -  As a SEAT WG participant pointed out, please note that both
          [CVE-2026-33697] and [EUVD-2026-16488] contain a link to
@@ -1080,6 +1208,19 @@ Table of Contents
          from any *shared secret* in this draft.
 
       -  *Unnecessary complexity* is itself a security concern
+
+           +======================================+============+
+           | Spec                                 | Status     |
+           +======================================+============+
+           | [I-D.fossati-tls-attestation-10]     | Withdrawn  |
+           +--------------------------------------+------------+
+           | [I-D.ritz-seat-facts]                | Archived   |
+           +--------------------------------------+------------+
+           | [I-D.fossati-seat-early-attestation] | Vulnerable |
+           +--------------------------------------+------------+
+
+             Table 10: Summary of vulnerable early attestation
+                                   drafts
 
 11.  Binding Levels
 
@@ -1134,7 +1275,7 @@ Table of Contents
     | of Evidence to kc  |                    |           |           |
     +--------------------+--------------------+-----------+-----------+
 
-                           Table 9: Main results
+                           Table 11: Main results
 
    Please see Sec. 7.1 and Figure 5 of [Intra-handshake.fail] for
    details of attacks.
@@ -1202,7 +1343,7 @@ Table of Contents
    |   |           |proposal/)               |                                  |
    +---+-----------+-------------------------+----------------------------------+
 
-                         Table 10: Expected results
+                         Table 12: Expected results
 
 14.  Implications of Findings
 
@@ -1354,7 +1495,7 @@ Table of Contents
    coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-
    handshake.fail."
 
-16.1.  Edgeless Systems (CVE-2026-100835)
+16.1.  EarlyAttestationTschüss (EAT) (CVE-2026-100835)
 
    *  Threat radar (https://radar.offseq.com/threat/contrast-before-
       1160-is-susceptible-to-remote-attestation-relay-attacks-cve-
@@ -2442,7 +2583,7 @@ Table of Contents
    |                                                |          |          |oZidg?list=PLmfkUJc39uMhZsNGmpx-qD-uCoQyMglIp&t=2920)                                 |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
 
-      Table 11: Evidence of several explanations of vulnerabilities to
+      Table 13: Evidence of several explanations of vulnerabilities to
                       the authors of vulnerable drafts
 
 19.1.2.  Archives
@@ -2596,6 +2737,11 @@ Table of Contents
               in the AMD SEV-SNP path", September 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-92702>.
 
+   [CVE-2026-100833]
+              CVE, "Contrast before 1.23.1 Image Substitution via Policy
+              Generation", September 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-100833>.
+
    [CVE-2026-100835]
               CVE, "Contrast before 1.16.0 Remote Attestation Relay
               Attack", September 2026,
@@ -2625,6 +2771,10 @@ Table of Contents
    [EUVD-2026-87851]
               ENISA, "EUVD-2026-87851", September 2026,
               <https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851>.
+
+   [EUVD-2026-87853]
+              ENISA, "EUVD-2026-87853", September 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-87853>.
 
    [GHSA-Cocos-AI]
               Ultraviolet Cocos AI, "CoCoS attested TLS is vulnerable to
@@ -2684,6 +2834,18 @@ Table of Contents
               local privilege escalation", September 2026,
               <https://github.com/edgelesssys/contrast/security/
               advisories/GHSA-376m-h37w-4rvq>.
+
+   [GHSA-Edgeless-Systems5]
+              Edgeless Systems, "Contrast before 1.16.0 is susceptible
+              to remote attestation relay attacks", August 2026,
+              <https://github.com/advisories/GHSA-jw33-f4wc-8736>.
+
+   [GHSA-Edgeless-Systems6]
+              Edgeless Systems, "Contrast (edgelesssys/contrast)
+              versions 1.14.0 before 1.23.1 generate runtime policies
+              that fail to detect all container image substitutions.",
+              September 2026,
+              <https://github.com/advisories/GHSA-MJJ6-PX65-JQ92>.
 
    [GHSA-Privasys-eom]
               Privasys, "enclave-os-mini: RA-TLS challenge certificates
