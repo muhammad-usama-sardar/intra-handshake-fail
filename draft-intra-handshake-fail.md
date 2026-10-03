@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-100833 of CVSS 8.2, CVE-2026-33697 of CVSS 7.5, and 36 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -18,6 +18,8 @@ keyword:
  - CVE-2026-33697
  - CVE-2026-92701
  - CVE-2026-92702
+ - CVE-2026-100833
+ - CVE-2026-100835
 venue:
 #  group: WG
 #  type: Working Group
@@ -219,6 +221,12 @@ normative:
     target: https://github.com/edgelesssys/contrast/security/advisories/GHSA-376m-h37w-4rvq
     author:
       - ins: Edgeless Systems
+  GHSA-Edgeless-Systems5:
+    title: "Contrast before 1.16.0 is susceptible to remote attestation relay attacks"
+    date: August 2026
+    target: https://github.com/advisories/GHSA-jw33-f4wc-8736
+    author:
+      - ins: Edgeless Systems
   SEAT-vulnerability-report:
     title: "Relay Attacks in Intra-handshake Attestation for Confidential Agentic AI Systems"
     date: 11 Jan 2026,
@@ -333,6 +341,30 @@ normative:
      title: EUVD-2026-87851
      target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
      date: 27 Sept 2026
+  CVE-2026-100833:
+     author:
+        org: CVE
+     title: Contrast before 1.23.1 Image Substitution via Policy Generation
+     target: https://www.cve.org/CVERecord?id=CVE-2026-100833
+     date: 27 Sept 2026
+  EUVD-2026-87851:
+     author:
+        org: ENISA
+     title: EUVD-2026-87851
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
+     date: 27 Sept 2026
+  GHSA-Edgeless-Systems6:
+    title: "Contrast (edgelesssys/contrast) versions 1.14.0 before 1.23.1 generate runtime policies that fail to detect all container image substitutions."
+    date: 27 Sept 2026
+    target: https://github.com/advisories/GHSA-MJJ6-PX65-JQ92
+    author:
+      - ins: Edgeless Systems
+  EUVD-2026-87853:
+     author:
+        org: ENISA
+     title: EUVD-2026-87853
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87853
+     date: 27 Sept 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -345,7 +377,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}}, {{CVE-2026-100833}}, {{EUVD-2026-87851}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems.
 
 --- middle
 
@@ -355,14 +387,14 @@ We first present the executive summary of published GHSAs/CVEs against early att
 ## Executive Summary of Current Status
 
 The table below presents the current status of published GHSAs and CVEs against implementations of early attestation with confirmed scores.
-Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 13 more published GHSAs is yet to be confirmed and will be added later in this table.
+Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 20 more published GHSAs is yet to be confirmed and will be added later in this table.
 
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
 | 9.8 | Critical | 1 | - |
 | 9.1 | Critical | 8 | 3 |
-| 8.2 | High | 1 | - |
+| 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | - |
 | 7.7 | High | 2 | - |
 | 7.5 | High | 3 | 1 |
@@ -386,9 +418,9 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 ## EarlyAttestationBleed
 {{EarlyAttestationBleed}} presents a formal analysis together with regression tests of the broader attestation ecosystem and discovered three critical-severity vulnerabilities in implementations of early attestation:
 
-- Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1
-- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1
-- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0
+- Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1.
+- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1.
+- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS 8.2.
 
 # Published GHSAs/CVEs
 {: #sec-credits }
@@ -432,8 +464,18 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Edgeless-Systems4}} | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
+| {{GHSA-Edgeless-Systems6}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{CVE-2026-100833}} | 8.2 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{EUVD-2026-87853}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
+| [GHSA-wqf9-jfmm-f68v](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
+| [GHSA-jj9v-7353-35cv](https://github.com/veraison/services/security/advisories/GHSA-jj9v-7353-35cv) | 9.0-10.0 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
+| [GHSA-9rfg-55gm-hwvw](https://github.com/veraison/services/security/advisories/GHSA-9rfg-55gm-hwvw) | 7.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| [GHSA-ccfw-q8vr-cww3](https://github.com/veraison/services/security/advisories/GHSA-ccfw-q8vr-cww3) | 5.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| [GHSA-ffg7-hfjp-rj7v](https://github.com/veraison/services/security/advisories/GHSA-ffg7-hfjp-rj7v) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-cxxj-pvvx-6xcv](https://github.com/veraison/services/security/advisories/GHSA-cxxj-pvvx-6xcv) | 4.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-pv6g-4385-q8c8](https://github.com/veraison/services/security/advisories/GHSA-pv6g-4385-q8c8) | 6.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -574,14 +616,24 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
 | CVE {{CVE-2026-100835}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87851}}  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
+| CVE {{CVE-2026-100833}} published  [**Severity = HIGH (CVSS 8.2)**] | 27 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
 
 # EU ENISA
 
-European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independently published {{EUVD-2026-16488}} with CVSS 7.5 to acknowledge this vulnerability.
+European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independently published the following EUVDs to acknowledge the vulnerabilities.
 
+| EUVD | CVSS | [Severity](https://nvd.nist.gov/vuln-metrics/cvss) |
+|---|---|---|
+| {{EUVD-2026-16488}} | 7.5 | High |
+| {{EUVD-2026-83194}} | 9.1 | Critical |
+| {{EUVD-2026-83192}} | 9.1 | Critical |
+| {{EUVD-2026-87851}} | 9.1 | Critical |
+| {{EUVD-2026-87853}} | 7.6 | High |
+{: title="ENISA's issued EUVDs"}
 
 # Comparison with Other Vulnerabilities in Confidential Computing Literature
 {: #sec-cvss-scores }
@@ -599,7 +651,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [BadRAM](https://badram.eu/badram.pdf)| [CVE-2024-21944](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
-| [Intra-handshake.fail](https://www.researchgate.net/publication/408219182_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) | {{CVE-2026-33697}} | 7.5 | High |
+| {{Intra-handshake.fail}} | {{CVE-2026-33697}} | 7.5 | High |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Critical |
@@ -629,7 +681,11 @@ These are preliminary estimates of scores, not final assigned score. They are st
 As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, at least the following intra-handshake implementations are vulnerable:
 
 - [Meta's AI](https://ai.meta.com/static-resource/private-processing-technical-whitepaper): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
-- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{CVE-2026-100835}} [**Severity = CRITICAL (CVSS 9.1)**]
+- [Edgeless Systems Contrast](https://github.com/edgelesssys/contrast): {{CVE-2026-33697}} and {{EUVD-2026-16488}} [**Severity = HIGH (CVSS 7.5)**]
+
+Both violate the fundamental requirement in SEAT charter of binding to connection.
+
+While {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] are patched in Contrast v1.16.0, users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers. This keeps Edgeless Systems within the TCB.
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
@@ -649,11 +705,18 @@ At least the following protocol specifications with intra-handshake attestation 
 - {{I-D.ritz-seat-facts}}: symbolic proof of insecurity; draft **archived**
   - violates G3 property in our analysis
   - unnecessary complexity is itself a security concern
-- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06)
+- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06 and -07)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to {{GHSA-Cocos-AI}} that contains a link to {{SEAT-vulnerability-report}} that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
   - **Unnecessary complexity** is itself a security concern
+
+| Spec | Status |
+|---|---|
+| {{I-D.fossati-tls-attestation-10}} | Withdrawn |
+| {{I-D.ritz-seat-facts}} | Archived |
+| {{I-D.fossati-seat-early-attestation}} | Vulnerable |
+{: title="Summary of vulnerable early attestation drafts"}
 
 # Binding Levels
 1. DH shared secret (`gxy`) used as shared secret between client and server
@@ -773,7 +836,7 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 
 If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."
 
-## Edgeless Systems (CVE-2026-100835)
+## EarlyAttestationTschüss (EAT) (CVE-2026-100835)
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
 - [vulnfeed](https://buttondown.com/vulnfeed/archive/vulnfeed-2-critical-cves-2026-09-27-0400-utc/)
