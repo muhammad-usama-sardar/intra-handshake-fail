@@ -377,7 +377,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}}, {{CVE-2026-100833}}, {{EUVD-2026-87851}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}}, {{CVE-2026-100833}}, {{EUVD-2026-87851}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **three CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, several GHSAs published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}} and {{ID-Crisis-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 
 --- middle
 
@@ -685,7 +685,7 @@ As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, a
 
 Both violate the fundamental requirement in SEAT charter of binding to connection.
 
-While {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] are patched in Contrast v1.16.0, users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers. This keeps Edgeless Systems within the TCB.
+While {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] are patched in Contrast v1.16.0, **users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers**. This keeps Edgeless Systems within the TCB.
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
@@ -836,7 +836,9 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 
 If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."
 
-## EarlyAttestationTschüss (EAT) (CVE-2026-100835)
+## EarlyAttestationTschüss (EAT)
+
+{{CVE-2026-100835}}
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
 - [vulnfeed](https://buttondown.com/vulnfeed/archive/vulnfeed-2-critical-cves-2026-09-27-0400-utc/)
@@ -865,6 +867,14 @@ If you have written an article on this and would like to be added here, please s
 - CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92702)
 - GCVE's [db.gcve.eu (CVE-2026-92701)](https://db.gcve.eu/vuln/cve-2026-92701)
 - GCVE's [db.gcve.eu (CVE-2026-92702)](https://db.gcve.eu/vuln/cve-2026-92702)
+
+### CVE-2026-100833
+
+- [America's Cyber Defense Agency (CISA)](https://www.cisa.gov/news-events/bulletins/sb26-271)
+- [Alan Turing Institute](https://github.com/alan-turing-institute/cyber-threat-observatory/blob/main/reports/2026-09-27/TIER_3_CVE-2026-100833.md)
+- [Offseq](https://radar.offseq.com/threat/contrast-edgelesssyscontrast-versions-1140-before-1231-generate-runtime-policies-that-fail-to-detect-d602b2a9f5df6321)
+- [The Hacker wire](https://www.thehackerwire.com/vulnerability/CVE-2026-100833/)
+- [CVE Brief](https://cvebrief.com/cve/cve-2026-100833/)
 
 ## Intra-handshake.fail
 
