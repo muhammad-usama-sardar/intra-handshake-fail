@@ -836,7 +836,9 @@ Several cybersecurity and media professionals and bloggers have covered the vuln
 
 If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."
 
-## EarlyAttestationTschüss (EAT) (CVE-2026-100835)
+## EarlyAttestationTschüss (EAT)
+
+{{CVE-2026-100835}}
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
 - [vulnfeed](https://buttondown.com/vulnfeed/archive/vulnfeed-2-critical-cves-2026-09-27-0400-utc/)
@@ -865,6 +867,14 @@ If you have written an article on this and would like to be added here, please s
 - CIRCL's [vulnerability.circl.lu (CVE-2026-92702)](https://vulnerability.circl.lu/vuln/CVE-2026-92702)
 - GCVE's [db.gcve.eu (CVE-2026-92701)](https://db.gcve.eu/vuln/cve-2026-92701)
 - GCVE's [db.gcve.eu (CVE-2026-92702)](https://db.gcve.eu/vuln/cve-2026-92702)
+
+### CVE-2026-100833
+
+- [America's Cyber Defense Agency (CISA)](https://www.cisa.gov/news-events/bulletins/sb26-271)
+- [Alan Turing Institute](https://github.com/alan-turing-institute/cyber-threat-observatory/blob/main/reports/2026-09-27/TIER_3_CVE-2026-100833.md)
+- [Offseq](https://radar.offseq.com/threat/contrast-edgelesssyscontrast-versions-1140-before-1231-generate-runtime-policies-that-fail-to-detect-d602b2a9f5df6321)
+- [The Hacker wire](https://www.thehackerwire.com/vulnerability/CVE-2026-100833/)
+- [CVE Brief](https://cvebrief.com/cve/cve-2026-100833/)
 
 ## Intra-handshake.fail
 
