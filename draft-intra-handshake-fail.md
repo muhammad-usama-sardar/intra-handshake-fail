@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 37 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-100833 of CVSS 8.2, CVE-2026-33697 of CVSS 7.5, and 36 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -18,6 +18,8 @@ keyword:
  - CVE-2026-33697
  - CVE-2026-92701
  - CVE-2026-92702
+ - CVE-2026-100833
+ - CVE-2026-100835
 venue:
 #  group: WG
 #  type: Working Group
@@ -339,6 +341,30 @@ normative:
      title: EUVD-2026-87851
      target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
      date: 27 Sept 2026
+  CVE-2026-100833:
+     author:
+        org: CVE
+     title: Contrast before 1.23.1 Image Substitution via Policy Generation
+     target: https://www.cve.org/CVERecord?id=CVE-2026-100833
+     date: 27 Sept 2026
+  EUVD-2026-87851:
+     author:
+        org: ENISA
+     title: EUVD-2026-87851
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
+     date: 27 Sept 2026
+  GHSA-Edgeless-Systems6:
+    title: "Contrast (edgelesssys/contrast) versions 1.14.0 before 1.23.1 generate runtime policies that fail to detect all container image substitutions."
+    date: 27 Sept 2026
+    target: https://github.com/advisories/GHSA-MJJ6-PX65-JQ92
+    author:
+      - ins: Edgeless Systems
+  EUVD-2026-87853:
+     author:
+        org: ENISA
+     title: EUVD-2026-87853
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87853
+     date: 27 Sept 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -351,7 +377,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems.
+The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}}, {{CVE-2026-100833}}, {{EUVD-2026-87851}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **two CVEs of CVSS 9.1, one CVE of CVSS 7.5, one GHSA of 9.0-10.0, one GHSA of CVSS 7.8, seven GHSAs of CVSS 7.4, and one GHSA of CVSS 6.3 published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users to carefully evaluate their systems.
 
 --- middle
 
@@ -361,14 +387,14 @@ We first present the executive summary of published GHSAs/CVEs against early att
 ## Executive Summary of Current Status
 
 The table below presents the current status of published GHSAs and CVEs against implementations of early attestation with confirmed scores.
-Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 13 more published GHSAs is yet to be confirmed and will be added later in this table.
+Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 20 more published GHSAs is yet to be confirmed and will be added later in this table.
 
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
 | 9.0-10.0 | Critical | 1 | - |
 | 9.8 | Critical | 1 | - |
 | 9.1 | Critical | 8 | 3 |
-| 8.2 | High | 1 | - |
+| 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | - |
 | 7.7 | High | 2 | - |
 | 7.5 | High | 3 | 1 |
@@ -392,9 +418,9 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 ## EarlyAttestationBleed
 {{EarlyAttestationBleed}} presents a formal analysis together with regression tests of the broader attestation ecosystem and discovered three critical-severity vulnerabilities in implementations of early attestation:
 
-- Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1
-- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1
-- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0
+- Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1.
+- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1.
+- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS 8.2.
 
 # Published GHSAs/CVEs
 {: #sec-credits }
@@ -438,6 +464,9 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Edgeless-Systems4}} | 7.8 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
+| {{GHSA-Edgeless-Systems6}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{CVE-2026-100833}} | 8.2 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{EUVD-2026-87853}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
@@ -587,14 +616,24 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
 | CVE {{CVE-2026-100835}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87851}}  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
+| CVE {{CVE-2026-100833}} published  [**Severity = HIGH (CVSS 8.2)**] | 27 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
 
 # EU ENISA
 
-European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independently published {{EUVD-2026-16488}} with CVSS 7.5 to acknowledge this vulnerability.
+European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independently published the following EUVDs to acknowledge the vulnerabilities.
 
+| EUVD | CVSS | [Severity](https://nvd.nist.gov/vuln-metrics/cvss) |
+|---|---|---|
+| {{EUVD-2026-16488}} | 7.5 | High |
+| {{EUVD-2026-83194}} | 9.1 | Critical |
+| {{EUVD-2026-83192}} | 9.1 | Critical |
+| {{EUVD-2026-87851}} | 9.1 | Critical |
+| {{EUVD-2026-87853}} | 7.6 | High |
+{: title="ENISA's issued EUVDs"}
 
 # Comparison with Other Vulnerabilities in Confidential Computing Literature
 {: #sec-cvss-scores }
