@@ -387,24 +387,27 @@ We first present the executive summary of published GHSAs/CVEs against early att
 ## Executive Summary of Current Status
 
 The table below presents the current status of published GHSAs and CVEs against implementations of early attestation with confirmed scores.
-Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**. Scores of 20 more published GHSAs is yet to be confirmed and will be added later in this table.
+Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**.
 
 | CVSS | Severity | Number of Published GHSAs | Number of Published CVEs |
 |---|---|---|---|
-| 9.0-10.0 | Critical | 1 | - |
-| 9.8 | Critical | 1 | - |
+| 9.0–10.0 | Critical | 2 | — |
+| 9.8 | Critical | 1 | — |
 | 9.1 | Critical | 8 | 3 |
 | 8.2 | High | 1 | 1 |
-| 7.8 | High | 2 | - |
-| 7.7 | High | 2 | - |
+| 7.8 | High | 2 | — |
+| 7.7 | High | 2 | — |
+| 7.6 | High | 1 | — |
 | 7.5 | High | 3 | 1 |
-| 7.4 | High | 4 | - |
-| 6.5 | Medium | 1 | - |
-| 6.3 | Medium | 3 | - |
-| 5.3 | Medium | 1 | - |
-| 4.4 | Medium | 1 | - |
-| 4.2 | Medium | 1 | - |
-| 3.7 | Low | 1 | - |
+| 7.4 | High | 4 | — |
+| 6.5 | Medium | 3 | — |
+| 6.3 | Medium | 3 | — |
+| 5.5 | Medium | 1 | — |
+| 5.3 | Medium | 1 | — |
+| 4.4 | Medium | 1 | — |
+| 4.3 | Medium | 1 | — |
+| 4.2 | Medium | 1 | — |
+| 3.7 | Low | 1 | — |
 {: title="Published CVEs/GHSAs for intra-handshake (aka early) attestation"}
 
 ## Intra-handshake.fail
@@ -661,18 +664,28 @@ The comparison of the above with CVSS up to **10.0** for early attestation indic
 
 # More CVEs
 
-Further formal analysis has led to the following potential CVEs for intra-handshake (aka early) attestation (currently under review and disclosure):
+Further code review and formal analysis has led to the following potential CVEs for intra-handshake (aka early) attestation (currently under review and disclosure):
 
 | CVSS | Severity | Number of CVEs |
 |---|---|---|
-| 9.0-10.0 | Critical | 1 (confirmed by developers) |
-| 9.8 | Critical | 1 |
+| 9.0–10.0 | Critical | 3 |
+| 9.8 | Critical | 2 |
+| 9.1 | Critical | 5 |
 | 8.7 | High | 1 |
-| 7.8 | High | 1 (confirmed by developers) |
-| 7.5 | High | 5 |
-| 7.4 | High | 9 (5 confirmed by developers) |
-| 6.3 | Medium | 7 |
-{: title="Expected CVEs for intra-handshake (aka early) attestation under review and disclosure "}
+| 7.8 | High | 3 |
+| 7.7 | High | 2 |
+| 7.6 | High | 1 |
+| 7.5 | High | 6 |
+| 7.4 | High | 13 |
+| 6.5 | Medium | 10 |
+| 6.3 | Medium | 10 |
+| 5.5 | Medium | 1 |
+| 5.3 | Medium | 1 |
+| 4.4 | Medium | 1 |
+| 4.3 | Medium | 1 |
+| 4.2 | Medium | 1 |
+| 3.7 | Low | 1 |
+{: title="Expected CVEs for intra-handshake (aka early) attestation under review"}
 
 These are preliminary estimates of scores, not final assigned score. They are still under review.
 
@@ -1075,7 +1088,7 @@ In short, five main questions have been raised by WG participants in support of 
 
 - What **security property** hybrid (intra- + post-handshake attestation) provides that post-handshake attestation alone cannot provide?
 - Since continuous attestation is required in most use cases {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, how is **additional complexity** of **intra**-handshake attestation justified? Use cases with one-time attestation can be covered by doing attestation round immediately after Connection Establishment Time: see [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-6-2).
-- What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
+- What is the benefit of doing **signatures** of remote attestation **within** the handshake (as this latency can be exploited)? We add that **verification** of signatures within the handshake is also time consuming, which can be exploited too. See [reference](https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-04.html#section-4.2.4).
 - How evidence is bound to the secure channel without involving any **shared secret**? See {{TLS-RA}}.
 - How does a verifying relying party get the legitimate PIIDs and CHIP_IDs?
 
