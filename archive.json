@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-01T03:06:24.164864+00:00",
+  "timestamp": "2026-10-04T03:24:24.611227+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1584,24 +1584,26 @@
       "id": "PR_kwDOTPsy-c8AAAABF5PFag",
       "title": "Add Islam",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/26",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- Has published a paper in ESORICS\r\n- Will contribute to security analysis ",
       "createdAt": "2026-09-30T12:35:40Z",
-      "updatedAt": "2026-09-30T17:27:27Z",
+      "updatedAt": "2026-10-01T13:21:45Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "25d07663fea35a956325891b5547fab7aedabdcb",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "add-islam",
       "headRefOid": "5261d9fe8678d006c8cde6bc388377c643b7e0f1",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-10-01T13:21:44Z",
+      "mergedAt": "2026-10-01T13:21:44Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "dae1fd2030b3e46c6053724bad5d64c6eaeb6eff"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1641,6 +1643,336 @@
           "body": "",
           "createdAt": "2026-09-30T17:27:27Z",
           "updatedAt": "2026-09-30T17:27:27Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDOTPsy-c8AAAABGIKHsg",
+      "title": "Add Venkat",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/27",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-01T15:56:55Z",
+      "updatedAt": "2026-10-02T10:01:24Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "dae1fd2030b3e46c6053724bad5d64c6eaeb6eff",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "add-venkat",
+      "headRefOid": "e510d566e439486227b21288c09436f44a562ff1",
+      "closedAt": "2026-10-02T08:33:06Z",
+      "mergedAt": "2026-10-02T08:33:06Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "95931dfb380d6a96338eae914fc0b780aed11bb9"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQMrpbA",
+          "commit": {
+            "abbreviatedOid": "e510d56"
+          },
+          "author": "vsmalladi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-01T16:00:43Z",
+          "updatedAt": "2026-10-01T16:00:43Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQM-HAA",
+          "commit": {
+            "abbreviatedOid": "e510d56"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-01T16:25:44Z",
+          "updatedAt": "2026-10-01T16:25:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQRinGA",
+          "commit": {
+            "abbreviatedOid": "e510d56"
+          },
+          "author": "rechard-edward",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T00:28:36Z",
+          "updatedAt": "2026-10-02T00:28:36Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQUNAFg",
+          "commit": {
+            "abbreviatedOid": "e510d56"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T08:50:12Z",
+          "updatedAt": "2026-10-02T08:50:12Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQU1POg",
+          "commit": {
+            "abbreviatedOid": "e510d56"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T10:01:24Z",
+          "updatedAt": "2026-10-02T10:01:24Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "id": "PR_kwDOTPsy-c8AAAABGQfQ1g",
+      "title": "EarlyAttestationTsch\u00fcss (EAT)",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/28",
+      "state": "MERGED",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-10-02T09:33:36Z",
+      "updatedAt": "2026-10-03T10:17:03Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "04e747c791b6cea0cb4054d2539841ac20f0564c",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "eat",
+      "headRefOid": "761424bfe88d3318522473f0a662574b5d5707d1",
+      "closedAt": "2026-10-03T10:17:03Z",
+      "mergedAt": "2026-10-03T10:17:03Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "b9a312d9793a9e38f0ac9a6fdfc08e50b4dfe5b0"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQU039A",
+          "commit": {
+            "abbreviatedOid": "d99e9f7"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T10:00:45Z",
+          "updatedAt": "2026-10-02T10:00:45Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQU1S9A",
+          "commit": {
+            "abbreviatedOid": "d99e9f7"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T10:01:31Z",
+          "updatedAt": "2026-10-02T10:01:31Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQZLdrQ",
+          "commit": {
+            "abbreviatedOid": "5ab7992"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T18:05:01Z",
+          "updatedAt": "2026-10-02T18:05:01Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQZeu3g",
+          "commit": {
+            "abbreviatedOid": "5ab7992"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T18:38:51Z",
+          "updatedAt": "2026-10-02T18:38:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "id": "PR_kwDOTPsy-c8AAAABGQ9x9w",
+      "title": "Clarify agent governability and contribution attribution",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/29",
+      "state": "OPEN",
+      "author": "ECMW",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "This PR makes two changes:\r\n\r\n- Clarifies that authorized parties must retain the practical ability to intervene effectively and in time.\r\n- Attributes Eva C. M. Willems\u2019s contribution to the AI-agent governability discussion within Ethical Considerations.\r\n\r\nPlease also clarify in Ethical Considerations which authors carried out the vulnerability research, technical validation and coordinated disclosure, so that the collective wording accurately reflects the respective contributions.",
+      "createdAt": "2026-10-02T10:31:34Z",
+      "updatedAt": "2026-10-02T15:58:45Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "04e747c791b6cea0cb4054d2539841ac20f0564c",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "ECMW-patch-1",
+      "headRefOid": "e703944388a84f88e91ceafdf197b1be4ae34418",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "> Thanks for adding Eva\u2019s governability contribution. One attribution issue remains before I can confirm the text: the Ethical Considerations sentence still says the entire listed author group \u201cresponsibly disclosed\u201d the vulnerabilities and supplied mitigations.\r\n\r\nIt is saying we are all ethical researchers. `Responsible disclosure`, by definition, means that the vulnerability was kept limited to the `finders` and repo `owners`. I can clarify it more explicitly.\r\n> The published-findings table credits specific finders, and those are not the same as every coauthor. Could we make the disclosure sentence specific to the researchers credited for each finding, while leaving the other contributions attributed separately? For example: \u201cThe researchers credited for each published finding in Section 4 followed the applicable coordinated-disclosure process and shared mitigations with the affected maintainers.\u201d Please use the exact section reference after checking the rendered draft. This avoids implying that I, Eva, or every other listed author personally made each disclosure.\r\n\r\nAgree. How about simply changing `We have responsibly disclosed [...]` to `The finders of {{sec-credits}} have responsibly disclosed [...]`?\r\n\r\n",
+          "createdAt": "2026-10-02T14:53:31Z",
+          "updatedAt": "2026-10-02T14:53:31Z"
+        },
+        {
+          "author": "FutureEnterprises",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Yes, that works for me if `{{sec-credits}}` points to the table naming the actual finders. Thank you for making the attribution precise.",
+          "createdAt": "2026-10-02T15:03:40Z",
+          "updatedAt": "2026-10-02T15:03:40Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "> Yes, that works for me if `{{sec-credits}}` points to the table naming the actual finders.\r\n\r\nIt is reference to Sec. 2 that contains the table of finders. Thank you for your suggestions. I updated text. Please check.\r\n\r\n",
+          "createdAt": "2026-10-02T15:07:01Z",
+          "updatedAt": "2026-10-02T15:08:32Z"
+        },
+        {
+          "author": "FutureEnterprises",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I checked the current text: `sec-credits` points to the published-findings table that names the finders, and the disclosure sentence now attributes that work to them rather than to every coauthor. This resolves my attribution concern. Thank you for making the change.",
+          "createdAt": "2026-10-02T15:58:44Z",
+          "updatedAt": "2026-10-02T15:58:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQVJQXQ",
+          "commit": {
+            "abbreviatedOid": "bec41ec"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Thanks very much, Eva.\n> Please also clarify in Ethical Considerations which authors carried out the vulnerability research, technical validation and coordinated disclosure, so that the collective wording accurately reflects the respective contributions.\n\nWe could say something like `authors who carried out the security analysis are listed in {{sec-credits}}. Several reports are still under review and will be added in  {{sec-credits}} as they get published`.",
+          "createdAt": "2026-10-02T10:42:40Z",
+          "updatedAt": "2026-10-02T10:42:40Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQVLZuQ",
+          "commit": {
+            "abbreviatedOid": "bec41ec"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-02T10:46:48Z",
+          "updatedAt": "2026-10-02T10:46:48Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQXQXxw",
+          "commit": {
+            "abbreviatedOid": "bec41ec"
+          },
+          "author": "FutureEnterprises",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "Thanks for adding Eva\u2019s governability contribution. One attribution issue remains before I can confirm the text: the Ethical Considerations sentence still says the entire listed author group \u201cresponsibly disclosed\u201d the vulnerabilities and supplied mitigations. The published-findings table credits specific finders, and those are not the same as every coauthor. Could we make the disclosure sentence specific to the researchers credited for each finding, while leaving the other contributions attributed separately? For example: \u201cThe researchers credited for each published finding in Section 4 followed the applicable coordinated-disclosure process and shared mitigations with the affected maintainers.\u201d Please use the exact section reference after checking the rendered draft. This avoids implying that I, Eva, or every other listed author personally made each disclosure. I\u2019m happy with the governability wording itself.",
+          "createdAt": "2026-10-02T14:39:18Z",
+          "updatedAt": "2026-10-02T14:39:18Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQXcoLw",
+          "commit": {
+            "abbreviatedOid": "bec41ec"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-10-02T14:57:26Z",
+          "updatedAt": "2026-10-02T14:57:27Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\nWe (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet K\u00fc\u00e7\u00fck, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. The finders of {{sec-credits}} have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them the proposed mitigations and requested them to take rapid action.\n```",
+              "createdAt": "2026-10-02T14:57:27Z",
+              "updatedAt": "2026-10-02T14:57:27Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDOTPsy-c8AAAABGa-0Ww",
+      "title": "CVE updates",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/30",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- update CVEs in abstract\r\n- highlight trust in Edgeless Systems",
+      "createdAt": "2026-10-03T10:38:46Z",
+      "updatedAt": "2026-10-03T11:13:58Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "b9a312d9793a9e38f0ac9a6fdfc08e50b4dfe5b0",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "patch1",
+      "headRefOid": "32816899b21d276f42890f165afb048e1e7aa714",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABQeSgsw",
+          "commit": {
+            "abbreviatedOid": "d66ef74"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-03T11:13:58Z",
+          "updatedAt": "2026-10-03T11:13:58Z",
           "comments": []
         }
       ]
