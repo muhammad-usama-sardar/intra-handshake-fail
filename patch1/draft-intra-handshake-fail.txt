@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 6 April 2027                                          CoreWeave
+Expires: 7 April 2027                                          CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 6 April 2027                                          CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                          3 October 2026
+                                                          4 October 2026
 
 
 Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1,
@@ -103,7 +103,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 April 2027.
+   This Internet-Draft will expire on 7 April 2027.
 
 Copyright Notice
 
@@ -198,40 +198,45 @@ Table of Contents
    scores.  Severity is based on NIST standard metrics
    (https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest
    possible vulnerability score. *For TLS reference, Heartbleed was CVSS
-   7.5*. Scores of 20 more published GHSAs is yet to be confirmed and
-   will be added later in this table.
+   7.5*.
 
    +==========+==========+===========================+================+
    | CVSS     | Severity | Number of Published GHSAs | Number of      |
    |          |          |                           | Published CVEs |
    +==========+==========+===========================+================+
-   | 9.0-10.0 | Critical | 1                         | -              |
+   | 9.0–10.0 | Critical | 2                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 9.8      | Critical | 1                         | -              |
+   | 9.8      | Critical | 1                         | —              |
    +----------+----------+---------------------------+----------------+
    | 9.1      | Critical | 8                         | 3              |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 7.8      | High     | 2                         | -              |
+   | 7.8      | High     | 2                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 7.7      | High     | 2                         | -              |
+   | 7.7      | High     | 2                         | —              |
+   +----------+----------+---------------------------+----------------+
+   | 7.6      | High     | 1                         | —              |
    +----------+----------+---------------------------+----------------+
    | 7.5      | High     | 3                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 7.4      | High     | 4                         | -              |
+   | 7.4      | High     | 4                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 6.5      | Medium   | 1                         | -              |
+   | 6.5      | Medium   | 3                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 6.3      | Medium   | 3                         | -              |
+   | 6.3      | Medium   | 3                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 5.3      | Medium   | 1                         | -              |
+   | 5.5      | Medium   | 1                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 4.4      | Medium   | 1                         | -              |
+   | 5.3      | Medium   | 1                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 4.2      | Medium   | 1                         | -              |
+   | 4.4      | Medium   | 1                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 3.7      | Low      | 1                         | -              |
+   | 4.3      | Medium   | 1                         | —              |
+   +----------+----------+---------------------------+----------------+
+   | 4.2      | Medium   | 1                         | —              |
+   +----------+----------+---------------------------+----------------+
+   | 3.7      | Low      | 1                         | —              |
    +----------+----------+---------------------------+----------------+
 
       Table 1: Published CVEs/GHSAs for intra-handshake (aka early)
@@ -1095,30 +1100,51 @@ Table of Contents
 
 8.  More CVEs
 
-   Further formal analysis has led to the following potential CVEs for
-   intra-handshake (aka early) attestation (currently under review and
-   disclosure):
+   Further code review and formal analysis has led to the following
+   potential CVEs for intra-handshake (aka early) attestation (currently
+   under review and disclosure):
 
-          +==========+==========+===============================+
-          | CVSS     | Severity | Number of CVEs                |
-          +==========+==========+===============================+
-          | 9.0-10.0 | Critical | 1 (confirmed by developers)   |
-          +----------+----------+-------------------------------+
-          | 9.8      | Critical | 1                             |
-          +----------+----------+-------------------------------+
-          | 8.7      | High     | 1                             |
-          +----------+----------+-------------------------------+
-          | 7.8      | High     | 1 (confirmed by developers)   |
-          +----------+----------+-------------------------------+
-          | 7.5      | High     | 5                             |
-          +----------+----------+-------------------------------+
-          | 7.4      | High     | 9 (5 confirmed by developers) |
-          +----------+----------+-------------------------------+
-          | 6.3      | Medium   | 7                             |
-          +----------+----------+-------------------------------+
+                 +==========+==========+================+
+                 | CVSS     | Severity | Number of CVEs |
+                 +==========+==========+================+
+                 | 9.0–10.0 | Critical | 3              |
+                 +----------+----------+----------------+
+                 | 9.8      | Critical | 2              |
+                 +----------+----------+----------------+
+                 | 9.1      | Critical | 5              |
+                 +----------+----------+----------------+
+                 | 8.7      | High     | 1              |
+                 +----------+----------+----------------+
+                 | 7.8      | High     | 3              |
+                 +----------+----------+----------------+
+                 | 7.7      | High     | 2              |
+                 +----------+----------+----------------+
+                 | 7.6      | High     | 1              |
+                 +----------+----------+----------------+
+                 | 7.5      | High     | 6              |
+                 +----------+----------+----------------+
+                 | 7.4      | High     | 13             |
+                 +----------+----------+----------------+
+                 | 6.5      | Medium   | 10             |
+                 +----------+----------+----------------+
+                 | 6.3      | Medium   | 10             |
+                 +----------+----------+----------------+
+                 | 5.5      | Medium   | 1              |
+                 +----------+----------+----------------+
+                 | 5.3      | Medium   | 1              |
+                 +----------+----------+----------------+
+                 | 4.4      | Medium   | 1              |
+                 +----------+----------+----------------+
+                 | 4.3      | Medium   | 1              |
+                 +----------+----------+----------------+
+                 | 4.2      | Medium   | 1              |
+                 +----------+----------+----------------+
+                 | 3.7      | Low      | 1              |
+                 +----------+----------+----------------+
 
-              Table 9: Expected CVEs for intra-handshake (aka
-               early) attestation under review and disclosure
+                    Table 9: Expected CVEs for intra-
+                    handshake (aka early) attestation
+                               under review
 
    These are preliminary estimates of scores, not final assigned score.
    They are still under review.
@@ -2354,8 +2380,8 @@ Table of Contents
 
    *  What is the benefit of doing *signatures* of remote attestation
       *within* the handshake (as this latency can be exploited)?  We add
-      that *verification* of signatures is also time consuming, which
-      can be exploited too.  See reference
+      that *verification* of signatures within the handshake is also
+      time consuming, which can be exploited too.  See reference
       (https://www.ietf.org/archive/id/draft-usama-seat-intra-vs-post-
       04.html#section-4.2.4).
 
