@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-04T03:24:24.611227+00:00",
+  "timestamp": "2026-10-06T03:51:03.883740+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1834,7 +1834,7 @@
       "labels": [],
       "body": "This PR makes two changes:\r\n\r\n- Clarifies that authorized parties must retain the practical ability to intervene effectively and in time.\r\n- Attributes Eva C. M. Willems\u2019s contribution to the AI-agent governability discussion within Ethical Considerations.\r\n\r\nPlease also clarify in Ethical Considerations which authors carried out the vulnerability research, technical validation and coordinated disclosure, so that the collective wording accurately reflects the respective contributions.",
       "createdAt": "2026-10-02T10:31:34Z",
-      "updatedAt": "2026-10-02T15:58:45Z",
+      "updatedAt": "2026-10-04T21:08:42Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "04e747c791b6cea0cb4054d2539841ac20f0564c",
@@ -1873,6 +1873,13 @@
           "body": "I checked the current text: `sec-credits` points to the published-findings table that names the finders, and the disclosure sentence now attributes that work to them rather than to every coauthor. This resolves my attribution concern. Thank you for making the change.",
           "createdAt": "2026-10-02T15:58:44Z",
           "updatedAt": "2026-10-02T15:58:44Z"
+        },
+        {
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "body": "Hi all, just a kind reminder to all to review this, so we can merge this in the next version.",
+          "createdAt": "2026-10-04T21:08:42Z",
+          "updatedAt": "2026-10-04T21:08:42Z"
         }
       ],
       "reviews": [
@@ -1942,24 +1949,26 @@
       "id": "PR_kwDOTPsy-c8AAAABGa-0Ww",
       "title": "CVE updates",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/30",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- update CVEs in abstract\r\n- highlight trust in Edgeless Systems",
       "createdAt": "2026-10-03T10:38:46Z",
-      "updatedAt": "2026-10-03T11:13:58Z",
+      "updatedAt": "2026-10-04T20:52:42Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "b9a312d9793a9e38f0ac9a6fdfc08e50b4dfe5b0",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "patch1",
-      "headRefOid": "32816899b21d276f42890f165afb048e1e7aa714",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "916ce51bcd5a3b6f2e4072cbbb3719194944e4bc",
+      "closedAt": "2026-10-04T20:52:42Z",
+      "mergedAt": "2026-10-04T20:52:42Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "bf418478389bbd04cce99afd6810ecdb17294828"
+      },
       "comments": [],
       "reviews": [
         {
