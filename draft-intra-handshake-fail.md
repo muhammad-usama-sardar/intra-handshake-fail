@@ -803,7 +803,7 @@ urgently move to post-handshake attestation.
 ## Implications of Findings for Agent2Agent
 The findings of published CVEs/GHSAs up to 10.0 (presented in {{sec-credits}}) show that intra-handshake attestation can introduce significant security risks for AI agents when relied upon as a security mechanism.
 
-Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether meaningful intervention remains possible. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
+Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether authorized parties retain the practical ability to intervene effectively and in time. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
 # Technical Details
 
@@ -1115,7 +1115,9 @@ By no means should the vendors mentioned in this draft be considered less secure
 
 # Ethical Considerations
 
-We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. We have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them our proposed mitigations and requested them to take rapid action.
+Eva C. M. Willems contributed the discussion of AI-agent governability, distinguishing technical attestation from the broader conditions for effective governance.
+
+We (i.e., the super set of all authors involved in this research, including but not limited to Muhammad Usama Sardar, Mariam Moustafa, Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu, Chengxin Huang, Haowen Song, Kaya Ercihan, Dr. Kubilay Ahmet Küçük, Sylvain Bellemare, Eva C. M. Willems, Justin DESSENNES SAINTEN, Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock) are ethical researchers aiming to protect the community from the potential harm caused by the exploitability of the vulnerabilities in early attestation. The finders of {{sec-credits}} have **responsibly disclosed** the vulnerabilities to the respective developers and maintainers following their respective disclosure processes and provided them the proposed mitigations and requested them to take rapid action.
 
 We have released only the formal analysis for published CVE-2026-33697. To minimize exploit in the wild, we have not publicly released the proof-of-concept exploit code.
 
