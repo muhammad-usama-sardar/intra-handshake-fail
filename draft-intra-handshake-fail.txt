@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                TU Dresden
 Intended status: Informational                                V. Dubeyko
-Expires: 7 April 2027                                          CoreWeave
+Expires: 13 April 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 7 April 2027                                          CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                          4 October 2026
+                                                         10 October 2026
 
 
 Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1,
@@ -103,7 +103,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 7 April 2027.
+   This Internet-Draft will expire on 13 April 2027.
 
 Copyright Notice
 
@@ -1429,12 +1429,13 @@ Table of Contents
    relying party, governability also depends on whether the agent’s
    identity, authority and permissions remain aligned with the intended
    interaction, whether responsibility for its actions can be
-   attributed, and whether meaningful intervention remains possible.
-   The findings in this draft reinforce that distinction by showing that
-   even the binding between attestation evidence and the intended
-   session can fail.  Successful attestation should therefore be treated
-   as one input into governance, rather than as sufficient evidence that
-   an AI agent remains under effective control.
+   attributed, and whether authorized parties retain the practical
+   ability to intervene effectively and in time.  The findings in this
+   draft reinforce that distinction by showing that even the binding
+   between attestation evidence and the intended session can fail.
+   Successful attestation should therefore be treated as one input into
+   governance, rather than as sufficient evidence that an AI agent
+   remains under effective control.
 
 15.  Technical Details
 
@@ -2432,6 +2433,10 @@ Table of Contents
 
 19.  Ethical Considerations
 
+   Eva C.  M.  Willems contributed the discussion of AI-agent
+   governability, distinguishing technical attestation from the broader
+   conditions for effective governance.
+
    We (i.e., the super set of all authors involved in this research,
    including but not limited to Muhammad Usama Sardar, Mariam Moustafa,
    Tuomas Aura, Viacheslav Dubeyko, Jean-Marie Jacquet, Songbo Bu,
@@ -2440,10 +2445,11 @@ Table of Contents
    Massimiliano Brighindi, Mikerah Quintyne-Collins, and Iman Schrock)
    are ethical researchers aiming to protect the community from the
    potential harm caused by the exploitability of the vulnerabilities in
-   early attestation.  We have *responsibly disclosed* the
-   vulnerabilities to the respective developers and maintainers
-   following their respective disclosure processes and provided them our
-   proposed mitigations and requested them to take rapid action.
+   early attestation.  The finders of Section 2 have *responsibly
+   disclosed* the vulnerabilities to the respective developers and
+   maintainers following their respective disclosure processes and
+   provided them the proposed mitigations and requested them to take
+   rapid action.
 
    We have released only the formal analysis for published CVE-
    2026-33697.  To minimize exploit in the wild, we have not publicly
