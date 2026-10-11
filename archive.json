@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-06T03:51:03.883740+00:00",
+  "timestamp": "2026-10-11T02:54:44.797238+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1827,24 +1827,26 @@
       "id": "PR_kwDOTPsy-c8AAAABGQ9x9w",
       "title": "Clarify agent governability and contribution attribution",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/29",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "ECMW",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "This PR makes two changes:\r\n\r\n- Clarifies that authorized parties must retain the practical ability to intervene effectively and in time.\r\n- Attributes Eva C. M. Willems\u2019s contribution to the AI-agent governability discussion within Ethical Considerations.\r\n\r\nPlease also clarify in Ethical Considerations which authors carried out the vulnerability research, technical validation and coordinated disclosure, so that the collective wording accurately reflects the respective contributions.",
       "createdAt": "2026-10-02T10:31:34Z",
-      "updatedAt": "2026-10-04T21:08:42Z",
+      "updatedAt": "2026-10-10T14:01:42Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "04e747c791b6cea0cb4054d2539841ac20f0564c",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "ECMW-patch-1",
       "headRefOid": "e703944388a84f88e91ceafdf197b1be4ae34418",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-10-10T14:01:42Z",
+      "mergedAt": "2026-10-10T14:01:42Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "1609e643bb01ae7eed7873ea5b41a53ef0a60668"
+      },
       "comments": [
         {
           "author": "muhammad-usama-sardar",
