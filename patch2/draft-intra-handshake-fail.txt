@@ -1720,12 +1720,15 @@ Table of Contents
 
    *  datasafetimes (https://datasafetimes.com/topic/vulnerabilities/
       cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/)
-      https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-
-      clients-let-attackers-spoof/
-      https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-
-      critical-privasys-ra-tls/
-      https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-
-      fixes-enclave-session-binding/
+
+   *  sandboxgazette (https://sandboxgazette.com/c/vulnerabilities/how-
+      privasys-ra-tls-clients-let-attackers-spoof/)
+
+   *  cloudsecpulse (https://cloudsecpulse.com/c/vulnerabilities/
+      organizations-at-risk-critical-privasys-ra-tls/)
+
+   *  redteamlog (https://redteamlog.com/category/vulnerabilities/
+      privasys-ra-tls-fixes-enclave-session-binding/)
 
 16.2.  EarlyAttestationBleed
 
