@@ -451,7 +451,7 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 
 - Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1.
 - Ultraviolet Cocos AI in AMD SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1.
-- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS v4 of 9.6.
+- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS v3.1 of 9.6.
 
 ## EarlyAttestationTschüss (EAT)
 
