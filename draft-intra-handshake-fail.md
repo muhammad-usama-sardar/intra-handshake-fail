@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-100833 of CVSS 8.2, CVE-2026-33697 of CVSS 7.5, and 36 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 31 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -31,11 +31,8 @@ venue:
 author:
  -
     fullname: "Muhammad Usama Sardar"
-    organization: Technical University of Dresden
-    abbrev: TU Dresden
-    city: Dresden
-    country: Germany
-    code: 01187
+    organization: Global Alliance for Genomics and Health
+    abbrev: GA4GH
     email: muhammad_usama.sardar@tu-dresden.de
  -
     fullname: "Viacheslav Dubeyko"
@@ -167,6 +164,36 @@ normative:
      title: Cocos AI Intra-handshake attested TLS implementation can accept Evidence with nil, empty, or omitted reportData in the AMD SEV-SNP path
      target: https://www.cve.org/CVERecord?id=CVE-2026-92702
      date: 18 Sept 2026
+  CVE-2026-108265:
+     author:
+        org: CVE
+     title: CVE-2026-108265
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108265
+     date: 9 Oct 2026
+  CVE-2026-108266:
+     author:
+        org: CVE
+     title: CVE-2026-108266
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108266
+     date: 9 Oct 2026
+  CVE-2026-108267:
+     author:
+        org: CVE
+     title: CVE-2026-108267
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108267
+     date: 9 Oct 2026
+  CVE-2026-108268:
+     author:
+        org: CVE
+     title: CVE-2026-108268
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108268
+     date: 9 Oct 2026
+  CVE-2026-108269:
+     author:
+        org: CVE
+     title: CVE-2026-108269
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108269
+     date: 9 Oct 2026
   EUVD-2026-83194:
      author:
         org: ENISA
@@ -393,7 +420,8 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 |---|---|---|---|
 | 9.0–10.0 | Critical | 2 | — |
 | 9.8 | Critical | 1 | — |
-| 9.1 | Critical | 8 | 3 |
+| 9.6 | Critical | — | 1 |
+| 9.1 | Critical | 8 | 8 |
 | 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | — |
 | 7.7 | High | 2 | — |
@@ -422,8 +450,16 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 {{EarlyAttestationBleed}} presents a formal analysis together with regression tests of the broader attestation ecosystem and discovered three critical-severity vulnerabilities in implementations of early attestation:
 
 - Ultraviolet Cocos AI in TDX path resulting in {{CVE-2026-92701}} of CVSS 9.1.
-- Ultraviolet Cocos AI in SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1.
-- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS 8.2.
+- Ultraviolet Cocos AI in AMD SEV-SNP path resulting in {{CVE-2026-92702}} of CVSS 9.1.
+- Edgeless Systems Contrast in policies resulting in {{GHSA-Edgeless-Systems2}} of CVSS 9.0-10.0 and {{CVE-2026-100833}} of CVSS v3.1 of 9.6.
+
+## EarlyAttestationTschüss (EAT)
+
+- {{CVE-2026-108265}} of CVSS 9.1
+- {{CVE-2026-108266}} of CVSS 9.1
+- {{CVE-2026-108267}} of CVSS 9.1
+- {{CVE-2026-108268}} of CVSS 9.1
+- {{CVE-2026-108269}} of CVSS 9.1
 
 # Published GHSAs/CVEs
 {: #sec-credits }
@@ -468,7 +504,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
 | {{GHSA-Edgeless-Systems6}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{CVE-2026-100833}} | 8.2 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{CVE-2026-100833}} | 9.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{EUVD-2026-87853}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
@@ -479,6 +515,11 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | [GHSA-ffg7-hfjp-rj7v](https://github.com/veraison/services/security/advisories/GHSA-ffg7-hfjp-rj7v) | 6.5 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-cxxj-pvvx-6xcv](https://github.com/veraison/services/security/advisories/GHSA-cxxj-pvvx-6xcv) | 4.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-pv6g-4385-q8c8](https://github.com/veraison/services/security/advisories/GHSA-pv6g-4385-q8c8) | 6.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
+| {{CVE-2026-108265}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-108266}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-108267}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-108268}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -619,8 +660,13 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Cocos AI published {{GHSA-Cocos-AI5}}  [**Severity = MODERATE (CVSS 6.3)**] | 25 September, 2026 |
 | CVE {{CVE-2026-100835}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87851}}  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
-| CVE {{CVE-2026-100833}} published  [**Severity = HIGH (CVSS 8.2)**] | 27 September, 2026 |
+| CVE {{CVE-2026-100833}} published  [**Severity = CRITICAL (CVSS 9.6)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
+| CVE {{CVE-2026-108265}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| CVE {{CVE-2026-108266}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| CVE {{CVE-2026-108267}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| CVE {{CVE-2026-108268}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| CVE {{CVE-2026-108269}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -657,7 +703,12 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{Intra-handshake.fail}} | {{CVE-2026-33697}} | 7.5 | High |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
-| {{EarlyAttestationBleed}} | {{GHSA-Edgeless-Systems2}} | 9.0-10.0 | Critical |
+| {{EarlyAttestationBleed}} | {{CVE-2026-100833}} | 9.6 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108265}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108266}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108267}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108268}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108269}} | 9.1 | Critical |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
 The comparison of the above with CVSS up to **10.0** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
@@ -670,7 +721,6 @@ Further code review and formal analysis has led to the following potential CVEs 
 |---|---|---|
 | 9.0–10.0 | Critical | 3 |
 | 9.8 | Critical | 2 |
-| 9.1 | Critical | 5 |
 | 8.7 | High | 1 |
 | 7.8 | High | 3 |
 | 7.7 | High | 2 |
@@ -851,6 +901,10 @@ If you have written an article on this and would like to be added here, please s
 
 ## EarlyAttestationTschüss (EAT)
 
+- [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
+
+### CVE-2026-100835
+
 {{CVE-2026-100835}}
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
@@ -858,6 +912,56 @@ If you have written an article on this and would like to be added here, please s
 - [ervik](https://www.ervik.as/cves/CVE-2026-100835)
 - [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
 - CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
+
+
+### CVE-2026-108265
+
+{{CVE-2026-108265}}
+
+- [circuitobserver](https://circuitobserver.com/section/vulnerabilities/9-1-cve-allows-relay-attack-on-privasys-enclave/)
+- [techwirebeat](https://techwirebeat.com/topic/vulnerabilities/organisations-at-risk-privasys-sgx-apps-face/)
+- [acidpeak](https://www.acidpeak.com/product/privasys-enclave-os-mini/)
+
+### CVE-2026-108266
+
+{{CVE-2026-108266}}
+
+- [honeypotdaily](https://honeypotdaily.com/category/vulnerabilities/can-attackers-impersonate-privasys-rustls/)
+- [techsecobserver](https://techsecobserver.com/section/vulnerabilities/privasys-rustls-v0-8-1-patches-cve-2026-108266-to/)
+- [techsecheadlines](https://techsecheadlines.com/section/vulnerabilities/privasys-rustls-ra-tls-binding-flaw-cve-2026/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/orgs-at-risk-critical-privasys-rustls-bug/)
+- [datasaferadar](https://datasaferadar.com/section/vulnerabilities/privasys-rustls-quote-relay-flaw-bypasses/)
+
+### CVE-2026-108267
+
+{{CVE-2026-108267}}
+
+
+- [vectorupdate](https://vectorupdate.com/news/vulnerabilities/update-privasys-go-to-v0-5-1-to-stop-attackers/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/privasys-go-flaw-lets-attackers-relay-attestation/)
+- [redteamtribune](https://redteamtribune.com/topic/vulnerabilities/privasys-go-quote-relay-bug-bypasses-attestation/)
+- [darkwebdispatch](https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-go-before-v0-5-1-to-block-critical/)
+
+### CVE-2026-108268
+
+{{CVE-2026-108268}}
+
+- [vulnpost](https://vulnpost.com/news/vulnerabilities/privasys-enclave-os-tls-quote-relay-bug-bypasses/)
+- [malwarechronicle](https://malwarechronicle.com/category/vulnerabilities/update-privasys-enclave-os-now-to-block-critical/)
+- [avd](https://avd.aliyun.com/detail?id=AVD-2026-108268)
+- [bitshieldnews](https://bitshieldnews.com/section/vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/)
+
+### CVE-2026-108269
+
+{{CVE-2026-108269}}
+
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/)
+- [vulnpost](https://vulnpost.com/news/vulnerabilities/privasys-ra-tls-relay-flaw-bypasses-security-in/)
+- [netsecobserver](https://netsecobserver.com/news/vulnerabilities/privasys-ra-tls-critical-relay-vulnerability/)
+- [datasafetimes](https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/)
+- [sandboxgazette](https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/)
+- [redteamlog](https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/)
 
 ## EarlyAttestationBleed
 
