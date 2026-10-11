@@ -901,6 +901,10 @@ If you have written an article on this and would like to be added here, please s
 
 ## EarlyAttestationTschüss (EAT)
 
+- [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
+
+### CVE-2026-100835
+
 {{CVE-2026-100835}}
 
 - [Threat radar](https://radar.offseq.com/threat/contrast-before-1160-is-susceptible-to-remote-attestation-relay-attacks-cve-2026-100835-3833ee713219f7e3)
@@ -909,10 +913,55 @@ If you have written an article on this and would like to be added here, please s
 - [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
 - CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
 
+
+### CVE-2026-108265
+
+{{CVE-2026-108265}}
+
+- [circuitobserver](https://circuitobserver.com/section/vulnerabilities/9-1-cve-allows-relay-attack-on-privasys-enclave/)
+- [techwirebeat](https://techwirebeat.com/topic/vulnerabilities/organisations-at-risk-privasys-sgx-apps-face/)
+- [acidpeak](https://www.acidpeak.com/product/privasys-enclave-os-mini/)
+
+### CVE-2026-108266
+
 {{CVE-2026-108266}}
 
 - [honeypotdaily](https://honeypotdaily.com/category/vulnerabilities/can-attackers-impersonate-privasys-rustls/)
+- [techsecobserver](https://techsecobserver.com/section/vulnerabilities/privasys-rustls-v0-8-1-patches-cve-2026-108266-to/)
+- [techsecheadlines](https://techsecheadlines.com/section/vulnerabilities/privasys-rustls-ra-tls-binding-flaw-cve-2026/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/orgs-at-risk-critical-privasys-rustls-bug/)
+- [datasaferadar](https://datasaferadar.com/section/vulnerabilities/privasys-rustls-quote-relay-flaw-bypasses/)
 
+### CVE-2026-108267
+
+{{CVE-2026-108267}}
+
+
+- [vectorupdate](https://vectorupdate.com/news/vulnerabilities/update-privasys-go-to-v0-5-1-to-stop-attackers/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/privasys-go-flaw-lets-attackers-relay-attestation/)
+- [redteamtribune](https://redteamtribune.com/topic/vulnerabilities/privasys-go-quote-relay-bug-bypasses-attestation/)
+- [darkwebdispatch](https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-go-before-v0-5-1-to-block-critical/)
+
+### CVE-2026-108268
+
+{{CVE-2026-108268}}
+
+- [vulnpost](https://vulnpost.com/news/vulnerabilities/privasys-enclave-os-tls-quote-relay-bug-bypasses/)
+- [malwarechronicle](https://malwarechronicle.com/category/vulnerabilities/update-privasys-enclave-os-now-to-block-critical/)
+- [avd](https://avd.aliyun.com/detail?id=AVD-2026-108268)
+- [bitshieldnews](https://bitshieldnews.com/section/vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/)
+
+### CVE-2026-108269
+
+{{CVE-2026-108269}}
+
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/)
+- [vulnpost](https://vulnpost.com/news/vulnerabilities/privasys-ra-tls-relay-flaw-bypasses-security-in/)
+- [netsecobserver](https://netsecobserver.com/news/vulnerabilities/privasys-ra-tls-critical-relay-vulnerability/)
+- [datasafetimes](https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/)
+https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/
+https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/
+https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/
 
 ## EarlyAttestationBleed
 
