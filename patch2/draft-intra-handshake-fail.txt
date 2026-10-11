@@ -282,7 +282,7 @@ Table of Contents
 
    *  Edgeless Systems Contrast in policies resulting in
       [GHSA-Edgeless-Systems2] of CVSS 9.0-10.0 and [CVE-2026-100833] of
-      CVSS v4 of 9.6.
+      CVSS v3.1 of 9.6.
 
 1.5.  EarlyAttestationTschüss (EAT)
 
