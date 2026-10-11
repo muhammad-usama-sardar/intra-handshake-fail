@@ -507,7 +507,7 @@ Table of Contents
    |                                                          |        |and Muhammad |
    |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
-   |[CVE-2026-100833]                                         |8.2     |Markus Rudy; |
+   |[CVE-2026-100833]                                         |9.6     |Markus Rudy; |
    |                                                          |        |independently|
    |                                                          |        |by Songbo Bu |
    |                                                          |        |and Muhammad |
