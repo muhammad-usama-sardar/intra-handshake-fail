@@ -959,9 +959,9 @@ If you have written an article on this and would like to be added here, please s
 - [vulnpost](https://vulnpost.com/news/vulnerabilities/privasys-ra-tls-relay-flaw-bypasses-security-in/)
 - [netsecobserver](https://netsecobserver.com/news/vulnerabilities/privasys-ra-tls-critical-relay-vulnerability/)
 - [datasafetimes](https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/)
-https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/
-https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/
-https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/
+- [sandboxgazette](https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/)
+- [cloudsecpulse](https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/)
+- [redteamlog](https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/)
 
 ## EarlyAttestationBleed
 
