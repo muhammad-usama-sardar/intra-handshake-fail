@@ -504,7 +504,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI4}} | 7.4 | Muhammad Usama Sardar |
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
 | {{GHSA-Edgeless-Systems6}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{CVE-2026-100833}} | 8.2 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{CVE-2026-100833}} | 9.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{EUVD-2026-87853}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
