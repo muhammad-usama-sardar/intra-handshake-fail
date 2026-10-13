@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-11T02:54:44.797238+00:00",
+  "timestamp": "2026-10-13T04:32:47.450967+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1984,6 +1984,59 @@
           "body": "",
           "createdAt": "2026-10-03T11:13:58Z",
           "updatedAt": "2026-10-03T11:13:58Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDOTPsy-c8AAAABH0teOw",
+      "title": "Latest CVEs: CVE-2026-108265 - CVE-2026-108269",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/31",
+      "state": "OPEN",
+      "author": "muhammad-usama-sardar",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "- Add Privasys CVEs",
+      "createdAt": "2026-10-11T15:04:05Z",
+      "updatedAt": "2026-10-12T08:22:36Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "1609e643bb01ae7eed7873ea5b41a53ef0a60668",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "patch2",
+      "headRefOid": "02f56d8a7ef4043388507a565f0f8d70be165695",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABRuYTjQ",
+          "commit": {
+            "abbreviatedOid": "0b824b4"
+          },
+          "author": "ercihan",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-11T18:37:59Z",
+          "updatedAt": "2026-10-11T18:37:59Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABRx5cFw",
+          "commit": {
+            "abbreviatedOid": "02f56d8"
+          },
+          "author": "B1ueD0g",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-12T08:22:36Z",
+          "updatedAt": "2026-10-12T08:22:36Z",
           "comments": []
         }
       ]
