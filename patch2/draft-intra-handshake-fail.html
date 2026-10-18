@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Han,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 31 other CVEs of up to expected CVSS 10.0 upcoming)</title>
+<title>Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-108362 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, CVE-2026-108361 of CVSS 7.2, and 29+ other CVEs of up to expected CVSS 10.0 upcoming)</title>
 <meta content="Muhammad Usama Sardar" name="author">
 <meta content="Viacheslav Dubeyko" name="author">
 <meta content="Jean-Marie Jacquet" name="author">
@@ -23,7 +23,7 @@
 <meta content="Ammara Gul" name="author">
 <meta content="Venkat Malladi" name="author">
 <meta content="
-       The draft aims to provide technical details of  ,  ,  ,  ,  ,  ,  ,   and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine. Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are  three CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, several GHSAs published against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis   and  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks. 
+       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine. Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are  one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis   and  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks. 
     " name="description">
 <meta content="xml2rfc 3.34.1" name="generator">
 <meta content="AI agents" name="keyword">
@@ -44,11 +44,11 @@
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.12.2
+    platformdirs 4.13.4
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.9.1
+    wcwidth 0.9.2
 -->
 <link href="draft-intra-handshake-fail.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1068,7 +1068,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 14 April 2027</td>
+<td class="center">Expires 21 April 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1081,12 +1081,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-11" class="published">11 October 2026</time>
+<time datetime="2026-10-18" class="published">18 October 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-14">14 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-04-21">21 April 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1160,10 +1160,10 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 31 other CVEs of up to expected CVSS 10.0 upcoming)</h1>
+<h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-108362 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, CVE-2026-108361 of CVSS 7.2, and 29+ other CVEs of up to expected CVSS 10.0 upcoming)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span>, <span>[<a href="#EUVD-2026-16488" class="cite xref">EUVD-2026-16488</a>]</span>, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span>, <span>[<a href="#EUVD-2026-83194" class="cite xref">EUVD-2026-83194</a>]</span>, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span>, <span>[<a href="#EUVD-2026-83192" class="cite xref">EUVD-2026-83192</a>]</span>, <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span>, <span>[<a href="#EUVD-2026-87851" class="cite xref">EUVD-2026-87851</a>]</span> and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>three CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, several GHSAs published against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> and <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> and <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1195,7 +1195,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1360,36 +1360,41 @@ svg {
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.1">
                     <p id="section-toc.1-1.16.2.1.2.1.1"><a href="#section-16.1.1" class="auto internal xref">16.1.1</a>.  <a href="#name-cve-2026-100835" class="internal xref">CVE-2026-100835</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.2">
-                    <p id="section-toc.1-1.16.2.1.2.2.1"><a href="#section-16.1.2" class="auto internal xref">16.1.2</a>.  <a href="#name-cve-2026-108265" class="internal xref">CVE-2026-108265</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.3">
-                    <p id="section-toc.1-1.16.2.1.2.3.1"><a href="#section-16.1.3" class="auto internal xref">16.1.3</a>.  <a href="#name-cve-2026-108266" class="internal xref">CVE-2026-108266</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.4">
-                    <p id="section-toc.1-1.16.2.1.2.4.1"><a href="#section-16.1.4" class="auto internal xref">16.1.4</a>.  <a href="#name-cve-2026-108267" class="internal xref">CVE-2026-108267</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.5">
-                    <p id="section-toc.1-1.16.2.1.2.5.1"><a href="#section-16.1.5" class="auto internal xref">16.1.5</a>.  <a href="#name-cve-2026-108268" class="internal xref">CVE-2026-108268</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.6">
-                    <p id="section-toc.1-1.16.2.1.2.6.1"><a href="#section-16.1.6" class="auto internal xref">16.1.6</a>.  <a href="#name-cve-2026-108269" class="internal xref">CVE-2026-108269</a></p>
-</li>
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2">
-                <p id="section-toc.1-1.16.2.2.1"><a href="#section-16.2" class="auto internal xref">16.2</a>.  <a href="#name-earlyattestationbleed-2" class="internal xref">EarlyAttestationBleed</a></p>
+                <p id="section-toc.1-1.16.2.2.1"><a href="#section-16.2" class="auto internal xref">16.2</a>.  <a href="#name-cve-2026-108362" class="internal xref">CVE-2026-108362</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2.2.1">
-                    <p id="section-toc.1-1.16.2.2.2.1.1"><a href="#section-16.2.1" class="auto internal xref">16.2.1</a>.  <a href="#name-cve-2026-100833" class="internal xref">CVE-2026-100833</a></p>
+                    <p id="section-toc.1-1.16.2.2.2.1.1"><a href="#section-16.2.1" class="auto internal xref">16.2.1</a>.  <a href="#name-cve-2026-108265" class="internal xref">CVE-2026-108265</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2.2.2">
+                    <p id="section-toc.1-1.16.2.2.2.2.1"><a href="#section-16.2.2" class="auto internal xref">16.2.2</a>.  <a href="#name-cve-2026-108266" class="internal xref">CVE-2026-108266</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2.2.3">
+                    <p id="section-toc.1-1.16.2.2.2.3.1"><a href="#section-16.2.3" class="auto internal xref">16.2.3</a>.  <a href="#name-cve-2026-108267" class="internal xref">CVE-2026-108267</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2.2.4">
+                    <p id="section-toc.1-1.16.2.2.2.4.1"><a href="#section-16.2.4" class="auto internal xref">16.2.4</a>.  <a href="#name-cve-2026-108268" class="internal xref">CVE-2026-108268</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2.2.5">
+                    <p id="section-toc.1-1.16.2.2.2.5.1"><a href="#section-16.2.5" class="auto internal xref">16.2.5</a>.  <a href="#name-cve-2026-108269" class="internal xref">CVE-2026-108269</a></p>
 </li>
                 </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.3">
-                <p id="section-toc.1-1.16.2.3.1"><a href="#section-16.3" class="auto internal xref">16.3</a>.  <a href="#name-intra-handshakefail-3" class="internal xref">Intra-handshake.fail</a></p>
+                <p id="section-toc.1-1.16.2.3.1"><a href="#section-16.3" class="auto internal xref">16.3</a>.  <a href="#name-earlyattestationbleed-2" class="internal xref">EarlyAttestationBleed</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.3.2.1">
-                    <p id="section-toc.1-1.16.2.3.2.1.1"><a href="#section-16.3.1" class="auto internal xref">16.3.1</a>.  <a href="#name-germanys-bsi" class="internal xref">Germany's BSI</a></p>
+                    <p id="section-toc.1-1.16.2.3.2.1.1"><a href="#section-16.3.1" class="auto internal xref">16.3.1</a>.  <a href="#name-cve-2026-100833" class="internal xref">CVE-2026-100833</a></p>
+</li>
+                </ul>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.4">
+                <p id="section-toc.1-1.16.2.4.1"><a href="#section-16.4" class="auto internal xref">16.4</a>.  <a href="#name-intra-handshakefail-3" class="internal xref">Intra-handshake.fail</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.4.2.1">
+                    <p id="section-toc.1-1.16.2.4.2.1.1"><a href="#section-16.4.1" class="auto internal xref">16.4.1</a>.  <a href="#name-germanys-bsi" class="internal xref">Germany's BSI</a></p>
 </li>
                 </ul>
 </li>
@@ -1511,8 +1516,8 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
             <tr>
               <td class="text-left" rowspan="1" colspan="1">9.1</td>
               <td class="text-left" rowspan="1" colspan="1">Critical</td>
-              <td class="text-left" rowspan="1" colspan="1">8</td>
-              <td class="text-left" rowspan="1" colspan="1">8</td>
+              <td class="text-left" rowspan="1" colspan="1">9</td>
+              <td class="text-left" rowspan="1" colspan="1">9</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">8.2</td>
@@ -1549,6 +1554,12 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
               <td class="text-left" rowspan="1" colspan="1">High</td>
               <td class="text-left" rowspan="1" colspan="1">4</td>
               <td class="text-left" rowspan="1" colspan="1">—</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">7.2</td>
+              <td class="text-left" rowspan="1" colspan="1">High</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">1</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">6.5</td>
@@ -1620,7 +1631,7 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
         <h3 id="name-id-crisis">
 <a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-id-crisis" class="section-name selfRef">ID-Crisis</a>
         </h3>
-<p id="section-1.3-1">A <em>complementary</em> paper <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span> presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span> under Apache-2.0 license for reproducibility, extensibility, and extensibility.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
+<p id="section-1.3-1">A <em>complementary</em> paper <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span> presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span> under Apache-2.0 license for reproducibility, extensibility, and further research.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="earlyattestationbleed">
@@ -1649,19 +1660,25 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
         </h3>
 <ul class="normal">
 <li class="normal" id="section-1.5-1.1">
-            <p id="section-1.5-1.1.1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1<a href="#section-1.5-1.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.1.1"><span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1 for Edgeless Systems Contrast<a href="#section-1.5-1.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.2">
-            <p id="section-1.5-1.2.1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1<a href="#section-1.5-1.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.2.1"><span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.3">
-            <p id="section-1.5-1.3.1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1<a href="#section-1.5-1.3.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.3.1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.4">
-            <p id="section-1.5-1.4.1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1<a href="#section-1.5-1.4.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.4.1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.5">
-            <p id="section-1.5-1.5.1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1<a href="#section-1.5-1.5.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.5.1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-1.6">
+            <p id="section-1.5-1.6.1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-1.7">
+            <p id="section-1.5-1.7.1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.7.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2599,6 +2616,14 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">CVE <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> published  [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
             <td class="text-left" rowspan="1" colspan="1">9 October, 2026</td>
           </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">CVE <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> published  [<strong>Severity = HIGH (CVSS 7.2)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">12 October, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">CVE <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> published  [<strong>Severity = CRITICAL (CVSS 9.1)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">12 October, 2026</td>
+          </tr>
         </tbody>
       </table>
 <p id="section-5-2"><strong>Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with <code>WeakHash</code>, <code>WeakDH</code>, or <code>BadElement</code>.</strong> They hold independent of those, i.e., with <code>StrongHash</code> and <code>StrongDH</code> and all good elements within a group.<a href="#section-5-2" class="pilcrow">¶</a></p>
@@ -2804,6 +2829,14 @@ and trust domains. The following table provides a corresponding low-level view.<
               <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span>
 </td>
             <td class="text-left" rowspan="1" colspan="1">9.6</td>
+            <td class="text-left" rowspan="1" colspan="1">Critical</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">EarlyAttestationTschüss (EAT)</td>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
             <td class="text-left" rowspan="1" colspan="1">Critical</td>
           </tr>
           <tr>
@@ -3423,7 +3456,7 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 <a href="#section-16" class="section-number selfRef">16. </a><a href="#name-media-coverage" class="section-name selfRef">Media Coverage</a>
       </h2>
 <p id="section-16-1">Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.<a href="#section-16-1" class="pilcrow">¶</a></p>
-<p id="section-16-2">If you have written an article on this and would like to be added here, please send us a PR at <a href="https://github.com/muhammad-usama-sardar/intra-handshake-fail">https://github.com/muhammad-usama-sardar/intra-handshake-fail</a> or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."<a href="#section-16-2" class="pilcrow">¶</a></p>
+<p id="section-16-2">If you have written an article on this and would like to be added here, please send us a PR at <a href="https://github.com/muhammad-usama-sardar/intra-handshake-fail">https://github.com/muhammad-usama-sardar/intra-handshake-fail</a> or an email with the subject "Media coverage of EarlyAttestationTschüss (EAT)/EarlyAttestationBleed/Intra-handshake.fail."<a href="#section-16-2" class="pilcrow">¶</a></p>
 <div id="earlyattestationtschss-eat-1">
 <section id="section-16.1">
         <h3 id="name-earlyattestationtschuss-eat-2">
@@ -3459,121 +3492,143 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
           </ul>
 </section>
 </div>
-<div id="cve-2026-108265">
-<section id="section-16.1.2">
-          <h4 id="name-cve-2026-108265">
-<a href="#section-16.1.2" class="section-number selfRef">16.1.2. </a><a href="#name-cve-2026-108265" class="section-name selfRef">CVE-2026-108265</a>
-          </h4>
-<p id="section-16.1.2-1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span><a href="#section-16.1.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="cve-2026-108362">
+<section id="section-16.2">
+        <h3 id="name-cve-2026-108362">
+<a href="#section-16.2" class="section-number selfRef">16.2. </a><a href="#name-cve-2026-108362" class="section-name selfRef">CVE-2026-108362</a>
+        </h3>
+<p id="section-16.2-1"><span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span><a href="#section-16.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.1.2-2.1">
-              <p id="section-16.1.2-2.1.1"><a href="https://circuitobserver.com/section/vulnerabilities/9-1-cve-allows-relay-attack-on-privasys-enclave/">circuitobserver</a><a href="#section-16.1.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2-2.1">
+            <p id="section-16.2-2.1.1"><a href="https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-11-0-fixes/">datasafetimes</a><a href="#section-16.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.2-2.2">
-              <p id="section-16.1.2-2.2.1"><a href="https://techwirebeat.com/topic/vulnerabilities/organisations-at-risk-privasys-sgx-apps-face/">techwirebeat</a><a href="#section-16.1.2-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.2-2.2">
+            <p id="section-16.2-2.2.1"><a href="https://firewallchronicle.com/topic/vulnerabilities/privasys-ra-tls-clients-identity-validation-flaw/">firewallchronicle</a><a href="#section-16.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.2-2.3">
-              <p id="section-16.1.2-2.3.1"><a href="https://www.acidpeak.com/product/privasys-enclave-os-mini/">acidpeak</a><a href="#section-16.1.2-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.2-2.3">
+            <p id="section-16.2-2.3.1"><a href="https://podcasts.apple.com/pl/podcast/top-vulnerabilidades-cr%C3%ADticas-13-10-2026/id1877409819?i=1000796060867&amp;l=pl">Apple podcase</a><a href="#section-16.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.2-2.4">
+            <p id="section-16.2-2.4.1"><a href="https://phishherald.com/topic/vulnerabilities/orgs-face-impersonation-risk-privasys-ra-tls/">Phish Herald</a><a href="#section-16.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<div id="cve-2026-108265">
+<section id="section-16.2.1">
+          <h4 id="name-cve-2026-108265">
+<a href="#section-16.2.1" class="section-number selfRef">16.2.1. </a><a href="#name-cve-2026-108265" class="section-name selfRef">CVE-2026-108265</a>
+          </h4>
+<p id="section-16.2.1-1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span><a href="#section-16.2.1-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-16.2.1-2.1">
+              <p id="section-16.2.1-2.1.1"><a href="https://circuitobserver.com/section/vulnerabilities/9-1-cve-allows-relay-attack-on-privasys-enclave/">circuitobserver</a><a href="#section-16.2.1-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-16.2.1-2.2">
+              <p id="section-16.2.1-2.2.1"><a href="https://techwirebeat.com/topic/vulnerabilities/organisations-at-risk-privasys-sgx-apps-face/">techwirebeat</a><a href="#section-16.2.1-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-16.2.1-2.3">
+              <p id="section-16.2.1-2.3.1"><a href="https://www.acidpeak.com/product/privasys-enclave-os-mini/">acidpeak</a><a href="#section-16.2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="cve-2026-108266">
-<section id="section-16.1.3">
+<section id="section-16.2.2">
           <h4 id="name-cve-2026-108266">
-<a href="#section-16.1.3" class="section-number selfRef">16.1.3. </a><a href="#name-cve-2026-108266" class="section-name selfRef">CVE-2026-108266</a>
+<a href="#section-16.2.2" class="section-number selfRef">16.2.2. </a><a href="#name-cve-2026-108266" class="section-name selfRef">CVE-2026-108266</a>
           </h4>
-<p id="section-16.1.3-1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span><a href="#section-16.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-16.2.2-1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span><a href="#section-16.2.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.1.3-2.1">
-              <p id="section-16.1.3-2.1.1"><a href="https://honeypotdaily.com/category/vulnerabilities/can-attackers-impersonate-privasys-rustls/">honeypotdaily</a><a href="#section-16.1.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2.2-2.1">
+              <p id="section-16.2.2-2.1.1"><a href="https://honeypotdaily.com/category/vulnerabilities/can-attackers-impersonate-privasys-rustls/">honeypotdaily</a><a href="#section-16.2.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.3-2.2">
-              <p id="section-16.1.3-2.2.1"><a href="https://techsecobserver.com/section/vulnerabilities/privasys-rustls-v0-8-1-patches-cve-2026-108266-to/">techsecobserver</a><a href="#section-16.1.3-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.2-2.2">
+              <p id="section-16.2.2-2.2.1"><a href="https://techsecobserver.com/section/vulnerabilities/privasys-rustls-v0-8-1-patches-cve-2026-108266-to/">techsecobserver</a><a href="#section-16.2.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.3-2.3">
-              <p id="section-16.1.3-2.3.1"><a href="https://techsecheadlines.com/section/vulnerabilities/privasys-rustls-ra-tls-binding-flaw-cve-2026/">techsecheadlines</a><a href="#section-16.1.3-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.2-2.3">
+              <p id="section-16.2.2-2.3.1"><a href="https://techsecheadlines.com/section/vulnerabilities/privasys-rustls-ra-tls-binding-flaw-cve-2026/">techsecheadlines</a><a href="#section-16.2.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.3-2.4">
-              <p id="section-16.1.3-2.4.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/orgs-at-risk-critical-privasys-rustls-bug/">cloudsecpulse</a><a href="#section-16.1.3-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.2-2.4">
+              <p id="section-16.2.2-2.4.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/orgs-at-risk-critical-privasys-rustls-bug/">cloudsecpulse</a><a href="#section-16.2.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.3-2.5">
-              <p id="section-16.1.3-2.5.1"><a href="https://datasaferadar.com/section/vulnerabilities/privasys-rustls-quote-relay-flaw-bypasses/">datasaferadar</a><a href="#section-16.1.3-2.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.2-2.5">
+              <p id="section-16.2.2-2.5.1"><a href="https://datasaferadar.com/section/vulnerabilities/privasys-rustls-quote-relay-flaw-bypasses/">datasaferadar</a><a href="#section-16.2.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="cve-2026-108267">
-<section id="section-16.1.4">
+<section id="section-16.2.3">
           <h4 id="name-cve-2026-108267">
-<a href="#section-16.1.4" class="section-number selfRef">16.1.4. </a><a href="#name-cve-2026-108267" class="section-name selfRef">CVE-2026-108267</a>
+<a href="#section-16.2.3" class="section-number selfRef">16.2.3. </a><a href="#name-cve-2026-108267" class="section-name selfRef">CVE-2026-108267</a>
           </h4>
-<p id="section-16.1.4-1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span><a href="#section-16.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-16.2.3-1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span><a href="#section-16.2.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.1.4-2.1">
-              <p id="section-16.1.4-2.1.1"><a href="https://vectorupdate.com/news/vulnerabilities/update-privasys-go-to-v0-5-1-to-stop-attackers/">vectorupdate</a><a href="#section-16.1.4-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2.3-2.1">
+              <p id="section-16.2.3-2.1.1"><a href="https://vectorupdate.com/news/vulnerabilities/update-privasys-go-to-v0-5-1-to-stop-attackers/">vectorupdate</a><a href="#section-16.2.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.4-2.2">
-              <p id="section-16.1.4-2.2.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/privasys-go-flaw-lets-attackers-relay-attestation/">cloudsecpulse</a><a href="#section-16.1.4-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.3-2.2">
+              <p id="section-16.2.3-2.2.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/privasys-go-flaw-lets-attackers-relay-attestation/">cloudsecpulse</a><a href="#section-16.2.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.4-2.3">
-              <p id="section-16.1.4-2.3.1"><a href="https://redteamtribune.com/topic/vulnerabilities/privasys-go-quote-relay-bug-bypasses-attestation/">redteamtribune</a><a href="#section-16.1.4-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.3-2.3">
+              <p id="section-16.2.3-2.3.1"><a href="https://redteamtribune.com/topic/vulnerabilities/privasys-go-quote-relay-bug-bypasses-attestation/">redteamtribune</a><a href="#section-16.2.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.4-2.4">
-              <p id="section-16.1.4-2.4.1"><a href="https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-go-before-v0-5-1-to-block-critical/">darkwebdispatch</a><a href="#section-16.1.4-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.3-2.4">
+              <p id="section-16.2.3-2.4.1"><a href="https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-go-before-v0-5-1-to-block-critical/">darkwebdispatch</a><a href="#section-16.2.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="cve-2026-108268">
-<section id="section-16.1.5">
+<section id="section-16.2.4">
           <h4 id="name-cve-2026-108268">
-<a href="#section-16.1.5" class="section-number selfRef">16.1.5. </a><a href="#name-cve-2026-108268" class="section-name selfRef">CVE-2026-108268</a>
+<a href="#section-16.2.4" class="section-number selfRef">16.2.4. </a><a href="#name-cve-2026-108268" class="section-name selfRef">CVE-2026-108268</a>
           </h4>
-<p id="section-16.1.5-1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span><a href="#section-16.1.5-1" class="pilcrow">¶</a></p>
+<p id="section-16.2.4-1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span><a href="#section-16.2.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.1.5-2.1">
-              <p id="section-16.1.5-2.1.1"><a href="https://vulnpost.com/news/vulnerabilities/privasys-enclave-os-tls-quote-relay-bug-bypasses/">vulnpost</a><a href="#section-16.1.5-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2.4-2.1">
+              <p id="section-16.2.4-2.1.1"><a href="https://vulnpost.com/news/vulnerabilities/privasys-enclave-os-tls-quote-relay-bug-bypasses/">vulnpost</a><a href="#section-16.2.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.5-2.2">
-              <p id="section-16.1.5-2.2.1"><a href="https://malwarechronicle.com/category/vulnerabilities/update-privasys-enclave-os-now-to-block-critical/">malwarechronicle</a><a href="#section-16.1.5-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.4-2.2">
+              <p id="section-16.2.4-2.2.1"><a href="https://malwarechronicle.com/category/vulnerabilities/update-privasys-enclave-os-now-to-block-critical/">malwarechronicle</a><a href="#section-16.2.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.5-2.3">
-              <p id="section-16.1.5-2.3.1"><a href="https://avd.aliyun.com/detail?id=AVD-2026-108268">avd</a><a href="#section-16.1.5-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.4-2.3">
+              <p id="section-16.2.4-2.3.1"><a href="https://avd.aliyun.com/detail?id=AVD-2026-108268">avd</a><a href="#section-16.2.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.5-2.4">
-              <p id="section-16.1.5-2.4.1"><a href="https://bitshieldnews.com/section/vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/">bitshieldnews</a><a href="#section-16.1.5-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.4-2.4">
+              <p id="section-16.2.4-2.4.1"><a href="https://bitshieldnews.com/section/vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/">bitshieldnews</a><a href="#section-16.2.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="cve-2026-108269">
-<section id="section-16.1.6">
+<section id="section-16.2.5">
           <h4 id="name-cve-2026-108269">
-<a href="#section-16.1.6" class="section-number selfRef">16.1.6. </a><a href="#name-cve-2026-108269" class="section-name selfRef">CVE-2026-108269</a>
+<a href="#section-16.2.5" class="section-number selfRef">16.2.5. </a><a href="#name-cve-2026-108269" class="section-name selfRef">CVE-2026-108269</a>
           </h4>
-<p id="section-16.1.6-1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span><a href="#section-16.1.6-1" class="pilcrow">¶</a></p>
+<p id="section-16.2.5-1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span><a href="#section-16.2.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.1.6-2.1">
-              <p id="section-16.1.6-2.1.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/">cloudsecpulse</a><a href="#section-16.1.6-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2.5-2.1">
+              <p id="section-16.2.5-2.1.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/">cloudsecpulse</a><a href="#section-16.2.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.2">
-              <p id="section-16.1.6-2.2.1"><a href="https://vulnpost.com/news/vulnerabilities/privasys-ra-tls-relay-flaw-bypasses-security-in/">vulnpost</a><a href="#section-16.1.6-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.2">
+              <p id="section-16.2.5-2.2.1"><a href="https://vulnpost.com/news/vulnerabilities/privasys-ra-tls-relay-flaw-bypasses-security-in/">vulnpost</a><a href="#section-16.2.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.3">
-              <p id="section-16.1.6-2.3.1"><a href="https://netsecobserver.com/news/vulnerabilities/privasys-ra-tls-critical-relay-vulnerability/">netsecobserver</a><a href="#section-16.1.6-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.3">
+              <p id="section-16.2.5-2.3.1"><a href="https://netsecobserver.com/news/vulnerabilities/privasys-ra-tls-critical-relay-vulnerability/">netsecobserver</a><a href="#section-16.2.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.4">
-              <p id="section-16.1.6-2.4.1"><a href="https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/">datasafetimes</a><a href="#section-16.1.6-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.4">
+              <p id="section-16.2.5-2.4.1"><a href="https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-5-0-vulnerable/">datasafetimes</a><a href="#section-16.2.5-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.5">
-              <p id="section-16.1.6-2.5.1"><a href="https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/">sandboxgazette</a><a href="#section-16.1.6-2.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.5">
+              <p id="section-16.2.5-2.5.1"><a href="https://sandboxgazette.com/c/vulnerabilities/how-privasys-ra-tls-clients-let-attackers-spoof/">sandboxgazette</a><a href="#section-16.2.5-2.5.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.6">
-              <p id="section-16.1.6-2.6.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/">cloudsecpulse</a><a href="#section-16.1.6-2.6.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.6">
+              <p id="section-16.2.5-2.6.1"><a href="https://cloudsecpulse.com/c/vulnerabilities/organizations-at-risk-critical-privasys-ra-tls/">cloudsecpulse</a><a href="#section-16.2.5-2.6.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.1.6-2.7">
-              <p id="section-16.1.6-2.7.1"><a href="https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/">redteamlog</a><a href="#section-16.1.6-2.7.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.2.5-2.7">
+              <p id="section-16.2.5-2.7.1"><a href="https://redteamlog.com/category/vulnerabilities/privasys-ra-tls-fixes-enclave-session-binding/">redteamlog</a><a href="#section-16.2.5-2.7.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -3581,84 +3636,87 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 </section>
 </div>
 <div id="earlyattestationbleed-1">
-<section id="section-16.2">
+<section id="section-16.3">
         <h3 id="name-earlyattestationbleed-2">
-<a href="#section-16.2" class="section-number selfRef">16.2. </a><a href="#name-earlyattestationbleed-2" class="section-name selfRef">EarlyAttestationBleed</a>
+<a href="#section-16.3" class="section-number selfRef">16.3. </a><a href="#name-earlyattestationbleed-2" class="section-name selfRef">EarlyAttestationBleed</a>
         </h3>
-<p id="section-16.2-1"><span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span><a href="#section-16.2-1" class="pilcrow">¶</a></p>
+<p id="section-16.3-1"><span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span><a href="#section-16.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.2-2.1">
-            <p id="section-16.2-2.1.1">(German) <a href="https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/">Cybersecurity news (CVE-2026-92701)</a><a href="#section-16.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.3-2.1">
+            <p id="section-16.3-2.1.1"><a href="https://freenode.net/article/early-attestation-bugs-crack-cocos-ai-and-contrast-tls-claims">Freenode</a><a href="#section-16.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.2">
-            <p id="section-16.2-2.2.1">(German) <a href="https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/">Cybersecurity news (CVE-2026-92702)</a><a href="#section-16.2-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.2">
+            <p id="section-16.3-2.2.1">(German) <a href="https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/">Cybersecurity news (CVE-2026-92701)</a><a href="#section-16.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.3">
-            <p id="section-16.2-2.3.1">(Chinese) <a href="https://www.anquan114.com/archives/7429">Security 114</a><a href="#section-16.2-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.3">
+            <p id="section-16.3-2.3.1">(German) <a href="https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/">Cybersecurity news (CVE-2026-92702)</a><a href="#section-16.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.4">
-            <p id="section-16.2-2.4.1">(Chinese) <a href="https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ">KK says security</a><a href="#section-16.2-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.4">
+            <p id="section-16.3-2.4.1">(Chinese) <a href="https://www.anquan114.com/archives/7429">Security 114</a><a href="#section-16.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.5">
-            <p id="section-16.2-2.5.1">(Chinese) <a href="mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw">Safe Meow Station</a><a href="#section-16.2-2.5.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.5">
+            <p id="section-16.3-2.5.1">(Chinese) <a href="https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ">KK says security</a><a href="#section-16.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.6">
-            <p id="section-16.2-2.6.1">(Chinese) <a href="https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg">Digital World Information</a><a href="#section-16.2-2.6.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.6">
+            <p id="section-16.3-2.6.1">(Chinese) <a href="mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw">Safe Meow Station</a><a href="#section-16.3-2.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.7">
-            <p id="section-16.2-2.7.1">(Chinese) <a href="https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg">Shusei Consulting</a><a href="#section-16.2-2.7.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.7">
+            <p id="section-16.3-2.7.1">(Chinese) <a href="https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg">Digital World Information</a><a href="#section-16.3-2.7.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.8">
-            <p id="section-16.2-2.8.1"><a href="https://freenode.net/digest/518">Freenode 518</a><a href="#section-16.2-2.8.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.8">
+            <p id="section-16.3-2.8.1">(Chinese) <a href="https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg">Shusei Consulting</a><a href="#section-16.3-2.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.9">
-            <p id="section-16.2-2.9.1"><a href="https://freenode.net/digest/571">Freenode 571</a><a href="#section-16.2-2.9.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.9">
+            <p id="section-16.3-2.9.1"><a href="https://freenode.net/digest/518">Freenode 518</a><a href="#section-16.3-2.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.10">
-            <p id="section-16.2-2.10.1"><a href="https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054">Flashbots</a><a href="#section-16.2-2.10.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.10">
+            <p id="section-16.3-2.10.1"><a href="https://freenode.net/digest/571">Freenode 571</a><a href="#section-16.3-2.10.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.11">
-            <p id="section-16.2-2.11.1">(Japanese) <a href="https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/">Rich &amp; Wise with Socrates and Plato</a><a href="#section-16.2-2.11.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.11">
+            <p id="section-16.3-2.11.1"><a href="https://collective.flashbots.net/t/earlyattestationbleed-paper-review/6054">Flashbots</a><a href="#section-16.3-2.11.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.12">
-            <p id="section-16.2-2.12.1"><a href="https://app.opencve.io/cve/CVE-2026-92701">OpenCVE (CVE-2026-92701)</a><a href="#section-16.2-2.12.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.12">
+            <p id="section-16.3-2.12.1">(Japanese) <a href="https://www.rich-wise.co.jp/cve-info/cve-2026-92701-intel-tdx%E3%81%AE%E8%84%86%E5%BC%B1%E6%80%A7%E3%81%AB%E3%82%88%E3%82%8A%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%AF%BE%E7%AD%96%E3%82%92%E8%AC%9B%E3%81%98%E3%82%8B/">Rich &amp; Wise with Socrates and Plato</a><a href="#section-16.3-2.12.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.13">
-            <p id="section-16.2-2.13.1"><a href="https://app.opencve.io/cve/CVE-2026-92702">OpenCVE (CVE-2026-92702)</a><a href="#section-16.2-2.13.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.13">
+            <p id="section-16.3-2.13.1"><a href="https://app.opencve.io/cve/CVE-2026-92701">OpenCVE (CVE-2026-92701)</a><a href="#section-16.3-2.13.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.14">
-            <p id="section-16.2-2.14.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92701">vulnerability.circl.lu (CVE-2026-92701)</a><a href="#section-16.2-2.14.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.14">
+            <p id="section-16.3-2.14.1"><a href="https://app.opencve.io/cve/CVE-2026-92702">OpenCVE (CVE-2026-92702)</a><a href="#section-16.3-2.14.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.15">
-            <p id="section-16.2-2.15.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92702">vulnerability.circl.lu (CVE-2026-92702)</a><a href="#section-16.2-2.15.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.15">
+            <p id="section-16.3-2.15.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92701">vulnerability.circl.lu (CVE-2026-92701)</a><a href="#section-16.3-2.15.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.16">
-            <p id="section-16.2-2.16.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92701">db.gcve.eu (CVE-2026-92701)</a><a href="#section-16.2-2.16.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.16">
+            <p id="section-16.3-2.16.1">CIRCL's <a href="https://vulnerability.circl.lu/vuln/CVE-2026-92702">vulnerability.circl.lu (CVE-2026-92702)</a><a href="#section-16.3-2.16.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.2-2.17">
-            <p id="section-16.2-2.17.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92702">db.gcve.eu (CVE-2026-92702)</a><a href="#section-16.2-2.17.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.3-2.17">
+            <p id="section-16.3-2.17.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92701">db.gcve.eu (CVE-2026-92701)</a><a href="#section-16.3-2.17.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.3-2.18">
+            <p id="section-16.3-2.18.1">GCVE's <a href="https://db.gcve.eu/vuln/cve-2026-92702">db.gcve.eu (CVE-2026-92702)</a><a href="#section-16.3-2.18.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div id="cve-2026-100833">
-<section id="section-16.2.1">
+<section id="section-16.3.1">
           <h4 id="name-cve-2026-100833">
-<a href="#section-16.2.1" class="section-number selfRef">16.2.1. </a><a href="#name-cve-2026-100833" class="section-name selfRef">CVE-2026-100833</a>
+<a href="#section-16.3.1" class="section-number selfRef">16.3.1. </a><a href="#name-cve-2026-100833" class="section-name selfRef">CVE-2026-100833</a>
           </h4>
 <ul class="normal">
-<li class="normal" id="section-16.2.1-1.1">
-              <p id="section-16.2.1-1.1.1"><a href="https://www.cisa.gov/news-events/bulletins/sb26-271">America's Cyber Defense Agency (CISA)</a><a href="#section-16.2.1-1.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.3.1-1.1">
+              <p id="section-16.3.1-1.1.1"><a href="https://www.cisa.gov/news-events/bulletins/sb26-271">America's Cyber Defense Agency (CISA)</a><a href="#section-16.3.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.2.1-1.2">
-              <p id="section-16.2.1-1.2.1"><a href="https://github.com/alan-turing-institute/cyber-threat-observatory/blob/main/reports/2026-09-27/TIER_3_CVE-2026-100833.md">Alan Turing Institute</a><a href="#section-16.2.1-1.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.3.1-1.2">
+              <p id="section-16.3.1-1.2.1"><a href="https://github.com/alan-turing-institute/cyber-threat-observatory/blob/main/reports/2026-09-27/TIER_3_CVE-2026-100833.md">Alan Turing Institute</a><a href="#section-16.3.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.2.1-1.3">
-              <p id="section-16.2.1-1.3.1"><a href="https://radar.offseq.com/threat/contrast-edgelesssyscontrast-versions-1140-before-1231-generate-runtime-policies-that-fail-to-detect-d602b2a9f5df6321">Offseq</a><a href="#section-16.2.1-1.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.3.1-1.3">
+              <p id="section-16.3.1-1.3.1"><a href="https://radar.offseq.com/threat/contrast-edgelesssyscontrast-versions-1140-before-1231-generate-runtime-policies-that-fail-to-detect-d602b2a9f5df6321">Offseq</a><a href="#section-16.3.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.2.1-1.4">
-              <p id="section-16.2.1-1.4.1"><a href="https://www.thehackerwire.com/vulnerability/CVE-2026-100833/">The Hacker wire</a><a href="#section-16.2.1-1.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.3.1-1.4">
+              <p id="section-16.3.1-1.4.1"><a href="https://www.thehackerwire.com/vulnerability/CVE-2026-100833/">The Hacker wire</a><a href="#section-16.3.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-16.2.1-1.5">
-              <p id="section-16.2.1-1.5.1"><a href="https://cvebrief.com/cve/cve-2026-100833/">CVE Brief</a><a href="#section-16.2.1-1.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.3.1-1.5">
+              <p id="section-16.3.1-1.5.1"><a href="https://cvebrief.com/cve/cve-2026-100833/">CVE Brief</a><a href="#section-16.3.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -3666,148 +3724,148 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 </section>
 </div>
 <div id="intra-handshakefail-2">
-<section id="section-16.3">
+<section id="section-16.4">
         <h3 id="name-intra-handshakefail-3">
-<a href="#section-16.3" class="section-number selfRef">16.3. </a><a href="#name-intra-handshakefail-3" class="section-name selfRef">Intra-handshake.fail</a>
+<a href="#section-16.4" class="section-number selfRef">16.4. </a><a href="#name-intra-handshakefail-3" class="section-name selfRef">Intra-handshake.fail</a>
         </h3>
-<p id="section-16.3-1"><span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span><a href="#section-16.3-1" class="pilcrow">¶</a></p>
+<p id="section-16.4-1"><span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span><a href="#section-16.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-16.3-2.1">
-            <p id="section-16.3-2.1.1"><a href="https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056">The Register</a><a href="#section-16.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.4-2.1">
+            <p id="section-16.4-2.1.1"><a href="https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056">The Register</a><a href="#section-16.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.2">
-            <p id="section-16.3-2.2.1">(Japanese) <a href="https://blackhatnews.tokyo/archives/119915">BlackHatNewsTokyo</a><a href="#section-16.3-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.2">
+            <p id="section-16.4-2.2.1">(Japanese) <a href="https://blackhatnews.tokyo/archives/119915">BlackHatNewsTokyo</a><a href="#section-16.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.3">
-            <p id="section-16.3-2.3.1">(Several languages) <a href="https://hackernoon.com/attested-tls-was-supposed-to-be-the-last-trust-boundary-it-isnt-formal-methods-show-how">Hackernoon</a><a href="#section-16.3-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.3">
+            <p id="section-16.4-2.3.1">(Several languages) <a href="https://hackernoon.com/attested-tls-was-supposed-to-be-the-last-trust-boundary-it-isnt-formal-methods-show-how">Hackernoon</a><a href="#section-16.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.4">
-            <p id="section-16.3-2.4.1"><a href="https://podcasts.apple.com/eg/podcast/attested-tls-was-supposed-to-be-the-last-trust/id1698517643?i=1000776623286">Apple podcast</a><a href="#section-16.3-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.4">
+            <p id="section-16.4-2.4.1"><a href="https://podcasts.apple.com/eg/podcast/attested-tls-was-supposed-to-be-the-last-trust/id1698517643?i=1000776623286">Apple podcast</a><a href="#section-16.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.5">
-            <p id="section-16.3-2.5.1"><a href="https://meterpreter.org/attested-tls-vulnerability-cve-2026-33697/">Information Security News</a><a href="#section-16.3-2.5.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.5">
+            <p id="section-16.4-2.5.1"><a href="https://meterpreter.org/attested-tls-vulnerability-cve-2026-33697/">Information Security News</a><a href="#section-16.4-2.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.6">
-            <p id="section-16.3-2.6.1"><a href="https://thenextgentechinsider.com/pulse/critical-flaw-discovered-in-confidential-computing-attestation-protocols">TheNextGenTechInsider</a><a href="#section-16.3-2.6.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.6">
+            <p id="section-16.4-2.6.1"><a href="https://thenextgentechinsider.com/pulse/critical-flaw-discovered-in-confidential-computing-attestation-protocols">TheNextGenTechInsider</a><a href="#section-16.4-2.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.7">
-            <p id="section-16.3-2.7.1"><a href="https://dailysecurityreview.com/resources/cve-2026-33697-attested-tls-relay-flaw-hits-whatsapp-cocos-ai/">DailySecurityReview</a><a href="#section-16.3-2.7.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.7">
+            <p id="section-16.4-2.7.1"><a href="https://dailysecurityreview.com/resources/cve-2026-33697-attested-tls-relay-flaw-hits-whatsapp-cocos-ai/">DailySecurityReview</a><a href="#section-16.4-2.7.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.8">
-            <p id="section-16.3-2.8.1"><a href="https://www.scworld.com/brief/confidential-computings-remote-attestation-protocol-may-have-fundamental-flaw">SC World</a><a href="#section-16.3-2.8.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.8">
+            <p id="section-16.4-2.8.1"><a href="https://www.scworld.com/brief/confidential-computings-remote-attestation-protocol-may-have-fundamental-flaw">SC World</a><a href="#section-16.4-2.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.9">
-            <p id="section-16.3-2.9.1"><a href="https://blogs.groupware.org.uk/01-Quantum-Inc/the-handshake-that-cant-keep-its-promise-why-confidential-computings-flaw-changes-the-data-sovereignty-conversation/">01 Quantum</a><a href="#section-16.3-2.9.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.9">
+            <p id="section-16.4-2.9.1"><a href="https://blogs.groupware.org.uk/01-Quantum-Inc/the-handshake-that-cant-keep-its-promise-why-confidential-computings-flaw-changes-the-data-sovereignty-conversation/">01 Quantum</a><a href="#section-16.4-2.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.10">
-            <p id="section-16.3-2.10.1">(Russian) <a href="https://www.securitylab.ru/news/574545.php">Security Lab</a><a href="#section-16.3-2.10.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.10">
+            <p id="section-16.4-2.10.1">(Russian) <a href="https://www.securitylab.ru/news/574545.php">Security Lab</a><a href="#section-16.4-2.10.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.11">
-            <p id="section-16.3-2.11.1">(German) <a href="https://www.blogspan.net/confidential-computing-attestierung-relay-luecke/">blogspan</a><a href="#section-16.3-2.11.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.11">
+            <p id="section-16.4-2.11.1">(German) <a href="https://www.blogspan.net/confidential-computing-attestierung-relay-luecke/">blogspan</a><a href="#section-16.4-2.11.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.12">
-            <p id="section-16.3-2.12.1">(Chinese) <a href="https://finance.sina.cn/tech/2026-07-04/detail-inifscxt9953361.d.html">Sina</a><a href="#section-16.3-2.12.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.12">
+            <p id="section-16.4-2.12.1">(Chinese) <a href="https://finance.sina.cn/tech/2026-07-04/detail-inifscxt9953361.d.html">Sina</a><a href="#section-16.4-2.12.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.13">
-            <p id="section-16.3-2.13.1"><a href="https://data4biz.com/articles/una-falla-rompe-la-fiducia-del-confidential-computing">data4biz</a><a href="#section-16.3-2.13.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.13">
+            <p id="section-16.4-2.13.1"><a href="https://data4biz.com/articles/una-falla-rompe-la-fiducia-del-confidential-computing">data4biz</a><a href="#section-16.4-2.13.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.14">
-            <p id="section-16.3-2.14.1">(Russian) <a href="https://www.itsec.ru/news/issledovateli-nashli-kriticheskuyu-uyazvimost-v-attested-tls">ITSec</a><a href="#section-16.3-2.14.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.14">
+            <p id="section-16.4-2.14.1">(Russian) <a href="https://www.itsec.ru/news/issledovateli-nashli-kriticheskuyu-uyazvimost-v-attested-tls">ITSec</a><a href="#section-16.4-2.14.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.15">
-            <p id="section-16.3-2.15.1">(Chinese) <a href="https://post.smzdm.com/p/a82ol990/">smzdm</a><a href="#section-16.3-2.15.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.15">
+            <p id="section-16.4-2.15.1">(Chinese) <a href="https://post.smzdm.com/p/a82ol990/">smzdm</a><a href="#section-16.4-2.15.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.16">
-            <p id="section-16.3-2.16.1">(Chinese) <a href="https://www.donews.com/news/detail/4/6621022.html">donews</a><a href="#section-16.3-2.16.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.16">
+            <p id="section-16.4-2.16.1">(Chinese) <a href="https://www.donews.com/news/detail/4/6621022.html">donews</a><a href="#section-16.4-2.16.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.17">
-            <p id="section-16.3-2.17.1">(Chinese) <a href="https://i.ifeng.com/c/8uUfy0PMmqE">ifeng</a><a href="#section-16.3-2.17.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.17">
+            <p id="section-16.4-2.17.1">(Chinese) <a href="https://i.ifeng.com/c/8uUfy0PMmqE">ifeng</a><a href="#section-16.4-2.17.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.18">
-            <p id="section-16.3-2.18.1"><a href="https://www.dugganusa.com/post/confidential-computing-s-whole-pitch-is-trust-the-proof-not-the-cloud-two-years-of-formal-verifi">dugganusa</a><a href="#section-16.3-2.18.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.18">
+            <p id="section-16.4-2.18.1"><a href="https://www.dugganusa.com/post/confidential-computing-s-whole-pitch-is-trust-the-proof-not-the-cloud-two-years-of-formal-verifi">dugganusa</a><a href="#section-16.4-2.18.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.19">
-            <p id="section-16.3-2.19.1"><a href="https://github.com/pduggusa/dugganusa-ietf/tree/main/cve-2026-33697-attestation">dugganusa repo</a><a href="#section-16.3-2.19.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.19">
+            <p id="section-16.4-2.19.1"><a href="https://github.com/pduggusa/dugganusa-ietf/tree/main/cve-2026-33697-attestation">dugganusa repo</a><a href="#section-16.4-2.19.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.20">
-            <p id="section-16.3-2.20.1"><a href="https://sploitus.com/exploit?id=92591A05-07BC-5015-BA3D-B1347B35D684">spoitus</a><a href="#section-16.3-2.20.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.20">
+            <p id="section-16.4-2.20.1"><a href="https://sploitus.com/exploit?id=92591A05-07BC-5015-BA3D-B1347B35D684">spoitus</a><a href="#section-16.4-2.20.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.21">
-            <p id="section-16.3-2.21.1"><a href="https://news.lavx.hu/article/attested-tls-research-exposes-a-weak-link-in-confidential-computing">lavx news</a><a href="#section-16.3-2.21.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.21">
+            <p id="section-16.4-2.21.1"><a href="https://news.lavx.hu/article/attested-tls-research-exposes-a-weak-link-in-confidential-computing">lavx news</a><a href="#section-16.4-2.21.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.22">
-            <p id="section-16.3-2.22.1"><a href="https://www.sohu.com/a/1045865934_122004016">sohu</a><a href="#section-16.3-2.22.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.22">
+            <p id="section-16.4-2.22.1"><a href="https://www.sohu.com/a/1045865934_122004016">sohu</a><a href="#section-16.4-2.22.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.23">
-            <p id="section-16.3-2.23.1">(Persian) <a href="https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8">news.ditty</a><a href="#section-16.3-2.23.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.23">
+            <p id="section-16.4-2.23.1">(Persian) <a href="https://news.ditty.ir/news/attested-tls-relay-flaw-formal-methods/019f6221-26ca-7293-9ee9-5557b3c0b8f8">news.ditty</a><a href="#section-16.4-2.23.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.24">
-            <p id="section-16.3-2.24.1">(Russian) <a href="https://limpvpn.com/ru/news/attested-tls-whatsapp-privacy-flaw-2026">LiMP VPN</a><a href="#section-16.3-2.24.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.24">
+            <p id="section-16.4-2.24.1">(Russian) <a href="https://limpvpn.com/ru/news/attested-tls-whatsapp-privacy-flaw-2026">LiMP VPN</a><a href="#section-16.4-2.24.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.25">
-            <p id="section-16.3-2.25.1"><a href="https://daily.dev/posts/kI6PoNzPx">daily.dev</a><a href="#section-16.3-2.25.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.25">
+            <p id="section-16.4-2.25.1"><a href="https://daily.dev/posts/kI6PoNzPx">daily.dev</a><a href="#section-16.4-2.25.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.26">
-            <p id="section-16.3-2.26.1"><a href="https://warden.veritai.ch/news/researchers-find-attested-tls-flaws-that-weaken-confidential-computing-trust-model">warden</a><a href="#section-16.3-2.26.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.26">
+            <p id="section-16.4-2.26.1"><a href="https://warden.veritai.ch/news/researchers-find-attested-tls-flaws-that-weaken-confidential-computing-trust-model">warden</a><a href="#section-16.4-2.26.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.27">
-            <p id="section-16.3-2.27.1"><a href="https://db.gcve.eu/sightings/?query=cve-2026-33697">GCVE.eu</a><a href="#section-16.3-2.27.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.27">
+            <p id="section-16.4-2.27.1"><a href="https://db.gcve.eu/sightings/?query=cve-2026-33697">GCVE.eu</a><a href="#section-16.4-2.27.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.28">
-            <p id="section-16.3-2.28.1"><a href="https://vulnerability.circl.lu/vuln/CVE-2026-33697#sightings">vuln.lu</a><a href="#section-16.3-2.28.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.28">
+            <p id="section-16.4-2.28.1"><a href="https://vulnerability.circl.lu/vuln/CVE-2026-33697#sightings">vuln.lu</a><a href="#section-16.4-2.28.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.29">
-            <p id="section-16.3-2.29.1"><a href="https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security">coderlegion</a><a href="#section-16.3-2.29.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.29">
+            <p id="section-16.4-2.29.1"><a href="https://coderlegion.com/24087/intra-handshake-attestation-when-more-security-doesnt-mean-better-security">coderlegion</a><a href="#section-16.4-2.29.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.30">
-            <p id="section-16.3-2.30.1"><a href="https://www.anjuna.io/blog/attested-tls-flaw-explained">Anjuna Security</a><a href="#section-16.3-2.30.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.30">
+            <p id="section-16.4-2.30.1"><a href="https://www.anjuna.io/blog/attested-tls-flaw-explained">Anjuna Security</a><a href="#section-16.4-2.30.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.31">
-            <p id="section-16.3-2.31.1"><a href="https://privasys.org/blog/binding-attestation-to-the-tls-session/">Privasys</a><a href="#section-16.3-2.31.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.31">
+            <p id="section-16.4-2.31.1"><a href="https://privasys.org/blog/binding-attestation-to-the-tls-session/">Privasys</a><a href="#section-16.4-2.31.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.32">
-            <p id="section-16.3-2.32.1"><a href="https://caution.co/blog/steve-attesting-the-session.html">Caution</a><a href="#section-16.3-2.32.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.32">
+            <p id="section-16.4-2.32.1"><a href="https://caution.co/blog/steve-attesting-the-session.html">Caution</a><a href="#section-16.4-2.32.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.33">
-            <p id="section-16.3-2.33.1"><a href="https://freenode.net/digest/67">freenode</a><a href="#section-16.3-2.33.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.33">
+            <p id="section-16.4-2.33.1"><a href="https://freenode.net/digest/67">freenode</a><a href="#section-16.4-2.33.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.34">
-            <p id="section-16.3-2.34.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-16.3-2.34.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.34">
+            <p id="section-16.4-2.34.1">(Chinese) <a href="https://blog.csdn.net/weixin_42376192/category_13096766.html">csdn</a><a href="#section-16.4-2.34.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.35">
-            <p id="section-16.3-2.35.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-16.3-2.35.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.35">
+            <p id="section-16.4-2.35.1"><a href="https://osintsights.com/confidential-computing-flaws-expose-trust-risks">osintsights</a><a href="#section-16.4-2.35.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.36">
-            <p id="section-16.3-2.36.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-16.3-2.36.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.36">
+            <p id="section-16.4-2.36.1">(Turkish) <a href="https://hardwaremania.com/haber/arastirma-attested-tls-confidential-computing-icin-zayif-kaliyor/">hardwaremania</a><a href="#section-16.4-2.36.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.37">
-            <p id="section-16.3-2.37.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-16.3-2.37.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.37">
+            <p id="section-16.4-2.37.1"><a href="https://akber.com/sovereignty-in-the-cloud-is-an-illusion/">akber</a><a href="#section-16.4-2.37.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.38">
-            <p id="section-16.3-2.38.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-16.3-2.38.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.38">
+            <p id="section-16.4-2.38.1"><a href="https://www.ad-hoc-news.de/wissenschaft/cloud-souveraenitaet-red-hat-startet-reifegrad-assessments-gegen/69691475">ad-hoc news</a><a href="#section-16.4-2.38.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-16.3-2.39">
-            <p id="section-16.3-2.39.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-16.3-2.39.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.4-2.39">
+            <p id="section-16.4-2.39.1"><a href="https://aimultiple.com/privacy-enhancing-technologies">AIMultiple</a><a href="#section-16.4-2.39.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div id="germanys-bsi">
-<section id="section-16.3.1">
+<section id="section-16.4.1">
           <h4 id="name-germanys-bsi">
-<a href="#section-16.3.1" class="section-number selfRef">16.3.1. </a><a href="#name-germanys-bsi" class="section-name selfRef">Germany's BSI</a>
+<a href="#section-16.4.1" class="section-number selfRef">16.4.1. </a><a href="#name-germanys-bsi" class="section-name selfRef">Germany's BSI</a>
           </h4>
-<p id="section-16.3.1-1">Germany's Federal Office for Information Security (Bundesamt für Sicherheit in der Informationstechnik) has attested to it. Carina Hilt, deputy press spokesperson at BSI, told <a href="https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056">The Register</a>:<a href="#section-16.3.1-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-16.3.1-2">
+<p id="section-16.4.1-1">Germany's Federal Office for Information Security (Bundesamt für Sicherheit in der Informationstechnik) has attested to it. Carina Hilt, deputy press spokesperson at BSI, told <a href="https://www.theregister.com/security/2026/07/04/confidential-computings-trust-mechanism-is-broken-the-fix-may-not-exist/5266056">The Register</a>:<a href="#section-16.4.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-16.4.1-2">
 <pre>
 CC alone cannot satisfy the requirements for digital sovereignty.
-</pre><a href="#section-16.3.1-2" class="pilcrow">¶</a>
+</pre><a href="#section-16.4.1-2" class="pilcrow">¶</a>
 </div>
-<div class="alignLeft art-text artwork" id="section-16.3.1-3">
+<div class="alignLeft art-text artwork" id="section-16.4.1-3">
 <pre>
 dependencies on other services, such as identity and key
 management etc., are also not mitigated by CC.
-</pre><a href="#section-16.3.1-3" class="pilcrow">¶</a>
+</pre><a href="#section-16.4.1-3" class="pilcrow">¶</a>
 </div>
-<p id="section-16.3.1-4">CC refers to Confidential Computing, and attested TLS is the core trust mechanism of CC.<a href="#section-16.3.1-4" class="pilcrow">¶</a></p>
+<p id="section-16.4.1-4">CC refers to Confidential Computing, and attested TLS is the core trust mechanism of CC.<a href="#section-16.4.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -4873,6 +4931,14 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"CVE-2026-108269"</span>, <time datetime="2026-10" class="refDate">October 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-108269">https://www.cve.org/CVERecord?id=CVE-2026-108269</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="CVE-2026-108361">[CVE-2026-108361]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"CVE-2026-108361"</span>, <time datetime="2026-10" class="refDate">October 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-108361">https://www.cve.org/CVERecord?id=CVE-2026-108361</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CVE-2026-108362">[CVE-2026-108362]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"CVE-2026-108362"</span>, <time datetime="2026-10" class="refDate">October 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-108362">https://www.cve.org/CVERecord?id=CVE-2026-108362</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="EarlyAttestationBleed">[EarlyAttestationBleed]</dt>
         <dd>
 <span class="refAuthor">Sardar, M. U.</span> and <span class="refAuthor">Songbo Bu</span>, <span class="refTitle">"EarlyAttestationBleed: Three Critical-severity Vulnerabilities of CVSS ≥ 9.0 in Confidential Computing"</span>, <time datetime="2026-09" class="refDate">September 2026</time>, <span>&lt;<a href="https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing">https://www.researchgate.net/publication/414529199_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing</a>&gt;</span>. </dd>
@@ -5012,7 +5078,7 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
 <dl class="references">
 <dt id="I-D.fossati-seat-early-attestation">[I-D.fossati-seat-early-attestation]</dt>
         <dd>
-<span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Mihalcea, I.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Fossati, T.</span>, and <span class="refAuthor">T. Reddy.K</span>, <span class="refTitle">"Using Attestation in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-fossati-seat-early-attestation-07</span>, <time datetime="2026-09-20" class="refDate">20 September 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-07">https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Sheffer, Y.</span>, <span class="refAuthor">Mihalcea, I.</span>, <span class="refAuthor">Deshpande, Y.</span>, <span class="refAuthor">Fossati, T.</span>, and <span class="refAuthor">T. Reddy.K</span>, <span class="refTitle">"Using Attestation in Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-fossati-seat-early-attestation-08</span>, <time datetime="2026-10-14" class="refDate">14 October 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-08">https://datatracker.ietf.org/doc/html/draft-fossati-seat-early-attestation-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.fossati-seat-early-attestation-04">[I-D.fossati-seat-early-attestation-04]</dt>
         <dd>
