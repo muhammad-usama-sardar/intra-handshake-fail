@@ -1367,6 +1367,14 @@ Acknowledgment does not necessarily imply attestation. It implies that the autho
 
 This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:
 
+**EarlyAttestationTschüss (EAT)**
+
+We wish to express our sincere appreciation to the following for their review:
+
+- Bertrand Foing
+- Markus Rudy
+- Kaya Ercihan
+
 **EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
 We wish to express our sincere appreciation to the following for their review:
