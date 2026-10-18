@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, and 31 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-108362 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, CVE-2026-108361 of CVSS 7.2, and 29+ other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -392,6 +392,18 @@ normative:
      title: EUVD-2026-87853
      target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87853
      date: 27 Sept 2026
+  CVE-2026-108362:
+     author:
+        org: CVE
+     title: CVE-2026-108362
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108362
+     date: 12 Oct 2026
+  CVE-2026-108361:
+     author:
+        org: CVE
+     title: CVE-2026-108361
+     target: https://www.cve.org/CVERecord?id=CVE-2026-108361
+     date: 12 Oct 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -404,7 +416,7 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-33697}}, {{EUVD-2026-16488}}, {{CVE-2026-92701}}, {{EUVD-2026-83194}}, {{CVE-2026-92702}}, {{EUVD-2026-83192}}, {{CVE-2026-100833}}, {{EUVD-2026-87851}} and several GitHub Security Advisories (GHSAs) which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **three CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, several GHSAs published against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}} and {{ID-Crisis-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
+The draft aims to provide technical details of {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}} and {{ID-Crisis-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 
 --- middle
 
@@ -421,13 +433,14 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 9.0–10.0 | Critical | 2 | — |
 | 9.8 | Critical | 1 | — |
 | 9.6 | Critical | — | 1 |
-| 9.1 | Critical | 8 | 8 |
+| 9.1 | Critical | 9 | 9 |
 | 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | — |
 | 7.7 | High | 2 | — |
 | 7.6 | High | 1 | — |
 | 7.5 | High | 3 | 1 |
 | 7.4 | High | 4 | — |
+| 7.2 | High | 1 | 1 |
 | 6.5 | Medium | 3 | — |
 | 6.3 | Medium | 3 | — |
 | 5.5 | Medium | 1 | — |
@@ -444,7 +457,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 - This work resulted in {{CVE-2026-33697}} of CVSS 7.5.
 
 ## ID-Crisis
-A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility, extensibility, and extensibility.
+A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and intra-handshake attestation. The formal analysis is available in {{ID-Crisis-repo}} under Apache-2.0 license for reproducibility, extensibility, and further research.
 
 ## EarlyAttestationBleed
 {{EarlyAttestationBleed}} presents a formal analysis together with regression tests of the broader attestation ecosystem and discovered three critical-severity vulnerabilities in implementations of early attestation:
@@ -455,11 +468,13 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 
 ## EarlyAttestationTschüss (EAT)
 
-- {{CVE-2026-108265}} of CVSS 9.1
-- {{CVE-2026-108266}} of CVSS 9.1
-- {{CVE-2026-108267}} of CVSS 9.1
-- {{CVE-2026-108268}} of CVSS 9.1
-- {{CVE-2026-108269}} of CVSS 9.1
+- {{CVE-2026-100835}} of CVSS 9.1 for Edgeless Systems Contrast
+- {{CVE-2026-108362}} of CVSS 9.1 for Privasys
+- {{CVE-2026-108265}} of CVSS 9.1 for Privasys
+- {{CVE-2026-108266}} of CVSS 9.1 for Privasys
+- {{CVE-2026-108267}} of CVSS 9.1 for Privasys
+- {{CVE-2026-108268}} of CVSS 9.1 for Privasys
+- {{CVE-2026-108269}} of CVSS 9.1 for Privasys
 
 # Published GHSAs/CVEs
 {: #sec-credits }
@@ -667,6 +682,8 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-108267}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108268}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108269}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| CVE {{CVE-2026-108361}} published  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
+| CVE {{CVE-2026-108362}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -704,6 +721,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-100833}} | 9.6 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-100835}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108265}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108266}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108267}} | 9.1 | Critical |
@@ -897,7 +915,9 @@ Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 Licens
 
 Several cybersecurity and media professionals and bloggers have covered the vulnerabilities to protect the community from the harm of early attestation.
 
-If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of CVE-2026-100835/EarlyAttestationBleed/Intra-handshake.fail."
+If you have written an article on this and would like to be added here, please send us a PR at [https://github.com/muhammad-usama-sardar/intra-handshake-fail](https://github.com/muhammad-usama-sardar/intra-handshake-fail) or an email with the subject "Media coverage of EarlyAttestationTschüss (EAT)/EarlyAttestationBleed/Intra-handshake.fail."
+
+
 
 ## EarlyAttestationTschüss (EAT)
 
@@ -913,6 +933,14 @@ If you have written an article on this and would like to be added here, please s
 - [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
 - CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
 
+## CVE-2026-108362
+
+{{CVE-2026-108362}}
+
+- [datasafetimes](https://datasafetimes.com/topic/vulnerabilities/cvss-9-1-privasys-ra-tls-clients-0-11-0-fixes/)
+- [firewallchronicle](https://firewallchronicle.com/topic/vulnerabilities/privasys-ra-tls-clients-identity-validation-flaw/)
+- [Apple podcase](https://podcasts.apple.com/pl/podcast/top-vulnerabilidades-cr%C3%ADticas-13-10-2026/id1877409819?i=1000796060867&l=pl)
+- [Phish Herald](https://phishherald.com/topic/vulnerabilities/orgs-face-impersonation-risk-privasys-ra-tls/)
 
 ### CVE-2026-108265
 
@@ -967,6 +995,7 @@ If you have written an article on this and would like to be added here, please s
 
 {{EarlyAttestationBleed}}
 
+- [Freenode](https://freenode.net/article/early-attestation-bugs-crack-cocos-ai-and-contrast-tls-claims)
 - (German) [Cybersecurity news (CVE-2026-92701)](https://cybersecurity-news.de/cve-2026-92701-trusted-execution-environments-0-8-2/)
 - (German) [Cybersecurity news (CVE-2026-92702)](https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/)
 - (Chinese) [Security 114](https://www.anquan114.com/archives/7429)
