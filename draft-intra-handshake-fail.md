@@ -404,6 +404,12 @@ normative:
      title: CVE-2026-108361
      target: https://www.cve.org/CVERecord?id=CVE-2026-108361
      date: 12 Oct 2026
+  CVE-2026-112377:
+     author:
+        org: CVE
+     title: CVE-2026-112377
+     target: https://www.cve.org/CVERecord?id=CVE-2026-112377
+     date: 19 Oct 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -417,6 +423,7 @@ informative:
 --- abstract
 
 The draft aims to provide technical details of {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even **without physical access** to the desired machine. Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**. The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are **one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis {{Intra-handshake.fail-repo}} and {{ID-Crisis-repo}}, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
+If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.
 
 --- middle
 
@@ -469,6 +476,7 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 ## EarlyAttestationTschüss (EAT)
 
 - {{CVE-2026-100835}} of CVSS 9.1 for Edgeless Systems Contrast
+- {{CVE-2026-112377}} of CVSS 9.1 for CCC Attestation SIG
 - {{CVE-2026-108362}} of CVSS 9.1 for Privasys
 - {{CVE-2026-108265}} of CVSS 9.1 for Privasys
 - {{CVE-2026-108266}} of CVSS 9.1 for Privasys
@@ -535,6 +543,9 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{CVE-2026-108267}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108268}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
+| [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
+| [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -684,6 +695,9 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-108269}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108361}} published  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
 | CVE {{CVE-2026-108362}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
+| CVE {{CVE-2026-112377}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
+| WCM published [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
+| WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -933,7 +947,7 @@ If you have written an article on this and would like to be added here, please s
 - [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
 - CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
 
-## CVE-2026-108362
+### CVE-2026-108362
 
 {{CVE-2026-108362}}
 
@@ -1080,6 +1094,10 @@ management etc., are also not mitigated by CC.
 ~~~
 
 CC refers to Confidential Computing, and attested TLS is the core trust mechanism of CC.
+
+# General Potential Objections
+
+- [https://mailarchive.ietf.org/arch/msg/seat/k_uGnkjn8-eqZgNRHyhOdvTA-bg/](https://mailarchive.ietf.org/arch/msg/seat/k_uGnkjn8-eqZgNRHyhOdvTA-bg/)
 
 # Reviews
 
