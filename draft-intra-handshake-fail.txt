@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 21 April 2027                                         CoreWeave
+Expires: 23 April 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 21 April 2027                                         CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         18 October 2026
+                                                         20 October 2026
 
 
 Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6,
@@ -82,7 +82,9 @@ Abstract
    implementations of early attestation -- Edgeless Systems Contrast and
    Meta's AI -- remain vulnerable.  We recommend users of these two
    implementations to carefully evaluate their systems and understand
-   the risks.
+   the risks.  If you are aware of any open-source implementation of
+   early attestation that is not yet covered in this draft, please let
+   us know to responsibly disclose the vulnerabilities to them.
 
 About This Document
 
@@ -111,7 +113,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 April 2027.
+   This Internet-Draft will expire on 23 April 2027.
 
 Copyright Notice
 
@@ -171,33 +173,34 @@ Table of Contents
    16. Media Coverage
      16.1.  EarlyAttestationTschüss (EAT)
        16.1.1.  CVE-2026-100835
-     16.2.  CVE-2026-108362
-       16.2.1.  CVE-2026-108265
-       16.2.2.  CVE-2026-108266
-       16.2.3.  CVE-2026-108267
-       16.2.4.  CVE-2026-108268
-       16.2.5.  CVE-2026-108269
-     16.3.  EarlyAttestationBleed
-       16.3.1.  CVE-2026-100833
-     16.4.  Intra-handshake.fail
-       16.4.1.  Germany's BSI
-   17. Reviews
-     17.1.  Conference Reviews
-     17.2.  IETF/IRTF
-       17.2.1.  Main Questions
-       17.2.2.  Guidance Text
-     17.3.  Researchers outside of IETF/IRTF
-   18. Security Considerations
-   19. Ethical Considerations
-     19.1.  Evidence of Explanation of Vulnerabilities to the Authors
+       16.1.2.  CVE-2026-108362
+       16.1.3.  CVE-2026-108265
+       16.1.4.  CVE-2026-108266
+       16.1.5.  CVE-2026-108267
+       16.1.6.  CVE-2026-108268
+       16.1.7.  CVE-2026-108269
+     16.2.  EarlyAttestationBleed
+       16.2.1.  CVE-2026-100833
+     16.3.  Intra-handshake.fail
+       16.3.1.  Germany's BSI
+   17. General Potential Objections
+   18. Reviews
+     18.1.  Conference Reviews
+     18.2.  IETF/IRTF
+       18.2.1.  Main Questions
+       18.2.2.  Guidance Text
+     18.3.  Researchers outside of IETF/IRTF
+   19. Security Considerations
+   20. Ethical Considerations
+     20.1.  Evidence of Explanation of Vulnerabilities to the Authors
             of Vulnerable Drafts
-       19.1.1.  Recordings
-       19.1.2.  Archives
-   20. Contributions
-   21. IANA Considerations
-   22. References
-     22.1.  Normative References
-     22.2.  Informative References
+       20.1.1.  Recordings
+       20.1.2.  Archives
+   21. Contributions
+   22. IANA Considerations
+   23. References
+     23.1.  Normative References
+     23.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -302,6 +305,8 @@ Table of Contents
 1.5.  EarlyAttestationTschüss (EAT)
 
    *  [CVE-2026-100835] of CVSS 9.1 for Edgeless Systems Contrast
+
+   *  [CVE-2026-112377] of CVSS 9.1 for CCC Attestation SIG
 
    *  [CVE-2026-108362] of CVSS 9.1 for Privasys
 
@@ -629,6 +634,17 @@ Table of Contents
    |                                                          |        |Jean-Marie   |
    |                                                          |        |Jacquet, and |
    |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-112377]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-x3w3-7mvg-hxw5 (https://github.com/agentrust-io/     |5.9     |Muhammad     |
+   |weight-custody-manifest/security/advisories/GHSA-x3w3-    |        |Usama Sardar |
+   |7mvg-hxw5)                                                |        |             |
+   +----------------------------------------------------------+--------+-------------+
+   |GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/     |5.9     |Muhammad     |
+   |weight-custody-manifest/security/advisories/GHSA-jr5r-    |        |Usama Sardar |
+   |w684-fg5m)                                                |        |             |
    +----------------------------------------------------------+--------+-------------+
 
       Table 2: GHSAs/CVEs for implementations of early attestation and
@@ -1090,6 +1106,18 @@ Table of Contents
    |CVE [CVE-2026-108362] published  [*Severity = CRITICAL (CVSS 9.1)*]         |12        |
    |                                                                            |October,  |
    |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |CVE [CVE-2026-112377] published  [*Severity = CRITICAL (CVSS 9.1)*]         |19        |
+   |                                                                            |October,  |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |WCM published GHSA-x3w3-7mvg-hxw5 (https://github.com/agentrust-io/weight-  |19        |
+   |custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [*Severity =      |October,  |
+   |MEDIUM (CVSS 5.9)*]                                                         |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |WCM published GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/weight-  |19        |
+   |custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [*Severity =      |October,  |
+   |MEDIUM (CVSS 5.9)*]                                                         |2026      |
    +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
@@ -1662,7 +1690,7 @@ Table of Contents
    *  CIRCL's vulnerability (https://vulnerability.circl.lu/vuln/cve-
       2026-100835)
 
-16.2.  CVE-2026-108362
+16.1.2.  CVE-2026-108362
 
    [CVE-2026-108362]
 
@@ -1680,7 +1708,7 @@ Table of Contents
    *  Phish Herald (https://phishherald.com/topic/vulnerabilities/orgs-
       face-impersonation-risk-privasys-ra-tls/)
 
-16.2.1.  CVE-2026-108265
+16.1.3.  CVE-2026-108265
 
    [CVE-2026-108265]
 
@@ -1693,7 +1721,7 @@ Table of Contents
    *  acidpeak (https://www.acidpeak.com/product/privasys-enclave-os-
       mini/)
 
-16.2.2.  CVE-2026-108266
+16.1.4.  CVE-2026-108266
 
    [CVE-2026-108266]
 
@@ -1714,7 +1742,7 @@ Table of Contents
    *  datasaferadar (https://datasaferadar.com/section/vulnerabilities/
       privasys-rustls-quote-relay-flaw-bypasses/)
 
-16.2.3.  CVE-2026-108267
+16.1.5.  CVE-2026-108267
 
    [CVE-2026-108267]
 
@@ -1731,7 +1759,7 @@ Table of Contents
       (https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-
       go-before-v0-5-1-to-block-critical/)
 
-16.2.4.  CVE-2026-108268
+16.1.6.  CVE-2026-108268
 
    [CVE-2026-108268]
 
@@ -1747,7 +1775,7 @@ Table of Contents
    *  bitshieldnews (https://bitshieldnews.com/section/
       vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/)
 
-16.2.5.  CVE-2026-108269
+16.1.7.  CVE-2026-108269
 
    [CVE-2026-108269]
 
@@ -1772,7 +1800,7 @@ Table of Contents
    *  redteamlog (https://redteamlog.com/category/vulnerabilities/
       privasys-ra-tls-fixes-enclave-session-binding/)
 
-16.3.  EarlyAttestationBleed
+16.2.  EarlyAttestationBleed
 
    [EarlyAttestationBleed]
 
@@ -1829,7 +1857,7 @@ Table of Contents
    *  GCVE's db.gcve.eu (CVE-2026-92702) (https://db.gcve.eu/vuln/cve-
       2026-92702)
 
-16.3.1.  CVE-2026-100833
+16.2.1.  CVE-2026-100833
 
    *  America's Cyber Defense Agency (CISA) (https://www.cisa.gov/news-
       events/bulletins/sb26-271)
@@ -1847,7 +1875,7 @@ Table of Contents
 
    *  CVE Brief (https://cvebrief.com/cve/cve-2026-100833/)
 
-16.4.  Intra-handshake.fail
+16.3.  Intra-handshake.fail
 
    [Intra-handshake.fail]
 
@@ -1965,7 +1993,7 @@ Table of Contents
 
    *  AIMultiple (https://aimultiple.com/privacy-enhancing-technologies)
 
-16.4.1.  Germany's BSI
+16.3.1.  Germany's BSI
 
    Germany's Federal Office for Information Security (Bundesamt für
    Sicherheit in der Informationstechnik) has attested to it.  Carina
@@ -1981,14 +2009,20 @@ Table of Contents
    CC refers to Confidential Computing, and attested TLS is the core
    trust mechanism of CC.
 
-17.  Reviews
+17.  General Potential Objections
 
-17.1.  Conference Reviews
+   *  https://mailarchive.ietf.org/arch/msg/seat/k_uGnkjn8-
+      eqZgNRHyhOdvTA-bg/ (https://mailarchive.ietf.org/arch/msg/seat/
+      k_uGnkjn8-eqZgNRHyhOdvTA-bg/)
+
+18.  Reviews
+
+18.1.  Conference Reviews
 
    [Intra-handshake.fail] has been peer-reviewed and accepted for
    publication at ESORICS 2026.
 
-17.2.  IETF/IRTF
+18.2.  IETF/IRTF
 
    Several participants of the IETF/IRTF have attested to the results by
    independently reproducing the results and reviewing the code.  Some
@@ -2595,7 +2629,7 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/ufmrg/
       mf_CtbtSDHPz3uMHRXele2vwYr8/)
 
-17.2.1.  Main Questions
+18.2.1.  Main Questions
 
    In short, five main questions have been raised by WG participants in
    support of our work:
@@ -2625,7 +2659,7 @@ Table of Contents
    *  How does a verifying relying party get the legitimate PIIDs and
       CHIP_IDs?
 
-17.2.2.  Guidance Text
+18.2.2.  Guidance Text
 
    *  Evidence MUST be bound to the secure channel.  Failure to do so
       results in relay attacks [CVE-2026-33697], [EUVD-2026-16488],
@@ -2643,13 +2677,13 @@ Table of Contents
       [GHSA-Privasys-eov], [GHSA-Privasys-eom], [GHSA-Privasys-rtc],
       [GHSA-Privasys-rtc-da], [GHSA-Privasys-rtc-tcu].
 
-17.3.  Researchers outside of IETF/IRTF
+18.3.  Researchers outside of IETF/IRTF
 
    Some researchers have approached us confirming the proof-of-concept
    of the vulnerabilities in intra-handshake attestation.  More
    information will be added once their pre-prints/papers are public.
 
-18.  Security Considerations
+19.  Security Considerations
 
    All of this document is about the *insecurity* of *intra*-handshake
    (aka early) attestation.
@@ -2664,7 +2698,7 @@ Table of Contents
    analysis, and thus such reviews may miss corner cases and subtle
    vulnerabilities.
 
-19.  Ethical Considerations
+20.  Ethical Considerations
 
    Eva C.  M.  Willems contributed the discussion of AI-agent
    governability, distinguishing technical attestation from the broader
@@ -2691,7 +2725,7 @@ Table of Contents
    We have not retrieved any real data from any real system.  We have
    not released any key to any public forum or to any person.
 
-19.1.  Evidence of Explanation of Vulnerabilities to the Authors of
+20.1.  Evidence of Explanation of Vulnerabilities to the Authors of
        Vulnerable Drafts
 
    To the best of our abilities, knowledge, and understanding, we have
@@ -2701,13 +2735,13 @@ Table of Contents
    privately in several meetings and then later on publicly for at least
    half a year at several forums, including but not limited to CCC
    Attestation SIG and IETF/IRTF.  Please see the (non-exhaustive list
-   of) recordings Section 19.1.1 and the archives Section 19.1.2 below.
+   of) recordings Section 20.1.1 and the archives Section 20.1.2 below.
    We sincerely thank the authors of [I-D.fossati-tls-attestation-10]
    for withdrawing their draft to protect further exploits mentioned in
    Section 16.  We also sincerely thank the author of
    [I-D.ritz-seat-facts] for archiving the draft.
 
-19.1.1.  Recordings
+20.1.1.  Recordings
 
    +================================================+==========+==========+======================================================================================+
    |Event/Host                                      |Venue     |Date(s)   |Evidence                                                                              |
@@ -2872,7 +2906,7 @@ Table of Contents
       Table 13: Evidence of several explanations of vulnerabilities to
                       the authors of vulnerable drafts
 
-19.1.2.  Archives
+20.1.2.  Archives
 
    Since January, we have publicly informed the authors of vulnerable
    drafts [I-D.fossati-tls-attestation-09],
@@ -2881,9 +2915,9 @@ Table of Contents
    awareness on high-severity vulnerabilities and apply appropriate
    mitigations for the safety of their users:
 
-19.1.2.1.  Intra-handshake.fail
+20.1.2.1.  Intra-handshake.fail
 
-19.1.2.1.1.  IETF (https://www.ietf.org/)
+20.1.2.1.1.  IETF (https://www.ietf.org/)
 
    *  SEAT WG (https://mailarchive.ietf.org/arch/msg/seat/
       x3eQxFjQFJLceae6l4_NgXnmsDY/)
@@ -2919,7 +2953,7 @@ Table of Contents
    *  126attendees (https://mailarchive.ietf.org/arch/msg/126attendees/
       V9BKZJ_DGkZPdlnjBaUeyluhbqQ/)
 
-19.1.2.1.2.  IRTF (https://www.irtf.org/)
+20.1.2.1.2.  IRTF (https://www.irtf.org/)
 
    *  UFMRG: thread1 (https://mailarchive.ietf.org/arch/msg/ufmrg/
       ZWK0uMM92OdwlPbgXBvQApDpe5Q/) and thread2
@@ -2934,7 +2968,7 @@ Table of Contents
    *  DINRG (https://mailarchive.ietf.org/arch/msg/
       din/_8LE3Ru1xX16hgGJwryMTRwRoaA/)
 
-19.1.2.1.3.  CCC (https://confidentialcomputing.io/)
+20.1.2.1.3.  CCC (https://confidentialcomputing.io/)
 
    *  Attestation SIG: thread1
       (https://lists.confidentialcomputing.io/g/attestation/
@@ -2945,7 +2979,7 @@ Table of Contents
       topic/117932193) and thread2
       (https://lists.confidentialcomputing.io/g/tac/topic/120068850)
 
-19.1.2.1.4.  OCP (https://www.opencompute.org/)
+20.1.2.1.4.  OCP (https://www.opencompute.org/)
 
    *  OCP Security: message1 (https://ocp-all.groups.io/g/OCP-Security/
       topic/117932716), message2 (https://ocp-all.groups.io/g/OCP-
@@ -2954,7 +2988,7 @@ Table of Contents
       intra_handshake_fail/120483814) and message4 (https://ocp-
       all.groups.io/g/OCP-Security/topic/intra_handshake_fail/120524635)
 
-19.1.2.2.  EarlyAttestationBleed
+20.1.2.2.  EarlyAttestationBleed
 
    *  IRTF UFMRG (https://mailarchive.ietf.org/arch/msg/ufmrg/
       ZQKdp07P4UeTushAC1q9eBBtp0s/)
@@ -2980,7 +3014,7 @@ Table of Contents
    If you know any other relevant mailing list that we should inform for
    protection of users, please let us know.
 
-20.  Contributions
+21.  Contributions
 
    Contributions to the draft are welcome at https://github.com/
    muhammad-usama-sardar/intra-handshake-fail (https://github.com/
@@ -2992,13 +3026,13 @@ Table of Contents
 
    如果您只会说中文，非常欢迎您通过电子邮件联系第四位作者。我们有成员可以协助翻译您的投稿。
 
-21.  IANA Considerations
+22.  IANA Considerations
 
    This document has no IANA actions.
 
-22.  References
+23.  References
 
-22.1.  Normative References
+23.1.  Normative References
 
    [CSA-eBPF] Cloud Security Alliance, "MITRE's New Framework: Securing
               the eBPF Layer Your AI Depends On", September 2026,
@@ -3060,6 +3094,10 @@ Table of Contents
    [CVE-2026-108362]
               CVE, "CVE-2026-108362", October 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-108362>.
+
+   [CVE-2026-112377]
+              CVE, "CVE-2026-112377", October 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-112377>.
 
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
@@ -3255,7 +3293,7 @@ Table of Contents
               <https://www.usenix.org/conference/atc25/presentation/
               weinhold>.
 
-22.2.  Informative References
+23.2.  Informative References
 
    [I-D.fossati-seat-early-attestation]
               Sheffer, Y., Mihalcea, I., Deshpande, Y., Fossati, T., and
