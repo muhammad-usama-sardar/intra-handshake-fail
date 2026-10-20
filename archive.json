@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-13T04:32:47.450967+00:00",
+  "timestamp": "2026-10-20T02:37:19.078130+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -1993,24 +1993,26 @@
       "id": "PR_kwDOTPsy-c8AAAABH0teOw",
       "title": "Latest CVEs: CVE-2026-108265 - CVE-2026-108269",
       "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/31",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muhammad-usama-sardar",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "- Add Privasys CVEs",
       "createdAt": "2026-10-11T15:04:05Z",
-      "updatedAt": "2026-10-12T08:22:36Z",
+      "updatedAt": "2026-10-18T20:24:33Z",
       "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "baseRefName": "main",
       "baseRefOid": "1609e643bb01ae7eed7873ea5b41a53ef0a60668",
       "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
       "headRefName": "patch2",
-      "headRefOid": "02f56d8a7ef4043388507a565f0f8d70be165695",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "e45627cc2f936de4d7b39aa11fc060d7e5104669",
+      "closedAt": "2026-10-18T20:24:33Z",
+      "mergedAt": "2026-10-18T20:24:33Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "82bce91184b08cfd17f4fb2aee3acdd1677d92ef"
+      },
       "comments": [],
       "reviews": [
         {
