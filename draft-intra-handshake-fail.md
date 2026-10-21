@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-2026-92702 of CVSS 9.1, CVE-2026-108362 of CVSS 9.1, CVE-2026-33697 of CVSS 7.5, CVE-2026-108361 of CVSS 7.2, and 29+ other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, and 29 other CVEs of up to expected CVSS 10.0 upcoming)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -800,7 +800,7 @@ At least the following protocol specifications with intra-handshake attestation 
 - {{I-D.ritz-seat-facts}}: symbolic proof of insecurity; draft **archived**
   - violates G3 property in our analysis
   - unnecessary complexity is itself a security concern
-- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06 and -07)
+- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06, -07, and -08)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to {{GHSA-Cocos-AI}} that contains a link to {{SEAT-vulnerability-report}} that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
