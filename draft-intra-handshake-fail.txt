@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 23 April 2027                                         CoreWeave
+Expires: 24 April 2027                                         CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,16 +36,13 @@ Expires: 23 April 2027                                         CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         20 October 2026
+                                                         21 October 2026
 
 
 Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6,
      CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-
 2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of
-CVSS 9.1, CVE-2026-100835 of CVSS 9.1, CVE-2026-92701 of CVSS 9.1, CVE-
- 2026-92702 of CVSS 9.1, CVE-2026-108362 of CVSS 9.1, CVE-2026-33697 of
-   CVSS 7.5, CVE-2026-108361 of CVSS 7.2, and 29+ other CVEs of up to
-                      expected CVSS 10.0 upcoming)
+   CVSS 9.1, and 29 other CVEs of up to expected CVSS 10.0 upcoming)
                    draft-intra-handshake-fail-latest
 
 Abstract
@@ -113,7 +110,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 April 2027.
+   This Internet-Draft will expire on 24 April 2027.
 
 Copyright Notice
 
@@ -1362,7 +1359,7 @@ Table of Contents
 
    *  [I-D.fossati-seat-early-attestation]: symbolic and (paper-and-pen-
       based) computational proof of insecurity (originally done for -04
-      and applies also to -06 and -07)
+      and applies also to -06, -07, and -08)
 
       -  As a SEAT WG participant pointed out, please note that both
          [CVE-2026-33697] and [EUVD-2026-16488] contain a link to
