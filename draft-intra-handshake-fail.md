@@ -887,6 +887,8 @@ The findings of published CVEs/GHSAs up to 10.0 (presented in {{sec-credits}}) s
 
 Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether authorized parties retain the practical ability to intervene effectively and in time. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
+In Agent2Agent interactions, this distinction also matters over time and across delegation chains. Attestation evidence obtained at one point does not, by itself, establish that an agent's subsequent actions remain within the authority granted for a particular task, that changes in permissions or delegation have been accounted for, or that intervention remains feasible as agents interact. Relying parties should therefore consider how authorization boundaries, attribution, monitoring, and timely suspension or revocation are maintained throughout the interaction. These are operational governance considerations, not additional security properties established by the formal analysis in this draft.
+
 # Technical Details
 
 ## Tool
