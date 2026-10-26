@@ -47,3 +47,10 @@ $ git push origin draft-intra-handshake-fail-00
 
 If it doesn't work, see [alternate methods](https://github.com/martinthomson/i-d-template/blob/main/doc/SUBMITTING.md).
 
+
+## Submitting manually
+
+Open the run, e.g., 
+https://github.com/muhammad-usama-sardar/intra-handshake-fail/actions/runs/39568272314
+
+Summary → "Artifacts" at the bottom of the page → Download "published" → It contains the XML → https://datatracker.ietf.org/submit/ → Upload the XML. 

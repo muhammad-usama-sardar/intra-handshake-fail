@@ -1,5 +1,5 @@
 ---
-title: "Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6, CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of CVSS 9.1, and 29 other CVEs of up to expected CVSS 10.0 upcoming)"
+title: "Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-100835,CVE-2026-108265, CVE-2026-108266, CVE-2026-108267, CVE-2026-108268, CVE-2026-108269,  CVE-2026-92701, CVE-2026-92702, CVE-2026-108362, CVE-2026-33697, CVE-2026-108361 and others)"
 abbrev: "Early Attestation Considered Harmful"
 category: info
 
@@ -410,6 +410,55 @@ normative:
      title: CVE-2026-112377
      target: https://www.cve.org/CVERecord?id=CVE-2026-112377
      date: 19 Oct 2026
+  EUVD-2026-95996:
+     author:
+        org: ENISA
+     title: EUVD-2026-95996
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-95996
+     date: 9 Oct 2026
+  EUVD-2026-95997:
+     author:
+        org: ENISA
+     title: EUVD-2026-95997
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-95997
+     date: 9 Oct 2026
+  EUVD-2026-96017:
+     author:
+        org: ENISA
+     title: EUVD-2026-96017
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-96017
+     date: 9 Oct 2026
+  EUVD-2026-96018:
+     author:
+        org: ENISA
+     title: EUVD-2026-96018
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-96018
+     date: 9 Oct 2026
+  EUVD-2026-96019:
+     author:
+        org: ENISA
+     title: EUVD-2026-96019
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-96019
+     date: 9 Oct 2026
+  EUVD-2026-97782:
+     author:
+        org: ENISA
+     title: EUVD-2026-97782
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-97782
+     date: 12 Oct 2026
+  EUVD-2026-97781:
+     author:
+        org: ENISA
+     title: EUVD-2026-97781
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-97781
+     date: 12 Oct 2026
+  EUVD-2026-104535:
+     author:
+        org: ENISA
+     title: EUVD-2026-104535
+     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-104535
+     date: 19 Oct 2026
+
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -440,7 +489,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 9.0–10.0 | Critical | 2 | — |
 | 9.8 | Critical | 1 | — |
 | 9.6 | Critical | — | 1 |
-| 9.1 | Critical | 9 | 9 |
+| 9.1 | Critical | 10 | 10 |
 | 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | — |
 | 7.7 | High | 2 | — |
@@ -528,7 +577,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{GHSA-Cocos-AI5}} | 6.3 | Muhammad Usama Sardar |
 | {{GHSA-Edgeless-Systems6}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100833}} | 9.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
-| {{EUVD-2026-87853}} | 7.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
+| {{EUVD-2026-87853}} | 8.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
 | [GHSA-wqf9-jfmm-f68v](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
@@ -539,10 +588,15 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | [GHSA-cxxj-pvvx-6xcv](https://github.com/veraison/services/security/advisories/GHSA-cxxj-pvvx-6xcv) | 4.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-pv6g-4385-q8c8](https://github.com/veraison/services/security/advisories/GHSA-pv6g-4385-q8c8) | 6.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | {{CVE-2026-108265}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{EUVD-2026-95996}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108266}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{EUVD-2026-95997}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108267}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{EUVD-2026-96017}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108268}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{EUVD-2026-96018}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{EUVD-2026-96019}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
 | [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
 | [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
@@ -689,13 +743,21 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-100833}} published  [**Severity = CRITICAL (CVSS 9.6)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
 | CVE {{CVE-2026-108265}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-95996}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
 | CVE {{CVE-2026-108266}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-95997}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
 | CVE {{CVE-2026-108267}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-96017}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
 | CVE {{CVE-2026-108268}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-96018}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
 | CVE {{CVE-2026-108269}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-96019}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
 | CVE {{CVE-2026-108361}} published  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-97782}}  [**Severity = HIGH (CVSS 7.2)**] | 12 Ocgtober, 2026 |
 | CVE {{CVE-2026-108362}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-97781}}  [**Severity = CRITICAL (CVSS 9.1)**] | 12 Ocgtober, 2026 |
 | CVE {{CVE-2026-112377}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
+| ENISA published EUVD {{EUVD-2026-104535}}  [**Severity = CRITICAL (CVSS 9.1)**] | 19 Ocgtober, 2026 |
 | WCM published [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
@@ -713,6 +775,14 @@ European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independentl
 | {{EUVD-2026-83192}} | 9.1 | Critical |
 | {{EUVD-2026-87851}} | 9.1 | Critical |
 | {{EUVD-2026-87853}} | 7.6 | High |
+| {{EUVD-2026-95996}} | 9.1 | Critical |
+| {{EUVD-2026-95997}} | 9.1 | Critical |
+| {{EUVD-2026-96017}} | 9.1 | Critical |
+| {{EUVD-2026-96018}} | 9.1 | Critical |
+| {{EUVD-2026-96019}} | 9.1 | Critical |
+| {{EUVD-2026-97782}} | 7.2 | High |
+| {{EUVD-2026-97781}} | 9.1 | Critical |
+| {{EUVD-2026-104535}} | 9.1 | Critical |
 {: title="ENISA's issued EUVDs"}
 
 # Comparison with Other Vulnerabilities in Confidential Computing Literature
@@ -736,6 +806,8 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-100833}} | 9.6 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-100835}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-112377}} | 9.1 | Critical |
+| EarlyAttestationTschüss (EAT) | {{CVE-2026-108362}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108265}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108266}} | 9.1 | Critical |
 | EarlyAttestationTschüss (EAT) | {{CVE-2026-108267}} | 9.1 | Critical |
@@ -936,6 +1008,7 @@ If you have written an article on this and would like to be added here, please s
 ## EarlyAttestationTschüss (EAT)
 
 - [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
+- [freenode](https://www.freenode.com/digest/766)
 
 ### CVE-2026-100835
 
@@ -946,6 +1019,14 @@ If you have written an article on this and would like to be added here, please s
 - [ervik](https://www.ervik.as/cves/CVE-2026-100835)
 - [securityvulnerability.io](https://securityvulnerability.io/vulnerability/CVE-2026-100835)
 - CIRCL's [vulnerability](https://vulnerability.circl.lu/vuln/cve-2026-100835)
+
+### CVE-2026-112377
+
+{{CVE-2026-112377}}
+
+- [shellbulletin](https://shellbulletin.com/section/vulnerabilities/shut-down-ccc-attestation-tls-poc-on-open/)
+- [Apple podcast](https://podcasts.apple.com/us/podcast/top-vulnerabilidades-cr%C3%ADticas-20-10-2026/id1877409819?i=1000797192823&l=zh-Hans-CN)
+- [Hackerstorm](https://www.hackerstorm.com/nvd/search/cveTestReport.php?id=CVE-2026-112377)
 
 ### CVE-2026-108362
 
@@ -1387,11 +1468,16 @@ This draft benefits from several years of research on attested TLS, in particula
 
 **EarlyAttestationTschüss (EAT)**
 
-We wish to express our sincere appreciation to the following for their review:
+We wish to express our sincere appreciation to the following for their review and discussions:
 
 - Bertrand Foing
 - Markus Rudy
+- Sammy Kerata Oina
 - Kaya Ercihan
+- David Kaplan
+- Elena Reshetova
+- Artem Bityutskiy
+- Mateusz Bronk
 
 **EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
