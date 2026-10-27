@@ -941,6 +941,7 @@ Please see Sec. 7.1 and Figure 5 of {{Intra-handshake.fail}} for details of atta
 
 ## Implications of Findings for IETF SEAT WG
 - We believe post-handshake attestation alone, such as [draft-fossati-seat-expat](https://datatracker.ietf.org/doc/draft-fossati-seat-expat/), can achieve level 3 binding.
+- Post-handshake attestation requires one additional round trip, in which the Verifying Relying Party conveys the attestation nonce and receives Evidence in return. This is cheaper than re-establishing the connection for each attestation, and it is the only placement that correlates Evidence to an already authenticated peer.
 - The research suggests that recent hybrid proposals (combination of intra-handshake attestation and post-handshake attestation) {{I-D.fossati-seat-early-attestation}} and {{I-D.ritz-seat-facts}} may add **unnecessary complexity** of intra-handshake attestation without adding any security benefit compared to post-handshake attestation alone, such as [draft-fossati-seat-expat](https://datatracker.ietf.org/doc/draft-fossati-seat-expat/). We are not aware of any **security property** that hybrid proposals can achieve that post-handshake attestation alone cannot achieve.
 - As demonstrated by our symbolic analysis using ProVerif, the protocol specifications {{I-D.fossati-seat-early-attestation}} and {{I-D.ritz-seat-facts}} remain vulnerable to CVE-2026-33697. We have also proved that {{I-D.fossati-seat-early-attestation-04}} and {{I-D.fossati-seat-early-attestation}} violate the security theorems in the computational model.
 
