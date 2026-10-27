@@ -980,6 +980,8 @@ From {{ID-Crisis}}:
 
 While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.
 
+Note that this scope restriction does not weaken the level 2 limit of early attestation (cf. {{sec-binding-levels}}). In a PSK-based handshake, the client's application traffic key is still derived from a transcript that includes the server Finished message. Evidence conveyed earlier in the handshake can therefore not be correlated to it, so G3 remains unachievable and the level 2 limit holds for PSK-based handshakes as well.
+
 Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.
 
 ## Properties
