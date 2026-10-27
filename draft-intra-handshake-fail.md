@@ -886,11 +886,14 @@ At least the following protocol specifications with intra-handshake attestation 
 {: title="Summary of vulnerable early attestation drafts"}
 
 # Binding Levels
+{: #sec-binding-levels }
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
 3. Application traffic key (`atsc`) used for encryption of application data
 
 Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
+
+In early attestation, Evidence must be conveyed before the server Finished message, and no later carrier is available: SEAT charter precludes modification of the TLS protocol, so no new handshake message can be introduced to convey Evidence after server authentication. Level 3 is therefore unachievable in early attestation alone.
 
 # Security Properties (Correlation Goals)
 {: #sec-corr-goals }
