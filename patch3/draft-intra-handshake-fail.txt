@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 30 April 2027                                         CoreWeave
+Expires: 1 May 2027                                            CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 30 April 2027                                         CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         27 October 2026
+                                                         28 October 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -57,11 +57,9 @@ Abstract
    (GHSAs) in the process of getting CVE IDs, which provide substantial
    technical evidence of how early attestation fails in practice, even
    *without physical access* to the desired machine.  Moreover, since
-   continuous attestation [CSA-eBPF] [MITRE-Continuous-Attestation] is
-   generally required by regulations such as Article 32.1.(d) of GDPR
-   (https://eur-lex.europa.eu/legal-content/EN/TXT/
-   HTML/?uri=CELEX:32016R0679#enc_1), early attestation adds
-   *unnecessary complexity*. The results are backed by the research
+   continuous attestation is generally required [CSA-eBPF]
+   [MITRE-Continuous-Attestation], early attestation adds *unnecessary
+   complexity*. The results are backed by the research
    [Intra-handshake.fail], [TLS-RA], [EarlyAttestationBleed] and the
    artifacts [Intra-handshake.fail-repo] in state-of-the-art formal
    analysis tool, ProVerif, under Apache-2.0 license for
@@ -112,7 +110,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2027.
+   This Internet-Draft will expire on 1 May 2027.
 
 Copyright Notice
 
@@ -2763,14 +2761,12 @@ Table of Contents
       provide?
 
    *  Since continuous attestation is required in most use cases
-      [CSA-eBPF] [MITRE-Continuous-Attestation] and by regulations such
-      as Article 32.1.(d) of GDPR (https://eur-lex.europa.eu/legal-
-      content/EN/TXT/HTML/?uri=CELEX:32016R0679#enc_1), how is
-      *additional complexity* of *intra*-handshake attestation
-      justified?  Use cases with one-time attestation can be covered by
-      doing attestation round immediately after Connection Establishment
-      Time: see reference (https://www.ietf.org/archive/id/draft-usama-
-      seat-intra-vs-post-04.html#section-6-2).
+      [CSA-eBPF] [MITRE-Continuous-Attestation], how is *additional
+      complexity* of *intra*-handshake attestation justified?  Use cases
+      with one-time attestation can be covered by doing attestation
+      round immediately after Connection Establishment Time: see
+      reference (https://www.ietf.org/archive/id/draft-usama-seat-intra-
+      vs-post-04.html#section-6-2).
 
    *  What is the benefit of doing *signatures* of remote attestation
       *within* the handshake (as this latency can be exploited)?  We add
