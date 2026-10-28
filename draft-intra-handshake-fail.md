@@ -904,11 +904,14 @@ At least the following protocol specifications with intra-handshake attestation 
 {: title="Summary of vulnerable early attestation drafts"}
 
 # Binding Levels
+{: #sec-binding-levels }
 1. DH shared secret (`gxy`) used as shared secret between client and server
 2. Handshake traffic key (`htsc`) used for encryption of handshake messages
 3. Application traffic key (`atsc`) used for encryption of application data
 
 Please see Sec. 6.2 of {{Intra-handshake.fail}} for details.
+
+In early attestation, Evidence must be conveyed before the server Finished message, and no later carrier is available: SEAT charter precludes modification of the TLS protocol, so no new handshake message can be introduced to convey Evidence after server authentication. Level 3 is therefore unachievable in early attestation alone.
 
 # Security Properties (Correlation Goals)
 {: #sec-corr-goals }
@@ -956,6 +959,7 @@ Please see Sec. 7.1 and Figure 5 of {{Intra-handshake.fail}} for details of atta
 
 ## Implications of Findings for IETF SEAT WG
 - We believe post-handshake attestation alone, such as [draft-fossati-seat-expat](https://datatracker.ietf.org/doc/draft-fossati-seat-expat/), can achieve level 3 binding.
+- Post-handshake attestation requires one additional round trip, in which the Verifying Relying Party conveys the attestation nonce and receives Evidence in return. This is cheaper than re-establishing the connection for each attestation, and it is the only placement that correlates Evidence to an already authenticated peer.
 - The research suggests that recent hybrid proposals (combination of intra-handshake attestation and post-handshake attestation) {{I-D.fossati-seat-early-attestation}} and {{I-D.ritz-seat-facts}} may add **unnecessary complexity** of intra-handshake attestation without adding any security benefit compared to post-handshake attestation alone, such as [draft-fossati-seat-expat](https://datatracker.ietf.org/doc/draft-fossati-seat-expat/). We are not aware of any **security property** that hybrid proposals can achieve that post-handshake attestation alone cannot achieve.
 - As demonstrated by our symbolic analysis using ProVerif, the protocol specifications {{I-D.fossati-seat-early-attestation}} and {{I-D.ritz-seat-facts}} remain vulnerable to CVE-2026-33697. We have also proved that {{I-D.fossati-seat-early-attestation-04}} and {{I-D.fossati-seat-early-attestation}} violate the security theorems in the computational model.
 
@@ -996,6 +1000,8 @@ From {{ID-Crisis}}:
 > For modeling TLS 1.3, we consider handshakes based on Diffie-Hellman over either finite fields or elliptic curves, represented as (EC)DHE. This is because we are unaware of any publicly available specification or implementation of attested TLS with PSK-based handshakes.
 
 While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.
+
+Note that this scope restriction does not weaken the level 2 limit of early attestation (cf. {{sec-binding-levels}}). In a PSK-based handshake, the client's application traffic key is still derived from a transcript that includes the server Finished message. Evidence conveyed earlier in the handshake can therefore not be correlated to it, so G3 remains unachievable and the level 2 limit holds for PSK-based handshakes as well.
 
 Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.
 
