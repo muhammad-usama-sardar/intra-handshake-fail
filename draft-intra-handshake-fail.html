@@ -23,7 +23,15 @@
 <meta content="Ammara Gul" name="author">
 <meta content="Venkat Malladi" name="author">
 <meta content="
-       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine. Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity . The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are  one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application . The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis   and  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
+       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine.
+Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity .
+The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
+Currently, there are  one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application .
+The research papers on these are currently either under submission or being prepared for submission.
+The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
+Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
+In our analysis   and  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them. 
     " name="description">
 <meta content="xml2rfc 3.34.1" name="generator">
@@ -1164,7 +1172,15 @@ svg {
 <h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-100835,CVE-2026-108265, CVE-2026-108266, CVE-2026-108267, CVE-2026-108268, CVE-2026-108269, CVE-2026-92701, CVE-2026-92702, CVE-2026-108362, CVE-2026-33697, CVE-2026-108361 and others)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine. Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>. The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders. Currently, there are <strong>one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>. The research papers on these are currently either under submission or being prepared for submission. The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review. Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation. In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> and <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable. We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
+<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine.
+Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>.
+The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
+Currently, there are <strong>one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>.
+The research papers on these are currently either under submission or being prepared for submission.
+The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
+Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
+In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> and <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
@@ -1240,6 +1256,11 @@ If you are aware of any open-source implementation of early attestation that is 
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.4">
                 <p id="section-toc.1-1.1.2.4.1"><a href="#section-1.4" class="auto internal xref">1.4</a>.  <a href="#name-earlyattestationbleed" class="internal xref">EarlyAttestationBleed</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.4.2.1">
+                    <p id="section-toc.1-1.1.2.4.2.1.1"><a href="#section-1.4.1" class="auto internal xref">1.4.1</a>.  <a href="#name-architectural-flaws-in-earl" class="internal xref">Architectural Flaws in Early Attestation</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.5">
                 <p id="section-toc.1-1.1.2.5.1"><a href="#section-1.5" class="auto internal xref">1.5</a>.  <a href="#name-earlyattestationtschuss-eat" class="internal xref">EarlyAttestationTschüss (EAT)</a></p>
@@ -1657,6 +1678,28 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
             <p id="section-1.4-2.3.1">Edgeless Systems Contrast in policies resulting in <span>[<a href="#GHSA-Edgeless-Systems2" class="cite xref">GHSA-Edgeless-Systems2</a>]</span> of CVSS 9.0-10.0 and <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS v3.1 of 9.6.<a href="#section-1.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
+<div id="architectural-flaws-in-early-attestation">
+<section id="section-1.4.1">
+          <h4 id="name-architectural-flaws-in-earl">
+<a href="#section-1.4.1" class="section-number selfRef">1.4.1. </a><a href="#name-architectural-flaws-in-earl" class="section-name selfRef">Architectural Flaws in Early Attestation</a>
+          </h4>
+<p id="section-1.4.1-1">Sec. 7 of <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> presents four architectural flaws in early attestation:<a href="#section-1.4.1-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1.4.1-2.1">
+              <p id="section-1.4.1-2.1.1">Hardware-level Information of Server<a href="#section-1.4.1-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-1.4.1-2.2">
+              <p id="section-1.4.1-2.2.1">Only Boot-time Claims<a href="#section-1.4.1-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-1.4.1-2.3">
+              <p id="section-1.4.1-2.3.1">Re-attestation<a href="#section-1.4.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-1.4.1-2.4">
+              <p id="section-1.4.1-2.4.1">High Handshake Latency, Timeouts, and Failures<a href="#section-1.4.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+</section>
+</div>
 </section>
 </div>
 <div id="earlyattestationtschss-eat">
@@ -4591,12 +4634,23 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
             </thead>
             <tbody>
               <tr>
+                <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/">Security WG</a> @ <a href="https://ripe93.ripe.net/">RIPE 93</a>
+</td>
+                <td class="text-left" rowspan="1" colspan="1">Sofia, Bulgaria</td>
+                <td class="text-left" rowspan="1" colspan="1">27 Oct, 2026</td>
+                <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/">abstract</a>, <a href="https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/resources/20261027_RIPE_93_Sec_e4tTL66.pdf">slides</a>, <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/">transcript</a>, <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video">video</a>
+</td>
+              </tr>
+              <tr>
                 <td class="text-left" rowspan="1" colspan="1">System Boot and Security MC @ <a href="https://lpc.events/event/20/">Linux Plumbers Conference 2026</a>
 </td>
                 <td class="text-left" rowspan="1" colspan="1">Prague, Czechia</td>
                 <td class="text-left" rowspan="1" colspan="1">5 Oct, 2026</td>
                 <td class="text-left" rowspan="1" colspan="1">
-                  <a href="https://lpc.events/event/20/contributions/2585/">abstract</a>, slides, video</td>
+                  <a href="https://lpc.events/event/20/contributions/2585/">abstract</a>, <a href="https://lpc.events/event/20/contributions/2585/attachments/2040/4688/20261005_LPC_2026_Security.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=KL6EX8hcFKc">video</a>
+</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">BoF @ <a href="https://lpc.events/event/20/">Linux Plumbers Conference 2026</a>
@@ -4604,7 +4658,7 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
                 <td class="text-left" rowspan="1" colspan="1">Prague, Czechia</td>
                 <td class="text-left" rowspan="1" colspan="1">5 Oct, 2026</td>
                 <td class="text-left" rowspan="1" colspan="1">
-                  <a href="https://lpc.events/event/20/contributions/2640/">abstract</a>, slides, video</td>
+                  <a href="https://lpc.events/event/20/contributions/2640/">abstract</a>, <a href="https://lpc.events/event/20/contributions/2640/attachments/2049/4690/20261005_LPC_2026_BoF.pdf">slides</a>, video</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">

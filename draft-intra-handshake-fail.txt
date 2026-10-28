@@ -133,6 +133,7 @@ Table of Contents
      1.2.  Intra-handshake.fail
      1.3.  ID-Crisis
      1.4.  EarlyAttestationBleed
+       1.4.1.  Architectural Flaws in Early Attestation
      1.5.  EarlyAttestationTschüss (EAT)
    2.  Published GHSAs/CVEs
    3.  Intra-handshake.fail
@@ -299,6 +300,19 @@ Table of Contents
    *  Edgeless Systems Contrast in policies resulting in
       [GHSA-Edgeless-Systems2] of CVSS 9.0-10.0 and [CVE-2026-100833] of
       CVSS v3.1 of 9.6.
+
+1.4.1.  Architectural Flaws in Early Attestation
+
+   Sec. 7 of [EarlyAttestationBleed] presents four architectural flaws
+   in early attestation:
+
+   *  Hardware-level Information of Server
+
+   *  Only Boot-time Claims
+
+   *  Re-attestation
+
+   *  High Handshake Latency, Timeouts, and Failures
 
 1.5.  EarlyAttestationTschüss (EAT)
 
@@ -2866,11 +2880,20 @@ Table of Contents
    +================================================+==========+==========+======================================================================================+
    |Event/Host                                      |Venue     |Date(s)   |Evidence                                                                              |
    +================================================+==========+==========+======================================================================================+
-   |System Boot and Security MC @ Linux Plumbers    |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2585/), slides, video             |
-   |Conference 2026 (https://lpc.events/event/20/)  |Czechia   |2026      |                                                                                      |
+   |Security WG (https://ripe93.ripe.net/programme/ |Sofia,    |27 Oct,   |abstract (https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), slides|
+   |meeting-plan/sessions/137/) @ RIPE 93           |Bulgaria  |2026      |(https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/                           |
+   |(https://ripe93.ripe.net/)                      |          |          |resources/20261027_RIPE_93_Sec_e4tTL66.pdf), transcript                               |
+   |                                                |          |          |(https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/), video      |
+   |                                                |          |          |(https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video)           |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |BoF @ Linux Plumbers Conference 2026            |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2640/), slides, video             |
-   |(https://lpc.events/event/20/)                  |Czechia   |2026      |                                                                                      |
+   |System Boot and Security MC @ Linux Plumbers    |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2585/), slides                    |
+   |Conference 2026 (https://lpc.events/event/20/)  |Czechia   |2026      |(https://lpc.events/event/20/contributions/2585/                                      |
+   |                                                |          |          |attachments/2040/4688/20261005_LPC_2026_Security.pdf), video (https://www.youtube.com/|
+   |                                                |          |          |watch?v=KL6EX8hcFKc)                                                                  |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |BoF @ Linux Plumbers Conference 2026            |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2640/), slides                    |
+   |(https://lpc.events/event/20/)                  |Czechia   |2026      |(https://lpc.events/event/20/contributions/2640/                                      |
+   |                                                |          |          |attachments/2049/4690/20261005_LPC_2026_BoF.pdf), video                               |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides (https://www.researchgate.net/                                                 |
    |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-            |
