@@ -3326,7 +3326,7 @@ and trust domains. The following table provides a corresponding low-level view.<
       </table>
 </section>
 </div>
-<div id="binding-levels">
+<div id="sec-binding-levels">
 <section id="section-11">
       <h2 id="name-binding-levels">
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-binding-levels" class="section-name selfRef">Binding Levels</a>
@@ -3343,6 +3343,7 @@ and trust domains. The following table provides a corresponding low-level view.<
 </li>
       </ol>
 <p id="section-11-2">Please see Sec. 6.2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> for details.<a href="#section-11-2" class="pilcrow">¶</a></p>
+<p id="section-11-3">In early attestation, Evidence must be conveyed before the server Finished message, and no later carrier is available: SEAT charter precludes modification of the TLS protocol, so no new handshake message can be introduced to convey Evidence after server authentication. Level 3 is therefore unachievable in early attestation alone.<a href="#section-11-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-corr-goals">
@@ -3542,10 +3543,13 @@ and trust domains. The following table provides a corresponding low-level view.<
             <p id="section-14.1-1.1.1">We believe post-handshake attestation alone, such as <a href="https://datatracker.ietf.org/doc/draft-fossati-seat-expat/">draft-fossati-seat-expat</a>, can achieve level 3 binding.<a href="#section-14.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.1-1.2">
-            <p id="section-14.1-1.2.1">The research suggests that recent hybrid proposals (combination of intra-handshake attestation and post-handshake attestation) <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> may add <strong>unnecessary complexity</strong> of intra-handshake attestation without adding any security benefit compared to post-handshake attestation alone, such as <a href="https://datatracker.ietf.org/doc/draft-fossati-seat-expat/">draft-fossati-seat-expat</a>. We are not aware of any <strong>security property</strong> that hybrid proposals can achieve that post-handshake attestation alone cannot achieve.<a href="#section-14.1-1.2.1" class="pilcrow">¶</a></p>
+            <p id="section-14.1-1.2.1">Post-handshake attestation requires one additional round trip, in which the Verifying Relying Party conveys the attestation nonce and receives Evidence in return. This is cheaper than re-establishing the connection for each attestation, and it is the only placement that correlates Evidence to an already authenticated peer.<a href="#section-14.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-14.1-1.3">
-            <p id="section-14.1-1.3.1">As demonstrated by our symbolic analysis using ProVerif, the protocol specifications <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> remain vulnerable to CVE-2026-33697. We have also proved that <span>[<a href="#I-D.fossati-seat-early-attestation-04" class="cite xref">I-D.fossati-seat-early-attestation-04</a>]</span> and <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> violate the security theorems in the computational model.<a href="#section-14.1-1.3.1" class="pilcrow">¶</a></p>
+            <p id="section-14.1-1.3.1">The research suggests that recent hybrid proposals (combination of intra-handshake attestation and post-handshake attestation) <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> may add <strong>unnecessary complexity</strong> of intra-handshake attestation without adding any security benefit compared to post-handshake attestation alone, such as <a href="https://datatracker.ietf.org/doc/draft-fossati-seat-expat/">draft-fossati-seat-expat</a>. We are not aware of any <strong>security property</strong> that hybrid proposals can achieve that post-handshake attestation alone cannot achieve.<a href="#section-14.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-14.1-1.4">
+            <p id="section-14.1-1.4.1">As demonstrated by our symbolic analysis using ProVerif, the protocol specifications <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> remain vulnerable to CVE-2026-33697. We have also proved that <span>[<a href="#I-D.fossati-seat-early-attestation-04" class="cite xref">I-D.fossati-seat-early-attestation-04</a>]</span> and <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span> violate the security theorems in the computational model.<a href="#section-14.1-1.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3625,7 +3629,8 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 </li>
         </ul>
 <p id="section-15.2-4">While it would be nice to model PSK-based handshake, the rationale is that the correlation properties studied in this work do not necessarily require it.<a href="#section-15.2-4" class="pilcrow">¶</a></p>
-<p id="section-15.2-5">Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.<a href="#section-15.2-5" class="pilcrow">¶</a></p>
+<p id="section-15.2-5">Note that this scope restriction does not weaken the level 2 limit of early attestation (cf. <a href="#sec-binding-levels" class="auto internal xref">Section 11</a>). In a PSK-based handshake, the client's application traffic key is still derived from a transcript that includes the server Finished message. Evidence conveyed earlier in the handshake can therefore not be correlated to it, so G3 remains unachievable and the level 2 limit holds for PSK-based handshakes as well.<a href="#section-15.2-5" class="pilcrow">¶</a></p>
+<p id="section-15.2-6">Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.<a href="#section-15.2-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="properties">

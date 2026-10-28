@@ -1511,6 +1511,13 @@ Table of Contents
 
    Please see Sec. 6.2 of [Intra-handshake.fail] for details.
 
+   In early attestation, Evidence must be conveyed before the server
+   Finished message, and no later carrier is available: SEAT charter
+   precludes modification of the TLS protocol, so no new handshake
+   message can be introduced to convey Evidence after server
+   authentication.  Level 3 is therefore unachievable in early
+   attestation alone.
+
 12.  Security Properties (Correlation Goals)
 
    We consider TLS Server as RATS Attester, which is typical in
@@ -1629,6 +1636,13 @@ Table of Contents
       fossati-seat-expat (https://datatracker.ietf.org/doc/draft-
       fossati-seat-expat/), can achieve level 3 binding.
 
+   *  Post-handshake attestation requires one additional round trip, in
+      which the Verifying Relying Party conveys the attestation nonce
+      and receives Evidence in return.  This is cheaper than re-
+      establishing the connection for each attestation, and it is the
+      only placement that correlates Evidence to an already
+      authenticated peer.
+
    *  The research suggests that recent hybrid proposals (combination of
       intra-handshake attestation and post-handshake attestation)
       [I-D.fossati-seat-early-attestation] and [I-D.ritz-seat-facts] may
@@ -1737,6 +1751,14 @@ Table of Contents
    While it would be nice to model PSK-based handshake, the rationale is
    that the correlation properties studied in this work do not
    necessarily require it.
+
+   Note that this scope restriction does not weaken the level 2 limit of
+   early attestation (cf. Section 11).  In a PSK-based handshake, the
+   client's application traffic key is still derived from a transcript
+   that includes the server Finished message.  Evidence conveyed earlier
+   in the handshake can therefore not be correlated to it, so G3 remains
+   unachievable and the level 2 limit holds for PSK-based handshakes as
+   well.
 
    Note: The artifacts consider the case of server authentication only,
    as client authentication is optional in TLS 1.3.  No claims are made
