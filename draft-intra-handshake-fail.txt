@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 29 April 2027                                         CoreWeave
+Expires: 1 May 2027                                            CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 29 April 2027                                         CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         26 October 2026
+                                                         28 October 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -110,7 +110,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 April 2027.
+   This Internet-Draft will expire on 1 May 2027.
 
 Copyright Notice
 
@@ -1671,6 +1671,18 @@ Table of Contents
    Successful attestation should therefore be treated as one input into
    governance, rather than as sufficient evidence that an AI agent
    remains under effective control.
+
+   In Agent2Agent interactions, this distinction also matters over time
+   and across delegation chains.  Attestation evidence obtained at one
+   point does not, by itself, establish that an agent's subsequent
+   actions remain within the authority granted for a particular task,
+   that changes in permissions or delegation have been accounted for, or
+   that intervention remains feasible as agents interact.  Relying
+   parties should therefore consider how authorization boundaries,
+   attribution, monitoring, and timely suspension or revocation are
+   maintained throughout the interaction.  These are operational
+   governance considerations, not additional security properties
+   established by the formal analysis in this draft.
 
 15.  Technical Details
 
