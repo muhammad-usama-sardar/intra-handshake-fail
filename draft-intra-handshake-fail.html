@@ -23,14 +23,14 @@
 <meta content="Ammara Gul" name="author">
 <meta content="Venkat Malladi" name="author">
 <meta content="
-       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even  without physical access  to the desired machine.
+       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as  , fails in practice, even  without physical access  to the desired machine.
 Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity .
 The results are backed by the research  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
 Currently, there are  one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application .
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis   and  , the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+In our analysis  ,  , and EarlyAttestationTschüss (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them. 
     " name="description">
@@ -1073,11 +1073,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Early Attestation Considered Harmful</td>
-<td class="right">October 2026</td>
+<td class="right">November 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 1 May 2027</td>
+<td class="center">Expires 5 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1090,12 +1090,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-28" class="published">28 October 2026</time>
+<time datetime="2026-11-01" class="published">1 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-01">1 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-05">5 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1172,14 +1172,14 @@ svg {
 <h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-100835,CVE-2026-108265, CVE-2026-108266, CVE-2026-108267, CVE-2026-108268, CVE-2026-108269, CVE-2026-92701, CVE-2026-92702, CVE-2026-108362, CVE-2026-33697, CVE-2026-108361 and others)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation fails in practice, even <strong>without physical access</strong> to the desired machine.
+<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>, fails in practice, even <strong>without physical access</strong> to the desired machine.
 Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>.
 The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
 Currently, there are <strong>one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>.
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> and <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable.
+In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span>, <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, and EarlyAttestationTschüss (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
@@ -1213,7 +1213,7 @@ If you are aware of any open-source implementation of early attestation that is 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 1 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 5 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1709,28 +1709,28 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
         </h3>
 <ul class="normal">
 <li class="normal" id="section-1.5-1.1">
-            <p id="section-1.5-1.1.1"><span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1 for Edgeless Systems Contrast<a href="#section-1.5-1.1.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.1.1"><span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1 against Edgeless Systems Contrast<a href="#section-1.5-1.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.2">
-            <p id="section-1.5-1.2.1"><span>[<a href="#CVE-2026-112377" class="cite xref">CVE-2026-112377</a>]</span> of CVSS 9.1 for CCC Attestation SIG<a href="#section-1.5-1.2.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.2.1"><span>[<a href="#CVE-2026-112377" class="cite xref">CVE-2026-112377</a>]</span> of CVSS 9.1 against CCC Attestation SIG<a href="#section-1.5-1.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.3">
-            <p id="section-1.5-1.3.1"><span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.3.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.3.1"><span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.4">
-            <p id="section-1.5-1.4.1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.4.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.4.1"><span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.4.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.5">
-            <p id="section-1.5-1.5.1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.5.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.5.1"><span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.5.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.6">
-            <p id="section-1.5-1.6.1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.6.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.6.1"><span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.6.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.7">
-            <p id="section-1.5-1.7.1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.7.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.7.1"><span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.7.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.5-1.8">
-            <p id="section-1.5-1.8.1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1 for Privasys<a href="#section-1.5-1.8.1" class="pilcrow">¶</a></p>
+            <p id="section-1.5-1.8.1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-1.8.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3699,6 +3699,12 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
           <li class="normal" id="section-16.1-1.2">
             <p id="section-16.1-1.2.1"><a href="https://www.freenode.com/digest/766">freenode</a><a href="#section-16.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
+          <li class="normal" id="section-16.1-1.3">
+            <p id="section-16.1-1.3.1"><a href="https://nhimg.org/articles/attested-tls-relay-flaws-show-where-confidential-computing-binding-fails/">NHI Management Group</a><a href="#section-16.1-1.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-16.1-1.4">
+            <p id="section-16.1-1.4.1"><a href="https://nhimg.org/community/nhi-breaches/attested-tls-relay-attacks-what-do-security-teams-need-to-change/">NHI Forum</a><a href="#section-16.1-1.4.1" class="pilcrow">¶</a></p>
+</li>
         </ul>
 <div id="cve-2026-100835">
 <section id="section-16.1.1">
@@ -3758,7 +3764,7 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
               <p id="section-16.1.3-2.2.1"><a href="https://firewallchronicle.com/topic/vulnerabilities/privasys-ra-tls-clients-identity-validation-flaw/">firewallchronicle</a><a href="#section-16.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.1.3-2.3">
-              <p id="section-16.1.3-2.3.1"><a href="https://podcasts.apple.com/pl/podcast/top-vulnerabilidades-cr%C3%ADticas-13-10-2026/id1877409819?i=1000796060867&amp;l=pl">Apple podcase</a><a href="#section-16.1.3-2.3.1" class="pilcrow">¶</a></p>
+              <p id="section-16.1.3-2.3.1"><a href="https://podcasts.apple.com/pl/podcast/top-vulnerabilidades-cr%C3%ADticas-13-10-2026/id1877409819?i=1000796060867&amp;l=pl">Apple podcast</a><a href="#section-16.1.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-16.1.3-2.4">
               <p id="section-16.1.3-2.4.1"><a href="https://phishherald.com/topic/vulnerabilities/orgs-face-impersonation-risk-privasys-ra-tls/">Phish Herald</a><a href="#section-16.1.3-2.4.1" class="pilcrow">¶</a></p>
@@ -4640,9 +4646,19 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
             <tbody>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://biohackathon-europe.org/">BioHackathon Europe</a>
+</td>
+                <td class="text-left" rowspan="1" colspan="1">Barcelona, Spain</td>
+                <td class="text-left" rowspan="1" colspan="1">9-13 Nov, 2026</td>
+                <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md">Proposal</a>
+</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">
                   <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/">Security WG</a> @ <a href="https://ripe93.ripe.net/">RIPE 93</a>
 </td>
-                <td class="text-left" rowspan="1" colspan="1">Sofia, Bulgaria</td>
+                <td class="text-left" rowspan="1" colspan="1">Sofia, Bulgaria (Virtual)</td>
                 <td class="text-left" rowspan="1" colspan="1">27 Oct, 2026</td>
                 <td class="text-left" rowspan="1" colspan="1">
                   <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/">abstract</a>, <a href="https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/resources/20261027_RIPE_93_Sec_e4tTL66.pdf">slides</a>, <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/">transcript</a>, <a href="https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video">video</a>
@@ -5007,7 +5023,7 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
           <h4 id="name-archives">
 <a href="#section-20.1.2" class="section-number selfRef">20.1.2. </a><a href="#name-archives" class="section-name selfRef">Archives</a>
           </h4>
-<p id="section-20.1.2-1">Since January, we have publicly informed the authors of vulnerable drafts <span>[<a href="#I-D.fossati-tls-attestation-09" class="cite xref">I-D.fossati-tls-attestation-09</a>]</span>, <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>, and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> and shared our results with the community for review and to raise awareness on high-severity vulnerabilities and apply appropriate mitigations for the safety of their users:<a href="#section-20.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-20.1.2-1">Since January'26, we have publicly informed the authors of vulnerable drafts <span>[<a href="#I-D.fossati-tls-attestation-09" class="cite xref">I-D.fossati-tls-attestation-09</a>]</span>, <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>, and <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> and shared our results with the community for review and to raise awareness on high- and critical-severity vulnerabilities and apply appropriate mitigations for the safety of their users:<a href="#section-20.1.2-1" class="pilcrow">¶</a></p>
 <div id="intra-handshakefail-3">
 <section id="section-20.1.2.1">
             <h5 id="name-intra-handshakefail-4">
@@ -5124,7 +5140,28 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
                 <p id="section-20.1.2.2-1.6.1"><a href="https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html">ProVerif</a><a href="#section-20.1.2.2-1.6.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
-<p id="section-20.1.2.2-2">If you know any other relevant mailing list that we should inform for protection of users, please let us know.<a href="#section-20.1.2.2-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="earlyattestationtschss-eat-2">
+<section id="section-20.1.2.3">
+            <h5 id="name-earlyattestationtschuss-eat-3">
+<a href="#section-20.1.2.3" class="section-number selfRef">20.1.2.3. </a><a href="#name-earlyattestationtschuss-eat-3" class="section-name selfRef">EarlyAttestationTschüss (EAT)</a>
+            </h5>
+<ul class="normal">
+<li class="normal" id="section-20.1.2.3-1.1">
+                <p id="section-20.1.2.3-1.1.1"><a href="https://mailarchive.ietf.org/arch/msg/ufmrg/8RPCf502JFmsBui5rUZw38l76Rk/">IRTF UFMRG</a><a href="#section-20.1.2.3-1.1.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-20.1.2.3-1.2">
+                <p id="section-20.1.2.3-1.2.1"><a href="https://lists.aaif.io/g/wg-security-privacy/topic/contribution/121847989">Agentic AI Foundation (AAIF) Security &amp; Privacy</a><a href="#section-20.1.2.3-1.2.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-20.1.2.3-1.3">
+                <p id="section-20.1.2.3-1.3.1"><a href="https://ocp-all.groups.io/g/OCP-Security/message/1279">OCP Security</a><a href="#section-20.1.2.3-1.3.1" class="pilcrow">¶</a></p>
+</li>
+              <li class="normal" id="section-20.1.2.3-1.4">
+                <p id="section-20.1.2.3-1.4.1"><a href="https://lists.confidentialcomputing.io/g/attestation/message/343">Confidential Computing Consortium (CCC)</a><a href="#section-20.1.2.3-1.4.1" class="pilcrow">¶</a></p>
+</li>
+            </ul>
+<p id="section-20.1.2.3-2">If you know any other relevant mailing list that we should inform for protection of users, please let us know.<a href="#section-20.1.2.3-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
