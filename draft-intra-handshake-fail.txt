@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 5 May 2027                                            CoreWeave
+Expires: 6 May 2027                                            CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 5 May 2027                                            CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         1 November 2026
+                                                         2 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -115,7 +115,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 May 2027.
+   This Internet-Draft will expire on 6 May 2027.
 
 Copyright Notice
 
@@ -233,7 +233,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.6      | Critical | —                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 10                        | 10             |
+   | 9.1      | Critical | 10                        | 11             |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
@@ -247,7 +247,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 7.4      | High     | 4                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 7.2      | High     | 1                         | 1              |
+   | 7.2      | High     | 1                         | 2              |
    +----------+----------+---------------------------+----------------+
    | 6.5      | Medium   | 3                         | —              |
    +----------+----------+---------------------------+----------------+
@@ -702,6 +702,12 @@ Table of Contents
    |GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/     |5.9     |Muhammad     |
    |weight-custody-manifest/security/advisories/GHSA-jr5r-    |        |Usama Sardar |
    |w684-fg5m)                                                |        |             |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-119344]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-119345]                                         |7.2     |Muhammad     |
+   |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
 
       Table 2: GHSAs/CVEs for implementations of early attestation and
@@ -1207,6 +1213,14 @@ Table of Contents
    |WCM published GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/weight-  |19        |
    |custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [*Severity =      |October,  |
    |MEDIUM (CVSS 5.9)*]                                                         |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-119344] published [*Severity = CRITICAL (CVSS 9.1)*]              |2         |
+   |                                                                            |November, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-119345] published [*Severity = HIGH (CVSS 7.2)*]                  |2         |
+   |                                                                            |November, |
+   |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
@@ -3293,6 +3307,14 @@ Table of Contents
               CVE, "CVE-2026-112377", October 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-112377>.
 
+   [CVE-2026-119344]
+              CVE, "CVE-2026-119344", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-119344>.
+
+   [CVE-2026-119345]
+              CVE, "CVE-2026-119345", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-119345>.
+
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
               Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
@@ -3526,9 +3548,9 @@ Table of Contents
               T. Reddy.K, "Using Attestation in Transport Layer Security
               (TLS) and Datagram Transport Layer Security (DTLS)", Work
               in Progress, Internet-Draft, draft-fossati-seat-early-
-              attestation-08, 14 October 2026,
+              attestation-09, 1 November 2026,
               <https://datatracker.ietf.org/doc/html/draft-fossati-seat-
-              early-attestation-08>.
+              early-attestation-09>.
 
    [I-D.fossati-seat-early-attestation-04]
               Sheffer, Y., Mihalcea, I., Deshpande, Y., Fossati, T., and
