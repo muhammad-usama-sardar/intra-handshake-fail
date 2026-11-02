@@ -52,8 +52,9 @@ Abstract
    9.1, [CVE-2026-108267] of CVSS 9.1, [CVE-2026-108268] of CVSS 9.1,
    [CVE-2026-108269] of CVSS 9.1, [CVE-2026-100835] of CVSS 9.1,
    [CVE-2026-92701] of CVSS 9.1, [CVE-2026-92702] of CVSS 9.1,
-   [CVE-2026-108362] of CVSS 9.1, [CVE-2026-33697] of CVSS 7.5,
-   [CVE-2026-108361] of CVSS 7.2, and several GitHub Security Advisories
+   [CVE-2026-108362] of CVSS 9.1, [CVE-2026-119344] of CVSS 9.1,
+   [CVE-2026-33697] of CVSS 7.5, [CVE-2026-108361] of CVSS 7.2,
+   [CVE-2026-119345] of CVSS 7.2, and several GitHub Security Advisories
    (GHSAs) in the process of getting CVE IDs, which provide substantial
    technical evidence of how early attestation, such as
    [I-D.fossati-seat-early-attestation], fails in practice, even
