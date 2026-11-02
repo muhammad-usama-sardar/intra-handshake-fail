@@ -458,7 +458,18 @@ normative:
      title: EUVD-2026-104535
      target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-104535
      date: 19 Oct 2026
-
+  CVE-2026-119344:
+     author:
+        org: CVE
+     title: CVE-2026-119344
+     target: https://www.cve.org/CVERecord?id=CVE-2026-119344
+     date: 2 Nov 2026
+  CVE-2026-119345:
+     author:
+        org: CVE
+     title: CVE-2026-119345
+     target: https://www.cve.org/CVERecord?id=CVE-2026-119345
+     date: 2 Nov 2026
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -497,14 +508,14 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 9.0–10.0 | Critical | 2 | — |
 | 9.8 | Critical | 1 | — |
 | 9.6 | Critical | — | 1 |
-| 9.1 | Critical | 10 | 10 |
+| 9.1 | Critical | 10 | 11 |
 | 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | — |
 | 7.7 | High | 2 | — |
 | 7.6 | High | 1 | — |
 | 7.5 | High | 3 | 1 |
 | 7.4 | High | 4 | — |
-| 7.2 | High | 1 | 1 |
+| 7.2 | High | 1 | 2 |
 | 6.5 | Medium | 3 | — |
 | 6.3 | Medium | 3 | — |
 | 5.5 | Medium | 1 | — |
@@ -618,6 +629,8 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
 | [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
 | [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
+| {{CVE-2026-119344}} | 9.1 | Muhammad Usama Sardar |
+| {{CVE-2026-119345}} | 7.2 | Muhammad Usama Sardar |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -778,6 +791,8 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | ENISA published EUVD {{EUVD-2026-104535}}  [**Severity = CRITICAL (CVSS 9.1)**] | 19 Ocgtober, 2026 |
 | WCM published [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
+| {{CVE-2026-119344}} published [**Severity = CRITICAL (CVSS 9.1)**] | 2 November, 2026 |
+| {{CVE-2026-119345}} published [**Severity = HIGH (CVSS 7.2)**] | 2 November, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
