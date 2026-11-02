@@ -470,6 +470,13 @@ normative:
      title: CVE-2026-119345
      target: https://www.cve.org/CVERecord?id=CVE-2026-119345
      date: 2 Nov 2026
+  EarlyAttestationTschuess:
+    title: "EarlyAttestationTschüss (EAT): 8+ Critical-Severity Vulnerabilities of CVSS 9.1 Resulting in End of Life of Early Attestation"
+    date: November 2026,
+    target: https://www.researchgate.net/publication/417343302_EarlyAttestationTschuss_EAT
+    author:
+      - ins: M. U. Sardar
+      - ins: Songbo Bu
 
 informative:
   I-D.fossati-seat-early-attestation:
@@ -482,14 +489,14 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-119344}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, {{CVE-2026-119345}} of CVSS 7.2, and several GitHub Security Advisories (GHSAs) in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as {{I-D.fossati-seat-early-attestation}}, fails in practice, even **without physical access** to the desired machine.
+The draft aims to provide technical details of {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-119344}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, {{CVE-2026-119345}} of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as {{I-D.fossati-seat-early-attestation}}, fails in practice, even **without physical access** to the desired machine.
 Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**.
-The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
-Currently, there are **one CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**.
+The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}}, {{EarlyAttestationTschuess}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
+Currently, there is **one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**.
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis {{Intra-handshake.fail-repo}}, {{ID-Crisis-repo}}, and EarlyAttestationTschüss (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
+In our analysis {{Intra-handshake.fail-repo}}, {{ID-Crisis-repo}}, and {{EarlyAttestationTschuess}} (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.
 
@@ -545,13 +552,16 @@ A *complementary* paper {{ID-Crisis}} presents the identity crisis in pre- and i
 
 Sec. 7 of {{EarlyAttestationBleed}} presents four architectural flaws in early attestation:
 
-- Hardware-level Information of Server
-- Only Boot-time Claims
-- Re-attestation
-- High Handshake Latency, Timeouts, and Failures
+- A malicious TLS client retrieves sensitive hardware-level and firmware-level information from the server’s Evidence before the server has authenticated the client.
+- Early attestation can typically provide information about only boot-time Claims, since
+most runtime Claims may not be available at the handshake time.
+- Re-attestation requires post-handshake attestation. Early attestation thus adds unnecessary complexity.
+- Early attestation results in high handshake latency, timeouts, and even failures.
 
 
 ## EarlyAttestationTschüss (EAT)
+
+{{EarlyAttestationTschuess}}
 
 - {{CVE-2026-100835}} of CVSS 9.1 against Edgeless Systems Contrast
 - {{CVE-2026-112377}} of CVSS 9.1 against CCC Attestation SIG
@@ -838,14 +848,14 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | {{EarlyAttestationBleed}} | {{CVE-2026-92701}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-92702}} | 9.1 | Critical |
 | {{EarlyAttestationBleed}} | {{CVE-2026-100833}} | 9.6 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-100835}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-112377}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108362}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108265}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108266}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108267}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108268}} | 9.1 | Critical |
-| EarlyAttestationTschüss (EAT) | {{CVE-2026-108269}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-100835}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-112377}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108362}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108265}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108266}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108267}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108268}} | 9.1 | Critical |
+| {{EarlyAttestationTschuess}} (EAT) | {{CVE-2026-108269}} | 9.1 | Critical |
 {: title="Comparison with other vulnerabilities in confidential computing literature"}
 
 The comparison of the above with CVSS up to **10.0** for early attestation indicates that it is not mature yet compared to the rest of the confidential computing stack, and is currently one of the weakest links in the ecosystem.
@@ -1047,6 +1057,8 @@ If you have written an article on this and would like to be added here, please s
 
 
 ## EarlyAttestationTschüss (EAT)
+
+{{EarlyAttestationTschuess}}
 
 - [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
 - [freenode](https://www.freenode.com/digest/766)
@@ -1490,6 +1502,9 @@ Since January'26, we have publicly informed the authors of vulnerable drafts {{I
 - [ProVerif](https://sympa.inria.fr/sympa/arc/proverif/2026-09/msg00000.html)
 
 #### EarlyAttestationTschüss (EAT)
+
+{{EarlyAttestationTschuess}}
+
 - [IRTF UFMRG](https://mailarchive.ietf.org/arch/msg/ufmrg/8RPCf502JFmsBui5rUZw38l76Rk/)
 - [Agentic AI Foundation (AAIF) Security & Privacy](https://lists.aaif.io/g/wg-security-privacy/topic/contribution/121847989)
 - [OCP Security](https://ocp-all.groups.io/g/OCP-Security/message/1279)
@@ -1517,7 +1532,7 @@ Acknowledgment does not necessarily imply attestation. It implies that the autho
 
 This draft benefits from several years of research on attested TLS, in particular some of the recent works mentioned below:
 
-**EarlyAttestationTschüss (EAT)**
+**EarlyAttestationTschüss (EAT)** {{EarlyAttestationTschuess}}
 
 We wish to express our sincere appreciation to the following for their review and discussions:
 
