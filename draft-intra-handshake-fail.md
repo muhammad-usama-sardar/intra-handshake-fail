@@ -104,12 +104,9 @@ author:
     email: "team@emiliaprotocol.ai"
  -
     fullname: "Islam Aboubakarov"
-    organization: Ecole Superieure Ingénieurs Léonard de Vinci Paris
-    abbrev: ESILV
-    city: Paris
+    organization: Independent
     country: France
-    code: 92000
-    email: islam.aboubakarov@edu.devinci.fr
+    email: "islamaboubakarov@yahoo.com"
  -
     fullname: "Ammara Gul"
     organization: Birmingham City University
