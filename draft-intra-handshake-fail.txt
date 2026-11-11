@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 6 May 2027                                            CoreWeave
+Expires: 15 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -31,12 +31,12 @@ Expires: 6 May 2027                                            CoreWeave
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
                                                           I. Aboubakarov
-                                                                   ESILV
+                                                             Independent
                                                                   A. Gul
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         2 November 2026
+                                                        11 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -116,7 +116,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 May 2027.
+   This Internet-Draft will expire on 15 May 2027.
 
 Copyright Notice
 
@@ -3332,9 +3332,9 @@ Table of Contents
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
               Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
               Confidential Computing", September 2026,
-              <https://www.researchgate.net/
-              publication/414529199_EarlyAttestationBleed_Three_Critical-
-              severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing>.
+              <https://www.researchgate.net/publication/414529199_
+              EarlyAttestationBleed_Three_Critical-severity_
+              Vulnerabilities_of_CVSS_90_in_Confidential_Computing>.
 
    [EarlyAttestationTschuess]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationTschüss
@@ -3900,10 +3900,9 @@ Authors' Addresses
 
 
    Islam Aboubakarov
-   Ecole Superieure Ingénieurs Léonard de Vinci Paris
-   92000 Paris
+   Independent
    France
-   Email: islam.aboubakarov@edu.devinci.fr
+   Email: islamaboubakarov@yahoo.com
 
 
    Ammara Gul
