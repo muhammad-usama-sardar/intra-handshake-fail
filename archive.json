@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-29T03:29:13.497482+00:00",
+  "timestamp": "2026-11-12T04:54:15.968614+00:00",
   "repo": "muhammad-usama-sardar/intra-handshake-fail",
   "labels": [
     {
@@ -2371,6 +2371,48 @@
           "body": "",
           "createdAt": "2026-10-28T12:56:03Z",
           "updatedAt": "2026-10-28T12:56:03Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "id": "PR_kwDOTPsy-c8AAAABOZQ8nw",
+      "title": "Author entry: remove ESILV affiliation, use Independent",
+      "url": "https://github.com/muhammad-usama-sardar/intra-handshake-fail/pull/41",
+      "state": "MERGED",
+      "author": "R4iid3n",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-11-11T14:12:00Z",
+      "updatedAt": "2026-11-11T17:14:57Z",
+      "baseRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "baseRefName": "main",
+      "baseRefOid": "6a242c5e4b5b499fa9a8bcd199110ecab28cbe37",
+      "headRepository": "muhammad-usama-sardar/intra-handshake-fail",
+      "headRefName": "remove-esilv-affiliation",
+      "headRefOid": "62fb3cecdaff54b8c0fb65cd177775629c922fb2",
+      "closedAt": "2026-11-11T17:14:57Z",
+      "mergedAt": "2026-11-11T17:14:57Z",
+      "mergedBy": "muhammad-usama-sardar",
+      "mergeCommit": {
+        "oid": "cfe44fa651cb2ca13080b41a8306db8f3ef8e0ff"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOTPsy-c8AAAABXXAWZA",
+          "commit": {
+            "abbreviatedOid": "62fb3ce"
+          },
+          "author": "muhammad-usama-sardar",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-11T17:13:24Z",
+          "updatedAt": "2026-11-11T17:13:24Z",
           "comments": []
         }
       ]
