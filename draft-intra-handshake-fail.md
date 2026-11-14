@@ -467,6 +467,12 @@ normative:
      title: CVE-2026-119345
      target: https://www.cve.org/CVERecord?id=CVE-2026-119345
      date: 2 Nov 2026
+  CVE-2026-129092:
+     author:
+        org: CVE
+     title: CVE-2026-129092
+     target: https://www.cve.org/CVERecord?id=CVE-2026-129092
+     date: 2 Nov 2026
   EarlyAttestationTschuess:
     title: "EarlyAttestationTschüss (EAT): 8+ Critical-Severity Vulnerabilities of CVSS 9.1 Resulting in End of Life of Early Attestation"
     date: November 2026,
@@ -493,7 +499,7 @@ Currently, there is **one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis {{Intra-handshake.fail-repo}}, {{ID-Crisis-repo}}, and {{EarlyAttestationTschuess}} (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
+In our analysis {{Intra-handshake.fail-repo}}, {{ID-Crisis-repo}}, and {{EarlyAttestationTschuess}} (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn {{I-D.fossati-tls-attestation-10}} -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.
 
@@ -512,7 +518,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 9.0–10.0 | Critical | 2 | — |
 | 9.8 | Critical | 1 | — |
 | 9.6 | Critical | — | 1 |
-| 9.1 | Critical | 10 | 11 |
+| 9.1 | Critical | 10 | 13 |
 | 8.2 | High | 1 | 1 |
 | 7.8 | High | 2 | — |
 | 7.7 | High | 2 | — |
@@ -520,6 +526,7 @@ Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/c
 | 7.5 | High | 3 | 1 |
 | 7.4 | High | 4 | — |
 | 7.2 | High | 1 | 2 |
+| 7.0 | High | — | 2 |
 | 6.5 | Medium | 3 | — |
 | 6.3 | Medium | 3 | — |
 | 5.5 | Medium | 1 | — |
@@ -558,7 +565,7 @@ most runtime Claims may not be available at the handshake time.
 
 ## EarlyAttestationTschüss (EAT)
 
-{{EarlyAttestationTschuess}}
+{{EarlyAttestationTschuess}} resulted in the following CVEs demonstrating relay and diversion attacks against early attestation implementations/deployments:
 
 - {{CVE-2026-100835}} of CVSS 9.1 against Edgeless Systems Contrast
 - {{CVE-2026-112377}} of CVSS 9.1 against CCC Attestation SIG
@@ -568,6 +575,7 @@ most runtime Claims may not be available at the handshake time.
 - {{CVE-2026-108267}} of CVSS 9.1 against Privasys
 - {{CVE-2026-108268}} of CVSS 9.1 against Privasys
 - {{CVE-2026-108269}} of CVSS 9.1 against Privasys
+- {{CVE-2026-119344}} of CVSS 9.1 against Cocos AI
 
 # Published GHSAs/CVEs
 {: #sec-credits }
@@ -638,6 +646,10 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
 | {{CVE-2026-119344}} | 9.1 | Muhammad Usama Sardar |
 | {{CVE-2026-119345}} | 7.2 | Muhammad Usama Sardar |
+| {{CVE-2026-129092}} | 7.0 | Muhammad Usama Sardar |
+| TBA | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| TBA | 9.1 | Muhammad Usama Sardar and Songbo Bu |
+| TBA | 7.0 | Muhammad Usama Sardar and Songbo Bu |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -800,6 +812,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | {{CVE-2026-119344}} published [**Severity = CRITICAL (CVSS 9.1)**] | 2 November, 2026 |
 | {{CVE-2026-119345}} published [**Severity = HIGH (CVSS 7.2)**] | 2 November, 2026 |
+| {{CVE-2026-129092}} published [**Severity = HIGH (CVSS 7.0)**] | 13 November, 2026 |
 {: title="Detailed vulnerability disclosure timeline and acknowledgements"}
 
 **Neither the GHSAs nor the CVEs have any dependency whatsoever on the considered threat model with `WeakHash`, `WeakDH`, or `BadElement`.** They hold independent of those, i.e., with `StrongHash` and `StrongDH` and all good elements within a group.
@@ -1033,13 +1046,16 @@ Properties in {{Intra-handshake.fail}} are complemetary to properties in {{ID-Cr
 > We emphasize that both diversion and relay attacks are orthogonal and thus the two works are complementary.
 
 ## Technical Vulnerability Report
-Technical vulnerability report is available at {{Intra-handshake.fail}}. It is accepted for publication at ESORICS 2026.
+Technical vulnerability report is available at {{Intra-handshake.fail}}. It is published at ESORICS 2026.
 
 ### Vulnerabilities
 Sec. 7.1 of {{Intra-handshake.fail}} presents the technical details with abstract attack traces of the vulnerabilities.
 
-### Mitigation
+### Mitigations
 Sec. 7.2 of {{Intra-handshake.fail}} presents the technical details of the proposed mitigation.
+Sec. 9 of {{ID-Crisis}} offers 6 solutions.
+Sec. 4 and 5 of {{EarlyAttestationBleed}} offer mitigations.
+Sec. 7 of {{EarlyAttestationTschuess}} offers mitigations.
 
 ## Artifacts
 Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 License.
@@ -1417,11 +1433,11 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- |
-| [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
+| [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain (Virtual) | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
 | [Security WG](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/) @ [RIPE 93](https://ripe93.ripe.net/) | Sofia, Bulgaria (Virtual) | 27 Oct, 2026 | [abstract](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), [slides](https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/resources/20261027_RIPE_93_Sec_e4tTL66.pdf), [transcript](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/), [video](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video) |
 | System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), [slides](https://lpc.events/event/20/contributions/2585/attachments/2040/4688/20261005_LPC_2026_Security.pdf), [video](https://www.youtube.com/watch?v=KL6EX8hcFKc) |
 | BoF @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2640/), [slides](https://lpc.events/event/20/contributions/2640/attachments/2049/4690/20261005_LPC_2026_BoF.pdf), video |
-| [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | [slides](https://www.researchgate.net/publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), video |
+| [GA4GH 14th Plenary Meeting](https://www.ga4gh.org/event/14th-plenary/) | Singapore | 28 Sept-2 Oct, 2026 | [slides](https://www.researchgate.net/publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation), [report](https://www.ga4gh.org/wp-content/uploads/2026/11/GA4GH-14th-Plenary-Meeting-Report.pdf), [video](https://youtu.be/Rm4SttVkJWM?t=3153) |
 | [PET-CON 2026.2: 16th Privacy Enhancing Techniques Convention](https://fg-pet.gi.de/veranstaltung/16th-privacy-enhancing-techniques-convention) | Lübeck, Germany | 28-29 Sept, 2026 | [slides](https://www.researchgate.net/publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing) |
 | [ESORICS 2026](https://sites.google.com/di.uniroma1.it/esorics2026/) | Rome, Italy | 14-18 Sept, 2026 | [slides](https://www.researchgate.net/publication/414416257_Intra-handshakefail_CVE-2026-33697_High-severity_CVE_in_Attested_TLS) |
 | [IETF RATS Interim meeting](https://datatracker.ietf.org/meeting/interim-2026-rats-03/session/rats) | Virtual | 14 Sept, 2026 | [slides](https://datatracker.ietf.org/meeting/interim-2026-rats-03/materials/slides-interim-2026-rats-03-sessa-protecting-the-rats-ecosystem-from-critical-severity-vulnerabilities-00), [video](https://youtu.be/y5_SR0-DzH0?t=255) |
