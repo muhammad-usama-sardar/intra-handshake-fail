@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 15 May 2027                                           CoreWeave
+Expires: 18 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 15 May 2027                                           CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                        11 November 2026
+                                                        14 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -79,9 +79,10 @@ Abstract
    withdrawn, or moved to post-handshake attestation.  In our analysis
    [Intra-handshake.fail-repo], [ID-Crisis-repo], and
    [EarlyAttestationTschuess] (EAT) and based on discussions in the CCC
-   Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums,
-   the remaining two implementations of early attestation -- Edgeless
-   Systems Contrast and Meta's AI -- remain vulnerable due to lack to
+   Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several
+   other forums, the remaining two implementations of early attestation
+   -- Edgeless Systems Contrast and Meta's AI following withdrawn
+   [I-D.fossati-tls-attestation-10] -- remain vulnerable due to lack of
    binding to the underlying connection.  We recommend users of these
    two implementations to carefully evaluate their systems and
    understand the risks.  If you are aware of any open-source
@@ -116,7 +117,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 May 2027.
+   This Internet-Draft will expire on 18 May 2027.
 
 Copyright Notice
 
@@ -172,7 +173,7 @@ Table of Contents
      15.3.  Properties
      15.4.  Technical Vulnerability Report
        15.4.1.  Vulnerabilities
-       15.4.2.  Mitigation
+       15.4.2.  Mitigations
      15.5.  Artifacts
    16. Media Coverage
      16.1.  EarlyAttestationTschüss (EAT)
@@ -234,7 +235,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.6      | Critical | —                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 10                        | 11             |
+   | 9.1      | Critical | 10                        | 13             |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
@@ -249,6 +250,8 @@ Table of Contents
    | 7.4      | High     | 4                         | —              |
    +----------+----------+---------------------------+----------------+
    | 7.2      | High     | 1                         | 2              |
+   +----------+----------+---------------------------+----------------+
+   | 7.0      | High     | —                         | 2              |
    +----------+----------+---------------------------+----------------+
    | 6.5      | Medium   | 3                         | —              |
    +----------+----------+---------------------------+----------------+
@@ -328,7 +331,9 @@ Table of Contents
 
 1.5.  EarlyAttestationTschüss (EAT)
 
-   [EarlyAttestationTschuess]
+   [EarlyAttestationTschuess] resulted in the following CVEs
+   demonstrating relay and diversion attacks against early attestation
+   implementations/deployments:
 
    *  [CVE-2026-100835] of CVSS 9.1 against Edgeless Systems Contrast
 
@@ -345,6 +350,8 @@ Table of Contents
    *  [CVE-2026-108268] of CVSS 9.1 against Privasys
 
    *  [CVE-2026-108269] of CVSS 9.1 against Privasys
+
+   *  [CVE-2026-119344] of CVSS 9.1 against Cocos AI
 
 2.  Published GHSAs/CVEs
 
@@ -717,6 +724,21 @@ Table of Contents
    +----------------------------------------------------------+--------+-------------+
    |[CVE-2026-119345]                                         |7.2     |Muhammad     |
    |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-129092]                                         |7.0     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |7.0     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
    +----------------------------------------------------------+--------+-------------+
 
       Table 2: GHSAs/CVEs for implementations of early attestation and
@@ -1228,6 +1250,10 @@ Table of Contents
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |[CVE-2026-119345] published [*Severity = HIGH (CVSS 7.2)*]                  |2         |
+   |                                                                            |November, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-129092] published [*Severity = HIGH (CVSS 7.0)*]                  |13        |
    |                                                                            |November, |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
@@ -1803,18 +1829,19 @@ Table of Contents
 15.4.  Technical Vulnerability Report
 
    Technical vulnerability report is available at
-   [Intra-handshake.fail].  It is accepted for publication at ESORICS
-   2026.
+   [Intra-handshake.fail].  It is published at ESORICS 2026.
 
 15.4.1.  Vulnerabilities
 
    Sec. 7.1 of [Intra-handshake.fail] presents the technical details
    with abstract attack traces of the vulnerabilities.
 
-15.4.2.  Mitigation
+15.4.2.  Mitigations
 
    Sec. 7.2 of [Intra-handshake.fail] presents the technical details of
-   the proposed mitigation.
+   the proposed mitigation.  Sec. 9 of [ID-Crisis] offers 6 solutions.
+   Sec. 4 and 5 of [EarlyAttestationBleed] offer mitigations.  Sec. 7 of
+   [EarlyAttestationTschuess] offers mitigations.
 
 15.5.  Artifacts
 
@@ -2940,6 +2967,7 @@ Table of Contents
    +================================================+==========+==========+======================================================================================+
    |BioHackathon Europe (https://biohackathon-      |Barcelona,|9-13 Nov, |Proposal (https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md)|
    |europe.org/)                                    |Spain     |2026      |                                                                                      |
+   |                                                |(Virtual) |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |Security WG (https://ripe93.ripe.net/programme/ |Sofia,    |27 Oct,   |abstract (https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), slides|
    |meeting-plan/sessions/137/) @ RIPE 93           |Bulgaria  |2026      |(https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/                           |
@@ -2959,7 +2987,9 @@ Table of Contents
    |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides (https://www.researchgate.net/                                                 |
    |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-            |
    |                                                |          |          |and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-    |
-   |                                                |          |          |fossati-seat-early-attestation), video                                                |
+   |                                                |          |          |fossati-seat-early-attestation), report (https://www.ga4gh.org/wp-                    |
+   |                                                |          |          |content/uploads/2026/11/GA4GH-14th-Plenary-Meeting-Report.pdf), video                 |
+   |                                                |          |          |(https://youtu.be/Rm4SttVkJWM?t=3153)                                                 |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |PET-CON 2026.2: 16th Privacy Enhancing          |Lübeck,   |28-29     |slides (https://www.researchgate.net/                                                 |
    |Techniques Convention (https://fg-pet.gi.de/    |Germany   |Sept, 2026|publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-              |
@@ -3327,6 +3357,10 @@ Table of Contents
    [CVE-2026-119345]
               CVE, "CVE-2026-119345", November 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-119345>.
+
+   [CVE-2026-129092]
+              CVE, "CVE-2026-129092", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-129092>.
 
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three

@@ -30,7 +30,7 @@ Currently, there is  one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 8
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis  ,  , and   (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
+In our analysis  ,  , and   (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn   -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them. 
     " name="description">
@@ -1077,7 +1077,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 15 May 2027</td>
+<td class="center">Expires 18 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1090,12 +1090,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-11-11" class="published">11 November 2026</time>
+<time datetime="2026-11-14" class="published">14 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-15">15 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-18">18 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1179,7 +1179,7 @@ Currently, there is <strong>one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
 Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
-In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span>, <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, and <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI -- remain vulnerable due to lack to binding to the underlying connection.
+In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span>, <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, and <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn <span>[<a href="#I-D.fossati-tls-attestation-10" class="cite xref">I-D.fossati-tls-attestation-10</a>]</span> -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
@@ -1213,7 +1213,7 @@ If you are aware of any open-source implementation of early attestation that is 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 15 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 18 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1365,7 +1365,7 @@ If you are aware of any open-source implementation of early attestation that is 
                     <p id="section-toc.1-1.15.2.4.2.1.1"><a href="#section-15.4.1" class="auto internal xref">15.4.1</a>.  <a href="#name-vulnerabilities" class="internal xref">Vulnerabilities</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.4.2.2">
-                    <p id="section-toc.1-1.15.2.4.2.2.1"><a href="#section-15.4.2" class="auto internal xref">15.4.2</a>.  <a href="#name-mitigation" class="internal xref">Mitigation</a></p>
+                    <p id="section-toc.1-1.15.2.4.2.2.1"><a href="#section-15.4.2" class="auto internal xref">15.4.2</a>.  <a href="#name-mitigations" class="internal xref">Mitigations</a></p>
 </li>
                 </ul>
 </li>
@@ -1544,7 +1544,7 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
               <td class="text-left" rowspan="1" colspan="1">9.1</td>
               <td class="text-left" rowspan="1" colspan="1">Critical</td>
               <td class="text-left" rowspan="1" colspan="1">10</td>
-              <td class="text-left" rowspan="1" colspan="1">11</td>
+              <td class="text-left" rowspan="1" colspan="1">13</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">8.2</td>
@@ -1586,6 +1586,12 @@ Severity is based on <a href="https://nvd.nist.gov/vuln-metrics/cvss">NIST stand
               <td class="text-left" rowspan="1" colspan="1">7.2</td>
               <td class="text-left" rowspan="1" colspan="1">High</td>
               <td class="text-left" rowspan="1" colspan="1">1</td>
+              <td class="text-left" rowspan="1" colspan="1">2</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">7.0</td>
+              <td class="text-left" rowspan="1" colspan="1">High</td>
+              <td class="text-left" rowspan="1" colspan="1">—</td>
               <td class="text-left" rowspan="1" colspan="1">2</td>
             </tr>
             <tr>
@@ -1708,7 +1714,7 @@ most runtime Claims may not be available at the handshake time.<a href="#section
         <h3 id="name-earlyattestationtschuss-eat">
 <a href="#section-1.5" class="section-number selfRef">1.5. </a><a href="#name-earlyattestationtschuss-eat" class="section-name selfRef">EarlyAttestationTschüss (EAT)</a>
         </h3>
-<p id="section-1.5-1"><span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span><a href="#section-1.5-1" class="pilcrow">¶</a></p>
+<p id="section-1.5-1"><span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> resulted in the following CVEs demonstrating relay and diversion attacks against early attestation implementations/deployments:<a href="#section-1.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1.5-2.1">
             <p id="section-1.5-2.1.1"><span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1 against Edgeless Systems Contrast<a href="#section-1.5-2.1.1" class="pilcrow">¶</a></p>
@@ -1733,6 +1739,9 @@ most runtime Claims may not be available at the handshake time.<a href="#section
 </li>
           <li class="normal" id="section-1.5-2.8">
             <p id="section-1.5-2.8.1"><span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1 against Privasys<a href="#section-1.5-2.8.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.5-2.9">
+            <p id="section-1.5-2.9.1"><span>[<a href="#CVE-2026-119344" class="cite xref">CVE-2026-119344</a>]</span> of CVSS 9.1 against Cocos AI<a href="#section-1.5-2.9.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2191,6 +2200,28 @@ most runtime Claims may not be available at the handshake time.<a href="#section
 </td>
             <td class="text-left" rowspan="1" colspan="1">7.2</td>
             <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-129092" class="cite xref">CVE-2026-129092</a>]</span>
+</td>
+            <td class="text-left" rowspan="1" colspan="1">7.0</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">TBA</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">TBA</td>
+            <td class="text-left" rowspan="1" colspan="1">9.1</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">TBA</td>
+            <td class="text-left" rowspan="1" colspan="1">7.0</td>
+            <td class="text-left" rowspan="1" colspan="1">Muhammad Usama Sardar and Songbo Bu</td>
           </tr>
         </tbody>
       </table>
@@ -2801,6 +2832,11 @@ and trust domains. The following table provides a corresponding low-level view.<
             <td class="text-left" rowspan="1" colspan="1">
               <span>[<a href="#CVE-2026-119345" class="cite xref">CVE-2026-119345</a>]</span> published [<strong>Severity = HIGH (CVSS 7.2)</strong>]</td>
             <td class="text-left" rowspan="1" colspan="1">2 November, 2026</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">
+              <span>[<a href="#CVE-2026-129092" class="cite xref">CVE-2026-129092</a>]</span> published [<strong>Severity = HIGH (CVSS 7.0)</strong>]</td>
+            <td class="text-left" rowspan="1" colspan="1">13 November, 2026</td>
           </tr>
         </tbody>
       </table>
@@ -3685,7 +3721,7 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
         <h3 id="name-technical-vulnerability-rep">
 <a href="#section-15.4" class="section-number selfRef">15.4. </a><a href="#name-technical-vulnerability-rep" class="section-name selfRef">Technical Vulnerability Report</a>
         </h3>
-<p id="section-15.4-1">Technical vulnerability report is available at <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>. It is accepted for publication at ESORICS 2026.<a href="#section-15.4-1" class="pilcrow">¶</a></p>
+<p id="section-15.4-1">Technical vulnerability report is available at <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>. It is published at ESORICS 2026.<a href="#section-15.4-1" class="pilcrow">¶</a></p>
 <div id="vulnerabilities">
 <section id="section-15.4.1">
           <h4 id="name-vulnerabilities">
@@ -3694,12 +3730,15 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
 <p id="section-15.4.1-1">Sec. 7.1 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents the technical details with abstract attack traces of the vulnerabilities.<a href="#section-15.4.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="mitigation">
+<div id="mitigations">
 <section id="section-15.4.2">
-          <h4 id="name-mitigation">
-<a href="#section-15.4.2" class="section-number selfRef">15.4.2. </a><a href="#name-mitigation" class="section-name selfRef">Mitigation</a>
+          <h4 id="name-mitigations">
+<a href="#section-15.4.2" class="section-number selfRef">15.4.2. </a><a href="#name-mitigations" class="section-name selfRef">Mitigations</a>
           </h4>
-<p id="section-15.4.2-1">Sec. 7.2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents the technical details of the proposed mitigation.<a href="#section-15.4.2-1" class="pilcrow">¶</a></p>
+<p id="section-15.4.2-1">Sec. 7.2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents the technical details of the proposed mitigation.
+Sec. 9 of <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span> offers 6 solutions.
+Sec. 4 and 5 of <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> offer mitigations.
+Sec. 7 of <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> offers mitigations.<a href="#section-15.4.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -4683,7 +4722,7 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
                 <td class="text-left" rowspan="1" colspan="1">
                   <a href="https://biohackathon-europe.org/">BioHackathon Europe</a>
 </td>
-                <td class="text-left" rowspan="1" colspan="1">Barcelona, Spain</td>
+                <td class="text-left" rowspan="1" colspan="1">Barcelona, Spain (Virtual)</td>
                 <td class="text-left" rowspan="1" colspan="1">9-13 Nov, 2026</td>
                 <td class="text-left" rowspan="1" colspan="1">
                   <a href="https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md">Proposal</a>
@@ -4723,7 +4762,8 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
                 <td class="text-left" rowspan="1" colspan="1">Singapore</td>
                 <td class="text-left" rowspan="1" colspan="1">28 Sept-2 Oct, 2026</td>
                 <td class="text-left" rowspan="1" colspan="1">
-                  <a href="https://www.researchgate.net/publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation">slides</a>, video</td>
+                  <a href="https://www.researchgate.net/publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-fossati-seat-early-attestation">slides</a>, <a href="https://www.ga4gh.org/wp-content/uploads/2026/11/GA4GH-14th-Plenary-Meeting-Report.pdf">report</a>, <a href="https://youtu.be/Rm4SttVkJWM?t=3153">video</a>
+</td>
               </tr>
               <tr>
                 <td class="text-left" rowspan="1" colspan="1">
@@ -5298,6 +5338,10 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
 <dt id="CVE-2026-119345">[CVE-2026-119345]</dt>
         <dd>
 <span class="refAuthor">CVE</span>, <span class="refTitle">"CVE-2026-119345"</span>, <time datetime="2026-11" class="refDate">November 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-119345">https://www.cve.org/CVERecord?id=CVE-2026-119345</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="CVE-2026-129092">[CVE-2026-129092]</dt>
+        <dd>
+<span class="refAuthor">CVE</span>, <span class="refTitle">"CVE-2026-129092"</span>, <time datetime="2026-11" class="refDate">November 2026</time>, <span>&lt;<a href="https://www.cve.org/CVERecord?id=CVE-2026-129092">https://www.cve.org/CVERecord?id=CVE-2026-129092</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="EarlyAttestationBleed">[EarlyAttestationBleed]</dt>
         <dd>
