@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 18 May 2027                                           CoreWeave
+Expires: 20 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 18 May 2027                                           CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                        14 November 2026
+                                                        16 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -117,7 +117,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 May 2027.
+   This Internet-Draft will expire on 20 May 2027.
 
 Copyright Notice
 
@@ -1865,6 +1865,11 @@ Table of Contents
 
    [EarlyAttestationTschuess]
 
+   *  (Chinese) KK Security Talk (https://mp.weixin.qq.com/s/
+      dWq3C4iisYNpgLogz7za-g)
+
+   *  (Chinese) Security 114 (https://www.anquan114.com/archives/7472)
+
    *  al-ice.ai (https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-
       cves-channel-binding-self-disclosure/)
 
@@ -2038,7 +2043,7 @@ Table of Contents
    *  (Chinese) KK says security (https://mp.weixin.qq.com/
       s/31Glxqr6ofHylTyrtNsuaQ)
 
-   *  (Chinese) Safe Meow Station (mp.weixin.qq.com/s/
+   *  (Chinese) Safe Meow Station (https://mp.weixin.qq.com/s/
       REtESPngXemSro0hjIZyxw)
 
    *  (Chinese) Digital World Information (https://mp.weixin.qq.com/
@@ -2965,6 +2970,18 @@ Table of Contents
    +================================================+==========+==========+======================================================================================+
    |Event/Host                                      |Venue     |Date(s)   |Evidence                                                                              |
    +================================================+==========+==========+======================================================================================+
+   |HotRFC @ IETF 127 (https://www.ietf.org/        |San       |15        |slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-   |
+   |meeting/127/)                                   |Francisco,|November, |confidential-computing-and-digital-sovereignty-00), video                             |
+   |                                                |USA       |2026      |(https://youtu.be/_c7VYycfRXA?t=3962)                                                 |
+   |                                                |(Virtual) |          |                                                                                      |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |IETF 126 Hackathon                              |San       |15        |Hackathon project (https://wiki.ietf.org/en/meeting/127/                              |
+   |(https://www.ietf.org/meeting/                  |Francisco,|November, |hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-          |
+   |hackathons/127-hackathon/)                      |USA       |2026      |2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-         |
+   |                                                |(Virtual) |          |attestation), slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-  |
+   |                                                |          |          |hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), video          |
+   |                                                |          |          |(https://youtu.be/d44apZBtXwI?t=1027)                                                 |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |BioHackathon Europe (https://biohackathon-      |Barcelona,|9-13 Nov, |Proposal (https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md)|
    |europe.org/)                                    |Spain     |2026      |                                                                                      |
    |                                                |(Virtual) |          |                                                                                      |
