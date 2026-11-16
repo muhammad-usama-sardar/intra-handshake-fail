@@ -1073,6 +1073,8 @@ If you have written an article on this and would like to be added here, please s
 
 {{EarlyAttestationTschuess}}
 
+- (Chinese) [KK Security Talk](https://mp.weixin.qq.com/s/dWq3C4iisYNpgLogz7za-g)
+- (Chinese) [Security 114](https://www.anquan114.com/archives/7472)
 - [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
 - [freenode](https://www.freenode.com/digest/766)
 - [NHI Management Group](https://nhimg.org/articles/attested-tls-relay-flaws-show-where-confidential-computing-binding-fails/)
@@ -1163,7 +1165,7 @@ If you have written an article on this and would like to be added here, please s
 - (German) [Cybersecurity news (CVE-2026-92702)](https://cybersecurity-news.de/cve-2026-92702-cocos-ai-0-8-2/)
 - (Chinese) [Security 114](https://www.anquan114.com/archives/7429)
 - (Chinese) [KK says security](https://mp.weixin.qq.com/s/31Glxqr6ofHylTyrtNsuaQ)
-- (Chinese) [Safe Meow Station](mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw)
+- (Chinese) [Safe Meow Station](https://mp.weixin.qq.com/s/REtESPngXemSro0hjIZyxw)
 - (Chinese) [Digital World Information](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - (Chinese) [Shusei Consulting](https://mp.weixin.qq.com/s/864dwIXF5IY04q7ig4uBwg)
 - [Freenode 518](https://freenode.net/digest/518)
@@ -1433,6 +1435,8 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- |
+| HotRFC @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 15 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-confidential-computing-and-digital-sovereignty-00), [video](https://youtu.be/_c7VYycfRXA?t=3962) |
+| [IETF 126 Hackathon](https://www.ietf.org/meeting/hackathons/127-hackathon/) | San Francisco, USA (Virtual) | 15 November, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/127/hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-attestation), [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), [video](https://youtu.be/d44apZBtXwI?t=1027) |
 | [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain (Virtual) | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
 | [Security WG](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/) @ [RIPE 93](https://ripe93.ripe.net/) | Sofia, Bulgaria (Virtual) | 27 Oct, 2026 | [abstract](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), [slides](https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/resources/20261027_RIPE_93_Sec_e4tTL66.pdf), [transcript](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/), [video](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video) |
 | System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), [slides](https://lpc.events/event/20/contributions/2585/attachments/2040/4688/20261005_LPC_2026_Security.pdf), [video](https://www.youtube.com/watch?v=KL6EX8hcFKc) |
