@@ -23,13 +23,21 @@
 <meta content="Ammara Gul" name="author">
 <meta content="Venkat Malladi" name="author">
 <meta content="
-       The draft aims to provide technical details of   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2,   of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as  , fails in practice, even  without physical access  to the desired machine.
+       As presented in   (EAT), all major early attestation implementations have declared end of life of early attestation, because of our responsibly disclosed vulnerabilities.
+Privasys  declared end of life  of early attestation in Go, archived the early attestation repo on 04.09, and moved to standard (post-handshake) attestation.
+Privasys  declared end of life  of early attestation in rustls, archived the early attestation repo on 04.09, and moved to standard attestation.
+Cocos AI  declared end of life  of early attestation, and moved to standard attestation.
+CCC Attestation SIG  declared end of life  of early attestation, and archived the repo on 22.07.
+Moreover, authors of   have  withdrawn their vulnerable draft  because of our discovered vulnerabilities.
+Finally,   has been archived.
+This draft aims to provide technical details of these vulnerabilities.
+Vulnerabilities include   of CVSS 9.6,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 9.1,   of CVSS 7.5,   of CVSS 7.2,   of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as  , fails in practice, even  without physical access  to the desired machine.
 Moreover, since continuous attestation is generally required    , early attestation adds  unnecessary complexity .
 The results are backed by the research  ,  ,  ,   and the artifacts   in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
-Currently, there is  one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application .
+Currently, there is  one CVE of CVSS 9.6, 13 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, two CVEs of CVSS 7.2, two CVEs of 7.0, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application .
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
-Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
+Based on our work, as noted above, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
 In our analysis  ,  , and   (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn   -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them. 
@@ -47,13 +55,13 @@ If you are aware of any open-source implementation of early attestation that is 
 <!-- Generator version information:
   xml2rfc 3.35.0
     Python 3.14.10
-    ConfigArgParse 1.9.0
+    ConfigArgParse 1.10.1
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.14.3
+    platformdirs 4.14.7
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
@@ -1077,7 +1085,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Sardar, et al.</td>
-<td class="center">Expires 20 May 2027</td>
+<td class="center">Expires 22 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1090,12 +1098,12 @@ svg {
 <dd class="internet-draft">draft-intra-handshake-fail-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-11-16" class="published">16 November 2026</time>
+<time datetime="2026-11-18" class="published">18 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-20">20 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-22">22 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1172,13 +1180,21 @@ svg {
 <h1 id="title">Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-100835,CVE-2026-108265, CVE-2026-108266, CVE-2026-108267, CVE-2026-108268, CVE-2026-108269, CVE-2026-92701, CVE-2026-92702, CVE-2026-108362, CVE-2026-33697, CVE-2026-108361 and others)</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The draft aims to provide technical details of <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-119344" class="cite xref">CVE-2026-119344</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, <span>[<a href="#CVE-2026-119345" class="cite xref">CVE-2026-119345</a>]</span> of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>, fails in practice, even <strong>without physical access</strong> to the desired machine.
+<p id="section-abstract-1">As presented in <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> (EAT), all major early attestation implementations have declared end of life of early attestation, because of our responsibly disclosed vulnerabilities.
+Privasys <a href="https://github.com/Privasys/go/commit/91195564d435a374e45d485d39edbc6cf8235901">declared end of life</a> of early attestation in Go, archived the early attestation repo on 04.09, and moved to standard (post-handshake) attestation.
+Privasys <a href="https://github.com/Privasys/rustls/commit/c39f7107dffd710c5087b1885a71b4bb8ff2de31">declared end of life</a> of early attestation in rustls, archived the early attestation repo on 04.09, and moved to standard attestation.
+Cocos AI <a href="https://github.com/ultravioletrs/cocos/releases/tag/v0.9.0">declared end of life</a> of early attestation, and moved to standard attestation.
+CCC Attestation SIG <a href="https://github.com/CCC-Attestation/attested-tls-poc/pull/60">declared end of life</a> of early attestation, and archived the repo on 22.07.
+Moreover, authors of <span>[<a href="#I-D.fossati-tls-attestation-10" class="cite xref">I-D.fossati-tls-attestation-10</a>]</span> have <a href="https://mailarchive.ietf.org/arch/msg/i-d-announce/4QeQmyBwZpZ69MRry4wGzkGyU0o/">withdrawn their vulnerable draft</a> because of our discovered vulnerabilities.
+Finally, <span>[<a href="#I-D.ritz-seat-facts" class="cite xref">I-D.ritz-seat-facts</a>]</span> has been archived.
+This draft aims to provide technical details of these vulnerabilities.
+Vulnerabilities include <span>[<a href="#CVE-2026-100833" class="cite xref">CVE-2026-100833</a>]</span> of CVSS 9.6, <span>[<a href="#CVE-2026-108265" class="cite xref">CVE-2026-108265</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108266" class="cite xref">CVE-2026-108266</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108267" class="cite xref">CVE-2026-108267</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108268" class="cite xref">CVE-2026-108268</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108269" class="cite xref">CVE-2026-108269</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-100835" class="cite xref">CVE-2026-100835</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92701" class="cite xref">CVE-2026-92701</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-92702" class="cite xref">CVE-2026-92702</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-108362" class="cite xref">CVE-2026-108362</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-119344" class="cite xref">CVE-2026-119344</a>]</span> of CVSS 9.1, <span>[<a href="#CVE-2026-33697" class="cite xref">CVE-2026-33697</a>]</span> of CVSS 7.5, <span>[<a href="#CVE-2026-108361" class="cite xref">CVE-2026-108361</a>]</span> of CVSS 7.2, <span>[<a href="#CVE-2026-119345" class="cite xref">CVE-2026-119345</a>]</span> of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as <span>[<a href="#I-D.fossati-seat-early-attestation" class="cite xref">I-D.fossati-seat-early-attestation</a>]</span>, fails in practice, even <strong>without physical access</strong> to the desired machine.
 Moreover, since continuous attestation is generally required <span>[<a href="#CSA-eBPF" class="cite xref">CSA-eBPF</a>]</span> <span>[<a href="#MITRE-Continuous-Attestation" class="cite xref">MITRE-Continuous-Attestation</a>]</span>, early attestation adds <strong>unnecessary complexity</strong>.
 The results are backed by the research <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span>, <span>[<a href="#TLS-RA" class="cite xref">TLS-RA</a>]</span>, <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span>, <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> and the artifacts <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span> in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
-Currently, there is <strong>one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>.
+Currently, there is <strong>one CVE of CVSS 9.6, 13 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, two CVEs of CVSS 7.2, two CVEs of 7.0, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application</strong>.
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
-Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
+Based on our work, as noted above, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
 In our analysis <span>[<a href="#Intra-handshake.fail-repo" class="cite xref">Intra-handshake.fail-repo</a>]</span>, <span>[<a href="#ID-Crisis-repo" class="cite xref">ID-Crisis-repo</a>]</span>, and <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn <span>[<a href="#I-D.fossati-tls-attestation-10" class="cite xref">I-D.fossati-tls-attestation-10</a>]</span> -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
@@ -1213,7 +1229,7 @@ If you are aware of any open-source implementation of early attestation that is 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 20 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -3735,10 +3751,21 @@ From <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span>:<a href
           <h4 id="name-mitigations">
 <a href="#section-15.4.2" class="section-number selfRef">15.4.2. </a><a href="#name-mitigations" class="section-name selfRef">Mitigations</a>
           </h4>
-<p id="section-15.4.2-1">Sec. 7.2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents the technical details of the proposed mitigation.
-Sec. 9 of <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span> offers 6 solutions.
-Sec. 4 and 5 of <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> offer mitigations.
-Sec. 7 of <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> offers mitigations.<a href="#section-15.4.2-1" class="pilcrow">¶</a></p>
+<p id="section-15.4.2-1">In each GHSA and paper, we provided mitigations or workarounds. For example:<a href="#section-15.4.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-15.4.2-2.1">
+              <p id="section-15.4.2-2.1.1">Sec. 7.2 of <span>[<a href="#Intra-handshake.fail" class="cite xref">Intra-handshake.fail</a>]</span> presents the technical details of the proposed mitigation.<a href="#section-15.4.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.4.2-2.2">
+              <p id="section-15.4.2-2.2.1">Sec. 9 of <span>[<a href="#ID-Crisis" class="cite xref">ID-Crisis</a>]</span> offers 6 solutions.<a href="#section-15.4.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.4.2-2.3">
+              <p id="section-15.4.2-2.3.1">Sec. 4 and 5 of <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span> offer mitigations.<a href="#section-15.4.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.4.2-2.4">
+              <p id="section-15.4.2-2.4.1">Sec. 7 of <span>[<a href="#EarlyAttestationTschuess" class="cite xref">EarlyAttestationTschuess</a>]</span> offers mitigations.<a href="#section-15.4.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
 </section>
 </div>
 </section>
@@ -4725,6 +4752,23 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
             </thead>
             <tbody>
               <tr>
+                <td class="text-left" rowspan="1" colspan="1">DINRG @ <a href="https://www.ietf.org/meeting/127/">IETF 127</a>
+</td>
+                <td class="text-left" rowspan="1" colspan="1">San Francisco, USA (Virtual)</td>
+                <td class="text-left" rowspan="1" colspan="1">16 November, 2026</td>
+                <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://datatracker.ietf.org/meeting/127/materials/slides-127-dinrg-earlyattestationbleed-and-earlyattestationtschuss-00">slides</a>, <a href="https://youtu.be/MnrA2-3davw?t=5915">video</a>
+</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">
+                  <a href="https://www.ga4gh.org/work_stream/data-security/">Data Security Work Stream (DSWS)</a> at the <a href="https://www.ga4gh.org/">Global Alliance for Genomics and Health (GA4GH)</a>
+</td>
+                <td class="text-left" rowspan="1" colspan="1">Virtual</td>
+                <td class="text-left" rowspan="1" colspan="1">16 Nov, 2026</td>
+                <td class="text-left" rowspan="1" colspan="1">slides, video</td>
+              </tr>
+              <tr>
                 <td class="text-left" rowspan="1" colspan="1">HotRFC @ <a href="https://www.ietf.org/meeting/127/">IETF 127</a>
 </td>
                 <td class="text-left" rowspan="1" colspan="1">San Francisco, USA (Virtual)</td>
@@ -5603,6 +5647,27 @@ We also sincerely thank the author of <span>[<a href="#I-D.ritz-seat-facts" clas
 </li>
         <li class="normal" id="appendix-A-5.8">
           <p id="appendix-A-5.8.1">Mateusz Bronk<a href="#appendix-A-5.8.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.9">
+          <p id="appendix-A-5.9.1">Kubilay Ahmet Küçük<a href="#appendix-A-5.9.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.10">
+          <p id="appendix-A-5.10.1">Waqas Nawaz<a href="#appendix-A-5.10.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.11">
+          <p id="appendix-A-5.11.1">Yanping Hu<a href="#appendix-A-5.11.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.12">
+          <p id="appendix-A-5.12.1">Thomas Fossati<a href="#appendix-A-5.12.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.13">
+          <p id="appendix-A-5.13.1">Ilari Liusvaara<a href="#appendix-A-5.13.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.14">
+          <p id="appendix-A-5.14.1">Vladislav Kostitsyn<a href="#appendix-A-5.14.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-5.15">
+          <p id="appendix-A-5.15.1">Kevin Hammond<a href="#appendix-A-5.15.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="appendix-A-6"><strong>EarlyAttestationBleed</strong> <span>[<a href="#EarlyAttestationBleed" class="cite xref">EarlyAttestationBleed</a>]</span><a href="#appendix-A-6" class="pilcrow">¶</a></p>
