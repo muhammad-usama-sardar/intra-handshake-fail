@@ -492,13 +492,21 @@ informative:
 
 --- abstract
 
-The draft aims to provide technical details of {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-119344}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, {{CVE-2026-119345}} of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as {{I-D.fossati-seat-early-attestation}}, fails in practice, even **without physical access** to the desired machine.
+As presented in {{EarlyAttestationTschuess}} (EAT), all major early attestation implementations have declared end of life of early attestation, because of our responsibly disclosed vulnerabilities.
+Privasys [declared end of life](https://github.com/Privasys/go/commit/91195564d435a374e45d485d39edbc6cf8235901) of early attestation in Go, archived the early attestation repo on 04.09, and moved to standard (post-handshake) attestation.
+Privasys [declared end of life](https://github.com/Privasys/rustls/commit/c39f7107dffd710c5087b1885a71b4bb8ff2de31) of early attestation in rustls, archived the early attestation repo on 04.09, and moved to standard attestation.
+Cocos AI [declared end of life](https://github.com/ultravioletrs/cocos/releases/tag/v0.9.0) of early attestation, and moved to standard attestation.
+CCC Attestation SIG [declared end of life](https://github.com/CCC-Attestation/attested-tls-poc/pull/60) of early attestation, and archived the repo on 22.07.
+Moreover, authors of {{I-D.fossati-tls-attestation-10}} have [withdrawn their vulnerable draft](https://mailarchive.ietf.org/arch/msg/i-d-announce/4QeQmyBwZpZ69MRry4wGzkGyU0o/) because of our discovered vulnerabilities.
+Finally, {{I-D.ritz-seat-facts}} has been archived.
+This draft aims to provide technical details of these vulnerabilities.
+Vulnerabilities include {{CVE-2026-100833}} of CVSS 9.6, {{CVE-2026-108265}} of CVSS 9.1, {{CVE-2026-108266}} of CVSS 9.1, {{CVE-2026-108267}} of CVSS 9.1, {{CVE-2026-108268}} of CVSS 9.1, {{CVE-2026-108269}} of CVSS 9.1, {{CVE-2026-100835}} of CVSS 9.1, {{CVE-2026-92701}} of CVSS 9.1, {{CVE-2026-92702}} of CVSS 9.1, {{CVE-2026-108362}} of CVSS 9.1, {{CVE-2026-119344}} of CVSS 9.1, {{CVE-2026-33697}} of CVSS 7.5, {{CVE-2026-108361}} of CVSS 7.2, {{CVE-2026-119345}} of CVSS 7.2, and 26+ GitHub Security Advisories (GHSAs) against early attestation in the process of getting CVE IDs, which provide substantial technical evidence of how early attestation, such as {{I-D.fossati-seat-early-attestation}}, fails in practice, even **without physical access** to the desired machine.
 Moreover, since continuous attestation is generally required {{CSA-eBPF}} {{MITRE-Continuous-Attestation}}, early attestation adds **unnecessary complexity**.
 The results are backed by the research {{Intra-handshake.fail}}, {{TLS-RA}}, {{EarlyAttestationBleed}}, {{EarlyAttestationTschuess}} and the artifacts {{Intra-handshake.fail-repo}} in state-of-the-art formal analysis tool, ProVerif, under Apache-2.0 license for reproducibility, extensibility, and review, and have been acknowledged by the relevant stakeholders.
-Currently, there is **one CVE of CVSS 9.6, 11 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, one CVE of CVSS 7.2, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**.
+Currently, there is **one CVE of CVSS 9.6, 13 CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, two CVEs of CVSS 7.2, two CVEs of 7.0, and 26+ GHSAs published awaiting CVE IDs against the broader early attestation covering all layers of the ecosystem up to the application**.
 The research papers on these are currently either under submission or being prepared for submission.
 The artifacts of these papers will be shared with the community under Apache-2.0 license for reproducibility, extensibility, and review.
-Based on our work, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
+Based on our work, as noted above, all except two implementations of early attestation have been archived, withdrawn, or moved to post-handshake attestation.
 In our analysis {{Intra-handshake.fail-repo}}, {{ID-Crisis-repo}}, and {{EarlyAttestationTschuess}} (EAT) and based on discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG, IRTF CFRG, and several other forums, the remaining two implementations of early attestation -- Edgeless Systems Contrast and Meta's AI following withdrawn {{I-D.fossati-tls-attestation-10}} -- remain vulnerable due to lack of binding to the underlying connection.
 We recommend users of these two implementations to carefully evaluate their systems and understand the risks.
 If you are aware of any open-source implementation of early attestation that is not yet covered in this draft, please let us know to responsibly disclose the vulnerabilities to them.
@@ -1052,10 +1060,13 @@ Technical vulnerability report is available at {{Intra-handshake.fail}}. It is p
 Sec. 7.1 of {{Intra-handshake.fail}} presents the technical details with abstract attack traces of the vulnerabilities.
 
 ### Mitigations
-Sec. 7.2 of {{Intra-handshake.fail}} presents the technical details of the proposed mitigation.
-Sec. 9 of {{ID-Crisis}} offers 6 solutions.
-Sec. 4 and 5 of {{EarlyAttestationBleed}} offer mitigations.
-Sec. 7 of {{EarlyAttestationTschuess}} offers mitigations.
+
+In each GHSA and paper, we provided mitigations or workarounds. For example:
+
+- Sec. 7.2 of {{Intra-handshake.fail}} presents the technical details of the proposed mitigation.
+- Sec. 9 of {{ID-Crisis}} offers 6 solutions.
+- Sec. 4 and 5 of {{EarlyAttestationBleed}} offer mitigations.
+- Sec. 7 of {{EarlyAttestationTschuess}} offers mitigations.
 
 ## Artifacts
 Artifacts are available at {{Intra-handshake.fail-repo}} under Apache-2.0 License.
@@ -1435,6 +1446,8 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- |
+| DINRG @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 16 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-dinrg-earlyattestationbleed-and-earlyattestationtschuss-00), [video](https://youtu.be/MnrA2-3davw?t=5915) |
+| [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 16 Nov, 2026 | slides, video |
 | HotRFC @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 15 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-confidential-computing-and-digital-sovereignty-00), [video](https://youtu.be/_c7VYycfRXA?t=3962) |
 | [IETF 126 Hackathon](https://www.ietf.org/meeting/hackathons/127-hackathon/) | San Francisco, USA (Virtual) | 15 November, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/127/hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-attestation), [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), [video](https://youtu.be/d44apZBtXwI?t=1027) |
 | [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain (Virtual) | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
@@ -1561,6 +1574,13 @@ We wish to express our sincere appreciation to the following for their review an
 - Elena Reshetova
 - Artem Bityutskiy
 - Mateusz Bronk
+- Kubilay Ahmet Küçük
+- Waqas Nawaz
+- Yanping Hu
+- Thomas Fossati
+- Ilari Liusvaara
+- Vladislav Kostitsyn
+- Kevin Hammond
 
 **EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
