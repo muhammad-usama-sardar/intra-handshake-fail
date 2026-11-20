@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 24 April 2027                                         CoreWeave
+Expires: 24 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -31,57 +31,85 @@ Expires: 24 April 2027                                         CoreWeave
                                                               I. Schrock
                                                    EMILIA Protocol, Inc.
                                                           I. Aboubakarov
-                                                                   ESILV
+                                                             Independent
                                                                   A. Gul
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                         21 October 2026
+                                                        20 November 2026
 
 
-Early Attestation Considered Very Harmful (CVE-2026-100833 of CVSS 9.6,
-     CVE-2026-108265 of CVSS 9.1, CVE-2026-108266 of CVSS 9.1, CVE-
-2026-108267 of CVSS 9.1, CVE-2026-108268 of CVSS 9.1, CVE-2026-108269 of
-   CVSS 9.1, and 29 other CVEs of up to expected CVSS 10.0 upcoming)
+ Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
+     100835,CVE-2026-108265, CVE-2026-108266, CVE-2026-108267, CVE-
+   2026-108268, CVE-2026-108269, CVE-2026-92701, CVE-2026-92702, CVE-
+        2026-108362, CVE-2026-33697, CVE-2026-108361 and others)
                    draft-intra-handshake-fail-latest
 
 Abstract
 
-   The draft aims to provide technical details of [CVE-2026-100833] of
-   CVSS 9.6, [CVE-2026-108265] of CVSS 9.1, [CVE-2026-108266] of CVSS
-   9.1, [CVE-2026-108267] of CVSS 9.1, [CVE-2026-108268] of CVSS 9.1,
+   As presented in [EarlyAttestationTschuess] (EAT), all major early
+   attestation implementations have declared end of life of early
+   attestation, because of our responsibly disclosed vulnerabilities.
+   Privasys declared end of life (https://github.com/Privasys/go/
+   commit/91195564d435a374e45d485d39edbc6cf8235901) of early attestation
+   in Go, archived the early attestation repo on 04.09, and moved to
+   standard (post-handshake) attestation.  Privasys declared end of life
+   (https://github.com/Privasys/rustls/commit/
+   c39f7107dffd710c5087b1885a71b4bb8ff2de31) of early attestation in
+   rustls, archived the early attestation repo on 04.09, and moved to
+   standard attestation.  Cocos AI declared end of life
+   (https://github.com/ultravioletrs/cocos/releases/tag/v0.9.0) of early
+   attestation, and moved to standard attestation.  CCC Attestation SIG
+   declared end of life (https://github.com/CCC-Attestation/attested-
+   tls-poc/pull/60) of early attestation, and archived the repo on
+   22.07.  Moreover, authors of [I-D.fossati-tls-attestation-10] have
+   withdrawn their vulnerable draft
+   (https://mailarchive.ietf.org/arch/msg/
+   i-d-announce/4QeQmyBwZpZ69MRry4wGzkGyU0o/) because of our discovered
+   vulnerabilities.  Finally, [I-D.ritz-seat-facts] has been archived.
+   This draft aims to provide technical details of these
+   vulnerabilities.  Vulnerabilities include [CVE-2026-100833] of CVSS
+   9.6, [CVE-2026-108265] of CVSS 9.1, [CVE-2026-108266] of CVSS 9.1,
+   [CVE-2026-108267] of CVSS 9.1, [CVE-2026-108268] of CVSS 9.1,
    [CVE-2026-108269] of CVSS 9.1, [CVE-2026-100835] of CVSS 9.1,
    [CVE-2026-92701] of CVSS 9.1, [CVE-2026-92702] of CVSS 9.1,
-   [CVE-2026-108362] of CVSS 9.1, [CVE-2026-33697] of CVSS 7.5,
-   [CVE-2026-108361] of CVSS 7.2, and several GitHub Security Advisories
-   (GHSAs) in the process of getting CVE IDs, which provide substantial
-   technical evidence of how early attestation fails in practice, even
-   *without physical access* to the desired machine.  Moreover, since
-   continuous attestation is generally required [CSA-eBPF]
-   [MITRE-Continuous-Attestation], early attestation adds *unnecessary
-   complexity*. The results are backed by the research
-   [Intra-handshake.fail], [TLS-RA], [EarlyAttestationBleed] and the
-   artifacts [Intra-handshake.fail-repo] in state-of-the-art formal
-   analysis tool, ProVerif, under Apache-2.0 license for
-   reproducibility, extensibility, and review, and have been
-   acknowledged by the relevant stakeholders.  Currently, there are *one
-   CVE of CVSS 9.6, nine CVEs of CVSS 9.1, one CVE of CVSS 8.2, one CVE
-   of CVSS 7.5, one CVE of CVSS 7.2, and several GHSAs published
-   awaiting CVE IDs against the broader early attestation covering all
-   layers of the ecosystem up to the application*. The research papers
-   on these are currently either under submission or being prepared for
-   submission.  The artifacts of these papers will be shared with the
-   community under Apache-2.0 license for reproducibility,
-   extensibility, and review.  Based on our work, all except two
-   implementations of early attestation have been archived, withdrawn,
-   or moved to post-handshake attestation.  In our analysis
-   [Intra-handshake.fail-repo] and [ID-Crisis-repo], the remaining two
+   [CVE-2026-108362] of CVSS 9.1, [CVE-2026-119344] of CVSS 9.1,
+   [CVE-2026-33697] of CVSS 7.5, [CVE-2026-108361] of CVSS 7.2,
+   [CVE-2026-119345] of CVSS 7.2, and 26+ GitHub Security Advisories
+   (GHSAs) against early attestation in the process of getting CVE IDs,
+   which provide substantial technical evidence of how early
+   attestation, such as [I-D.fossati-seat-early-attestation], fails in
+   practice, even *without physical access* to the desired machine.
+   Moreover, since continuous attestation is generally required
+   [CSA-eBPF] [MITRE-Continuous-Attestation], early attestation adds
+   *unnecessary complexity*. The results are backed by the research
+   [Intra-handshake.fail], [TLS-RA], [EarlyAttestationBleed],
+   [EarlyAttestationTschuess] and the artifacts
+   [Intra-handshake.fail-repo] in state-of-the-art formal analysis tool,
+   ProVerif, under Apache-2.0 license for reproducibility,
+   extensibility, and review, and have been acknowledged by the relevant
+   stakeholders.  Currently, there is *one CVE of CVSS 9.6, 13 CVEs of
+   CVSS 9.1, one CVE of CVSS 8.2, one CVE of CVSS 7.5, two CVEs of CVSS
+   7.2, two CVEs of 7.0, and 26+ GHSAs published awaiting CVE IDs
+   against the broader early attestation covering all layers of the
+   ecosystem up to the application*. The research papers on these are
+   currently either under submission or being prepared for submission.
+   The artifacts of these papers will be shared with the community under
+   Apache-2.0 license for reproducibility, extensibility, and review.
+   Based on our work, as noted above, all except two implementations of
+   early attestation have been archived, withdrawn, or moved to post-
+   handshake attestation.  In our analysis [Intra-handshake.fail-repo],
+   [ID-Crisis-repo], and [EarlyAttestationTschuess] (EAT) and based on
+   discussions in the CCC Attestation SIG, IETF SEAT WG, IRTF UFMRG,
+   IRTF CFRG, and several other forums, the remaining two
    implementations of early attestation -- Edgeless Systems Contrast and
-   Meta's AI -- remain vulnerable.  We recommend users of these two
-   implementations to carefully evaluate their systems and understand
-   the risks.  If you are aware of any open-source implementation of
-   early attestation that is not yet covered in this draft, please let
-   us know to responsibly disclose the vulnerabilities to them.
+   Meta's AI following withdrawn [I-D.fossati-tls-attestation-10] --
+   remain vulnerable due to lack of binding to the underlying
+   connection.  We recommend users of these two implementations to
+   carefully evaluate their systems and understand the risks.  If you
+   are aware of any open-source implementation of early attestation that
+   is not yet covered in this draft, please let us know to responsibly
+   disclose the vulnerabilities to them.
 
 About This Document
 
@@ -110,7 +138,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 April 2027.
+   This Internet-Draft will expire on 24 May 2027.
 
 Copyright Notice
 
@@ -133,6 +161,7 @@ Table of Contents
      1.2.  Intra-handshake.fail
      1.3.  ID-Crisis
      1.4.  EarlyAttestationBleed
+       1.4.1.  Architectural Flaws in Early Attestation
      1.5.  EarlyAttestationTschüss (EAT)
    2.  Published GHSAs/CVEs
    3.  Intra-handshake.fail
@@ -165,17 +194,18 @@ Table of Contents
      15.3.  Properties
      15.4.  Technical Vulnerability Report
        15.4.1.  Vulnerabilities
-       15.4.2.  Mitigation
+       15.4.2.  Mitigations
      15.5.  Artifacts
    16. Media Coverage
      16.1.  EarlyAttestationTschüss (EAT)
        16.1.1.  CVE-2026-100835
-       16.1.2.  CVE-2026-108362
-       16.1.3.  CVE-2026-108265
-       16.1.4.  CVE-2026-108266
-       16.1.5.  CVE-2026-108267
-       16.1.6.  CVE-2026-108268
-       16.1.7.  CVE-2026-108269
+       16.1.2.  CVE-2026-112377
+       16.1.3.  CVE-2026-108362
+       16.1.4.  CVE-2026-108265
+       16.1.5.  CVE-2026-108266
+       16.1.6.  CVE-2026-108267
+       16.1.7.  CVE-2026-108268
+       16.1.8.  CVE-2026-108269
      16.2.  EarlyAttestationBleed
        16.2.1.  CVE-2026-100833
      16.3.  Intra-handshake.fail
@@ -226,7 +256,7 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 9.6      | Critical | —                         | 1              |
    +----------+----------+---------------------------+----------------+
-   | 9.1      | Critical | 9                         | 9              |
+   | 9.1      | Critical | 10                        | 13             |
    +----------+----------+---------------------------+----------------+
    | 8.2      | High     | 1                         | 1              |
    +----------+----------+---------------------------+----------------+
@@ -240,7 +270,9 @@ Table of Contents
    +----------+----------+---------------------------+----------------+
    | 7.4      | High     | 4                         | —              |
    +----------+----------+---------------------------+----------------+
-   | 7.2      | High     | 1                         | 1              |
+   | 7.2      | High     | 1                         | 2              |
+   +----------+----------+---------------------------+----------------+
+   | 7.0      | High     | —                         | 2              |
    +----------+----------+---------------------------+----------------+
    | 6.5      | Medium   | 3                         | —              |
    +----------+----------+---------------------------+----------------+
@@ -299,23 +331,48 @@ Table of Contents
       [GHSA-Edgeless-Systems2] of CVSS 9.0-10.0 and [CVE-2026-100833] of
       CVSS v3.1 of 9.6.
 
+1.4.1.  Architectural Flaws in Early Attestation
+
+   Sec. 7 of [EarlyAttestationBleed] presents four architectural flaws
+   in early attestation:
+
+   *  A malicious TLS client retrieves sensitive hardware-level and
+      firmware-level information from the server’s Evidence before the
+      server has authenticated the client.
+
+   *  Early attestation can typically provide information about only
+      boot-time Claims, since most runtime Claims may not be available
+      at the handshake time.
+
+   *  Re-attestation requires post-handshake attestation.  Early
+      attestation thus adds unnecessary complexity.
+
+   *  Early attestation results in high handshake latency, timeouts, and
+      even failures.
+
 1.5.  EarlyAttestationTschüss (EAT)
 
-   *  [CVE-2026-100835] of CVSS 9.1 for Edgeless Systems Contrast
+   [EarlyAttestationTschuess] resulted in the following CVEs
+   demonstrating relay and diversion attacks against early attestation
+   implementations/deployments:
 
-   *  [CVE-2026-112377] of CVSS 9.1 for CCC Attestation SIG
+   *  [CVE-2026-100835] of CVSS 9.1 against Edgeless Systems Contrast
 
-   *  [CVE-2026-108362] of CVSS 9.1 for Privasys
+   *  [CVE-2026-112377] of CVSS 9.1 against CCC Attestation SIG
 
-   *  [CVE-2026-108265] of CVSS 9.1 for Privasys
+   *  [CVE-2026-108362] of CVSS 9.1 against Privasys
 
-   *  [CVE-2026-108266] of CVSS 9.1 for Privasys
+   *  [CVE-2026-108265] of CVSS 9.1 against Privasys
 
-   *  [CVE-2026-108267] of CVSS 9.1 for Privasys
+   *  [CVE-2026-108266] of CVSS 9.1 against Privasys
 
-   *  [CVE-2026-108268] of CVSS 9.1 for Privasys
+   *  [CVE-2026-108267] of CVSS 9.1 against Privasys
 
-   *  [CVE-2026-108269] of CVSS 9.1 for Privasys
+   *  [CVE-2026-108268] of CVSS 9.1 against Privasys
+
+   *  [CVE-2026-108269] of CVSS 9.1 against Privasys
+
+   *  [CVE-2026-119344] of CVSS 9.1 against Cocos AI
 
 2.  Published GHSAs/CVEs
 
@@ -534,7 +591,7 @@ Table of Contents
    |                                                          |        |and Muhammad |
    |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
-   |[EUVD-2026-87853]                                         |7.6     |Markus Rudy; |
+   |[EUVD-2026-87853]                                         |8.6     |Markus Rudy; |
    |                                                          |        |independently|
    |                                                          |        |by Songbo Bu |
    |                                                          |        |and Muhammad |
@@ -600,7 +657,23 @@ Table of Contents
    |                                                          |        |Jacquet, and |
    |                                                          |        |Songbo Bu    |
    +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-95996]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
    |[CVE-2026-108266]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-95997]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar,|
    |                                                          |        |Viacheslav   |
    |                                                          |        |Dubeyko,     |
@@ -616,6 +689,14 @@ Table of Contents
    |                                                          |        |Jacquet, and |
    |                                                          |        |Songbo Bu    |
    +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-96017]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
    |[CVE-2026-108268]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar,|
    |                                                          |        |Viacheslav   |
@@ -624,7 +705,23 @@ Table of Contents
    |                                                          |        |Jacquet, and |
    |                                                          |        |Songbo Bu    |
    +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-96018]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
    |[CVE-2026-108269]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar,|
+   |                                                          |        |Viacheslav   |
+   |                                                          |        |Dubeyko,     |
+   |                                                          |        |Jean-Marie   |
+   |                                                          |        |Jacquet, and |
+   |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-96019]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar,|
    |                                                          |        |Viacheslav   |
    |                                                          |        |Dubeyko,     |
@@ -642,6 +739,27 @@ Table of Contents
    |GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/     |5.9     |Muhammad     |
    |weight-custody-manifest/security/advisories/GHSA-jr5r-    |        |Usama Sardar |
    |w684-fg5m)                                                |        |             |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-119344]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-119345]                                         |7.2     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-129092]                                         |7.0     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
+   +----------------------------------------------------------+--------+-------------+
+   |TBA                                                       |7.0     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   |                                                          |        |and Songbo Bu|
    +----------------------------------------------------------+--------+-------------+
 
       Table 2: GHSAs/CVEs for implementations of early attestation and
@@ -1084,28 +1202,60 @@ Table of Contents
    |CVE [CVE-2026-108265] published  [*Severity = CRITICAL (CVSS 9.1)*]         |9 October,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-95996]  [*Severity = CRITICAL (CVSS 9.1)*]  |9         |
+   |                                                                            |Ocgtober, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108266] published  [*Severity = CRITICAL (CVSS 9.1)*]         |9 October,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-95997]  [*Severity = CRITICAL (CVSS 9.1)*]  |9         |
+   |                                                                            |Ocgtober, |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108267] published  [*Severity = CRITICAL (CVSS 9.1)*]         |9 October,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-96017]  [*Severity = CRITICAL (CVSS 9.1)*]  |9         |
+   |                                                                            |Ocgtober, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108268] published  [*Severity = CRITICAL (CVSS 9.1)*]         |9 October,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-96018]  [*Severity = CRITICAL (CVSS 9.1)*]  |9         |
+   |                                                                            |Ocgtober, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108269] published  [*Severity = CRITICAL (CVSS 9.1)*]         |9 October,|
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-96019]  [*Severity = CRITICAL (CVSS 9.1)*]  |9         |
+   |                                                                            |Ocgtober, |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108361] published  [*Severity = HIGH (CVSS 7.2)*]             |12        |
    |                                                                            |October,  |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-97782]  [*Severity = HIGH (CVSS 7.2)*]      |12        |
+   |                                                                            |Ocgtober, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-108362] published  [*Severity = CRITICAL (CVSS 9.1)*]         |12        |
    |                                                                            |October,  |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-97781]  [*Severity = CRITICAL (CVSS 9.1)*]  |12        |
+   |                                                                            |Ocgtober, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
    |CVE [CVE-2026-112377] published  [*Severity = CRITICAL (CVSS 9.1)*]         |19        |
    |                                                                            |October,  |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |ENISA published EUVD [EUVD-2026-104535]  [*Severity = CRITICAL (CVSS 9.1)*] |19        |
+   |                                                                            |Ocgtober, |
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |WCM published GHSA-x3w3-7mvg-hxw5 (https://github.com/agentrust-io/weight-  |19        |
@@ -1115,6 +1265,18 @@ Table of Contents
    |WCM published GHSA-jr5r-w684-fg5m (https://github.com/agentrust-io/weight-  |19        |
    |custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [*Severity =      |October,  |
    |MEDIUM (CVSS 5.9)*]                                                         |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-119344] published [*Severity = CRITICAL (CVSS 9.1)*]              |2         |
+   |                                                                            |November, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-119345] published [*Severity = HIGH (CVSS 7.2)*]                  |2         |
+   |                                                                            |November, |
+   |                                                                            |2026      |
+   +----------------------------------------------------------------------------+----------+
+   |[CVE-2026-129092] published [*Severity = HIGH (CVSS 7.0)*]                  |13        |
+   |                                                                            |November, |
+   |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
 
           Table 6: Detailed vulnerability disclosure timeline and
@@ -1131,21 +1293,37 @@ Table of Contents
    independently published the following EUVDs to acknowledge the
    vulnerabilities.
 
-                  +===================+======+==========+
-                  | EUVD              | CVSS | Severity |
-                  +===================+======+==========+
-                  | [EUVD-2026-16488] | 7.5  | High     |
-                  +-------------------+------+----------+
-                  | [EUVD-2026-83194] | 9.1  | Critical |
-                  +-------------------+------+----------+
-                  | [EUVD-2026-83192] | 9.1  | Critical |
-                  +-------------------+------+----------+
-                  | [EUVD-2026-87851] | 9.1  | Critical |
-                  +-------------------+------+----------+
-                  | [EUVD-2026-87853] | 7.6  | High     |
-                  +-------------------+------+----------+
+                 +====================+======+==========+
+                 | EUVD               | CVSS | Severity |
+                 +====================+======+==========+
+                 | [EUVD-2026-16488]  | 7.5  | High     |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-83194]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-83192]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-87851]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-87853]  | 7.6  | High     |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-95996]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-95997]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-96017]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-96018]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-96019]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-97782]  | 7.2  | High     |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-97781]  | 9.1  | Critical |
+                 +--------------------+------+----------+
+                 | [EUVD-2026-104535] | 9.1  | Critical |
+                 +--------------------+------+----------+
 
-                       Table 7: ENISA's issued EUVDs
+                      Table 7: ENISA's issued EUVDs
 
 7.  Comparison with Other Vulnerabilities in Confidential Computing
     Literature
@@ -1213,22 +1391,28 @@ Table of Contents
    +----------------------------+-----------------------------------------+----+--------+
    |[EarlyAttestationBleed]     |[CVE-2026-100833]                        |9.6 |Critical|
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-100835]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-100835]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-108265]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-112377]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-108266]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-108362]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-108267]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-108265]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-108268]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-108266]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
-   |EarlyAttestationTschüss     |[CVE-2026-108269]                        |9.1 |Critical|
+   |[EarlyAttestationTschuess]  |[CVE-2026-108267]                        |9.1 |Critical|
+   |(EAT)                       |                                         |    |        |
+   +----------------------------+-----------------------------------------+----+--------+
+   |[EarlyAttestationTschuess]  |[CVE-2026-108268]                        |9.1 |Critical|
+   |(EAT)                       |                                         |    |        |
+   +----------------------------+-----------------------------------------+----+--------+
+   |[EarlyAttestationTschuess]  |[CVE-2026-108269]                        |9.1 |Critical|
    |(EAT)                       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
 
@@ -1402,6 +1586,13 @@ Table of Contents
 
    Please see Sec. 6.2 of [Intra-handshake.fail] for details.
 
+   In early attestation, Evidence must be conveyed before the server
+   Finished message, and no later carrier is available: SEAT charter
+   precludes modification of the TLS protocol, so no new handshake
+   message can be introduced to convey Evidence after server
+   authentication.  Level 3 is therefore unachievable in early
+   attestation alone.
+
 12.  Security Properties (Correlation Goals)
 
    We consider TLS Server as RATS Attester, which is typical in
@@ -1520,6 +1711,13 @@ Table of Contents
       fossati-seat-expat (https://datatracker.ietf.org/doc/draft-
       fossati-seat-expat/), can achieve level 3 binding.
 
+   *  Post-handshake attestation requires one additional round trip, in
+      which the Verifying Relying Party conveys the attestation nonce
+      and receives Evidence in return.  This is cheaper than re-
+      establishing the connection for each attestation, and it is the
+      only placement that correlates Evidence to an already
+      authenticated peer.
+
    *  The research suggests that recent hybrid proposals (combination of
       intra-handshake attestation and post-handshake attestation)
       [I-D.fossati-seat-early-attestation] and [I-D.ritz-seat-facts] may
@@ -1577,6 +1775,18 @@ Table of Contents
    governance, rather than as sufficient evidence that an AI agent
    remains under effective control.
 
+   In Agent2Agent interactions, this distinction also matters over time
+   and across delegation chains.  Attestation evidence obtained at one
+   point does not, by itself, establish that an agent's subsequent
+   actions remain within the authority granted for a particular task,
+   that changes in permissions or delegation have been accounted for, or
+   that intervention remains feasible as agents interact.  Relying
+   parties should therefore consider how authorization boundaries,
+   attribution, monitoring, and timely suspension or revocation are
+   maintained throughout the interaction.  These are operational
+   governance considerations, not additional security properties
+   established by the formal analysis in this draft.
+
 15.  Technical Details
 
 15.1.  Tool
@@ -1617,6 +1827,14 @@ Table of Contents
    that the correlation properties studied in this work do not
    necessarily require it.
 
+   Note that this scope restriction does not weaken the level 2 limit of
+   early attestation (cf. Section 11).  In a PSK-based handshake, the
+   client's application traffic key is still derived from a transcript
+   that includes the server Finished message.  Evidence conveyed earlier
+   in the handshake can therefore not be correlated to it, so G3 remains
+   unachievable and the level 2 limit holds for PSK-based handshakes as
+   well.
+
    Note: The artifacts consider the case of server authentication only,
    as client authentication is optional in TLS 1.3.  No claims are made
    about other configurations.
@@ -1632,18 +1850,26 @@ Table of Contents
 15.4.  Technical Vulnerability Report
 
    Technical vulnerability report is available at
-   [Intra-handshake.fail].  It is accepted for publication at ESORICS
-   2026.
+   [Intra-handshake.fail].  It is published at ESORICS 2026.
 
 15.4.1.  Vulnerabilities
 
    Sec. 7.1 of [Intra-handshake.fail] presents the technical details
    with abstract attack traces of the vulnerabilities.
 
-15.4.2.  Mitigation
+15.4.2.  Mitigations
 
-   Sec. 7.2 of [Intra-handshake.fail] presents the technical details of
-   the proposed mitigation.
+   In each GHSA and paper, we provided mitigations or workarounds.  For
+   example:
+
+   *  Sec. 7.2 of [Intra-handshake.fail] presents the technical details
+      of the proposed mitigation.
+
+   *  Sec. 9 of [ID-Crisis] offers 6 solutions.
+
+   *  Sec. 4 and 5 of [EarlyAttestationBleed] offer mitigations.
+
+   *  Sec. 7 of [EarlyAttestationTschuess] offers mitigations.
 
 15.5.  Artifacts
 
@@ -1665,8 +1891,23 @@ Table of Contents
 
 16.1.  EarlyAttestationTschüss (EAT)
 
+   [EarlyAttestationTschuess]
+
+   *  (Chinese) KK Security Talk (https://mp.weixin.qq.com/s/
+      dWq3C4iisYNpgLogz7za-g)
+
+   *  (Chinese) Security 114 (https://www.anquan114.com/archives/7472)
+
    *  al-ice.ai (https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-
       cves-channel-binding-self-disclosure/)
+
+   *  freenode (https://www.freenode.com/digest/766)
+
+   *  NHI Management Group (https://nhimg.org/articles/attested-tls-
+      relay-flaws-show-where-confidential-computing-binding-fails/)
+
+   *  NHI Forum (https://nhimg.org/community/nhi-breaches/attested-tls-
+      relay-attacks-what-do-security-teams-need-to-change/)
 
 16.1.1.  CVE-2026-100835
 
@@ -1687,7 +1928,21 @@ Table of Contents
    *  CIRCL's vulnerability (https://vulnerability.circl.lu/vuln/cve-
       2026-100835)
 
-16.1.2.  CVE-2026-108362
+16.1.2.  CVE-2026-112377
+
+   [CVE-2026-112377]
+
+   *  shellbulletin (https://shellbulletin.com/section/vulnerabilities/
+      shut-down-ccc-attestation-tls-poc-on-open/)
+
+   *  Apple podcast (https://podcasts.apple.com/us/podcast/top-
+      vulnerabilidades-cr%C3%ADticas-20-10-2026/
+      id1877409819?i=1000797192823&l=zh-Hans-CN)
+
+   *  Hackerstorm (https://www.hackerstorm.com/nvd/search/
+      cveTestReport.php?id=CVE-2026-112377)
+
+16.1.3.  CVE-2026-108362
 
    [CVE-2026-108362]
 
@@ -1698,14 +1953,14 @@ Table of Contents
       (https://firewallchronicle.com/topic/vulnerabilities/privasys-ra-
       tls-clients-identity-validation-flaw/)
 
-   *  Apple podcase (https://podcasts.apple.com/pl/podcast/top-
+   *  Apple podcast (https://podcasts.apple.com/pl/podcast/top-
       vulnerabilidades-cr%C3%ADticas-13-10-2026/
       id1877409819?i=1000796060867&l=pl)
 
    *  Phish Herald (https://phishherald.com/topic/vulnerabilities/orgs-
       face-impersonation-risk-privasys-ra-tls/)
 
-16.1.3.  CVE-2026-108265
+16.1.4.  CVE-2026-108265
 
    [CVE-2026-108265]
 
@@ -1718,7 +1973,7 @@ Table of Contents
    *  acidpeak (https://www.acidpeak.com/product/privasys-enclave-os-
       mini/)
 
-16.1.4.  CVE-2026-108266
+16.1.5.  CVE-2026-108266
 
    [CVE-2026-108266]
 
@@ -1739,7 +1994,7 @@ Table of Contents
    *  datasaferadar (https://datasaferadar.com/section/vulnerabilities/
       privasys-rustls-quote-relay-flaw-bypasses/)
 
-16.1.5.  CVE-2026-108267
+16.1.6.  CVE-2026-108267
 
    [CVE-2026-108267]
 
@@ -1756,7 +2011,7 @@ Table of Contents
       (https://darkwebdispatch.com/topic/vulnerabilities/patch-privasys-
       go-before-v0-5-1-to-block-critical/)
 
-16.1.6.  CVE-2026-108268
+16.1.7.  CVE-2026-108268
 
    [CVE-2026-108268]
 
@@ -1772,7 +2027,7 @@ Table of Contents
    *  bitshieldnews (https://bitshieldnews.com/section/
       vulnerabilities/9-1-cvss-privasys-enclave-os-critical-flaw/)
 
-16.1.7.  CVE-2026-108269
+16.1.8.  CVE-2026-108269
 
    [CVE-2026-108269]
 
@@ -1816,7 +2071,7 @@ Table of Contents
    *  (Chinese) KK says security (https://mp.weixin.qq.com/
       s/31Glxqr6ofHylTyrtNsuaQ)
 
-   *  (Chinese) Safe Meow Station (mp.weixin.qq.com/s/
+   *  (Chinese) Safe Meow Station (https://mp.weixin.qq.com/s/
       REtESPngXemSro0hjIZyxw)
 
    *  (Chinese) Digital World Information (https://mp.weixin.qq.com/
@@ -2743,16 +2998,53 @@ Table of Contents
    +================================================+==========+==========+======================================================================================+
    |Event/Host                                      |Venue     |Date(s)   |Evidence                                                                              |
    +================================================+==========+==========+======================================================================================+
-   |System Boot and Security MC @ Linux Plumbers    |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2585/), slides, video             |
-   |Conference 2026 (https://lpc.events/event/20/)  |Czechia   |2026      |                                                                                      |
+   |DINRG @ IETF 127 (https://www.ietf.org/         |San       |16        |slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-dinrg-          |
+   |meeting/127/)                                   |Francisco,|November, |earlyattestationbleed-and-earlyattestationtschuss-00), video (https://youtu.be/       |
+   |                                                |USA       |2026      |MnrA2-3davw?t=5915)                                                                   |
+   |                                                |(Virtual) |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |BoF @ Linux Plumbers Conference 2026            |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2640/), slides, video             |
-   |(https://lpc.events/event/20/)                  |Czechia   |2026      |                                                                                      |
+   |Data Security Work Stream (DSWS)                |Virtual   |16 Nov,   |slides, video                                                                         |
+   |(https://www.ga4gh.org/work_stream/data-        |          |2026      |                                                                                      |
+   |security/) at the Global Alliance for Genomics  |          |          |                                                                                      |
+   |and Health (GA4GH) (https://www.ga4gh.org/)     |          |          |                                                                                      |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |HotRFC @ IETF 127 (https://www.ietf.org/        |San       |15        |slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-   |
+   |meeting/127/)                                   |Francisco,|November, |confidential-computing-and-digital-sovereignty-00), video                             |
+   |                                                |USA       |2026      |(https://youtu.be/_c7VYycfRXA?t=3962)                                                 |
+   |                                                |(Virtual) |          |                                                                                      |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |IETF 126 Hackathon                              |San       |15        |Hackathon project (https://wiki.ietf.org/en/meeting/127/                              |
+   |(https://www.ietf.org/meeting/                  |Francisco,|November, |hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-          |
+   |hackathons/127-hackathon/)                      |USA       |2026      |2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-         |
+   |                                                |(Virtual) |          |attestation), slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-  |
+   |                                                |          |          |hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), video          |
+   |                                                |          |          |(https://youtu.be/d44apZBtXwI?t=1027)                                                 |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |BioHackathon Europe (https://biohackathon-      |Barcelona,|9-13 Nov, |Proposal (https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md)|
+   |europe.org/)                                    |Spain     |2026      |                                                                                      |
+   |                                                |(Virtual) |          |                                                                                      |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |Security WG (https://ripe93.ripe.net/programme/ |Sofia,    |27 Oct,   |abstract (https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), slides|
+   |meeting-plan/sessions/137/) @ RIPE 93           |Bulgaria  |2026      |(https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/                           |
+   |(https://ripe93.ripe.net/)                      |(Virtual) |          |resources/20261027_RIPE_93_Sec_e4tTL66.pdf), transcript                               |
+   |                                                |          |          |(https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/), video      |
+   |                                                |          |          |(https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video)           |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |System Boot and Security MC @ Linux Plumbers    |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2585/), slides                    |
+   |Conference 2026 (https://lpc.events/event/20/)  |Czechia   |2026      |(https://lpc.events/event/20/contributions/2585/                                      |
+   |                                                |          |          |attachments/2040/4688/20261005_LPC_2026_Security.pdf), video (https://www.youtube.com/|
+   |                                                |          |          |watch?v=KL6EX8hcFKc)                                                                  |
+   +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
+   |BoF @ Linux Plumbers Conference 2026            |Prague,   |5 Oct,    |abstract (https://lpc.events/event/20/contributions/2640/), slides                    |
+   |(https://lpc.events/event/20/)                  |Czechia   |2026      |(https://lpc.events/event/20/contributions/2640/                                      |
+   |                                                |          |          |attachments/2049/4690/20261005_LPC_2026_BoF.pdf), video                               |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |GA4GH 14th Plenary Meeting                      |Singapore |28 Sept-2 |slides (https://www.researchgate.net/                                                 |
    |(https://www.ga4gh.org/event/14th-plenary/)     |          |Oct, 2026 |publication/415074362_Presentation_Safeguarding_GA4GH_Ecosystem_from_High-            |
    |                                                |          |          |and_Critical-Severity_Vulnerabilities_in_Former_GIF_Design_for_Attested_TLS_draft-    |
-   |                                                |          |          |fossati-seat-early-attestation), video                                                |
+   |                                                |          |          |fossati-seat-early-attestation), report (https://www.ga4gh.org/wp-                    |
+   |                                                |          |          |content/uploads/2026/11/GA4GH-14th-Plenary-Meeting-Report.pdf), video                 |
+   |                                                |          |          |(https://youtu.be/Rm4SttVkJWM?t=3153)                                                 |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |PET-CON 2026.2: 16th Privacy Enhancing          |Lübeck,   |28-29     |slides (https://www.researchgate.net/                                                 |
    |Techniques Convention (https://fg-pet.gi.de/    |Germany   |Sept, 2026|publication/414897198_Presentation_EarlyAttestationBleed_Three_Critical-              |
@@ -2905,12 +3197,12 @@ Table of Contents
 
 20.1.2.  Archives
 
-   Since January, we have publicly informed the authors of vulnerable
+   Since January'26, we have publicly informed the authors of vulnerable
    drafts [I-D.fossati-tls-attestation-09],
    [I-D.fossati-seat-early-attestation], and [I-D.ritz-seat-facts] and
    shared our results with the community for review and to raise
-   awareness on high-severity vulnerabilities and apply appropriate
-   mitigations for the safety of their users:
+   awareness on high- and critical-severity vulnerabilities and apply
+   appropriate mitigations for the safety of their users:
 
 20.1.2.1.  Intra-handshake.fail
 
@@ -3008,6 +3300,23 @@ Table of Contents
    *  ProVerif (https://sympa.inria.fr/sympa/arc/proverif/2026-09/
       msg00000.html)
 
+20.1.2.3.  EarlyAttestationTschüss (EAT)
+
+   [EarlyAttestationTschuess]
+
+   *  IRTF UFMRG (https://mailarchive.ietf.org/arch/msg/
+      ufmrg/8RPCf502JFmsBui5rUZw38l76Rk/)
+
+   *  Agentic AI Foundation (AAIF) Security & Privacy
+      (https://lists.aaif.io/g/wg-security-privacy/topic/
+      contribution/121847989)
+
+   *  OCP Security (https://ocp-all.groups.io/g/OCP-Security/
+      message/1279)
+
+   *  Confidential Computing Consortium (CCC)
+      (https://lists.confidentialcomputing.io/g/attestation/message/343)
+
    If you know any other relevant mailing list that we should inform for
    protection of users, please let us know.
 
@@ -3096,13 +3405,32 @@ Table of Contents
               CVE, "CVE-2026-112377", October 2026,
               <https://www.cve.org/CVERecord?id=CVE-2026-112377>.
 
+   [CVE-2026-119344]
+              CVE, "CVE-2026-119344", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-119344>.
+
+   [CVE-2026-119345]
+              CVE, "CVE-2026-119345", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-119345>.
+
+   [CVE-2026-129092]
+              CVE, "CVE-2026-129092", November 2026,
+              <https://www.cve.org/CVERecord?id=CVE-2026-129092>.
+
    [EarlyAttestationBleed]
               Sardar, M. U. and Songbo Bu, "EarlyAttestationBleed: Three
               Critical-severity Vulnerabilities of CVSS ≥ 9.0 in
               Confidential Computing", September 2026,
-              <https://www.researchgate.net/
-              publication/414529199_EarlyAttestationBleed_Three_Critical-
-              severity_Vulnerabilities_of_CVSS_90_in_Confidential_Computing>.
+              <https://www.researchgate.net/publication/414529199_
+              EarlyAttestationBleed_Three_Critical-severity_
+              Vulnerabilities_of_CVSS_90_in_Confidential_Computing>.
+
+   [EarlyAttestationTschuess]
+              Sardar, M. U. and Songbo Bu, "EarlyAttestationTschüss
+              (EAT): 8+ Critical-Severity Vulnerabilities of CVSS 9.1
+              Resulting in End of Life of Early Attestation", November
+              2026, <https://www.researchgate.net/
+              publication/417343302_EarlyAttestationTschuss_EAT>.
 
    [EUVD-2026-16488]
               ENISA, "CoCoS attested TLS is vulnerable to relay attacks
@@ -3124,6 +3452,38 @@ Table of Contents
    [EUVD-2026-87853]
               ENISA, "EUVD-2026-87853", September 2026,
               <https://euvd.enisa.europa.eu/enisa/EUVD-2026-87853>.
+
+   [EUVD-2026-95996]
+              ENISA, "EUVD-2026-95996", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-95996>.
+
+   [EUVD-2026-95997]
+              ENISA, "EUVD-2026-95997", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-95997>.
+
+   [EUVD-2026-96017]
+              ENISA, "EUVD-2026-96017", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-96017>.
+
+   [EUVD-2026-96018]
+              ENISA, "EUVD-2026-96018", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-96018>.
+
+   [EUVD-2026-96019]
+              ENISA, "EUVD-2026-96019", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-96019>.
+
+   [EUVD-2026-97781]
+              ENISA, "EUVD-2026-97781", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-97781>.
+
+   [EUVD-2026-97782]
+              ENISA, "EUVD-2026-97782", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-97782>.
+
+   [EUVD-2026-104535]
+              ENISA, "EUVD-2026-104535", October 2026,
+              <https://euvd.enisa.europa.eu/enisa/EUVD-2026-104535>.
 
    [GHSA-Cocos-AI]
               Ultraviolet Cocos AI, "CoCoS attested TLS is vulnerable to
@@ -3297,9 +3657,9 @@ Table of Contents
               T. Reddy.K, "Using Attestation in Transport Layer Security
               (TLS) and Datagram Transport Layer Security (DTLS)", Work
               in Progress, Internet-Draft, draft-fossati-seat-early-
-              attestation-08, 14 October 2026,
+              attestation-09, 1 November 2026,
               <https://datatracker.ietf.org/doc/html/draft-fossati-seat-
-              early-attestation-08>.
+              early-attestation-09>.
 
    [I-D.fossati-seat-early-attestation-04]
               Sheffer, Y., Mihalcea, I., Deshpande, Y., Fossati, T., and
@@ -3354,16 +3714,40 @@ Acknowledgments
    This draft benefits from several years of research on attested TLS,
    in particular some of the recent works mentioned below:
 
-   *EarlyAttestationTschüss (EAT)*
+   *EarlyAttestationTschüss (EAT)* [EarlyAttestationTschuess]
 
    We wish to express our sincere appreciation to the following for
-   their review:
+   their review and discussions:
 
    *  Bertrand Foing
 
    *  Markus Rudy
 
+   *  Sammy Kerata Oina
+
    *  Kaya Ercihan
+
+   *  David Kaplan
+
+   *  Elena Reshetova
+
+   *  Artem Bityutskiy
+
+   *  Mateusz Bronk
+
+   *  Kubilay Ahmet Küçük
+
+   *  Waqas Nawaz
+
+   *  Yanping Hu
+
+   *  Thomas Fossati
+
+   *  Ilari Liusvaara
+
+   *  Vladislav Kostitsyn
+
+   *  Kevin Hammond
 
    *EarlyAttestationBleed* [EarlyAttestationBleed]
 
@@ -3619,10 +4003,9 @@ Authors' Addresses
 
 
    Islam Aboubakarov
-   Ecole Superieure Ingénieurs Léonard de Vinci Paris
-   92000 Paris
+   Independent
    France
-   Email: islam.aboubakarov@edu.devinci.fr
+   Email: islamaboubakarov@yahoo.com
 
 
    Ammara Gul
