@@ -493,8 +493,8 @@ informative:
 --- abstract
 
 As presented in {{EarlyAttestationTschuess}} (EAT), all major early attestation implementations have declared end of life of early attestation, because of our responsibly disclosed vulnerabilities.
-Privasys [declared end of life](https://github.com/Privasys/go/commit/91195564d435a374e45d485d39edbc6cf8235901) of early attestation in Go, archived the early attestation repo on 04.09, and moved to standard (post-handshake) attestation.
-Privasys [declared end of life](https://github.com/Privasys/rustls/commit/c39f7107dffd710c5087b1885a71b4bb8ff2de31) of early attestation in rustls, archived the early attestation repo on 04.09, and moved to standard attestation.
+Privasys [declared end of life](https://github.com/Privasys/go/commit/91195564d435a374e45d485d39edbc6cf8235901) of early attestation in **Go**, archived the early attestation repo on 04.09, and moved to standard (post-handshake) attestation.
+Privasys [declared end of life](https://github.com/Privasys/rustls/commit/c39f7107dffd710c5087b1885a71b4bb8ff2de31) of early attestation in **rustls**, archived the early attestation repo on 04.09, and moved to standard attestation.
 Cocos AI [declared end of life](https://github.com/ultravioletrs/cocos/releases/tag/v0.9.0) of early attestation, and moved to standard attestation.
 CCC Attestation SIG [declared end of life](https://github.com/CCC-Attestation/attested-tls-poc/pull/60) of early attestation, and archived the repo on 22.07.
 Moreover, authors of {{I-D.fossati-tls-attestation-10}} have [withdrawn their vulnerable draft](https://mailarchive.ietf.org/arch/msg/i-d-announce/4QeQmyBwZpZ69MRry4wGzkGyU0o/) because of our discovered vulnerabilities.
@@ -517,6 +517,14 @@ If you are aware of any open-source implementation of early attestation that is 
 We first present the executive summary of published GHSAs/CVEs against early attestation and then an overview of the research works that led to those discoveries.
 
 ## Executive Summary of Current Status
+
+| Category | Total | Critical | High | Medium | Low |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **GHSAs Published** | **39** | 13 | 14 | 11 | 1 |
+| **CVEs Published** | **20** | 14 | 6 | 0 | 0 |
+| **CVEs in Process** | **57+** | 5 | 26 | 25 | 1 |
+
+### Published GHSAs and CVEs
 
 The table below presents the current status of published GHSAs and CVEs against implementations of early attestation with confirmed scores.
 Severity is based on [NIST standard metrics](https://nvd.nist.gov/vuln-metrics/cvss), where 10.0 is the highest possible vulnerability score. **For TLS reference, Heartbleed was CVSS 7.5**.
@@ -702,9 +710,9 @@ The draft {{I-D.fossati-seat-early-attestation}} is an extension of the provably
 1. Binder has been updated
 2. Optional post-handshake attestation part has been added for re-attestation
 
-The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks.
+The current binder in {{I-D.fossati-seat-early-attestation}} does not prevent relay attacks as there is no **shared secret** in the binder. In addition to the formal analysis in {{Intra-handshake.fail}}, see {{TLS-RA}} for arguments why shared secret is necessary to prevent relay attacks. {{EarlyAttestationTschuess}} presents a thorough formal analysis of early attestation part of {{I-D.fossati-seat-early-attestation}} describing the properties it breaks.
 
-Post-handshake attestation part may prevent relay attacks, but then the **additional complexity** of intra-handshake attestation is unjustified.
+Post-handshake attestation part of {{I-D.fossati-seat-early-attestation}} may prevent relay attacks, but then the **additional complexity** of intra-handshake attestation is unjustified.
 
 # Threat Model
 The threat model is explained in Sec. 6.1 of {{Intra-handshake.fail}} and Sec. 4 of {{ID-Crisis}}.
@@ -801,21 +809,21 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-100833}} published  [**Severity = CRITICAL (CVSS 9.6)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
 | CVE {{CVE-2026-108265}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-95996}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-95996}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108266}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-95997}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-95997}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108267}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-96017}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-96017}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108268}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-96018}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-96018}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108269}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-96019}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-96019}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108361}} published  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-97782}}  [**Severity = HIGH (CVSS 7.2)**] | 12 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-97782}}  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
 | CVE {{CVE-2026-108362}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-97781}}  [**Severity = CRITICAL (CVSS 9.1)**] | 12 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-97781}}  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
 | CVE {{CVE-2026-112377}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
-| ENISA published EUVD {{EUVD-2026-104535}}  [**Severity = CRITICAL (CVSS 9.1)**] | 19 Ocgtober, 2026 |
+| ENISA published EUVD {{EUVD-2026-104535}}  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
 | WCM published [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | {{CVE-2026-119344}} published [**Severity = CRITICAL (CVSS 9.1)**] | 2 November, 2026 |
@@ -913,7 +921,7 @@ As demonstrated in {{Intra-handshake.fail}} and {{Intra-handshake.fail-repo}}, a
 
 Both violate the fundamental requirement in SEAT charter of binding to connection.
 
-While {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] are patched in Contrast v1.16.0, **users of Edgeless Systems Contrast need to trust Edgeless Systems for the provided hardware identifiers**. This keeps Edgeless Systems within the TCB.
+As presented in Section 9.2 of {{EarlyAttestationTschuess}}, while a workaround for {{CVE-2026-100835}} and {{GHSA-Edgeless-Systems5}} [**Severity = CRITICAL (CVSS 9.1)**] has been applied in Contrast v1.16.0 in an **optional** manner, **users of Edgeless Systems Contrast need to blindly trust Edgeless Systems for the provided hardware identifiers**. This keeps Edgeless Systems within the TCB.
 
 If you are aware of any other intra-handshake attestation implementation, please let us know so that we can check and responsibly disclose the vulnerabilities to them.
 
@@ -933,11 +941,11 @@ At least the following protocol specifications with intra-handshake attestation 
 - {{I-D.ritz-seat-facts}}: symbolic proof of insecurity; draft **archived**
   - violates G3 property in our analysis
   - unnecessary complexity is itself a security concern
-- {{I-D.fossati-seat-early-attestation}}: symbolic and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06, -07, and -08)
+- {{I-D.fossati-seat-early-attestation}}: symbolic {{EarlyAttestationTschuess}} and (paper-and-pen-based) computational proof of insecurity (originally done for -04 and applies also to -06, -07, -08, and -09)
   - As a SEAT WG participant pointed out, please note that both {{CVE-2026-33697}} and {{EUVD-2026-16488}} contain a link to {{GHSA-Cocos-AI}} that contains a link to {{SEAT-vulnerability-report}} that contains the G3 property (cf. {{sec-corr-goals}}) that this draft does not satisfy.
   - Some WG participants successfully reproduced the vulnerability by substituting the right value of `rdata` in the shared formal model {{Intra-handshake.fail-repo}} that led to the CVE.
   - An informal reasoning is that binder is not **directly** derived from any **shared secret** in this draft.
-  - **Unnecessary complexity** is itself a security concern
+  - **Unnecessary complexity** is itself a security concern.
 
 | Spec | Status |
 |---|---|
@@ -1416,10 +1424,6 @@ relay attacks {{GHSA-Cocos-AI2}}, {{GHSA-Cocos-AI3}}.
 - Binder MUST contain shared secrets. Failure to do so results in relay
 attacks {{GHSA-Privasys-rustls}}, {{GHSA-Privasys-go}}, {{GHSA-Privasys-eov}}, {{GHSA-Privasys-eom}}, {{GHSA-Privasys-rtc}}, {{GHSA-Privasys-rtc-da}}, {{GHSA-Privasys-rtc-tcu}}.
 
-## Researchers outside of IETF/IRTF
-
-Some researchers have approached us confirming the proof-of-concept of the vulnerabilities in intra-handshake attestation. More information will be added once their pre-prints/papers are public.
-
 # Security Considerations
 
 All of this document is about the **insecurity** of **intra**-handshake (aka early) attestation.
@@ -1446,8 +1450,9 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 
 | Event/Host | Venue | Date(s) | Evidence |
 | --- | --- | --- | --- |
+| UFMRG @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 20 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-ufmrg-earlyattestationbleed-and-earlyattestationtschuss-00), [video](https://youtu.be/0IGyCGou1tk?t=5150) |
 | DINRG @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 16 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-dinrg-earlyattestationbleed-and-earlyattestationtschuss-00), [video](https://youtu.be/MnrA2-3davw?t=5915) |
-| [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 16 Nov, 2026 | slides, video |
+| [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 16 Nov, 2026 | slides, [video](https://us02web.zoom.us/rec/share/r5JFsGLI39okHloPsl18Mdqgi_d66g4nX0VjhN_YfxvFn7ZQ4t3qmpadyTbwAZZD.YDwncy74MPzJlsOR) |
 | HotRFC @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 15 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-confidential-computing-and-digital-sovereignty-00), [video](https://youtu.be/_c7VYycfRXA?t=3962) |
 | [IETF 126 Hackathon](https://www.ietf.org/meeting/hackathons/127-hackathon/) | San Francisco, USA (Virtual) | 15 November, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/127/hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-attestation), [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), [video](https://youtu.be/d44apZBtXwI?t=1027) |
 | [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain (Virtual) | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
@@ -1535,10 +1540,16 @@ Since January'26, we have publicly informed the authors of vulnerable drafts {{I
 
 {{EarlyAttestationTschuess}}
 
+- [IRTF CFRG](https://mailarchive.ietf.org/arch/msg/cfrg/_Ol3Ft4PZFrg47Nujxr_xvRgoq4/)
+- [Agentic AI Foundation (AAIF) Identity & Trust](https://lists.aaif.io/g/wg-identity-trust/topic/121848020?msg=54#msg54)
+- [Confidential Computing Consortium (CCC)](https://lists.confidentialcomputing.io/g/attestation/message/343)
+- [Global Alliance for Genomics and Health](https://groups.google.com/a/ga4gh.org/g/gif-open-tre-members/c/hqx1P4bcTT0)
+- [Linux Plumbers Conference](https://lpc.events/event/20/contributions/2585/)
+- [RIPE](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/)
 - [IRTF UFMRG](https://mailarchive.ietf.org/arch/msg/ufmrg/8RPCf502JFmsBui5rUZw38l76Rk/)
+- [Agentic AI Foundation (AAIF) Governance, Risk & Regulatory Alignment Working Group](https://lists.aaif.io/g/wg-governance-risk-regulatory/message/7)
 - [Agentic AI Foundation (AAIF) Security & Privacy](https://lists.aaif.io/g/wg-security-privacy/topic/contribution/121847989)
 - [OCP Security](https://ocp-all.groups.io/g/OCP-Security/message/1279)
-- [Confidential Computing Consortium (CCC)](https://lists.confidentialcomputing.io/g/attestation/message/343)
 
 If you know any other relevant mailing list that we should inform for protection of users, please let us know.
 
@@ -1581,6 +1592,7 @@ We wish to express our sincere appreciation to the following for their review an
 - Ilari Liusvaara
 - Vladislav Kostitsyn
 - Kevin Hammond
+- Marc Molas
 
 **EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
