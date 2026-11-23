@@ -523,6 +523,24 @@ We first present the executive summary of published GHSAs/CVEs against early att
 | **GHSAs Published** | **39** | 13 | 14 | 11 | 1 |
 | **CVEs Published** | **20** | 14 | 6 | 0 | 0 |
 | **CVEs in Process** | **57+** | 5 | 26 | 25 | 1 |
+{: title="Overall status"}
+
+
+## EarlyAttestationTschüss (EAT) Profiles
+
+The paper {{EarlyAttestationTschuess}} summarizes the current EAT profiles:
+
+| Affected Component | Archived | Migrated | Withdrawn | Still Vulnerable |
+| :--- | :---: | :---: | :---: | :---: |
+| Privasys rustls <= v0.2.0 | **Yes** | **Yes** | | |
+| Privasys Go <= v0.3.0-go1.26.5 | **Yes** | **Yes** | | |
+| Cocos AI <= v0.8.2 | | **Yes** | | |
+| CCC Attestation SIG reference implementation | **Yes** | | | |
+| draft-fossati-tls-attestation-10 | | | **Yes** | |
+| **Edgeless Systems Contrast** | | | | **Follows withdrawn draft** |
+| **Meta Private Processing** | | | | **Follows withdrawn draft** |
+| **draft-fossati-seat-early-attestation-09** | | | | **No shared secrets in binder** |
+{: title="EarlyAttestationTschüss (EAT) Profiles of Major Service Providers"}
 
 ### Published GHSAs and CVEs
 
@@ -658,14 +676,24 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{EUVD-2026-96019}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
+| [GHSA-86rg-3pxr-6h8c](https://github.com/veraison/services/security/advisories/GHSA-86rg-3pxr-6h8c) |  3.7 | Songbo Bu and Chengxin Huang; independently by Kaled Aljebur  |
 | [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
 | [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
+| [GHSA-2w6f-8xrm-f9xw](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-2w6f-8xrm-f9xw) |  8.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-4456-rr46-r7v6](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-4456-rr46-r7v6) |  8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-4pqf-h3v4-fq3c](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-4pqf-h3v4-fq3c) |  2.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-58mm-x75f-qv9h](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-58mm-x75f-qv9h) |  6.9 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-83wg-c3jj-cf77](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-83wg-c3jj-cf77) |  9.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-gh56-wjpj-xppq](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-gh56-wjpj-xppq) |  8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-j83r-456j-5qj2](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-j83r-456j-5qj2) |  6.9 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-qp28-6j56-j83v](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qp28-6j56-j83v) |  9.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
+| [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) |  9.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | {{CVE-2026-119344}} | 9.1 | Muhammad Usama Sardar |
 | {{CVE-2026-119345}} | 7.2 | Muhammad Usama Sardar |
 | {{CVE-2026-129092}} | 7.0 | Muhammad Usama Sardar |
-| TBA | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| TBA | 9.1 | Muhammad Usama Sardar and Songbo Bu |
-| TBA | 7.0 | Muhammad Usama Sardar and Songbo Bu |
+| TBA | 9.1* | Muhammad Usama Sardar and Songbo Bu |
+| TBA | 9.1* | Muhammad Usama Sardar and Songbo Bu |
+| TBA | 7.0* | Muhammad Usama Sardar and Songbo Bu |
 {: title="GHSAs/CVEs for implementations of early attestation and finders in (roughly) chronological order of publishing -- CVSS scores marked with * are preliminary"}
 
 # Intra-handshake.fail
@@ -822,10 +850,20 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | ENISA published EUVD {{EUVD-2026-97782}}  [**Severity = HIGH (CVSS 7.2)**] | 12 October, 2026 |
 | CVE {{CVE-2026-108362}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
 | ENISA published EUVD {{EUVD-2026-97781}}  [**Severity = CRITICAL (CVSS 9.1)**] | 12 October, 2026 |
+| Veraison published [GHSA-86rg-3pxr-6h8c](https://github.com/veraison/services/security/advisories/GHSA-86rg-3pxr-6h8c) [**Severity = LOW (CVSS 3.7)**] | 16 October, 2026 |
 | CVE {{CVE-2026-112377}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
 | ENISA published EUVD {{EUVD-2026-104535}}  [**Severity = CRITICAL (CVSS 9.1)**] | 19 October, 2026 |
 | WCM published [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
 | WCM published [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) [**Severity = MEDIUM (CVSS 5.9)**] | 19 October, 2026 |
+| Privasys published [GHSA-2w6f-8xrm-f9xw](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-2w6f-8xrm-f9xw) [**Severity = HIGH (CVSS 8.3)**] | 20 October, 2026 |
+| Privasys published [GHSA-4456-rr46-r7v6](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-4456-rr46-r7v6) [**Severity = HIGH (CVSS 8.2)**] | 20 October, 2026 |
+| Privasys published [GHSA-4pqf-h3v4-fq3c](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-4pqf-h3v4-fq3c) [**Severity = LOW (CVSS 2.3)**] | 20 October, 2026 |
+| Privasys published [GHSA-58mm-x75f-qv9h](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-58mm-x75f-qv9h) [**Severity = MODERATE (CVSS 6.9)**] | 20 October, 2026 |
+| Privasys published [GHSA-83wg-c3jj-cf77](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-83wg-c3jj-cf77) [**Severity = CRITICAL (CVSS 9.2)**] | 20 October, 2026 |
+| Privasys published [GHSA-gh56-wjpj-xppq](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-gh56-wjpj-xppq) [**Severity = HIGH (CVSS 8.2)**] | 20 October, 2026 |
+| Privasys published [GHSA-j83r-456j-5qj2](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-j83r-456j-5qj2) [**Severity = MODERATE (CVSS 6.9)**] | 20 October, 2026 |
+| Privasys published [GHSA-qp28-6j56-j83v](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qp28-6j56-j83v) [**Severity = CRITICAL (CVSS 9.2)**] | 20 October, 2026 |
+| Privasys published [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) [**Severity = CRITICAL (CVSS 9.4)**] | 20 October, 2026 |
 | {{CVE-2026-119344}} published [**Severity = CRITICAL (CVSS 9.1)**] | 2 November, 2026 |
 | {{CVE-2026-119345}} published [**Severity = HIGH (CVSS 7.2)**] | 2 November, 2026 |
 | {{CVE-2026-129092}} published [**Severity = HIGH (CVSS 7.0)**] | 13 November, 2026 |
@@ -1094,6 +1132,7 @@ If you have written an article on this and would like to be added here, please s
 
 - (Chinese) [KK Security Talk](https://mp.weixin.qq.com/s/dWq3C4iisYNpgLogz7za-g)
 - (Chinese) [Security 114](https://www.anquan114.com/archives/7472)
+- (Chinese) [cn-sec](https://cn-sec.com/archives/5584496.html)
 - [al-ice.ai](https://al-ice.ai/posts/2026/10/privasys-ra-tls-five-cves-channel-binding-self-disclosure/)
 - [freenode](https://www.freenode.com/digest/766)
 - [NHI Management Group](https://nhimg.org/articles/attested-tls-relay-flaws-show-where-confidential-computing-binding-fails/)
@@ -1577,22 +1616,23 @@ This draft benefits from several years of research on attested TLS, in particula
 
 We wish to express our sincere appreciation to the following for their review and discussions:
 
-- Bertrand Foing
-- Markus Rudy
-- Sammy Kerata Oina
-- Kaya Ercihan
-- David Kaplan
-- Elena Reshetova
-- Artem Bityutskiy
-- Mateusz Bronk
-- Kubilay Ahmet Küçük
-- Waqas Nawaz
-- Yanping Hu
-- Thomas Fossati
+- Bertrand Foing (Privasys owner)
+- Markus Rudy (Edgeless Systems maintainer)
+- Sammy Kerata Oina (Cocos AI maintainer)
+- Kaya Ercihan (Switch)
+- David Kaplan (AMD)
+- Elena Reshetova (Intel)
+- Artem Bityutskiy (Intel)
+- Mateusz Bronk (Intel)
+- Rihui Tan (Intel)
+- Kubilay Ahmet Küçük (Oxford University D.Phil.)
+- Waqas Nawaz (Vision4d)
+- Yanping Hu (TU Dresden)
+- Thomas Fossati (Nvidia)
 - Ilari Liusvaara
-- Vladislav Kostitsyn
-- Kevin Hammond
-- Marc Molas
+- Vladislav Kostitsyn (Alakris)
+- Kevin Hammond (Ensurable Systems)
+- Marc Molas (MintID)
 
 **EarlyAttestationBleed** {{EarlyAttestationBleed}}
 
