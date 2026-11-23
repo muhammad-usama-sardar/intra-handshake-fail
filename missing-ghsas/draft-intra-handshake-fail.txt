@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 26 May 2027                                           CoreWeave
+Expires: 27 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 26 May 2027                                           CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                        22 November 2026
+                                                        23 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -138,7 +138,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 May 2027.
+   This Internet-Draft will expire on 27 May 2027.
 
 Copyright Notice
 
@@ -789,9 +789,9 @@ Table of Contents
    |[CVE-2026-112377]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
-   |GHSA-86rg-3pxr-6h8c (https://github.com/Privasys/enclave- |3.7     |Songbo Bu and|
-   |os-virtual/security/advisories/GHSA-86rg-3pxr-6h8c)       |        |Chengxin     |
-   |                                                          |        |Huang;       |
+   |GHSA-86rg-3pxr-6h8c                                       |3.7     |Songbo Bu and|
+   |(https://github.com/veraison/services/security/advisories/|        |Chengxin     |
+   |GHSA-86rg-3pxr-6h8c)                                      |        |Huang;       |
    |                                                          |        |independently|
    |                                                          |        |by Kaled     |
    |                                                          |        |Aljebur      |
@@ -848,12 +848,6 @@ Table of Contents
    +----------------------------------------------------------+--------+-------------+
    |GHSA-qp28-6j56-j83v (https://github.com/Privasys/enclave- |9.2     |Songbo Bu,   |
    |os-virtual/security/advisories/GHSA-qp28-6j56-j83v)       |        |Chengxin     |
-   |                                                          |        |Huang, and   |
-   |                                                          |        |Muhammad     |
-   |                                                          |        |Usama Sardar |
-   +----------------------------------------------------------+--------+-------------+
-   |GHSA-qrvp-grrm-qpqv (https://github.com/Privasys/enclave- |9.4     |Songbo Bu,   |
-   |os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv)       |        |Chengxin     |
    |                                                          |        |Huang, and   |
    |                                                          |        |Muhammad     |
    |                                                          |        |Usama Sardar |
@@ -1424,10 +1418,6 @@ Table of Contents
    |Privasys published GHSA-qp28-6j56-j83v (https://github.com/Privasys/enclave-|20        |
    |os-virtual/security/advisories/GHSA-qp28-6j56-j83v) [*Severity = CRITICAL   |October,  |
    |(CVSS 9.2)*]                                                                |2026      |
-   +----------------------------------------------------------------------------+----------+
-   |Privasys published GHSA-qrvp-grrm-qpqv (https://github.com/Privasys/enclave-|20        |
-   |os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) [*Severity = CRITICAL   |October,  |
-   |(CVSS 9.4)*]                                                                |2026      |
    +----------------------------------------------------------------------------+----------+
    |Privasys published GHSA-qrvp-grrm-qpqv (https://github.com/Privasys/enclave-|20        |
    |os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) [*Severity = CRITICAL   |October,  |
