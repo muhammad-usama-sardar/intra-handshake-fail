@@ -676,7 +676,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{EUVD-2026-96019}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
-| [GHSA-86rg-3pxr-6h8c](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-86rg-3pxr-6h8c) |  3.7 | Songbo Bu and Chengxin Huang; independently by Kaled Aljebur  |
+| [GHSA-86rg-3pxr-6h8c](https://github.com/veraison/services/security/advisories/GHSA-86rg-3pxr-6h8c) |  3.7 | Songbo Bu and Chengxin Huang; independently by Kaled Aljebur  |
 | [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
 | [GHSA-jr5r-w684-fg5m](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-jr5r-w684-fg5m) | 5.9 | Muhammad Usama Sardar |
 | [GHSA-2w6f-8xrm-f9xw](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-2w6f-8xrm-f9xw) |  8.3 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
@@ -687,7 +687,6 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | [GHSA-gh56-wjpj-xppq](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-gh56-wjpj-xppq) |  8.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-j83r-456j-5qj2](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-j83r-456j-5qj2) |  6.9 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-qp28-6j56-j83v](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qp28-6j56-j83v) |  9.2 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
-| [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) |  9.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) |  9.4 | Songbo Bu, Chengxin Huang, and Muhammad Usama Sardar  |
 | {{CVE-2026-119344}} | 9.1 | Muhammad Usama Sardar |
 | {{CVE-2026-119345}} | 7.2 | Muhammad Usama Sardar |
@@ -864,7 +863,6 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-gh56-wjpj-xppq](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-gh56-wjpj-xppq) [**Severity = HIGH (CVSS 8.2)**] | 20 October, 2026 |
 | Privasys published [GHSA-j83r-456j-5qj2](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-j83r-456j-5qj2) [**Severity = MODERATE (CVSS 6.9)**] | 20 October, 2026 |
 | Privasys published [GHSA-qp28-6j56-j83v](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qp28-6j56-j83v) [**Severity = CRITICAL (CVSS 9.2)**] | 20 October, 2026 |
-| Privasys published [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) [**Severity = CRITICAL (CVSS 9.4)**] | 20 October, 2026 |
 | Privasys published [GHSA-qrvp-grrm-qpqv](https://github.com/Privasys/enclave-os-virtual/security/advisories/GHSA-qrvp-grrm-qpqv) [**Severity = CRITICAL (CVSS 9.4)**] | 20 October, 2026 |
 | {{CVE-2026-119344}} published [**Severity = CRITICAL (CVSS 9.1)**] | 2 November, 2026 |
 | {{CVE-2026-119345}} published [**Severity = HIGH (CVSS 7.2)**] | 2 November, 2026 |
