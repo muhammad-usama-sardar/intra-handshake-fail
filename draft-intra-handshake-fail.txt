@@ -18,6 +18,8 @@ Expires: 30 May 2027                                           CoreWeave
                                                                   Switch
                                                           D. K. A. Küçük
                                                  DPhil Oxford University
+                                                             B. Morrison
+                                                  Alter Meridian Pty Ltd
                                                             S. Bellemare
                                                            Sureshot Labs
                                                         E. C. M. Willems
@@ -4175,6 +4177,11 @@ Authors' Addresses
    Dr Kubilay Ahmet Küçük
    DPhil Oxford University
    Email: dr.kucuk@oxfordalumni.org
+
+
+   Blake Morrison
+   Alter Meridian Pty Ltd
+   Email: blake@truealter.com
 
 
    Sylvain Bellemare
