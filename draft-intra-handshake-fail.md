@@ -488,6 +488,9 @@ informative:
   I-D.fossati-tls-attestation-09:
   I-D.fossati-tls-attestation-10:
   I-D.ritz-seat-facts:
+  I-D.morrison-acts-for-04:
+  RFC8693:
+  RFC9334:
 ...
 
 --- abstract
@@ -1071,6 +1074,16 @@ The findings of published CVEs/GHSAs up to 10.0 (presented in {{sec-credits}}) s
 Attestation can provide evidence about an agent’s technical state, but such evidence should not be equated with governability. For a relying party, governability also depends on whether the agent’s identity, authority and permissions remain aligned with the intended interaction, whether responsibility for its actions can be attributed, and whether authorized parties retain the practical ability to intervene effectively and in time. The findings in this draft reinforce that distinction by showing that even the binding between attestation evidence and the intended session can fail. Successful attestation should therefore be treated as one input into governance, rather than as sufficient evidence that an AI agent remains under effective control.
 
 In Agent2Agent interactions, this distinction also matters over time and across delegation chains. Attestation evidence obtained at one point does not, by itself, establish that an agent's subsequent actions remain within the authority granted for a particular task, that changes in permissions or delegation have been accounted for, or that intervention remains feasible as agents interact. Relying parties should therefore consider how authorization boundaries, attribution, monitoring, and timely suspension or revocation are maintained throughout the interaction. These are operational governance considerations, not additional security properties established by the formal analysis in this draft.
+
+### Identity of the AI Agent
+
+Attestation Evidence, and the Attestation Results a Verifier produces from it {{RFC9334}}, describe the platform and workload an agent runs on. Neither says which agent is acting or on whose behalf. Which agent is acting, the principal it acts for, and the authority that principal has granted are separate questions for a relying party that admits an AI agent. An agent can present valid Evidence from a genuine platform and still act for a principal who did not authorise it, or beyond the authority that principal granted.
+
+{{I-D.morrison-acts-for-04}} describes a profile covering these questions in one setting, an agent signing in to a website (the relying party) on behalf of a person (the principal). The pass the agent presents names the person, as its subject, by an identifier specific to that website, and the agent, as the actor in the sense of Section 4.1 of {{RFC8693}}, by its own identifier. It carries the limits the person set, and the website checks it against the issuer's published signing key and does not call the issuer to do so (Sections 6.2 and 6.3 of {{I-D.morrison-acts-for-04}}).
+
+The same profile speaks to the time, delegation and attribution concerns above in that one setting. A pass expires at most 300 seconds after it is issued, and once the issuer records the person's withdrawal of the grant no website holds a valid pass under it more than 300 seconds later. An agent that hands work to another agent does not hand its pass on. The second agent obtains its own pass under a grant of its own from the person. A record of an act cites the grant and the person's website-specific identifier. Only the issuer can resolve that identifier to the person, and it resolves neither the identifier nor the grant to the person without the person's agreement (Sec. 6.2 and 6.4 of {{I-D.morrison-acts-for-04}}).
+
+The profile is single-hop, leaves out how the person grants authority to the agent, and makes no use of platform attestation. Nothing in this subsection is a security property established by the formal analysis in this draft.
 
 # Technical Details
 
