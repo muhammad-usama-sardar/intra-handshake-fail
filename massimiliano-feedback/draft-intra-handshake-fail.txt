@@ -1964,9 +1964,13 @@ Table of Contents
    attribution, monitoring, and timely suspension or revocation are
    maintained throughout the interaction.  For delegated operations,
    deployments should state where and by when revocation takes effect,
-   and whether work already accepted may still complete.  These are
-   operational governance considerations, not additional security
-   properties established by the formal analysis in this draft.
+   and whether work already accepted may still complete.  For example,
+   the party authorized to intervene could check a status record for the
+   delegated authority showing which enforcement points have confirmed
+   revocation, when each applied it, and where confirmation is still
+   pending.  These are operational governance considerations, not
+   additional security properties established by the formal analysis in
+   this draft.
 
 15.  Technical Details
 
