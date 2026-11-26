@@ -371,12 +371,6 @@ normative:
      title: Contrast before 1.23.1 Image Substitution via Policy Generation
      target: https://www.cve.org/CVERecord?id=CVE-2026-100833
      date: 27 Sept 2026
-  EUVD-2026-87851:
-     author:
-        org: ENISA
-     title: EUVD-2026-87851
-     target: https://euvd.enisa.europa.eu/enisa/EUVD-2026-87851
-     date: 27 Sept 2026
   GHSA-Edgeless-Systems6:
     title: "Contrast (edgelesssys/contrast) versions 1.14.0 before 1.23.1 generate runtime policies that fail to detect all container image substitutions."
     date: 27 Sept 2026
@@ -515,6 +509,8 @@ If you are aware of any open-source implementation of early attestation that is 
 
 # Introduction
 We first present the executive summary of published GHSAs/CVEs against early attestation and then an overview of the research works that led to those discoveries.
+
+{::boilerplate bcp14-tagged}
 
 ## Executive Summary of Current Status
 
@@ -658,7 +654,7 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{EUVD-2026-87853}} | 8.6 | Markus Rudy; independently by Songbo Bu and Muhammad Usama Sardar |
 | {{CVE-2026-100835}} | 9.1 | Muhammad Usama Sardar |
 | {{EUVD-2026-87851}} | 9.1 | Muhammad Usama Sardar |
-| [GHSA-wqf9-jfmm-f68v](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
+| [GHSA-q46g-34w4-vhmp](https://github.com/veraison/services/security/advisories/GHSA-q46g-34w4-vhmp) | Moderate | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
 | [GHSA-jj9v-7353-35cv](https://github.com/veraison/services/security/advisories/GHSA-jj9v-7353-35cv) | 9.0-10.0 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar; independently by XOR  |
 | [GHSA-9rfg-55gm-hwvw](https://github.com/veraison/services/security/advisories/GHSA-9rfg-55gm-hwvw) | 7.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
 | [GHSA-ccfw-q8vr-cww3](https://github.com/veraison/services/security/advisories/GHSA-ccfw-q8vr-cww3) | 5.5 | Chengxin Huang, Songbo Bu, and Muhammad Usama Sardar  |
@@ -675,6 +671,10 @@ The vulnerabilities cover the broader ecosystem, including but not limited to at
 | {{EUVD-2026-96018}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{CVE-2026-108269}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
 | {{EUVD-2026-96019}} | 9.1 | Muhammad Usama Sardar, Viacheslav Dubeyko, Jean-Marie Jacquet, and Songbo Bu |
+| {{CVE-2026-108361}} | 7.2 | Muhammad Usama Sardar |
+| {{EUVD-2026-97782}} | 7.2 | Muhammad Usama Sardar |
+| {{CVE-2026-108362}} | 9.1 | Muhammad Usama Sardar |
+| {{EUVD-2026-97781}} | 9.1 | Muhammad Usama Sardar |
 | {{CVE-2026-112377}} | 9.1 | Muhammad Usama Sardar |
 | [GHSA-86rg-3pxr-6h8c](https://github.com/veraison/services/security/advisories/GHSA-86rg-3pxr-6h8c) |  3.7 | Songbo Bu and Chengxin Huang; independently by Kaled Aljebur  |
 | [GHSA-x3w3-7mvg-hxw5](https://github.com/agentrust-io/weight-custody-manifest/security/advisories/GHSA-x3w3-7mvg-hxw5) | 5.9 | Muhammad Usama Sardar |
@@ -802,11 +802,11 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Cocos AI published {{GHSA-Cocos-AI3}}  [**Severity = CRITICAL (CVSS 9.1)**] | 16 August, 2026 |
 | Edgeless Systems published {{GHSA-Edgeless-Systems2}} [**Severity = CRITICAL (CVSS 9.0-10.0)**] | 24 August, 2026 |
 | {{I-D.ritz-seat-facts}} archived | 2 September, 2026 |
-| Privasys published {{GHSA-Privasys-rustls}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
-| Privasys published {{GHSA-Privasys-go}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
-| Privasys published {{GHSA-Privasys-eov}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
-| Privasys published {{GHSA-Privasys-eom}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
-| Privasys published {{GHSA-Privasys-rtc}} [**Severity = HIGH (CVSS 7.4)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-rustls}} [**Severity = CRITICAL (CVSS 9.1)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-go}} [**Severity = CRITICAL (CVSS 9.1)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-eov}} [**Severity = CRITICAL (CVSS 9.1)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-eom}} [**Severity = CRITICAL (CVSS 9.1)**] | 3 September, 2026 |
+| Privasys published {{GHSA-Privasys-rtc}} [**Severity = CRITICAL (CVSS 9.1)**] | 3 September, 2026 |
 | Privasys archived early attestation in rustls and moved to post-handshake attestation | 4 September, 2026 |
 | Privasys archived early attestation in go and moved to post-handshake attestation | 4 September, 2026 |
 | Privasys published {{GHSA-Privasys-rtc-da}} [**Severity = HIGH (CVSS 7.4)**] | 6 September, 2026 |
@@ -824,7 +824,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | Privasys published [GHSA-qqq3-6c47-684v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-qqq3-6c47-684v) | 19 September, 2026 |
 | Privasys published [GHSA-xxr6-w252-4ggx](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-xxr6-w252-4ggx) | 19 September, 2026 |
 | Privasys published [GHSA-fmrx-fjqw-37gp](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 19 September, 2026 |
-| Privasys published [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fmrx-fjqw-37gp) | 19 September, 2026 |
+| Privasys published [GHSA-f96w-jjf8-xpw3](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-f96w-jjf8-xpw3) | 19 September, 2026 |
 | Privasys published [GHSA-fqrx-3wc2-4g49](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-fqrx-3wc2-4g49) | 19 September, 2026 |
 | Privasys published [GHSA-mrgr-34cc-fcg8](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-mrgr-34cc-fcg8) | 19 September, 2026 |
 | Privasys published [GHSA-wqf9-jfmm-f68v](https://github.com/Privasys/enclave-os-mini/security/advisories/GHSA-wqf9-jfmm-f68v) | 19 September, 2026 |
@@ -835,7 +835,7 @@ Per-VM memory-encryption key is used to encrypt confidential VM's RAM.
 | CVE {{CVE-2026-100835}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 | ENISA published EUVD {{EUVD-2026-87851}}  [**Severity = CRITICAL (CVSS 9.1)**] | 27 September, 2026 |
 | CVE {{CVE-2026-100833}} published  [**Severity = CRITICAL (CVSS 9.6)**] | 27 September, 2026 |
-| ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 7.6)**] | 27 September, 2026 |
+| ENISA published EUVD {{EUVD-2026-87853}}  [**Severity = HIGH (CVSS 8.6)**] | 27 September, 2026 |
 | CVE {{CVE-2026-108265}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | ENISA published EUVD {{EUVD-2026-95996}}  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
 | CVE {{CVE-2026-108266}} published  [**Severity = CRITICAL (CVSS 9.1)**] | 9 October, 2026 |
@@ -881,7 +881,7 @@ European Union's [ENISA](https://euvd.enisa.europa.eu/homepage) has independentl
 | {{EUVD-2026-83194}} | 9.1 | Critical |
 | {{EUVD-2026-83192}} | 9.1 | Critical |
 | {{EUVD-2026-87851}} | 9.1 | Critical |
-| {{EUVD-2026-87853}} | 7.6 | High |
+| {{EUVD-2026-87853}} | 8.6 | High |
 | {{EUVD-2026-95996}} | 9.1 | Critical |
 | {{EUVD-2026-95997}} | 9.1 | Critical |
 | {{EUVD-2026-96017}} | 9.1 | Critical |
@@ -904,7 +904,7 @@ Severity is based on [NIST metrics](https://nvd.nist.gov/vuln-metrics/cvss).
 | [DDRop](https://ddropattack.eu/ddrop.pdf) | No CVE ([Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2026-08-11-001.html) and [AMD](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3048.html) announcements) | - | None |
 | [TDXdown](https://dl.acm.org/doi/10.1145/3658644.3690230) | [Intel](https://www.intel.com/content/www/us/en/security-center/announcement/intel-security-announcement-2024-10-08-001.html) | 2.5 | Low |
 | [Staleus](https://xca-attacks.github.io/staleus/staleus_usenix26.pdf) | [CVE-2025-54509](https://www.cve.org/CVERecord?id=CVE-2025-54509) | 4.0 | Medium |
-| [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61972](https://www.cve.org/CVERecord?id=CVE-2025-6197)| 4.2 | Medium |
+| [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61972](https://www.cve.org/CVERecord?id=CVE-2025-61972)| 4.2 | Medium |
 | [BadRAM](https://badram.eu/badram.pdf)| [CVE-2024-21944](https://www.amd.com/en/resources/product-security/bulletin/amd-sb-3015.html)| 5.3 | Medium |
 | [BreakFAST](https://xca-attacks.github.io/breakfast/breakfast_oakland26.pdf) | [CVE-2025-61971](https://www.cve.org/CVERecord?id=CVE-2025-61971)| 5.9 | Medium |
 | [Fabricked](https://xca-attacks.github.io/fabricked/fabricked_usenix26.pdf) | [CVE-2025-54510](https://www.cve.org/CVERecord?id=cve-2025-54510)| 5.9 | Medium |
@@ -1095,7 +1095,7 @@ Note that this scope restriction does not weaken the level 2 limit of early atte
 Note: The artifacts consider the case of server authentication only, as client authentication is optional in TLS 1.3. No claims are made about other configurations.
 
 ## Properties
-Properties in {{Intra-handshake.fail}} are complemetary to properties in {{ID-Crisis}}. Sec. 8 of {{ID-Crisis}} mentions:
+Properties in {{Intra-handshake.fail}} are complementary to properties in {{ID-Crisis}}. Sec. 8 of {{ID-Crisis}} mentions:
 
 > We emphasize that both diversion and relay attacks are orthogonal and thus the two works are complementary.
 
@@ -1493,7 +1493,7 @@ We also sincerely thank the author of {{I-D.ritz-seat-facts}} for archiving the 
 | DINRG @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 16 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-dinrg-earlyattestationbleed-and-earlyattestationtschuss-00), [video](https://youtu.be/MnrA2-3davw?t=5915) |
 | [Data Security Work Stream (DSWS)](https://www.ga4gh.org/work_stream/data-security/) at the [Global Alliance for Genomics and Health (GA4GH)](https://www.ga4gh.org/) | Virtual | 16 Nov, 2026 | slides, [video](https://us02web.zoom.us/rec/share/r5JFsGLI39okHloPsl18Mdqgi_d66g4nX0VjhN_YfxvFn7ZQ4t3qmpadyTbwAZZD.YDwncy74MPzJlsOR) |
 | HotRFC @ [IETF 127](https://www.ietf.org/meeting/127/) | San Francisco, USA (Virtual) | 15 November, 2026  | [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-confidential-computing-and-digital-sovereignty-00), [video](https://youtu.be/_c7VYycfRXA?t=3962) |
-| [IETF 126 Hackathon](https://www.ietf.org/meeting/hackathons/127-hackathon/) | San Francisco, USA (Virtual) | 15 November, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/127/hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-attestation), [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), [video](https://youtu.be/d44apZBtXwI?t=1027) |
+| [IETF 127 Hackathon](https://www.ietf.org/meeting/hackathons/127-hackathon/) | San Francisco, USA (Virtual) | 15 November, 2026  | [Hackathon project](https://wiki.ietf.org/en/meeting/127/hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-attestation), [slides](https://datatracker.ietf.org/meeting/127/materials/slides-127-hackathon-sessd-earlyattestationbleed-and-earlyattestationtschuss-01), [video](https://youtu.be/d44apZBtXwI?t=1027) |
 | [BioHackathon Europe](https://biohackathon-europe.org/) | Barcelona, Spain (Virtual) | 9-13 Nov, 2026 | [Proposal](https://github.com/elixir-europe/biohackathon-projects-2026/blob/main/27.md) |
 | [Security WG](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/) @ [RIPE 93](https://ripe93.ripe.net/) | Sofia, Bulgaria (Virtual) | 27 Oct, 2026 | [abstract](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/), [slides](https://pretalx.ripe.net/media/ripe-93/submissions/GJXMGP/resources/20261027_RIPE_93_Sec_e4tTL66.pdf), [transcript](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/transcript/), [video](https://ripe93.ripe.net/programme/meeting-plan/sessions/137/GJXMGP/#video) |
 | System Boot and Security MC @ [Linux Plumbers Conference 2026](https://lpc.events/event/20/) | Prague, Czechia | 5 Oct, 2026 | [abstract](https://lpc.events/event/20/contributions/2585/), [slides](https://lpc.events/event/20/contributions/2585/attachments/2040/4688/20261005_LPC_2026_Security.pdf), [video](https://www.youtube.com/watch?v=KL6EX8hcFKc) |
@@ -1551,7 +1551,7 @@ Since January'26, we have publicly informed the authors of vulnerable drafts {{I
   - [SAAG](https://mailarchive.ietf.org/arch/msg/saag/jBZVk7YySwpaFqydAfxW33kNZPY/)
   - [Practical Cybersecurity list](https://mailarchive.ietf.org/arch/msg/practical-cybersecurity/d65WPaC0WbZRwxTBclnTkf7SmRs/)
   - Agent2agent list [thread1](https://mailarchive.ietf.org/arch/msg/agent2agent/ubz7uXCs--YzuSWyXNNsmWf_tSQ/) and [thread2](https://mailarchive.ietf.org/arch/msg/agent2agent/xHhjA94fzed6ONIvPRgwTT-WRmA/)
-  - [DSMC list](https://mailarchive.ietf.org/arch/msg/dmsc/QC2adIcYkxiTlniEcc7ggk86BAY/)
+  - [DMSC list](https://mailarchive.ietf.org/arch/msg/dmsc/QC2adIcYkxiTlniEcc7ggk86BAY/)
   - [Hackathon](https://mailarchive.ietf.org/arch/msg/hackathon/PIrJ2O_QqcNUAnMIn_Vh22ImWMc/)
   - [126attendees](https://mailarchive.ietf.org/arch/msg/126attendees/V9BKZJ_DGkZPdlnjBaUeyluhbqQ/)
 
