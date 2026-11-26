@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 27 May 2027                                           CoreWeave
+Expires: 30 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -36,7 +36,7 @@ Expires: 27 May 2027                                           CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                        23 November 2026
+                                                        26 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -138,7 +138,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 May 2027.
+   This Internet-Draft will expire on 30 May 2027.
 
 Copyright Notice
 
@@ -237,6 +237,12 @@ Table of Contents
    We first present the executive summary of published GHSAs/CVEs
    against early attestation and then an overview of the research works
    that led to those discoveries.
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
 
 1.1.  Executive Summary of Current Status
 
@@ -660,7 +666,7 @@ Table of Contents
    |[EUVD-2026-87851]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
-   |GHSA-wqf9-jfmm-f68v                                       |Moderate|Chengxin     |
+   |GHSA-q46g-34w4-vhmp                                       |Moderate|Chengxin     |
    |(https://github.com/veraison/services/security/advisories/|        |Huang, Songbo|
    |GHSA-q46g-34w4-vhmp)                                      |        |Bu, and      |
    |                                                          |        |Muhammad     |
@@ -785,6 +791,18 @@ Table of Contents
    |                                                          |        |Jean-Marie   |
    |                                                          |        |Jacquet, and |
    |                                                          |        |Songbo Bu    |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-108361]                                         |7.2     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-97782]                                         |7.2     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[CVE-2026-108362]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
+   +----------------------------------------------------------+--------+-------------+
+   |[EUVD-2026-97781]                                         |9.1     |Muhammad     |
+   |                                                          |        |Usama Sardar |
    +----------------------------------------------------------+--------+-------------+
    |[CVE-2026-112377]                                         |9.1     |Muhammad     |
    |                                                          |        |Usama Sardar |
@@ -1185,23 +1203,23 @@ Table of Contents
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |Privasys published [GHSA-Privasys-rustls] [*Severity = HIGH (CVSS 7.4)*]    |3         |
+   |Privasys published [GHSA-Privasys-rustls] [*Severity = CRITICAL (CVSS 9.1)*]|3         |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |Privasys published [GHSA-Privasys-go] [*Severity = HIGH (CVSS 7.4)*]        |3         |
+   |Privasys published [GHSA-Privasys-go] [*Severity = CRITICAL (CVSS 9.1)*]    |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |Privasys published [GHSA-Privasys-eov] [*Severity = HIGH (CVSS 7.4)*]       |3         |
+   |Privasys published [GHSA-Privasys-eov] [*Severity = CRITICAL (CVSS 9.1)*]   |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |Privasys published [GHSA-Privasys-eom] [*Severity = HIGH (CVSS 7.4)*]       |3         |
+   |Privasys published [GHSA-Privasys-eom] [*Severity = CRITICAL (CVSS 9.1)*]   |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |Privasys published [GHSA-Privasys-rtc] [*Severity = HIGH (CVSS 7.4)*]       |3         |
+   |Privasys published [GHSA-Privasys-rtc] [*Severity = CRITICAL (CVSS 9.1)*]   |3         |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
@@ -1274,7 +1292,7 @@ Table of Contents
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |Privasys published GHSA-f96w-jjf8-xpw3 (https://github.com/Privasys/enclave-|19        |
-   |os-mini/security/advisories/GHSA-fmrx-fjqw-37gp)                            |September,|
+   |os-mini/security/advisories/GHSA-f96w-jjf8-xpw3)                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
    |Privasys published GHSA-fqrx-3wc2-4g49 (https://github.com/Privasys/enclave-|19        |
@@ -1317,7 +1335,7 @@ Table of Contents
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
-   |ENISA published EUVD [EUVD-2026-87853]  [*Severity = HIGH (CVSS 7.6)*]      |27        |
+   |ENISA published EUVD [EUVD-2026-87853]  [*Severity = HIGH (CVSS 8.6)*]      |27        |
    |                                                                            |September,|
    |                                                                            |2026      |
    +----------------------------------------------------------------------------+----------+
@@ -1461,7 +1479,7 @@ Table of Contents
                  +--------------------+------+----------+
                  | [EUVD-2026-87851]  | 9.1  | Critical |
                  +--------------------+------+----------+
-                 | [EUVD-2026-87853]  | 7.6  | High     |
+                 | [EUVD-2026-87853]  | 8.6  | High     |
                  +--------------------+------+----------+
                  | [EUVD-2026-95996]  | 9.1  | Critical |
                  +--------------------+------+----------+
@@ -1524,7 +1542,7 @@ Table of Contents
    |staleus_usenix26.pdf)       |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
    |BreakFAST (https://xca-     |CVE-2025-61972 (https://www.cve.org/     |4.2 |Medium  |
-   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-6197)              |    |        |
+   |attacks.github.io/breakfast/|CVERecord?id=CVE-2025-61972)             |    |        |
    |breakfast_oakland26.pdf)    |                                         |    |        |
    +----------------------------+-----------------------------------------+----+--------+
    |BadRAM (https://badram.eu/  |CVE-2024-21944                           |5.3 |Medium  |
@@ -2000,7 +2018,7 @@ Table of Contents
 
 15.3.  Properties
 
-   Properties in [Intra-handshake.fail] are complemetary to properties
+   Properties in [Intra-handshake.fail] are complementary to properties
    in [ID-Crisis].  Sec. 8 of [ID-Crisis] mentions:
 
       We emphasize that both diversion and relay attacks are orthogonal
@@ -3173,7 +3191,7 @@ Table of Contents
    |                                                |USA       |2026      |(https://youtu.be/_c7VYycfRXA?t=3962)                                                 |
    |                                                |(Virtual) |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |IETF 126 Hackathon                              |San       |15        |Hackathon project (https://wiki.ietf.org/en/meeting/127/                              |
+   |IETF 127 Hackathon                              |San       |15        |Hackathon project (https://wiki.ietf.org/en/meeting/127/                              |
    |(https://www.ietf.org/meeting/                  |Francisco,|November, |hackathon#earlyattestationbleed-earlyattestationtsch%C3%BCss-eat-and-co-cve-          |
    |hackathons/127-hackathon/)                      |USA       |2026      |2026-100835-of-cvss-91-and-41-other-cves-of-up-to-expected-cvss-100-on-early-         |
    |                                                |(Virtual) |          |attestation), slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-  |
@@ -3393,7 +3411,7 @@ Table of Contents
       (https://mailarchive.ietf.org/arch/msg/agent2agent/
       xHhjA94fzed6ONIvPRgwTT-WRmA/)
 
-   *  DSMC list (https://mailarchive.ietf.org/arch/msg/dmsc/
+   *  DMSC list (https://mailarchive.ietf.org/arch/msg/dmsc/
       QC2adIcYkxiTlniEcc7ggk86BAY/)
 
    *  Hackathon (https://mailarchive.ietf.org/arch/msg/hackathon/
@@ -3817,6 +3835,15 @@ Table of Contents
               Standard Candidate", IEEE, 2017 IEEE Symposium on Security
               and Privacy (SP) pp. 483-502, DOI 10.1109/sp.2017.26, May
               2017, <https://doi.org/10.1109/sp.2017.26>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
    [SEAT-vulnerability-report]
               Sardar, M. U., "Relay Attacks in Intra-handshake
