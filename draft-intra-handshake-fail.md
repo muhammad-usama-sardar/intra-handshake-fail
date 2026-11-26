@@ -71,6 +71,10 @@ author:
     organization: DPhil Oxford University
     email: "dr.kucuk@oxfordalumni.org"
  -
+    fullname: "Blake Morrison"
+    organization: Alter Meridian Pty Ltd
+    email: blake@truealter.com
+ -
     fullname: "Sylvain Bellemare"
     organization: Sureshot Labs
     country: Japan
