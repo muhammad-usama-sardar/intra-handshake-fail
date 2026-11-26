@@ -3183,10 +3183,10 @@ Table of Contents
    |                                                |USA       |2026      |MnrA2-3davw?t=5915)                                                                   |
    |                                                |(Virtual) |          |                                                                                      |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
-   |Data Security Work Stream (DSWS)                |Virtual   |16 Nov,   |slides, video (https://us02web.zoom.us/rec/share/                                     |
-   |(https://www.ga4gh.org/work_stream/data-        |          |2026      |r5JFsGLI39okHloPsl18Mdqgi_d66g4nX0VjhN_YfxvFn7ZQ4t3qmpadyTbwAZZD.YDwncy74MPzJlsOR)    |
-   |security/) at the Global Alliance for Genomics  |          |          |                                                                                      |
-   |and Health (GA4GH) (https://www.ga4gh.org/)     |          |          |                                                                                      |
+   |Data Security Work Stream (DSWS)                |Virtual   |16 Nov,   |slides (https://www.researchgate.net/                                                 |
+   |(https://www.ga4gh.org/work_stream/data-        |          |2026      |publication/418309490_Presentation_EarlyAttestationTschuss_EAT), video                |
+   |security/) at the Global Alliance for Genomics  |          |          |(https://us02web.zoom.us/rec/share/                                                   |
+   |and Health (GA4GH) (https://www.ga4gh.org/)     |          |          |r5JFsGLI39okHloPsl18Mdqgi_d66g4nX0VjhN_YfxvFn7ZQ4t3qmpadyTbwAZZD.YDwncy74MPzJlsOR)    |
    +------------------------------------------------+----------+----------+--------------------------------------------------------------------------------------+
    |HotRFC @ IETF 127 (https://www.ietf.org/        |San       |15        |slides (https://datatracker.ietf.org/meeting/127/materials/slides-127-hotrfc-sessa-   |
    |meeting/127/)                                   |Francisco,|November, |confidential-computing-and-digital-sovereignty-00), video                             |
