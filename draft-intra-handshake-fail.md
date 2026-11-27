@@ -1079,6 +1079,7 @@ Attestation evidence obtained at one point does not, by itself, establish that a
 Relying parties should therefore consider how authorization boundaries, attribution, monitoring, and timely suspension or revocation are maintained throughout the interaction.
 For delegated operations, deployments should state where and by when revocation takes effect, and whether work already accepted may still complete.
 For example, the party authorized to intervene could check a status record for the delegated authority showing which enforcement points have confirmed revocation, when each applied it, and where confirmation is still pending.
+The record could also indicate whether work already accepted or passed on to another service can still proceed, and flag any cases where this is unknown.
 These are operational governance considerations, not additional security properties established by the formal analysis in this draft.
 
 # Technical Details
