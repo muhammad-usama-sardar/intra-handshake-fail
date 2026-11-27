@@ -5,7 +5,7 @@
 SEAT                                                        M. U. Sardar
 Internet-Draft                                                     GA4GH
 Intended status: Informational                                V. Dubeyko
-Expires: 30 May 2027                                           CoreWeave
+Expires: 31 May 2027                                           CoreWeave
                                                               J. Jacquet
                                                      University of Namur
                                                                    S. Bu
@@ -38,7 +38,7 @@ Expires: 30 May 2027                                           CoreWeave
                                               Birmingham City University
                                                               V. Malladi
                                                                   Verily
-                                                        26 November 2026
+                                                        27 November 2026
 
 
  Early Attestation Considered Very Harmful (CVE-2026-100833, CVE-2026-
@@ -140,7 +140,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 May 2027.
+   This Internet-Draft will expire on 31 May 2027.
 
 Copyright Notice
 
@@ -1968,9 +1968,11 @@ Table of Contents
    the party authorized to intervene could check a status record for the
    delegated authority showing which enforcement points have confirmed
    revocation, when each applied it, and where confirmation is still
-   pending.  These are operational governance considerations, not
-   additional security properties established by the formal analysis in
-   this draft.
+   pending.  The record could also indicate whether work already
+   accepted or passed on to another service can still proceed, and flag
+   any cases where this is unknown.  These are operational governance
+   considerations, not additional security properties established by the
+   formal analysis in this draft.
 
 15.  Technical Details
 
